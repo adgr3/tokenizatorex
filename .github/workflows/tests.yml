@@ -1,0 +1,38 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Instalacja zależności
+        run: pip install regex pytest tokenizers
+      - name: Testy
+        run: python -m pytest -q
+      - name: Wytrenowane tokenizery ładują się i są bezstratne
+        run: |
+          python - <<'EOF'
+          from superbpe import SuperBPETokenizer
+          from tokenizers import Tokenizer
+          s = "Na podstawie umowy, w ramach projektu — zgodnie z planem. Zażółć gęślą jaźń 🤖\n\t2026: 12345 zł"
+          for name in ("tokenizatorex-32k", "tokenizatorex-base-32k"):
+              t = SuperBPETokenizer.load(f"tokenizers/{name}.json")
+              assert t.vocab_size == 32000 and t.decode(t.encode(s)) == s, name
+              hf = Tokenizer.from_file(f"hf/{name}/tokenizer.json")
+              assert hf.decode(hf.encode(s, add_special_tokens=False).ids) == s, name
+              print(name, len(t.encode(s)), "tokenów: OK")
+          EOF
