@@ -1,0 +1,7 @@
+regex
+polars
+tiktoken
+tokenizers
+huggingface_hub
+pytest
+

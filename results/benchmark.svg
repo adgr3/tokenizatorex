@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 596" font-family="system-ui,Segoe UI,sans-serif" font-size="13">
+<style>.t{fill:#111827}.m{fill:#6b7280}@media (prefers-color-scheme:dark){.t{fill:#f3f4f6}.m{fill:#9ca3af}}</style>
+<text x="210" y="20" class="t" font-weight="600" font-size="15">Tokeny na słowo — polski tekst (7 dziedzin), mniej = lepiej</text>
+<text x="210" y="37" class="m" font-size="12">■ niebieski: TOKENIZATOREX · czerwony: modele polskie · szary: modele światowe</text>
+<text x="202" y="61" text-anchor="end" class="t" font-weight="700">TOKENIZATOREX</text>
+<rect x="210" y="46" width="199.6" height="20" rx="3" fill="#2563eb"/>
+<text x="415.6" y="61" class="t" font-weight="700">1.66</text>
+<text x="202" y="87" text-anchor="end" class="t">APT3-1B</text>
+<rect x="210" y="72" width="207.6" height="20" rx="3" fill="#dc2626"/>
+<text x="423.6" y="87" class="t">1.72</text>
+<text x="202" y="113" text-anchor="end" class="t">Pollock-2.0</text>
+<rect x="210" y="98" width="208.6" height="20" rx="3" fill="#dc2626"/>
+<text x="424.6" y="113" class="t">1.73</text>
+<text x="202" y="139" text-anchor="end" class="t">polish-gpt2</text>
+<rect x="210" y="124" width="209.9" height="20" rx="3" fill="#dc2626"/>
+<text x="425.9" y="139" class="t">1.74</text>
+<text x="202" y="165" text-anchor="end" class="t">GoLLeM-v4</text>
+<rect x="210" y="150" width="221.8" height="20" rx="3" fill="#dc2626"/>
+<text x="437.8" y="165" class="t">1.84</text>
+<text x="202" y="191" text-anchor="end" class="t" font-weight="700">TOKENIZATOREX-base</text>
+<rect x="210" y="176" width="223.0" height="20" rx="3" fill="#2563eb"/>
+<text x="439.0" y="191" class="t" font-weight="700">1.85</text>
+<text x="202" y="217" text-anchor="end" class="t">Slayer1B (GoLLeM-v6)</text>
+<rect x="210" y="202" width="228.2" height="20" rx="3" fill="#dc2626"/>
+<text x="444.2" y="217" class="t">1.89</text>
+<text x="202" y="243" text-anchor="end" class="t">TokenizerTest-32m-B</text>
+<rect x="210" y="228" width="245.3" height="20" rx="3" fill="#dc2626"/>
+<text x="461.3" y="243" class="t">2.04</text>
+<text x="202" y="269" text-anchor="end" class="t">Qwen3.5</text>
+<rect x="210" y="254" width="279.3" height="20" rx="3" fill="#6b7280"/>
+<text x="495.3" y="269" class="t">2.32</text>
+<text x="202" y="295" text-anchor="end" class="t">PLLuM-4B-2512</text>
+<rect x="210" y="280" width="279.3" height="20" rx="3" fill="#dc2626"/>
+<text x="495.3" y="295" class="t">2.32</text>
+<text x="202" y="321" text-anchor="end" class="t">GPT-4o / GPT-5 (o200k)</text>
+<rect x="210" y="306" width="282.3" height="20" rx="3" fill="#6b7280"/>
+<text x="498.3" y="321" class="t">2.34</text>
+<text x="202" y="347" text-anchor="end" class="t">DeepSeek-V3</text>
+<rect x="210" y="332" width="292.4" height="20" rx="3" fill="#6b7280"/>
+<text x="508.4" y="347" class="t">2.43</text>
+<text x="202" y="373" text-anchor="end" class="t">PLLuM-12B-2512</text>
+<rect x="210" y="358" width="294.0" height="20" rx="3" fill="#dc2626"/>
+<text x="510.0" y="373" class="t">2.44</text>
+<text x="202" y="399" text-anchor="end" class="t">Qwen3</text>
+<rect x="210" y="384" width="313.2" height="20" rx="3" fill="#6b7280"/>
+<text x="529.2" y="399" class="t">2.60</text>
+<text x="202" y="425" text-anchor="end" class="t">Llama-PLLuM-8B-2512</text>
+<rect x="210" y="410" width="320.4" height="20" rx="3" fill="#dc2626"/>
+<text x="536.4" y="425" class="t">2.66</text>
+<text x="202" y="451" text-anchor="end" class="t">GPT-4 (cl100k)</text>
+<rect x="210" y="436" width="324.6" height="20" rx="3" fill="#6b7280"/>
+<text x="540.6" y="451" class="t">2.69</text>
+<text x="202" y="477" text-anchor="end" class="t">Bielik-11B-v2.3</text>
+<rect x="210" y="462" width="369.0" height="20" rx="3" fill="#dc2626"/>
+<text x="585.0" y="477" class="t">3.06</text>
+<text x="202" y="503" text-anchor="end" class="t">PLLuM-8x7B-2412</text>
+<rect x="210" y="488" width="369.0" height="20" rx="3" fill="#dc2626"/>
+<text x="585.0" y="503" class="t">3.06</text>
+<text x="202" y="529" text-anchor="end" class="t">Slayer139</text>
+<rect x="210" y="514" width="432.5" height="20" rx="3" fill="#dc2626"/>
+<text x="648.5" y="529" class="t">3.59</text>
+<text x="202" y="555" text-anchor="end" class="t">Slayer149</text>
+<rect x="210" y="540" width="457.1" height="20" rx="3" fill="#dc2626"/>
+<text x="673.1" y="555" class="t">3.79</text>
+</svg>

@@ -1,0 +1,13 @@
+fragmenty: 1,170,238 unikalnych, 1,945,171 łącznie (3s)
+  merge   1000  vocab  21000  freq       571  b' do czynienia'
+  merge   2000  vocab  22000  freq       338  b' odbywa si\xc4\x99'
+  merge   3000  vocab  23000  freq       248  b' tzn.'
+  merge   4000  vocab  24000  freq       198  b' b\xc4\x99d\xc4\x85 si\xc4\x99'
+  merge   5000  vocab  25000  freq       173  b'ST\xc4\x98'
+  merge   6000  vocab  26000  freq       159  b'wa na'
+  merge   7000  vocab  27000  freq       149  b' rzad'
+  merge   8000  vocab  28000  freq       140  b' (8'
+  merge   9000  vocab  29000  freq       133  b'5 roku.'
+  merge  10000  vocab  30000  freq       127  b' reklam\xc4\x99'
+  merge  11000  vocab  31000  freq       121  b' Kapitu'
+zapisano tokenizers\superbpe-32k-t20k.json: vocab 32000, t=20000, etap2=11999 merge'y, 252s

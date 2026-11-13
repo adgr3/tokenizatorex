@@ -1,0 +1,5 @@
+fragmenty: 1,170,238 unikalnych, 1,945,171 łącznie (3s)
+  merge   1000  vocab  29000  freq       529  b', trzeba'
+  merge   2000  vocab  30000  freq       321  b'-7'
+  merge   3000  vocab  31000  freq       234  b'owie,'
+zapisano tokenizers\superbpe-32k-t28k.json: vocab 32000, t=28000, etap2=3999 merge'y, 202s
