@@ -1,0 +1,17 @@
+fragmenty: 1,170,238 unikalnych, 1,945,171 łącznie (4s)
+  merge   1000  vocab  17000  freq       604  b'nej przez'
+  merge   2000  vocab  18000  freq       353  b' w za'
+  merge   3000  vocab  19000  freq       261  b' na za'
+  merge   4000  vocab  20000  freq       225  b' nie masz'
+  merge   5000  vocab  21000  freq       206  b' zaniedba'
+  merge   6000  vocab  22000  freq       191  b' Jerozoli'
+  merge   7000  vocab  23000  freq       179  b'wokado'
+  merge   8000  vocab  24000  freq       168  b' M\xc5\x82y'
+  merge   9000  vocab  25000  freq       159  b' skarpe'
+  merge  10000  vocab  26000  freq       150  b' Moko'
+  merge  11000  vocab  27000  freq       143  b' Street'
+  merge  12000  vocab  28000  freq       136  b' wysz\xc5\x82y'
+  merge  13000  vocab  29000  freq       130  b' ju\xc5\xbc nied\xc5\x82ugo'
+  merge  14000  vocab  30000  freq       125  b' zaanga\xc5\xbcowanie w'
+  merge  15000  vocab  31000  freq       119  b' Opowie'
+zapisano tokenizers\superbpe-32k-t16k.json: vocab 32000, t=16000, etap2=15999 merge'y, 292s

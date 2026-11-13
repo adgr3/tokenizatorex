@@ -1,0 +1,100 @@
+{
+  "heldout_chars": 9475716,
+  "heldout_words": 1358906,
+  "heldout_bytes": 10017776,
+  "rows": [
+    {
+      "name": "cl100k_base",
+      "vocab": 100277,
+      "tokens": 3537688,
+      "fertility": 2.603335330037545,
+      "bytes_per_token": 2.8317296494207516,
+      "chars_per_token": 2.6785052836767966,
+      "roundtrip": true,
+      "encode_seconds": 0.9,
+      "vocab_used": 0.2308904334992072,
+      "vs_cl100k": 1.0
+    },
+    {
+      "name": "o200k_base",
+      "vocab": 200019,
+      "tokens": 3033590,
+      "fertility": 2.2323766323792817,
+      "bytes_per_token": 3.302284092444925,
+      "chars_per_token": 3.1235981131266914,
+      "roundtrip": true,
+      "encode_seconds": 0.6,
+      "vocab_used": 0.14708102730240627,
+      "vs_cl100k": 1.1661720931305812
+    },
+    {
+      "name": "superbpe-32k-t16k",
+      "vocab": 32000,
+      "tokens": 1947409,
+      "fertility": 1.4330711616550371,
+      "bytes_per_token": 5.144156158259513,
+      "chars_per_token": 4.865806823322681,
+      "roundtrip": true,
+      "encode_seconds": 9.6,
+      "vocab_used": 0.99225,
+      "superword_share": 0.09923595916420228,
+      "transition": 16000,
+      "vs_cl100k": 1.8166127403128978
+    },
+    {
+      "name": "superbpe-32k-t24k",
+      "vocab": 32000,
+      "tokens": 1947805,
+      "fertility": 1.4333625725399697,
+      "bytes_per_token": 5.143110321618437,
+      "chars_per_token": 4.86481757670814,
+      "roundtrip": true,
+      "encode_seconds": 8.8,
+      "vocab_used": 0.99228125,
+      "superword_share": 0.09328346523394282,
+      "transition": 24000,
+      "vs_cl100k": 1.8162434124565858
+    },
+    {
+      "name": "superbpe-32k-t28k",
+      "vocab": 32000,
+      "tokens": 1959395,
+      "fertility": 1.441891492126755,
+      "bytes_per_token": 5.112688355334172,
+      "chars_per_token": 4.836041737373016,
+      "roundtrip": true,
+      "encode_seconds": 8.0,
+      "vocab_used": 0.99225,
+      "superword_share": 0.08039930692892448,
+      "transition": 28000,
+      "vs_cl100k": 1.8055001671434294
+    },
+    {
+      "name": "tokenizatorex-32k",
+      "vocab": 32000,
+      "tokens": 1947130,
+      "fertility": 1.432865849440653,
+      "bytes_per_token": 5.14489325314694,
+      "chars_per_token": 4.866504034142559,
+      "roundtrip": true,
+      "encode_seconds": 8.6,
+      "vocab_used": 0.99234375,
+      "superword_share": 0.09650870768772501,
+      "transition": 20000,
+      "vs_cl100k": 1.8168730387801533
+    },
+    {
+      "name": "tokenizatorex-base-32k",
+      "vocab": 32000,
+      "tokens": 2181725,
+      "fertility": 1.6055010427505656,
+      "bytes_per_token": 4.591676769528698,
+      "chars_per_token": 4.343221991772565,
+      "roundtrip": true,
+      "encode_seconds": 6.1,
+      "vocab_used": 0.991375,
+      "transition": 31999,
+      "vs_cl100k": 1.6215095853052057
+    }
+  ]
+}

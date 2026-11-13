@@ -1,0 +1,18 @@
+
+Na podstawie art. 5 ustawy, w ramach projektu, zgodnie z planem.
+  cl100k (GPT-4)          25 tok  Na|·pod|staw|ie|·art|.|·|5|·u|staw|y|,|·w|·ram|ach|·projekt|u|,|·z|god|nie|·z|·plan|em|.
+  o200k (GPT-4o)          20 tok  Na|·podstaw|ie|·art|.|·|5|·ust|awy|,|·w|·ramach|·projektu|,|·zgod|nie|·z|·plan|em|.
+  TOKENIZATOREX-base      16 tok  Na|·podstawie|·art|.|·|5|·ustawy|,|·w|·ramach|·projektu|,|·zgodnie|·z|·planem|.
+  TOKENIZATOREX            9 tok  Na·podstawie|·art.|·5|·ustawy|,·w·ramach|·projektu|,·zgodnie·z|·planem|.
+
+Wydaje mi się, że nie tylko w Polsce jest to możliwe.
+  cl100k (GPT-4)          17 tok  W|yd|aje|·mi|·się|,|·że|·nie|·tylko|·w|·Pols|ce|·jest|·to|·możli|we|.
+  o200k (GPT-4o)          16 tok  W|yd|aje|·mi|·się|,|·że|·nie|·tylko|·w|·Polsce|·jest|·to|·moż|liwe|.
+  TOKENIZATOREX-base      13 tok  Wydaje|·mi|·się|,|·że|·nie|·tylko|·w|·Polsce|·jest|·to|·możliwe|.
+  TOKENIZATOREX            7 tok  Wyda|je|·mi·się,·że|·nie·tylko|·w·Polsce|·jest·to|·możliwe.
+
+W związku z tym, że klient nie może być obecny, spotkanie przełożono.
+  cl100k (GPT-4)          24 tok  W|·z|wiąz|ku|·z|·tym|,|·że|·klient|·nie|·może|·być|·ob|ec|ny|,|·spot|kan|ie|·prze|ło|ż|ono|.
+  o200k (GPT-4o)          20 tok  W|·związ|ku|·z|·tym|,|·że|·klient|·nie|·może|·być|·obec|ny|,|·spot|kanie|·prze|łoż|ono|.
+  TOKENIZATOREX-base      16 tok  W|·związku|·z|·tym|,|·że|·klient|·nie|·może|·być|·obecny|,|·spotkanie|·przeło|żono|.
+  TOKENIZATOREX           10 tok  W·związku·z|·tym,·że|·klient|·nie·może·być|·obecny|,|·spotkanie|·przeło|żono|.

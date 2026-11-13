@@ -1,0 +1,9 @@
+fragmenty: 1,170,238 unikalnych, 1,945,171 łącznie (4s)
+  merge   1000  vocab  25000  freq       547  b' 2020 r.'
+  merge   2000  vocab  26000  freq       328  b' czy nie'
+  merge   3000  vocab  27000  freq       240  b' W ka\xc5\xbcdym'
+  merge   4000  vocab  28000  freq       189  b' "wy'
+  merge   5000  vocab  29000  freq       159  b' drugiej stronie'
+  merge   6000  vocab  30000  freq       140  b' lub inne'
+  merge   7000  vocab  31000  freq       130  b' pozycji.'
+zapisano tokenizers\superbpe-32k-t24k.json: vocab 32000, t=24000, etap2=7999 merge'y, 227s

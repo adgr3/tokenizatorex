@@ -1,0 +1,806 @@
+{
+  "meta": {
+    "words": {
+      "web": 285499,
+      "wikipedia": 258054,
+      "literatura": 284054,
+      "prawo": 283211,
+      "sejm": 274671,
+      "nauka": 254419,
+      "dyskusje": 278317,
+      "angielski": 230201
+    },
+    "bytes": {
+      "web": 2114345,
+      "wikipedia": 2007348,
+      "literatura": 2002917,
+      "prawo": 2013292,
+      "sejm": 2003785,
+      "nauka": 2001313,
+      "dyskusje": 2004617,
+      "angielski": 1233964
+    }
+  },
+  "rows": [
+    {
+      "name": "TOKENIZATOREX",
+      "group": "nasz",
+      "vocab": 32000,
+      "note": "nasz — SuperBPE, t=20k",
+      "tokens": {
+        "web": 409129,
+        "wikipedia": 462242,
+        "literatura": 467842,
+        "prawo": 445359,
+        "sejm": 356636,
+        "nauka": 576878,
+        "dyskusje": 457928,
+        "angielski": 454480
+      },
+      "fertility": {
+        "web": 1.433031289076319,
+        "wikipedia": 1.791260743875313,
+        "literatura": 1.6470178205552466,
+        "prawo": 1.572534258909435,
+        "sejm": 1.2984115541866452,
+        "nauka": 2.2674328568228,
+        "dyskusje": 1.645346852689559,
+        "angielski": 1.974274655627039
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 3176014,
+      "fertility_pl": 1.6557046227632317,
+      "vs_tokenizatorex_pl": 1.0
+    },
+    {
+      "name": "APT3-1B",
+      "group": "polski",
+      "vocab": 31980,
+      "note": "Azurro, polski tokenizer",
+      "tokens": {
+        "web": 456566,
+        "wikipedia": 472828,
+        "literatura": 491407,
+        "prawo": 447055,
+        "sejm": 392668,
+        "nauka": 555119,
+        "dyskusje": 488280,
+        "angielski": 419388
+      },
+      "fertility": {
+        "web": 1.599185986640934,
+        "wikipedia": 1.8322831655389957,
+        "literatura": 1.7299773986636344,
+        "prawo": 1.5785227268714845,
+        "sejm": 1.4295939505808768,
+        "nauka": 2.1819085838714876,
+        "dyskusje": 1.7544023541501237,
+        "angielski": 1.8218339624936468
+      },
+      "roundtrip": {
+        "web": false,
+        "wikipedia": false,
+        "literatura": false,
+        "prawo": false,
+        "sejm": false,
+        "nauka": false,
+        "dyskusje": false,
+        "angielski": false
+      },
+      "tokens_pl": 3303923,
+      "fertility_pl": 1.7223855387141758,
+      "vs_tokenizatorex_pl": 1.0402734370818265
+    },
+    {
+      "name": "Pollock-2.0",
+      "group": "polski",
+      "vocab": 49152,
+      "note": "SlayerLab",
+      "tokens": {
+        "web": 459187,
+        "wikipedia": 458517,
+        "literatura": 510887,
+        "prawo": 464956,
+        "sejm": 384901,
+        "nauka": 564134,
+        "dyskusje": 477750,
+        "angielski": 406761
+      },
+      "fertility": {
+        "web": 1.6083664040854784,
+        "wikipedia": 1.7768257806505614,
+        "literatura": 1.7985559083836171,
+        "prawo": 1.6417300175487535,
+        "sejm": 1.4013164840845957,
+        "nauka": 2.2173422582432916,
+        "dyskusje": 1.7165677985893784,
+        "angielski": 1.7669818984278955
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 3320332,
+      "fertility_pl": 1.7309398011182213,
+      "vs_tokenizatorex_pl": 1.0454399760202568
+    },
+    {
+      "name": "polish-gpt2",
+      "group": "polski",
+      "vocab": 51200,
+      "note": "sdadas, polski GPT-2",
+      "tokens": {
+        "web": 445010,
+        "wikipedia": 466637,
+        "literatura": 471020,
+        "prawo": 495112,
+        "sejm": 389146,
+        "nauka": 593543,
+        "dyskusje": 479587,
+        "angielski": 427218
+      },
+      "fertility": {
+        "web": 1.5587094875989058,
+        "wikipedia": 1.8082920629015633,
+        "literatura": 1.6582058341019665,
+        "prawo": 1.7482089325626475,
+        "sejm": 1.416771337345406,
+        "nauka": 2.3329350402289135,
+        "dyskusje": 1.723168185917497,
+        "angielski": 1.8558477156919388
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 3340055,
+      "fertility_pl": 1.7412217023550418,
+      "vs_tokenizatorex_pl": 1.051649961240725
+    },
+    {
+      "name": "GoLLeM-v4",
+      "group": "polski",
+      "vocab": 32000,
+      "note": "SlayerLab (= TokenizerTest-32m-A)",
+      "tokens": {
+        "web": 492924,
+        "wikipedia": 500799,
+        "literatura": 491781,
+        "prawo": 488730,
+        "sejm": 416740,
+        "nauka": 616705,
+        "dyskusje": 521323,
+        "angielski": 468561
+      },
+      "fertility": {
+        "web": 1.7265349440803646,
+        "wikipedia": 1.9406752075147062,
+        "literatura": 1.73129404972294,
+        "prawo": 1.7256744971063978,
+        "sejm": 1.517233344619563,
+        "nauka": 2.4239738384318783,
+        "dyskusje": 1.8731266864762124,
+        "angielski": 2.03544293899679
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 3529002,
+      "fertility_pl": 1.839722660271866,
+      "vs_tokenizatorex_pl": 1.1111418274604583
+    },
+    {
+      "name": "TOKENIZATOREX-base",
+      "group": "nasz",
+      "vocab": 32000,
+      "note": "nasz — zwykły BPE",
+      "tokens": {
+        "web": 458573,
+        "wikipedia": 506331,
+        "literatura": 504761,
+        "prawo": 533444,
+        "sejm": 417177,
+        "nauka": 611043,
+        "dyskusje": 517708,
+        "angielski": 455283
+      },
+      "fertility": {
+        "web": 1.6062157835929374,
+        "wikipedia": 1.9621125810876794,
+        "literatura": 1.7769895864870764,
+        "prawo": 1.8835567827520823,
+        "sejm": 1.5188243389364002,
+        "nauka": 2.4017192112224324,
+        "dyskusje": 1.8601379003079224,
+        "angielski": 1.9777629115425215
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 3549037,
+      "fertility_pl": 1.850167211875562,
+      "vs_tokenizatorex_pl": 1.1174500490237134
+    },
+    {
+      "name": "Slayer1B (GoLLeM-v6)",
+      "group": "polski",
+      "vocab": 32768,
+      "note": "SlayerLab, tokenizer v6 (Slayer1B 1.00–1.09)",
+      "tokens": {
+        "web": 489520,
+        "wikipedia": 514771,
+        "literatura": 545158,
+        "prawo": 521125,
+        "sejm": 438884,
+        "nauka": 593915,
+        "dyskusje": 528907,
+        "angielski": 298899
+      },
+      "fertility": {
+        "web": 1.7146119601119443,
+        "wikipedia": 1.9948189138707402,
+        "literatura": 1.919205503178973,
+        "prawo": 1.8400591784923608,
+        "sejm": 1.597853431924011,
+        "nauka": 2.334397195178033,
+        "dyskusje": 1.9003761897404758,
+        "angielski": 1.2984261580097394
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 3632280,
+      "fertility_pl": 1.893563059599369,
+      "vs_tokenizatorex_pl": 1.1436599460833612
+    },
+    {
+      "name": "TokenizerTest-32m-B",
+      "group": "polski",
+      "vocab": 32000,
+      "note": "SlayerLab",
+      "tokens": {
+        "web": 527021,
+        "wikipedia": 529626,
+        "literatura": 557642,
+        "prawo": 592309,
+        "sejm": 474951,
+        "nauka": 631096,
+        "dyskusje": 591721,
+        "angielski": 482771
+      },
+      "fertility": {
+        "web": 1.8459644342011705,
+        "wikipedia": 2.052384384663675,
+        "literatura": 1.9631548930837095,
+        "prawo": 2.0914053479561177,
+        "sejm": 1.72916325349236,
+        "nauka": 2.480538010132891,
+        "dyskusje": 2.126068475874632,
+        "angielski": 2.0971716022085047
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": false,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 3904366,
+      "fertility_pl": 2.035405648451042,
+      "vs_tokenizatorex_pl": 1.2293289639151466
+    },
+    {
+      "name": "Qwen3.5",
+      "group": "świat",
+      "vocab": 248070,
+      "note": "Alibaba",
+      "tokens": {
+        "web": 615160,
+        "wikipedia": 625412,
+        "literatura": 638382,
+        "prawo": 699713,
+        "sejm": 564179,
+        "nauka": 655992,
+        "dyskusje": 645446,
+        "angielski": 282102
+      },
+      "fertility": {
+        "web": 2.1546835540579825,
+        "wikipedia": 2.423570260488115,
+        "literatura": 2.2473966217691004,
+        "prawo": 2.470642030147134,
+        "sejm": 2.0540173516679956,
+        "nauka": 2.578392337050299,
+        "dyskusje": 2.319103755789262,
+        "angielski": 1.2254594897502618
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": false,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 4444284,
+      "fertility_pl": 2.316873150959872,
+      "vs_tokenizatorex_pl": 1.3993275848280267
+    },
+    {
+      "name": "PLLuM-4B-2512",
+      "group": "polski",
+      "vocab": 262147,
+      "note": "PLLuM (tokenizer Gemma 3)",
+      "tokens": {
+        "web": 608524,
+        "wikipedia": 615239,
+        "literatura": 631003,
+        "prawo": 711014,
+        "sejm": 562310,
+        "nauka": 685260,
+        "dyskusje": 631095,
+        "angielski": 274840
+      },
+      "fertility": {
+        "web": 2.131440040070193,
+        "wikipedia": 2.384148279042371,
+        "literatura": 2.2214191667781478,
+        "prawo": 2.5105451412551067,
+        "sejm": 2.0472128473701265,
+        "nauka": 2.693430915143916,
+        "dyskusje": 2.2675402508650206,
+        "angielski": 1.1939131454685252
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 4444445,
+      "fertility_pl": 2.3169570827197017,
+      "vs_tokenizatorex_pl": 1.3993782772997851
+    },
+    {
+      "name": "GPT-4o / GPT-5 (o200k)",
+      "group": "świat",
+      "vocab": 200019,
+      "note": "OpenAI (też gpt-oss)",
+      "tokens": {
+        "web": 639418,
+        "wikipedia": 631449,
+        "literatura": 651815,
+        "prawo": 678511,
+        "sejm": 595017,
+        "nauka": 649925,
+        "dyskusje": 645655,
+        "angielski": 271017
+      },
+      "fertility": {
+        "web": 2.2396505767095505,
+        "wikipedia": 2.4469645888069937,
+        "literatura": 2.29468692572539,
+        "prawo": 2.395779118748919,
+        "sejm": 2.1662898522232052,
+        "nauka": 2.5545458475978604,
+        "dyskusje": 2.3198546980601256,
+        "angielski": 1.177305919609385
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 4491790,
+      "fertility_pl": 2.3416387545778,
+      "vs_tokenizatorex_pl": 1.4142853274576246
+    },
+    {
+      "name": "DeepSeek-V3",
+      "group": "świat",
+      "vocab": 128815,
+      "note": "DeepSeek",
+      "tokens": {
+        "web": 669209,
+        "wikipedia": 642850,
+        "literatura": 675607,
+        "prawo": 693907,
+        "sejm": 626548,
+        "nauka": 675964,
+        "dyskusje": 668388,
+        "angielski": 271550
+      },
+      "fertility": {
+        "web": 2.3439977022686596,
+        "wikipedia": 2.491145264169515,
+        "literatura": 2.378445647658544,
+        "prawo": 2.45014141399875,
+        "sejm": 2.2810853712259394,
+        "nauka": 2.656892763512159,
+        "dyskusje": 2.4015349403737463,
+        "angielski": 1.179621287483547
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 4652473,
+      "fertility_pl": 2.425405257464583,
+      "vs_tokenizatorex_pl": 1.4648779885730983
+    },
+    {
+      "name": "PLLuM-12B-2512",
+      "group": "polski",
+      "vocab": 131072,
+      "note": "PLLuM (tokenizer Mistral Nemo / Tekken)",
+      "tokens": {
+        "web": 655106,
+        "wikipedia": 628126,
+        "literatura": 665096,
+        "prawo": 716761,
+        "sejm": 619590,
+        "nauka": 721985,
+        "dyskusje": 672779,
+        "angielski": 281982
+      },
+      "fertility": {
+        "web": 2.294599981085748,
+        "wikipedia": 2.4340874390631417,
+        "literatura": 2.3414421201602513,
+        "prawo": 2.5308374321618863,
+        "sejm": 2.2557532466114005,
+        "nauka": 2.837779411128886,
+        "dyskusje": 2.417311914112325,
+        "angielski": 1.2249382061763416
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 4679443,
+      "fertility_pl": 2.439465130524313,
+      "vs_tokenizatorex_pl": 1.4733697647428505
+    },
+    {
+      "name": "Qwen3",
+      "group": "świat",
+      "vocab": 151669,
+      "note": "Alibaba",
+      "tokens": {
+        "web": 708297,
+        "wikipedia": 702065,
+        "literatura": 700099,
+        "prawo": 767616,
+        "sejm": 657605,
+        "nauka": 730076,
+        "dyskusje": 717888,
+        "angielski": 282184
+      },
+      "fertility": {
+        "web": 2.480908864829649,
+        "wikipedia": 2.7206127399691535,
+        "literatura": 2.464668689756173,
+        "prawo": 2.710403197615912,
+        "sejm": 2.394155189299198,
+        "nauka": 2.869581281272232,
+        "dyskusje": 2.5793896887362253,
+        "angielski": 1.2258157001924406
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": false,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 4983646,
+      "fertility_pl": 2.598050802173885,
+      "vs_tokenizatorex_pl": 1.5691511435402992
+    },
+    {
+      "name": "Llama-PLLuM-8B-2512",
+      "group": "polski",
+      "vocab": 128259,
+      "note": "PLLuM (tokenizer Llama 3)",
+      "tokens": {
+        "web": 737084,
+        "wikipedia": 713053,
+        "literatura": 731802,
+        "prawo": 766600,
+        "sejm": 696357,
+        "nauka": 727122,
+        "dyskusje": 727398,
+        "angielski": 272816
+      },
+      "fertility": {
+        "web": 2.581739340593137,
+        "wikipedia": 2.763192975113736,
+        "literatura": 2.5762777500052807,
+        "prawo": 2.7068157663367596,
+        "sejm": 2.535240342081982,
+        "nauka": 2.8579705132085262,
+        "dyskusje": 2.613559358573138,
+        "angielski": 1.185120829188405
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 5099416,
+      "fertility_pl": 2.6584034719597547,
+      "vs_tokenizatorex_pl": 1.6056024941955545
+    },
+    {
+      "name": "GPT-4 (cl100k)",
+      "group": "świat",
+      "vocab": 100277,
+      "note": "OpenAI",
+      "tokens": {
+        "web": 745783,
+        "wikipedia": 721221,
+        "literatura": 739811,
+        "prawo": 774900,
+        "sejm": 703727,
+        "nauka": 744518,
+        "dyskusje": 735826,
+        "angielski": 273016
+      },
+      "fertility": {
+        "web": 2.6122087993302956,
+        "wikipedia": 2.7948452649445463,
+        "literatura": 2.6044730931442612,
+        "prawo": 2.7361225376132987,
+        "sejm": 2.5620724430318456,
+        "nauka": 2.9263459097001405,
+        "dyskusje": 2.643841375122612,
+        "angielski": 1.1859896351449386
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 5165786,
+      "fertility_pl": 2.6930031669903167,
+      "vs_tokenizatorex_pl": 1.6264997572428836
+    },
+    {
+      "name": "Bielik-11B-v2.3",
+      "group": "polski",
+      "vocab": 32128,
+      "note": "SpeakLeash (tokenizer Mistral 7B)",
+      "tokens": {
+        "web": 837059,
+        "wikipedia": 806475,
+        "literatura": 833111,
+        "prawo": 900331,
+        "sejm": 797897,
+        "nauka": 861625,
+        "dyskusje": 836080,
+        "angielski": 308762
+      },
+      "fertility": {
+        "web": 2.9319156984788037,
+        "wikipedia": 3.1252179776325884,
+        "literatura": 2.932931766495103,
+        "prawo": 3.17901140845518,
+        "sejm": 2.9049189757928575,
+        "nauka": 3.386637790416596,
+        "dyskusje": 3.0040565254727523,
+        "angielski": 1.3412713237561957
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 5872578,
+      "fertility_pl": 3.0614646352747985,
+      "vs_tokenizatorex_pl": 1.8490403379833968
+    },
+    {
+      "name": "PLLuM-8x7B-2412",
+      "group": "polski",
+      "vocab": 32003,
+      "note": "PLLuM (tokenizer Mixtral)",
+      "tokens": {
+        "web": 837059,
+        "wikipedia": 806475,
+        "literatura": 833111,
+        "prawo": 900331,
+        "sejm": 797897,
+        "nauka": 861625,
+        "dyskusje": 836080,
+        "angielski": 308762
+      },
+      "fertility": {
+        "web": 2.9319156984788037,
+        "wikipedia": 3.1252179776325884,
+        "literatura": 2.932931766495103,
+        "prawo": 3.17901140845518,
+        "sejm": 2.9049189757928575,
+        "nauka": 3.386637790416596,
+        "dyskusje": 3.0040565254727523,
+        "angielski": 1.3412713237561957
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 5872578,
+      "fertility_pl": 3.0614646352747985,
+      "vs_tokenizatorex_pl": 1.8490403379833968
+    },
+    {
+      "name": "Slayer139",
+      "group": "polski",
+      "vocab": 24576,
+      "note": "SlayerLab",
+      "tokens": {
+        "web": 1008002,
+        "wikipedia": 939544,
+        "literatura": 1000277,
+        "prawo": 1017572,
+        "sejm": 973370,
+        "nauka": 982551,
+        "dyskusje": 961639,
+        "angielski": 288392
+      },
+      "fertility": {
+        "web": 3.530667357854143,
+        "wikipedia": 3.640881365915661,
+        "literatura": 3.5214325445161836,
+        "prawo": 3.5929819110133434,
+        "sejm": 3.543766906590066,
+        "nauka": 3.8619403425058665,
+        "dyskusje": 3.4551931790009234,
+        "angielski": 1.2527834370832447
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 6882955,
+      "fertility_pl": 3.5881896023667714,
+      "vs_tokenizatorex_pl": 2.167167713996223
+    },
+    {
+      "name": "Slayer149",
+      "group": "polski",
+      "vocab": 12288,
+      "note": "SlayerLab",
+      "tokens": {
+        "web": 1071345,
+        "wikipedia": 1001858,
+        "literatura": 1055244,
+        "prawo": 1070632,
+        "sejm": 1023958,
+        "nauka": 1035949,
+        "dyskusje": 1016005,
+        "angielski": 318804
+      },
+      "fertility": {
+        "web": 3.7525350351489846,
+        "wikipedia": 3.8823579560867105,
+        "literatura": 3.7149415252029545,
+        "prawo": 3.7803333910052928,
+        "sejm": 3.7279436125400935,
+        "nauka": 4.071822466089404,
+        "dyskusje": 3.6505315880812166,
+        "angielski": 1.3848940708337496
+      },
+      "roundtrip": {
+        "web": true,
+        "wikipedia": true,
+        "literatura": true,
+        "prawo": true,
+        "sejm": true,
+        "nauka": true,
+        "dyskusje": true,
+        "angielski": true
+      },
+      "tokens_pl": 7274991,
+      "fertility_pl": 3.7925639588682247,
+      "vs_tokenizatorex_pl": 2.2906041975885496
+    }
+  ]
+}
