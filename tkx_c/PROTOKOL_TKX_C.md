@@ -129,4 +129,25 @@ Bootstrap po dokumentach 1000×, seed 20261119, jeden generator NumPy
 
 ## 9. Zmiany po fakcie
 
-(brak — protokół zamrożony przed treningiem i pomiarami)
+1. **Dane treningowe (post hoc):** plan zakładał p0 przez `prepare_data.py`.
+   Pobrany p0 był kompletny, ale przy wolnej pamięci 1,2–1,6 GB pełny
+   `read_parquet` + `sample(fraction=1.0, shuffle=True)` nie zmieścił się
+   (procesy przerwane). Zgodnie z fallbackiem z §3 **wszystkie warianty**,
+   łącznie z V0, wytrenowano na `audit/tmp/stability_train.txt` (HPLT p2,
+   400 MB, ten sam seed/procedura). V0 nie jest kopią v1 (89,3% wspólnego
+   słownika); jest nową bazą.
+2. **V0 32 001 → 32 000 (post hoc):** pierwsza wersja użyła
+   `audit/tmp/stability-tokenizer-32k.json` (trening stability do 32k +
+   special = 32 001). V0 został przetrenowany `train.py --vocab 32000` na tej
+   samej próbce; wynik 32 000.
+3. **Koszt cyfr — CI w procentach (post hoc):** dodano `delta_pct_ci` do
+   `digits_cost.json`, żeby przedział był w % tokenów, nie w tokenach/słowo.
+4. **Kontekst — pełne dokumenty (post hoc):** pełne teksty zamrożonego testu
+   nie były dostępne lokalnie; użyto świeżej próbki 20 dok./dziedzinę z tych
+   samych źródeł (`tkx_c/data/full_docs.json`, nie test TKX-A). To jawne
+   ograniczenie, nie zamrożony test.
+5. **V1 = V2 w słowniku:** próbka p2 jest już NFC, więc V2 różni się od V1
+   tylko normalizacją wejścia (nie słownikiem). To oczekiwane; NFD pokazuje
+   różnicę.
+6. **Golden:** 1240 zdań z `dev` + załącznik A; test CI porównuje ID i
+   round-trip. To regresja, nie dowód jakości.

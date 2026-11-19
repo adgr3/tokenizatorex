@@ -1,0 +1,1040 @@
+{
+  "meta": {
+    "split": "test",
+    "max_strings": 100,
+    "variants": [
+      "V0-32k",
+      "V1-32k",
+      "V2-32k"
+    ]
+  },
+  "categories": {
+    "kwota": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.3557142857142857,
+        "examples": [
+          {
+            "string": "0 PLN",
+            "variants": 2
+          },
+          {
+            "string": "0 zł",
+            "variants": 3
+          },
+          {
+            "string": "0,00 zł",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.2714285714285714,
+        "examples": [
+          {
+            "string": "0 zł",
+            "variants": 2
+          },
+          {
+            "string": "0,00 zł",
+            "variants": 2
+          },
+          {
+            "string": "0,35 zł",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.2714285714285714,
+        "examples": [
+          {
+            "string": "0 zł",
+            "variants": 2
+          },
+          {
+            "string": "0,00 zł",
+            "variants": 2
+          },
+          {
+            "string": "0,35 zł",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "data_slowna": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.29285714285714287,
+        "examples": [
+          {
+            "string": "02 lipca 2026 r.",
+            "variants": 2
+          },
+          {
+            "string": "02 października 2026 r.",
+            "variants": 2
+          },
+          {
+            "string": "02 stycznia 2025",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.12285714285714286,
+        "examples": [
+          {
+            "string": "02 lipca 2026 r.",
+            "variants": 2
+          },
+          {
+            "string": "02 października 2026 r.",
+            "variants": 2
+          },
+          {
+            "string": "03 września 2026 r.",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.12285714285714286,
+        "examples": [
+          {
+            "string": "02 lipca 2026 r.",
+            "variants": 2
+          },
+          {
+            "string": "02 października 2026 r.",
+            "variants": 2
+          },
+          {
+            "string": "03 września 2026 r.",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "data_cyfrowa": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.17142857142857143,
+        "examples": [
+          {
+            "string": "01.01.2026",
+            "variants": 2
+          },
+          {
+            "string": "01.01.2027",
+            "variants": 2
+          },
+          {
+            "string": "01.02.2023",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.0,
+        "examples": []
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.0,
+        "examples": []
+      }
+    },
+    "rok": {
+      "V0-32k": {
+        "pairs": 448,
+        "share_other": 0.21205357142857142,
+        "examples": [
+          {
+            "string": "1907",
+            "variants": 2
+          },
+          {
+            "string": "1913",
+            "variants": 2
+          },
+          {
+            "string": "1930",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 448,
+        "share_other": 0.0,
+        "examples": []
+      },
+      "V2-32k": {
+        "pairs": 448,
+        "share_other": 0.0,
+        "examples": []
+      }
+    },
+    "rok_z_r": {
+      "V0-32k": {
+        "pairs": 455,
+        "share_other": 0.3010989010989011,
+        "examples": [
+          {
+            "string": "1960 r.",
+            "variants": 2
+          },
+          {
+            "string": "1964 r.",
+            "variants": 2
+          },
+          {
+            "string": "1982 r.",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 455,
+        "share_other": 0.14285714285714285,
+        "examples": [
+          {
+            "string": "1960 r.",
+            "variants": 2
+          },
+          {
+            "string": "1964 r.",
+            "variants": 2
+          },
+          {
+            "string": "1982 r.",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 455,
+        "share_other": 0.14285714285714285,
+        "examples": [
+          {
+            "string": "1960 r.",
+            "variants": 2
+          },
+          {
+            "string": "1964 r.",
+            "variants": 2
+          },
+          {
+            "string": "1982 r.",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "godzina": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.15285714285714286,
+        "examples": [
+          {
+            "string": "0.20",
+            "variants": 2
+          },
+          {
+            "string": "00:06",
+            "variants": 2
+          },
+          {
+            "string": "01.01",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.0,
+        "examples": []
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.0,
+        "examples": []
+      }
+    },
+    "przepis": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.28,
+        "examples": [
+          {
+            "string": "art. 1 pkt 3",
+            "variants": 3
+          },
+          {
+            "string": "art. 1 ust. 2",
+            "variants": 3
+          },
+          {
+            "string": "art. 10",
+            "variants": 3
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.14857142857142858,
+        "examples": [
+          {
+            "string": "art. 1 pkt 3",
+            "variants": 2
+          },
+          {
+            "string": "art. 1 ust. 2",
+            "variants": 2
+          },
+          {
+            "string": "art. 10",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.14857142857142858,
+        "examples": [
+          {
+            "string": "art. 1 pkt 3",
+            "variants": 2
+          },
+          {
+            "string": "art. 1 ust. 2",
+            "variants": 2
+          },
+          {
+            "string": "art. 10",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "publikator": {
+      "V0-32k": {
+        "pairs": 21,
+        "share_other": 0.23809523809523808,
+        "examples": [
+          {
+            "string": "Dz. U.",
+            "variants": 3
+          },
+          {
+            "string": "Dz.U.",
+            "variants": 3
+          },
+          {
+            "string": "M.P.",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 21,
+        "share_other": 0.23809523809523808,
+        "examples": [
+          {
+            "string": "Dz. U.",
+            "variants": 3
+          },
+          {
+            "string": "Dz.U.",
+            "variants": 3
+          },
+          {
+            "string": "M.P.",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 21,
+        "share_other": 0.23809523809523808,
+        "examples": [
+          {
+            "string": "Dz. U.",
+            "variants": 3
+          },
+          {
+            "string": "Dz.U.",
+            "variants": 3
+          },
+          {
+            "string": "M.P.",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "poz": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.5714285714285714,
+        "examples": [
+          {
+            "string": "poz. 1",
+            "variants": 4
+          },
+          {
+            "string": "poz. 1000",
+            "variants": 4
+          },
+          {
+            "string": "poz. 1002",
+            "variants": 4
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.5714285714285714,
+        "examples": [
+          {
+            "string": "poz. 1",
+            "variants": 3
+          },
+          {
+            "string": "poz. 1000",
+            "variants": 3
+          },
+          {
+            "string": "poz. 1002",
+            "variants": 3
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.5714285714285714,
+        "examples": [
+          {
+            "string": "poz. 1",
+            "variants": 3
+          },
+          {
+            "string": "poz. 1000",
+            "variants": 3
+          },
+          {
+            "string": "poz. 1002",
+            "variants": 3
+          }
+        ]
+      }
+    },
+    "cpv": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.23857142857142857,
+        "examples": [
+          {
+            "string": "03451000-6",
+            "variants": 2
+          },
+          {
+            "string": "03451300-9",
+            "variants": 2
+          },
+          {
+            "string": "03452000-3",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.0,
+        "examples": []
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.0,
+        "examples": []
+      }
+    },
+    "znak_sprawy": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.24714285714285714,
+        "examples": [
+          {
+            "string": "A-521/87",
+            "variants": 2
+          },
+          {
+            "string": "A.261.199.2025",
+            "variants": 2
+          },
+          {
+            "string": "AD.261.5.2025",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.13,
+        "examples": [
+          {
+            "string": "A-521/87",
+            "variants": 2
+          },
+          {
+            "string": "AZ.262.13.2026",
+            "variants": 2
+          },
+          {
+            "string": "BR.0007.31.184.2026",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.13,
+        "examples": [
+          {
+            "string": "A-521/87",
+            "variants": 2
+          },
+          {
+            "string": "AZ.262.13.2026",
+            "variants": 2
+          },
+          {
+            "string": "BR.0007.31.184.2026",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "sygnatura_kio": {
+      "V0-32k": {
+        "pairs": 203,
+        "share_other": 0.42857142857142855,
+        "examples": [
+          {
+            "string": "KIO 1118/18",
+            "variants": 3
+          },
+          {
+            "string": "KIO 1428/20",
+            "variants": 3
+          },
+          {
+            "string": "KIO 1550/23",
+            "variants": 3
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 203,
+        "share_other": 0.42857142857142855,
+        "examples": [
+          {
+            "string": "KIO 1118/18",
+            "variants": 2
+          },
+          {
+            "string": "KIO 1428/20",
+            "variants": 2
+          },
+          {
+            "string": "KIO 1550/23",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 203,
+        "share_other": 0.42857142857142855,
+        "examples": [
+          {
+            "string": "KIO 1118/18",
+            "variants": 2
+          },
+          {
+            "string": "KIO 1428/20",
+            "variants": 2
+          },
+          {
+            "string": "KIO 1550/23",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "sygnatura_sadu": {
+      "V0-32k": {
+        "pairs": 7,
+        "share_other": 0.2857142857142857,
+        "examples": [
+          {
+            "string": "V CA 2056/07",
+            "variants": 3
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 7,
+        "share_other": 0.14285714285714285,
+        "examples": [
+          {
+            "string": "V CA 2056/07",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 7,
+        "share_other": 0.14285714285714285,
+        "examples": [
+          {
+            "string": "V CA 2056/07",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "uchwala": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.23857142857142857,
+        "examples": [
+          {
+            "string": "UCHWAŁA NR I/6/2026",
+            "variants": 3
+          },
+          {
+            "string": "UCHWAŁA NR VII/13/2026",
+            "variants": 3
+          },
+          {
+            "string": "UCHWAŁA NR VII/17/2026",
+            "variants": 3
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.14285714285714285,
+        "examples": [
+          {
+            "string": "UCHWAŁA NR I/6/2026",
+            "variants": 2
+          },
+          {
+            "string": "UCHWAŁA NR VII/13/2026",
+            "variants": 2
+          },
+          {
+            "string": "UCHWAŁA NR VII/17/2026",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.14285714285714285,
+        "examples": [
+          {
+            "string": "UCHWAŁA NR I/6/2026",
+            "variants": 2
+          },
+          {
+            "string": "UCHWAŁA NR VII/13/2026",
+            "variants": 2
+          },
+          {
+            "string": "UCHWAŁA NR VII/17/2026",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "procent": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.31,
+        "examples": [
+          {
+            "string": "0 %",
+            "variants": 3
+          },
+          {
+            "string": "0%",
+            "variants": 3
+          },
+          {
+            "string": "0,05%",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.25142857142857145,
+        "examples": [
+          {
+            "string": "0 %",
+            "variants": 2
+          },
+          {
+            "string": "0%",
+            "variants": 2
+          },
+          {
+            "string": "0,05%",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.25142857142857145,
+        "examples": [
+          {
+            "string": "0 %",
+            "variants": 2
+          },
+          {
+            "string": "0%",
+            "variants": 2
+          },
+          {
+            "string": "0,05%",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "kod_pocztowy": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.13714285714285715,
+        "examples": [
+          {
+            "string": "00-002",
+            "variants": 2
+          },
+          {
+            "string": "00-124",
+            "variants": 2
+          },
+          {
+            "string": "00-175",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.0,
+        "examples": []
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.0,
+        "examples": []
+      }
+    },
+    "email": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.3457142857142857,
+        "examples": [
+          {
+            "string": "22wog.zamowienia@ron.mil.pl",
+            "variants": 2
+          },
+          {
+            "string": "CWK@platformazakupowa.pl",
+            "variants": 3
+          },
+          {
+            "string": "FIO@niw.gov.pl",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.34,
+        "examples": [
+          {
+            "string": "22wog.zamowienia@ron.mil.pl",
+            "variants": 2
+          },
+          {
+            "string": "CWK@platformazakupowa.pl",
+            "variants": 3
+          },
+          {
+            "string": "FIO@niw.gov.pl",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.34,
+        "examples": [
+          {
+            "string": "22wog.zamowienia@ron.mil.pl",
+            "variants": 2
+          },
+          {
+            "string": "CWK@platformazakupowa.pl",
+            "variants": 3
+          },
+          {
+            "string": "FIO@niw.gov.pl",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "url": {
+      "V0-32k": {
+        "pairs": 700,
+        "share_other": 0.12142857142857143,
+        "examples": [
+          {
+            "string": "http://45.226.103.129",
+            "variants": 2
+          },
+          {
+            "string": "http://antybohater.wordpress.com/2011/03/23/zagubiona-na-ug/",
+            "variants": 2
+          },
+          {
+            "string": "http://beta-us.battle.net/en/info/digital-purchase",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 700,
+        "share_other": 0.11571428571428571,
+        "examples": [
+          {
+            "string": "http://antybohater.wordpress.com/2011/03/23/zagubiona-na-ug/",
+            "variants": 2
+          },
+          {
+            "string": "http://beta-us.battle.net/en/info/digital-purchase",
+            "variants": 2
+          },
+          {
+            "string": "http://bip.pzd.powiatwalecki.pl/",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 700,
+        "share_other": 0.11571428571428571,
+        "examples": [
+          {
+            "string": "http://antybohater.wordpress.com/2011/03/23/zagubiona-na-ug/",
+            "variants": 2
+          },
+          {
+            "string": "http://beta-us.battle.net/en/info/digital-purchase",
+            "variants": 2
+          },
+          {
+            "string": "http://bip.pzd.powiatwalecki.pl/",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "nip": {
+      "V0-32k": {
+        "pairs": 140,
+        "share_other": 0.4357142857142857,
+        "examples": [
+          {
+            "string": "NIP 547-004-91-18",
+            "variants": 3
+          },
+          {
+            "string": "NIP 5482362660",
+            "variants": 2
+          },
+          {
+            "string": "NIP 5871707828",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 140,
+        "share_other": 0.42857142857142855,
+        "examples": [
+          {
+            "string": "NIP 547-004-91-18",
+            "variants": 2
+          },
+          {
+            "string": "NIP 5482362660",
+            "variants": 2
+          },
+          {
+            "string": "NIP 5871707828",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 140,
+        "share_other": 0.42857142857142855,
+        "examples": [
+          {
+            "string": "NIP 547-004-91-18",
+            "variants": 2
+          },
+          {
+            "string": "NIP 5482362660",
+            "variants": 2
+          },
+          {
+            "string": "NIP 5871707828",
+            "variants": 2
+          }
+        ]
+      }
+    }
+  },
+  "abbreviations": {
+    "art.": {
+      "V0-32k": {
+        "pairs": 7,
+        "share_other": 0.0,
+        "examples": []
+      },
+      "V1-32k": {
+        "pairs": 7,
+        "share_other": 0.0,
+        "examples": []
+      },
+      "V2-32k": {
+        "pairs": 7,
+        "share_other": 0.0,
+        "examples": []
+      }
+    },
+    "lit.": {
+      "V0-32k": {
+        "pairs": 7,
+        "share_other": 0.42857142857142855,
+        "examples": [
+          {
+            "string": "lit.",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 7,
+        "share_other": 0.42857142857142855,
+        "examples": [
+          {
+            "string": "lit.",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 7,
+        "share_other": 0.42857142857142855,
+        "examples": [
+          {
+            "string": "lit.",
+            "variants": 2
+          }
+        ]
+      }
+    },
+    "Dz.U.": {
+      "V0-32k": {
+        "pairs": 7,
+        "share_other": 0.0,
+        "examples": []
+      },
+      "V1-32k": {
+        "pairs": 7,
+        "share_other": 0.0,
+        "examples": []
+      },
+      "V2-32k": {
+        "pairs": 7,
+        "share_other": 0.0,
+        "examples": []
+      }
+    },
+    "M.P.": {
+      "V0-32k": {
+        "pairs": 7,
+        "share_other": 0.0,
+        "examples": []
+      },
+      "V1-32k": {
+        "pairs": 7,
+        "share_other": 0.0,
+        "examples": []
+      },
+      "V2-32k": {
+        "pairs": 7,
+        "share_other": 0.0,
+        "examples": []
+      }
+    },
+    "poz.": {
+      "V0-32k": {
+        "pairs": 7,
+        "share_other": 0.42857142857142855,
+        "examples": [
+          {
+            "string": "poz.",
+            "variants": 2
+          }
+        ]
+      },
+      "V1-32k": {
+        "pairs": 7,
+        "share_other": 0.42857142857142855,
+        "examples": [
+          {
+            "string": "poz.",
+            "variants": 2
+          }
+        ]
+      },
+      "V2-32k": {
+        "pairs": 7,
+        "share_other": 0.42857142857142855,
+        "examples": [
+          {
+            "string": "poz.",
+            "variants": 2
+          }
+        ]
+      }
+    }
+  }
+}

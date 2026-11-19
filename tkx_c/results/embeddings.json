@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "params_total": 150000000,
+    "d_model": 768,
+    "note": "udział embeddingów w modelu 150M; tied = jedna macierz wejściowa/wyjściowa"
+  },
+  "variants": {
+    "16000": {
+      "embedding_params": 12288000,
+      "share_tied": 0.08192,
+      "share_untied": 0.16384,
+      "params_other_tied": 137712000
+    },
+    "24000": {
+      "embedding_params": 18432000,
+      "share_tied": 0.12288,
+      "share_untied": 0.24576,
+      "params_other_tied": 131568000
+    },
+    "32000": {
+      "embedding_params": 24576000,
+      "share_tied": 0.16384,
+      "share_untied": 0.32768,
+      "params_other_tied": 125424000
+    }
+  }
+}
