@@ -1,0 +1,1614 @@
+{
+  "meta": {
+    "split": "test",
+    "domains": [
+      "przetargi_ogloszenia",
+      "przetargi_kio",
+      "samorzad_uchwaly",
+      "granty_ogloszenia",
+      "prawo_eli",
+      "ocr_prasa",
+      "tabele_json",
+      "web"
+    ],
+    "phrases": [
+      "Czytaj więcej",
+      "Zobacz także",
+      "Zobacz też",
+      "Polityka prywatności",
+      "cookies",
+      "Strona główna",
+      "Menu",
+      "Szukaj",
+      "Newsletter",
+      "Reklama",
+      "Zaloguj",
+      "Kontakt",
+      "Dowiedz się więcej",
+      "Wróć",
+      "Pobierz"
+    ],
+    "modes": [
+      "boundary",
+      "literal"
+    ],
+    "baseline_source": "r3_robustness.json (same TEST docs, str.split words)"
+  },
+  "baseline": {
+    "przetargi_ogloszenia": {
+      "docs": 60,
+      "words": 136034,
+      "tokens": {
+        "TOKENIZATOREX": 211560,
+        "TOKENIZATOREX-HF": 211179,
+        "Slayer1B": 274390,
+        "Pollock-2.0": 246441
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.5551994354352587,
+        "TOKENIZATOREX-HF": 1.5523986650396224,
+        "Slayer1B": 2.0170692620962405,
+        "Pollock-2.0": 1.8116132731523003
+      }
+    },
+    "przetargi_kio": {
+      "docs": 66,
+      "words": 95409,
+      "tokens": {
+        "TOKENIZATOREX": 133826,
+        "TOKENIZATOREX-HF": 133881,
+        "Slayer1B": 164087,
+        "Pollock-2.0": 142856
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.4026559339265687,
+        "TOKENIZATOREX-HF": 1.4032323994591704,
+        "Slayer1B": 1.7198272699640496,
+        "Pollock-2.0": 1.4973010931882735
+      }
+    },
+    "samorzad_uchwaly": {
+      "docs": 240,
+      "words": 71910,
+      "tokens": {
+        "TOKENIZATOREX": 109866,
+        "TOKENIZATOREX-HF": 109527,
+        "Slayer1B": 142628,
+        "Pollock-2.0": 126047
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.5278264497288276,
+        "TOKENIZATOREX-HF": 1.5231122236128494,
+        "Slayer1B": 1.983423724099569,
+        "Pollock-2.0": 1.7528438325684883
+      }
+    },
+    "granty_ogloszenia": {
+      "docs": 66,
+      "words": 100550,
+      "tokens": {
+        "TOKENIZATOREX": 180076,
+        "TOKENIZATOREX-HF": 179350,
+        "Slayer1B": 209503,
+        "Pollock-2.0": 179037
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.7909099950273495,
+        "TOKENIZATOREX-HF": 1.783689706613625,
+        "Slayer1B": 2.083570363003481,
+        "Pollock-2.0": 1.7805768274490303
+      }
+    },
+    "prawo_eli": {
+      "docs": 78,
+      "words": 137764,
+      "tokens": {
+        "TOKENIZATOREX": 204825,
+        "TOKENIZATOREX-HF": 204346,
+        "Slayer1B": 248522,
+        "Pollock-2.0": 214289
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.486781742690398,
+        "TOKENIZATOREX-HF": 1.4833047820911123,
+        "Slayer1B": 1.803969106588078,
+        "Pollock-2.0": 1.5554789349902731
+      }
+    },
+    "ocr_prasa": {
+      "docs": 36,
+      "words": 91388,
+      "tokens": {
+        "TOKENIZATOREX": 175075,
+        "TOKENIZATOREX-HF": 175015,
+        "Slayer1B": 189925,
+        "Pollock-2.0": 177430
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.9157329189827985,
+        "TOKENIZATOREX-HF": 1.915076377642579,
+        "Slayer1B": 2.07822690068718,
+        "Pollock-2.0": 1.9415021665864227
+      }
+    },
+    "tabele_json": {
+      "docs": 60,
+      "words": 52698,
+      "tokens": {
+        "TOKENIZATOREX": 138565,
+        "TOKENIZATOREX-HF": 137842,
+        "Slayer1B": 160613,
+        "Pollock-2.0": 142859
+      },
+      "fertility": {
+        "TOKENIZATOREX": 2.6294166761546927,
+        "TOKENIZATOREX-HF": 2.6156969903981175,
+        "Slayer1B": 3.047800675547459,
+        "Pollock-2.0": 2.710899844396372
+      }
+    },
+    "web": {
+      "docs": 421,
+      "words": 155005,
+      "tokens": {
+        "TOKENIZATOREX": 219425,
+        "TOKENIZATOREX-HF": 219391,
+        "Slayer1B": 259230,
+        "Pollock-2.0": 244400
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.4155994967904262,
+        "TOKENIZATOREX-HF": 1.4153801490274507,
+        "Slayer1B": 1.6723976645914649,
+        "Pollock-2.0": 1.5767233315054352
+      }
+    },
+    "__official_pooled__": {
+      "words": 685753,
+      "tokens": {
+        "TOKENIZATOREX": 1153793,
+        "TOKENIZATOREX-HF": 1151140,
+        "Slayer1B": 1389668,
+        "Pollock-2.0": 1228959
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.6825197994029921,
+        "TOKENIZATOREX-HF": 1.6786510594922661,
+        "Slayer1B": 2.02648475471489,
+        "Pollock-2.0": 1.792130694287885
+      }
+    }
+  },
+  "modes": {
+    "boundary": {
+      "per_domain": {
+        "przetargi_ogloszenia": {
+          "docs": 60,
+          "docs_changed": 21,
+          "words_before": 136034,
+          "words_after": 135374,
+          "tokens_before": {
+            "TOKENIZATOREX": 211560,
+            "TOKENIZATOREX-HF": 211179,
+            "Slayer1B": 274390,
+            "Pollock-2.0": 246441
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 210581,
+            "TOKENIZATOREX-HF": 210200,
+            "Slayer1B": 273087,
+            "Pollock-2.0": 245253
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.5551994354352587,
+            "TOKENIZATOREX-HF": 1.5523986650396224,
+            "Slayer1B": 2.0170692620962405,
+            "Pollock-2.0": 1.8116132731523003
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.555549810155569,
+            "TOKENIZATOREX-HF": 1.5527353849335914,
+            "Slayer1B": 2.017278059302377,
+            "Pollock-2.0": 1.8116698922983734
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 1,
+            "Strona główna": 0,
+            "Menu": 3,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 1,
+            "Zaloguj": 3,
+            "Kontakt": 56,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": 0.00022529246881575204,
+            "TOKENIZATOREX-HF": 0.00021690297830834204,
+            "Slayer1B": 0.00010351513954431901,
+            "Pollock-2.0": 3.125343963428229e-05
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.004627528833427874,
+            "TOKENIZATOREX-HF": -0.0046358776204072916,
+            "Slayer1B": -0.0047487153321914555,
+            "Pollock-2.0": -0.004820626437970987
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              1.5527353849335914
+            ],
+            [
+              "TOKENIZATOREX",
+              1.555549810155569
+            ],
+            [
+              "Pollock-2.0",
+              1.8116698922983734
+            ],
+            [
+              "Slayer1B",
+              2.017278059302377
+            ]
+          ]
+        },
+        "przetargi_kio": {
+          "docs": 66,
+          "docs_changed": 5,
+          "words_before": 95409,
+          "words_after": 95272,
+          "tokens_before": {
+            "TOKENIZATOREX": 133826,
+            "TOKENIZATOREX-HF": 133881,
+            "Slayer1B": 164087,
+            "Pollock-2.0": 142856
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 133593,
+            "TOKENIZATOREX-HF": 133648,
+            "Slayer1B": 163815,
+            "Pollock-2.0": 142612
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.4026559339265687,
+            "TOKENIZATOREX-HF": 1.4032323994591704,
+            "Slayer1B": 1.7198272699640496,
+            "Pollock-2.0": 1.4973010931882735
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.40222730707868,
+            "TOKENIZATOREX-HF": 1.402804601561844,
+            "Slayer1B": 1.7194453774456293,
+            "Pollock-2.0": 1.4968931060542447
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 5,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 0,
+            "Zaloguj": 0,
+            "Kontakt": 2,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": -0.0003055823153215176,
+            "TOKENIZATOREX-HF": -0.0003048660346577359,
+            "Slayer1B": -0.00022205283349663318,
+            "Pollock-2.0": -0.00027248169114735266
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.0017410667583279693,
+            "TOKENIZATOREX-HF": -0.0017403515061883423,
+            "Slayer1B": -0.0016576572184268112,
+            "Pollock-2.0": -0.0017080136641093313
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX",
+              1.40222730707868
+            ],
+            [
+              "TOKENIZATOREX-HF",
+              1.402804601561844
+            ],
+            [
+              "Pollock-2.0",
+              1.4968931060542447
+            ],
+            [
+              "Slayer1B",
+              1.7194453774456293
+            ]
+          ]
+        },
+        "samorzad_uchwaly": {
+          "docs": 240,
+          "docs_changed": 0,
+          "words_before": 71910,
+          "words_after": 71910,
+          "tokens_before": {
+            "TOKENIZATOREX": 109866,
+            "TOKENIZATOREX-HF": 109527,
+            "Slayer1B": 142628,
+            "Pollock-2.0": 126047
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 109866,
+            "TOKENIZATOREX-HF": 109527,
+            "Slayer1B": 142628,
+            "Pollock-2.0": 126047
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.5278264497288276,
+            "TOKENIZATOREX-HF": 1.5231122236128494,
+            "Slayer1B": 1.983423724099569,
+            "Pollock-2.0": 1.7528438325684883
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.5278264497288276,
+            "TOKENIZATOREX-HF": 1.5231122236128494,
+            "Slayer1B": 1.983423724099569,
+            "Pollock-2.0": 1.7528438325684883
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 0,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 0,
+            "Zaloguj": 0,
+            "Kontakt": 0,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": 0.0,
+            "TOKENIZATOREX-HF": 0.0,
+            "Slayer1B": 0.0,
+            "Pollock-2.0": 0.0
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": 0.0,
+            "TOKENIZATOREX-HF": 0.0,
+            "Slayer1B": 0.0,
+            "Pollock-2.0": 0.0
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              1.5231122236128494
+            ],
+            [
+              "TOKENIZATOREX",
+              1.5278264497288276
+            ],
+            [
+              "Pollock-2.0",
+              1.7528438325684883
+            ],
+            [
+              "Slayer1B",
+              1.983423724099569
+            ]
+          ]
+        },
+        "granty_ogloszenia": {
+          "docs": 66,
+          "docs_changed": 22,
+          "words_before": 100550,
+          "words_after": 100266,
+          "tokens_before": {
+            "TOKENIZATOREX": 180076,
+            "TOKENIZATOREX-HF": 179350,
+            "Slayer1B": 209503,
+            "Pollock-2.0": 179037
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 179552,
+            "TOKENIZATOREX-HF": 178826,
+            "Slayer1B": 208821,
+            "Pollock-2.0": 178410
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.7909099950273495,
+            "TOKENIZATOREX-HF": 1.783689706613625,
+            "Slayer1B": 2.083570363003481,
+            "Pollock-2.0": 1.7805768274490303
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.7907565874773104,
+            "TOKENIZATOREX-HF": 1.783515847844733,
+            "Slayer1B": 2.082670097540542,
+            "Pollock-2.0": 1.779366884088325
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 0,
+            "Szukaj": 0,
+            "Newsletter": 2,
+            "Reklama": 0,
+            "Zaloguj": 0,
+            "Kontakt": 48,
+            "Dowiedz się więcej": 0,
+            "Wróć": 2,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": -8.565899484902495e-05,
+            "TOKENIZATOREX-HF": -9.747142019567168e-05,
+            "Slayer1B": -0.0004320782628339792,
+            "Pollock-2.0": -0.0006795232545168117
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.0029098824940581025,
+            "TOKENIZATOREX-HF": -0.0029216615556174608,
+            "Slayer1B": -0.0032553233127926573,
+            "Pollock-2.0": -0.003502069404648256
+          },
+          "ranking_after": [
+            [
+              "Pollock-2.0",
+              1.779366884088325
+            ],
+            [
+              "TOKENIZATOREX-HF",
+              1.783515847844733
+            ],
+            [
+              "TOKENIZATOREX",
+              1.7907565874773104
+            ],
+            [
+              "Slayer1B",
+              2.082670097540542
+            ]
+          ]
+        },
+        "prawo_eli": {
+          "docs": 78,
+          "docs_changed": 6,
+          "words_before": 137764,
+          "words_after": 137764,
+          "tokens_before": {
+            "TOKENIZATOREX": 204825,
+            "TOKENIZATOREX-HF": 204346,
+            "Slayer1B": 248522,
+            "Pollock-2.0": 214289
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 204821,
+            "TOKENIZATOREX-HF": 204342,
+            "Slayer1B": 248516,
+            "Pollock-2.0": 214283
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.486781742690398,
+            "TOKENIZATOREX-HF": 1.4833047820911123,
+            "Slayer1B": 1.803969106588078,
+            "Pollock-2.0": 1.5554789349902731
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.4867527075288174,
+            "TOKENIZATOREX-HF": 1.4832757469295317,
+            "Slayer1B": 1.803925553845707,
+            "Pollock-2.0": 1.5554353822479021
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 0,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 1,
+            "Zaloguj": 0,
+            "Kontakt": 14,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": -1.9528866105122944e-05,
+            "TOKENIZATOREX-HF": -1.9574643007391757e-05,
+            "Slayer1B": -2.4142731830600894e-05,
+            "Pollock-2.0": -2.7999570673231666e-05
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -1.9528866105233966e-05,
+            "TOKENIZATOREX-HF": -1.957464300750278e-05,
+            "Slayer1B": -2.4142731830600894e-05,
+            "Pollock-2.0": -2.7999570673231666e-05
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              1.4832757469295317
+            ],
+            [
+              "TOKENIZATOREX",
+              1.4867527075288174
+            ],
+            [
+              "Pollock-2.0",
+              1.5554353822479021
+            ],
+            [
+              "Slayer1B",
+              1.803925553845707
+            ]
+          ]
+        },
+        "ocr_prasa": {
+          "docs": 36,
+          "docs_changed": 3,
+          "words_before": 91388,
+          "words_after": 91097,
+          "tokens_before": {
+            "TOKENIZATOREX": 175075,
+            "TOKENIZATOREX-HF": 175015,
+            "Slayer1B": 189925,
+            "Pollock-2.0": 177430
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 174555,
+            "TOKENIZATOREX-HF": 174495,
+            "Slayer1B": 189365,
+            "Pollock-2.0": 176903
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.9157329189827985,
+            "TOKENIZATOREX-HF": 1.915076377642579,
+            "Slayer1B": 2.07822690068718,
+            "Pollock-2.0": 1.9415021665864227
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.916144329670571,
+            "TOKENIZATOREX-HF": 1.9154856910765448,
+            "Slayer1B": 2.078718289296025,
+            "Pollock-2.0": 1.9419190533167943
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 3,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 1,
+            "Zaloguj": 0,
+            "Kontakt": 0,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": 0.00021475367661949463,
+            "TOKENIZATOREX-HF": 0.0002137321721182861,
+            "Slayer1B": 0.000236446082322761,
+            "Pollock-2.0": 0.00021472380383924516
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.002970155647579631,
+            "TOKENIZATOREX-HF": -0.002971173899380064,
+            "Slayer1B": -0.0029485323153876086,
+            "Pollock-2.0": -0.002970185425238081
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              1.9154856910765448
+            ],
+            [
+              "TOKENIZATOREX",
+              1.916144329670571
+            ],
+            [
+              "Pollock-2.0",
+              1.9419190533167943
+            ],
+            [
+              "Slayer1B",
+              2.078718289296025
+            ]
+          ]
+        },
+        "tabele_json": {
+          "docs": 60,
+          "docs_changed": 1,
+          "words_before": 52698,
+          "words_after": 51210,
+          "tokens_before": {
+            "TOKENIZATOREX": 138565,
+            "TOKENIZATOREX-HF": 137842,
+            "Slayer1B": 160613,
+            "Pollock-2.0": 142859
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 135531,
+            "TOKENIZATOREX-HF": 134815,
+            "Slayer1B": 157043,
+            "Pollock-2.0": 139661
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 2.6294166761546927,
+            "TOKENIZATOREX-HF": 2.6156969903981175,
+            "Slayer1B": 3.047800675547459,
+            "Pollock-2.0": 2.710899844396372
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 2.646572934973638,
+            "TOKENIZATOREX-HF": 2.6325912907635227,
+            "Slayer1B": 3.066647139230619,
+            "Pollock-2.0": 2.7272212458504197
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 0,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 0,
+            "Zaloguj": 0,
+            "Kontakt": 5,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": 0.006524739488621201,
+            "TOKENIZATOREX-HF": 0.006458814009199898,
+            "Slayer1B": 0.006183627372474021,
+            "Pollock-2.0": 0.006020658228220954
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.021895861148197637,
+            "TOKENIZATOREX-HF": -0.021959925131672442,
+            "Slayer1B": -0.02222734149788619,
+            "Pollock-2.0": -0.02238570898578318
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              2.6325912907635227
+            ],
+            [
+              "TOKENIZATOREX",
+              2.646572934973638
+            ],
+            [
+              "Pollock-2.0",
+              2.7272212458504197
+            ],
+            [
+              "Slayer1B",
+              3.066647139230619
+            ]
+          ]
+        },
+        "web": {
+          "docs": 421,
+          "docs_changed": 75,
+          "words_before": 155005,
+          "words_after": 151519,
+          "tokens_before": {
+            "TOKENIZATOREX": 219425,
+            "TOKENIZATOREX-HF": 219391,
+            "Slayer1B": 259230,
+            "Pollock-2.0": 244400
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 214266,
+            "TOKENIZATOREX-HF": 214231,
+            "Slayer1B": 253101,
+            "Pollock-2.0": 238456
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.4155994967904262,
+            "TOKENIZATOREX-HF": 1.4153801490274507,
+            "Slayer1B": 1.6723976645914649,
+            "Pollock-2.0": 1.5767233315054352
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.4141196813600934,
+            "TOKENIZATOREX-HF": 1.4138886872273444,
+            "Slayer1B": 1.6704241712260508,
+            "Pollock-2.0": 1.5737696262514933
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 46,
+            "Zobacz także": 4,
+            "Zobacz też": 7,
+            "Polityka prywatności": 0,
+            "cookies": 1,
+            "Strona główna": 4,
+            "Menu": 9,
+            "Szukaj": 14,
+            "Newsletter": 3,
+            "Reklama": 30,
+            "Zaloguj": 7,
+            "Kontakt": 44,
+            "Dowiedz się więcej": 0,
+            "Wróć": 3,
+            "Pobierz": 7
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": -0.0010453630660988145,
+            "TOKENIZATOREX-HF": -0.0010537535100595408,
+            "Slayer1B": -0.001180038340878764,
+            "Pollock-2.0": -0.0018733186697514892
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.023511450381679344,
+            "TOKENIZATOREX-HF": -0.02351965212793594,
+            "Slayer1B": -0.02364309686378896,
+            "Pollock-2.0": -0.024320785597381378
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              1.4138886872273444
+            ],
+            [
+              "TOKENIZATOREX",
+              1.4141196813600934
+            ],
+            [
+              "Pollock-2.0",
+              1.5737696262514933
+            ],
+            [
+              "Slayer1B",
+              1.6704241712260508
+            ]
+          ]
+        }
+      },
+      "official_pooled": {
+        "words_before": 685753,
+        "words_after": 682893,
+        "tokenizers": {
+          "TOKENIZATOREX": {
+            "tokens_before": 1153793,
+            "tokens_after": 1148499,
+            "fertility_before": 1.6825197994029921,
+            "fertility_after": 1.6818139884286412,
+            "tokens_delta_rel": -0.004588344703079339,
+            "fertility_delta_rel": -0.0004194963854816658
+          },
+          "TOKENIZATOREX-HF": {
+            "tokens_before": 1151140,
+            "tokens_after": 1145853,
+            "fertility_before": 1.6786510594922661,
+            "fertility_after": 1.6779392964930084,
+            "tokens_delta_rel": -0.004592838403669419,
+            "fertility_delta_rel": -0.0004240089059801555
+          },
+          "Slayer1B": {
+            "tokens_before": 1389668,
+            "tokens_after": 1383275,
+            "fertility_before": 2.02648475471489,
+            "fertility_after": 2.0256101614747846,
+            "tokens_delta_rel": -0.004600379371187957,
+            "fertility_delta_rel": -0.0004315814555577724
+          },
+          "Pollock-2.0": {
+            "tokens_before": 1228959,
+            "tokens_after": 1223169,
+            "fertility_before": 1.792130694287885,
+            "fertility_after": 1.7911576191292047,
+            "tokens_delta_rel": -0.004711304445469744,
+            "fertility_delta_rel": -0.000542971091216593
+          }
+        },
+        "ranking_before": [
+          [
+            "TOKENIZATOREX-HF",
+            1.6786510594922661
+          ],
+          [
+            "TOKENIZATOREX",
+            1.6825197994029921
+          ],
+          [
+            "Pollock-2.0",
+            1.792130694287885
+          ],
+          [
+            "Slayer1B",
+            2.02648475471489
+          ]
+        ],
+        "ranking_after": [
+          [
+            "TOKENIZATOREX-HF",
+            1.6779392964930084
+          ],
+          [
+            "TOKENIZATOREX",
+            1.6818139884286412
+          ],
+          [
+            "Pollock-2.0",
+            1.7911576191292047
+          ],
+          [
+            "Slayer1B",
+            2.0256101614747846
+          ]
+        ]
+      },
+      "hits_total": {
+        "Czytaj więcej": 46,
+        "Zobacz także": 4,
+        "Zobacz też": 7,
+        "Polityka prywatności": 0,
+        "cookies": 2,
+        "Strona główna": 4,
+        "Menu": 20,
+        "Szukaj": 14,
+        "Newsletter": 5,
+        "Reklama": 33,
+        "Zaloguj": 10,
+        "Kontakt": 169,
+        "Dowiedz się więcej": 0,
+        "Wróć": 5,
+        "Pobierz": 7
+      },
+      "docs_changed": 133,
+      "chars_before": 6118472,
+      "chars_after": 6069890,
+      "chars_removed_share": 0.007940217753713674
+    },
+    "literal": {
+      "per_domain": {
+        "przetargi_ogloszenia": {
+          "docs": 60,
+          "docs_changed": 39,
+          "words_before": 136034,
+          "words_after": 134001,
+          "tokens_before": {
+            "TOKENIZATOREX": 211560,
+            "TOKENIZATOREX-HF": 211179,
+            "Slayer1B": 274390,
+            "Pollock-2.0": 246441
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 208643,
+            "TOKENIZATOREX-HF": 208262,
+            "Slayer1B": 270552,
+            "Pollock-2.0": 242932
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.5551994354352587,
+            "TOKENIZATOREX-HF": 1.5523986650396224,
+            "Slayer1B": 2.0170692620962405,
+            "Pollock-2.0": 1.8116132731523003
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.5570256938381057,
+            "TOKENIZATOREX-HF": 1.554182431474392,
+            "Slayer1B": 2.019029708733517,
+            "Pollock-2.0": 1.812911843941463
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 1,
+            "Strona główna": 0,
+            "Menu": 3,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 1,
+            "Zaloguj": 3,
+            "Kontakt": 56,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": 0.0011742920947859226,
+            "TOKENIZATOREX-HF": 0.0011490388873298674,
+            "Slayer1B": 0.0009719282694531373,
+            "Pollock-2.0": 0.0007168035299847109
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.013788050671204366,
+            "TOKENIZATOREX-HF": -0.013812926474696785,
+            "Slayer1B": -0.013987390211013473,
+            "Pollock-2.0": -0.0142387021640068
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              1.554182431474392
+            ],
+            [
+              "TOKENIZATOREX",
+              1.5570256938381057
+            ],
+            [
+              "Pollock-2.0",
+              1.812911843941463
+            ],
+            [
+              "Slayer1B",
+              2.019029708733517
+            ]
+          ]
+        },
+        "przetargi_kio": {
+          "docs": 66,
+          "docs_changed": 7,
+          "words_before": 95409,
+          "words_after": 94999,
+          "tokens_before": {
+            "TOKENIZATOREX": 133826,
+            "TOKENIZATOREX-HF": 133881,
+            "Slayer1B": 164087,
+            "Pollock-2.0": 142856
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 133241,
+            "TOKENIZATOREX-HF": 133296,
+            "Slayer1B": 163378,
+            "Pollock-2.0": 142234
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.4026559339265687,
+            "TOKENIZATOREX-HF": 1.4032323994591704,
+            "Slayer1B": 1.7198272699640496,
+            "Pollock-2.0": 1.4973010931882735
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.402551605806377,
+            "TOKENIZATOREX-HF": 1.4031305592690448,
+            "Slayer1B": 1.7197865240686745,
+            "Pollock-2.0": 1.4972157601658964
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 5,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 0,
+            "Zaloguj": 0,
+            "Kontakt": 2,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": -7.437898180751024e-05,
+            "TOKENIZATOREX-HF": -7.257542668259731e-05,
+            "Slayer1B": -2.3691853296314846e-05,
+            "Pollock-2.0": -5.699122425362191e-05
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.004371347869621789,
+            "TOKENIZATOREX-HF": -0.004369552064893423,
+            "Slayer1B": -0.004320878558325747,
+            "Pollock-2.0": -0.004354034832278697
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX",
+              1.402551605806377
+            ],
+            [
+              "TOKENIZATOREX-HF",
+              1.4031305592690448
+            ],
+            [
+              "Pollock-2.0",
+              1.4972157601658964
+            ],
+            [
+              "Slayer1B",
+              1.7197865240686745
+            ]
+          ]
+        },
+        "samorzad_uchwaly": {
+          "docs": 240,
+          "docs_changed": 0,
+          "words_before": 71910,
+          "words_after": 71910,
+          "tokens_before": {
+            "TOKENIZATOREX": 109866,
+            "TOKENIZATOREX-HF": 109527,
+            "Slayer1B": 142628,
+            "Pollock-2.0": 126047
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 109866,
+            "TOKENIZATOREX-HF": 109527,
+            "Slayer1B": 142628,
+            "Pollock-2.0": 126047
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.5278264497288276,
+            "TOKENIZATOREX-HF": 1.5231122236128494,
+            "Slayer1B": 1.983423724099569,
+            "Pollock-2.0": 1.7528438325684883
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.5278264497288276,
+            "TOKENIZATOREX-HF": 1.5231122236128494,
+            "Slayer1B": 1.983423724099569,
+            "Pollock-2.0": 1.7528438325684883
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 0,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 0,
+            "Zaloguj": 0,
+            "Kontakt": 0,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": 0.0,
+            "TOKENIZATOREX-HF": 0.0,
+            "Slayer1B": 0.0,
+            "Pollock-2.0": 0.0
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": 0.0,
+            "TOKENIZATOREX-HF": 0.0,
+            "Slayer1B": 0.0,
+            "Pollock-2.0": 0.0
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              1.5231122236128494
+            ],
+            [
+              "TOKENIZATOREX",
+              1.5278264497288276
+            ],
+            [
+              "Pollock-2.0",
+              1.7528438325684883
+            ],
+            [
+              "Slayer1B",
+              1.983423724099569
+            ]
+          ]
+        },
+        "granty_ogloszenia": {
+          "docs": 66,
+          "docs_changed": 31,
+          "words_before": 100550,
+          "words_after": 99726,
+          "tokens_before": {
+            "TOKENIZATOREX": 180076,
+            "TOKENIZATOREX-HF": 179350,
+            "Slayer1B": 209503,
+            "Pollock-2.0": 179037
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 178785,
+            "TOKENIZATOREX-HF": 178059,
+            "Slayer1B": 207865,
+            "Pollock-2.0": 177554
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.7909099950273495,
+            "TOKENIZATOREX-HF": 1.783689706613625,
+            "Slayer1B": 2.083570363003481,
+            "Pollock-2.0": 1.7805768274490303
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.7927621683412551,
+            "TOKENIZATOREX-HF": 1.7854822212863246,
+            "Slayer1B": 2.0843611495497663,
+            "Pollock-2.0": 1.7804183462687764
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 0,
+            "Szukaj": 0,
+            "Newsletter": 2,
+            "Reklama": 0,
+            "Zaloguj": 0,
+            "Kontakt": 48,
+            "Dowiedz się więcej": 0,
+            "Wróć": 2,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": 0.001034207927281816,
+            "TOKENIZATOREX-HF": 0.0010049475904094773,
+            "Slayer1B": 0.0003795343609829249,
+            "Pollock-2.0": -8.90055277653623e-05
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.007169195228681202,
+            "TOKENIZATOREX-HF": -0.007198215779202655,
+            "Slayer1B": -0.007818503792308418,
+            "Pollock-2.0": -0.008283204030451796
+          },
+          "ranking_after": [
+            [
+              "Pollock-2.0",
+              1.7804183462687764
+            ],
+            [
+              "TOKENIZATOREX-HF",
+              1.7854822212863246
+            ],
+            [
+              "TOKENIZATOREX",
+              1.7927621683412551
+            ],
+            [
+              "Slayer1B",
+              2.0843611495497663
+            ]
+          ]
+        },
+        "prawo_eli": {
+          "docs": 78,
+          "docs_changed": 15,
+          "words_before": 137764,
+          "words_after": 137626,
+          "tokens_before": {
+            "TOKENIZATOREX": 204825,
+            "TOKENIZATOREX-HF": 204346,
+            "Slayer1B": 248522,
+            "Pollock-2.0": 214289
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 204636,
+            "TOKENIZATOREX-HF": 204157,
+            "Slayer1B": 248295,
+            "Pollock-2.0": 214078
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.486781742690398,
+            "TOKENIZATOREX-HF": 1.4833047820911123,
+            "Slayer1B": 1.803969106588078,
+            "Pollock-2.0": 1.5554789349902731
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.48689927775275,
+            "TOKENIZATOREX-HF": 1.4834188307441907,
+            "Slayer1B": 1.804128580355456,
+            "Pollock-2.0": 1.555505500414166
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 0,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 1,
+            "Zaloguj": 0,
+            "Kontakt": 14,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": 7.905333982605178e-05,
+            "TOKENIZATOREX-HF": 7.688821235896093e-05,
+            "Slayer1B": 8.84016066549087e-05,
+            "Pollock-2.0": 1.707861372812758e-05
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.000922738923471278,
+            "TOKENIZATOREX-HF": -0.000924901882101925,
+            "Slayer1B": -0.0009134000209236603,
+            "Pollock-2.0": -0.0009846515686759982
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              1.4834188307441907
+            ],
+            [
+              "TOKENIZATOREX",
+              1.48689927775275
+            ],
+            [
+              "Pollock-2.0",
+              1.555505500414166
+            ],
+            [
+              "Slayer1B",
+              1.804128580355456
+            ]
+          ]
+        },
+        "ocr_prasa": {
+          "docs": 36,
+          "docs_changed": 5,
+          "words_before": 91388,
+          "words_after": 85250,
+          "tokens_before": {
+            "TOKENIZATOREX": 175075,
+            "TOKENIZATOREX-HF": 175015,
+            "Slayer1B": 189925,
+            "Pollock-2.0": 177430
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 159923,
+            "TOKENIZATOREX-HF": 159865,
+            "Slayer1B": 174795,
+            "Pollock-2.0": 162450
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.9157329189827985,
+            "TOKENIZATOREX-HF": 1.915076377642579,
+            "Slayer1B": 2.07822690068718,
+            "Pollock-2.0": 1.9415021665864227
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.8759296187683285,
+            "TOKENIZATOREX-HF": 1.87524926686217,
+            "Slayer1B": 2.050381231671554,
+            "Pollock-2.0": 1.9055718475073313
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 3,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 1,
+            "Zaloguj": 0,
+            "Kontakt": 0,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": -0.020777061259460106,
+            "TOKENIZATOREX-HF": -0.020796617432791487,
+            "Slayer1B": -0.013398762669474817,
+            "Pollock-2.0": -0.018506453249168664
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.08654576610024278,
+            "TOKENIZATOREX-HF": -0.08656400879924575,
+            "Slayer1B": -0.0796630248782414,
+            "Pollock-2.0": -0.0844276616130305
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              1.87524926686217
+            ],
+            [
+              "TOKENIZATOREX",
+              1.8759296187683285
+            ],
+            [
+              "Pollock-2.0",
+              1.9055718475073313
+            ],
+            [
+              "Slayer1B",
+              2.050381231671554
+            ]
+          ]
+        },
+        "tabele_json": {
+          "docs": 60,
+          "docs_changed": 2,
+          "words_before": 52698,
+          "words_after": 48670,
+          "tokens_before": {
+            "TOKENIZATOREX": 138565,
+            "TOKENIZATOREX-HF": 137842,
+            "Slayer1B": 160613,
+            "Pollock-2.0": 142859
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 131101,
+            "TOKENIZATOREX-HF": 130388,
+            "Slayer1B": 151709,
+            "Pollock-2.0": 134906
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 2.6294166761546927,
+            "TOKENIZATOREX-HF": 2.6156969903981175,
+            "Slayer1B": 3.047800675547459,
+            "Pollock-2.0": 2.710899844396372
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 2.6936716663242244,
+            "TOKENIZATOREX-HF": 2.679021984795562,
+            "Slayer1B": 3.1170947195397574,
+            "Pollock-2.0": 2.7718512430655435
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 0,
+            "Zobacz także": 0,
+            "Zobacz też": 0,
+            "Polityka prywatności": 0,
+            "cookies": 0,
+            "Strona główna": 0,
+            "Menu": 0,
+            "Szukaj": 0,
+            "Newsletter": 0,
+            "Reklama": 0,
+            "Zaloguj": 0,
+            "Kontakt": 5,
+            "Dowiedz się więcej": 0,
+            "Wróć": 0,
+            "Pobierz": 0
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": 0.024436975224291668,
+            "TOKENIZATOREX-HF": 0.024209606322866284,
+            "Slayer1B": 0.022735753209927934,
+            "Pollock-2.0": 0.022483825359746357
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.053866416483238866,
+            "TOKENIZATOREX-HF": -0.05407640632027977,
+            "Slayer1B": -0.05543760467708092,
+            "Pollock-2.0": -0.055670276286408305
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              2.679021984795562
+            ],
+            [
+              "TOKENIZATOREX",
+              2.6936716663242244
+            ],
+            [
+              "Pollock-2.0",
+              2.7718512430655435
+            ],
+            [
+              "Slayer1B",
+              3.1170947195397574
+            ]
+          ]
+        },
+        "web": {
+          "docs": 421,
+          "docs_changed": 100,
+          "words_before": 155005,
+          "words_after": 149280,
+          "tokens_before": {
+            "TOKENIZATOREX": 219425,
+            "TOKENIZATOREX-HF": 219391,
+            "Slayer1B": 259230,
+            "Pollock-2.0": 244400
+          },
+          "tokens_after": {
+            "TOKENIZATOREX": 211236,
+            "TOKENIZATOREX-HF": 211202,
+            "Slayer1B": 249533,
+            "Pollock-2.0": 235100
+          },
+          "fertility_before": {
+            "TOKENIZATOREX": 1.4155994967904262,
+            "TOKENIZATOREX-HF": 1.4153801490274507,
+            "Slayer1B": 1.6723976645914649,
+            "Pollock-2.0": 1.5767233315054352
+          },
+          "fertility_after": {
+            "TOKENIZATOREX": 1.415032154340836,
+            "TOKENIZATOREX-HF": 1.414804394426581,
+            "Slayer1B": 1.671576902465166,
+            "Pollock-2.0": 1.57489281886388
+          },
+          "phrase_hits": {
+            "Czytaj więcej": 46,
+            "Zobacz także": 4,
+            "Zobacz też": 7,
+            "Polityka prywatności": 0,
+            "cookies": 1,
+            "Strona główna": 4,
+            "Menu": 9,
+            "Szukaj": 14,
+            "Newsletter": 3,
+            "Reklama": 30,
+            "Zaloguj": 7,
+            "Kontakt": 44,
+            "Dowiedz się więcej": 0,
+            "Wróć": 3,
+            "Pobierz": 7
+          },
+          "fertility_delta_rel": {
+            "TOKENIZATOREX": -0.0004007789285574992,
+            "TOKENIZATOREX-HF": -0.00040678442555908134,
+            "Slayer1B": -0.0004907697156461,
+            "Pollock-2.0": -0.0011609599509175839
+          },
+          "tokens_delta_rel": {
+            "TOKENIZATOREX": -0.03732026888458473,
+            "TOKENIZATOREX-HF": -0.03732605257280386,
+            "Slayer1B": -0.03740693592562594,
+            "Pollock-2.0": -0.03805237315875609
+          },
+          "ranking_after": [
+            [
+              "TOKENIZATOREX-HF",
+              1.414804394426581
+            ],
+            [
+              "TOKENIZATOREX",
+              1.415032154340836
+            ],
+            [
+              "Pollock-2.0",
+              1.57489281886388
+            ],
+            [
+              "Slayer1B",
+              1.671576902465166
+            ]
+          ]
+        }
+      },
+      "official_pooled": {
+        "words_before": 685753,
+        "words_after": 672182,
+        "tokenizers": {
+          "TOKENIZATOREX": {
+            "tokens_before": 1153793,
+            "tokens_after": 1126195,
+            "fertility_before": 1.6825197994029921,
+            "fertility_after": 1.6754316539270615,
+            "tokens_delta_rel": -0.023919368552244635,
+            "fertility_delta_rel": -0.004212815491648758
+          },
+          "TOKENIZATOREX-HF": {
+            "tokens_before": 1151140,
+            "tokens_after": 1123554,
+            "fertility_before": 1.6786510594922661,
+            "fertility_after": 1.6715026585061783,
+            "tokens_delta_rel": -0.02396407039977766,
+            "fertility_delta_rel": -0.0042584198459029166
+          },
+          "Slayer1B": {
+            "tokens_before": 1389668,
+            "tokens_after": 1359222,
+            "fertility_before": 2.02648475471489,
+            "fertility_after": 2.0221041325117306,
+            "tokens_delta_rel": -0.02190883002271049,
+            "fertility_delta_rel": -0.0021616852497742256
+          },
+          "Pollock-2.0": {
+            "tokens_before": 1228959,
+            "tokens_after": 1200201,
+            "fertility_before": 1.792130694287885,
+            "fertility_after": 1.7855298118664291,
+            "tokens_delta_rel": -0.023400292442628312,
+            "fertility_delta_rel": -0.0036832595091949027
+          }
+        },
+        "ranking_before": [
+          [
+            "TOKENIZATOREX-HF",
+            1.6786510594922661
+          ],
+          [
+            "TOKENIZATOREX",
+            1.6825197994029921
+          ],
+          [
+            "Pollock-2.0",
+            1.792130694287885
+          ],
+          [
+            "Slayer1B",
+            2.02648475471489
+          ]
+        ],
+        "ranking_after": [
+          [
+            "TOKENIZATOREX-HF",
+            1.6715026585061783
+          ],
+          [
+            "TOKENIZATOREX",
+            1.6754316539270615
+          ],
+          [
+            "Pollock-2.0",
+            1.7855298118664291
+          ],
+          [
+            "Slayer1B",
+            2.0221041325117306
+          ]
+        ]
+      },
+      "hits_total": {
+        "Czytaj więcej": 46,
+        "Zobacz także": 4,
+        "Zobacz też": 7,
+        "Polityka prywatności": 0,
+        "cookies": 2,
+        "Strona główna": 4,
+        "Menu": 20,
+        "Szukaj": 14,
+        "Newsletter": 5,
+        "Reklama": 33,
+        "Zaloguj": 10,
+        "Kontakt": 169,
+        "Dowiedz się więcej": 0,
+        "Wróć": 5,
+        "Pobierz": 7
+      },
+      "docs_changed": 199,
+      "chars_before": 6118472,
+      "chars_after": 5976205,
+      "chars_removed_share": 0.023252047243167873
+    }
+  }
+}

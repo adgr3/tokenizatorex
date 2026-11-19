@@ -202,4 +202,33 @@ leave-one-source-out, 50 najgorszych dokumentów, boilerplate, koszt w kontekśc
 
 ## 11. Zmiany po fakcie
 
-(brak — protokół zamrożony przed pomiarami)
+Poniższe wpisy dotyczą **korekt implementacji**, nie zmiany definicji metryk.
+Każda korekta została wprowadzona po uruchomieniu pomiarów; wyniki nią dotknięte
+są oznaczone jako **post hoc** i przeliczone od zera na tych samych danych.
+Protokół merytoryczny (definicje, progi, podział) nie zmienił się.
+
+1. **H6 — kryterium „środek słowa” (post hoc, po recenzji R2).**
+   Pierwsza implementacja (a) liczyła też tokeny zaczynające się spacją (czyli
+   zaczynające się na granicy słowa) i (b) uznawała za „samodzielne słowo” tylko
+   formy z top 2000. Recenzent R2 wykazał zawyżenie. Poprawka: token zaczynający
+   się spacją nie jest „od środka”; samodzielność pierwszego segmentu sprawdzana
+   słownikiem frekwencyjnym korpusu (forma ≥ 5 wystąpień). Dodano analizę
+   wrażliwości (`strict_lex5` = główne, `any_lex1`, `loose_top2000`). Wniosek H6
+   po poprawce: **obalona** (udział 1,6–13,2% zależnie od definicji, użycie
+   0,04–0,59% — poniżej progu obalenia 1%). Wynik H6 oznaczony jako post hoc.
+2. **H1 — regex lat.** `\b` gubił lata zlepione z literą („2020r.”). Zamieniono
+   na `(?<!\d)(?:19|20)\d{2}(?!\d)`. Zmieniło to tylko liczniki wystąpień
+   (+0,77%), nie średnie tokenów; H1 bez zmian.
+3. **Spójność podziału (H3/H4) — sygnatura.** Pierwsza wersja wliczała do
+   sygnatury przyklejoną wiodącą spację z kontekstu, co fałszywie zawyżało
+   niespójność. Poprawka: sygnatura = (czy zapis zaczyna się w środku tokenu,
+   czy kończy w środku tokenu, wewnętrzne granice tokenów); biały znak z
+   kontekstu nie zmienia sygnatury. Wyniki H3/H4 przeliczone; nadal potwierdzone.
+4. **Szybkość.** Enkoder Python ma wewnętrzny cache fragmentów; przy trzech
+   powtórzeniach ten sam tekst byłby liczony z cache. Pomiar „zimny”: cache
+   czyszczony przed każdym powtórzeniem. Cache nie jest częścią porównania.
+5. **Daty w `granty_ogloszenia`.** Data dokumentu = rok/miesiąc z katalogu
+   uploadu PDF (`/uploads/RRRR/MM/`), a dla stron HTML `datePublished`. Dzięki
+   temu wszystkie 110 dokumentów ma realną datę 2026 (a nie datę lastmod strony).
+6. **`stability.py` zakończył się OK** (nie UNKNOWN): 300 MB + 100 MB z innego
+   shardu HPLT, 345 s treningu; pokrycie słownika 89,3%.

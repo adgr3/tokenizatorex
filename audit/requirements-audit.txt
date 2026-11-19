@@ -1,0 +1,11 @@
+regex
+polars
+tiktoken
+tokenizers
+huggingface_hub
+pytest
+numpy
+matplotlib
+requests
+pypdf
+pandas

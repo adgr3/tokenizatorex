@@ -145,6 +145,9 @@ class Encoder:
     def ids(self, text: str) -> list[int]:
         return self.encode(text)
 
+    def decode(self, ids) -> str:
+        return self.encode.decode(ids)
+
 
 class SuperBPEEncoder:
     def __init__(self, tok: SuperBPETokenizer):

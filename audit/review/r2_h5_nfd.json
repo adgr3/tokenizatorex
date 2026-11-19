@@ -1,0 +1,351 @@
+{
+  "definition": "per domain first 25 test docs sorted by id; NFD = unicodedata.normalize('NFD', text) on whole text; increase = sum(variant_tokens)/sum(baseline_tokens) - 1",
+  "per_domain": {
+    "przetargi_ogloszenia": {
+      "docs": 25,
+      "ids": [
+        "bzp-2026/BZP 00000008/01",
+        "bzp-2026/BZP 00000032/01",
+        "bzp-2026/BZP 00000048/01",
+        "bzp-2026/BZP 00000096/01",
+        "bzp-2026/BZP 00000233/01",
+        "bzp-2026/BZP 00000269/01",
+        "bzp-2026/BZP 00000287/01",
+        "bzp-2026/BZP 00000473/01",
+        "bzp-2026/BZP 00000534/01",
+        "bzp-2026/BZP 00000572/01",
+        "bzp-2026/BZP 00000692/01",
+        "bzp-2026/BZP 00000742/01",
+        "bzp-2026/BZP 00000772/01",
+        "bzp-2026/BZP 00000790/01",
+        "bzp-2026/BZP 00000868/01",
+        "bzp-2026/BZP 00000933/01",
+        "bzp-2026/BZP 00000949/01",
+        "bzp-2026/BZP 00000982/01",
+        "bzp-2026/BZP 00001036/01",
+        "bzp-2026/BZP 00001098/01",
+        "bzp-2026/BZP 00001110/01",
+        "bzp-2026/BZP 00001124/01",
+        "bzp-2026/BZP 00001177/01",
+        "bzp-2026/BZP 00001192/01",
+        "bzp-2026/BZP 00001219/01"
+      ],
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "baseline_tokens": 89757,
+          "nfd_tokens": 140149,
+          "relative_increase": 0.561426963913678
+        },
+        "TOKENIZATOREX-HF": {
+          "baseline_tokens": 89576,
+          "nfd_tokens": 139968,
+          "relative_increase": 0.5625614003751005
+        },
+        "Slayer1B": {
+          "baseline_tokens": 116599,
+          "nfd_tokens": 166231,
+          "relative_increase": 0.425664027993379
+        }
+      }
+    },
+    "przetargi_kio": {
+      "docs": 25,
+      "ids": [
+        "kio-36575",
+        "kio-36638",
+        "kio-37069",
+        "kio-37070",
+        "kio-37072",
+        "kio-37073",
+        "kio-37074",
+        "kio-37082",
+        "kio-37085",
+        "kio-37087",
+        "kio-37089",
+        "kio-37090",
+        "kio-37091",
+        "kio-37094",
+        "kio-37095",
+        "kio-37097",
+        "kio-37098",
+        "kio-37101",
+        "kio-37102",
+        "kio-37104",
+        "kio-37105",
+        "kio-37107",
+        "kio-37108",
+        "kio-37109",
+        "kio-37112"
+      ],
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "baseline_tokens": 46892,
+          "nfd_tokens": 77051,
+          "relative_increase": 0.643158747760812
+        },
+        "TOKENIZATOREX-HF": {
+          "baseline_tokens": 46919,
+          "nfd_tokens": 77077,
+          "relative_increase": 0.642767322406701
+        },
+        "Slayer1B": {
+          "baseline_tokens": 57664,
+          "nfd_tokens": 87997,
+          "relative_increase": 0.5260301054384018
+        }
+      }
+    },
+    "samorzad_uchwaly": {
+      "docs": 25,
+      "ids": [
+        "uchwala-POL_WOJ_SL-2026-1003",
+        "uchwala-POL_WOJ_SL-2026-1010",
+        "uchwala-POL_WOJ_SL-2026-1015",
+        "uchwala-POL_WOJ_SL-2026-1052",
+        "uchwala-POL_WOJ_SL-2026-1069",
+        "uchwala-POL_WOJ_SL-2026-1075",
+        "uchwala-POL_WOJ_SL-2026-1109",
+        "uchwala-POL_WOJ_SL-2026-1116",
+        "uchwala-POL_WOJ_SL-2026-1130",
+        "uchwala-POL_WOJ_SL-2026-1158",
+        "uchwala-POL_WOJ_SL-2026-1268",
+        "uchwala-POL_WOJ_SL-2026-1271",
+        "uchwala-POL_WOJ_SL-2026-1338",
+        "uchwala-POL_WOJ_SL-2026-1340",
+        "uchwala-POL_WOJ_SL-2026-1371",
+        "uchwala-POL_WOJ_SL-2026-141",
+        "uchwala-POL_WOJ_SL-2026-1429",
+        "uchwala-POL_WOJ_SL-2026-1437",
+        "uchwala-POL_WOJ_SL-2026-1463",
+        "uchwala-POL_WOJ_SL-2026-1489",
+        "uchwala-POL_WOJ_SL-2026-1514",
+        "uchwala-POL_WOJ_SL-2026-1519",
+        "uchwala-POL_WOJ_SL-2026-1549",
+        "uchwala-POL_WOJ_SL-2026-1573",
+        "uchwala-POL_WOJ_SL-2026-1586"
+      ],
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "baseline_tokens": 11243,
+          "nfd_tokens": 15171,
+          "relative_increase": 0.34937294316463574
+        },
+        "TOKENIZATOREX-HF": {
+          "baseline_tokens": 11208,
+          "nfd_tokens": 15136,
+          "relative_increase": 0.3504639543183441
+        },
+        "Slayer1B": {
+          "baseline_tokens": 14657,
+          "nfd_tokens": 18622,
+          "relative_increase": 0.27051920584021283
+        }
+      }
+    },
+    "granty_ogloszenia": {
+      "docs": 25,
+      "ids": [
+        "grant-023292b34c38",
+        "grant-038a16206005",
+        "grant-05e1eca87651",
+        "grant-0b8afd3c5909",
+        "grant-0dbfe377deff",
+        "grant-12b940f85884",
+        "grant-12ef8acca4ff",
+        "grant-1ee84940c27f",
+        "grant-28d3b714be2e",
+        "grant-29420fc4513f",
+        "grant-2b9f0addb80c",
+        "grant-327d7776a483",
+        "grant-352844234a52",
+        "grant-40aa9101ecec",
+        "grant-42aaf13d7448",
+        "grant-44c5e29ade3f",
+        "grant-45dfeeb94a30",
+        "grant-4b0c98d1136f",
+        "grant-4c137957fa14",
+        "grant-4e7bb2b60c8e",
+        "grant-4ed753d7c0a0",
+        "grant-519394cf1ac1",
+        "grant-521c8e1be80f",
+        "grant-5242299df66c",
+        "grant-5d27a447b6d9"
+      ],
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "baseline_tokens": 70572,
+          "nfd_tokens": 100879,
+          "relative_increase": 0.42944793969279593
+        },
+        "TOKENIZATOREX-HF": {
+          "baseline_tokens": 70283,
+          "nfd_tokens": 100590,
+          "relative_increase": 0.43121380703726353
+        },
+        "Slayer1B": {
+          "baseline_tokens": 81994,
+          "nfd_tokens": 111337,
+          "relative_increase": 0.3578676488523551
+        }
+      }
+    },
+    "prawo_eli": {
+      "docs": 25,
+      "ids": [
+        "eli-DU-2026-1028",
+        "eli-DU-2026-1059",
+        "eli-DU-2026-1064",
+        "eli-DU-2026-1071",
+        "eli-DU-2026-1080",
+        "eli-DU-2026-1085",
+        "eli-DU-2026-1121",
+        "eli-DU-2026-1131",
+        "eli-DU-2026-1161",
+        "eli-DU-2026-1179",
+        "eli-DU-2026-12",
+        "eli-DU-2026-1245",
+        "eli-DU-2026-1248",
+        "eli-DU-2026-1281",
+        "eli-DU-2026-1314",
+        "eli-DU-2026-1316",
+        "eli-DU-2026-1322",
+        "eli-DU-2026-1332",
+        "eli-DU-2026-1353",
+        "eli-DU-2026-1367",
+        "eli-DU-2026-137",
+        "eli-DU-2026-1376",
+        "eli-DU-2026-1387",
+        "eli-DU-2026-1394",
+        "eli-DU-2026-1406"
+      ],
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "baseline_tokens": 62115,
+          "nfd_tokens": 91646,
+          "relative_increase": 0.475424615632295
+        },
+        "TOKENIZATOREX-HF": {
+          "baseline_tokens": 61989,
+          "nfd_tokens": 91520,
+          "relative_increase": 0.47639097259191154
+        },
+        "Slayer1B": {
+          "baseline_tokens": 75318,
+          "nfd_tokens": 104551,
+          "relative_increase": 0.3881276720040363
+        }
+      }
+    },
+    "ocr_prasa": {
+      "docs": 25,
+      "ids": [
+        "polona-MTA4NjU2NTU3",
+        "polona-MTEwNTg0NTI3",
+        "polona-MTEzMDE2NjIx",
+        "polona-MTI1NTI1Mzk4",
+        "polona-MTMxMDUwNzI5",
+        "polona-MTc1MjMzNzk",
+        "polona-MTc3NTc5NTY",
+        "polona-MTc3ODUwMzM",
+        "polona-MjAxMjAzNjk",
+        "polona-MjAxMzE0NDM",
+        "polona-MjE5OTE5OTI",
+        "polona-MjM5NjU3NDg",
+        "polona-MjU1OTIyNjM",
+        "polona-Mjk1ODAwMTM",
+        "polona-MzM4OTA0Mzg",
+        "polona-NDA5NTk0ODI",
+        "polona-NDg0Mjc0OTg",
+        "polona-NTExMjUzMjM",
+        "polona-NTU1MDE1MzU",
+        "polona-NjA5NjI0NA",
+        "polona-NjY5OTIwNTU",
+        "polona-Njg2MDcyNzQ",
+        "polona-NzE4MDcxMjU",
+        "polona-NzEzODMxODE",
+        "polona-NzU4NDAyMDA"
+      ],
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "baseline_tokens": 126425,
+          "nfd_tokens": 169761,
+          "relative_increase": 0.3427803045283766
+        },
+        "TOKENIZATOREX-HF": {
+          "baseline_tokens": 126355,
+          "nfd_tokens": 169692,
+          "relative_increase": 0.3429781172094495
+        },
+        "Slayer1B": {
+          "baseline_tokens": 136938,
+          "nfd_tokens": 179899,
+          "relative_increase": 0.3137259197593072
+        }
+      }
+    },
+    "tabele_json": {
+      "docs": 25,
+      "ids": [
+        "bzp-json-2026/BZP 00000001/01",
+        "bzp-json-2026/BZP 00000006/01",
+        "bzp-json-2026/BZP 00000007/01",
+        "bzp-json-2026/BZP 00000016/01",
+        "bzp-json-2026/BZP 00000017/01",
+        "bzp-json-2026/BZP 00000020/01",
+        "bzp-json-2026/BZP 00000026/01",
+        "bzp-json-2026/BZP 00000038/01",
+        "bzp-json-2026/BZP 00000072/01",
+        "bzp-json-2026/BZP 00000090/01",
+        "bzp-json-2026/BZP 00000105/01",
+        "bzp-json-2026/BZP 00000106/01",
+        "bzp-json-2026/BZP 00000108/01",
+        "bzp-json-2026/BZP 00000122/01",
+        "bzp-json-2026/BZP 00000124/01",
+        "bzp-json-2026/BZP 00000134/01",
+        "bzp-json-2026/BZP 00000142/01",
+        "bzp-json-2026/BZP 00000144/01",
+        "bzp-json-2026/BZP 00000152/01",
+        "bzp-json-2026/BZP 00000154/01",
+        "bzp-json-2026/BZP 00000158/01",
+        "bzp-json-2026/BZP 00000163/01",
+        "bzp-json-2026/BZP 00000168/01",
+        "bzp-json-2026/BZP 00000186/01",
+        "bzp-json-2026/BZP 00000190/01"
+      ],
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "baseline_tokens": 58473,
+          "nfd_tokens": 79583,
+          "relative_increase": 0.36102132608212334
+        },
+        "TOKENIZATOREX-HF": {
+          "baseline_tokens": 58178,
+          "nfd_tokens": 79288,
+          "relative_increase": 0.36285193715837605
+        },
+        "Slayer1B": {
+          "baseline_tokens": 67745,
+          "nfd_tokens": 88838,
+          "relative_increase": 0.3113587718650823
+        }
+      }
+    }
+  },
+  "total": {
+    "TOKENIZATOREX": {
+      "baseline_tokens": 465477,
+      "nfd_tokens": 674240,
+      "relative_increase": 0.448492621547359
+    },
+    "TOKENIZATOREX-HF": {
+      "baseline_tokens": 464508,
+      "nfd_tokens": 673271,
+      "relative_increase": 0.4494282122159361
+    },
+    "Slayer1B": {
+      "baseline_tokens": 550915,
+      "nfd_tokens": 757475,
+      "relative_increase": 0.37493987275714047
+    }
+  }
+}

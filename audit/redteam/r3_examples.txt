@@ -1,0 +1,51 @@
+===== top50_slayer
+polona-MTI1NTI1Mzk4 | ocr_prasa | adv=+0.1478 | words=813 | tokens={'TOKENIZATOREX': 2185, 'Slayer1B': 1862, 'APT3-1B': 2120}
+  | DU COMMUNISME PARIS PROVINCE MAI 1849. PAULIN ET LHEUREUX, F.ÜE DE RICIIEIA CHEZ TOUS LES LIBRAIRES.
+
+grant-1ee84940c27f | granty_ogloszenia | adv=+0.1395 | words=470 | tokens={'TOKENIZATOREX': 925, 'Slayer1B': 796, 'APT3-1B': 972}
+  | Zgłoszenie na konkurs na najlepszą pracę
+  | 1. Niniejszym zgłaszam na konkurs na najlepszą pracę
+  | magisterską/rozprawę doktorską poświęconą
+
+polona-NzU4NDAyMDA | ocr_prasa | adv=+0.0829 | words=2826 | tokens={'TOKENIZATOREX': 9882, 'Slayer1B': 9063, 'APT3-1B': 9658}
+
+polona-ODE2OTAwMTk | ocr_prasa | adv=+0.0744 | words=2903 | tokens={'TOKENIZATOREX': 9835, 'Slayer1B': 9103, 'APT3-1B': 9660}
+
+polona-MTEwNTg0NTI3 | ocr_prasa | adv=+0.0623 | words=2079 | tokens={'TOKENIZATOREX': 7384, 'Slayer1B': 6924, 'APT3-1B': 7018}
+
+polona-Mjk1ODAwMTM | ocr_prasa | adv=+0.0234 | words=3937 | tokens={'TOKENIZATOREX': 13286, 'Slayer1B': 12975, 'APT3-1B': 13519}
+
+grant-d69a94756d1a | granty_ogloszenia | adv=-0.0709 | words=756 | tokens={'TOKENIZATOREX': 1523, 'Slayer1B': 1631, 'APT3-1B': 1493}
+  | oferty Tytuł zadania Oferent NIP Miejscowość Województwo wynik oceny
+  | Niespełnione kryterium formalne nr 3. Weryfikacja porównawcza ofert wykazała wysoki
+  | (pow. 85%) stopień tożsamości treści z treścią innej oferty złożonej
+
+eli-DU-2026-669 | prawo_eli | adv=-0.0791 | words=2702 | tokens={'TOKENIZATOREX': 6375, 'Slayer1B': 6879, 'APT3-1B': 6383}
+  | w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Zdrowia
+  | w sprawie wykazu substancji czynnych wchodzących w skład produktów leczniczych,
+  | które mogą być dopuszczone do obrotu w placówkach obrotu pozaaptecznego oraz punktach aptecznych,
+
+grant-4b0c98d1136f | granty_ogloszenia | adv=-0.0791 | words=2478 | tokens={'TOKENIZATOREX': 5004, 'Slayer1B': 5400, 'APT3-1B': 4970}
+  | Tytuł zadania Oferent NIP Miejscowość Województwo wynik oceny
+  | Mieszkańców (Gdańsk) - zgodnie z regulaminem: nieuprawiony do uczestnictwa w
+  | działalność w miejscowości pow. 100 tys. mieszkańców (Kraków) - zgodnie z
+
+grant-12b940f85884 | granty_ogloszenia | adv=-0.0794 | words=584 | tokens={'TOKENIZATOREX': 1348, 'Slayer1B': 1455, 'APT3-1B': 1321}
+  | Tytuł zadania Oferent NIP Miejscowość Województwo Wynik oceny formalnej
+
+===== top50_apt3
+eli-DU-2026-408 | prawo_eli | adv=-0.1137 | words=296 | tokens={'TOKENIZATOREX': 598, 'Slayer1B': 666, 'APT3-1B': 560}
+  | zmieniające rozporządzenie w sprawie wielokrotności kwoty bazowej, zasad wynagradzania pracowników
+  | regionalnych izb obrachunkowych, wymaganych kwalifikacji oraz zasad ustalania ryczałtu, diet i zwrotu kosztów
+  | podróży pozaetatowych członków kolegiów izb
+
+eli-DU-2026-1367 | prawo_eli | adv=-0.1631 | words=1429 | tokens={'TOKENIZATOREX': 2465, 'Slayer1B': 2867, 'APT3-1B': 2429}
+  | w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Spraw Zagranicznych
+  | 2. Podany w załączniku do niniejszego obwieszczenia tekst jednolity rozporządzenia nie obejmuje § 2 rozporządzenia
+  | konsularnych (Dz. U. poz. 1512), który stanowi:
+
+grant-e25f09f8e98c | granty_ogloszenia | adv=-0.0804 | words=2479 | tokens={'TOKENIZATOREX': 6135, 'Slayer1B': 6628, 'APT3-1B': 6075}
+  | Tytuł zadania Oferent NIP Miejscowość Województwo Wynik oceny formalnej
+  | profesjonalnych kadr sportowych w UKS AP
+  | kompetencji i wolontariatu młodzieżowego
+

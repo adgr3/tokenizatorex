@@ -1,0 +1,83 @@
+{
+  "definition": "tokens / len(text.split()), split == 'test'",
+  "domains": {
+    "przetargi_ogloszenia": {
+      "docs": 60,
+      "words_from_split": 136034,
+      "words_field": 136034,
+      "chars": 1057364,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens": 211560,
+          "fertility": 1.5551994354352587,
+          "bytes_per_token": 5.211604273019474,
+          "chars_per_token": 4.997939118926073
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens": 211179,
+          "fertility": 1.5523986650396224,
+          "bytes_per_token": 5.2210068235951494,
+          "chars_per_token": 5.006956184090274
+        },
+        "Slayer1B": {
+          "tokens": 274390,
+          "fertility": 2.0170692620962405,
+          "bytes_per_token": 4.018247749553555,
+          "chars_per_token": 3.8535077808958054
+        }
+      }
+    },
+    "przetargi_kio": {
+      "docs": 66,
+      "words_from_split": 95409,
+      "words_field": 95409,
+      "chars": 696320,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens": 133826,
+          "fertility": 1.4026559339265687,
+          "bytes_per_token": 5.501397336840375,
+          "chars_per_token": 5.203174271068402
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens": 133881,
+          "fertility": 1.4032323994591704,
+          "bytes_per_token": 5.499137293566675,
+          "chars_per_token": 5.201036741583944
+        },
+        "Slayer1B": {
+          "tokens": 164087,
+          "fertility": 1.7198272699640496,
+          "bytes_per_token": 4.486827110008715,
+          "chars_per_token": 4.243602479172634
+        }
+      }
+    },
+    "granty_ogloszenia": {
+      "docs": 66,
+      "words_from_split": 100550,
+      "words_field": 100550,
+      "chars": 798796,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens": 180076,
+          "fertility": 1.7909099950273495,
+          "bytes_per_token": 4.636581221262134,
+          "chars_per_token": 4.4358826273351255
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens": 179350,
+          "fertility": 1.783689706613625,
+          "bytes_per_token": 4.6553498745469755,
+          "chars_per_token": 4.453838862559242
+        },
+        "Slayer1B": {
+          "tokens": 209503,
+          "fertility": 2.083570363003481,
+          "bytes_per_token": 3.9853224058844026,
+          "chars_per_token": 3.812814136313084
+        }
+      }
+    }
+  }
+}

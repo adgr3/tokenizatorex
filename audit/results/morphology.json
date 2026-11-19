@@ -1,0 +1,445 @@
+{
+  "meta": {
+    "morphscore_commit": "821fabf4692b6376cd9cf446a5e6fada7e61e608",
+    "dataset": "catherinearnett/morphscore polish_data.csv (UD_Polish-PDB)",
+    "items_after_filter": 10916,
+    "seed": 20261119,
+    "note": "MorphScore liczony na izolowanych formach; SuperBPE może dzielić inaczej w kontekście (ograniczenie metody)."
+  },
+  "morphscore": {
+    "TOKENIZATOREX": {
+      "default_paper": {
+        "morphscore_recall": 0.06301886792452831,
+        "morphscore_precision": 0.023283539721603706,
+        "morphscore_recall_std": 1.2309673082939307e-05,
+        "morphscore_precision_std": 5.4771731176643115e-06,
+        "mean_token_char_ratio": 0.34365866184163024,
+        "micro_precision": 0.02559532954370871,
+        "micro_recall": 0.038353515355218935,
+        "micro_f1": 0.030701754385964914,
+        "macro_precision": 0.025611780102798066,
+        "macro_recall": 0.03824658375556579,
+        "macro_f1": 0.030679241798410133,
+        "num_samples": 10855.0
+      },
+      "all_words": {
+        "morphscore_recall": 0.06985159399047271,
+        "morphscore_precision": 0.026033578204703155,
+        "morphscore_recall_std": 0.2545820764973729,
+        "morphscore_precision_std": 0.10864218780457932,
+        "mean_token_char_ratio": 0.3428731044777327,
+        "micro_precision": 0.025547445255474453,
+        "micro_recall": 0.038139279337026696,
+        "micro_f1": 0.030598563740885633,
+        "macro_precision": 0.025468658209588952,
+        "macro_recall": 0.038032856968364476,
+        "macro_f1": 0.030507802283047083,
+        "num_samples": 10916.0
+      }
+    },
+    "TOKENIZATOREX-HF": {
+      "default_paper": {
+        "morphscore_recall": 0.06301886792452831,
+        "morphscore_precision": 0.023283539721603706,
+        "morphscore_recall_std": 1.2309673082939307e-05,
+        "morphscore_precision_std": 5.4771731176643115e-06,
+        "mean_token_char_ratio": 0.34365866184163024,
+        "micro_precision": 0.02559532954370871,
+        "micro_recall": 0.038353515355218935,
+        "micro_f1": 0.030701754385964914,
+        "macro_precision": 0.025611780102798066,
+        "macro_recall": 0.03824658375556579,
+        "macro_f1": 0.030679241798410133,
+        "num_samples": 10855.0
+      },
+      "all_words": {
+        "morphscore_recall": 0.06985159399047271,
+        "morphscore_precision": 0.026033578204703155,
+        "morphscore_recall_std": 0.2545820764973729,
+        "morphscore_precision_std": 0.10864218780457932,
+        "mean_token_char_ratio": 0.3428731044777327,
+        "micro_precision": 0.025547445255474453,
+        "micro_recall": 0.038139279337026696,
+        "micro_f1": 0.030598563740885633,
+        "macro_precision": 0.025468658209588952,
+        "macro_recall": 0.038032856968364476,
+        "macro_f1": 0.030507802283047083,
+        "num_samples": 10916.0
+      }
+    },
+    "TOKENIZATOREX-base": {
+      "default_paper": {
+        "morphscore_recall": 0.06002935583947693,
+        "morphscore_precision": 0.02265518643658551,
+        "morphscore_recall_std": 1.218410595533337e-05,
+        "morphscore_precision_std": 5.4595841297855635e-06,
+        "mean_token_char_ratio": 0.33394397697405587,
+        "micro_precision": 0.025057092108601877,
+        "micro_recall": 0.03645424761201606,
+        "micro_f1": 0.029699806387338105,
+        "macro_precision": 0.024971642243823946,
+        "macro_recall": 0.03634628997014741,
+        "macro_f1": 0.0296039516419963,
+        "num_samples": 10831.0
+      },
+      "all_words": {
+        "morphscore_recall": 0.06710333455478197,
+        "morphscore_precision": 0.027146805039348094,
+        "morphscore_recall_std": 0.24988029516683052,
+        "morphscore_precision_std": 0.11720454272170448,
+        "mean_token_char_ratio": 0.3328544933994535,
+        "micro_precision": 0.02498971941922627,
+        "micro_recall": 0.03617050501350671,
+        "micro_f1": 0.029558124742769486,
+        "macro_precision": 0.024777194681463645,
+        "macro_recall": 0.03606327103945279,
+        "macro_f1": 0.0293734335136004,
+        "num_samples": 10916.0
+      }
+    },
+    "Slayer1B": {
+      "default_paper": {
+        "morphscore_recall": 0.2252064792880466,
+        "morphscore_precision": 0.08180139268717282,
+        "morphscore_recall_std": 2.7456533803229232e-05,
+        "morphscore_precision_std": 1.192715200987779e-05,
+        "mean_token_char_ratio": 0.3618306029560962,
+        "micro_precision": 0.07640992775576788,
+        "micro_recall": 0.12044817927170869,
+        "micro_f1": 0.09350325282951608,
+        "macro_precision": 0.08265912392152744,
+        "macro_recall": 0.12037547470292784,
+        "macro_f1": 0.09801414485997384,
+        "num_samples": 10884.0
+      },
+      "all_words": {
+        "morphscore_recall": 0.21399780139245145,
+        "morphscore_precision": 0.07077640510216546,
+        "morphscore_recall_std": 0.40990184812456704,
+        "morphscore_precision_std": 0.1455495685703329,
+        "mean_token_char_ratio": 0.36148187137879956,
+        "micro_precision": 0.07633876600698486,
+        "micro_recall": 0.1200952337347191,
+        "micro_f1": 0.09334353481254781,
+        "macro_precision": 0.0824168106231133,
+        "macro_recall": 0.12002259679980455,
+        "macro_f1": 0.09772681867496845,
+        "num_samples": 10916.0
+      }
+    },
+    "APT3-1B": {
+      "default_paper": {
+        "morphscore_recall": 0.07015582655826558,
+        "morphscore_precision": 0.030250838817911987,
+        "morphscore_recall_std": 4.9398895873279885e-06,
+        "morphscore_precision_std": 2.362501051402783e-06,
+        "mean_token_char_ratio": 0.28226517161119513,
+        "micro_precision": 0.044530323657283384,
+        "micro_recall": 0.05500108483402039,
+        "micro_f1": 0.04921493920935763,
+        "macro_precision": 0.047840735860269226,
+        "macro_recall": 0.05491047205642973,
+        "macro_f1": 0.05113238944585528,
+        "num_samples": 9215.0
+      },
+      "all_words": {
+        "morphscore_recall": 0.21587577867350677,
+        "morphscore_precision": 0.1801409900713675,
+        "morphscore_recall_std": 0.41128933373696114,
+        "morphscore_precision_std": 0.3658609199869504,
+        "mean_token_char_ratio": 0.25984803240417675,
+        "micro_precision": 0.04143510951291272,
+        "micro_recall": 0.0464264456755643,
+        "micro_f1": 0.04378900092846501,
+        "macro_precision": 0.04038589052330349,
+        "macro_recall": 0.046353975815316965,
+        "macro_f1": 0.04316461787683733,
+        "num_samples": 10916.0
+      }
+    },
+    "Pollock-2.0": {
+      "default_paper": {
+        "morphscore_recall": 0.06476015412351091,
+        "morphscore_precision": 0.025822505466536715,
+        "morphscore_recall_std": 1.212726340784605e-05,
+        "morphscore_precision_std": 5.711753917000118e-06,
+        "mean_token_char_ratio": 0.31988618621816783,
+        "micro_precision": 0.028429995317412537,
+        "micro_recall": 0.03948896631823461,
+        "micro_f1": 0.03305913696205978,
+        "macro_precision": 0.02982055436043166,
+        "macro_recall": 0.03935056082295346,
+        "macro_f1": 0.03392906229784827,
+        "num_samples": 10758.0
+      },
+      "all_words": {
+        "morphscore_recall": 0.07809637229754489,
+        "morphscore_precision": 0.036520659931249894,
+        "morphscore_recall_std": 0.2679388166612508,
+        "morphscore_precision_std": 0.14592497490175246,
+        "mean_token_char_ratio": 0.31788957763170356,
+        "micro_precision": 0.02828054298642534,
+        "micro_recall": 0.03891763197655785,
+        "micro_f1": 0.03275719213056631,
+        "macro_precision": 0.029388926695632447,
+        "macro_recall": 0.0387809942591914,
+        "macro_f1": 0.03343796740566615,
+        "num_samples": 10916.0
+      }
+    },
+    "Bielik-v3": {
+      "default_paper": {
+        "morphscore_recall": 0.39533700181303477,
+        "morphscore_precision": 0.1347981503107302,
+        "morphscore_recall_std": 3.8001865885854375e-05,
+        "morphscore_precision_std": 1.6941253202770334e-05,
+        "mean_token_char_ratio": 0.43138774115924433,
+        "micro_precision": 0.11223317698860917,
+        "micro_recall": 0.2149896859958744,
+        "micro_f1": 0.14747732025218938,
+        "macro_precision": 0.14099505160222395,
+        "macro_recall": 0.21494084197009997,
+        "macro_f1": 0.1702868165435066,
+        "num_samples": 10903.0
+      },
+      "all_words": {
+        "morphscore_recall": 0.37426713081714913,
+        "morphscore_precision": 0.1139879861801811,
+        "morphscore_recall_std": 0.483720090702641,
+        "morphscore_precision_std": 0.16100329856557202,
+        "mean_token_char_ratio": 0.4311934631226222,
+        "micro_precision": 0.11219827276859405,
+        "micro_recall": 0.21473375761183097,
+        "micro_f1": 0.14738694572766414,
+        "macro_precision": 0.14082713884381162,
+        "macro_recall": 0.21468486625137412,
+        "macro_f1": 0.1700840198583595,
+        "num_samples": 10916.0
+      }
+    },
+    "PLLuM-12B": {
+      "default_paper": {
+        "morphscore_recall": 0.29801240663375106,
+        "morphscore_precision": 0.1054994529144738,
+        "morphscore_recall_std": 3.1279822018238075e-05,
+        "morphscore_precision_std": 1.3302793719041888e-05,
+        "mean_token_char_ratio": 0.3898478726965138,
+        "micro_precision": 0.10155501118329961,
+        "micro_recall": 0.17497820801027664,
+        "micro_f1": 0.1285191986925682,
+        "macro_precision": 0.11920661875912471,
+        "macro_recall": 0.1749127960345144,
+        "macro_f1": 0.1417843361860914,
+        "num_samples": 10894.0
+      },
+      "all_words": {
+        "morphscore_recall": 0.3038200806156101,
+        "morphscore_precision": 0.09792997173218866,
+        "morphscore_recall_std": 0.4596817592342091,
+        "morphscore_precision_std": 0.15910018387837238,
+        "mean_token_char_ratio": 0.38965916011565477,
+        "micro_precision": 0.1014955559103731,
+        "micro_recall": 0.1746257039512843,
+        "micro_f1": 0.12837644524478703,
+        "macro_precision": 0.1189663709016036,
+        "macro_recall": 0.1745602784902895,
+        "macro_f1": 0.1414985854169366,
+        "num_samples": 10916.0
+      }
+    },
+    "GPT-4o": {
+      "default_paper": {
+        "morphscore_recall": 0.26842712472759905,
+        "morphscore_precision": 0.09757349485108746,
+        "morphscore_recall_std": 2.67054285485284e-05,
+        "morphscore_precision_std": 1.1577472868944e-05,
+        "mean_token_char_ratio": 0.384726635271215,
+        "micro_precision": 0.09714423877710018,
+        "micro_recall": 0.16604674656747945,
+        "micro_f1": 0.12257627118644068,
+        "macro_precision": 0.11834037731226263,
+        "macro_recall": 0.16597758177140756,
+        "macro_f1": 0.13816819532265295,
+        "num_samples": 10884.0
+      },
+      "all_words": {
+        "morphscore_recall": 0.27798644192011723,
+        "morphscore_precision": 0.09351716135336509,
+        "morphscore_recall_std": 0.44777657438842616,
+        "morphscore_precision_std": 0.16291456545224417,
+        "mean_token_char_ratio": 0.3844110814362927,
+        "micro_precision": 0.0970607972084284,
+        "micro_recall": 0.1655601849732155,
+        "micro_f1": 0.12237714904562068,
+        "macro_precision": 0.11799346524978624,
+        "macro_recall": 0.16549102235251006,
+        "macro_f1": 0.1377631584730446,
+        "num_samples": 10916.0
+      }
+    }
+  },
+  "core_consistency": {
+    "TOKENIZATOREX": {
+      "rzeczowniki": {
+        "lemmas": 200,
+        "forms": 997,
+        "share_same_first_token": 0.9097291875626881
+      },
+      "czasowniki": {
+        "lemmas": 2,
+        "forms": 2,
+        "share_same_first_token": 1.0
+      },
+      "przymiotniki": {
+        "lemmas": 200,
+        "forms": 667,
+        "share_same_first_token": 0.9685157421289355
+      },
+      "overall": 0.9333733493397359
+    },
+    "TOKENIZATOREX-HF": {
+      "rzeczowniki": {
+        "lemmas": 200,
+        "forms": 997,
+        "share_same_first_token": 0.9097291875626881
+      },
+      "czasowniki": {
+        "lemmas": 2,
+        "forms": 2,
+        "share_same_first_token": 1.0
+      },
+      "przymiotniki": {
+        "lemmas": 200,
+        "forms": 667,
+        "share_same_first_token": 0.9685157421289355
+      },
+      "overall": 0.9333733493397359
+    },
+    "TOKENIZATOREX-base": {
+      "rzeczowniki": {
+        "lemmas": 200,
+        "forms": 997,
+        "share_same_first_token": 0.8956870611835507
+      },
+      "czasowniki": {
+        "lemmas": 2,
+        "forms": 2,
+        "share_same_first_token": 1.0
+      },
+      "przymiotniki": {
+        "lemmas": 200,
+        "forms": 667,
+        "share_same_first_token": 0.952023988005997
+      },
+      "overall": 0.9183673469387755
+    },
+    "Slayer1B": {
+      "rzeczowniki": {
+        "lemmas": 200,
+        "forms": 997,
+        "share_same_first_token": 0.8976930792377131
+      },
+      "czasowniki": {
+        "lemmas": 2,
+        "forms": 2,
+        "share_same_first_token": 1.0
+      },
+      "przymiotniki": {
+        "lemmas": 200,
+        "forms": 667,
+        "share_same_first_token": 0.967016491754123
+      },
+      "overall": 0.9255702280912365
+    },
+    "APT3-1B": {
+      "rzeczowniki": {
+        "lemmas": 200,
+        "forms": 997,
+        "share_same_first_token": 0.32196589769307926
+      },
+      "czasowniki": {
+        "lemmas": 2,
+        "forms": 2,
+        "share_same_first_token": 1.0
+      },
+      "przymiotniki": {
+        "lemmas": 200,
+        "forms": 667,
+        "share_same_first_token": 0.49325337331334335
+      },
+      "overall": 0.39135654261704683
+    },
+    "Pollock-2.0": {
+      "rzeczowniki": {
+        "lemmas": 200,
+        "forms": 997,
+        "share_same_first_token": 0.8094282848545636
+      },
+      "czasowniki": {
+        "lemmas": 2,
+        "forms": 2,
+        "share_same_first_token": 1.0
+      },
+      "przymiotniki": {
+        "lemmas": 200,
+        "forms": 667,
+        "share_same_first_token": 0.9280359820089955
+      },
+      "overall": 0.8571428571428571
+    },
+    "Bielik-v3": {
+      "rzeczowniki": {
+        "lemmas": 200,
+        "forms": 997,
+        "share_same_first_token": 0.9568706118355065
+      },
+      "czasowniki": {
+        "lemmas": 2,
+        "forms": 2,
+        "share_same_first_token": 1.0
+      },
+      "przymiotniki": {
+        "lemmas": 200,
+        "forms": 667,
+        "share_same_first_token": 0.9850074962518741
+      },
+      "overall": 0.968187274909964
+    },
+    "PLLuM-12B": {
+      "rzeczowniki": {
+        "lemmas": 200,
+        "forms": 997,
+        "share_same_first_token": 0.9167502507522568
+      },
+      "czasowniki": {
+        "lemmas": 2,
+        "forms": 2,
+        "share_same_first_token": 1.0
+      },
+      "przymiotniki": {
+        "lemmas": 200,
+        "forms": 667,
+        "share_same_first_token": 0.9820089955022488
+      },
+      "overall": 0.9429771908763506
+    },
+    "GPT-4o": {
+      "rzeczowniki": {
+        "lemmas": 200,
+        "forms": 997,
+        "share_same_first_token": 0.872617853560682
+      },
+      "czasowniki": {
+        "lemmas": 2,
+        "forms": 2,
+        "share_same_first_token": 1.0
+      },
+      "przymiotniki": {
+        "lemmas": 200,
+        "forms": 667,
+        "share_same_first_token": 0.9805097451274363
+      },
+      "overall": 0.9159663865546218
+    }
+  }
+}

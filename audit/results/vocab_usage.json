@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "split": "test",
+    "domains": [
+      "przetargi_ogloszenia",
+      "przetargi_kio",
+      "samorzad_uchwaly",
+      "granty_ogloszenia",
+      "prawo_eli",
+      "ocr_prasa",
+      "tabele_json",
+      "web",
+      "wikipedia",
+      "literatura",
+      "prawo",
+      "sejm",
+      "nauka",
+      "dyskusje",
+      "angielski"
+    ],
+    "alpha": 2.5,
+    "dead_definition": "0 użyć na całym korpusie testowym",
+    "rare_definition": "< 5 użyć"
+  },
+  "tokenizers": {
+    "TOKENIZATOREX": {
+      "vocab": 32000,
+      "tokens": 3245161,
+      "used_types": 31429,
+      "dead_types": 571,
+      "dead_share": 0.01784375,
+      "rare_types_lt5": 2756,
+      "rare_share": 0.086125,
+      "top10_token_share": 0.09825891535119521,
+      "top100_token_share": 0.2370252200121966,
+      "top1000_token_share": 0.5204881976579898,
+      "renyi": {
+        "H_alpha": 5.4703893892274404,
+        "effective_vocab": 237.5526752068394,
+        "renyi_efficiency": 0.007423521100213731
+      },
+      "zipf_slope": -1.321212546824086
+    },
+    "TOKENIZATOREX-HF": {
+      "vocab": 32000,
+      "tokens": 3240703,
+      "used_types": 31416,
+      "dead_types": 584,
+      "dead_share": 0.01825,
+      "rare_types_lt5": 2753,
+      "rare_share": 0.08603125,
+      "top10_token_share": 0.09874678426255044,
+      "top100_token_share": 0.2346740815187322,
+      "top1000_token_share": 0.5194909869864656,
+      "renyi": {
+        "H_alpha": 5.467497149646867,
+        "effective_vocab": 236.8666085699246,
+        "renyi_efficiency": 0.007402081517810144
+      },
+      "zipf_slope": -1.3218539730598085
+    },
+    "TOKENIZATOREX-base": {
+      "vocab": 32000,
+      "tokens": 3661008,
+      "used_types": 31298,
+      "dead_types": 702,
+      "dead_share": 0.0219375,
+      "rare_types_lt5": 3699,
+      "rare_share": 0.11559375,
+      "top10_token_share": 0.19481874937175772,
+      "top100_token_share": 0.3803187537421388,
+      "top1000_token_share": 0.6327475930126347,
+      "renyi": {
+        "H_alpha": 4.6177245621445415,
+        "effective_vocab": 101.26335131619395,
+        "renyi_efficiency": 0.003164479728631061
+      },
+      "zipf_slope": -1.3783088094549816
+    },
+    "Slayer1B": {
+      "vocab": 32768,
+      "tokens": 3673931,
+      "used_types": 29861,
+      "dead_types": 2907,
+      "dead_share": 0.088714599609375,
+      "rare_types_lt5": 5525,
+      "rare_share": 0.168609619140625,
+      "top10_token_share": 0.18196803369469922,
+      "top100_token_share": 0.34402333631197757,
+      "top1000_token_share": 0.623781448263454,
+      "renyi": {
+        "H_alpha": 4.4802086722584,
+        "effective_vocab": 88.25308672525175,
+        "renyi_efficiency": 0.0026932704689102706
+      },
+      "zipf_slope": -1.526382622341253
+    },
+    "APT3-1B": {
+      "vocab": 31980,
+      "tokens": 3425031,
+      "used_types": 31137,
+      "dead_types": 843,
+      "dead_share": 0.026360225140712946,
+      "rare_types_lt5": 2682,
+      "rare_share": 0.08386491557223265,
+      "top10_token_share": 0.11842170187656696,
+      "top100_token_share": 0.284789831099339,
+      "top1000_token_share": 0.5705323543056983,
+      "renyi": {
+        "H_alpha": 5.503763591172158,
+        "effective_vocab": 245.61458782045298,
+        "renyi_efficiency": 0.007680256029407535
+      },
+      "zipf_slope": -1.337119397221008
+    },
+    "Pollock-2.0": {
+      "vocab": 49152,
+      "tokens": 3381145,
+      "used_types": 44556,
+      "dead_types": 4596,
+      "dead_share": 0.093505859375,
+      "rare_types_lt5": 8178,
+      "rare_share": 0.1663818359375,
+      "top10_token_share": 0.19803557670552432,
+      "top100_token_share": 0.35736828796162246,
+      "top1000_token_share": 0.5976975255423829,
+      "renyi": {
+        "H_alpha": 4.34350375073736,
+        "effective_vocab": 76.9767748274011,
+        "renyi_efficiency": 0.0015660964930704977
+      },
+      "zipf_slope": -1.3436187369160748
+    },
+    "Bielik-v3": {
+      "vocab": 32128,
+      "tokens": 5892559,
+      "used_types": 19782,
+      "dead_types": 12346,
+      "dead_share": 0.3842753984063745,
+      "rare_types_lt5": 8476,
+      "rare_share": 0.26381972111553786,
+      "top10_token_share": 0.1713136856160456,
+      "top100_token_share": 0.47877365334823124,
+      "top1000_token_share": 0.9033934153226129,
+      "renyi": {
+        "H_alpha": 4.9420606531311275,
+        "effective_vocab": 140.05856451893624,
+        "renyi_efficiency": 0.004359392570933025
+      },
+      "zipf_slope": -1.9971974523054778
+    },
+    "PLLuM-12B": {
+      "vocab": 131072,
+      "tokens": 4706215,
+      "used_types": 35977,
+      "dead_types": 95095,
+      "dead_share": 0.7255172729492188,
+      "rare_types_lt5": 19644,
+      "rare_share": 0.149871826171875,
+      "top10_token_share": 0.15764855621768237,
+      "top100_token_share": 0.3928694290422346,
+      "top1000_token_share": 0.7553923907003823,
+      "renyi": {
+        "H_alpha": 5.158323243973754,
+        "effective_vocab": 173.8726690004544,
+        "renyi_efficiency": 0.0013265431900059083
+      },
+      "zipf_slope": -1.8964724461214624
+    },
+    "GPT-4o": {
+      "vocab": 200019,
+      "tokens": 4531987,
+      "used_types": 42223,
+      "dead_types": 157796,
+      "dead_share": 0.7889050540198681,
+      "rare_types_lt5": 23722,
+      "rare_share": 0.11859873312035357,
+      "top10_token_share": 0.13618551862571537,
+      "top100_token_share": 0.34839508586410334,
+      "top1000_token_share": 0.7254842081409324,
+      "renyi": {
+        "H_alpha": 5.255665882396189,
+        "effective_vocab": 191.64905910997814,
+        "renyi_efficiency": 0.0009581542708941558
+      },
+      "zipf_slope": -1.8421154803996054
+    }
+  }
+}
