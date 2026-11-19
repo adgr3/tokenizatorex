@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Instalacja zależności
-        run: pip install regex pytest tokenizers
+        run: pip install regex pytest tokenizers numpy
       - name: Testy
         run: python -m pytest -q
       - name: Wytrenowane tokenizery ładują się i są bezstratne
