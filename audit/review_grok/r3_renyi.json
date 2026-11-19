@@ -1,0 +1,145 @@
+{
+  "alpha": 2.5,
+  "tokenizers": {
+    "TOKENIZATOREX": {
+      "H_alpha": 5.4703893892274404,
+      "log_base": "natural (ln); stosunek H/log|V| nie zależy od podstawy",
+      "vocab": 32000,
+      "used_types": 31429,
+      "eff_zouhar_H_over_logV": 0.5273431377504469,
+      "audit_expH_over_V": 0.007423521100213731,
+      "identity": "exp(H)/|V| = |V|^(eff-1), więc to nie jest Eff_α",
+      "tokens": 3245161,
+      "dead": 571
+    },
+    "TOKENIZATOREX-HF": {
+      "H_alpha": 5.467497149646867,
+      "log_base": "natural (ln); stosunek H/log|V| nie zależy od podstawy",
+      "vocab": 32000,
+      "used_types": 31416,
+      "eff_zouhar_H_over_logV": 0.5270643271234469,
+      "audit_expH_over_V": 0.007402081517810144,
+      "identity": "exp(H)/|V| = |V|^(eff-1), więc to nie jest Eff_α",
+      "tokens": 3240703,
+      "dead": 584
+    },
+    "TOKENIZATOREX-base": {
+      "H_alpha": 4.6177245621445415,
+      "log_base": "natural (ln); stosunek H/log|V| nie zależy od podstawy",
+      "vocab": 32000,
+      "used_types": 31298,
+      "eff_zouhar_H_over_logV": 0.4451466224075346,
+      "audit_expH_over_V": 0.003164479728631061,
+      "identity": "exp(H)/|V| = |V|^(eff-1), więc to nie jest Eff_α",
+      "tokens": 3661008,
+      "dead": 702
+    },
+    "Slayer1B": {
+      "H_alpha": 4.4802086722584,
+      "log_base": "natural (ln); stosunek H/log|V| nie zależy od podstawy",
+      "vocab": 32768,
+      "used_types": 29861,
+      "eff_zouhar_H_over_logV": 0.43090498890766143,
+      "audit_expH_over_V": 0.0026932704689102706,
+      "identity": "exp(H)/|V| = |V|^(eff-1), więc to nie jest Eff_α",
+      "tokens": 3673931,
+      "dead": 2907
+    },
+    "APT3-1B": {
+      "H_alpha": 5.503763591172158,
+      "log_base": "natural (ln); stosunek H/log|V| nie zależy od podstawy",
+      "vocab": 31980,
+      "used_types": 31137,
+      "eff_zouhar_H_over_logV": 0.5305923742189103,
+      "audit_expH_over_V": 0.007680256029407535,
+      "identity": "exp(H)/|V| = |V|^(eff-1), więc to nie jest Eff_α",
+      "tokens": 3425031,
+      "dead": 843
+    },
+    "Pollock-2.0": {
+      "H_alpha": 4.34350375073736,
+      "log_base": "natural (ln); stosunek H/log|V| nie zależy od podstawy",
+      "vocab": 49152,
+      "used_types": 44556,
+      "eff_zouhar_H_over_logV": 0.40207676604813397,
+      "audit_expH_over_V": 0.0015660964930704977,
+      "identity": "exp(H)/|V| = |V|^(eff-1), więc to nie jest Eff_α",
+      "tokens": 3381145,
+      "dead": 4596
+    },
+    "Bielik-v3": {
+      "H_alpha": 4.9420606531311275,
+      "log_base": "natural (ln); stosunek H/log|V| nie zależy od podstawy",
+      "vocab": 32128,
+      "used_types": 19782,
+      "eff_zouhar_H_over_logV": 0.47622921246241684,
+      "audit_expH_over_V": 0.004359392570933025,
+      "identity": "exp(H)/|V| = |V|^(eff-1), więc to nie jest Eff_α",
+      "tokens": 5892559,
+      "dead": 12346
+    },
+    "PLLuM-12B": {
+      "H_alpha": 5.158323243973754,
+      "log_base": "natural (ln); stosunek H/log|V| nie zależy od podstawy",
+      "vocab": 131072,
+      "used_types": 35977,
+      "eff_zouhar_H_over_logV": 0.43775808019901213,
+      "audit_expH_over_V": 0.0013265431900059083,
+      "identity": "exp(H)/|V| = |V|^(eff-1), więc to nie jest Eff_α",
+      "tokens": 4706215,
+      "dead": 95095
+    },
+    "GPT-4o": {
+      "H_alpha": 5.255665882396189,
+      "log_base": "natural (ln); stosunek H/log|V| nie zależy od podstawy",
+      "vocab": 200019,
+      "used_types": 42223,
+      "eff_zouhar_H_over_logV": 0.4305746108823622,
+      "audit_expH_over_V": 0.0009581542708941558,
+      "identity": "exp(H)/|V| = |V|^(eff-1), więc to nie jest Eff_α",
+      "tokens": 4531987,
+      "dead": 157796
+    }
+  },
+  "rank_audit_desc": [
+    "APT3-1B",
+    "TOKENIZATOREX",
+    "TOKENIZATOREX-HF",
+    "Bielik-v3",
+    "TOKENIZATOREX-base",
+    "Slayer1B",
+    "Pollock-2.0",
+    "PLLuM-12B",
+    "GPT-4o"
+  ],
+  "rank_zouhar_desc": [
+    "APT3-1B",
+    "TOKENIZATOREX",
+    "TOKENIZATOREX-HF",
+    "Bielik-v3",
+    "TOKENIZATOREX-base",
+    "PLLuM-12B",
+    "Slayer1B",
+    "GPT-4o",
+    "Pollock-2.0"
+  ],
+  "rank_changed": true,
+  "docs": 2752,
+  "domains": [
+    "przetargi_ogloszenia",
+    "przetargi_kio",
+    "samorzad_uchwaly",
+    "granty_ogloszenia",
+    "prawo_eli",
+    "ocr_prasa",
+    "tabele_json",
+    "web",
+    "wikipedia",
+    "literatura",
+    "prawo",
+    "sejm",
+    "nauka",
+    "dyskusje",
+    "angielski"
+  ]
+}
