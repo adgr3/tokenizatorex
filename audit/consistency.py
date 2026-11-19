@@ -19,6 +19,7 @@ from notation_patterns import ABBREVIATIONS, CODE_CATEGORIES, PATTERNS, extract
 DOMAINS = ["przetargi_ogloszenia", "przetargi_kio", "samorzad_uchwaly",
            "granty_ogloszenia", "prawo_eli", "ocr_prasa", "tabele_json", "web"]
 MAX_STRINGS = 150
+SENSITIVE = {"nip", "email", "url"}
 
 
 def contexts(s: str) -> dict[str, str]:
@@ -121,7 +122,7 @@ def analyse(encoders, samples: dict[str, list[str]], ctx_fn) -> dict:
                 diff += d
                 if len(c) > 1:
                     varying_strings += 1
-                    if len(examples) < 3:
+                    if len(examples) < 3 and cat not in SENSITIVE:
                         alt = {k: {"signature": list(v),
                                    "tokens": _tokens_for(enc, ctx_fn(s)[k], s)}
                                for k, v in sigs.items() if v != best}

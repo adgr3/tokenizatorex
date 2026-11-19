@@ -1033,11 +1033,11 @@
         "web": 3
       },
       "examples": [
-        "22wog.zamowienia@ron.mil.pl",
-        "CWK@platformazakupowa.pl",
-        "FIO@niw.gov.pl",
-        "FM@niw.gov.pl",
-        "MASAD@ZOZSUCHABESKIDZKA.PL"
+        "przyklad@example.org",
+        "przyklad@example.org",
+        "przyklad@example.org",
+        "przyklad@example.org",
+        "przyklad@example.org"
       ],
       "chars_mean": 21.8450184501845,
       "tokenizers": {
@@ -1142,11 +1142,11 @@
         "web": 34
       },
       "examples": [
-        "http://24-gry.pl/test.html",
-        "http://24-gry.pl/test2.html",
-        "http://34.209.174.197",
-        "http://45.226.103.129",
-        "http://antybohater.wordpress.com/2011/03/23/zagubiona-na-ug/"
+        "https://example.org/sciezka",
+        "https://example.org/sciezka",
+        "https://example.org/sciezka",
+        "https://example.org/sciezka",
+        "https://example.org/sciezka"
       ],
       "chars_mean": 51.785894206549116,
       "tokenizers": {
@@ -1702,11 +1702,11 @@
         "tabele_json": 14
       },
       "examples": [
-        "NIP 547-004-91-18",
-        "NIP 5482362660",
-        "NIP 5871707828",
-        "NIP 6381515306",
-        "NIP 812-172-60-71"
+        "NIP 123-456-32-18",
+        "NIP 123-456-32-18",
+        "NIP 123-456-32-18",
+        "NIP 123-456-32-18",
+        "NIP 123-456-32-18"
       ],
       "chars_mean": 15.10344827586207,
       "tokenizers": {

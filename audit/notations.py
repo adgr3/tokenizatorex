@@ -18,6 +18,18 @@ from common import (BOOTSTRAP_N, RESULTS_DIR, SEED, build_encoders, load_domain,
                     write_json)
 from notation_patterns import COMPILED, PATTERNS, extract
 
+SENSITIVE_EXAMPLES = {"nip", "email", "url"}
+
+
+def safe_example(cat: str, value: str) -> str:
+    if cat == "nip":
+        return "NIP 123-456-32-18"
+    if cat == "email":
+        return "przyklad@example.org"
+    if cat == "url":
+        return "https://example.org/sciezka"
+    return value
+
 DOMAINS = ["przetargi_ogloszenia", "przetargi_kio", "samorzad_uchwaly",
            "granty_ogloszenia", "prawo_eli", "ocr_prasa", "tabele_json",
            "web", "prawo"]
@@ -58,7 +70,7 @@ def main() -> None:
             continue
         arr = np.array([len(x) for x in items])
         row = {"count": len(items), "by_domain": dict(occ_dom[cat]),
-               "examples": sorted(set(items))[:5],
+               "examples": [safe_example(cat, x) for x in sorted(set(items))[:5]],
                "chars_mean": float(arr.mean()), "tokenizers": {}}
         for label, enc in encoders.items():
             tok = np.array([len(enc.ids(x)) for x in items], dtype=float)
