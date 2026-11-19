@@ -139,8 +139,9 @@ def chart_parity():
     ax.set_xticklabels([LABELS.get(x, x) for x in doms], fontsize=8.5)
     ax.set_ylim(90, 100)
     ax.set_ylabel("% fragmentów z identyczną segmentacją")
-    head(fig, "Eksport HF nie jest 1:1: 97,3% na dziedzinach urzędowych vs 99,4% na web",
-         "Miara: odsetek fragmentów (CHUNK_PATTERN) o identycznych tokenach "
+    head(fig, "Eksport HF nie jest 1:1 w segmentacji: 97,3% ID na urzędowych vs 99,4% na web;\n"
+              "po zdekodowaniu 100% tekstu jest identyczne",
+         "Miara: odsetek fragmentów (CHUNK_PATTERN) o identycznych tokenach (ID) "
          "w superbpe.py i eksporcie HF; niebieski = dziedzina urzędowa")
     ax.grid(axis="y", alpha=0.25)
     fig.tight_layout(rect=(0, 0.05, 1, 0.86))
@@ -153,19 +154,27 @@ def chart_parity():
 def chart_vocab():
     d = j("vocab_usage.json")
     labs = list(d["tokenizers"])
-    vals = [d["tokenizers"][l]["renyi"]["renyi_efficiency"] * 1000 for l in labs]
-    fig, ax = plt.subplots(figsize=(11, 5.2))
-    ax.bar(range(len(labs)), vals, color=[COLS.get(l, "#999") for l in labs])
-    ax.set_xticks(range(len(labs)))
-    ax.set_xticklabels(labs, rotation=25, ha="right", fontsize=8.5)
-    ax.set_ylabel("Rényi efficiency ×1000 (α = 2,5)")
-    head(fig, "Słownik TOKENIZATOREX jest w pełni wykorzystany: Rényi 7,4‰,\n"
-              "wyżej niż Slayer1B 2,7‰ i Pollock 1,6‰",
-         "Miara: exp(H_α)/|V|, α = 2,5, częstości tokenów na korpusie testowym; "
-         "wyżej = lepsze wykorzystanie słownika")
-    ax.grid(axis="y", alpha=0.25)
+    hlog = [d["tokenizers"][l]["renyi"]["H_over_logV"] for l in labs]
+    expv = [d["tokenizers"][l]["renyi"]["exp_H_over_V"] * 1000 for l in labs]
+    cols = [COLS.get(l, "#999") for l in labs]
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5.6))
+    for ax, vals, title in ((axes[0], hlog, "H_α / ln|V| (Zouhar i in. 2023)"),
+                            (axes[1], expv, "exp(H_α)/|V| ×1000 (forma audytu)")):
+        ax.bar(range(len(labs)), vals, color=cols)
+        ax.set_xticks(range(len(labs)))
+        ax.set_xticklabels(labs, rotation=30, ha="right", fontsize=8)
+        ax.set_title(title, fontsize=10)
+        ax.grid(axis="y", alpha=0.25)
+        for i, v in enumerate(vals):
+            ax.text(i, v, f"{v:.4f}" if vals is hlog else f"{v:.2f}",
+                    ha="center", va="bottom", fontsize=7)
+    head(fig, "Rényi jest miarą opisową: APT3 wygrywa obie formy (0,531 i 0,00768),\n"
+              "TOKENIZATOREX ma 0,527 i 0,00742",
+         "Miara: α = 2,5, częstości tokenów na korpusie testowym; lewy panel H_α/ln|V|, "
+         "prawy exp(H_α)/|V|. Rényi nie przewiduje jakości modelu (Cognetta i in. 2024).")
     fig.tight_layout(rect=(0, 0.05, 1, 0.86))
-    footer(fig, "Dane: audit/results/vocab_usage.json · test · tokeny specjalne pominięte")
+    footer(fig, "Dane: audit/results/vocab_usage.json · test · tokeny specjalne pominięte · "
+                "APT3 wygrywa także przy drugiej formie")
     fig.savefig(os.path.join(FIG, "05_renyi.png"), dpi=150)
     plt.close(fig)
 

@@ -25,7 +25,10 @@ def renyi_eff(counts: np.ndarray, vocab_size: int) -> dict:
     total = counts.sum()
     p = counts / total
     h = (1.0 / (1.0 - ALPHA)) * np.log(np.sum(p ** ALPHA))
-    return {"H_alpha": float(h), "effective_vocab": float(np.exp(h)),
+    return {"H_alpha": float(h),
+            "effective_vocab": float(np.exp(h)),
+            "exp_H_over_V": float(np.exp(h) / vocab_size),
+            "H_over_logV": float(h / np.log(vocab_size)),
             "renyi_efficiency": float(np.exp(h) / vocab_size)}
 
 
@@ -62,23 +65,27 @@ def main() -> None:
         row["zipf_slope"] = float(np.polyfit(np.log(ranks[mask]), np.log(sorted_counts[mask]), 1)[0])
         out["tokenizers"][label] = row
         print(f"{label:<20} vocab {vocab_size:>7,} used {used:>6,} dead {dead:>6,} "
-              f"({dead/vocab_size:.1%})  Rényi {row['renyi']['renyi_efficiency']:.4f}")
+              f"({dead/vocab_size:.1%})  Rényi H/lnV {row['renyi']['H_over_logV']:.4f} "
+              f"exp/V {row['renyi']['exp_H_over_V']:.5f}")
     write_json(os.path.join(RESULTS_DIR, "vocab_usage.json"), out)
     write_md(out)
 
 
 def write_md(out: dict) -> None:
     lines = ["# Użycie słownika (test)", "",
-             "| tokenizer | słownik | użyte typy | martwe | <5 użyć | Rényi eff. α=2,5 | top-1000 share | Zipf slope |",
-             "|---|---:|---:|---:|---:|---:|---:|---:|"]
+             "| tokenizer | słownik | użyte typy | martwe | <5 użyć | Rényi H/ln(V) (Zouhar) | exp(H)/V | top-1000 share | Zipf slope |",
+             "|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
     for l, r in out["tokenizers"].items():
         lines.append(f"| {l} | {r['vocab']:,} | {r['used_types']:,} | "
                      f"{r['dead_types']:,} ({r['dead_share']:.1%}) | "
                      f"{r['rare_types_lt5']:,} ({r['rare_share']:.1%}) | "
-                     f"{r['renyi']['renyi_efficiency']:.4f} | "
+                     f"{r['renyi']['H_over_logV']:.4f} | "
+                     f"{r['renyi']['exp_H_over_V']:.5f} | "
                      f"{r['top1000_token_share']:.1%} | {r['zipf_slope']:.2f} |")
-    lines += ["", "Rényi: `exp(H_α)/|V|`, α = 2,5, częstości z korpusu testowego.",
-              "Tokeny specjalne nie są liczone (brak użyć)."]
+    lines += ["", "Rényi: α = 2,5, częstości z korpusu testowego; podane **obie** formy:",
+              "`H_α / ln|V|` (Zouhar i in. 2023) oraz `exp(H_α)/|V|` (forma audytu).",
+              "Tokeny specjalne nie są liczone (brak użyć). Rényi jest miarą opisową;",
+              "Cognetta i in. (2024) pokazują, że nie przewiduje jakości modelu."]
     path = os.path.join(RESULTS_DIR, "vocab_usage.md")
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(lines) + "\n")
