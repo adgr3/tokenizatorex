@@ -10,7 +10,7 @@ import sys
 import numpy as np
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from common import (BOOTSTRAP_N, RESULTS_DIR, SEED, build_encoders, load_domain,
+from common import (BOOTSTRAP_N, RESULTS_DIR, SEED, bootstrap_indices, build_encoders, load_domain,
                     write_json)
 
 DOMAINS = ["przetargi_ogloszenia", "przetargi_kio", "samorzad_uchwaly",
@@ -21,8 +21,7 @@ REFERENCE = "TOKENIZATOREX"
 
 
 def _boot_idx(k: int, n: int = BOOTSTRAP_N, seed: int = SEED) -> np.ndarray:
-    rng = np.random.default_rng(seed)
-    return rng.integers(0, k, size=(n, k))
+    return bootstrap_indices(k, n, seed)
 
 
 def _ci_from_replicates(rep: np.ndarray) -> list[float]:

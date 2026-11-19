@@ -2,12 +2,14 @@
   "meta": {
     "chunk_pattern": "CHUNK_PATTERN z superbpe.py",
     "split": "test",
-    "note": "porównanie na fragmentach; tokeny bez specjalnych"
+    "note": "parytet segmentacji liczony na ID (główny) i dodatkowo na zdekodowanych ciągach (kontrola utraty tekstu); tokeny bez specjalnych"
   },
   "domains": {
     "przetargi_ogloszenia": {
       "chunks": 48145,
       "identical_chunks": 47380,
+      "identical_chunks_decoded": 48145,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9841104995326617,
       "identical_ci_wilson": [
         0.9829542400428195,
@@ -344,6 +346,8 @@
     "przetargi_kio": {
       "chunks": 13485,
       "identical_chunks": 13224,
+      "identical_chunks_decoded": 13485,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9806451612903225,
       "identical_ci_wilson": [
         0.9781792667876853,
@@ -658,6 +662,8 @@
     "samorzad_uchwaly": {
       "chunks": 23938,
       "identical_chunks": 23446,
+      "identical_chunks_decoded": 23938,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9794469045033002,
       "identical_ci_wilson": [
         0.9775710877053372,
@@ -912,6 +918,8 @@
     "granty_ogloszenia": {
       "chunks": 33726,
       "identical_chunks": 32231,
+      "identical_chunks_decoded": 33726,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.955672181699579,
       "identical_ci_wilson": [
         0.9534231183037103,
@@ -1264,6 +1272,8 @@
     "prawo_eli": {
       "chunks": 40138,
       "identical_chunks": 39355,
+      "identical_chunks_decoded": 40138,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9804923015596193,
       "identical_ci_wilson": [
         0.979092584476607,
@@ -1528,6 +1538,8 @@
     "ocr_prasa": {
       "chunks": 9942,
       "identical_chunks": 9563,
+      "identical_chunks_decoded": 9942,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9618788976061154,
       "identical_ci_wilson": [
         0.9579328885270664,
@@ -1875,6 +1887,8 @@
     "tabele_json": {
       "chunks": 17574,
       "identical_chunks": 16643,
+      "identical_chunks_decoded": 17574,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9470240127461022,
       "identical_ci_wilson": [
         0.9436136153788625,
@@ -2227,6 +2241,8 @@
     "web": {
       "chunks": 20344,
       "identical_chunks": 20214,
+      "identical_chunks_decoded": 20344,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.993609909555643,
       "identical_ci_wilson": [
         0.9924178993767899,
@@ -2557,6 +2573,8 @@
     "wikipedia": {
       "chunks": 23172,
       "identical_chunks": 21537,
+      "identical_chunks_decoded": 23172,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9294407042982911,
       "identical_ci_wilson": [
         0.9260716967312748,
@@ -2895,6 +2913,8 @@
     "literatura": {
       "chunks": 32479,
       "identical_chunks": 32395,
+      "identical_chunks_decoded": 32479,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9974137134764002,
       "identical_ci_wilson": [
         0.996799424574436,
@@ -3249,6 +3269,8 @@
     "prawo": {
       "chunks": 75300,
       "identical_chunks": 73948,
+      "identical_chunks_decoded": 75300,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9820451527224435,
       "identical_ci_wilson": [
         0.9810718151983852,
@@ -3561,6 +3583,8 @@
     "sejm": {
       "chunks": 30212,
       "identical_chunks": 30054,
+      "identical_chunks_decoded": 30212,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9947702899510128,
       "identical_ci_wilson": [
         0.9938916786197813,
@@ -3862,6 +3886,8 @@
     "nauka": {
       "chunks": 65407,
       "identical_chunks": 64908,
+      "identical_chunks_decoded": 65407,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9923708471570322,
       "identical_ci_wilson": [
         0.991674486810015,
@@ -4185,6 +4211,8 @@
     "dyskusje": {
       "chunks": 26038,
       "identical_chunks": 25596,
+      "identical_chunks_decoded": 26038,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9830248098932329,
       "identical_ci_wilson": [
         0.981382986144947,
@@ -4501,6 +4529,8 @@
     "angielski": {
       "chunks": 7456,
       "identical_chunks": 7078,
+      "identical_chunks_decoded": 7456,
+      "identical_share_decoded": 1.0,
       "identical_share": 0.9493025751072961,
       "identical_ci_wilson": [
         0.9440874606454605,

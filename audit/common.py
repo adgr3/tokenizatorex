@@ -276,51 +276,44 @@ def tokenizer_manifest() -> list[dict]:
 
 # --- statystyka -------------------------------------------------------------
 
+def bootstrap_indices(k: int, n: int = BOOTSTRAP_N, seed: int = SEED):
+    """Jeden generator losowy dla całego audytu (NumPy PCG64)."""
+    import numpy as np
+    return np.random.default_rng(seed).integers(0, k, size=(n, k))
+
+
 def bootstrap_ci(values: list[float], n: int = BOOTSTRAP_N, seed: int = SEED,
                  alpha: float = 0.05) -> tuple[float, float, float]:
-    """Średnia i 95% CI z bootstrapu (po dokumentach)."""
-    import random
+    """Średnia i 95% CI z bootstrapu po dokumentach (NumPy, jeden RNG)."""
+    import numpy as np
     if not values:
         return (float("nan"), float("nan"), float("nan"))
-    rng = random.Random(seed)
-    k = len(values)
-    means = []
-    for _ in range(n):
-        s = 0.0
-        for _ in range(k):
-            s += values[rng.randrange(k)]
-        means.append(s / k)
-    means.sort()
-    lo = means[int((alpha / 2) * n)]
-    hi = means[min(n - 1, int((1 - alpha / 2) * n))]
-    return sum(values) / k, lo, hi
+    a = np.asarray(values, dtype=float)
+    idx = bootstrap_indices(len(a), n, seed)
+    means = a[idx].mean(axis=1)
+    lo = float(np.percentile(means, 100 * alpha / 2))
+    hi = float(np.percentile(means, 100 * (1 - alpha / 2)))
+    return float(a.mean()), lo, hi
 
 
 def bootstrap_paired_ratio(num_a: list[float], num_b: list[float], denom: list[float],
                            n: int = BOOTSTRAP_N, seed: int = SEED,
                            alpha: float = 0.05) -> dict:
-    """Bootstrap parowany: stosunek sum tokenów (A/B) przy tych samych dokumentach."""
-    import random
+    """Bootstrap parowany różnicy tokenów na słowo (NumPy, jeden RNG)."""
+    import numpy as np
     assert len(num_a) == len(num_b) == len(denom)
-    rng = random.Random(seed)
-    k = len(num_a)
-    ratios = []
-    for _ in range(n):
-        ta = tb = dw = 0.0
-        for _ in range(k):
-            i = rng.randrange(k)
-            ta += num_a[i]
-            tb += num_b[i]
-            dw += denom[i]
-        if tb:
-            ratios.append((ta - tb) / dw)  # różnica tokenów na słowo
-    ratios.sort()
-    lo = ratios[int((alpha / 2) * n)]
-    hi = ratios[min(n - 1, int((1 - alpha / 2) * n))]
-    obs = (sum(num_a) - sum(num_b)) / sum(denom) if sum(denom) else float("nan")
+    a = np.asarray(num_a, dtype=float)
+    b = np.asarray(num_b, dtype=float)
+    w = np.asarray(denom, dtype=float)
+    idx = bootstrap_indices(len(a), n, seed)
+    den = w[idx].sum(axis=1)
+    ratios = (a[idx] - b[idx]).sum(axis=1) / den
+    lo = float(np.percentile(ratios, 100 * alpha / 2))
+    hi = float(np.percentile(ratios, 100 * (1 - alpha / 2)))
+    obs = float((a.sum() - b.sum()) / w.sum()) if w.sum() else float("nan")
     return {"diff_per_word": obs, "ci_lo": lo, "ci_hi": hi,
             "significant": lo > 0 or hi < 0,
-            "practical": abs(obs) >= 0.01 * (sum(num_b) / sum(denom)) if sum(denom) else False}
+            "practical": abs(obs) >= 0.01 * (b.sum() / w.sum()) if w.sum() else False}
 
 
 def percentile(values: list[float], q: float) -> float:

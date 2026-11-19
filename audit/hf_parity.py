@@ -43,14 +43,14 @@ def main() -> None:
     tok = load_superbpe("tokenizers/tokenizatorex-32k.json")
     hf = load_hf_file(os.path.join(REPO_ROOT, "hf/tokenizatorex-32k/tokenizer.json"))
     out = {"meta": {"chunk_pattern": "CHUNK_PATTERN z superbpe.py", "split": "test",
-                    "note": "porównanie na fragmentach; tokeny bez specjalnych"},
+                    "note": "parytet segmentacji liczony na ID (główny) i dodatkowo na zdekodowanych ciągach (kontrola utraty tekstu); tokeny bez specjalnych"},
            "domains": {}, "causes": {}, "h8": {}}
 
     for dom in DOMAINS:
         docs = load_domain(dom, "test")
         if not docs:
             continue
-        total = identical = 0
+        total = identical = identical_decoded = 0
         ours_tokens = hf_tokens = 0
         feat_diff = Counter()
         feat_same = Counter()
@@ -62,7 +62,12 @@ def main() -> None:
                 total += 1
                 ours_tokens += len(a)
                 hf_tokens += len(b)
-                same = a == b
+                same_ids = a == b
+                a_str = tok.decode(a)
+                b_str = hf.decode(b, skip_special_tokens=False)
+                same_decoded = a_str == b_str
+                identical_decoded += same_decoded
+                same = same_ids
                 identical += same
                 bucket = feat_same if same else feat_diff
                 for name, rx in FEATURES.items():
@@ -84,6 +89,8 @@ def main() -> None:
                             "lift": (p_diff / p_same) if p_same else None}
         out["domains"][dom] = {
             "chunks": total, "identical_chunks": identical,
+            "identical_chunks_decoded": identical_decoded,
+            "identical_share_decoded": (identical_decoded / total) if total else None,
             "identical_share": share,
             "identical_ci_wilson": _wilson(identical, total),
             "tokens_ours": ours_tokens, "tokens_hf": hf_tokens,
@@ -92,7 +99,7 @@ def main() -> None:
             "causes": causes, "examples": examples,
             "official": dom in OFFICIAL,
         }
-        print(f"{dom:<22} parytet {share:.4%}  dT {hf_tokens-ours_tokens:+d}")
+        print(f"{dom:<22} parytet ID {share:.4%} (ciągi {identical_decoded/total:.4%})  dT {hf_tokens-ours_tokens:+d}")
 
     out["causes"] = _global_causes(out["domains"])
     out["h8"] = _verdict(out["domains"])
@@ -149,14 +156,14 @@ def _verdict(domains: dict) -> dict:
 
 def write_md(out: dict) -> None:
     lines = ["# Parytet eksportu HF (test)", "",
-             "| dziedzina | fragmentów | identyczne | 95% CI | Δ tokenów | przyczyna #1 (lift) |",
-             "|---|---:|---:|---|---:|---|"]
+             "| dziedzina | fragmentów | identyczne (ID) | identyczne (ciągi) | 95% CI | Δ tokenów | przyczyna #1 (lift) |",
+             "|---|---:|---:|---:|---|---:|---|"]
     for d, r in out["domains"].items():
         ci = r["identical_ci_wilson"]
         top = max(r["causes"].items(), key=lambda kv: kv[1]["lift"] or 0)
         lines.append(f"| {d} | {r['chunks']:,} | {r['identical_share']:.3%} | "
-                     f"[{ci[0]:.3%}; {ci[1]:.3%}] | {r['token_delta']:+,} "
-                     f"({r['token_delta_pct']:+.3%}) | {top[0]} "
+                     f"{r['identical_share_decoded']:.3%} | [{ci[0]:.3%}; {ci[1]:.3%}] | "
+                     f"{r['token_delta']:+,} ({r['token_delta_pct']:+.3%}) | {top[0]} "
                      f"({top[1]['lift']:.2f}×) |")
     lines += ["", "## Werdykt H8", ""]
     h = out["h8"]
