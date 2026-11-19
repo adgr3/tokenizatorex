@@ -477,27 +477,27 @@
   "A6_renyi": {
     "TKX_ref": {
       "vocab_size": 32000,
-      "total_tokens": 5502689,
-      "distinct_tokens_used": 31710,
-      "H_alpha": 5.474567963419443,
-      "renyi_standard_H_over_logV": 0.5277459504697889,
-      "renyi_expH_over_V": 0.0074546057333904755
+      "total_tokens": 3245161,
+      "distinct_tokens_used": 31429,
+      "H_alpha": 5.470389389227332,
+      "renyi_standard_H_over_logV": 0.5273431377504365,
+      "renyi_expH_over_V": 0.007423521100212927
     },
     "Slayer1B": {
       "vocab_size": 32768,
-      "total_tokens": 6232070,
-      "distinct_tokens_used": 30830,
-      "H_alpha": 4.487409175123047,
-      "renyi_standard_H_over_logV": 0.43159753089264363,
-      "renyi_expH_over_V": 0.0027127333578393195
+      "total_tokens": 3673931,
+      "distinct_tokens_used": 29861,
+      "H_alpha": 4.480208672258515,
+      "renyi_standard_H_over_logV": 0.4309049889076724,
+      "renyi_expH_over_V": 0.0026932704689105794
     },
     "Pollock": {
       "vocab_size": 49152,
-      "total_tokens": 5738696,
-      "distinct_tokens_used": 45590,
-      "H_alpha": 4.351552176287237,
-      "renyi_standard_H_over_logV": 0.40282180625129355,
-      "renyi_expH_over_V": 0.0015787519640916793
+      "total_tokens": 3381145,
+      "distinct_tokens_used": 44556,
+      "H_alpha": 4.343503750737338,
+      "renyi_standard_H_over_logV": 0.4020767660481319,
+      "renyi_expH_over_V": 0.001566096493070463
     }
   },
   "A7_digits": {

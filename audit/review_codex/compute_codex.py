@@ -369,6 +369,8 @@ def compute_renyi(manifest, encs):
         freq = Counter()
         total = 0
         for d in manifest["documents"]:
+            if d["split"] != "test":
+                continue
             raw = load_raw(d["domain"], d["id"])
             ids = enc(raw["text"])
             for i in ids:
