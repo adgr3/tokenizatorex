@@ -22,9 +22,10 @@ Data: 19.11.2026 · Repo: `adgr3/tokenizatorex` · gałąź `audit/tkx-a-19-11`
 4. **Zapisy urzędowe są tanie, ale niestabilne:** kwota 3,87 tokenu (Slayer
    5,23), data słowna 3,76 (5,31), przepis 4,20 (5,78), ale ten sam zapis jest
    dzielony inaczej w 12,8–57,1% kontekstów (Slayer w wielu kategoriach 0%).
-5. **Naprawa cyfr nie jest darmowa:** pojedyncze cyfry dodają **+6,4% (dolna)
-   do +16,6% (górna)** tokenów na pełnym ogłoszeniu; to świadoma cena za to, by
-   2024 i 2027 kosztowały tyle samo.
+5. **Naprawa cyfr nie jest darmowa:** pojedyncze cyfry dodają **+6,7% (dolna)
+   do +15,0% (górna)** tokenów na 7 dziedzinach urzędowych; na pełnym
+   ogłoszeniu górna granica to **+16,6%**. To świadoma cena za to, by 2024 i
+   2027 kosztowały tyle samo.
 6. **Odporność jest słaba:** NFD +45,9%, CAPS +106,8%, tytuły +30,6% tokenów;
    względnie więcej niż Slayer1B o 5–9 pkt proc. (NFD, CAPS, tytuły).
 7. **Eksport HF nie jest 1:1 w segmentacji:** 97,27% identycznych fragmentów
