@@ -403,63 +403,63 @@
     ],
     "corpus_occurrence_cost": {
       "TKX_ref": {
-        "2026": {
-          "n_occurrences": 4104,
-          "mean_tokens": 1.216130604288499
-        },
         "2024": {
-          "n_occurrences": 326,
-          "mean_tokens": 0.2331288343558282
+          "n_occurrences": 163,
+          "mean_tokens": 1
+        },
+        "2026": {
+          "n_occurrences": 1129,
+          "mean_tokens": 2
         }
       },
       "TKX_HF": {
-        "2026": {
-          "n_occurrences": 4104,
-          "mean_tokens": 1.216130604288499
-        },
         "2024": {
-          "n_occurrences": 326,
-          "mean_tokens": 0.2331288343558282
+          "n_occurrences": 163,
+          "mean_tokens": 1
+        },
+        "2026": {
+          "n_occurrences": 1129,
+          "mean_tokens": 2
         }
       }
     }
   },
   "A4_nfd": {
     "TKX_ref": {
-      "docs": 570,
-      "total_tokens_original": 978718,
-      "total_tokens_nfd": 1443068,
-      "increase_pct_aggregate": 47.444718499097796,
-      "increase_pct_mean_per_doc": 43.504562868970176,
-      "ci95_lo": 42.464425411534584,
-      "ci95_hi": 44.615030214125696
+      "docs": 606,
+      "total_tokens_original": 1153793,
+      "total_tokens_nfd": 1677531,
+      "increase_pct_aggregate": 45.392717757864716,
+      "increase_pct_mean_per_doc": 43.152892819173026,
+      "ci95_lo": 41.9927900071322,
+      "ci95_hi": 44.235469115377605
     },
     "TKX_HF": {
-      "docs": 570,
-      "total_tokens_original": 976125,
-      "total_tokens_nfd": 1440472,
-      "increase_pct_aggregate": 47.570444359072866,
-      "increase_pct_mean_per_doc": 43.60088412299868,
-      "ci95_lo": 42.5587410262816,
-      "ci95_hi": 44.700802779989516
+      "docs": 606,
+      "total_tokens_original": 1151140,
+      "total_tokens_nfd": 1674876,
+      "increase_pct_aggregate": 45.49715933770002,
+      "increase_pct_mean_per_doc": 43.24332032733709,
+      "ci95_lo": 42.08100800124812,
+      "ci95_hi": 44.32393238262916
     },
     "Slayer1B": {
-      "docs": 570,
-      "total_tokens_original": 1199743,
-      "total_tokens_nfd": 1659625,
-      "increase_pct_aggregate": 38.331709374424356,
-      "increase_pct_mean_per_doc": 34.62779240915145,
-      "ci95_lo": 33.814525369695616,
-      "ci95_hi": 35.580413409687374
+      "docs": 606,
+      "total_tokens_original": 1389668,
+      "total_tokens_nfd": 1908417,
+      "increase_pct_aggregate": 37.32898793093026,
+      "increase_pct_mean_per_doc": 34.52897941661849,
+      "ci95_lo": 33.63131734181083,
+      "ci95_hi": 35.416464186752755
     },
     "Pollock": {
-      "docs": 570,
-      "total_tokens_original": 1051529,
-      "total_tokens_nfd": 1459303,
-      "increase_pct_aggregate": 38.77914921985033,
-      "increase_pct_mean_per_doc": 35.75226740758449,
-      "ci95_lo": 34.86941669334127,
-      "ci95_hi": 36.70039111849888
+      "docs": 606,
+      "total_tokens_original": 1228959,
+      "total_tokens_nfd": 1688659,
+      "increase_pct_aggregate": 37.40564168536135,
+      "increase_pct_mean_per_doc": 35.51838848326322,
+      "ci95_lo": 34.56578045875235,
+      "ci95_hi": 36.40745818825067
     }
   },
   "A5_hf_parity": {

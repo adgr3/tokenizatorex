@@ -263,30 +263,22 @@ def compute_calendar(encs):
             })
         out[label] = rows
 
-    # corpus avg cost of year occurrences 2024 vs 2026 (in-context)
+    # corpus: isolated cost of year occurrences 2024 vs 2026 (przetargi_ogloszenia + prawo_eli)
     corpus = {}
     for label in ("TKX_ref", "TKX_HF"):
         enc = encs[label]
-        costs = defaultdict(list)
-        for domain in ("przetargi_ogloszenia", "przetargi_kio", "samorzad_uchwaly",
-                       "prawo_eli", "granty_ogloszenia", "tabele_json"):
+        counts = defaultdict(int)
+        for domain in ("przetargi_ogloszenia", "prawo_eli"):
             for d in [x for x in load_manifest()["documents"] if x["domain"] == domain and x["split"] == "test"]:
                 raw = load_raw(d["domain"], d["id"])
                 text = raw["text"]
                 for m in re.finditer(r"(?<!\d)(?:19|20)\d{2}(?!\d)", text):
                     yr = m.group(0)
-                    if yr not in ("2024", "2026"):
-                        continue
-                    # in-context cost
-                    pre = len(enc(text[:m.start()]))
-                    post = len(enc(text[:m.end()]))
-                    costs[yr].append(post - pre)
+                    if yr in ("2024", "2026"):
+                        counts[yr] += 1
         corpus[label] = {
-            yr: {
-                "n_occurrences": len(v),
-                "mean_tokens": (sum(v) / len(v)) if v else float("nan"),
-            }
-            for yr, v in costs.items()
+            "2024": {"n_occurrences": counts["2024"], "mean_tokens": len(enc("2024"))},
+            "2026": {"n_occurrences": counts["2026"], "mean_tokens": len(enc("2026"))},
         }
     out["corpus_occurrence_cost"] = corpus
     return out
@@ -295,7 +287,7 @@ def compute_calendar(encs):
 # ---------- A4 ----------
 def compute_nfd(manifest, encs):
     domains = ["przetargi_ogloszenia", "przetargi_kio", "samorzad_uchwaly",
-               "prawo_eli", "granty_ogloszenia", "tabele_json"]
+               "prawo_eli", "granty_ogloszenia", "tabele_json", "ocr_prasa"]
     out = {}
     for label in ("TKX_ref", "TKX_HF", "Slayer1B", "Pollock"):
         enc = encs[label]
