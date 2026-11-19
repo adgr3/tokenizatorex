@@ -1,3 +1,9 @@
 __pycache__/
 .pytest_cache/
 *.pyc
+
+audit/data/raw/
+audit/data/cache/
+audit/data/bench/
+audit/data/tokenizer_files/
+audit/tmp/
