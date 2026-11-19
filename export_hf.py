@@ -12,9 +12,9 @@ może wybrać inną segmentację. `--check` mierzy, jak często — wynik raport
 import argparse
 import os
 
-from tokenizers import Regex, Tokenizer, decoders, models, pre_tokenizers
+from tokenizers import Regex, Tokenizer, decoders, models, normalizers, pre_tokenizers
 
-from superbpe import CHUNK_PATTERN, CHUNK_RE, WORD_PATTERN, SuperBPETokenizer
+from superbpe import CHUNK_PATTERN, CHUNK_RE, SuperBPETokenizer
 
 
 def bytes_to_unicode() -> dict[int, str]:
@@ -41,9 +41,15 @@ def to_hf(tok: SuperBPETokenizer) -> Tokenizer:
     merges = [(s(tok.vocab[a]), s(tok.vocab[b])) for a, b, _ in tok.stage1 + tok.stage2]
 
     hf = Tokenizer(models.BPE(vocab=vocab, merges=merges, ignore_merges=False))
+    if tok.normalize == "nfc":
+        hf.normalizer = normalizers.NFC()
     pre = [pre_tokenizers.Split(Regex(CHUNK_PATTERN), behavior="isolated")]
     if not tok.stage2:
-        pre.append(pre_tokenizers.Split(Regex(WORD_PATTERN), behavior="isolated"))
+        pre.append(pre_tokenizers.Split(Regex(tok.word_pattern), behavior="isolated"))
+    elif tok.digits == "single":
+        # A1: cyfry są pojedynczymi pretokenami także w eksporcie; stage2 nie ma
+        # merge'y z cyframi, więc nic się nie sklei z powrotem.
+        pre.append(pre_tokenizers.Digits(individual_digits=True))
     pre.append(pre_tokenizers.ByteLevel(add_prefix_space=False, use_regex=False))
     hf.pre_tokenizer = pre_tokenizers.Sequence(pre)
     hf.decoder = decoders.ByteLevel()
@@ -72,13 +78,14 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("tokenizer")
     ap.add_argument("--out-dir", default="hf")
+    ap.add_argument("--name", help="nazwa katalogu wyjściowego (domyślnie nazwa pliku)")
     ap.add_argument("--check", help="plik tekstowy do porównania segmentacji")
     ap.add_argument("--check-mb", type=float, default=2)
     a = ap.parse_args()
 
     tok = SuperBPETokenizer.load(a.tokenizer)
     hf = to_hf(tok)
-    name = os.path.splitext(os.path.basename(a.tokenizer))[0]
+    name = a.name or os.path.splitext(os.path.basename(a.tokenizer))[0]
     out = os.path.join(a.out_dir, name)
     os.makedirs(out, exist_ok=True)
     hf.save(os.path.join(out, "tokenizer.json"))

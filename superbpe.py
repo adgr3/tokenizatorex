@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import heapq
 import json
+import unicodedata
 from collections import Counter, defaultdict
 from typing import Callable, Iterable
 
@@ -39,20 +40,43 @@ WORD_PATTERN = (
     r"|\s+"
 )
 
+# Wariant TKX-C: każda cyfra osobno (bez grup \p{N}{1,3}).
+WORD_PATTERN_SINGLE_DIGITS = WORD_PATTERN.replace(r"\p{N}{1,3}", r"\p{Nd}")
+
 CHUNK_RE = re.compile(CHUNK_PATTERN)
 WORD_RE = re.compile(WORD_PATTERN)
 _WORDCOUNT_RE = re.compile(r"[\p{L}\p{M}]+|\p{N}+")
+_DIGIT_RE = re.compile(r"\p{Nd}")
+_WORD_PATTERN_CACHE: dict[str, re.Pattern] = {}
 
 
-def chunks(text: str) -> list[str]:
-    return CHUNK_RE.findall(text)
+def normalize_text(text: str, mode: str = "none") -> str:
+    """A2: jedno miejsce normalizacji (domyślnie brak zmian = v1)."""
+    if mode == "nfc":
+        return unicodedata.normalize("NFC", text)
+    if mode == "none":
+        return text
+    raise ValueError(f"nieznany tryb normalizacji: {mode}")
 
 
-def pretokens(text: str) -> list[str]:
+def word_regex(pattern: str = WORD_PATTERN) -> re.Pattern:
+    rx = _WORD_PATTERN_CACHE.get(pattern)
+    if rx is None:
+        rx = re.compile(pattern)
+        _WORD_PATTERN_CACHE[pattern] = rx
+    return rx
+
+
+def chunks(text: str, normalize: str = "none") -> list[str]:
+    return CHUNK_RE.findall(normalize_text(text, normalize))
+
+
+def pretokens(text: str, word_pattern: str = WORD_PATTERN, normalize: str = "none") -> list[str]:
     """Pretokeny etapu 1 — zawsze liczone wewnątrz fragmentów (chunków)."""
     out: list[str] = []
-    for ch in CHUNK_RE.findall(text):
-        out.extend(WORD_RE.findall(ch))
+    rx = word_regex(word_pattern)
+    for ch in CHUNK_RE.findall(normalize_text(text, normalize)):
+        out.extend(rx.findall(ch))
     return out
 
 
@@ -177,7 +201,15 @@ def bpe_train_loop(
 # --- tokenizer ----------------------------------------------------------------------
 
 class SuperBPETokenizer:
-    def __init__(self) -> None:
+    def __init__(self, digits: str = "grouped", normalize: str = "none") -> None:
+        if digits not in ("grouped", "single"):
+            raise ValueError(f"nieznany tryb cyfr: {digits}")
+        normalize_text("", normalize)  # walidacja trybu
+        self.digits = digits
+        self.normalize = normalize
+        self.word_pattern = (WORD_PATTERN_SINGLE_DIGITS if digits == "single"
+                             else WORD_PATTERN)
+        self._word_re = word_regex(self.word_pattern)
         self.vocab: list[bytes] = [bytes([i]) for i in range(256)]
         self.stage1: list[tuple[int, int, int]] = []
         self.stage2: list[tuple[int, int, int]] = []
@@ -235,7 +267,10 @@ class SuperBPETokenizer:
         def allowed(p: tuple[int, int], new_bytes: bytes) -> bool:
             if p in stage1_pairs:           # para już ma merge z etapu 1 — nie dublujemy
                 return False
-            words = _WORDCOUNT_RE.findall(new_bytes.decode("utf-8", errors="ignore"))
+            text = new_bytes.decode("utf-8", errors="ignore")
+            if self.digits == "single" and _DIGIT_RE.search(text):
+                return False                # A1: superwordy nie mogą zawierać cyfr
+            words = _WORDCOUNT_RE.findall(text)
             return len(words) <= max_words
 
         self.stage2 = bpe_train_loop(seqs, freqs, self.vocab, target_vocab, allowed=allowed, log=log)
@@ -258,7 +293,7 @@ class SuperBPETokenizer:
 
     def _encode_chunk_stage1(self, ch: str) -> list[int]:
         out: list[int] = []
-        for pt in WORD_RE.findall(ch):
+        for pt in self._word_re.findall(ch):
             out.extend(self._encode_pretoken(pt))
         return out
 
@@ -273,6 +308,7 @@ class SuperBPETokenizer:
         return ids
 
     def encode_ordinary(self, text: str) -> list[int]:
+        text = normalize_text(text, self.normalize)
         out: list[int] = []
         for ch in CHUNK_RE.findall(text):
             out.extend(self._encode_chunk(ch))
@@ -280,6 +316,7 @@ class SuperBPETokenizer:
 
     def encode(self, text: str, allowed_special: bool = True) -> list[int]:
         """Koduje tekst; tokeny specjalne (np. <|endoftext|>) są atomowe."""
+        text = normalize_text(text, self.normalize)
         if not (allowed_special and self.specials):
             return self.encode_ordinary(text)
         pat = "(" + "|".join(re.escape(s) for s in sorted(self.specials, key=len, reverse=True)) + ")"
@@ -308,7 +345,9 @@ class SuperBPETokenizer:
         data = {
             "format": "superbpe-pl/1",
             "chunk_pattern": CHUNK_PATTERN,
-            "word_pattern": WORD_PATTERN,
+            "word_pattern": self.word_pattern,
+            "digits": self.digits,
+            "normalize": self.normalize,
             "max_words": self.max_words,
             "transition": self.transition,
             "vocab_size": self.vocab_size,
@@ -324,9 +363,20 @@ class SuperBPETokenizer:
     def load(cls, path: str) -> "SuperBPETokenizer":
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
-        assert data["chunk_pattern"] == CHUNK_PATTERN and data["word_pattern"] == WORD_PATTERN, \
-            "plik zapisany z innymi regexami"
-        tok = cls()
+        assert data["chunk_pattern"] == CHUNK_PATTERN, "plik zapisany z innym chunk_pattern"
+        word_pattern = data.get("word_pattern", WORD_PATTERN)
+        digits = data.get("digits")
+        if digits is None:
+            if word_pattern == WORD_PATTERN:
+                digits = "grouped"
+            elif word_pattern == WORD_PATTERN_SINGLE_DIGITS:
+                digits = "single"
+            else:
+                raise ValueError("plik zapisany z nieznanym word_pattern")
+        normalize = data.get("normalize", "none")
+        tok = cls(digits=digits, normalize=normalize)
+        assert word_pattern == tok.word_pattern, "plik zapisany z innymi regexami"
+        tok._word_re = word_regex(tok.word_pattern)
         tok.stage1 = [tuple(m) for m in data["stage1_merges"]]
         tok.stage2 = [tuple(m) for m in data["stage2_merges"]]
         for a, b, n in tok.stage1 + tok.stage2:
