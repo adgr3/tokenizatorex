@@ -12,8 +12,9 @@ Data: 19.11.2026 · Repo: `adgr3/tokenizatorex` · gałąź `audyt/tkx-a-19-11`
    6 i praktycznie remisuje na 1; zbiorczo ma **1,6825 tokenu/słowo** wobec
    1,7921 Pollocka (−6,1%), 1,8612 APT3 (−9,6%) i 2,0265 Slayera (−17,0%).
 2. Na **15 dziedzinach** (z web, Wikipedią, literaturą, nauką, dyskursami,
-   angielskim) jest najlepszy na 12; istotnie przegrywa tylko w Wikipedii
-   (Pollock, −1,25%) i nauce (APT3, −2,95%).
+   angielskim) jest najlepszy na 11; istotnie przegrywa w Wikipedii
+   (Pollock, −1,25%), nauce (APT3, −2,95%) i angielskim (GPT-4o 1,68× taniej —
+   dziedzina poza celem tokenizera polskiego).
 3. **Kalendarz jest zamrożony:** lata 2015–2024 kosztują 1 token, 2025–2026
    już 2; zdanie `w roku RRRR r. zadanie` ma 4 tokeny dla starych lat i 5 dla
    nowych. To najważniejsza słabość dla modelu, który będzie czytał nowe
@@ -43,7 +44,7 @@ Data: 19.11.2026 · Repo: `adgr3/tokenizatorex` · gałąź `audyt/tkx-a-19-11`
 
 | Mocna strona | Liczba [95% CI] | Plik |
 |---|---|---|
-| Najlepszy na 7 dziedzinach urzędowych | 1,6825 [1,6412; 1,7279] tok./słowo | `official_aggregate.json` |
+| Najlepszy zbiorczo na 7 dziedzinach urzędowych | 1,6825 [1,6412; 1,7279] tok./słowo | `official_aggregate.json` |
 | Przewaga nad Slayer1B (oficjalne) | −17,0% tokenów | `official_aggregate.json` |
 | Przewaga nad Pollockiem (oficjalne) | −6,1% | `official_aggregate.json` |
 | Przewaga nad APT3 (oficjalne) | −9,6% | `official_aggregate.json` |
@@ -193,6 +194,8 @@ stopka — ustawienia).
 * Najgorsze 50 dokumentów to długa proza, OCR i formularze, nie cyfry/tabele;
   Slayer wygrywa tylko 6/606 dokumentów oficjalnych, APT3 12/606.
 * Boilerplate nie jest źródłem przewagi (zmiana <0,5%, ranking bez zmian).
+* Liczby R3 są w `audit/results/redteam_*.json` (kopie artefaktów
+  `audit/redteam/r3_*.json` wygenerowanych skryptami `audit/redteam/*.py`).
 * **Jedyna zmiana lokalna:** na `granty` w 2048 mediana i „fit rate” faworyzują
   TKX, ale p90/średnia Pollocka — nie można mówić o jednoznacznej przewadze.
 * Typowy przetarg ma medianę 3780 tokenów i tylko 1,7% mieści się w 2048 —

@@ -12,8 +12,9 @@ w sekcji „Zmiany po fakcie”). Korpus: `audit/data/MANIFEST.json`.
    remisuje.** Na 7 nowych dziedzinach nie przegrywa istotnie z żadnym polskim
    tokenizerem; jedyne nieistotne wyprzedzenie to Pollock na `granty` (1,781 vs
    1,791 tokenu/słowo, CI różnicy zawiera zero).
-2. **Na 15 dziedzinach jest najlepszy na 12** (razem z eksportem HF), a istotnie
-   przegrywa tylko w Wikipedii (Pollock, −1,25%) i nauce (APT3, −2,95%).
+2. **Na 15 dziedzinach jest najlepszy na 11** (razem z eksportem HF); istotnie
+   przegrywa w Wikipedii (Pollock, −1,25%), nauce (APT3, −2,95%) i angielskim
+   (GPT-4o 1,68× taniej; to dziedzina poza celem tokenizera).
 3. **H1 potwierdzona:** lata 2015–2024 to 1 token, 2025–2026 to 2 tokeny.
    Zdanie-kontrolne `w roku RRRR r. zadanie` ma 4 tokeny dla 2015–2024 i 5 dla
    2025–2026. Nowy rok będzie „nowym” tokenem, bez wspólnych kawałków ze starym.
