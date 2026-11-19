@@ -1,0 +1,264 @@
+{
+  "with_apt3_rank_fertility": [
+    "TOKENIZATOREX-HF",
+    "TOKENIZATOREX",
+    "Pollock-2.0",
+    "APT3-1B",
+    "TOKENIZATOREX-base",
+    "Slayer1B",
+    "GPT-4o",
+    "PLLuM-12B",
+    "Bielik-v3"
+  ],
+  "with_apt3_rank_bytes": [
+    "TOKENIZATOREX-HF",
+    "TOKENIZATOREX",
+    "Pollock-2.0",
+    "APT3-1B",
+    "TOKENIZATOREX-base",
+    "Slayer1B",
+    "GPT-4o",
+    "PLLuM-12B",
+    "Bielik-v3"
+  ],
+  "without_apt3_rank_fertility": [
+    "TOKENIZATOREX-HF",
+    "TOKENIZATOREX",
+    "Pollock-2.0",
+    "TOKENIZATOREX-base",
+    "Slayer1B",
+    "GPT-4o",
+    "PLLuM-12B",
+    "Bielik-v3"
+  ],
+  "without_apt3_rank_bytes": [
+    "TOKENIZATOREX-HF",
+    "TOKENIZATOREX",
+    "Pollock-2.0",
+    "TOKENIZATOREX-base",
+    "Slayer1B",
+    "GPT-4o",
+    "PLLuM-12B",
+    "Bielik-v3"
+  ],
+  "aggregate_all": {
+    "TOKENIZATOREX": {
+      "docs": 606,
+      "tokens": 1153793,
+      "words": 685753,
+      "chars": 5037385,
+      "bytes": 5279146,
+      "fertility": 1.6825197994029921,
+      "bytes_per_token": 4.575470643347637,
+      "chars_per_token": 4.3659347907293595,
+      "macro_fertility": 1.6868023005764057,
+      "macro_bytes_per_token": 4.554682986566737
+    },
+    "TOKENIZATOREX-HF": {
+      "docs": 606,
+      "tokens": 1151140,
+      "words": 685753,
+      "chars": 5037385,
+      "bytes": 5279146,
+      "fertility": 1.6786510594922661,
+      "bytes_per_token": 4.586015601925048,
+      "chars_per_token": 4.375996837917195,
+      "macro_fertility": 1.6819057641613178,
+      "macro_bytes_per_token": 4.565453044065105
+    },
+    "TOKENIZATOREX-base": {
+      "docs": 606,
+      "tokens": 1347980,
+      "words": 685753,
+      "chars": 5037385,
+      "bytes": 5279146,
+      "fertility": 1.9656931869054892,
+      "bytes_per_token": 3.9163385213430466,
+      "chars_per_token": 3.736987937506491,
+      "macro_fertility": 2.0230666098611043,
+      "macro_bytes_per_token": 3.7776334708070243
+    },
+    "Slayer1B": {
+      "docs": 606,
+      "tokens": 1389668,
+      "words": 685753,
+      "chars": 5037385,
+      "bytes": 5279146,
+      "fertility": 2.02648475471489,
+      "bytes_per_token": 3.798854114795764,
+      "chars_per_token": 3.6248837851918587,
+      "macro_fertility": 2.0784472030910948,
+      "macro_bytes_per_token": 3.6615178992011734
+    },
+    "APT3-1B": {
+      "docs": 606,
+      "tokens": 1276350,
+      "words": 685753,
+      "chars": 5037385,
+      "bytes": 5279146,
+      "fertility": 1.8612386675668937,
+      "bytes_per_token": 4.136127237826615,
+      "chars_per_token": 3.9467113252634465,
+      "macro_fertility": 1.8885211444737542,
+      "macro_bytes_per_token": 4.044933114425971
+    },
+    "Pollock-2.0": {
+      "docs": 606,
+      "tokens": 1228959,
+      "words": 685753,
+      "chars": 5037385,
+      "bytes": 5279146,
+      "fertility": 1.792130694287885,
+      "bytes_per_token": 4.295624182743281,
+      "chars_per_token": 4.098904031786252,
+      "macro_fertility": 1.8312855256692517,
+      "macro_bytes_per_token": 4.172299010005021
+    },
+    "Bielik-v3": {
+      "docs": 606,
+      "tokens": 2292903,
+      "words": 685753,
+      "chars": 5037385,
+      "bytes": 5279146,
+      "fertility": 3.343628099330225,
+      "bytes_per_token": 2.302385229553976,
+      "chars_per_token": 2.1969464037510527,
+      "macro_fertility": 3.404991433409717,
+      "macro_bytes_per_token": 2.2018815364419737
+    },
+    "PLLuM-12B": {
+      "docs": 606,
+      "tokens": 1837994,
+      "words": 685753,
+      "chars": 5037385,
+      "bytes": 5279146,
+      "fertility": 2.6802565938464724,
+      "bytes_per_token": 2.8722324447196237,
+      "chars_per_token": 2.740697194876588,
+      "macro_fertility": 2.7374169153689984,
+      "macro_bytes_per_token": 2.7515801386088388
+    },
+    "GPT-4o": {
+      "docs": 606,
+      "tokens": 1745922,
+      "words": 685753,
+      "chars": 5037385,
+      "bytes": 5279146,
+      "fertility": 2.545992507506347,
+      "bytes_per_token": 3.023700944257533,
+      "chars_per_token": 2.8852291224922992,
+      "macro_fertility": 2.578174695048426,
+      "macro_bytes_per_token": 2.9051666082681677
+    }
+  },
+  "per_domain_winner_all": {
+    "przetargi_ogloszenia": "TOKENIZATOREX-HF",
+    "przetargi_kio": "TOKENIZATOREX",
+    "samorzad_uchwaly": "TOKENIZATOREX-HF",
+    "granty_ogloszenia": "Pollock-2.0",
+    "prawo_eli": "TOKENIZATOREX-HF",
+    "ocr_prasa": "TOKENIZATOREX-HF",
+    "tabele_json": "TOKENIZATOREX-HF"
+  },
+  "per_domain_winner_no_apt": {
+    "przetargi_ogloszenia": "TOKENIZATOREX-HF",
+    "przetargi_kio": "TOKENIZATOREX",
+    "samorzad_uchwaly": "TOKENIZATOREX-HF",
+    "granty_ogloszenia": "Pollock-2.0",
+    "prawo_eli": "TOKENIZATOREX-HF",
+    "ocr_prasa": "TOKENIZATOREX-HF",
+    "tabele_json": "TOKENIZATOREX-HF"
+  },
+  "per_domain_rank_bytes": {
+    "przetargi_ogloszenia": [
+      "TOKENIZATOREX-HF",
+      "TOKENIZATOREX",
+      "APT3-1B",
+      "Pollock-2.0",
+      "TOKENIZATOREX-base",
+      "Slayer1B",
+      "GPT-4o",
+      "PLLuM-12B",
+      "Bielik-v3"
+    ],
+    "przetargi_kio": [
+      "TOKENIZATOREX",
+      "TOKENIZATOREX-HF",
+      "Pollock-2.0",
+      "APT3-1B",
+      "TOKENIZATOREX-base",
+      "Slayer1B",
+      "GPT-4o",
+      "PLLuM-12B",
+      "Bielik-v3"
+    ],
+    "samorzad_uchwaly": [
+      "TOKENIZATOREX-HF",
+      "TOKENIZATOREX",
+      "Pollock-2.0",
+      "APT3-1B",
+      "TOKENIZATOREX-base",
+      "Slayer1B",
+      "GPT-4o",
+      "PLLuM-12B",
+      "Bielik-v3"
+    ],
+    "granty_ogloszenia": [
+      "Pollock-2.0",
+      "TOKENIZATOREX-HF",
+      "TOKENIZATOREX",
+      "TOKENIZATOREX-base",
+      "APT3-1B",
+      "Slayer1B",
+      "GPT-4o",
+      "PLLuM-12B",
+      "Bielik-v3"
+    ],
+    "prawo_eli": [
+      "TOKENIZATOREX-HF",
+      "TOKENIZATOREX",
+      "Pollock-2.0",
+      "APT3-1B",
+      "TOKENIZATOREX-base",
+      "Slayer1B",
+      "GPT-4o",
+      "PLLuM-12B",
+      "Bielik-v3"
+    ],
+    "ocr_prasa": [
+      "TOKENIZATOREX-HF",
+      "TOKENIZATOREX",
+      "Pollock-2.0",
+      "APT3-1B",
+      "TOKENIZATOREX-base",
+      "Slayer1B",
+      "GPT-4o",
+      "PLLuM-12B",
+      "Bielik-v3"
+    ],
+    "tabele_json": [
+      "TOKENIZATOREX-HF",
+      "TOKENIZATOREX",
+      "Pollock-2.0",
+      "APT3-1B",
+      "TOKENIZATOREX-base",
+      "Slayer1B",
+      "GPT-4o",
+      "PLLuM-12B",
+      "Bielik-v3"
+    ]
+  },
+  "note": "Na tym samym tekście suma_bajtów jest stała, więc ranking bajtów/token jest odwrotnością rankingu liczby tokenów (i fertility, bo suma słów też jest stała). To tożsamość, nie osobny eksperyment.",
+  "apt3_loss_official_test": {
+    "docs": 606,
+    "exact_rate": 0.0049504950495049506,
+    "source_chars": 5037385,
+    "decoded_chars": 5104862,
+    "char_retention": 1.0133952437623885,
+    "tokens": 1276350,
+    "fertility_on_source_words": 1.8612386675668937,
+    "bytes_per_token_source": null,
+    "source_bytes": 5279146,
+    "bytes_per_token_on_source": 4.136127237826615
+  }
+}

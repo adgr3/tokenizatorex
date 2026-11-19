@@ -1,0 +1,65 @@
+{
+  "przetargi_ogloszenia": {
+    "docs": 60,
+    "rebuilt": 60,
+    "prefix_ok": 60,
+    "missing": 0,
+    "stored_chars": 1057364,
+    "full_chars": 1524641,
+    "stored_at_cap": 32
+  },
+  "przetargi_kio": {
+    "docs": 66,
+    "rebuilt": 66,
+    "prefix_ok": 66,
+    "missing": 0,
+    "stored_chars": 696320,
+    "full_chars": 996620,
+    "stored_at_cap": 17
+  },
+  "samorzad_uchwaly": {
+    "docs": 240,
+    "rebuilt": 240,
+    "prefix_ok": 240,
+    "missing": 0,
+    "stored_chars": 454064,
+    "full_chars": 454064,
+    "stored_at_cap": 0
+  },
+  "granty_ogloszenia": {
+    "docs": 66,
+    "rebuilt": 66,
+    "prefix_ok": 66,
+    "missing": 0,
+    "stored_chars": 798796,
+    "full_chars": 2579167,
+    "stored_at_cap": 24
+  },
+  "prawo_eli": {
+    "docs": 78,
+    "rebuilt": 78,
+    "prefix_ok": 12,
+    "missing": 0,
+    "stored_chars": 947209,
+    "full_chars": 4360113,
+    "stored_at_cap": 30
+  },
+  "ocr_prasa": {
+    "docs": 36,
+    "rebuilt": 36,
+    "prefix_ok": 36,
+    "missing": 0,
+    "stored_chars": 594523,
+    "full_chars": 1426186,
+    "stored_at_cap": 21
+  },
+  "tabele_json": {
+    "docs": 60,
+    "rebuilt": 60,
+    "prefix_ok": 0,
+    "missing": 0,
+    "stored_chars": 489109,
+    "full_chars": 517864,
+    "stored_at_cap": 2
+  }
+}

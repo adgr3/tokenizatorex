@@ -1,0 +1,636 @@
+{
+  "domains": {
+    "przetargi_ogloszenia": {
+      "rows": {
+        "TOKENIZATOREX": {
+          "docs": 60,
+          "tokens": 211560,
+          "words": 136034,
+          "chars": 1057364,
+          "bytes": 1102567,
+          "fertility": 1.5551994354352587,
+          "bytes_per_token": 5.211604273019474,
+          "chars_per_token": 4.997939118926073,
+          "macro_fertility": 1.5715454865232887,
+          "macro_bytes_per_token": 5.197002319516248
+        },
+        "TOKENIZATOREX-HF": {
+          "docs": 60,
+          "tokens": 211179,
+          "words": 136034,
+          "chars": 1057364,
+          "bytes": 1102567,
+          "fertility": 1.5523986650396224,
+          "bytes_per_token": 5.2210068235951494,
+          "chars_per_token": 5.006956184090274,
+          "macro_fertility": 1.5686344024905168,
+          "macro_bytes_per_token": 5.20644943868959
+        },
+        "Slayer1B": {
+          "docs": 60,
+          "tokens": 274390,
+          "words": 136034,
+          "chars": 1057364,
+          "bytes": 1102567,
+          "fertility": 2.0170692620962405,
+          "bytes_per_token": 4.018247749553555,
+          "chars_per_token": 3.8535077808958054,
+          "macro_fertility": 2.0402544035384818,
+          "macro_bytes_per_token": 4.003643491747492
+        },
+        "Pollock-2.0": {
+          "docs": 60,
+          "tokens": 246441,
+          "words": 136034,
+          "chars": 1057364,
+          "bytes": 1102567,
+          "fertility": 1.8116132731523003,
+          "bytes_per_token": 4.473959284372325,
+          "chars_per_token": 4.290536071514074,
+          "macro_fertility": 1.8306555672088423,
+          "macro_bytes_per_token": 4.461180570758302
+        },
+        "APT3-1B": {
+          "docs": 60,
+          "tokens": 244358,
+          "words": 136034,
+          "chars": 1057364,
+          "bytes": 1102567,
+          "fertility": 1.7963009247688078,
+          "bytes_per_token": 4.512097005213662,
+          "chars_per_token": 4.327110223524501,
+          "macro_fertility": 1.8135707618439825,
+          "macro_bytes_per_token": 4.497449748439598
+        }
+      },
+      "rank_fertility": [
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "APT3-1B",
+        "Pollock-2.0",
+        "Slayer1B"
+      ],
+      "rank_bytes_per_token": [
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "APT3-1B",
+        "Pollock-2.0",
+        "Slayer1B"
+      ],
+      "winner_fertility": "TOKENIZATOREX-HF"
+    },
+    "przetargi_kio": {
+      "rows": {
+        "TOKENIZATOREX": {
+          "docs": 66,
+          "tokens": 133826,
+          "words": 95409,
+          "chars": 696320,
+          "bytes": 736230,
+          "fertility": 1.4026559339265687,
+          "bytes_per_token": 5.501397336840375,
+          "chars_per_token": 5.203174271068402,
+          "macro_fertility": 1.4025717425248156,
+          "macro_bytes_per_token": 5.510110397206606
+        },
+        "TOKENIZATOREX-HF": {
+          "docs": 66,
+          "tokens": 133881,
+          "words": 95409,
+          "chars": 696320,
+          "bytes": 736230,
+          "fertility": 1.4032323994591704,
+          "bytes_per_token": 5.499137293566675,
+          "chars_per_token": 5.201036741583944,
+          "macro_fertility": 1.4038115091387318,
+          "macro_bytes_per_token": 5.504955593112303
+        },
+        "Slayer1B": {
+          "docs": 66,
+          "tokens": 164087,
+          "words": 95409,
+          "chars": 696320,
+          "bytes": 736230,
+          "fertility": 1.7198272699640496,
+          "bytes_per_token": 4.486827110008715,
+          "chars_per_token": 4.243602479172634,
+          "macro_fertility": 1.728370868821884,
+          "macro_bytes_per_token": 4.474355543890706
+        },
+        "Pollock-2.0": {
+          "docs": 66,
+          "tokens": 142856,
+          "words": 95409,
+          "chars": 696320,
+          "bytes": 736230,
+          "fertility": 1.4973010931882735,
+          "bytes_per_token": 5.153651229209833,
+          "chars_per_token": 4.874278994231954,
+          "macro_fertility": 1.488276906536794,
+          "macro_bytes_per_token": 5.194998527049546
+        },
+        "APT3-1B": {
+          "docs": 66,
+          "tokens": 151159,
+          "words": 95409,
+          "chars": 696320,
+          "bytes": 736230,
+          "fertility": 1.5843264262281336,
+          "bytes_per_token": 4.870566754212452,
+          "chars_per_token": 4.606540133237187,
+          "macro_fertility": 1.5901950607337134,
+          "macro_bytes_per_token": 4.8619792047994626
+        }
+      },
+      "rank_fertility": [
+        "TOKENIZATOREX",
+        "TOKENIZATOREX-HF",
+        "Pollock-2.0",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "rank_bytes_per_token": [
+        "TOKENIZATOREX",
+        "TOKENIZATOREX-HF",
+        "Pollock-2.0",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "winner_fertility": "TOKENIZATOREX"
+    },
+    "samorzad_uchwaly": {
+      "rows": {
+        "TOKENIZATOREX": {
+          "docs": 240,
+          "tokens": 109866,
+          "words": 71910,
+          "chars": 454064,
+          "bytes": 474660,
+          "fertility": 1.5278264497288276,
+          "bytes_per_token": 4.32035388564251,
+          "chars_per_token": 4.1328891558808,
+          "macro_fertility": 1.5364828149847944,
+          "macro_bytes_per_token": 4.3121533228896585
+        },
+        "TOKENIZATOREX-HF": {
+          "docs": 240,
+          "tokens": 109527,
+          "words": 71910,
+          "chars": 454064,
+          "bytes": 474660,
+          "fertility": 1.5231122236128494,
+          "bytes_per_token": 4.333725930592457,
+          "chars_per_token": 4.145680973641203,
+          "macro_fertility": 1.5316462899933356,
+          "macro_bytes_per_token": 4.325455919678435
+        },
+        "Slayer1B": {
+          "docs": 240,
+          "tokens": 142628,
+          "words": 71910,
+          "chars": 454064,
+          "bytes": 474660,
+          "fertility": 1.983423724099569,
+          "bytes_per_token": 3.327958044703705,
+          "chars_per_token": 3.183554421291752,
+          "macro_fertility": 1.9966418120616316,
+          "macro_bytes_per_token": 3.3179918412515144
+        },
+        "Pollock-2.0": {
+          "docs": 240,
+          "tokens": 126047,
+          "words": 71910,
+          "chars": 454064,
+          "bytes": 474660,
+          "fertility": 1.7528438325684883,
+          "bytes_per_token": 3.7657381770292035,
+          "chars_per_token": 3.6023388101263816,
+          "macro_fertility": 1.765313035822192,
+          "macro_bytes_per_token": 3.7530448934691787
+        },
+        "APT3-1B": {
+          "docs": 240,
+          "tokens": 127444,
+          "words": 71910,
+          "chars": 454064,
+          "bytes": 474660,
+          "fertility": 1.772270894173272,
+          "bytes_per_token": 3.7244593703901323,
+          "chars_per_token": 3.5628511346159883,
+          "macro_fertility": 1.7871460356832014,
+          "macro_bytes_per_token": 3.7068305538430026
+        }
+      },
+      "rank_fertility": [
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "Pollock-2.0",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "rank_bytes_per_token": [
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "Pollock-2.0",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "winner_fertility": "TOKENIZATOREX-HF"
+    },
+    "granty_ogloszenia": {
+      "rows": {
+        "TOKENIZATOREX": {
+          "docs": 66,
+          "tokens": 180076,
+          "words": 100550,
+          "chars": 798796,
+          "bytes": 834937,
+          "fertility": 1.7909099950273495,
+          "bytes_per_token": 4.636581221262134,
+          "chars_per_token": 4.4358826273351255,
+          "macro_fertility": 1.7632925878342882,
+          "macro_bytes_per_token": 4.789039047987465
+        },
+        "TOKENIZATOREX-HF": {
+          "docs": 66,
+          "tokens": 179350,
+          "words": 100550,
+          "chars": 798796,
+          "bytes": 834937,
+          "fertility": 1.783689706613625,
+          "bytes_per_token": 4.6553498745469755,
+          "chars_per_token": 4.453838862559242,
+          "macro_fertility": 1.7574331887431196,
+          "macro_bytes_per_token": 4.79989352991565
+        },
+        "Slayer1B": {
+          "docs": 66,
+          "tokens": 209503,
+          "words": 100550,
+          "chars": 798796,
+          "bytes": 834937,
+          "fertility": 2.083570363003481,
+          "bytes_per_token": 3.9853224058844026,
+          "chars_per_token": 3.812814136313084,
+          "macro_fertility": 2.062894756260514,
+          "macro_bytes_per_token": 4.0551749437221805
+        },
+        "Pollock-2.0": {
+          "docs": 66,
+          "tokens": 179037,
+          "words": 100550,
+          "chars": 798796,
+          "bytes": 834937,
+          "fertility": 1.7805768274490303,
+          "bytes_per_token": 4.663488552645543,
+          "chars_per_token": 4.461625250646515,
+          "macro_fertility": 1.7738245151607124,
+          "macro_bytes_per_token": 4.723641386731669
+        },
+        "APT3-1B": {
+          "docs": 66,
+          "tokens": 206278,
+          "words": 100550,
+          "chars": 798796,
+          "bytes": 834937,
+          "fertility": 2.051496767777225,
+          "bytes_per_token": 4.047629897516943,
+          "chars_per_token": 3.8724245920553817,
+          "macro_fertility": 1.9916380209304485,
+          "macro_bytes_per_token": 4.243475654595096
+        }
+      },
+      "rank_fertility": [
+        "Pollock-2.0",
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "rank_bytes_per_token": [
+        "Pollock-2.0",
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "winner_fertility": "Pollock-2.0"
+    },
+    "prawo_eli": {
+      "rows": {
+        "TOKENIZATOREX": {
+          "docs": 78,
+          "tokens": 204825,
+          "words": 137764,
+          "chars": 947209,
+          "bytes": 993154,
+          "fertility": 1.486781742690398,
+          "bytes_per_token": 4.848792871963871,
+          "chars_per_token": 4.624479433662883,
+          "macro_fertility": 1.4848526755684583,
+          "macro_bytes_per_token": 4.866752048892563
+        },
+        "TOKENIZATOREX-HF": {
+          "docs": 78,
+          "tokens": 204346,
+          "words": 137764,
+          "chars": 947209,
+          "bytes": 993154,
+          "fertility": 1.4833047820911123,
+          "bytes_per_token": 4.86015875035479,
+          "chars_per_token": 4.635319507110489,
+          "macro_fertility": 1.4794026520547543,
+          "macro_bytes_per_token": 4.882814424102972
+        },
+        "Slayer1B": {
+          "docs": 78,
+          "tokens": 248522,
+          "words": 137764,
+          "chars": 947209,
+          "bytes": 993154,
+          "fertility": 1.803969106588078,
+          "bytes_per_token": 3.996241781411706,
+          "chars_per_token": 3.8113688124190213,
+          "macro_fertility": 1.8165155435335119,
+          "macro_bytes_per_token": 3.9612006157558506
+        },
+        "Pollock-2.0": {
+          "docs": 78,
+          "tokens": 214289,
+          "words": 137764,
+          "chars": 947209,
+          "bytes": 993154,
+          "fertility": 1.5554789349902731,
+          "bytes_per_token": 4.6346476020701015,
+          "chars_per_token": 4.420240889639692,
+          "macro_fertility": 1.554809668892681,
+          "macro_bytes_per_token": 4.6270433447372366
+        },
+        "APT3-1B": {
+          "docs": 78,
+          "tokens": 218678,
+          "words": 137764,
+          "chars": 947209,
+          "bytes": 993154,
+          "fertility": 1.587337766034668,
+          "bytes_per_token": 4.541627415652237,
+          "chars_per_token": 4.331523975891494,
+          "macro_fertility": 1.5816136263261176,
+          "macro_bytes_per_token": 4.5562689008098864
+        }
+      },
+      "rank_fertility": [
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "Pollock-2.0",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "rank_bytes_per_token": [
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "Pollock-2.0",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "winner_fertility": "TOKENIZATOREX-HF"
+    },
+    "ocr_prasa": {
+      "rows": {
+        "TOKENIZATOREX": {
+          "docs": 36,
+          "tokens": 175075,
+          "words": 91388,
+          "chars": 594523,
+          "bytes": 628704,
+          "fertility": 1.9157329189827985,
+          "bytes_per_token": 3.5910552620305585,
+          "chars_per_token": 3.395818934742253,
+          "macro_fertility": 1.92848440944097,
+          "macro_bytes_per_token": 3.820833466198848
+        },
+        "TOKENIZATOREX-HF": {
+          "docs": 36,
+          "tokens": 175015,
+          "words": 91388,
+          "chars": 594523,
+          "bytes": 628704,
+          "fertility": 1.915076377642579,
+          "bytes_per_token": 3.5922863754535324,
+          "chars_per_token": 3.396983115732937,
+          "macro_fertility": 1.9281331060142368,
+          "macro_bytes_per_token": 3.8205584944514754
+        },
+        "Slayer1B": {
+          "docs": 36,
+          "tokens": 189925,
+          "words": 91388,
+          "chars": 594523,
+          "bytes": 628704,
+          "fertility": 2.07822690068718,
+          "bytes_per_token": 3.3102751085954982,
+          "chars_per_token": 3.1303040673950244,
+          "macro_fertility": 2.0897916422791463,
+          "macro_bytes_per_token": 3.427912735097932
+        },
+        "Pollock-2.0": {
+          "docs": 36,
+          "tokens": 177430,
+          "words": 91388,
+          "chars": 594523,
+          "bytes": 628704,
+          "fertility": 1.9415021665864227,
+          "bytes_per_token": 3.543391760130756,
+          "chars_per_token": 3.3507467733754157,
+          "macro_fertility": 1.9487283260686372,
+          "macro_bytes_per_token": 3.7241199358743913
+        },
+        "APT3-1B": {
+          "docs": 36,
+          "tokens": 180590,
+          "words": 91388,
+          "chars": 594523,
+          "bytes": 628704,
+          "fertility": 1.9760800105046614,
+          "bytes_per_token": 3.4813887812171216,
+          "chars_per_token": 3.2921147350351627,
+          "macro_fertility": 1.9886606529161692,
+          "macro_bytes_per_token": 3.6684566879155462
+        }
+      },
+      "rank_fertility": [
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "Pollock-2.0",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "rank_bytes_per_token": [
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "Pollock-2.0",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "winner_fertility": "TOKENIZATOREX-HF"
+    },
+    "tabele_json": {
+      "rows": {
+        "TOKENIZATOREX": {
+          "docs": 60,
+          "tokens": 138565,
+          "words": 52698,
+          "chars": 489109,
+          "bytes": 508894,
+          "fertility": 2.6294166761546927,
+          "bytes_per_token": 3.672601306246166,
+          "chars_per_token": 3.5298163316854905,
+          "macro_fertility": 2.7493766020606376,
+          "macro_bytes_per_token": 3.6083404202560465
+        },
+        "TOKENIZATOREX-HF": {
+          "docs": 60,
+          "tokens": 137842,
+          "words": 52698,
+          "chars": 489109,
+          "bytes": 508894,
+          "fertility": 2.6156969903981175,
+          "bytes_per_token": 3.691864598598395,
+          "chars_per_token": 3.548330697465214,
+          "macro_fertility": 2.7345561766156887,
+          "macro_bytes_per_token": 3.627474744318733
+        },
+        "Slayer1B": {
+          "docs": 60,
+          "tokens": 160613,
+          "words": 52698,
+          "chars": 489109,
+          "bytes": 508894,
+          "fertility": 3.047800675547459,
+          "bytes_per_token": 3.1684483821359417,
+          "chars_per_token": 3.0452640819858914,
+          "macro_fertility": 3.1797577198833613,
+          "macro_bytes_per_token": 3.1169279472627545
+        },
+        "Pollock-2.0": {
+          "docs": 60,
+          "tokens": 142859,
+          "words": 52698,
+          "chars": 489109,
+          "bytes": 508894,
+          "fertility": 2.710899844396372,
+          "bytes_per_token": 3.562211691248014,
+          "chars_per_token": 3.4237184916596086,
+          "macro_fertility": 2.8252749696929063,
+          "macro_bytes_per_token": 3.5067276415733093
+        },
+        "APT3-1B": {
+          "docs": 60,
+          "tokens": 147843,
+          "words": 52698,
+          "chars": 489109,
+          "bytes": 508894,
+          "fertility": 2.805476488671297,
+          "bytes_per_token": 3.4421244157653725,
+          "chars_per_token": 3.3083000209681894,
+          "macro_fertility": 2.922598158803892,
+          "macro_bytes_per_token": 3.3888285627545054
+        }
+      },
+      "rank_fertility": [
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "Pollock-2.0",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "rank_bytes_per_token": [
+        "TOKENIZATOREX-HF",
+        "TOKENIZATOREX",
+        "Pollock-2.0",
+        "APT3-1B",
+        "Slayer1B"
+      ],
+      "winner_fertility": "TOKENIZATOREX-HF"
+    }
+  },
+  "aggregate": {
+    "rows": {
+      "TOKENIZATOREX": {
+        "docs": 606,
+        "tokens": 1153793,
+        "words": 685753,
+        "chars": 5037385,
+        "bytes": 5279146,
+        "fertility": 1.6825197994029921,
+        "bytes_per_token": 4.575470643347637,
+        "chars_per_token": 4.3659347907293595,
+        "macro_fertility": 1.6868023005764057,
+        "macro_bytes_per_token": 4.554682986566737
+      },
+      "TOKENIZATOREX-HF": {
+        "docs": 606,
+        "tokens": 1151140,
+        "words": 685753,
+        "chars": 5037385,
+        "bytes": 5279146,
+        "fertility": 1.6786510594922661,
+        "bytes_per_token": 4.586015601925048,
+        "chars_per_token": 4.375996837917195,
+        "macro_fertility": 1.6819057641613178,
+        "macro_bytes_per_token": 4.565453044065105
+      },
+      "Slayer1B": {
+        "docs": 606,
+        "tokens": 1389668,
+        "words": 685753,
+        "chars": 5037385,
+        "bytes": 5279146,
+        "fertility": 2.02648475471489,
+        "bytes_per_token": 3.798854114795764,
+        "chars_per_token": 3.6248837851918587,
+        "macro_fertility": 2.0784472030910948,
+        "macro_bytes_per_token": 3.6615178992011734
+      },
+      "Pollock-2.0": {
+        "docs": 606,
+        "tokens": 1228959,
+        "words": 685753,
+        "chars": 5037385,
+        "bytes": 5279146,
+        "fertility": 1.792130694287885,
+        "bytes_per_token": 4.295624182743281,
+        "chars_per_token": 4.098904031786252,
+        "macro_fertility": 1.8312855256692517,
+        "macro_bytes_per_token": 4.172299010005021
+      },
+      "APT3-1B": {
+        "docs": 606,
+        "tokens": 1276350,
+        "words": 685753,
+        "chars": 5037385,
+        "bytes": 5279146,
+        "fertility": 1.8612386675668937,
+        "bytes_per_token": 4.136127237826615,
+        "chars_per_token": 3.9467113252634465,
+        "macro_fertility": 1.8885211444737542,
+        "macro_bytes_per_token": 4.044933114425971
+      }
+    },
+    "rank_fertility": [
+      "TOKENIZATOREX-HF",
+      "TOKENIZATOREX",
+      "Pollock-2.0",
+      "APT3-1B",
+      "Slayer1B"
+    ],
+    "rank_bytes_per_token": [
+      "TOKENIZATOREX-HF",
+      "TOKENIZATOREX",
+      "Pollock-2.0",
+      "APT3-1B",
+      "Slayer1B"
+    ],
+    "docs": 606
+  }
+}
