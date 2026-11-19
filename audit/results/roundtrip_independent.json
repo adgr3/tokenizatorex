@@ -1,0 +1,105 @@
+{
+  "docs": 1010,
+  "tokenizers": {
+    "TOKENIZATOREX": {
+      "exact_ok": 1010,
+      "exact_rate": 1.0,
+      "mismatch": 0,
+      "net_char_delta_on_mismatch": 0,
+      "tokens_on_source": 1961983,
+      "tokens_on_decoded": 1961983,
+      "lost_char_buckets": {},
+      "gained_char_buckets": {}
+    },
+    "TOKENIZATOREX-HF": {
+      "exact_ok": 1010,
+      "exact_rate": 1.0,
+      "mismatch": 0,
+      "net_char_delta_on_mismatch": 0,
+      "tokens_on_source": 1957010,
+      "tokens_on_decoded": 1957010,
+      "lost_char_buckets": {},
+      "gained_char_buckets": {}
+    },
+    "TOKENIZATOREX-base": {
+      "exact_ok": 1010,
+      "exact_rate": 1.0,
+      "mismatch": 0,
+      "net_char_delta_on_mismatch": 0,
+      "tokens_on_source": 2294865,
+      "tokens_on_decoded": 2294865,
+      "lost_char_buckets": {},
+      "gained_char_buckets": {}
+    },
+    "Slayer1B": {
+      "exact_ok": 1010,
+      "exact_rate": 1.0,
+      "mismatch": 0,
+      "net_char_delta_on_mismatch": 0,
+      "tokens_on_source": 2357624,
+      "tokens_on_decoded": 2357624,
+      "lost_char_buckets": {},
+      "gained_char_buckets": {}
+    },
+    "APT3-1B": {
+      "exact_ok": 6,
+      "exact_rate": 0.005940594059405941,
+      "mismatch": 1004,
+      "net_char_delta_on_mismatch": 115302,
+      "tokens_on_source": 2163062,
+      "tokens_on_decoded": 2160532,
+      "lost_char_buckets": {
+        "nonascii": 30466,
+        "other_space": 150
+      },
+      "gained_char_buckets": {
+        "ascii": 145768,
+        "space": 150
+      }
+    },
+    "Pollock-2.0": {
+      "exact_ok": 1010,
+      "exact_rate": 1.0,
+      "mismatch": 0,
+      "net_char_delta_on_mismatch": 0,
+      "tokens_on_source": 2088996,
+      "tokens_on_decoded": 2088996,
+      "lost_char_buckets": {},
+      "gained_char_buckets": {}
+    },
+    "Bielik-v3": {
+      "exact_ok": 1010,
+      "exact_rate": 1.0,
+      "mismatch": 0,
+      "net_char_delta_on_mismatch": 0,
+      "tokens_on_source": 3889599,
+      "tokens_on_decoded": 3889599,
+      "lost_char_buckets": {},
+      "gained_char_buckets": {}
+    },
+    "PLLuM-12B": {
+      "exact_ok": 1010,
+      "exact_rate": 1.0,
+      "mismatch": 0,
+      "net_char_delta_on_mismatch": 0,
+      "tokens_on_source": 3126095,
+      "tokens_on_decoded": 3126095,
+      "lost_char_buckets": {},
+      "gained_char_buckets": {}
+    },
+    "GPT-4o": {
+      "exact_ok": 1010,
+      "exact_rate": 1.0,
+      "mismatch": 0,
+      "net_char_delta_on_mismatch": 0,
+      "tokens_on_source": 2959583,
+      "tokens_on_decoded": 2959583,
+      "lost_char_buckets": {},
+      "gained_char_buckets": {}
+    }
+  },
+  "composition": {
+    "official_all_splits": 1010,
+    "measured": 1010
+  }
+}

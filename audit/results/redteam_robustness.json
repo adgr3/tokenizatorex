@@ -1,0 +1,3543 @@
+{
+  "meta": {
+    "split": "test",
+    "domains": [
+      "przetargi_ogloszenia",
+      "przetargi_kio",
+      "samorzad_uchwaly",
+      "granty_ogloszenia",
+      "prawo_eli",
+      "ocr_prasa",
+      "tabele_json",
+      "web",
+      "wikipedia",
+      "nauka"
+    ],
+    "official7": [
+      "przetargi_ogloszenia",
+      "przetargi_kio",
+      "samorzad_uchwaly",
+      "granty_ogloszenia",
+      "prawo_eli",
+      "ocr_prasa",
+      "tabele_json"
+    ],
+    "tokenizers": [
+      "TOKENIZATOREX",
+      "TOKENIZATOREX-HF",
+      "Slayer1B",
+      "Pollock-2.0",
+      "APT3-1B"
+    ],
+    "word_definitions": {
+      "baseline": "str.split()",
+      "letters": "[^\\W\\d_]+ (regex, Unicode)"
+    },
+    "drop10": "drop ceil(10%) longest documents per domain, measured in str.split() words"
+  },
+  "baseline": {
+    "przetargi_ogloszenia": {
+      "docs": 60,
+      "words": 136034,
+      "tokens": {
+        "TOKENIZATOREX": 211560,
+        "TOKENIZATOREX-HF": 211179,
+        "Slayer1B": 274390,
+        "Pollock-2.0": 246441,
+        "APT3-1B": 244358
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.5551994354352587,
+        "TOKENIZATOREX-HF": 1.5523986650396224,
+        "Slayer1B": 2.0170692620962405,
+        "Pollock-2.0": 1.8116132731523003,
+        "APT3-1B": 1.7963009247688078
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.5523986650396224,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.5551994354352587,
+          "rank": 2
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.7963009247688078,
+          "rank": 3
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.8116132731523003,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.0170692620962405,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.5523986650396224,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.5551994354352587,
+      "tkx_value": 1.5551994354352587,
+      "gap_tkx_minus_best": 0.0028007703956363095,
+      "relative_tkx_vs_best": 0.0018041566633044681
+    },
+    "przetargi_kio": {
+      "docs": 66,
+      "words": 95409,
+      "tokens": {
+        "TOKENIZATOREX": 133826,
+        "TOKENIZATOREX-HF": 133881,
+        "Slayer1B": 164087,
+        "Pollock-2.0": 142856,
+        "APT3-1B": 151159
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.4026559339265687,
+        "TOKENIZATOREX-HF": 1.4032323994591704,
+        "Slayer1B": 1.7198272699640496,
+        "Pollock-2.0": 1.4973010931882735,
+        "APT3-1B": 1.5843264262281336
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.4026559339265687,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.4032323994591704,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.4973010931882735,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.5843264262281336,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.7198272699640496,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 1,
+      "best": "TOKENIZATOREX",
+      "best_value": 1.4026559339265687,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 1.4032323994591704,
+      "tkx_value": 1.4026559339265687,
+      "gap_tkx_minus_best": 0.0,
+      "relative_tkx_vs_best": 0.0
+    },
+    "samorzad_uchwaly": {
+      "docs": 240,
+      "words": 71910,
+      "tokens": {
+        "TOKENIZATOREX": 109866,
+        "TOKENIZATOREX-HF": 109527,
+        "Slayer1B": 142628,
+        "Pollock-2.0": 126047,
+        "APT3-1B": 127444
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.5278264497288276,
+        "TOKENIZATOREX-HF": 1.5231122236128494,
+        "Slayer1B": 1.983423724099569,
+        "Pollock-2.0": 1.7528438325684883,
+        "APT3-1B": 1.772270894173272
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.5231122236128494,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.5278264497288276,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.7528438325684883,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.772270894173272,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.983423724099569,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.5231122236128494,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.5278264497288276,
+      "tkx_value": 1.5278264497288276,
+      "gap_tkx_minus_best": 0.004714226115978271,
+      "relative_tkx_vs_best": 0.0030951272289023724
+    },
+    "granty_ogloszenia": {
+      "docs": 66,
+      "words": 100550,
+      "tokens": {
+        "TOKENIZATOREX": 180076,
+        "TOKENIZATOREX-HF": 179350,
+        "Slayer1B": 209503,
+        "Pollock-2.0": 179037,
+        "APT3-1B": 206278
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.7909099950273495,
+        "TOKENIZATOREX-HF": 1.783689706613625,
+        "Slayer1B": 2.083570363003481,
+        "Pollock-2.0": 1.7805768274490303,
+        "APT3-1B": 2.051496767777225
+      },
+      "ranking": [
+        {
+          "label": "Pollock-2.0",
+          "value": 1.7805768274490303,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.783689706613625,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7909099950273495,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 2.051496767777225,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.083570363003481,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 3,
+      "best": "Pollock-2.0",
+      "best_value": 1.7805768274490303,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 1.783689706613625,
+      "tkx_value": 1.7909099950273495,
+      "gap_tkx_minus_best": 0.010333167578319147,
+      "relative_tkx_vs_best": 0.0058032697151984
+    },
+    "prawo_eli": {
+      "docs": 78,
+      "words": 137764,
+      "tokens": {
+        "TOKENIZATOREX": 204825,
+        "TOKENIZATOREX-HF": 204346,
+        "Slayer1B": 248522,
+        "Pollock-2.0": 214289,
+        "APT3-1B": 218678
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.486781742690398,
+        "TOKENIZATOREX-HF": 1.4833047820911123,
+        "Slayer1B": 1.803969106588078,
+        "Pollock-2.0": 1.5554789349902731,
+        "APT3-1B": 1.587337766034668
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.4833047820911123,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.486781742690398,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.5554789349902731,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.587337766034668,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.803969106588078,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.4833047820911123,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.486781742690398,
+      "tkx_value": 1.486781742690398,
+      "gap_tkx_minus_best": 0.0034769605992857056,
+      "relative_tkx_vs_best": 0.002344063500141935
+    },
+    "ocr_prasa": {
+      "docs": 36,
+      "words": 91388,
+      "tokens": {
+        "TOKENIZATOREX": 175075,
+        "TOKENIZATOREX-HF": 175015,
+        "Slayer1B": 189925,
+        "Pollock-2.0": 177430,
+        "APT3-1B": 180590
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.9157329189827985,
+        "TOKENIZATOREX-HF": 1.915076377642579,
+        "Slayer1B": 2.07822690068718,
+        "Pollock-2.0": 1.9415021665864227,
+        "APT3-1B": 1.9760800105046614
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.915076377642579,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.9157329189827985,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.9415021665864227,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.9760800105046614,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.07822690068718,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.915076377642579,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.9157329189827985,
+      "tkx_value": 1.9157329189827985,
+      "gap_tkx_minus_best": 0.0006565413402195297,
+      "relative_tkx_vs_best": 0.0003428277576207339
+    },
+    "tabele_json": {
+      "docs": 60,
+      "words": 52698,
+      "tokens": {
+        "TOKENIZATOREX": 138565,
+        "TOKENIZATOREX-HF": 137842,
+        "Slayer1B": 160613,
+        "Pollock-2.0": 142859,
+        "APT3-1B": 147843
+      },
+      "fertility": {
+        "TOKENIZATOREX": 2.6294166761546927,
+        "TOKENIZATOREX-HF": 2.6156969903981175,
+        "Slayer1B": 3.047800675547459,
+        "Pollock-2.0": 2.710899844396372,
+        "APT3-1B": 2.805476488671297
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 2.6156969903981175,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 2.6294166761546927,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 2.710899844396372,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 2.805476488671297,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 3.047800675547459,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 2.6156969903981175,
+      "second": "TOKENIZATOREX",
+      "second_value": 2.6294166761546927,
+      "tkx_value": 2.6294166761546927,
+      "gap_tkx_minus_best": 0.013719685756575117,
+      "relative_tkx_vs_best": 0.00524513573511709
+    },
+    "web": {
+      "docs": 421,
+      "words": 155005,
+      "tokens": {
+        "TOKENIZATOREX": 219425,
+        "TOKENIZATOREX-HF": 219391,
+        "Slayer1B": 259230,
+        "Pollock-2.0": 244400,
+        "APT3-1B": 241317
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.4155994967904262,
+        "TOKENIZATOREX-HF": 1.4153801490274507,
+        "Slayer1B": 1.6723976645914649,
+        "Pollock-2.0": 1.5767233315054352,
+        "APT3-1B": 1.5568336505274023
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.4153801490274507,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.4155994967904262,
+          "rank": 2
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.5568336505274023,
+          "rank": 3
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.5767233315054352,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.6723976645914649,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.4153801490274507,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.4155994967904262,
+      "tkx_value": 1.4155994967904262,
+      "gap_tkx_minus_best": 0.00021934776297549696,
+      "relative_tkx_vs_best": 0.0001549744520059626
+    },
+    "wikipedia": {
+      "docs": 241,
+      "words": 144170,
+      "tokens": {
+        "TOKENIZATOREX": 257369,
+        "TOKENIZATOREX-HF": 256994,
+        "Slayer1B": 287917,
+        "Pollock-2.0": 254144,
+        "APT3-1B": 263981
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.785177221335923,
+        "TOKENIZATOREX-HF": 1.782576125407505,
+        "Slayer1B": 1.9970659637927446,
+        "Pollock-2.0": 1.7628077963515294,
+        "APT3-1B": 1.8310397447457862
+      },
+      "ranking": [
+        {
+          "label": "Pollock-2.0",
+          "value": 1.7628077963515294,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.782576125407505,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.785177221335923,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.8310397447457862,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.9970659637927446,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 3,
+      "best": "Pollock-2.0",
+      "best_value": 1.7628077963515294,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 1.782576125407505,
+      "tkx_value": 1.785177221335923,
+      "gap_tkx_minus_best": 0.022369424984393538,
+      "relative_tkx_vs_best": 0.012689656257869553
+    },
+    "nauka": {
+      "docs": 62,
+      "words": 158015,
+      "tokens": {
+        "TOKENIZATOREX": 312217,
+        "TOKENIZATOREX-HF": 312073,
+        "Slayer1B": 331123,
+        "Pollock-2.0": 311842,
+        "APT3-1B": 302993
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.975869379489289,
+        "TOKENIZATOREX-HF": 1.9749580736006076,
+        "Slayer1B": 2.095516248457425,
+        "Pollock-2.0": 1.9734961870708476,
+        "APT3-1B": 1.9174951745087492
+      },
+      "ranking": [
+        {
+          "label": "APT3-1B",
+          "value": 1.9174951745087492,
+          "rank": 1
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.9734961870708476,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.9749580736006076,
+          "rank": 3
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.975869379489289,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.095516248457425,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 4,
+      "best": "APT3-1B",
+      "best_value": 1.9174951745087492,
+      "second": "Pollock-2.0",
+      "second_value": 1.9734961870708476,
+      "tkx_value": 1.975869379489289,
+      "gap_tkx_minus_best": 0.0583742049805398,
+      "relative_tkx_vs_best": 0.030442947526840625
+    }
+  },
+  "letters": {
+    "przetargi_ogloszenia": {
+      "docs": 60,
+      "words_letters": 123930,
+      "tokens": {
+        "TOKENIZATOREX": 211560,
+        "TOKENIZATOREX-HF": 211179,
+        "Slayer1B": 274390,
+        "Pollock-2.0": 246441,
+        "APT3-1B": 244358
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.7070927136286613,
+        "TOKENIZATOREX-HF": 1.7040183974824499,
+        "Slayer1B": 2.2140724602598243,
+        "Pollock-2.0": 1.988549987896393,
+        "APT3-1B": 1.9717421124828531
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.7040183974824499,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7070927136286613,
+          "rank": 2
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.9717421124828531,
+          "rank": 3
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.988549987896393,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.2140724602598243,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.7040183974824499,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.7070927136286613,
+      "tkx_value": 1.7070927136286613,
+      "gap_tkx_minus_best": 0.003074316146211453,
+      "relative_tkx_vs_best": 0.0018041566633044681
+    },
+    "przetargi_kio": {
+      "docs": 66,
+      "words_letters": 88597,
+      "tokens": {
+        "TOKENIZATOREX": 133826,
+        "TOKENIZATOREX-HF": 133881,
+        "Slayer1B": 164087,
+        "Pollock-2.0": 142856,
+        "APT3-1B": 151159
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.5105026129552919,
+        "TOKENIZATOREX-HF": 1.5111234014695758,
+        "Slayer1B": 1.8520604535142273,
+        "Pollock-2.0": 1.6124247999367924,
+        "APT3-1B": 1.706141291465851
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.5105026129552919,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.5111234014695758,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.6124247999367924,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.706141291465851,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.8520604535142273,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 1,
+      "best": "TOKENIZATOREX",
+      "best_value": 1.5105026129552919,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 1.5111234014695758,
+      "tkx_value": 1.5105026129552919,
+      "gap_tkx_minus_best": 0.0,
+      "relative_tkx_vs_best": 0.0
+    },
+    "samorzad_uchwaly": {
+      "docs": 240,
+      "words_letters": 58813,
+      "tokens": {
+        "TOKENIZATOREX": 109866,
+        "TOKENIZATOREX-HF": 109527,
+        "Slayer1B": 142628,
+        "Pollock-2.0": 126047,
+        "APT3-1B": 127444
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.8680563820923946,
+        "TOKENIZATOREX-HF": 1.8622923503307092,
+        "Slayer1B": 2.4251100947069526,
+        "Pollock-2.0": 2.1431826296907146,
+        "APT3-1B": 2.1669358815227926
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.8622923503307092,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.8680563820923946,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 2.1431826296907146,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 2.1669358815227926,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.4251100947069526,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.8622923503307092,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.8680563820923946,
+      "tkx_value": 1.8680563820923946,
+      "gap_tkx_minus_best": 0.005764031761685384,
+      "relative_tkx_vs_best": 0.0030951272289025944
+    },
+    "granty_ogloszenia": {
+      "docs": 66,
+      "words_letters": 87485,
+      "tokens": {
+        "TOKENIZATOREX": 180076,
+        "TOKENIZATOREX-HF": 179350,
+        "Slayer1B": 209503,
+        "Pollock-2.0": 179037,
+        "APT3-1B": 206278
+      },
+      "fertility": {
+        "TOKENIZATOREX": 2.058364291021318,
+        "TOKENIZATOREX-HF": 2.050065725552952,
+        "Slayer1B": 2.394730525232897,
+        "Pollock-2.0": 2.046487969366177,
+        "APT3-1B": 2.357867062925073
+      },
+      "ranking": [
+        {
+          "label": "Pollock-2.0",
+          "value": 2.046487969366177,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 2.050065725552952,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 2.058364291021318,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 2.357867062925073,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.394730525232897,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 3,
+      "best": "Pollock-2.0",
+      "best_value": 2.046487969366177,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 2.050065725552952,
+      "tkx_value": 2.058364291021318,
+      "gap_tkx_minus_best": 0.011876321655140742,
+      "relative_tkx_vs_best": 0.0058032697151984
+    },
+    "prawo_eli": {
+      "docs": 78,
+      "words_letters": 119391,
+      "tokens": {
+        "TOKENIZATOREX": 204825,
+        "TOKENIZATOREX-HF": 204346,
+        "Slayer1B": 248522,
+        "Pollock-2.0": 214289,
+        "APT3-1B": 218678
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.7155815765007412,
+        "TOKENIZATOREX-HF": 1.7115695487934601,
+        "Slayer1B": 2.0815806886616244,
+        "Pollock-2.0": 1.7948505331222622,
+        "APT3-1B": 1.831612098064343
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.7115695487934601,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7155815765007412,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.7948505331222622,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.831612098064343,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.0815806886616244,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.7115695487934601,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.7155815765007412,
+      "tkx_value": 1.7155815765007412,
+      "gap_tkx_minus_best": 0.004012027707281041,
+      "relative_tkx_vs_best": 0.002344063500141935
+    },
+    "ocr_prasa": {
+      "docs": 36,
+      "words_letters": 88938,
+      "tokens": {
+        "TOKENIZATOREX": 175075,
+        "TOKENIZATOREX-HF": 175015,
+        "Slayer1B": 189925,
+        "Pollock-2.0": 177430,
+        "APT3-1B": 180590
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.9685061503519306,
+        "TOKENIZATOREX-HF": 1.9678315230834964,
+        "Slayer1B": 2.135476399289393,
+        "Pollock-2.0": 1.9949852706379725,
+        "APT3-1B": 2.03051564010884
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.9678315230834964,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.9685061503519306,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.9949852706379725,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 2.03051564010884,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.135476399289393,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.9678315230834964,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.9685061503519306,
+      "tkx_value": 1.9685061503519306,
+      "gap_tkx_minus_best": 0.000674627268434147,
+      "relative_tkx_vs_best": 0.0003428277576207339
+    },
+    "tabele_json": {
+      "docs": 60,
+      "words_letters": 62620,
+      "tokens": {
+        "TOKENIZATOREX": 138565,
+        "TOKENIZATOREX-HF": 137842,
+        "Slayer1B": 160613,
+        "Pollock-2.0": 142859,
+        "APT3-1B": 147843
+      },
+      "fertility": {
+        "TOKENIZATOREX": 2.212791440434366,
+        "TOKENIZATOREX-HF": 2.201245608431811,
+        "Slayer1B": 2.5648834238262537,
+        "Pollock-2.0": 2.281363781539444,
+        "APT3-1B": 2.3609549664643885
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 2.201245608431811,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 2.212791440434366,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 2.281363781539444,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 2.3609549664643885,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.5648834238262537,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 2.201245608431811,
+      "second": "TOKENIZATOREX",
+      "second_value": 2.212791440434366,
+      "tkx_value": 2.212791440434366,
+      "gap_tkx_minus_best": 0.011545832002555212,
+      "relative_tkx_vs_best": 0.00524513573511709
+    },
+    "web": {
+      "docs": 421,
+      "words_letters": 150655,
+      "tokens": {
+        "TOKENIZATOREX": 219425,
+        "TOKENIZATOREX-HF": 219391,
+        "Slayer1B": 259230,
+        "Pollock-2.0": 244400,
+        "APT3-1B": 241317
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.4564733994888985,
+        "TOKENIZATOREX-HF": 1.4562477182967708,
+        "Slayer1B": 1.7206863363313532,
+        "Pollock-2.0": 1.6222495104709436,
+        "APT3-1B": 1.6017855364906575
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.4562477182967708,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.4564733994888985,
+          "rank": 2
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.6017855364906575,
+          "rank": 3
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.6222495104709436,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.7206863363313532,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.4562477182967708,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.4564733994888985,
+      "tkx_value": 1.4564733994888985,
+      "gap_tkx_minus_best": 0.00022568119212773574,
+      "relative_tkx_vs_best": 0.00015497445200574056
+    },
+    "wikipedia": {
+      "docs": 241,
+      "words_letters": 137044,
+      "tokens": {
+        "TOKENIZATOREX": 257369,
+        "TOKENIZATOREX-HF": 256994,
+        "Slayer1B": 287917,
+        "Pollock-2.0": 254144,
+        "APT3-1B": 263981
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.8780026852689646,
+        "TOKENIZATOREX-HF": 1.8752663378185108,
+        "Slayer1B": 2.100909197046204,
+        "Pollock-2.0": 1.8544700971950614,
+        "APT3-1B": 1.9262499635153674
+      },
+      "ranking": [
+        {
+          "label": "Pollock-2.0",
+          "value": 1.8544700971950614,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.8752663378185108,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.8780026852689646,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.9262499635153674,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.100909197046204,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 3,
+      "best": "Pollock-2.0",
+      "best_value": 1.8544700971950614,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 1.8752663378185108,
+      "tkx_value": 1.8780026852689646,
+      "gap_tkx_minus_best": 0.023532588073903238,
+      "relative_tkx_vs_best": 0.012689656257869553
+    },
+    "nauka": {
+      "docs": 62,
+      "words_letters": 145557,
+      "tokens": {
+        "TOKENIZATOREX": 312217,
+        "TOKENIZATOREX-HF": 312073,
+        "Slayer1B": 331123,
+        "Pollock-2.0": 311842,
+        "APT3-1B": 302993
+      },
+      "fertility": {
+        "TOKENIZATOREX": 2.1449810040053037,
+        "TOKENIZATOREX-HF": 2.1439917008457168,
+        "Slayer1B": 2.274868264666076,
+        "Pollock-2.0": 2.142404693693879,
+        "APT3-1B": 2.0816106405050943
+      },
+      "ranking": [
+        {
+          "label": "APT3-1B",
+          "value": 2.0816106405050943,
+          "rank": 1
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 2.142404693693879,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 2.1439917008457168,
+          "rank": 3
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 2.1449810040053037,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.274868264666076,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 4,
+      "best": "APT3-1B",
+      "best_value": 2.0816106405050943,
+      "second": "Pollock-2.0",
+      "second_value": 2.142404693693879,
+      "tkx_value": 2.1449810040053037,
+      "gap_tkx_minus_best": 0.06337036350020941,
+      "relative_tkx_vs_best": 0.030442947526840403
+    }
+  },
+  "bytes": {
+    "przetargi_ogloszenia": {
+      "docs": 60,
+      "bytes": 1102567,
+      "tokens": {
+        "TOKENIZATOREX": 211560,
+        "TOKENIZATOREX-HF": 211179,
+        "Slayer1B": 274390,
+        "Pollock-2.0": 246441,
+        "APT3-1B": 244358
+      },
+      "tokens_per_byte": {
+        "TOKENIZATOREX": 0.1918794957585344,
+        "TOKENIZATOREX-HF": 0.19153393852709177,
+        "Slayer1B": 0.24886469484394147,
+        "Pollock-2.0": 0.223515668435569,
+        "APT3-1B": 0.22162644084214383
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 0.19153393852709177,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 0.1918794957585344,
+          "rank": 2
+        },
+        {
+          "label": "APT3-1B",
+          "value": 0.22162644084214383,
+          "rank": 3
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 0.223515668435569,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 0.24886469484394147,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 0.19153393852709177,
+      "second": "TOKENIZATOREX",
+      "second_value": 0.1918794957585344,
+      "tkx_value": 0.1918794957585344,
+      "gap_tkx_minus_best": 0.00034555723144263917,
+      "relative_tkx_vs_best": 0.0018041566633046902
+    },
+    "przetargi_kio": {
+      "docs": 66,
+      "bytes": 736230,
+      "tokens": {
+        "TOKENIZATOREX": 133826,
+        "TOKENIZATOREX-HF": 133881,
+        "Slayer1B": 164087,
+        "Pollock-2.0": 142856,
+        "APT3-1B": 151159
+      },
+      "tokens_per_byte": {
+        "TOKENIZATOREX": 0.18177200059763932,
+        "TOKENIZATOREX-HF": 0.18184670551322277,
+        "Slayer1B": 0.22287464515165098,
+        "Pollock-2.0": 0.19403718946524864,
+        "APT3-1B": 0.20531491517596404
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX",
+          "value": 0.18177200059763932,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 0.18184670551322277,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 0.19403718946524864,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 0.20531491517596404,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 0.22287464515165098,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 1,
+      "best": "TOKENIZATOREX",
+      "best_value": 0.18177200059763932,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 0.18184670551322277,
+      "tkx_value": 0.18177200059763932,
+      "gap_tkx_minus_best": 0.0,
+      "relative_tkx_vs_best": 0.0
+    },
+    "samorzad_uchwaly": {
+      "docs": 240,
+      "bytes": 474660,
+      "tokens": {
+        "TOKENIZATOREX": 109866,
+        "TOKENIZATOREX-HF": 109527,
+        "Slayer1B": 142628,
+        "Pollock-2.0": 126047,
+        "APT3-1B": 127444
+      },
+      "tokens_per_byte": {
+        "TOKENIZATOREX": 0.23146252054101885,
+        "TOKENIZATOREX-HF": 0.2307483251169258,
+        "Slayer1B": 0.3004845573673788,
+        "Pollock-2.0": 0.2655521847216955,
+        "APT3-1B": 0.26849534403573083
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 0.2307483251169258,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 0.23146252054101885,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 0.2655521847216955,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 0.26849534403573083,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 0.3004845573673788,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 0.2307483251169258,
+      "second": "TOKENIZATOREX",
+      "second_value": 0.23146252054101885,
+      "tkx_value": 0.23146252054101885,
+      "gap_tkx_minus_best": 0.0007141954240930393,
+      "relative_tkx_vs_best": 0.0030951272289023724
+    },
+    "granty_ogloszenia": {
+      "docs": 66,
+      "bytes": 834937,
+      "tokens": {
+        "TOKENIZATOREX": 180076,
+        "TOKENIZATOREX-HF": 179350,
+        "Slayer1B": 209503,
+        "Pollock-2.0": 179037,
+        "APT3-1B": 206278
+      },
+      "tokens_per_byte": {
+        "TOKENIZATOREX": 0.2156761528115295,
+        "TOKENIZATOREX-HF": 0.21480662612867799,
+        "Slayer1B": 0.25092072815074673,
+        "Pollock-2.0": 0.21443174754502436,
+        "APT3-1B": 0.24705816127444347
+      },
+      "ranking": [
+        {
+          "label": "Pollock-2.0",
+          "value": 0.21443174754502436,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 0.21480662612867799,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 0.2156761528115295,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 0.24705816127444347,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 0.25092072815074673,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 3,
+      "best": "Pollock-2.0",
+      "best_value": 0.21443174754502436,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 0.21480662612867799,
+      "tkx_value": 0.2156761528115295,
+      "gap_tkx_minus_best": 0.0012444052665051275,
+      "relative_tkx_vs_best": 0.0058032697151984
+    },
+    "prawo_eli": {
+      "docs": 78,
+      "bytes": 993154,
+      "tokens": {
+        "TOKENIZATOREX": 204825,
+        "TOKENIZATOREX-HF": 204346,
+        "Slayer1B": 248522,
+        "Pollock-2.0": 214289,
+        "APT3-1B": 218678
+      },
+      "tokens_per_byte": {
+        "TOKENIZATOREX": 0.20623689780235493,
+        "TOKENIZATOREX-HF": 0.20575459596396933,
+        "Slayer1B": 0.2502351095600481,
+        "Pollock-2.0": 0.2157661349599357,
+        "APT3-1B": 0.22018538917428718
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 0.20575459596396933,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 0.20623689780235493,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 0.2157661349599357,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 0.22018538917428718,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 0.2502351095600481,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 0.20575459596396933,
+      "second": "TOKENIZATOREX",
+      "second_value": 0.20623689780235493,
+      "tkx_value": 0.20623689780235493,
+      "gap_tkx_minus_best": 0.0004823018383856015,
+      "relative_tkx_vs_best": 0.002344063500141935
+    },
+    "ocr_prasa": {
+      "docs": 36,
+      "bytes": 628704,
+      "tokens": {
+        "TOKENIZATOREX": 175075,
+        "TOKENIZATOREX-HF": 175015,
+        "Slayer1B": 189925,
+        "Pollock-2.0": 177430,
+        "APT3-1B": 180590
+      },
+      "tokens_per_byte": {
+        "TOKENIZATOREX": 0.27846967730442307,
+        "TOKENIZATOREX-HF": 0.2783742428869547,
+        "Slayer1B": 0.3020896956278312,
+        "Pollock-2.0": 0.28221547819005444,
+        "APT3-1B": 0.28724169084338574
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 0.2783742428869547,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 0.27846967730442307,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 0.28221547819005444,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 0.28724169084338574,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 0.3020896956278312,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 0.2783742428869547,
+      "second": "TOKENIZATOREX",
+      "second_value": 0.27846967730442307,
+      "tkx_value": 0.27846967730442307,
+      "gap_tkx_minus_best": 9.543441746834302e-05,
+      "relative_tkx_vs_best": 0.00034282775762095596
+    },
+    "tabele_json": {
+      "docs": 60,
+      "bytes": 508894,
+      "tokens": {
+        "TOKENIZATOREX": 138565,
+        "TOKENIZATOREX-HF": 137842,
+        "Slayer1B": 160613,
+        "Pollock-2.0": 142859,
+        "APT3-1B": 147843
+      },
+      "tokens_per_byte": {
+        "TOKENIZATOREX": 0.272286566554135,
+        "TOKENIZATOREX-HF": 0.2708658384653779,
+        "Slayer1B": 0.3156118956010486,
+        "Pollock-2.0": 0.2807244730729779,
+        "APT3-1B": 0.29051826117030266
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 0.2708658384653779,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 0.272286566554135,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 0.2807244730729779,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 0.29051826117030266,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 0.3156118956010486,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 0.2708658384653779,
+      "second": "TOKENIZATOREX",
+      "second_value": 0.272286566554135,
+      "tkx_value": 0.272286566554135,
+      "gap_tkx_minus_best": 0.0014207280887571505,
+      "relative_tkx_vs_best": 0.005245135735116868
+    },
+    "web": {
+      "docs": 421,
+      "bytes": 1139692,
+      "tokens": {
+        "TOKENIZATOREX": 219425,
+        "TOKENIZATOREX-HF": 219391,
+        "Slayer1B": 259230,
+        "Pollock-2.0": 244400,
+        "APT3-1B": 241317
+      },
+      "tokens_per_byte": {
+        "TOKENIZATOREX": 0.19253008707615743,
+        "TOKENIZATOREX-HF": 0.19250025445471233,
+        "Slayer1B": 0.22745618991797784,
+        "Pollock-2.0": 0.21444390238766264,
+        "APT3-1B": 0.21173878556662679
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 0.19250025445471233,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 0.19253008707615743,
+          "rank": 2
+        },
+        {
+          "label": "APT3-1B",
+          "value": 0.21173878556662679,
+          "rank": 3
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 0.21444390238766264,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 0.22745618991797784,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 0.19250025445471233,
+      "second": "TOKENIZATOREX",
+      "second_value": 0.19253008707615743,
+      "tkx_value": 0.19253008707615743,
+      "gap_tkx_minus_best": 2.983262144509724e-05,
+      "relative_tkx_vs_best": 0.00015497445200574056
+    },
+    "wikipedia": {
+      "docs": 241,
+      "bytes": 1117870,
+      "tokens": {
+        "TOKENIZATOREX": 257369,
+        "TOKENIZATOREX-HF": 256994,
+        "Slayer1B": 287917,
+        "Pollock-2.0": 254144,
+        "APT3-1B": 263981
+      },
+      "tokens_per_byte": {
+        "TOKENIZATOREX": 0.2302316011700824,
+        "TOKENIZATOREX-HF": 0.22989614176961543,
+        "Slayer1B": 0.25755857121132153,
+        "Pollock-2.0": 0.22734665032606655,
+        "APT3-1B": 0.2361464213191158
+      },
+      "ranking": [
+        {
+          "label": "Pollock-2.0",
+          "value": 0.22734665032606655,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 0.22989614176961543,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 0.2302316011700824,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 0.2361464213191158,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 0.25755857121132153,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 3,
+      "best": "Pollock-2.0",
+      "best_value": 0.22734665032606655,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 0.22989614176961543,
+      "tkx_value": 0.2302316011700824,
+      "gap_tkx_minus_best": 0.0028849508440158544,
+      "relative_tkx_vs_best": 0.012689656257869553
+    },
+    "nauka": {
+      "docs": 62,
+      "bytes": 1208607,
+      "tokens": {
+        "TOKENIZATOREX": 312217,
+        "TOKENIZATOREX-HF": 312073,
+        "Slayer1B": 331123,
+        "Pollock-2.0": 311842,
+        "APT3-1B": 302993
+      },
+      "tokens_per_byte": {
+        "TOKENIZATOREX": 0.2583279759260041,
+        "TOKENIZATOREX-HF": 0.2582088304965965,
+        "Slayer1B": 0.27397077792864016,
+        "Pollock-2.0": 0.2580177013702552,
+        "APT3-1B": 0.25069604925339667
+      },
+      "ranking": [
+        {
+          "label": "APT3-1B",
+          "value": 0.25069604925339667,
+          "rank": 1
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 0.2580177013702552,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 0.2582088304965965,
+          "rank": 3
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 0.2583279759260041,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 0.27397077792864016,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 4,
+      "best": "APT3-1B",
+      "best_value": 0.25069604925339667,
+      "second": "Pollock-2.0",
+      "second_value": 0.2580177013702552,
+      "tkx_value": 0.2583279759260041,
+      "gap_tkx_minus_best": 0.007631926672607425,
+      "relative_tkx_vs_best": 0.030442947526840625
+    }
+  },
+  "drop10": {
+    "przetargi_ogloszenia": {
+      "docs_total": 60,
+      "docs_kept": 54,
+      "docs_dropped": 6,
+      "dropped_ids_sample": [
+        "bzp-2026/BZP 00000772/01",
+        "bzp-2026/BZP 00001098/01",
+        "bzp-2026/BZP 00001395/01",
+        "bzp-2026/BZP 00001876/01",
+        "bzp-2026/BZP 00002318/01"
+      ],
+      "words_kept": 120116,
+      "tokens": {
+        "TOKENIZATOREX": 188117,
+        "TOKENIZATOREX-HF": 187776,
+        "Slayer1B": 244258,
+        "Pollock-2.0": 219329,
+        "APT3-1B": 217188
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.5661277431815912,
+        "TOKENIZATOREX-HF": 1.5632888208065536,
+        "Slayer1B": 2.0335175996536683,
+        "Pollock-2.0": 1.8259765559958707,
+        "APT3-1B": 1.8081521196177028
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.5632888208065536,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.5661277431815912,
+          "rank": 2
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.8081521196177028,
+          "rank": 3
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.8259765559958707,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.0335175996536683,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.5632888208065536,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.5661277431815912,
+      "tkx_value": 1.5661277431815912,
+      "gap_tkx_minus_best": 0.002838922375037578,
+      "relative_tkx_vs_best": 0.0018159935241990333
+    },
+    "przetargi_kio": {
+      "docs_total": 66,
+      "docs_kept": 60,
+      "docs_dropped": 6,
+      "dropped_ids_sample": [
+        "kio-36575",
+        "kio-37082",
+        "kio-37085",
+        "kio-37142",
+        "kio-37144"
+      ],
+      "words_kept": 78578,
+      "tokens": {
+        "TOKENIZATOREX": 110094,
+        "TOKENIZATOREX-HF": 110158,
+        "Slayer1B": 134777,
+        "Pollock-2.0": 117099,
+        "APT3-1B": 124153
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.4010791824683753,
+        "TOKENIZATOREX-HF": 1.4018936598029983,
+        "Slayer1B": 1.7152001832574002,
+        "Pollock-2.0": 1.490226271984525,
+        "APT3-1B": 1.5799969457099952
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.4010791824683753,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.4018936598029983,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.490226271984525,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.5799969457099952,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.7152001832574002,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 1,
+      "best": "TOKENIZATOREX",
+      "best_value": 1.4010791824683753,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 1.4018936598029983,
+      "tkx_value": 1.4010791824683753,
+      "gap_tkx_minus_best": 0.0,
+      "relative_tkx_vs_best": 0.0
+    },
+    "samorzad_uchwaly": {
+      "docs_total": 240,
+      "docs_kept": 216,
+      "docs_dropped": 24,
+      "dropped_ids_sample": [
+        "uchwala-POL_WOJ_SL-2026-1075",
+        "uchwala-POL_WOJ_SL-2026-1109",
+        "uchwala-POL_WOJ_SL-2026-1158",
+        "uchwala-POL_WOJ_SL-2026-1371",
+        "uchwala-POL_WOJ_SL-2026-2262"
+      ],
+      "words_kept": 61532,
+      "tokens": {
+        "TOKENIZATOREX": 94276,
+        "TOKENIZATOREX-HF": 93991,
+        "Slayer1B": 122485,
+        "Pollock-2.0": 108293,
+        "APT3-1B": 109414
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.5321458753169084,
+        "TOKENIZATOREX-HF": 1.5275141389845934,
+        "Slayer1B": 1.9905902619775075,
+        "Pollock-2.0": 1.759946044334655,
+        "APT3-1B": 1.7781642072417603
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.5275141389845934,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.5321458753169084,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.759946044334655,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.7781642072417603,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.9905902619775075,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.5275141389845934,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.5321458753169084,
+      "tkx_value": 1.5321458753169084,
+      "gap_tkx_minus_best": 0.004631736332314951,
+      "relative_tkx_vs_best": 0.00303220521113734
+    },
+    "granty_ogloszenia": {
+      "docs_total": 66,
+      "docs_kept": 60,
+      "docs_dropped": 6,
+      "dropped_ids_sample": [
+        "grant-0dbfe377deff",
+        "grant-2b9f0addb80c",
+        "grant-521c8e1be80f",
+        "grant-93d5087743d7",
+        "grant-a0c8ca42ae51"
+      ],
+      "words_kept": 84057,
+      "tokens": {
+        "TOKENIZATOREX": 148174,
+        "TOKENIZATOREX-HF": 147648,
+        "Slayer1B": 172599,
+        "Pollock-2.0": 147493,
+        "APT3-1B": 172295
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.7627800183209013,
+        "TOKENIZATOREX-HF": 1.7565223598272601,
+        "Slayer1B": 2.05335665084407,
+        "Pollock-2.0": 1.7546783730087916,
+        "APT3-1B": 2.0497400573420417
+      },
+      "ranking": [
+        {
+          "label": "Pollock-2.0",
+          "value": 1.7546783730087916,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.7565223598272601,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7627800183209013,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 2.0497400573420417,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.05335665084407,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 3,
+      "best": "Pollock-2.0",
+      "best_value": 1.7546783730087916,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 1.7565223598272601,
+      "tkx_value": 1.7627800183209013,
+      "gap_tkx_minus_best": 0.008101645312109662,
+      "relative_tkx_vs_best": 0.004617168272392558
+    },
+    "prawo_eli": {
+      "docs_total": 78,
+      "docs_kept": 71,
+      "docs_dropped": 7,
+      "dropped_ids_sample": [
+        "eli-DU-2026-1245",
+        "eli-DU-2026-1322",
+        "eli-DU-2026-1492",
+        "eli-DU-2026-37",
+        "eli-DU-2026-499"
+      ],
+      "words_kept": 116114,
+      "tokens": {
+        "TOKENIZATOREX": 175646,
+        "TOKENIZATOREX-HF": 175222,
+        "Slayer1B": 212225,
+        "Pollock-2.0": 182567,
+        "APT3-1B": 186835
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.5127030332259677,
+        "TOKENIZATOREX-HF": 1.5090514494376217,
+        "Slayer1B": 1.8277296450040477,
+        "Pollock-2.0": 1.5723082487899822,
+        "APT3-1B": 1.609065228999087
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.5090514494376217,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.5127030332259677,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.5723082487899822,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.609065228999087,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.8277296450040477,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.5090514494376217,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.5127030332259677,
+      "tkx_value": 1.5127030332259677,
+      "gap_tkx_minus_best": 0.003651583788345958,
+      "relative_tkx_vs_best": 0.002419787469609913
+    },
+    "ocr_prasa": {
+      "docs_total": 36,
+      "docs_kept": 33,
+      "docs_dropped": 3,
+      "dropped_ids_sample": [
+        "polona-Mjk1ODAwMTM",
+        "polona-NTExMjUzMjM",
+        "polona-NTU1MDE1MzU"
+      ],
+      "words_kept": 81084,
+      "tokens": {
+        "TOKENIZATOREX": 151831,
+        "TOKENIZATOREX-HF": 151807,
+        "Slayer1B": 165557,
+        "Pollock-2.0": 154057,
+        "APT3-1B": 156553
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.8725149227961126,
+        "TOKENIZATOREX-HF": 1.872218933451729,
+        "Slayer1B": 2.0417961620048346,
+        "Pollock-2.0": 1.8999679344876919,
+        "APT3-1B": 1.9307508263035864
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.872218933451729,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.8725149227961126,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.8999679344876919,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.9307508263035864,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.0417961620048346,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.872218933451729,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.8725149227961126,
+      "tkx_value": 1.8725149227961126,
+      "gap_tkx_minus_best": 0.00029598934438368474,
+      "relative_tkx_vs_best": 0.0001580954764932585
+    },
+    "tabele_json": {
+      "docs_total": 60,
+      "docs_kept": 54,
+      "docs_dropped": 6,
+      "dropped_ids_sample": [
+        "bzp-json-2026/BZP 00000016/01",
+        "bzp-json-2026/BZP 00000122/01",
+        "bzp-json-2026/BZP 00000144/01",
+        "bzp-json-2026/BZP 00000194/01",
+        "bzp-json-2026/BZP 00000334/01"
+      ],
+      "words_kept": 41173,
+      "tokens": {
+        "TOKENIZATOREX": 114572,
+        "TOKENIZATOREX-HF": 113951,
+        "Slayer1B": 132419,
+        "Pollock-2.0": 117615,
+        "APT3-1B": 121651
+      },
+      "fertility": {
+        "TOKENIZATOREX": 2.7826973987807544,
+        "TOKENIZATOREX-HF": 2.7676146989531976,
+        "Slayer1B": 3.2161610764335853,
+        "Pollock-2.0": 2.8566050567119228,
+        "APT3-1B": 2.954630461710344
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 2.7676146989531976,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 2.7826973987807544,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 2.8566050567119228,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 2.954630461710344,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 3.2161610764335853,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 2.7676146989531976,
+      "second": "TOKENIZATOREX",
+      "second_value": 2.7826973987807544,
+      "tkx_value": 2.7826973987807544,
+      "gap_tkx_minus_best": 0.015082699827556834,
+      "relative_tkx_vs_best": 0.0054497108406244
+    },
+    "web": {
+      "docs_total": 421,
+      "docs_kept": 379,
+      "docs_dropped": 42,
+      "dropped_ids_sample": [
+        "web-00013",
+        "web-00061",
+        "web-00066",
+        "web-00080",
+        "web-00087"
+      ],
+      "words_kept": 98055,
+      "tokens": {
+        "TOKENIZATOREX": 136761,
+        "TOKENIZATOREX-HF": 136745,
+        "Slayer1B": 162315,
+        "Pollock-2.0": 151908,
+        "APT3-1B": 151020
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.3947376472387945,
+        "TOKENIZATOREX-HF": 1.394574473509765,
+        "Slayer1B": 1.6553464892152363,
+        "Pollock-2.0": 1.5492121768395288,
+        "APT3-1B": 1.5401560348783845
+      },
+      "ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.394574473509765,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.3947376472387945,
+          "rank": 2
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.5401560348783845,
+          "rank": 3
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.5492121768395288,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.6553464892152363,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.394574473509765,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.3947376472387945,
+      "tkx_value": 1.3947376472387945,
+      "gap_tkx_minus_best": 0.00016317372902951988,
+      "relative_tkx_vs_best": 0.00011700610625609009
+    },
+    "wikipedia": {
+      "docs_total": 241,
+      "docs_kept": 217,
+      "docs_dropped": 24,
+      "dropped_ids_sample": [
+        "wikipedia-00008",
+        "wikipedia-00012",
+        "wikipedia-00031",
+        "wikipedia-00172",
+        "wikipedia-00184"
+      ],
+      "words_kept": 86330,
+      "tokens": {
+        "TOKENIZATOREX": 159116,
+        "TOKENIZATOREX-HF": 158705,
+        "Slayer1B": 177429,
+        "Pollock-2.0": 156723,
+        "APT3-1B": 162842
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.843113633731032,
+        "TOKENIZATOREX-HF": 1.8383528321556817,
+        "Slayer1B": 2.0552415151164136,
+        "Pollock-2.0": 1.8153944167728484,
+        "APT3-1B": 1.8862736012973473
+      },
+      "ranking": [
+        {
+          "label": "Pollock-2.0",
+          "value": 1.8153944167728484,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.8383528321556817,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.843113633731032,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.8862736012973473,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.0552415151164136,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 3,
+      "best": "Pollock-2.0",
+      "best_value": 1.8153944167728484,
+      "second": "TOKENIZATOREX-HF",
+      "second_value": 1.8383528321556817,
+      "tkx_value": 1.843113633731032,
+      "gap_tkx_minus_best": 0.02771921695818369,
+      "relative_tkx_vs_best": 0.01526897775055347
+    },
+    "nauka": {
+      "docs_total": 62,
+      "docs_kept": 56,
+      "docs_dropped": 6,
+      "dropped_ids_sample": [
+        "nauka-00000",
+        "nauka-00016",
+        "nauka-00040",
+        "nauka-00071",
+        "nauka-00088"
+      ],
+      "words_kept": 140173,
+      "tokens": {
+        "TOKENIZATOREX": 277972,
+        "TOKENIZATOREX-HF": 277837,
+        "Slayer1B": 294904,
+        "Pollock-2.0": 277463,
+        "APT3-1B": 269840
+      },
+      "fertility": {
+        "TOKENIZATOREX": 1.9830637854651039,
+        "TOKENIZATOREX-HF": 1.9821006898618136,
+        "Slayer1B": 2.103857376242215,
+        "Pollock-2.0": 1.9794325583386243,
+        "APT3-1B": 1.9250497599395033
+      },
+      "ranking": [
+        {
+          "label": "APT3-1B",
+          "value": 1.9250497599395033,
+          "rank": 1
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.9794325583386243,
+          "rank": 2
+        },
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.9821006898618136,
+          "rank": 3
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.9830637854651039,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.103857376242215,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 4,
+      "best": "APT3-1B",
+      "best_value": 1.9250497599395033,
+      "second": "Pollock-2.0",
+      "second_value": 1.9794325583386243,
+      "tkx_value": 1.9830637854651039,
+      "gap_tkx_minus_best": 0.05801402552560053,
+      "relative_tkx_vs_best": 0.030136377112362833
+    }
+  },
+  "loso": {
+    "przetargi_ogloszenia": {
+      "domains_kept": [
+        "przetargi_kio",
+        "samorzad_uchwaly",
+        "granty_ogloszenia",
+        "prawo_eli",
+        "ocr_prasa",
+        "tabele_json"
+      ],
+      "docs": 546,
+      "words": 549719,
+      "tokens": {
+        "TOKENIZATOREX": 942233,
+        "TOKENIZATOREX-HF": 939961,
+        "Slayer1B": 1115278,
+        "Pollock-2.0": 982518,
+        "APT3-1B": 1031992
+      },
+      "pooled_fertility": {
+        "TOKENIZATOREX": 1.7140266208735735,
+        "TOKENIZATOREX-HF": 1.7098936001848217,
+        "Slayer1B": 2.02881472170327,
+        "Pollock-2.0": 1.787309516316518,
+        "APT3-1B": 1.8773082247475528
+      },
+      "pooled_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.7098936001848217,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7140266208735735,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.787309516316518,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.8773082247475528,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.02881472170327,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.7098936001848217,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.7140266208735735,
+      "tkx_value": 1.7140266208735735,
+      "gap_tkx_minus_best": 0.004133020688751765,
+      "relative_tkx_vs_best": 0.002417121561426372,
+      "mean_domain_fertility": {
+        "TOKENIZATOREX": 1.7922206194184394,
+        "TOKENIZATOREX-HF": 1.7873520799695755,
+        "Slayer1B": 2.119469673314969,
+        "Pollock-2.0": 1.8731004498631432,
+        "APT3-1B": 1.9628313922315428
+      },
+      "mean_domain_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.7873520799695755,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7922206194184394,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.8731004498631432,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.9628313922315428,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.119469673314969,
+          "rank": 5
+        }
+      ],
+      "mean_domain_winner": "TOKENIZATOREX-HF"
+    },
+    "przetargi_kio": {
+      "domains_kept": [
+        "przetargi_ogloszenia",
+        "samorzad_uchwaly",
+        "granty_ogloszenia",
+        "prawo_eli",
+        "ocr_prasa",
+        "tabele_json"
+      ],
+      "docs": 540,
+      "words": 590344,
+      "tokens": {
+        "TOKENIZATOREX": 1019967,
+        "TOKENIZATOREX-HF": 1017259,
+        "Slayer1B": 1225581,
+        "Pollock-2.0": 1086103,
+        "APT3-1B": 1125191
+      },
+      "pooled_fertility": {
+        "TOKENIZATOREX": 1.7277502608648516,
+        "TOKENIZATOREX-HF": 1.723163104901549,
+        "Slayer1B": 2.0760454921198486,
+        "Pollock-2.0": 1.8397798571680242,
+        "APT3-1B": 1.9059920995216348
+      },
+      "pooled_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.723163104901549,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7277502608648516,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.8397798571680242,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.9059920995216348,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.0760454921198486,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.723163104901549,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.7277502608648516,
+      "tkx_value": 1.7277502608648516,
+      "gap_tkx_minus_best": 0.004587155963302614,
+      "relative_tkx_vs_best": 0.002662055582698164,
+      "mean_domain_fertility": {
+        "TOKENIZATOREX": 1.817644536336554,
+        "TOKENIZATOREX-HF": 1.8122131242329844,
+        "Slayer1B": 2.169010005337001,
+        "Pollock-2.0": 1.925485813190481,
+        "APT3-1B": 1.9981604753216553
+      },
+      "mean_domain_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.8122131242329844,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.817644536336554,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.925485813190481,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.9981604753216553,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.169010005337001,
+          "rank": 5
+        }
+      ],
+      "mean_domain_winner": "TOKENIZATOREX-HF"
+    },
+    "samorzad_uchwaly": {
+      "domains_kept": [
+        "przetargi_ogloszenia",
+        "przetargi_kio",
+        "granty_ogloszenia",
+        "prawo_eli",
+        "ocr_prasa",
+        "tabele_json"
+      ],
+      "docs": 366,
+      "words": 613843,
+      "tokens": {
+        "TOKENIZATOREX": 1043927,
+        "TOKENIZATOREX-HF": 1041613,
+        "Slayer1B": 1247040,
+        "Pollock-2.0": 1102912,
+        "APT3-1B": 1148906
+      },
+      "pooled_fertility": {
+        "TOKENIZATOREX": 1.7006416950262526,
+        "TOKENIZATOREX-HF": 1.6968720014726892,
+        "Slayer1B": 2.0315292346740126,
+        "Pollock-2.0": 1.796733040858982,
+        "APT3-1B": 1.8716609947494718
+      },
+      "pooled_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.6968720014726892,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7006416950262526,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.796733040858982,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.8716609947494718,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.0315292346740126,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.6968720014726892,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.7006416950262526,
+      "tkx_value": 1.7006416950262526,
+      "gap_tkx_minus_best": 0.00376969355356338,
+      "relative_tkx_vs_best": 0.0022215544544854637,
+      "mean_domain_fertility": {
+        "TOKENIZATOREX": 1.7967827837028443,
+        "TOKENIZATOREX-HF": 1.7922331535407043,
+        "Slayer1B": 2.1250772629810815,
+        "Pollock-2.0": 1.882895356627112,
+        "APT3-1B": 1.966836397330799
+      },
+      "mean_domain_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.7922331535407043,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7967827837028443,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.882895356627112,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.966836397330799,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.1250772629810815,
+          "rank": 5
+        }
+      ],
+      "mean_domain_winner": "TOKENIZATOREX-HF"
+    },
+    "granty_ogloszenia": {
+      "domains_kept": [
+        "przetargi_ogloszenia",
+        "przetargi_kio",
+        "samorzad_uchwaly",
+        "prawo_eli",
+        "ocr_prasa",
+        "tabele_json"
+      ],
+      "docs": 540,
+      "words": 585203,
+      "tokens": {
+        "TOKENIZATOREX": 973717,
+        "TOKENIZATOREX-HF": 971790,
+        "Slayer1B": 1180165,
+        "Pollock-2.0": 1049922,
+        "APT3-1B": 1070072
+      },
+      "pooled_fertility": {
+        "TOKENIZATOREX": 1.6638961180991896,
+        "TOKENIZATOREX-HF": 1.6606032436607467,
+        "Slayer1B": 2.016676264475746,
+        "Pollock-2.0": 1.7941158879910049,
+        "APT3-1B": 1.8285483840650167
+      },
+      "pooled_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.6606032436607467,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.6638961180991896,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.7941158879910049,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.8285483840650167,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.016676264475746,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.6606032436607467,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.6638961180991896,
+      "tkx_value": 1.6638961180991896,
+      "gap_tkx_minus_best": 0.0032928744384428388,
+      "relative_tkx_vs_best": 0.0019829387007481714,
+      "mean_domain_fertility": {
+        "TOKENIZATOREX": 1.7529355261530908,
+        "TOKENIZATOREX-HF": 1.7488035730405753,
+        "Slayer1B": 2.108386156497096,
+        "Pollock-2.0": 1.8782731908136883,
+        "APT3-1B": 1.92029875173014
+      },
+      "mean_domain_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.7488035730405753,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7529355261530908,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.8782731908136883,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.92029875173014,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.108386156497096,
+          "rank": 5
+        }
+      ],
+      "mean_domain_winner": "TOKENIZATOREX-HF"
+    },
+    "prawo_eli": {
+      "domains_kept": [
+        "przetargi_ogloszenia",
+        "przetargi_kio",
+        "samorzad_uchwaly",
+        "granty_ogloszenia",
+        "ocr_prasa",
+        "tabele_json"
+      ],
+      "docs": 528,
+      "words": 547989,
+      "tokens": {
+        "TOKENIZATOREX": 948968,
+        "TOKENIZATOREX-HF": 946794,
+        "Slayer1B": 1141146,
+        "Pollock-2.0": 1014670,
+        "APT3-1B": 1057672
+      },
+      "pooled_fertility": {
+        "TOKENIZATOREX": 1.7317281916242844,
+        "TOKENIZATOREX-HF": 1.7277609587053755,
+        "Slayer1B": 2.0824250121809014,
+        "Pollock-2.0": 1.8516247588911456,
+        "APT3-1B": 1.9300971369863265
+      },
+      "pooled_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.7277609587053755,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7317281916242844,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.8516247588911456,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.9300971369863265,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.0824250121809014,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.7277609587053755,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.7317281916242844,
+      "tkx_value": 1.7317281916242844,
+      "gap_tkx_minus_best": 0.003967232918908881,
+      "relative_tkx_vs_best": 0.0022961700222012826,
+      "mean_domain_fertility": {
+        "TOKENIZATOREX": 1.8036235682092494,
+        "TOKENIZATOREX-HF": 1.7988677271276607,
+        "Slayer1B": 2.154986365899663,
+        "Pollock-2.0": 1.915789506223481,
+        "APT3-1B": 1.9976585853538993
+      },
+      "mean_domain_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.7988677271276607,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.8036235682092494,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.915789506223481,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.9976585853538993,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.154986365899663,
+          "rank": 5
+        }
+      ],
+      "mean_domain_winner": "TOKENIZATOREX-HF"
+    },
+    "ocr_prasa": {
+      "domains_kept": [
+        "przetargi_ogloszenia",
+        "przetargi_kio",
+        "samorzad_uchwaly",
+        "granty_ogloszenia",
+        "prawo_eli",
+        "tabele_json"
+      ],
+      "docs": 570,
+      "words": 594365,
+      "tokens": {
+        "TOKENIZATOREX": 978718,
+        "TOKENIZATOREX-HF": 976125,
+        "Slayer1B": 1199743,
+        "Pollock-2.0": 1051529,
+        "APT3-1B": 1095760
+      },
+      "pooled_fertility": {
+        "TOKENIZATOREX": 1.6466615631808736,
+        "TOKENIZATOREX-HF": 1.6422989240618138,
+        "Slayer1B": 2.0185290183641365,
+        "Pollock-2.0": 1.7691637293582227,
+        "APT3-1B": 1.8435809645588148
+      },
+      "pooled_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.6422989240618138,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.6466615631808736,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.7691637293582227,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.8435809645588148,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.0185290183641365,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.6422989240618138,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.6466615631808736,
+      "tkx_value": 1.6466615631808736,
+      "gap_tkx_minus_best": 0.0043626391190598746,
+      "relative_tkx_vs_best": 0.0026564220770906033,
+      "mean_domain_fertility": {
+        "TOKENIZATOREX": 1.7321317054938492,
+        "TOKENIZATOREX-HF": 1.7269057945357495,
+        "Slayer1B": 2.109276733549813,
+        "Pollock-2.0": 1.8514523009574564,
+        "APT3-1B": 1.932868211275567
+      },
+      "mean_domain_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.7269057945357495,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.7321317054938492,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.8514523009574564,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.932868211275567,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 2.109276733549813,
+          "rank": 5
+        }
+      ],
+      "mean_domain_winner": "TOKENIZATOREX-HF"
+    },
+    "tabele_json": {
+      "domains_kept": [
+        "przetargi_ogloszenia",
+        "przetargi_kio",
+        "samorzad_uchwaly",
+        "granty_ogloszenia",
+        "prawo_eli",
+        "ocr_prasa"
+      ],
+      "docs": 546,
+      "words": 633055,
+      "tokens": {
+        "TOKENIZATOREX": 1015228,
+        "TOKENIZATOREX-HF": 1013298,
+        "Slayer1B": 1229055,
+        "Pollock-2.0": 1086100,
+        "APT3-1B": 1128507
+      },
+      "pooled_fertility": {
+        "TOKENIZATOREX": 1.603696361295622,
+        "TOKENIZATOREX-HF": 1.6006476530475235,
+        "Slayer1B": 1.941466381278088,
+        "Pollock-2.0": 1.7156487193055896,
+        "APT3-1B": 1.7826365797600525
+      },
+      "pooled_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.6006476530475235,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.603696361295622,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.7156487193055896,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.7826365797600525,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.941466381278088,
+          "rank": 5
+        }
+      ],
+      "tkx_rank": 2,
+      "best": "TOKENIZATOREX-HF",
+      "best_value": 1.6006476530475235,
+      "second": "TOKENIZATOREX",
+      "second_value": 1.603696361295622,
+      "tkx_value": 1.603696361295622,
+      "gap_tkx_minus_best": 0.003048708248098553,
+      "relative_tkx_vs_best": 0.0019046716760517945,
+      "mean_domain_fertility": {
+        "TOKENIZATOREX": 1.6131844126318668,
+        "TOKENIZATOREX-HF": 1.6101356924098262,
+        "Slayer1B": 1.947681104406433,
+        "Pollock-2.0": 1.7232193546557981,
+        "APT3-1B": 1.7946354649144614
+      },
+      "mean_domain_ranking": [
+        {
+          "label": "TOKENIZATOREX-HF",
+          "value": 1.6101356924098262,
+          "rank": 1
+        },
+        {
+          "label": "TOKENIZATOREX",
+          "value": 1.6131844126318668,
+          "rank": 2
+        },
+        {
+          "label": "Pollock-2.0",
+          "value": 1.7232193546557981,
+          "rank": 3
+        },
+        {
+          "label": "APT3-1B",
+          "value": 1.7946354649144614,
+          "rank": 4
+        },
+        {
+          "label": "Slayer1B",
+          "value": 1.947681104406433,
+          "rank": 5
+        }
+      ],
+      "mean_domain_winner": "TOKENIZATOREX-HF"
+    }
+  },
+  "changes": {
+    "letters": {
+      "przetargi_ogloszenia": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "przetargi_kio": {
+        "baseline_top1": "TOKENIZATOREX",
+        "variant_top1": "TOKENIZATOREX",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX",
+          "TOKENIZATOREX-HF"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX",
+          "TOKENIZATOREX-HF"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 1,
+        "tkx_rank_variant": 1,
+        "tkx_lead_disappeared": false
+      },
+      "samorzad_uchwaly": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "granty_ogloszenia": {
+        "baseline_top1": "Pollock-2.0",
+        "variant_top1": "Pollock-2.0",
+        "top1_changed": false,
+        "baseline_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "variant_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 3,
+        "tkx_rank_variant": 3,
+        "tkx_lead_disappeared": false
+      },
+      "prawo_eli": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "ocr_prasa": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "tabele_json": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "web": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "wikipedia": {
+        "baseline_top1": "Pollock-2.0",
+        "variant_top1": "Pollock-2.0",
+        "top1_changed": false,
+        "baseline_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "variant_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 3,
+        "tkx_rank_variant": 3,
+        "tkx_lead_disappeared": false
+      },
+      "nauka": {
+        "baseline_top1": "APT3-1B",
+        "variant_top1": "APT3-1B",
+        "top1_changed": false,
+        "baseline_top2": [
+          "APT3-1B",
+          "Pollock-2.0"
+        ],
+        "variant_top2": [
+          "APT3-1B",
+          "Pollock-2.0"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 4,
+        "tkx_rank_variant": 4,
+        "tkx_lead_disappeared": false
+      }
+    },
+    "bytes": {
+      "przetargi_ogloszenia": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "przetargi_kio": {
+        "baseline_top1": "TOKENIZATOREX",
+        "variant_top1": "TOKENIZATOREX",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX",
+          "TOKENIZATOREX-HF"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX",
+          "TOKENIZATOREX-HF"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 1,
+        "tkx_rank_variant": 1,
+        "tkx_lead_disappeared": false
+      },
+      "samorzad_uchwaly": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "granty_ogloszenia": {
+        "baseline_top1": "Pollock-2.0",
+        "variant_top1": "Pollock-2.0",
+        "top1_changed": false,
+        "baseline_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "variant_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 3,
+        "tkx_rank_variant": 3,
+        "tkx_lead_disappeared": false
+      },
+      "prawo_eli": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "ocr_prasa": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "tabele_json": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "web": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "wikipedia": {
+        "baseline_top1": "Pollock-2.0",
+        "variant_top1": "Pollock-2.0",
+        "top1_changed": false,
+        "baseline_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "variant_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 3,
+        "tkx_rank_variant": 3,
+        "tkx_lead_disappeared": false
+      },
+      "nauka": {
+        "baseline_top1": "APT3-1B",
+        "variant_top1": "APT3-1B",
+        "top1_changed": false,
+        "baseline_top2": [
+          "APT3-1B",
+          "Pollock-2.0"
+        ],
+        "variant_top2": [
+          "APT3-1B",
+          "Pollock-2.0"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 4,
+        "tkx_rank_variant": 4,
+        "tkx_lead_disappeared": false
+      }
+    },
+    "drop10": {
+      "przetargi_ogloszenia": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "przetargi_kio": {
+        "baseline_top1": "TOKENIZATOREX",
+        "variant_top1": "TOKENIZATOREX",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX",
+          "TOKENIZATOREX-HF"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX",
+          "TOKENIZATOREX-HF"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 1,
+        "tkx_rank_variant": 1,
+        "tkx_lead_disappeared": false
+      },
+      "samorzad_uchwaly": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "granty_ogloszenia": {
+        "baseline_top1": "Pollock-2.0",
+        "variant_top1": "Pollock-2.0",
+        "top1_changed": false,
+        "baseline_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "variant_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 3,
+        "tkx_rank_variant": 3,
+        "tkx_lead_disappeared": false
+      },
+      "prawo_eli": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "ocr_prasa": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "tabele_json": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "web": {
+        "baseline_top1": "TOKENIZATOREX-HF",
+        "variant_top1": "TOKENIZATOREX-HF",
+        "top1_changed": false,
+        "baseline_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "variant_top2": [
+          "TOKENIZATOREX-HF",
+          "TOKENIZATOREX"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 2,
+        "tkx_rank_variant": 2,
+        "tkx_lead_disappeared": false
+      },
+      "wikipedia": {
+        "baseline_top1": "Pollock-2.0",
+        "variant_top1": "Pollock-2.0",
+        "top1_changed": false,
+        "baseline_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "variant_top2": [
+          "Pollock-2.0",
+          "TOKENIZATOREX-HF"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 3,
+        "tkx_rank_variant": 3,
+        "tkx_lead_disappeared": false
+      },
+      "nauka": {
+        "baseline_top1": "APT3-1B",
+        "variant_top1": "APT3-1B",
+        "top1_changed": false,
+        "baseline_top2": [
+          "APT3-1B",
+          "Pollock-2.0"
+        ],
+        "variant_top2": [
+          "APT3-1B",
+          "Pollock-2.0"
+        ],
+        "top2_changed": false,
+        "tkx_rank_baseline": 4,
+        "tkx_rank_variant": 4,
+        "tkx_lead_disappeared": false
+      }
+    }
+  },
+  "baseline_official_pooled": {
+    "docs": 606,
+    "words": 685753,
+    "tokens": {
+      "TOKENIZATOREX": 1153793,
+      "TOKENIZATOREX-HF": 1151140,
+      "Slayer1B": 1389668,
+      "Pollock-2.0": 1228959,
+      "APT3-1B": 1276350
+    },
+    "fertility": {
+      "TOKENIZATOREX": 1.6825197994029921,
+      "TOKENIZATOREX-HF": 1.6786510594922661,
+      "Slayer1B": 2.02648475471489,
+      "Pollock-2.0": 1.792130694287885,
+      "APT3-1B": 1.8612386675668937
+    },
+    "ranking": [
+      {
+        "label": "TOKENIZATOREX-HF",
+        "value": 1.6786510594922661,
+        "rank": 1
+      },
+      {
+        "label": "TOKENIZATOREX",
+        "value": 1.6825197994029921,
+        "rank": 2
+      },
+      {
+        "label": "Pollock-2.0",
+        "value": 1.792130694287885,
+        "rank": 3
+      },
+      {
+        "label": "APT3-1B",
+        "value": 1.8612386675668937,
+        "rank": 4
+      },
+      {
+        "label": "Slayer1B",
+        "value": 2.02648475471489,
+        "rank": 5
+      }
+    ],
+    "tkx_rank": 2,
+    "best": "TOKENIZATOREX-HF",
+    "best_value": 1.6786510594922661,
+    "second": "TOKENIZATOREX",
+    "second_value": 1.6825197994029921,
+    "tkx_value": 1.6825197994029921,
+    "gap_tkx_minus_best": 0.0038687399107260045,
+    "relative_tkx_vs_best": 0.002304671890473786
+  },
+  "baseline_official_mean": {
+    "mean_domain_fertility": {
+      "TOKENIZATOREX": 1.7583604502779848,
+      "TOKENIZATOREX-HF": 1.7537873064081537,
+      "Slayer1B": 2.104841043140865,
+      "Pollock-2.0": 1.86431656747588,
+      "APT3-1B": 1.939041325451152
+    },
+    "ranking": [
+      {
+        "label": "TOKENIZATOREX-HF",
+        "value": 1.7537873064081537,
+        "rank": 1
+      },
+      {
+        "label": "TOKENIZATOREX",
+        "value": 1.7583604502779848,
+        "rank": 2
+      },
+      {
+        "label": "Pollock-2.0",
+        "value": 1.86431656747588,
+        "rank": 3
+      },
+      {
+        "label": "APT3-1B",
+        "value": 1.939041325451152,
+        "rank": 4
+      },
+      {
+        "label": "Slayer1B",
+        "value": 2.104841043140865,
+        "rank": 5
+      }
+    ],
+    "tkx_rank": 2,
+    "best": "TOKENIZATOREX-HF",
+    "best_value": 1.7537873064081537,
+    "second": "TOKENIZATOREX",
+    "second_value": 1.7583604502779848,
+    "tkx_value": 1.7583604502779848,
+    "gap_tkx_minus_best": 0.004573143869831098,
+    "relative_tkx_vs_best": 0.0026075818048867383
+  }
+}

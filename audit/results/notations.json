@@ -1,0 +1,3655 @@
+{
+  "meta": {
+    "bootstrap_n": 500,
+    "seed": 20261119,
+    "split": "test",
+    "max_occurrences_per_category": 4000
+  },
+  "categories": {
+    "kwota": {
+      "count": 2175,
+      "by_domain": {
+        "przetargi_ogloszenia": 48,
+        "przetargi_kio": 156,
+        "samorzad_uchwaly": 629,
+        "granty_ogloszenia": 1133,
+        "prawo_eli": 35,
+        "ocr_prasa": 22,
+        "tabele_json": 47,
+        "web": 42,
+        "prawo": 63
+      },
+      "examples": [
+        "0 PLN",
+        "0 zł",
+        "0,00 zł",
+        "0,20 zł",
+        "0,30 zł"
+      ],
+      "chars_mean": 11.429425287356322,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 3.869885057471264,
+          "ci": [
+            3.8080344827586208,
+            3.9402758620689653
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.3385896456011907
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 3.869885057471264,
+          "ci": [
+            3.8080344827586208,
+            3.9402758620689653
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.3385896456011907
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 6.023448275862069,
+          "ci": [
+            5.947057471264368,
+            6.109666666666667
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 9.0,
+          "tokens_per_char": 0.5270123496520375
+        },
+        "Slayer1B": {
+          "tokens_mean": 5.234942528735632,
+          "ci": [
+            5.178827586206896,
+            5.29935632183908
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.45802325113640935
+        },
+        "APT3-1B": {
+          "tokens_mean": 4.783448275862069,
+          "ci": [
+            4.731252873563219,
+            4.8388850574712645
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.4185204553682771
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 4.794942528735632,
+          "ci": [
+            4.748264367816092,
+            4.846701149425288
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.4195261273583008
+        },
+        "Bielik-v3": {
+          "tokens_mean": 11.421609195402299,
+          "ci": [
+            11.308701149425287,
+            11.545379310344828
+          ],
+          "tokens_median": 12.0,
+          "tokens_p90": 15.0,
+          "tokens_per_char": 0.9993161430467838
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 9.441379310344828,
+          "ci": [
+            9.329850574712644,
+            9.562609195402299
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 13.0,
+          "tokens_per_char": 0.826058972605495
+        },
+        "GPT-4o": {
+          "tokens_mean": 5.4671264367816095,
+          "ci": [
+            5.402977011494253,
+            5.534954022988506
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 8.0,
+          "tokens_per_char": 0.4783378253348888
+        }
+      }
+    },
+    "data_slowna": {
+      "count": 4000,
+      "by_domain": {
+        "przetargi_ogloszenia": 249,
+        "przetargi_kio": 604,
+        "samorzad_uchwaly": 1370,
+        "granty_ogloszenia": 212,
+        "prawo_eli": 1343,
+        "ocr_prasa": 39,
+        "tabele_json": 71,
+        "web": 74,
+        "prawo": 1380
+      },
+      "examples": [
+        "02 lipca 2026 r.",
+        "02 października 2026 r.",
+        "02 stycznia 2025",
+        "03 września 2026 r.",
+        "04 maja 2016 r."
+      ],
+      "chars_mean": 17.71525,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 3.76375,
+          "ci": [
+            3.74586875,
+            3.78175
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.2124581927999887
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 3.8275,
+          "ci": [
+            3.8077375,
+            3.8475125
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.21605678723134022
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 6.856,
+          "ci": [
+            6.83786875,
+            6.8733812499999996
+          ],
+          "tokens_median": 7.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.38701119092307473
+        },
+        "Slayer1B": {
+          "tokens_mean": 5.30725,
+          "ci": [
+            5.2815,
+            5.32988125
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.2995865144437702
+        },
+        "APT3-1B": {
+          "tokens_mean": 5.291,
+          "ci": [
+            5.2672375,
+            5.31375
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.2986692256671512
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 4.918,
+          "ci": [
+            4.89911875,
+            4.936
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.2776139202099886
+        },
+        "Bielik-v3": {
+          "tokens_mean": 12.25075,
+          "ci": [
+            12.20911875,
+            12.2897625
+          ],
+          "tokens_median": 12.0,
+          "tokens_p90": 14.0,
+          "tokens_per_char": 0.6915369526255627
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 9.584,
+          "ci": [
+            9.558606249999999,
+            9.60488125
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 0.5410028083148699
+        },
+        "GPT-4o": {
+          "tokens_mean": 8.27125,
+          "ci": [
+            8.23459375,
+            8.30418125
+          ],
+          "tokens_median": 8.0,
+          "tokens_p90": 9.0,
+          "tokens_per_char": 0.4668999872990785
+        }
+      }
+    },
+    "rok": {
+      "count": 4000,
+      "by_domain": {
+        "przetargi_ogloszenia": 1145,
+        "przetargi_kio": 956,
+        "samorzad_uchwaly": 2838,
+        "granty_ogloszenia": 1069,
+        "prawo_eli": 2579,
+        "ocr_prasa": 102,
+        "tabele_json": 1035,
+        "web": 639,
+        "prawo": 3174
+      },
+      "examples": [
+        "1907",
+        "1913",
+        "1926",
+        "1928",
+        "1930"
+      ],
+      "chars_mean": 4.0,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 1.7455,
+          "ci": [
+            1.7319875,
+            1.7601312500000001
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 2.0,
+          "tokens_per_char": 0.436375
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 1.77725,
+          "ci": [
+            1.7638687499999999,
+            1.79
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 2.0,
+          "tokens_per_char": 0.4443125
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.00075,
+          "ci": [
+            2.0,
+            2.00175
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 2.0,
+          "tokens_per_char": 0.5001875
+        },
+        "Slayer1B": {
+          "tokens_mean": 1.6875,
+          "ci": [
+            1.67325,
+            1.70275
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 2.0,
+          "tokens_per_char": 0.421875
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.50325,
+          "ci": [
+            1.48834375,
+            1.52015625
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 2.0,
+          "tokens_per_char": 0.3758125
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.004,
+          "ci": [
+            1.00225,
+            1.00625
+          ],
+          "tokens_median": 1.0,
+          "tokens_p90": 1.0,
+          "tokens_per_char": 0.251
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 1.25
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 1.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 2.0,
+          "tokens_per_char": 0.5
+        }
+      }
+    },
+    "rok_z_r": {
+      "count": 4000,
+      "by_domain": {
+        "przetargi_ogloszenia": 355,
+        "przetargi_kio": 745,
+        "samorzad_uchwaly": 1807,
+        "granty_ogloszenia": 351,
+        "prawo_eli": 1880,
+        "ocr_prasa": 50,
+        "tabele_json": 127,
+        "web": 75,
+        "prawo": 2750
+      },
+      "examples": [
+        "1958 r.",
+        "1960 r.",
+        "1961 r.",
+        "1962 r.",
+        "1964 r."
+      ],
+      "chars_mean": 6.9875,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 2.00925,
+          "ci": [
+            2.006,
+            2.0123812500000002
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 2.0,
+          "tokens_per_char": 0.28754919499105547
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 2.0555,
+          "ci": [
+            2.04861875,
+            2.06313125
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 2.0,
+          "tokens_per_char": 0.2941681574239714
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 4.0015,
+          "ci": [
+            4.0005,
+            4.00275
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.5726654740608229
+        },
+        "Slayer1B": {
+          "tokens_mean": 3.6175,
+          "ci": [
+            3.60236875,
+            3.6330125
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.5177101967799642
+        },
+        "APT3-1B": {
+          "tokens_mean": 3.39575,
+          "ci": [
+            3.3804875,
+            3.41213125
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.48597495527728085
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 3.00325,
+          "ci": [
+            3.0015,
+            3.00525
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.4298032200357782
+        },
+        "Bielik-v3": {
+          "tokens_mean": 7.0015,
+          "ci": [
+            7.0005,
+            7.00275
+          ],
+          "tokens_median": 7.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 1.0020035778175314
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 6.0015,
+          "ci": [
+            6.0005,
+            6.00275
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.8588908765652952
+        },
+        "GPT-4o": {
+          "tokens_mean": 4.0015,
+          "ci": [
+            4.0005,
+            4.00275
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.5726654740608229
+        }
+      }
+    },
+    "godzina": {
+      "count": 2541,
+      "by_domain": {
+        "przetargi_ogloszenia": 1396,
+        "przetargi_kio": 116,
+        "samorzad_uchwaly": 51,
+        "granty_ogloszenia": 145,
+        "prawo_eli": 307,
+        "ocr_prasa": 38,
+        "tabele_json": 205,
+        "web": 207,
+        "prawo": 76
+      },
+      "examples": [
+        "0.20",
+        "00:06",
+        "00:39",
+        "01.01",
+        "01.02"
+      ],
+      "chars_mean": 4.421487603305785,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 2.2152695789059424,
+          "ci": [
+            2.1979535615899253,
+            2.2327922077922078
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.5010235870048955
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 2.2152695789059424,
+          "ci": [
+            2.1979535615899253,
+            2.2327922077922078
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.5010235870048955
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 3.0,
+          "ci": [
+            3.0,
+            3.0
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.6785046728971963
+        },
+        "Slayer1B": {
+          "tokens_mean": 3.0,
+          "ci": [
+            3.0,
+            3.0
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.6785046728971963
+        },
+        "APT3-1B": {
+          "tokens_mean": 2.3152302243211333,
+          "ci": [
+            2.2957398661944115,
+            2.331365604092877
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.5236315086782376
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 3.0,
+          "ci": [
+            3.0,
+            3.0
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.6785046728971963
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.421487603305785,
+          "ci": [
+            5.4027843368752455,
+            5.442945690672963
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 1.2261682242990655
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.421487603305785,
+          "ci": [
+            4.4027843368752455,
+            4.442945690672963
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 1.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 3.0,
+          "ci": [
+            3.0,
+            3.0
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.6785046728971963
+        }
+      }
+    },
+    "przepis": {
+      "count": 4000,
+      "by_domain": {
+        "przetargi_ogloszenia": 916,
+        "przetargi_kio": 1078,
+        "samorzad_uchwaly": 1385,
+        "granty_ogloszenia": 212,
+        "prawo_eli": 1294,
+        "ocr_prasa": 41,
+        "tabele_json": 135,
+        "web": 6,
+        "prawo": 1595
+      },
+      "examples": [
+        "art.\n\n22",
+        "art.\n127 ust. 1 pkt 1 lit. e",
+        "art.\n3 ust. 3",
+        "art.\n6 ust. 1 lit. e",
+        "art. 1"
+      ],
+      "chars_mean": 13.1345,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 4.20175,
+          "ci": [
+            4.15186875,
+            4.25264375
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.3199017853743957
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 4.19975,
+          "ci": [
+            4.14961875,
+            4.25075
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.3197495146370246
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 7.526,
+          "ci": [
+            7.44909375,
+            7.6123
+          ],
+          "tokens_median": 8.0,
+          "tokens_p90": 11.0,
+          "tokens_per_char": 0.5729947847272451
+        },
+        "Slayer1B": {
+          "tokens_mean": 5.77625,
+          "ci": [
+            5.71460625,
+            5.8420375
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 9.0,
+          "tokens_per_char": 0.43977692336975144
+        },
+        "APT3-1B": {
+          "tokens_mean": 5.7665,
+          "ci": [
+            5.7057125,
+            5.8349062499999995
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 8.0,
+          "tokens_per_char": 0.43903460352506757
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 5.41625,
+          "ci": [
+            5.3577125,
+            5.48089375
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 8.0,
+          "tokens_per_char": 0.4123681906429632
+        },
+        "Bielik-v3": {
+          "tokens_mean": 9.0605,
+          "ci": [
+            8.9729375,
+            9.16268125
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 14.0,
+          "tokens_per_char": 0.6898245079751799
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 8.5195,
+          "ci": [
+            8.43760625,
+            8.6095
+          ],
+          "tokens_median": 9.0,
+          "tokens_p90": 13.0,
+          "tokens_per_char": 0.648635273516312
+        },
+        "GPT-4o": {
+          "tokens_mean": 7.1595,
+          "ci": [
+            7.0794250000000005,
+            7.2443937499999995
+          ],
+          "tokens_median": 8.0,
+          "tokens_p90": 11.0,
+          "tokens_per_char": 0.5450911721040009
+        }
+      }
+    },
+    "cpv": {
+      "count": 596,
+      "by_domain": {
+        "przetargi_ogloszenia": 312,
+        "przetargi_kio": 9,
+        "tabele_json": 275
+      },
+      "examples": [
+        "03451000-6",
+        "03451300-9",
+        "03452000-3",
+        "09000000-3",
+        "09111210-5"
+      ],
+      "chars_mean": 10.0,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 5.360738255033557,
+          "ci": [
+            5.3120805369127515,
+            5.417785234899329
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.5360738255033557
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 4.946308724832215,
+          "ci": [
+            4.912751677852349,
+            4.983221476510067
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.49463087248322146
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 6.251677852348993,
+          "ci": [
+            6.202936241610739,
+            6.303691275167785
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.6251677852348994
+        },
+        "Slayer1B": {
+          "tokens_mean": 5.629194630872483,
+          "ci": [
+            5.5855704697986575,
+            5.671140939597316
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.5629194630872483
+        },
+        "APT3-1B": {
+          "tokens_mean": 5.01510067114094,
+          "ci": [
+            4.982340604026846,
+            5.049538590604027
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.501510067114094
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 5.12248322147651,
+          "ci": [
+            5.072944630872484,
+            5.177936241610738
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.512248322147651
+        },
+        "Bielik-v3": {
+          "tokens_mean": 11.0,
+          "ci": [
+            11.0,
+            11.0
+          ],
+          "tokens_median": 11.0,
+          "tokens_p90": 11.0,
+          "tokens_per_char": 1.1
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 10.0,
+          "ci": [
+            10.0,
+            10.0
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 1.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.5
+        }
+      }
+    },
+    "procent": {
+      "count": 695,
+      "by_domain": {
+        "przetargi_ogloszenia": 76,
+        "przetargi_kio": 91,
+        "samorzad_uchwaly": 26,
+        "granty_ogloszenia": 89,
+        "prawo_eli": 47,
+        "ocr_prasa": 30,
+        "tabele_json": 20,
+        "web": 114,
+        "prawo": 202
+      },
+      "examples": [
+        "0 %",
+        "0%",
+        "0,0007%",
+        "0,0018%",
+        "0,002%"
+      ],
+      "chars_mean": 3.460431654676259,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 2.2402877697841728,
+          "ci": [
+            2.20068345323741,
+            2.279892086330935
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.6474012474012474
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 2.2330935251798563,
+          "ci": [
+            2.19636690647482,
+            2.2698201438848917
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.6453222453222454
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.3827338129496405,
+          "ci": [
+            2.3215467625899278,
+            2.4431654676258994
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.6885654885654886
+        },
+        "Slayer1B": {
+          "tokens_mean": 2.38705035971223,
+          "ci": [
+            2.327302158273381,
+            2.446043165467626
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.6898128898128898
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.8287769784172663,
+          "ci": [
+            1.7884892086330935,
+            1.8676258992805754
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 2.0,
+          "tokens_per_char": 0.5284823284823285
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 2.349640287769784,
+          "ci": [
+            2.293525179856115,
+            2.405755395683453
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.679002079002079
+        },
+        "Bielik-v3": {
+          "tokens_mean": 4.336690647482015,
+          "ci": [
+            4.269748201438849,
+            4.40363309352518
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 1.2532224532224532
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 3.3366906474820146,
+          "ci": [
+            3.2697482014388486,
+            3.4036330935251797
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.9642411642411642
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.3482014388489207,
+          "ci": [
+            2.293525179856115,
+            2.40431654676259
+          ],
+          "tokens_median": 2.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.6785862785862786
+        }
+      }
+    },
+    "kod_pocztowy": {
+      "count": 363,
+      "by_domain": {
+        "przetargi_ogloszenia": 115,
+        "przetargi_kio": 41,
+        "samorzad_uchwaly": 10,
+        "granty_ogloszenia": 57,
+        "ocr_prasa": 2,
+        "tabele_json": 136,
+        "web": 2
+      },
+      "examples": [
+        "00-002",
+        "00-124",
+        "00-175",
+        "00-193",
+        "00-590"
+      ],
+      "chars_mean": 6.0,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 3.0082644628099175,
+          "ci": [
+            2.961432506887052,
+            3.0523415977961434
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.5013774104683195
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 3.0082644628099175,
+          "ci": [
+            2.961432506887052,
+            3.0523415977961434
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.5013774104683195
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 3.5371900826446283,
+          "ci": [
+            3.4916666666666667,
+            3.581267217630854
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.5895316804407713
+        },
+        "Slayer1B": {
+          "tokens_mean": 3.6914600550964187,
+          "ci": [
+            3.6459366391184576,
+            3.7382920110192837
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.6152433425160698
+        },
+        "APT3-1B": {
+          "tokens_mean": 3.0633608815426996,
+          "ci": [
+            3.024793388429752,
+            3.1019283746556474
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.5105601469237833
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 3.1790633608815426,
+          "ci": [
+            3.1404958677685952,
+            3.2148760330578514
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.5298438934802571
+        },
+        "Bielik-v3": {
+          "tokens_mean": 7.0,
+          "ci": [
+            7.0,
+            7.0
+          ],
+          "tokens_median": 7.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 1.1666666666666667
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 6.0,
+          "ci": [
+            6.0,
+            6.0
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 1.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 3.0,
+          "ci": [
+            3.0,
+            3.0
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.5
+        }
+      }
+    },
+    "email": {
+      "count": 271,
+      "by_domain": {
+        "przetargi_ogloszenia": 144,
+        "granty_ogloszenia": 62,
+        "tabele_json": 62,
+        "web": 3
+      },
+      "examples": [
+        "przyklad@example.org",
+        "przyklad@example.org",
+        "przyklad@example.org",
+        "przyklad@example.org",
+        "przyklad@example.org"
+      ],
+      "chars_mean": 21.8450184501845,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 9.712177121771218,
+          "ci": [
+            9.464760147601476,
+            9.96309963099631
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 12.0,
+          "tokens_per_char": 0.4445945945945946
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 9.712177121771218,
+          "ci": [
+            9.464760147601476,
+            9.96309963099631
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 12.0,
+          "tokens_per_char": 0.4445945945945946
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 10.752767527675276,
+          "ci": [
+            10.494280442804428,
+            11.0
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 14.0,
+          "tokens_per_char": 0.4922297297297297
+        },
+        "Slayer1B": {
+          "tokens_mean": 10.84870848708487,
+          "ci": [
+            10.564575645756458,
+            11.145848708487085
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 14.0,
+          "tokens_per_char": 0.4966216216216216
+        },
+        "APT3-1B": {
+          "tokens_mean": 9.675276752767529,
+          "ci": [
+            9.402029520295203,
+            9.94289667896679
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 13.0,
+          "tokens_per_char": 0.4429054054054054
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 10.357933579335793,
+          "ci": [
+            10.101383763837639,
+            10.597970479704797
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 13.0,
+          "tokens_per_char": 0.4741554054054054
+        },
+        "Bielik-v3": {
+          "tokens_mean": 11.55719557195572,
+          "ci": [
+            11.214022140221402,
+            11.861715867158672
+          ],
+          "tokens_median": 11.0,
+          "tokens_p90": 15.0,
+          "tokens_per_char": 0.529054054054054
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 9.269372693726938,
+          "ci": [
+            8.972232472324723,
+            9.542435424354244
+          ],
+          "tokens_median": 9.0,
+          "tokens_p90": 13.0,
+          "tokens_per_char": 0.4243243243243243
+        },
+        "GPT-4o": {
+          "tokens_mean": 8.763837638376383,
+          "ci": [
+            8.494464944649447,
+            9.040590405904059
+          ],
+          "tokens_median": 9.0,
+          "tokens_p90": 12.0,
+          "tokens_per_char": 0.40118243243243246
+        }
+      }
+    },
+    "url": {
+      "count": 397,
+      "by_domain": {
+        "przetargi_ogloszenia": 256,
+        "granty_ogloszenia": 25,
+        "tabele_json": 82,
+        "web": 34
+      },
+      "examples": [
+        "https://example.org/sciezka",
+        "https://example.org/sciezka",
+        "https://example.org/sciezka",
+        "https://example.org/sciezka",
+        "https://example.org/sciezka"
+      ],
+      "chars_mean": 51.785894206549116,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 22.095717884130984,
+          "ci": [
+            20.435453400503775,
+            23.59137279596977
+          ],
+          "tokens_median": 17.0,
+          "tokens_p90": 52.0,
+          "tokens_per_char": 0.42667444914635927
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 21.765743073047858,
+          "ci": [
+            20.172795969773297,
+            23.208627204030225
+          ],
+          "tokens_median": 17.0,
+          "tokens_p90": 50.0,
+          "tokens_per_char": 0.4203025438980495
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 25.808564231738035,
+          "ci": [
+            24.004974811083123,
+            27.43280856423174
+          ],
+          "tokens_median": 19.0,
+          "tokens_p90": 57.0,
+          "tokens_per_char": 0.49837054331436353
+        },
+        "Slayer1B": {
+          "tokens_mean": 24.5264483627204,
+          "ci": [
+            22.909886649874053,
+            26.031801007556673
+          ],
+          "tokens_median": 19.0,
+          "tokens_p90": 54.0,
+          "tokens_per_char": 0.47361252979230506
+        },
+        "APT3-1B": {
+          "tokens_mean": 24.42317380352645,
+          "ci": [
+            22.60044080604534,
+            25.971473551637278
+          ],
+          "tokens_median": 17.0,
+          "tokens_p90": 57.0,
+          "tokens_per_char": 0.47161826937107837
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 24.161209068010077,
+          "ci": [
+            22.482304785894208,
+            25.7066120906801
+          ],
+          "tokens_median": 18.0,
+          "tokens_p90": 54.0,
+          "tokens_per_char": 0.4665596575708935
+        },
+        "Bielik-v3": {
+          "tokens_mean": 27.042821158690177,
+          "ci": [
+            25.035138539042823,
+            28.917506297229217
+          ],
+          "tokens_median": 20.0,
+          "tokens_p90": 63.400000000000034,
+          "tokens_per_char": 0.5222043873729267
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 23.178841309823678,
+          "ci": [
+            21.404785894206547,
+            24.91580604534005
+          ],
+          "tokens_median": 17.0,
+          "tokens_p90": 58.0,
+          "tokens_per_char": 0.4475898633202004
+        },
+        "GPT-4o": {
+          "tokens_mean": 19.48110831234257,
+          "ci": [
+            18.16227959697733,
+            20.712153652392946
+          ],
+          "tokens_median": 15.0,
+          "tokens_p90": 43.0,
+          "tokens_per_char": 0.3761856121406683
+        }
+      }
+    },
+    "data_cyfrowa": {
+      "count": 624,
+      "by_domain": {
+        "przetargi_ogloszenia": 52,
+        "przetargi_kio": 83,
+        "samorzad_uchwaly": 31,
+        "granty_ogloszenia": 36,
+        "prawo_eli": 244,
+        "tabele_json": 40,
+        "web": 77,
+        "prawo": 61
+      },
+      "examples": [
+        "01.01.2026",
+        "01.01.2027",
+        "01.02.2023",
+        "01.07.2021",
+        "01.08.2000"
+      ],
+      "chars_mean": 9.926282051282051,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 3.815705128205128,
+          "ci": [
+            3.7580128205128207,
+            3.878205128205128
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.38440426218921536
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 3.8349358974358974,
+          "ci": [
+            3.778004807692308,
+            3.892708333333333
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.38634162092347435
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 6.001602564102564,
+          "ci": [
+            6.0,
+            6.0048076923076925
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.6046173716499839
+        },
+        "Slayer1B": {
+          "tokens_mean": 5.352564102564102,
+          "ci": [
+            5.3132612179487175,
+            5.391025641025641
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.539231514368744
+        },
+        "APT3-1B": {
+          "tokens_mean": 4.068910256410256,
+          "ci": [
+            4.052043269230769,
+            4.088982371794872
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.40991281885695835
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 5.011217948717949,
+          "ci": [
+            5.003205128205129,
+            5.020833333333333
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.5048433968356474
+        },
+        "Bielik-v3": {
+          "tokens_mean": 10.926282051282051,
+          "ci": [
+            10.901402243589743,
+            10.948717948717949
+          ],
+          "tokens_median": 11.0,
+          "tokens_p90": 11.0,
+          "tokens_per_char": 1.100742654181466
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 9.926282051282051,
+          "ci": [
+            9.901402243589743,
+            9.948717948717949
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 1.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 6.0,
+          "ci": [
+            6.0,
+            6.0
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.6044559250887956
+        }
+      }
+    },
+    "publikator": {
+      "count": 2426,
+      "by_domain": {
+        "przetargi_ogloszenia": 113,
+        "przetargi_kio": 96,
+        "samorzad_uchwaly": 567,
+        "granty_ogloszenia": 110,
+        "prawo_eli": 639,
+        "ocr_prasa": 5,
+        "tabele_json": 39,
+        "web": 1,
+        "prawo": 856
+      },
+      "examples": [
+        "Dz.\nU.",
+        "Dz. U.",
+        "Dz.U.",
+        "M.P."
+      ],
+      "chars_mean": 5.95919208573784,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 2.9983511953833473,
+          "ci": [
+            2.9950535861500414,
+            3.0012366034624898
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.5031472643010306
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 2.9983511953833473,
+          "ci": [
+            2.9950535861500414,
+            3.0012366034624898
+          ],
+          "tokens_median": 3.0,
+          "tokens_p90": 3.0,
+          "tokens_per_char": 0.5031472643010306
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 4.002061005770816,
+          "ci": [
+            4.000412201154163,
+            4.004122011541632
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.671577782389154
+        },
+        "Slayer1B": {
+          "tokens_mean": 4.002061005770816,
+          "ci": [
+            4.000412201154163,
+            4.004122011541632
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.671577782389154
+        },
+        "APT3-1B": {
+          "tokens_mean": 3.996290189612531,
+          "ci": [
+            3.993404781533388,
+            3.9983511953833473
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.6706093933734523
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 4.002061005770816,
+          "ci": [
+            4.000412201154163,
+            4.004122011541632
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.671577782389154
+        },
+        "Bielik-v3": {
+          "tokens_mean": 4.998351195383347,
+          "ci": [
+            4.995053586150041,
+            5.001236603462489
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.8387632288856609
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.95919208573784,
+          "ci": [
+            4.950948062654575,
+            4.967023907666942
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.8321920177076848
+        },
+        "GPT-4o": {
+          "tokens_mean": 3.962901896125309,
+          "ci": [
+            3.9558944765045343,
+            3.9699093157460843
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.665006571211178
+        }
+      }
+    },
+    "poz": {
+      "count": 4000,
+      "by_domain": {
+        "przetargi_ogloszenia": 111,
+        "przetargi_kio": 111,
+        "samorzad_uchwaly": 623,
+        "granty_ogloszenia": 112,
+        "prawo_eli": 805,
+        "ocr_prasa": 6,
+        "tabele_json": 40,
+        "web": 2,
+        "prawo": 2932
+      },
+      "examples": [
+        "poz.\n\n1801",
+        "poz.\n1092",
+        "poz.\n1119",
+        "poz.\n1121",
+        "poz.\n1126"
+      ],
+      "chars_mean": 8.33075,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 4.27325,
+          "ci": [
+            4.2524875,
+            4.294393749999999
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.5129490141944003
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 3.96075,
+          "ci": [
+            3.94825,
+            3.97375
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.47543738558953275
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 5.9985,
+          "ci": [
+            5.98185625,
+            6.0145
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.7200432133961528
+        },
+        "Slayer1B": {
+          "tokens_mean": 4.9165,
+          "ci": [
+            4.9042375,
+            4.9295
+          ],
+          "tokens_median": 5.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.5901629505146595
+        },
+        "APT3-1B": {
+          "tokens_mean": 3.83725,
+          "ci": [
+            3.82611875,
+            3.84838125
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.46061278996488914
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 3.60825,
+          "ci": [
+            3.59034375,
+            3.625
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 4.0,
+          "tokens_per_char": 0.4331242685232422
+        },
+        "Bielik-v3": {
+          "tokens_mean": 6.33075,
+          "ci": [
+            6.313,
+            6.352
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.759925576928848
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 6.30925,
+          "ci": [
+            6.2915,
+            6.33039375
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.757344776880833
+        },
+        "GPT-4o": {
+          "tokens_mean": 4.408,
+          "ci": [
+            4.394,
+            4.42363125
+          ],
+          "tokens_median": 4.0,
+          "tokens_p90": 5.0,
+          "tokens_per_char": 0.5291240284488191
+        }
+      }
+    },
+    "znak_sprawy": {
+      "count": 543,
+      "by_domain": {
+        "przetargi_ogloszenia": 96,
+        "przetargi_kio": 51,
+        "samorzad_uchwaly": 305,
+        "granty_ogloszenia": 13,
+        "tabele_json": 77,
+        "web": 1
+      },
+      "examples": [
+        "A-521/87",
+        "A.261.199.2025",
+        "AD.261.5.2025",
+        "ARMS/010/26",
+        "AZ.262.13.2026"
+      ],
+      "chars_mean": 11.953959484346225,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 6.92633517495396,
+          "ci": [
+            6.805662983425415,
+            7.069106813996317
+          ],
+          "tokens_median": 7.0,
+          "tokens_p90": 9.0,
+          "tokens_per_char": 0.579417655214913
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 6.883977900552487,
+          "ci": [
+            6.7569060773480665,
+            7.012983425414364
+          ],
+          "tokens_median": 7.0,
+          "tokens_p90": 8.800000000000011,
+          "tokens_per_char": 0.5758742874749654
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 7.801104972375691,
+          "ci": [
+            7.639732965009208,
+            7.958609576427256
+          ],
+          "tokens_median": 8.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 0.652595902018179
+        },
+        "Slayer1B": {
+          "tokens_mean": 7.917127071823204,
+          "ci": [
+            7.7743554327808475,
+            8.07279005524862
+          ],
+          "tokens_median": 8.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 0.6623016484362965
+        },
+        "APT3-1B": {
+          "tokens_mean": 6.224677716390423,
+          "ci": [
+            6.104005524861878,
+            6.342541436464089
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 8.0,
+          "tokens_per_char": 0.5207209983053459
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 6.482504604051566,
+          "ci": [
+            6.3710405156537755,
+            6.605018416206262
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 8.0,
+          "tokens_per_char": 0.5422893236789401
+        },
+        "Bielik-v3": {
+          "tokens_mean": 10.869244935543279,
+          "ci": [
+            10.651933701657459,
+            11.09401473296501
+          ],
+          "tokens_median": 11.0,
+          "tokens_p90": 15.0,
+          "tokens_per_char": 0.9092589739639501
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 10.823204419889503,
+          "ci": [
+            10.618600368324126,
+            11.042357274401473
+          ],
+          "tokens_median": 11.0,
+          "tokens_p90": 14.0,
+          "tokens_per_char": 0.905407487290094
+        },
+        "GPT-4o": {
+          "tokens_mean": 7.058931860036832,
+          "ci": [
+            6.940009208103131,
+            7.189686924493555
+          ],
+          "tokens_median": 7.0,
+          "tokens_p90": 9.0,
+          "tokens_per_char": 0.5905099368356186
+        }
+      }
+    },
+    "nip": {
+      "count": 29,
+      "by_domain": {
+        "przetargi_ogloszenia": 5,
+        "samorzad_uchwaly": 2,
+        "granty_ogloszenia": 8,
+        "tabele_json": 14
+      },
+      "examples": [
+        "NIP 123-456-32-18",
+        "NIP 123-456-32-18",
+        "NIP 123-456-32-18",
+        "NIP 123-456-32-18",
+        "NIP 123-456-32-18"
+      ],
+      "chars_mean": 15.10344827586207,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 9.413793103448276,
+          "ci": [
+            9.154310344827586,
+            9.655172413793103
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 0.6232876712328768
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 8.758620689655173,
+          "ci": [
+            8.533620689655173,
+            8.96551724137931
+          ],
+          "tokens_median": 9.0,
+          "tokens_p90": 9.2,
+          "tokens_per_char": 0.5799086757990868
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 10.413793103448276,
+          "ci": [
+            10.068965517241379,
+            10.724137931034482
+          ],
+          "tokens_median": 11.0,
+          "tokens_p90": 11.0,
+          "tokens_per_char": 0.6894977168949772
+        },
+        "Slayer1B": {
+          "tokens_mean": 9.10344827586207,
+          "ci": [
+            8.724137931034482,
+            9.500862068965516
+          ],
+          "tokens_median": 9.0,
+          "tokens_p90": 11.0,
+          "tokens_per_char": 0.6027397260273972
+        },
+        "APT3-1B": {
+          "tokens_mean": 8.931034482758621,
+          "ci": [
+            8.655172413793103,
+            9.206896551724139
+          ],
+          "tokens_median": 9.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 0.591324200913242
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 8.344827586206897,
+          "ci": [
+            7.896551724137931,
+            8.793103448275861
+          ],
+          "tokens_median": 8.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 0.5525114155251142
+        },
+        "Bielik-v3": {
+          "tokens_mean": 14.10344827586207,
+          "ci": [
+            13.706034482758621,
+            14.517241379310345
+          ],
+          "tokens_median": 14.0,
+          "tokens_p90": 16.0,
+          "tokens_per_char": 0.9337899543378996
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 14.10344827586207,
+          "ci": [
+            13.706034482758621,
+            14.517241379310345
+          ],
+          "tokens_median": 14.0,
+          "tokens_p90": 16.0,
+          "tokens_per_char": 0.9337899543378996
+        },
+        "GPT-4o": {
+          "tokens_mean": 8.10344827586207,
+          "ci": [
+            7.7060344827586205,
+            8.517241379310345
+          ],
+          "tokens_median": 8.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 0.5365296803652968
+        }
+      }
+    },
+    "sygnatura_kio": {
+      "count": 41,
+      "by_domain": {
+        "przetargi_kio": 41
+      },
+      "examples": [
+        "KIO 1118/18",
+        "KIO 1428/20",
+        "KIO 1550/23",
+        "KIO 1558/23",
+        "KIO 1614/24"
+      ],
+      "chars_mean": 10.902439024390244,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 6.560975609756097,
+          "ci": [
+            6.426219512195122,
+            6.7073170731707314
+          ],
+          "tokens_median": 7.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.6017897091722595
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 6.219512195121951,
+          "ci": [
+            6.097560975609756,
+            6.341463414634147
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.5704697986577181
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 7.780487804878049,
+          "ci": [
+            7.658536585365853,
+            7.902439024390244
+          ],
+          "tokens_median": 8.0,
+          "tokens_p90": 8.0,
+          "tokens_per_char": 0.7136465324384788
+        },
+        "Slayer1B": {
+          "tokens_mean": 6.365853658536586,
+          "ci": [
+            6.219512195121951,
+            6.512195121951219
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.5838926174496645
+        },
+        "APT3-1B": {
+          "tokens_mean": 6.170731707317073,
+          "ci": [
+            5.975609756097561,
+            6.365853658536586
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.5659955257270693
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 5.926829268292683,
+          "ci": [
+            5.853658536585366,
+            6.0
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.5436241610738255
+        },
+        "Bielik-v3": {
+          "tokens_mean": 9.902439024390244,
+          "ci": [
+            9.804878048780488,
+            9.975609756097562
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 0.9082774049217002
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 9.902439024390244,
+          "ci": [
+            9.804878048780488,
+            9.975609756097562
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 0.9082774049217002
+        },
+        "GPT-4o": {
+          "tokens_mean": 6.902439024390244,
+          "ci": [
+            6.804878048780488,
+            6.975609756097561
+          ],
+          "tokens_median": 7.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.6331096196868009
+        }
+      }
+    },
+    "sygnatura_sadu": {
+      "count": 1,
+      "by_domain": {
+        "przetargi_kio": 1
+      },
+      "examples": [
+        "V CA 2056/07"
+      ],
+      "chars_mean": 12.0,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 8.0,
+          "ci": [
+            8.0,
+            8.0
+          ],
+          "tokens_median": 8.0,
+          "tokens_p90": 8.0,
+          "tokens_per_char": 0.6666666666666666
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 7.0,
+          "ci": [
+            7.0,
+            7.0
+          ],
+          "tokens_median": 7.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.5833333333333334
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 7.0,
+          "ci": [
+            7.0,
+            7.0
+          ],
+          "tokens_median": 7.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.5833333333333334
+        },
+        "Slayer1B": {
+          "tokens_mean": 6.0,
+          "ci": [
+            6.0,
+            6.0
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.5
+        },
+        "APT3-1B": {
+          "tokens_mean": 6.0,
+          "ci": [
+            6.0,
+            6.0
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.5
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 6.0,
+          "ci": [
+            6.0,
+            6.0
+          ],
+          "tokens_median": 6.0,
+          "tokens_p90": 6.0,
+          "tokens_per_char": 0.5
+        },
+        "Bielik-v3": {
+          "tokens_mean": 10.0,
+          "ci": [
+            10.0,
+            10.0
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 0.8333333333333334
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 10.0,
+          "ci": [
+            10.0,
+            10.0
+          ],
+          "tokens_median": 10.0,
+          "tokens_p90": 10.0,
+          "tokens_per_char": 0.8333333333333334
+        },
+        "GPT-4o": {
+          "tokens_mean": 7.0,
+          "ci": [
+            7.0,
+            7.0
+          ],
+          "tokens_median": 7.0,
+          "tokens_p90": 7.0,
+          "tokens_per_char": 0.5833333333333334
+        }
+      }
+    },
+    "uchwala": {
+      "count": 197,
+      "by_domain": {
+        "samorzad_uchwaly": 197
+      },
+      "examples": [
+        "UCHWAŁA NR I/6/2026",
+        "UCHWAŁA NR VII/13/2026",
+        "UCHWAŁA NR VII/17/2026",
+        "UCHWAŁA NR XIX/118/2026",
+        "UCHWAŁA NR XIX/141/2025"
+      ],
+      "chars_mean": 23.31979695431472,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "tokens_mean": 12.00507614213198,
+          "ci": [
+            11.852791878172589,
+            12.17766497461929
+          ],
+          "tokens_median": 12.0,
+          "tokens_p90": 13.0,
+          "tokens_per_char": 0.5148019155420113
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 12.01522842639594,
+          "ci": [
+            11.870431472081219,
+            12.185406091370558
+          ],
+          "tokens_median": 12.0,
+          "tokens_p90": 13.0,
+          "tokens_per_char": 0.5152372659991293
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 11.868020304568528,
+          "ci": [
+            11.751269035532994,
+            11.99758883248731
+          ],
+          "tokens_median": 12.0,
+          "tokens_p90": 13.0,
+          "tokens_per_char": 0.5089246843709185
+        },
+        "Slayer1B": {
+          "tokens_mean": 14.360406091370558,
+          "ci": [
+            14.144543147208122,
+            14.606725888324872
+          ],
+          "tokens_median": 15.0,
+          "tokens_p90": 16.0,
+          "tokens_per_char": 0.6158032215933826
+        },
+        "APT3-1B": {
+          "tokens_mean": 11.096446700507615,
+          "ci": [
+            10.931345177664975,
+            11.271700507614213
+          ],
+          "tokens_median": 11.0,
+          "tokens_p90": 12.0,
+          "tokens_per_char": 0.47583804962995213
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 11.568527918781726,
+          "ci": [
+            11.436548223350254,
+            11.705583756345177
+          ],
+          "tokens_median": 12.0,
+          "tokens_p90": 12.0,
+          "tokens_per_char": 0.4960818458859382
+        },
+        "Bielik-v3": {
+          "tokens_mean": 17.04060913705584,
+          "ci": [
+            16.86535532994924,
+            17.226015228426395
+          ],
+          "tokens_median": 17.0,
+          "tokens_p90": 18.0,
+          "tokens_per_char": 0.7307357422725294
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 16.629441624365484,
+          "ci": [
+            16.431472081218274,
+            16.86294416243655
+          ],
+          "tokens_median": 17.0,
+          "tokens_p90": 18.0,
+          "tokens_per_char": 0.7131040487592512
+        },
+        "GPT-4o": {
+          "tokens_mean": 11.380710659898478,
+          "ci": [
+            11.294416243654823,
+            11.472081218274111
+          ],
+          "tokens_median": 11.0,
+          "tokens_p90": 12.0,
+          "tokens_per_char": 0.48802786242925555
+        }
+      }
+    }
+  },
+  "h1": {
+    "years": {
+      "2015": {
+        "occurrences": 32,
+        "TOKENIZATOREX": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 4,
+          "TOKENIZATOREX-HF": 4,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 6,
+          "APT3-1B": 6,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      },
+      "2016": {
+        "occurrences": 203,
+        "TOKENIZATOREX": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 4,
+          "TOKENIZATOREX-HF": 4,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 6,
+          "APT3-1B": 6,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      },
+      "2017": {
+        "occurrences": 56,
+        "TOKENIZATOREX": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 4,
+          "TOKENIZATOREX-HF": 4,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 6,
+          "APT3-1B": 6,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      },
+      "2018": {
+        "occurrences": 57,
+        "TOKENIZATOREX": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 4,
+          "TOKENIZATOREX-HF": 4,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 6,
+          "APT3-1B": 6,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      },
+      "2019": {
+        "occurrences": 111,
+        "TOKENIZATOREX": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 4,
+          "TOKENIZATOREX-HF": 4,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 6,
+          "APT3-1B": 6,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      },
+      "2020": {
+        "occurrences": 69,
+        "TOKENIZATOREX": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 4,
+          "TOKENIZATOREX-HF": 6,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 6,
+          "APT3-1B": 6,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      },
+      "2021": {
+        "occurrences": 106,
+        "TOKENIZATOREX": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 4,
+          "TOKENIZATOREX-HF": 4,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 6,
+          "APT3-1B": 6,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      },
+      "2022": {
+        "occurrences": 115,
+        "TOKENIZATOREX": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 4,
+          "TOKENIZATOREX-HF": 4,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 6,
+          "APT3-1B": 6,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      },
+      "2023": {
+        "occurrences": 128,
+        "TOKENIZATOREX": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 4,
+          "TOKENIZATOREX-HF": 4,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 6,
+          "APT3-1B": 6,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      },
+      "2024": {
+        "occurrences": 163,
+        "TOKENIZATOREX": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 4,
+          "TOKENIZATOREX-HF": 4,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 6,
+          "APT3-1B": 6,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      },
+      "2025": {
+        "occurrences": 460,
+        "TOKENIZATOREX": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 5,
+          "TOKENIZATOREX-HF": 5,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 6,
+          "APT3-1B": 6,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      },
+      "2026": {
+        "occurrences": 1129,
+        "TOKENIZATOREX": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-HF": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "TOKENIZATOREX-base": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Slayer1B": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "APT3-1B": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Pollock-2.0": {
+          "tokens_mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "Bielik-v3": {
+          "tokens_mean": 5.0,
+          "ci": [
+            5.0,
+            5.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "PLLuM-12B": {
+          "tokens_mean": 4.0,
+          "ci": [
+            4.0,
+            4.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "GPT-4o": {
+          "tokens_mean": 2.0,
+          "ci": [
+            2.0,
+            2.0
+          ],
+          "distinct_segmentation_share": 0.0
+        },
+        "template_total_tokens": {
+          "TOKENIZATOREX": 5,
+          "TOKENIZATOREX-HF": 5,
+          "TOKENIZATOREX-base": 8,
+          "Slayer1B": 7,
+          "APT3-1B": 7,
+          "Pollock-2.0": 6,
+          "Bielik-v3": 12,
+          "PLLuM-12B": 11,
+          "GPT-4o": 9
+        }
+      }
+    },
+    "template": "w roku {year} r. zadanie",
+    "note": "template_total_tokens = liczba tokenów całego zdania-kontrolnego",
+    "early_vs_late": {
+      "early_n": 1040,
+      "late_n": 1589,
+      "tokenizers": {
+        "TOKENIZATOREX": {
+          "early_mean": 1.0,
+          "early_ci": [
+            1.0,
+            1.0
+          ],
+          "late_mean": 2.0,
+          "late_ci": [
+            2.0,
+            2.0
+          ],
+          "diff": 1.0,
+          "ratio": 2.0,
+          "significant": true
+        },
+        "TOKENIZATOREX-HF": {
+          "early_mean": 1.0663461538461538,
+          "early_ci": [
+            1.0528846153846154,
+            1.0826923076923076
+          ],
+          "late_mean": 2.0,
+          "late_ci": [
+            2.0,
+            2.0
+          ],
+          "diff": 0.9336538461538462,
+          "ratio": 1.8755635707844907,
+          "significant": true
+        },
+        "TOKENIZATOREX-base": {
+          "early_mean": 2.0,
+          "early_ci": [
+            2.0,
+            2.0
+          ],
+          "late_mean": 2.0,
+          "late_ci": [
+            2.0,
+            2.0
+          ],
+          "diff": 0.0,
+          "ratio": 1.0,
+          "significant": false
+        },
+        "Slayer1B": {
+          "early_mean": 1.1567307692307693,
+          "early_ci": [
+            1.1341105769230768,
+            1.1793509615384616
+          ],
+          "late_mean": 2.0,
+          "late_ci": [
+            2.0,
+            2.0
+          ],
+          "diff": 0.8432692307692307,
+          "ratio": 1.7290108063175393,
+          "significant": true
+        },
+        "APT3-1B": {
+          "early_mean": 1.0,
+          "early_ci": [
+            1.0,
+            1.0
+          ],
+          "late_mean": 1.710509754562618,
+          "late_ci": [
+            1.6890811831340466,
+            1.7325361862806796
+          ],
+          "diff": 0.710509754562618,
+          "ratio": 1.710509754562618,
+          "significant": true
+        },
+        "Pollock-2.0": {
+          "early_mean": 1.0,
+          "early_ci": [
+            1.0,
+            1.0
+          ],
+          "late_mean": 1.0,
+          "late_ci": [
+            1.0,
+            1.0
+          ],
+          "diff": 0.0,
+          "ratio": 1.0,
+          "significant": false
+        },
+        "Bielik-v3": {
+          "early_mean": 5.0,
+          "early_ci": [
+            5.0,
+            5.0
+          ],
+          "late_mean": 5.0,
+          "late_ci": [
+            5.0,
+            5.0
+          ],
+          "diff": 0.0,
+          "ratio": 1.0,
+          "significant": false
+        },
+        "PLLuM-12B": {
+          "early_mean": 4.0,
+          "early_ci": [
+            4.0,
+            4.0
+          ],
+          "late_mean": 4.0,
+          "late_ci": [
+            4.0,
+            4.0
+          ],
+          "diff": 0.0,
+          "ratio": 1.0,
+          "significant": false
+        },
+        "GPT-4o": {
+          "early_mean": 2.0,
+          "early_ci": [
+            2.0,
+            2.0
+          ],
+          "late_mean": 2.0,
+          "late_ci": [
+            2.0,
+            2.0
+          ],
+          "diff": 0.0,
+          "ratio": 1.0,
+          "significant": false
+        }
+      }
+    }
+  },
+  "h2": {
+    "by_tokenizer": {
+      "TOKENIZATOREX": {
+        "lengths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14
+        ],
+        "tokens_mean": [
+          1.8455,
+          2.9825528007346187,
+          3.603641456582633,
+          4.490196078431373,
+          4.263478260869565,
+          5.6608187134502925,
+          6.288385826771654,
+          6.857142857142857,
+          7.0,
+          8.5
+        ],
+        "tokens_per_digit": [
+          0.461375,
+          0.5965105601469238,
+          0.6006069094304388,
+          0.6414565826330533,
+          0.5329347826086956,
+          0.6289798570500325,
+          0.6288385826771653,
+          0.6233766233766234,
+          0.5833333333333334,
+          0.6071428571428571
+        ],
+        "corr_len_tokens": 0.9892841693646017
+      },
+      "TOKENIZATOREX-HF": {
+        "lengths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14
+        ],
+        "tokens_mean": [
+          1.796,
+          3.0192837465564737,
+          3.100840336134454,
+          3.8627450980392157,
+          3.973913043478261,
+          4.935672514619883,
+          5.4862204724409445,
+          6.142857142857143,
+          7.0,
+          7.5
+        ],
+        "tokens_per_digit": [
+          0.449,
+          0.6038567493112947,
+          0.5168067226890757,
+          0.5518207282913166,
+          0.4967391304347826,
+          0.548408057179987,
+          0.5486220472440945,
+          0.5584415584415584,
+          0.5833333333333334,
+          0.5357142857142857
+        ],
+        "corr_len_tokens": 0.9903463306161965
+      },
+      "TOKENIZATOREX-base": {
+        "lengths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14
+        ],
+        "tokens_mean": [
+          2.085,
+          2.928374655647383,
+          3.4901960784313726,
+          4.235294117647059,
+          4.1869565217391305,
+          5.497076023391813,
+          6.06988188976378,
+          6.857142857142857,
+          7.0,
+          8.5
+        ],
+        "tokens_per_digit": [
+          0.52125,
+          0.5856749311294766,
+          0.5816993464052288,
+          0.6050420168067226,
+          0.5233695652173913,
+          0.6107862248213125,
+          0.606988188976378,
+          0.6233766233766234,
+          0.5833333333333334,
+          0.6071428571428571
+        ],
+        "corr_len_tokens": 0.993610785737805
+      },
+      "Slayer1B": {
+        "lengths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14
+        ],
+        "tokens_mean": [
+          1.732,
+          2.9393939393939394,
+          3.1218487394957983,
+          3.8627450980392157,
+          3.722608695652174,
+          4.976608187134503,
+          5.176181102362205,
+          6.0,
+          7.0,
+          7.0
+        ],
+        "tokens_per_digit": [
+          0.433,
+          0.5878787878787879,
+          0.5203081232492998,
+          0.5518207282913166,
+          0.4653260869565217,
+          0.552956465237167,
+          0.5176181102362205,
+          0.5454545454545454,
+          0.5833333333333334,
+          0.5
+        ],
+        "corr_len_tokens": 0.9789038846928361
+      },
+      "APT3-1B": {
+        "lengths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14
+        ],
+        "tokens_mean": [
+          1.6465,
+          2.957759412304867,
+          3.0980392156862746,
+          3.6666666666666665,
+          4.1060869565217395,
+          5.04093567251462,
+          5.665354330708661,
+          6.285714285714286,
+          7.0,
+          7.5
+        ],
+        "tokens_per_digit": [
+          0.411625,
+          0.5915518824609733,
+          0.5163398692810458,
+          0.5238095238095238,
+          0.5132608695652174,
+          0.5601039636127355,
+          0.5665354330708662,
+          0.5714285714285714,
+          0.5833333333333334,
+          0.5357142857142857
+        ],
+        "corr_len_tokens": 0.9904925983827083
+      },
+      "Pollock-2.0": {
+        "lengths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14
+        ],
+        "tokens_mean": [
+          1.1365,
+          2.4178145087235996,
+          2.6624649859943976,
+          3.019607843137255,
+          3.0765217391304347,
+          4.076023391812866,
+          4.156496062992126,
+          4.714285714285714,
+          5.0,
+          6.0
+        ],
+        "tokens_per_digit": [
+          0.284125,
+          0.48356290174471994,
+          0.4437441643323996,
+          0.43137254901960786,
+          0.38456521739130434,
+          0.45289148797920725,
+          0.4156496062992126,
+          0.42857142857142855,
+          0.4166666666666667,
+          0.42857142857142855
+        ],
+        "corr_len_tokens": 0.9841584143044876
+      },
+      "Bielik-v3": {
+        "lengths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14
+        ],
+        "tokens_mean": [
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0,
+          13.0,
+          15.0
+        ],
+        "tokens_per_digit": [
+          1.25,
+          1.2,
+          1.1666666666666667,
+          1.1428571428571428,
+          1.125,
+          1.1111111111111112,
+          1.1,
+          1.0909090909090908,
+          1.0833333333333333,
+          1.0714285714285714
+        ],
+        "corr_len_tokens": 0.9999999999999999
+      },
+      "PLLuM-12B": {
+        "lengths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14
+        ],
+        "tokens_mean": [
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0,
+          14.0
+        ],
+        "tokens_per_digit": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "corr_len_tokens": 0.9999999999999999
+      },
+      "GPT-4o": {
+        "lengths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14
+        ],
+        "tokens_mean": [
+          2.0,
+          2.0,
+          2.0,
+          3.0,
+          3.0,
+          3.0,
+          4.0,
+          4.0,
+          4.0,
+          5.0
+        ],
+        "tokens_per_digit": [
+          0.5,
+          0.4,
+          0.3333333333333333,
+          0.42857142857142855,
+          0.375,
+          0.3333333333333333,
+          0.4,
+          0.36363636363636365,
+          0.3333333333333333,
+          0.35714285714285715
+        ],
+        "corr_len_tokens": 0.9669875568304561
+      }
+    },
+    "note": "liczby całkowite 4+ cyfr z testu; tokens_per_digit = tokeny / (cyfry·wystąpienia)"
+  }
+}

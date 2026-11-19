@@ -1,0 +1,194 @@
+{
+  "definition": "regex (?<!\\d)(20(?:1[5-9]|2[0-6]))(?!\\d); kazde wystapienie kodowane jako izolowany string roku; srednia = suma tokenow / liczba wystapien",
+  "domains": [
+    "przetargi_ogloszenia",
+    "prawo_eli"
+  ],
+  "split": "test",
+  "years": {
+    "przetargi_ogloszenia": {
+      "docs": 60,
+      "counts": {
+        "2015": 5,
+        "2016": 142,
+        "2017": 4,
+        "2018": 9,
+        "2019": 33,
+        "2020": 32,
+        "2021": 20,
+        "2022": 44,
+        "2023": 34,
+        "2024": 39,
+        "2025": 63,
+        "2026": 521
+      }
+    },
+    "prawo_eli": {
+      "docs": 78,
+      "counts": {
+        "2015": 27,
+        "2016": 61,
+        "2017": 52,
+        "2018": 48,
+        "2019": 78,
+        "2020": 37,
+        "2021": 86,
+        "2022": 71,
+        "2023": 94,
+        "2024": 124,
+        "2025": 397,
+        "2026": 608
+      }
+    }
+  },
+  "per_year": {
+    "TOKENIZATOREX": {
+      "2015": {
+        "occurrences": 32,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 32
+      },
+      "2016": {
+        "occurrences": 203,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 203
+      },
+      "2017": {
+        "occurrences": 56,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 56
+      },
+      "2018": {
+        "occurrences": 57,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 57
+      },
+      "2019": {
+        "occurrences": 111,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 111
+      },
+      "2020": {
+        "occurrences": 69,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 69
+      },
+      "2021": {
+        "occurrences": 106,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 106
+      },
+      "2022": {
+        "occurrences": 115,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 115
+      },
+      "2023": {
+        "occurrences": 128,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 128
+      },
+      "2024": {
+        "occurrences": 163,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 163
+      },
+      "2025": {
+        "occurrences": 460,
+        "tokens_per_occurrence": 2,
+        "mean_tokens_per_occurrence": 2,
+        "total_tokens": 920
+      },
+      "2026": {
+        "occurrences": 1129,
+        "tokens_per_occurrence": 2,
+        "mean_tokens_per_occurrence": 2,
+        "total_tokens": 2258
+      }
+    },
+    "Slayer1B": {
+      "2015": {
+        "occurrences": 32,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 32
+      },
+      "2016": {
+        "occurrences": 203,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 203
+      },
+      "2017": {
+        "occurrences": 56,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 56
+      },
+      "2018": {
+        "occurrences": 57,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 57
+      },
+      "2019": {
+        "occurrences": 111,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 111
+      },
+      "2020": {
+        "occurrences": 69,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 69
+      },
+      "2021": {
+        "occurrences": 106,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 106
+      },
+      "2022": {
+        "occurrences": 115,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 115
+      },
+      "2023": {
+        "occurrences": 128,
+        "tokens_per_occurrence": 1,
+        "mean_tokens_per_occurrence": 1,
+        "total_tokens": 128
+      },
+      "2024": {
+        "occurrences": 163,
+        "tokens_per_occurrence": 2,
+        "mean_tokens_per_occurrence": 2,
+        "total_tokens": 326
+      },
+      "2025": {
+        "occurrences": 460,
+        "tokens_per_occurrence": 2,
+        "mean_tokens_per_occurrence": 2,
+        "total_tokens": 920
+      },
+      "2026": {
+        "occurrences": 1129,
+        "tokens_per_occurrence": 2,
+        "mean_tokens_per_occurrence": 2,
+        "total_tokens": 2258
+      }
+    }
+  }
+}

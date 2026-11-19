@@ -1,0 +1,88 @@
+{
+  "note": "Wszystkie enkodery bez tokenów specjalnych; SHA-256 pliku, którego użył audyt.",
+  "tokenizer_files_dir": "data\\tokenizer_files",
+  "tokenizers": [
+    {
+      "label": "TOKENIZATOREX",
+      "group": "nasz",
+      "note": "referencyjny enkoder superbpe.py",
+      "kind": "superbpe",
+      "file": "tokenizers/tokenizatorex-32k.json",
+      "sha256": "9ed6ea13f8f4cf8282951254eb36a16bf6f3000b8bdfa6c34d0798fcf826a4f8"
+    },
+    {
+      "label": "TOKENIZATOREX-HF",
+      "group": "nasz",
+      "note": "eksport HF (tego użyje model)",
+      "kind": "hf_file",
+      "file": "hf/tokenizatorex-32k/tokenizer.json",
+      "sha256": "eafa72041f95c6b8e434ded911137af3a7ec9da274fd9c3dc01c90d9172d2c67"
+    },
+    {
+      "label": "TOKENIZATOREX-base",
+      "group": "nasz",
+      "note": "kontrola: ten sam trening bez SuperBPE",
+      "kind": "superbpe",
+      "file": "tokenizers/tokenizatorex-base-32k.json",
+      "sha256": "b191ebbdb366c1fe90a7b8ae30f7bc7934c90684218f55ad368704212c7a6a26"
+    },
+    {
+      "label": "Slayer1B",
+      "group": "polski",
+      "note": "GoLLeM-v6; SHA-256 zgodny z kartą modelu",
+      "kind": "hf_repo",
+      "repo": "SlayerLab/Slayer1B-1.08",
+      "file": "data\\tokenizer_files\\SlayerLab__Slayer1B-1.08.json",
+      "sha256": "0640d3bd3674d7a6e59c540d945a2ad275a12e1bcaeb6007c37a90751f9815dd",
+      "repo_commit": "ea0945b11153e67517b70d21192e6076d161f658"
+    },
+    {
+      "label": "APT3-1B",
+      "group": "polski",
+      "note": "stratny (NFKC itd.)",
+      "kind": "hf_repo",
+      "repo": "Azurro/APT3-1B-Base",
+      "file": "data\\tokenizer_files\\Azurro__APT3-1B-Base.json",
+      "sha256": "7a71b12d936a346bfbf12d5c0a28f4c1590bf9f60cc77c2579031c78fe22132d",
+      "repo_commit": "a9dbe5e7cc056eaaeef35ff73adedb9c0eb87179"
+    },
+    {
+      "label": "Pollock-2.0",
+      "group": "polski",
+      "note": "SlayerLab",
+      "kind": "hf_repo",
+      "repo": "SlayerLab/pollock-2.0-polishdynaword-150m",
+      "file": "data\\tokenizer_files\\SlayerLab__pollock-2.0-polishdynaword-150m.json",
+      "sha256": "3fb0614f890fcb654ea71079b8d6ab4461c8506d05f8ac980031461f1fe2227d",
+      "repo_commit": "da7bac89b14cf9f0abdef09b96c589f6a7ee7881"
+    },
+    {
+      "label": "Bielik-v3",
+      "group": "polski",
+      "note": "APT4 (gated, dostęp potwierdzony przez hf auth whoami)",
+      "kind": "hf_repo",
+      "repo": "speakleash/Bielik-11B-v3.1-Instruct",
+      "file": "data\\tokenizer_files\\speakleash__Bielik-11B-v3.1-Instruct.json",
+      "sha256": "a42ea93224aceea268a924b4c42c9ae1c68870b86e382ac511d4294bfaecacdf",
+      "repo_commit": "d6e755d356ad418d0f0e30b8c428db267415ddb9"
+    },
+    {
+      "label": "PLLuM-12B",
+      "group": "polski",
+      "note": "tokenizer Mistral Nemo / Tekken",
+      "kind": "hf_repo",
+      "repo": "CYFRAGOVPL/PLLuM-12B-chat-2512",
+      "file": "data\\tokenizer_files\\CYFRAGOVPL__PLLuM-12B-chat-2512.json",
+      "sha256": "b0240ce510f08e6c2041724e9043e33be9d251d1e4a4d94eb68cd47b954b61d2",
+      "repo_commit": "19a26cf61648be90c78fe8d57cb13aafac457474"
+    },
+    {
+      "label": "GPT-4o",
+      "group": "świat",
+      "note": "o200k",
+      "kind": "tiktoken",
+      "encoding": "o200k_base",
+      "tiktoken_version": "0.14.0"
+    }
+  ]
+}

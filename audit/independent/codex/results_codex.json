@@ -1,0 +1,685 @@
+{
+  "A1_integrity": {
+    "total_docs_manifest": 4586,
+    "dev_docs": 1834,
+    "test_docs": 2752,
+    "missing_raw_files": 0,
+    "sha_mismatch_raw_vs_manifest": 0,
+    "sha_text_recompute_mismatch": 0,
+    "word_count_mismatch_raw_vs_manifest": 0,
+    "word_count_recompute_mismatch": 0,
+    "nfd_mismatch": 0,
+    "ids_in_two_splits": 0,
+    "shas_in_both_splits": 0,
+    "duplicate_content_shas": 0,
+    "duplicate_content_extra_docs": 0,
+    "official_docs_date_2026": 918,
+    "distinct_url_sources_per_domain": {
+      "angielski": 1,
+      "dyskusje": 1,
+      "granty_ogloszenia": 1,
+      "literatura": 1,
+      "nauka": 1,
+      "ocr_prasa": 1,
+      "prawo": 1,
+      "prawo_eli": 1,
+      "przetargi_kio": 1,
+      "przetargi_ogloszenia": 1,
+      "samorzad_uchwaly": 1,
+      "sejm": 1,
+      "tabele_json": 1,
+      "web": 1,
+      "wikipedia": 1
+    }
+  },
+  "A2_fertility": {
+    "przetargi_ogloszenia": {
+      "TKX_ref": {
+        "docs": 60,
+        "total_tokens": 211560,
+        "total_words": 136034,
+        "fertility_aggregate": 1.5551994354352587,
+        "fertility_mean_per_doc": 1.571545486523289,
+        "ci95_lo": 1.541078732236769,
+        "ci95_hi": 1.6043592089294483
+      },
+      "TKX_HF": {
+        "docs": 60,
+        "total_tokens": 211179,
+        "total_words": 136034,
+        "fertility_aggregate": 1.5523986650396224,
+        "fertility_mean_per_doc": 1.568634402490517,
+        "ci95_lo": 1.5382503552809266,
+        "ci95_hi": 1.6009981719553295
+      },
+      "Slayer1B": {
+        "docs": 60,
+        "total_tokens": 274390,
+        "total_words": 136034,
+        "fertility_aggregate": 2.0170692620962405,
+        "fertility_mean_per_doc": 2.0402544035384813,
+        "ci95_lo": 2.000855829697686,
+        "ci95_hi": 2.083023857105304
+      },
+      "Pollock": {
+        "docs": 60,
+        "total_tokens": 246441,
+        "total_words": 136034,
+        "fertility_aggregate": 1.8116132731523003,
+        "fertility_mean_per_doc": 1.830655567208842,
+        "ci95_lo": 1.7964310353324322,
+        "ci95_hi": 1.8665534951193723
+      }
+    },
+    "samorzad_uchwaly": {
+      "TKX_ref": {
+        "docs": 240,
+        "total_tokens": 109866,
+        "total_words": 71910,
+        "fertility_aggregate": 1.5278264497288276,
+        "fertility_mean_per_doc": 1.5364828149847944,
+        "ci95_lo": 1.5250507340799835,
+        "ci95_hi": 1.5484981291767013
+      },
+      "TKX_HF": {
+        "docs": 240,
+        "total_tokens": 109527,
+        "total_words": 71910,
+        "fertility_aggregate": 1.5231122236128494,
+        "fertility_mean_per_doc": 1.5316462899933359,
+        "ci95_lo": 1.5202969321579294,
+        "ci95_hi": 1.5432058016780699
+      },
+      "Slayer1B": {
+        "docs": 240,
+        "total_tokens": 142628,
+        "total_words": 71910,
+        "fertility_aggregate": 1.983423724099569,
+        "fertility_mean_per_doc": 1.9966418120616314,
+        "ci95_lo": 1.982057393085761,
+        "ci95_hi": 2.0111478879038236
+      },
+      "Pollock": {
+        "docs": 240,
+        "total_tokens": 126047,
+        "total_words": 71910,
+        "fertility_aggregate": 1.7528438325684883,
+        "fertility_mean_per_doc": 1.765313035822192,
+        "ci95_lo": 1.7528863001518629,
+        "ci95_hi": 1.7785203058248054
+      }
+    },
+    "prawo_eli": {
+      "TKX_ref": {
+        "docs": 78,
+        "total_tokens": 204825,
+        "total_words": 137764,
+        "fertility_aggregate": 1.486781742690398,
+        "fertility_mean_per_doc": 1.4848526755684581,
+        "ci95_lo": 1.4349610773503263,
+        "ci95_hi": 1.5480072926253756
+      },
+      "TKX_HF": {
+        "docs": 78,
+        "total_tokens": 204346,
+        "total_words": 137764,
+        "fertility_aggregate": 1.4833047820911123,
+        "fertility_mean_per_doc": 1.479402652054754,
+        "ci95_lo": 1.4287857097116654,
+        "ci95_hi": 1.541378227275616
+      },
+      "Slayer1B": {
+        "docs": 78,
+        "total_tokens": 248522,
+        "total_words": 137764,
+        "fertility_aggregate": 1.803969106588078,
+        "fertility_mean_per_doc": 1.8165155435335116,
+        "ci95_lo": 1.7631457967600057,
+        "ci95_hi": 1.885311780921268
+      },
+      "Pollock": {
+        "docs": 78,
+        "total_tokens": 214289,
+        "total_words": 137764,
+        "fertility_aggregate": 1.5554789349902731,
+        "fertility_mean_per_doc": 1.5548096688926805,
+        "ci95_lo": 1.5100150476473555,
+        "ci95_hi": 1.6154769667776445
+      }
+    },
+    "przetargi_kio": {
+      "TKX_ref": {
+        "docs": 66,
+        "total_tokens": 133826,
+        "total_words": 95409,
+        "fertility_aggregate": 1.4026559339265687,
+        "fertility_mean_per_doc": 1.4025717425248156,
+        "ci95_lo": 1.385101462456148,
+        "ci95_hi": 1.418884807558275
+      },
+      "TKX_HF": {
+        "docs": 66,
+        "total_tokens": 133881,
+        "total_words": 95409,
+        "fertility_aggregate": 1.4032323994591704,
+        "fertility_mean_per_doc": 1.4038115091387318,
+        "ci95_lo": 1.386615670929723,
+        "ci95_hi": 1.420103969516073
+      },
+      "Slayer1B": {
+        "docs": 66,
+        "total_tokens": 164087,
+        "total_words": 95409,
+        "fertility_aggregate": 1.7198272699640496,
+        "fertility_mean_per_doc": 1.728370868821884,
+        "ci95_lo": 1.706327178986146,
+        "ci95_hi": 1.7505129681985474
+      },
+      "Pollock": {
+        "docs": 66,
+        "total_tokens": 142856,
+        "total_words": 95409,
+        "fertility_aggregate": 1.4973010931882735,
+        "fertility_mean_per_doc": 1.488276906536794,
+        "ci95_lo": 1.470882667310681,
+        "ci95_hi": 1.5049487367860899
+      }
+    }
+  },
+  "A3_calendar": {
+    "TKX_ref": [
+      {
+        "year": 2015,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2016,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2017,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2018,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2019,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2020,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2021,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2022,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2023,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2024,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2025,
+        "tokens_year": 2,
+        "tokens_template": 5
+      },
+      {
+        "year": 2026,
+        "tokens_year": 2,
+        "tokens_template": 5
+      },
+      {
+        "year": 2027,
+        "tokens_year": 2,
+        "tokens_template": 5
+      },
+      {
+        "year": 2028,
+        "tokens_year": 2,
+        "tokens_template": 5
+      },
+      {
+        "year": 2029,
+        "tokens_year": 2,
+        "tokens_template": 5
+      },
+      {
+        "year": 2030,
+        "tokens_year": 2,
+        "tokens_template": 6
+      },
+      {
+        "year": 2031,
+        "tokens_year": 2,
+        "tokens_template": 6
+      },
+      {
+        "year": 2032,
+        "tokens_year": 2,
+        "tokens_template": 6
+      },
+      {
+        "year": 2033,
+        "tokens_year": 2,
+        "tokens_template": 6
+      },
+      {
+        "year": 2034,
+        "tokens_year": 2,
+        "tokens_template": 6
+      },
+      {
+        "year": 2035,
+        "tokens_year": 2,
+        "tokens_template": 6
+      }
+    ],
+    "TKX_HF": [
+      {
+        "year": 2015,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2016,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2017,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2018,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2019,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2020,
+        "tokens_year": 2,
+        "tokens_template": 6
+      },
+      {
+        "year": 2021,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2022,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2023,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2024,
+        "tokens_year": 1,
+        "tokens_template": 4
+      },
+      {
+        "year": 2025,
+        "tokens_year": 2,
+        "tokens_template": 5
+      },
+      {
+        "year": 2026,
+        "tokens_year": 2,
+        "tokens_template": 5
+      },
+      {
+        "year": 2027,
+        "tokens_year": 2,
+        "tokens_template": 5
+      },
+      {
+        "year": 2028,
+        "tokens_year": 2,
+        "tokens_template": 5
+      },
+      {
+        "year": 2029,
+        "tokens_year": 2,
+        "tokens_template": 5
+      },
+      {
+        "year": 2030,
+        "tokens_year": 2,
+        "tokens_template": 6
+      },
+      {
+        "year": 2031,
+        "tokens_year": 2,
+        "tokens_template": 6
+      },
+      {
+        "year": 2032,
+        "tokens_year": 2,
+        "tokens_template": 6
+      },
+      {
+        "year": 2033,
+        "tokens_year": 2,
+        "tokens_template": 6
+      },
+      {
+        "year": 2034,
+        "tokens_year": 2,
+        "tokens_template": 6
+      },
+      {
+        "year": 2035,
+        "tokens_year": 2,
+        "tokens_template": 6
+      }
+    ],
+    "corpus_occurrence_cost": {
+      "TKX_ref": {
+        "2024": {
+          "n_occurrences": 163,
+          "mean_tokens": 1
+        },
+        "2026": {
+          "n_occurrences": 1129,
+          "mean_tokens": 2
+        }
+      },
+      "TKX_HF": {
+        "2024": {
+          "n_occurrences": 163,
+          "mean_tokens": 1
+        },
+        "2026": {
+          "n_occurrences": 1129,
+          "mean_tokens": 2
+        }
+      }
+    }
+  },
+  "A4_nfd": {
+    "TKX_ref": {
+      "docs": 606,
+      "total_tokens_original": 1153793,
+      "total_tokens_nfd": 1677531,
+      "increase_pct_aggregate": 45.392717757864716,
+      "increase_pct_mean_per_doc": 43.152892819173026,
+      "ci95_lo": 41.9927900071322,
+      "ci95_hi": 44.235469115377605
+    },
+    "TKX_HF": {
+      "docs": 606,
+      "total_tokens_original": 1151140,
+      "total_tokens_nfd": 1674876,
+      "increase_pct_aggregate": 45.49715933770002,
+      "increase_pct_mean_per_doc": 43.24332032733709,
+      "ci95_lo": 42.08100800124812,
+      "ci95_hi": 44.32393238262916
+    },
+    "Slayer1B": {
+      "docs": 606,
+      "total_tokens_original": 1389668,
+      "total_tokens_nfd": 1908417,
+      "increase_pct_aggregate": 37.32898793093026,
+      "increase_pct_mean_per_doc": 34.52897941661849,
+      "ci95_lo": 33.63131734181083,
+      "ci95_hi": 35.416464186752755
+    },
+    "Pollock": {
+      "docs": 606,
+      "total_tokens_original": 1228959,
+      "total_tokens_nfd": 1688659,
+      "increase_pct_aggregate": 37.40564168536135,
+      "increase_pct_mean_per_doc": 35.51838848326322,
+      "ci95_lo": 34.56578045875235,
+      "ci95_hi": 36.40745818825067
+    }
+  },
+  "A5_hf_parity": {
+    "przetargi_ogloszenia": {
+      "fragments": 48145,
+      "identical": 47380,
+      "parity_pct": 98.41104995326617
+    },
+    "web": {
+      "fragments": 20344,
+      "identical": 20214,
+      "parity_pct": 99.3609909555643
+    }
+  },
+  "A6_renyi": {
+    "TKX_ref": {
+      "vocab_size": 32000,
+      "total_tokens": 3245161,
+      "distinct_tokens_used": 31429,
+      "H_alpha": 5.470389389227332,
+      "renyi_standard_H_over_logV": 0.5273431377504365,
+      "renyi_expH_over_V": 0.007423521100212927
+    },
+    "Slayer1B": {
+      "vocab_size": 32768,
+      "total_tokens": 3673931,
+      "distinct_tokens_used": 29861,
+      "H_alpha": 4.480208672258515,
+      "renyi_standard_H_over_logV": 0.4309049889076724,
+      "renyi_expH_over_V": 0.0026932704689105794
+    },
+    "Pollock": {
+      "vocab_size": 49152,
+      "total_tokens": 3381145,
+      "distinct_tokens_used": 44556,
+      "H_alpha": 4.343503750737338,
+      "renyi_standard_H_over_logV": 0.4020767660481319,
+      "renyi_expH_over_V": 0.001566096493070463
+    }
+  },
+  "A7_digits": {
+    "angielski": {
+      "docs": 71,
+      "digit_char_share": 0.01572288400068601,
+      "number_word_share": 0.03617165818686401,
+      "total_digits": 11643,
+      "words_with_digit": 5005,
+      "total_tokens_domain": 273469,
+      "tokens_with_digit": 6244,
+      "tokens_digit_leading_space": 4836,
+      "variant_each_digit_separate_abs": 5399,
+      "variant_each_digit_separate_pct_of_tokens": 1.9742639933593935
+    },
+    "dyskusje": {
+      "docs": 232,
+      "digit_char_share": 0.02498648507452516,
+      "number_word_share": 0.05366126675165573,
+      "total_digits": 27501,
+      "words_with_digit": 8629,
+      "total_tokens_domain": 265308,
+      "tokens_with_digit": 13124,
+      "tokens_digit_leading_space": 5320,
+      "variant_each_digit_separate_abs": 14377,
+      "variant_each_digit_separate_pct_of_tokens": 5.418984727185007
+    },
+    "granty_ogloszenia": {
+      "docs": 66,
+      "digit_char_share": 0.0507138243055799,
+      "number_word_share": 0.11889607160616608,
+      "total_digits": 40510,
+      "words_with_digit": 11955,
+      "total_tokens_domain": 180076,
+      "tokens_with_digit": 23471,
+      "tokens_digit_leading_space": 8547,
+      "variant_each_digit_separate_abs": 17039,
+      "variant_each_digit_separate_pct_of_tokens": 9.46211599546858
+    },
+    "literatura": {
+      "docs": 230,
+      "digit_char_share": 0.000876760273372082,
+      "number_word_share": 0.0013066426733450627,
+      "total_digits": 990,
+      "words_with_digit": 228,
+      "total_tokens_domain": 282987,
+      "tokens_with_digit": 640,
+      "tokens_digit_leading_space": 182,
+      "variant_each_digit_separate_abs": 350,
+      "variant_each_digit_separate_pct_of_tokens": 0.1236805931014499
+    },
+    "nauka": {
+      "docs": 62,
+      "digit_char_share": 0.025087919855488555,
+      "number_word_share": 0.0740182894029048,
+      "total_digits": 28749,
+      "words_with_digit": 11696,
+      "total_tokens_domain": 312217,
+      "tokens_with_digit": 17998,
+      "tokens_digit_leading_space": 5250,
+      "variant_each_digit_separate_abs": 10751,
+      "variant_each_digit_separate_pct_of_tokens": 3.443438377794931
+    },
+    "ocr_prasa": {
+      "docs": 36,
+      "digit_char_share": 0.019281003426276193,
+      "number_word_share": 0.058815161728016804,
+      "total_digits": 11463,
+      "words_with_digit": 5375,
+      "total_tokens_domain": 175075,
+      "tokens_with_digit": 7748,
+      "tokens_digit_leading_space": 3851,
+      "variant_each_digit_separate_abs": 3715,
+      "variant_each_digit_separate_pct_of_tokens": 2.121947736684278
+    },
+    "prawo": {
+      "docs": 127,
+      "digit_char_share": 0.04521866461312169,
+      "number_word_share": 0.13563063507192077,
+      "total_digits": 54844,
+      "words_with_digit": 24761,
+      "total_tokens_domain": 275820,
+      "tokens_with_digit": 34013,
+      "tokens_digit_leading_space": 17324,
+      "variant_each_digit_separate_abs": 20831,
+      "variant_each_digit_separate_pct_of_tokens": 7.552389239359002
+    },
+    "prawo_eli": {
+      "docs": 78,
+      "digit_char_share": 0.03971140476916921,
+      "number_word_share": 0.12351557736418803,
+      "total_digits": 37615,
+      "words_with_digit": 17016,
+      "total_tokens_domain": 204825,
+      "tokens_with_digit": 23561,
+      "tokens_digit_leading_space": 11931,
+      "variant_each_digit_separate_abs": 14054,
+      "variant_each_digit_separate_pct_of_tokens": 6.861467106066153
+    },
+    "przetargi_kio": {
+      "docs": 66,
+      "digit_char_share": 0.02409811580882353,
+      "number_word_share": 0.07593623243090275,
+      "total_digits": 16780,
+      "words_with_digit": 7245,
+      "total_tokens_domain": 133826,
+      "tokens_with_digit": 10751,
+      "tokens_digit_leading_space": 6176,
+      "variant_each_digit_separate_abs": 6029,
+      "variant_each_digit_separate_pct_of_tokens": 4.505103642042652
+    },
+    "przetargi_ogloszenia": {
+      "docs": 60,
+      "digit_char_share": 0.04060380342058175,
+      "number_word_share": 0.1062381463457665,
+      "total_digits": 42933,
+      "words_with_digit": 14452,
+      "total_tokens_domain": 211560,
+      "tokens_with_digit": 31013,
+      "tokens_digit_leading_space": 6320,
+      "variant_each_digit_separate_abs": 11920,
+      "variant_each_digit_separate_pct_of_tokens": 5.6343354131215735
+    },
+    "samorzad_uchwaly": {
+      "docs": 240,
+      "digit_char_share": 0.07614345114345114,
+      "number_word_share": 0.178820748157419,
+      "total_digits": 34574,
+      "words_with_digit": 12859,
+      "total_tokens_domain": 109866,
+      "tokens_with_digit": 20929,
+      "tokens_digit_leading_space": 11008,
+      "variant_each_digit_separate_abs": 13645,
+      "variant_each_digit_separate_pct_of_tokens": 12.41967487666794
+    },
+    "sejm": {
+      "docs": 762,
+      "digit_char_share": 0.008734758685885522,
+      "number_word_share": 0.026270796136350732,
+      "total_digits": 9517,
+      "words_with_digit": 4164,
+      "total_tokens_domain": 204773,
+      "tokens_with_digit": 5288,
+      "tokens_digit_leading_space": 3820,
+      "variant_each_digit_separate_abs": 4229,
+      "variant_each_digit_separate_pct_of_tokens": 2.065213675631065
+    },
+    "tabele_json": {
+      "docs": 60,
+      "digit_char_share": 0.07264638352596252,
+      "number_word_share": 0.13970169645906866,
+      "total_digits": 35532,
+      "words_with_digit": 7362,
+      "total_tokens_domain": 138565,
+      "tokens_with_digit": 24819,
+      "tokens_digit_leading_space": 3522,
+      "variant_each_digit_separate_abs": 10713,
+      "variant_each_digit_separate_pct_of_tokens": 7.731389600548479
+    },
+    "web": {
+      "docs": 421,
+      "digit_char_share": 0.00837027917272153,
+      "number_word_share": 0.021425115318860682,
+      "total_digits": 9049,
+      "words_with_digit": 3321,
+      "total_tokens_domain": 219425,
+      "tokens_with_digit": 4762,
+      "tokens_digit_leading_space": 2498,
+      "variant_each_digit_separate_abs": 4287,
+      "variant_each_digit_separate_pct_of_tokens": 1.9537427366981885
+    },
+    "wikipedia": {
+      "docs": 241,
+      "digit_char_share": 0.02349590871264801,
+      "number_word_share": 0.049080946105292365,
+      "total_digits": 24818,
+      "words_with_digit": 7076,
+      "total_tokens_domain": 257369,
+      "tokens_with_digit": 13844,
+      "tokens_digit_leading_space": 5110,
+      "variant_each_digit_separate_abs": 10974,
+      "variant_each_digit_separate_pct_of_tokens": 4.26391678873524
+    }
+  }
+}

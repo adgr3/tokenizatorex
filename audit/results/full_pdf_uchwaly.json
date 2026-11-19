@@ -1,0 +1,441 @@
+{
+  "n": 40,
+  "skipped": 3,
+  "seed": 20261119,
+  "note": "Ta sama uchwała: text.html (audyt, zwykle 1. strona) vs text.pdf (pełny akt). PDF >4 MB pominięte.",
+  "html_chars_sum": 72102,
+  "pdf_chars_sum": 458910,
+  "html_words_sum": 11522,
+  "pdf_words_sum": 71177,
+  "median_pdf_over_html_chars": 5.79038854805726,
+  "html": {
+    "TOKENIZATOREX": {
+      "tokens": 17673,
+      "words": 11522,
+      "fertility": 1.533848290227391
+    },
+    "TOKENIZATOREX-HF": {
+      "tokens": 17623,
+      "words": 11522,
+      "fertility": 1.529508765839264
+    },
+    "Slayer1B": {
+      "tokens": 23113,
+      "words": 11522,
+      "fertility": 2.0059885436556155
+    },
+    "Pollock-2.0": {
+      "tokens": 20485,
+      "words": 11522,
+      "fertility": 1.777903141815657
+    },
+    "APT3-1B": {
+      "tokens": 20545,
+      "words": 11522,
+      "fertility": 1.7831105710814095
+    }
+  },
+  "pdf": {
+    "TOKENIZATOREX": {
+      "tokens": 131975,
+      "words": 71177,
+      "fertility": 1.8541804234513959
+    },
+    "TOKENIZATOREX-HF": {
+      "tokens": 131622,
+      "words": 71177,
+      "fertility": 1.8492209562077637
+    },
+    "Slayer1B": {
+      "tokens": 158706,
+      "words": 71177,
+      "fertility": 2.229737134186605
+    },
+    "Pollock-2.0": {
+      "tokens": 139708,
+      "words": 71177,
+      "fertility": 1.9628250698961742
+    },
+    "APT3-1B": {
+      "tokens": 132699,
+      "words": 71177,
+      "fertility": 1.8643522486196384
+    }
+  },
+  "rank_html": [
+    "TOKENIZATOREX-HF",
+    "TOKENIZATOREX",
+    "Pollock-2.0",
+    "APT3-1B",
+    "Slayer1B"
+  ],
+  "rank_pdf": [
+    "TOKENIZATOREX-HF",
+    "TOKENIZATOREX",
+    "APT3-1B",
+    "Pollock-2.0",
+    "Slayer1B"
+  ],
+  "per_doc": [
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-3563",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/3563/text.pdf",
+      "html_chars": 2193,
+      "html_words": 362,
+      "pdf_chars": 20281,
+      "pdf_words": 3580,
+      "sha256_pdf": "4c3e0e39dbe0b0f2c6d0018f0c975df635910244843b3fc2f032094c1977c48c"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-5369",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/5369/text.pdf",
+      "html_chars": 1771,
+      "html_words": 275,
+      "pdf_chars": 22974,
+      "pdf_words": 3599,
+      "sha256_pdf": "4e61b77e07ccaaf1a077b2f5684763fd434c6677c2af9eb2f75dd844e739697c"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-6308",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/6308/text.pdf",
+      "html_chars": 2210,
+      "html_words": 389,
+      "pdf_chars": 25950,
+      "pdf_words": 4607,
+      "sha256_pdf": "a4f3f1ab31530bcea1c3e80d2878fb531a9ad23625943ca21ea8a8c3ad1436dc"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-3499",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/3499/text.pdf",
+      "html_chars": 2006,
+      "html_words": 328,
+      "pdf_chars": 2198,
+      "pdf_words": 364,
+      "sha256_pdf": "9f58c5ad15a1a4246adea05875abc43c405d80f0e05da11a9c456dd0ef81ace2"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-970",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/970/text.pdf",
+      "html_chars": 1339,
+      "html_words": 228,
+      "pdf_chars": 3613,
+      "pdf_words": 570,
+      "sha256_pdf": "b66a128f55856a56d3c087ba5bff7f17c80845925d00238c67ce414474dc055c"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-3871",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/3871/text.pdf",
+      "html_chars": 1073,
+      "html_words": 183,
+      "pdf_chars": 1194,
+      "pdf_words": 206,
+      "sha256_pdf": "d321b1f6f3d4e035bcd20f71fa5be1893e63d7114456fbd9fd9cfc7997283724"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-1628",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/1628/text.pdf",
+      "html_chars": 1533,
+      "html_words": 235,
+      "pdf_chars": 1512,
+      "pdf_words": 237,
+      "sha256_pdf": "a2b390a218c5c72f000e64ebcc56165a5980f7e9bd5ff811e51f528f74631531"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-3564",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/3564/text.pdf",
+      "html_chars": 2317,
+      "html_words": 396,
+      "pdf_chars": 16509,
+      "pdf_words": 2513,
+      "sha256_pdf": "f7d0f91a14c3ab932894c1af7a3b7aa54517fd5c0747fb6d14eecce72bcc527c"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-20",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/20/text.pdf",
+      "html_chars": 1479,
+      "html_words": 244,
+      "pdf_chars": 1593,
+      "pdf_words": 267,
+      "sha256_pdf": "d85e31e6433c2fb2d2f32c3d88e611d6379a12da3d23a4ca8ac739a77c66c028"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-4491",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/4491/text.pdf",
+      "html_chars": 1067,
+      "html_words": 166,
+      "pdf_chars": 1375,
+      "pdf_words": 220,
+      "sha256_pdf": "0b137da663838b8d33cede805997fffe294e022e096ce2fa3cef520c00e964f2"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-6258",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/6258/text.pdf",
+      "html_chars": 1800,
+      "html_words": 252,
+      "pdf_chars": 17672,
+      "pdf_words": 2493,
+      "sha256_pdf": "a9f0319212295fe74a3475376e344a78782036c582c5d03a3050f224e8c03a72"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-5705",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/5705/text.pdf",
+      "html_chars": 2941,
+      "html_words": 531,
+      "pdf_chars": 8478,
+      "pdf_words": 1606,
+      "sha256_pdf": "8899fe2fb485bdb7494e15b33fcf68a90874f7d9106aabf64de6a2bcd6d5a6f9"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-6257",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/6257/text.pdf",
+      "html_chars": 1828,
+      "html_words": 252,
+      "pdf_chars": 17704,
+      "pdf_words": 2493,
+      "sha256_pdf": "2257fac679f870f08b7335a3b1ed20d3e7d094b8ebe878de022dd933812cf3bd"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-8",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/8/text.pdf",
+      "html_chars": 2117,
+      "html_words": 326,
+      "pdf_chars": 23481,
+      "pdf_words": 3949,
+      "sha256_pdf": "e10f64b3fb4b058f91fa372e0697ebe18d23a8b325ef414486b4c60023da720a"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-1616",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/1616/text.pdf",
+      "html_chars": 1090,
+      "html_words": 175,
+      "pdf_chars": 8341,
+      "pdf_words": 1170,
+      "sha256_pdf": "945d2ea3a46458a31d3c6b6649f4475a5faa4b24708a7fd74d5effd5225d8643"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-6860",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/6860/text.pdf",
+      "html_chars": 1903,
+      "html_words": 317,
+      "pdf_chars": 36036,
+      "pdf_words": 4361,
+      "sha256_pdf": "ed979c67d8afa22990c33d0fdf7f98a4d2b258f527f5328770e1bfad6538a0c4"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-6745",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/6745/text.pdf",
+      "html_chars": 1652,
+      "html_words": 253,
+      "pdf_chars": 16301,
+      "pdf_words": 2288,
+      "sha256_pdf": "9943229eaa6462eb2df56978af7f1a275f3ac34deb06723e4cf5d25395c943d8"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-5654",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/5654/text.pdf",
+      "html_chars": 1360,
+      "html_words": 214,
+      "pdf_chars": 1339,
+      "pdf_words": 214,
+      "sha256_pdf": "5f2eb148a7e57ce33673cc421a2cccb456fa9779115e2d483f3182f4810dbbf3"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-4894",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/4894/text.pdf",
+      "html_chars": 2270,
+      "html_words": 371,
+      "pdf_chars": 33578,
+      "pdf_words": 5616,
+      "sha256_pdf": "dea2a7165185dee537e1bd46b1cff9418c5332eba2236510abc7f8a1ab533b5a"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-1662",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/1662/text.pdf",
+      "html_chars": 1956,
+      "html_words": 322,
+      "pdf_chars": 11326,
+      "pdf_words": 2030,
+      "sha256_pdf": "128345c57c5522747958ad1bcd32a6d9f8d9caa43851595770dbcab906c088ab"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-4715",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/4715/text.pdf",
+      "html_chars": 1987,
+      "html_words": 300,
+      "pdf_chars": 1961,
+      "pdf_words": 301,
+      "sha256_pdf": "639582e16dc8889449e37081c6aca31defc6a2f65590b5674f013335dfc16ac3"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-5788",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/5788/text.pdf",
+      "html_chars": 993,
+      "html_words": 165,
+      "pdf_chars": 7804,
+      "pdf_words": 1185,
+      "sha256_pdf": "d01b7c59a2fe68ee54daab96f860e90d2e5c1399763a8ee84b7fb284c0ca470a"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-5537",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/5537/text.pdf",
+      "html_chars": 2570,
+      "html_words": 389,
+      "pdf_chars": 24350,
+      "pdf_words": 4218,
+      "sha256_pdf": "c574d5958dcaaa32301e48c467ab59f0c0b6199cb5197e0825a787eca8d86c2b"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-6262",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/6262/text.pdf",
+      "html_chars": 1974,
+      "html_words": 326,
+      "pdf_chars": 7275,
+      "pdf_words": 1302,
+      "sha256_pdf": "535438110291b6d19e86d0bf7bc2aa6f423000d6f9bc9ed88ce3ce2ec1229907"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-5317",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/5317/text.pdf",
+      "html_chars": 1114,
+      "html_words": 185,
+      "pdf_chars": 6298,
+      "pdf_words": 878,
+      "sha256_pdf": "5f59b8cbd6a446b3d63f5b1785b293486196fc0c58c26779237b782bcec0bbf6"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-1069",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/1069/text.pdf",
+      "html_chars": 2148,
+      "html_words": 311,
+      "pdf_chars": 2341,
+      "pdf_words": 349,
+      "sha256_pdf": "9301f79c365b5d920c7c57385eca2874bf4b6c987347aa2f7b87c224b42150ec"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-669",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/669/text.pdf",
+      "html_chars": 1771,
+      "html_words": 259,
+      "pdf_chars": 1750,
+      "pdf_words": 262,
+      "sha256_pdf": "49e69563be0e20b59fb681c8faa62826280055402e0b7bf6e00ddbd4aa384b55"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-4817",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/4817/text.pdf",
+      "html_chars": 1495,
+      "html_words": 231,
+      "pdf_chars": 1475,
+      "pdf_words": 234,
+      "sha256_pdf": "74fa8461c319b1b97eaae85c09a2ed2d975de8de4e5e86fc7f9b3a2ec93269b5"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-1268",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/1268/text.pdf",
+      "html_chars": 1146,
+      "html_words": 207,
+      "pdf_chars": 15397,
+      "pdf_words": 2621,
+      "sha256_pdf": "6ec016cc73da228bf12d74c682c4afa63c2342823a5aaa7c601f5138141e2110"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-3214",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/3214/text.pdf",
+      "html_chars": 1710,
+      "html_words": 284,
+      "pdf_chars": 15414,
+      "pdf_words": 2671,
+      "sha256_pdf": "e0c1cc5359dfb912a714eab50acc17dc1eb416c586abfd167405bf8617f95a22"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-178",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/178/text.pdf",
+      "html_chars": 1606,
+      "html_words": 243,
+      "pdf_chars": 16568,
+      "pdf_words": 1851,
+      "sha256_pdf": "e31794d5397016139ab59da8d5b8f1e32ed51715da7f75e8a145cfe62fb94ebc"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-2000",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/2000/text.pdf",
+      "html_chars": 2062,
+      "html_words": 341,
+      "pdf_chars": 7556,
+      "pdf_words": 1188,
+      "sha256_pdf": "dce0318cd5a3bf741e9d0da42ce70d409abc5aa15026768259598740326bc8f1"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-5419",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/5419/text.pdf",
+      "html_chars": 2233,
+      "html_words": 331,
+      "pdf_chars": 9971,
+      "pdf_words": 1387,
+      "sha256_pdf": "7420b412d4d4547b5874a536ef077b66503c36bfe1b4b0e17957d0038be37cd4"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-6232",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/6232/text.pdf",
+      "html_chars": 1988,
+      "html_words": 310,
+      "pdf_chars": 1961,
+      "pdf_words": 311,
+      "sha256_pdf": "7366ddf055a10c5cea6cdef6cd6b8ce6488a10c1354f325a20938dd1e0828f32"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-4912",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/4912/text.pdf",
+      "html_chars": 2377,
+      "html_words": 367,
+      "pdf_chars": 6173,
+      "pdf_words": 955,
+      "sha256_pdf": "e7d55be8fccfe4f7cf494911144e2202187d87540f082aae7c4406bab30d3d32"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-228",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/228/text.pdf",
+      "html_chars": 1508,
+      "html_words": 256,
+      "pdf_chars": 8562,
+      "pdf_words": 1408,
+      "sha256_pdf": "41c4515969535822e2f70c6e83bb8be8a05e287bd677d044219c1c457a510cbe"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-1015",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/1015/text.pdf",
+      "html_chars": 1172,
+      "html_words": 181,
+      "pdf_chars": 16038,
+      "pdf_words": 2107,
+      "sha256_pdf": "0f4cb7a23fcf373f3f5cefe2792e8be0e9373e9b0fe8ccfe5579c15f9a5e8e69"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-1489",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/1489/text.pdf",
+      "html_chars": 1378,
+      "html_words": 205,
+      "pdf_chars": 11206,
+      "pdf_words": 1577,
+      "sha256_pdf": "0b4162a7f7ad1604c372634d367bcde020ad9d36db0cc5748c9e558622c6958f"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-1720",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/1720/text.pdf",
+      "html_chars": 2231,
+      "html_words": 351,
+      "pdf_chars": 22019,
+      "pdf_words": 3420,
+      "sha256_pdf": "10ba5e06329b808e0d27c5306c08443bdb95f6586de05762bf974fd73dc4c38d"
+    },
+    {
+      "id": "uchwala-POL_WOJ_SL-2026-3546",
+      "url": "https://dzienniki.slask.eu/api/eli/acts/POL_WOJ_SL/2026/3546/text.pdf",
+      "html_chars": 2734,
+      "html_words": 461,
+      "pdf_chars": 3336,
+      "pdf_words": 569,
+      "sha256_pdf": "d1ab58f26d64b0041237c3b293350170ba1aacb7f522f7d72e4141fea27f3913"
+    }
+  ]
+}

@@ -1,0 +1,4973 @@
+{
+  "meta": {
+    "chunk_pattern": "CHUNK_PATTERN z superbpe.py",
+    "split": "test",
+    "note": "parytet segmentacji liczony na ID (główny) i dodatkowo na zdekodowanych ciągach (kontrola utraty tekstu); tokeny bez specjalnych"
+  },
+  "domains": {
+    "przetargi_ogloszenia": {
+      "chunks": 48145,
+      "identical_chunks": 47380,
+      "identical_chunks_decoded": 48145,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9841104995326617,
+      "identical_ci_wilson": [
+        0.9829542400428195,
+        0.985189508611769
+      ],
+      "tokens_ours": 211560,
+      "tokens_hf": 211179,
+      "token_delta": -381,
+      "token_delta_pct": -0.0018009075439591605,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 0.9973856209150327,
+          "share_in_identical": 0.4462431405656395,
+          "lift": 2.2350721618953906
+        },
+        "4+_cyfry": {
+          "share_in_different": 0.996078431372549,
+          "share_in_identical": 0.018404390037990714,
+          "lift": 54.12178449361396
+        },
+        "kropka": {
+          "share_in_different": 0.15947712418300652,
+          "share_in_identical": 0.46781342338539467,
+          "lift": 0.34089899137337465
+        },
+        "przecinek": {
+          "share_in_different": 0.11503267973856209,
+          "share_in_identical": 0.06969185310257493,
+          "lift": 1.650590056333456
+        },
+        "myslnik": {
+          "share_in_different": 0.592156862745098,
+          "share_in_identical": 0.04717180244829042,
+          "lift": 12.553195595911744
+        },
+        "ukosnik": {
+          "share_in_different": 0.2823529411764706,
+          "share_in_identical": 0.020958210215280708,
+          "lift": 13.472187666607429
+        },
+        "procent": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0016673701983959477,
+          "lift": 0.0
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.29934640522875816,
+          "share_in_identical": 0.0463064584212748,
+          "lift": 6.464463390947384
+        },
+        "skrot": {
+          "share_in_different": 0.00392156862745098,
+          "share_in_identical": 0.04607429295061207,
+          "lift": 0.08511402728750685
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.00392156862745098,
+          "share_in_identical": 0.0036935415787252004,
+          "lift": 1.0617366946778712
+        }
+      },
+      "examples": [
+        {
+          "chunk": "Ogłoszenie nr 2026/BZP 00000008 z dnia 2026-01-01",
+          "ours": [
+            "O",
+            "głoszenie",
+            " nr",
+            " 202",
+            "6",
+            "/",
+            "B",
+            "Z",
+            "P",
+            " 000",
+            "000",
+            "08",
+            " z dnia",
+            " 202"
+          ],
+          "hf": [
+            "O",
+            "głoszenie",
+            " nr",
+            " 202",
+            "6",
+            "/",
+            "B",
+            "Z",
+            "P",
+            " 00",
+            "00",
+            "000",
+            "8",
+            " z dnia"
+          ],
+          "tokens_ours": 17,
+          "tokens_hf": 18
+        },
+        {
+          "chunk": " ocds-148610-5c6919e6-bb54-4e39-9a62-ad16170bee72",
+          "ours": [
+            " oc",
+            "ds",
+            "-14",
+            "8",
+            "6",
+            "10",
+            "-5",
+            "c",
+            "69",
+            "1",
+            "9",
+            "e",
+            "6",
+            "-"
+          ],
+          "hf": [
+            " oc",
+            "ds",
+            "-14",
+            "86",
+            "10",
+            "-5",
+            "c",
+            "69",
+            "19",
+            "e",
+            "6",
+            "-",
+            "b",
+            "b"
+          ],
+          "tokens_ours": 31,
+          "tokens_hf": 28
+        },
+        {
+          "chunk": " 2026/BZP 00000008",
+          "ours": [
+            " 202",
+            "6",
+            "/",
+            "B",
+            "Z",
+            "P",
+            " 000",
+            "000",
+            "08"
+          ],
+          "hf": [
+            " 202",
+            "6",
+            "/",
+            "B",
+            "Z",
+            "P",
+            " 00",
+            "00",
+            "000",
+            "8"
+          ],
+          "tokens_ours": 9,
+          "tokens_hf": 10
+        },
+        {
+          "chunk": "pl/mp-client/search/list/ocds-148610-5c6919e6-bb54-4e39-9a62-ad16170bee72",
+          "ours": [
+            "pl/",
+            "mp",
+            "-",
+            "c",
+            "lie",
+            "nt",
+            "/",
+            "search",
+            "/",
+            "list",
+            "/o",
+            "c",
+            "ds",
+            "-14"
+          ],
+          "hf": [
+            "pl/",
+            "mp",
+            "-",
+            "c",
+            "lie",
+            "nt",
+            "/",
+            "search",
+            "/",
+            "list",
+            "/o",
+            "c",
+            "ds",
+            "-14"
+          ],
+          "tokens_ours": 42,
+          "tokens_hf": 39
+        },
+        {
+          "chunk": " 90620000-9 - Usługi odśnieżania",
+          "ours": [
+            " 90",
+            "6",
+            "200",
+            "00",
+            "-9",
+            " -",
+            " U",
+            "sługi",
+            " od",
+            "śnie",
+            "żania"
+          ],
+          "hf": [
+            " 90",
+            "6",
+            "20",
+            "000",
+            "-9",
+            " -",
+            " U",
+            "sługi",
+            " od",
+            "śnie",
+            "żania"
+          ],
+          "tokens_ours": 11,
+          "tokens_hf": 11
+        },
+        {
+          "chunk": " 90620000-9 - Usługi odśnieżania",
+          "ours": [
+            " 90",
+            "6",
+            "200",
+            "00",
+            "-9",
+            " -",
+            " U",
+            "sługi",
+            " od",
+            "śnie",
+            "żania"
+          ],
+          "hf": [
+            " 90",
+            "6",
+            "20",
+            "000",
+            "-9",
+            " -",
+            " U",
+            "sługi",
+            " od",
+            "śnie",
+            "żania"
+          ],
+          "tokens_ours": 11,
+          "tokens_hf": 11
+        },
+        {
+          "chunk": " 90620000-9 - Usługi odśnieżania",
+          "ours": [
+            " 90",
+            "6",
+            "200",
+            "00",
+            "-9",
+            " -",
+            " U",
+            "sługi",
+            " od",
+            "śnie",
+            "żania"
+          ],
+          "hf": [
+            " 90",
+            "6",
+            "20",
+            "000",
+            "-9",
+            " -",
+            " U",
+            "sługi",
+            " od",
+            "śnie",
+            "żania"
+          ],
+          "tokens_ours": 11,
+          "tokens_hf": 11
+        },
+        {
+          "chunk": " 90620000-9 - Usługi odśnieżania",
+          "ours": [
+            " 90",
+            "6",
+            "200",
+            "00",
+            "-9",
+            " -",
+            " U",
+            "sługi",
+            " od",
+            "śnie",
+            "żania"
+          ],
+          "hf": [
+            " 90",
+            "6",
+            "20",
+            "000",
+            "-9",
+            " -",
+            " U",
+            "sługi",
+            " od",
+            "śnie",
+            "żania"
+          ],
+          "tokens_ours": 11,
+          "tokens_hf": 11
+        }
+      ],
+      "official": true
+    },
+    "przetargi_kio": {
+      "chunks": 13485,
+      "identical_chunks": 13224,
+      "identical_chunks_decoded": 13485,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9806451612903225,
+      "identical_ci_wilson": [
+        0.9781792667876853,
+        0.9828372818831804
+      ],
+      "tokens_ours": 133826,
+      "tokens_hf": 133881,
+      "token_delta": 55,
+      "token_delta_pct": 0.0004109814236396515,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 0.9961685823754789,
+          "share_in_identical": 0.36993345432546887,
+          "lift": 2.6928318342872717
+        },
+        "4+_cyfry": {
+          "share_in_different": 0.9923371647509579,
+          "share_in_identical": 0.061932849364791286,
+          "lift": 16.022792022792025
+        },
+        "kropka": {
+          "share_in_different": 0.8199233716475096,
+          "share_in_identical": 0.6191016333938294,
+          "lift": 1.3243760433207117
+        },
+        "przecinek": {
+          "share_in_different": 0.31800766283524906,
+          "share_in_identical": 0.2394888082274652,
+          "lift": 1.3278602252394487
+        },
+        "myslnik": {
+          "share_in_different": 0.13409961685823754,
+          "share_in_identical": 0.06367211131276466,
+          "lift": 2.1060965954077595
+        },
+        "ukosnik": {
+          "share_in_different": 0.21455938697318008,
+          "share_in_identical": 0.01308227465214761,
+          "lift": 16.40077071290944
+        },
+        "procent": {
+          "share_in_different": 0.007662835249042145,
+          "share_in_identical": 0.0054446460980036296,
+          "lift": 1.4074074074074074
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.24521072796934865,
+          "share_in_identical": 0.09770114942528736,
+          "lift": 2.509803921568627
+        },
+        "skrot": {
+          "share_in_different": 0.0842911877394636,
+          "share_in_identical": 0.19449485783424078,
+          "lift": 0.4333851736651115
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.034482758620689655,
+          "share_in_identical": 0.019963702359346643,
+          "lift": 1.7272727272727273
+        }
+      },
+      "examples": [
+        {
+          "chunk": " Rozpoznając przedmiotowe odwołanie, Izba miała na uwadze treść akt postępowania – § 8 rozporządzenia Prezesa Rady Ministrów z dnia 30 grudnia 2020 r.",
+          "ours": [
+            " Rozpo",
+            "zna",
+            "jąc",
+            " przedmio",
+            "towe",
+            " odwoła",
+            "nie,",
+            " Izba",
+            " miała",
+            " na uwadze",
+            " treść",
+            " akt",
+            " postępowania",
+            " –"
+          ],
+          "hf": [
+            " Rozpo",
+            "zna",
+            "jąc",
+            " przedmio",
+            "towe",
+            " odwoła",
+            "nie,",
+            " Izba",
+            " miała",
+            " na uwadze",
+            " treść",
+            " akt",
+            " postępowania",
+            " –"
+          ],
+          "tokens_ours": 23,
+          "tokens_hf": 25
+        },
+        {
+          "chunk": "Ogłoszenie o zamówieniu zostało opublikowane w Biuletynie Zamówień Publicznych pod numerem 2026/BZP 00359637/01 w dniu 23 lipca 2026 roku.",
+          "ours": [
+            "O",
+            "głoszenie",
+            " o",
+            " zamówie",
+            "niu",
+            " zostało",
+            " opublikowane",
+            " w",
+            " Biu",
+            "lety",
+            "nie",
+            " Za",
+            "mówie",
+            "ń"
+          ],
+          "hf": [
+            "O",
+            "głoszenie",
+            " o",
+            " zamówie",
+            "niu",
+            " zostało",
+            " opublikowane",
+            " w",
+            " Biu",
+            "lety",
+            "nie",
+            " Za",
+            "mówie",
+            "ń"
+          ],
+          "tokens_ours": 36,
+          "tokens_hf": 35
+        },
+        {
+          "chunk": " a rozporządzenia Prezesa Rady Ministrów z dnia 30 grudnia 2020 r.",
+          "ours": [
+            " a",
+            " rozporządzenia",
+            " Prezesa",
+            " Rady Ministrów",
+            " z dnia",
+            " 30",
+            " grudnia",
+            " 2020 r."
+          ],
+          "hf": [
+            " a",
+            " rozporządzenia",
+            " Prezesa",
+            " Rady Ministrów",
+            " z dnia",
+            " 30",
+            " grudnia",
+            " 20",
+            "20",
+            " r."
+          ],
+          "tokens_ours": 8,
+          "tokens_hf": 10
+        },
+        {
+          "chunk": " pod numerem 568428-2026.",
+          "ours": [
+            " pod numerem",
+            " 56",
+            "8",
+            "4",
+            "28",
+            "-202",
+            "6."
+          ],
+          "hf": [
+            " pod numerem",
+            " 56",
+            "84",
+            "28",
+            "-202",
+            "6."
+          ],
+          "tokens_ours": 7,
+          "tokens_hf": 6
+        },
+        {
+          "chunk": " a z 2020 r.",
+          "ours": [
+            " a",
+            " z",
+            " 2020 r."
+          ],
+          "hf": [
+            " a",
+            " z",
+            " 20",
+            "20",
+            " r."
+          ],
+          "tokens_ours": 3,
+          "tokens_hf": 5
+        },
+        {
+          "chunk": " 2437), orzekając o dokonaniu zwrotu Odwołującemu z rachunku Urzędu kwoty uiszczonej tytułem wpisu.",
+          "ours": [
+            " 24",
+            "3",
+            "7",
+            "),",
+            " orze",
+            "kając",
+            " o",
+            " dokona",
+            "niu",
+            " zwrotu",
+            " Od",
+            "wo",
+            "łu",
+            "jącemu"
+          ],
+          "hf": [
+            " 24",
+            "37",
+            "),",
+            " orze",
+            "kając",
+            " o",
+            " dokona",
+            "niu",
+            " zwrotu",
+            " Od",
+            "wo",
+            "łu",
+            "jącemu",
+            " z"
+          ],
+          "tokens_ours": 24,
+          "tokens_hf": 23
+        },
+        {
+          "chunk": " 3 pkt 1 rozporządzenia Ministra Rozwoju, Pracy i Technologii z dnia 23 grudnia 2020 r.",
+          "ours": [
+            " 3",
+            " pkt",
+            " 1",
+            " rozporządzenia",
+            " Ministra",
+            " Rozwoju",
+            ",",
+            " Pracy i",
+            " Techno",
+            "logii",
+            " z dnia",
+            " 23",
+            " grudnia",
+            " 2020 r."
+          ],
+          "hf": [
+            " 3",
+            " pkt",
+            " 1",
+            " rozporządzenia",
+            " Ministra",
+            " Rozwoju",
+            ",",
+            " Pracy i",
+            " Techno",
+            "logii",
+            " z dnia",
+            " 23",
+            " grudnia",
+            " 20"
+          ],
+          "tokens_ours": 14,
+          "tokens_hf": 16
+        },
+        {
+          "chunk": " a rozporządzenia Prezesa Rady Ministrów z dnia 30 grudnia 2020 r.",
+          "ours": [
+            " a",
+            " rozporządzenia",
+            " Prezesa",
+            " Rady Ministrów",
+            " z dnia",
+            " 30",
+            " grudnia",
+            " 2020 r."
+          ],
+          "hf": [
+            " a",
+            " rozporządzenia",
+            " Prezesa",
+            " Rady Ministrów",
+            " z dnia",
+            " 30",
+            " grudnia",
+            " 20",
+            "20",
+            " r."
+          ],
+          "tokens_ours": 8,
+          "tokens_hf": 10
+        }
+      ],
+      "official": true
+    },
+    "samorzad_uchwaly": {
+      "chunks": 23938,
+      "identical_chunks": 23446,
+      "identical_chunks_decoded": 23938,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9794469045033002,
+      "identical_ci_wilson": [
+        0.9775710877053372,
+        0.9811688615222944
+      ],
+      "tokens_ours": 109866,
+      "tokens_hf": 109527,
+      "token_delta": -339,
+      "token_delta_pct": -0.0030855769755884443,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.3643265375757059,
+          "lift": 2.7447904472020603
+        },
+        "4+_cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.11865563422332168,
+          "lift": 8.427749820273185
+        },
+        "kropka": {
+          "share_in_different": 0.42073170731707316,
+          "share_in_identical": 0.4409280900793312,
+          "lift": 0.954195744801325
+        },
+        "przecinek": {
+          "share_in_different": 0.19715447154471544,
+          "share_in_identical": 0.13520429924080868,
+          "lift": 1.458196763355646
+        },
+        "myslnik": {
+          "share_in_different": 0.046747967479674794,
+          "share_in_identical": 0.025803975091700078,
+          "lift": 1.811657595914802
+        },
+        "ukosnik": {
+          "share_in_different": 0.06097560975609756,
+          "share_in_identical": 0.022178623219312462,
+          "lift": 2.7492964352720453
+        },
+        "procent": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0009383263669709118,
+          "lift": 0.0
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.052845528455284556,
+          "share_in_identical": 0.05625693081975604,
+          "lift": 0.9393603185463242
+        },
+        "skrot": {
+          "share_in_different": 0.052845528455284556,
+          "share_in_identical": 0.18873155335664932,
+          "lift": 0.28000367461301734
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        }
+      },
+      "examples": [
+        {
+          "chunk": " 1530 z późn.",
+          "ours": [
+            " 15",
+            "3",
+            "0",
+            " z",
+            " późn."
+          ],
+          "hf": [
+            " 15",
+            "30",
+            " z",
+            " późn."
+          ],
+          "tokens_ours": 5,
+          "tokens_hf": 4
+        },
+        {
+          "chunk": " 1684) i art.",
+          "ours": [
+            " 16",
+            "8",
+            "4",
+            ") i",
+            " art."
+          ],
+          "hf": [
+            " 16",
+            "84",
+            ") i",
+            " art."
+          ],
+          "tokens_ours": 5,
+          "tokens_hf": 4
+        },
+        {
+          "chunk": " 1251 ze zm.",
+          "ours": [
+            " 125",
+            "1",
+            " ze",
+            " zm."
+          ],
+          "hf": [
+            " 12",
+            "51",
+            " ze",
+            " zm."
+          ],
+          "tokens_ours": 4,
+          "tokens_hf": 4
+        },
+        {
+          "chunk": "6) pojazd o dopuszczalnej masie całkowitej powyżej 16 t – 1050 zł,",
+          "ours": [
+            "6)",
+            " pojazd",
+            " o",
+            " dopuszcza",
+            "lnej",
+            " ma",
+            "sie",
+            " całkowitej",
+            " powyżej",
+            " 16",
+            " t",
+            " –",
+            " 105",
+            "0 zł"
+          ],
+          "hf": [
+            "6)",
+            " pojazd",
+            " o",
+            " dopuszcza",
+            "lnej",
+            " ma",
+            "sie",
+            " całkowitej",
+            " powyżej",
+            " 16",
+            " t",
+            " –",
+            " 10",
+            "50"
+          ],
+          "tokens_ours": 15,
+          "tokens_hf": 15
+        },
+        {
+          "chunk": " 1130 z późn.",
+          "ours": [
+            " 11",
+            "3",
+            "0",
+            " z",
+            " późn."
+          ],
+          "hf": [
+            " 11",
+            "30",
+            " z",
+            " późn."
+          ],
+          "tokens_ours": 5,
+          "tokens_hf": 4
+        },
+        {
+          "chunk": " 1688 z późn.",
+          "ours": [
+            " 16",
+            "8",
+            "8",
+            " z",
+            " późn."
+          ],
+          "hf": [
+            " 16",
+            "88",
+            " z",
+            " późn."
+          ],
+          "tokens_ours": 5,
+          "tokens_hf": 4
+        },
+        {
+          "chunk": "- Uchwałą Nr 1150/LXXIII/2023 Rady Miejskiej w Sosnowcu z dnia 30 marca 2023 roku w sprawie",
+          "ours": [
+            "- U",
+            "ch",
+            "wa",
+            "łą",
+            " Nr",
+            " 1",
+            "15",
+            "0",
+            "/",
+            "L",
+            "XX",
+            "III",
+            "/",
+            "2023"
+          ],
+          "hf": [
+            "- U",
+            "ch",
+            "wa",
+            "łą",
+            " Nr",
+            " 1",
+            "150",
+            "/",
+            "L",
+            "XX",
+            "III",
+            "/",
+            "2023",
+            " Rady Miejskiej"
+          ],
+          "tokens_ours": 23,
+          "tokens_hf": 22
+        },
+        {
+          "chunk": " 1483 z późn.",
+          "ours": [
+            " 14",
+            "8",
+            "3",
+            " z",
+            " późn."
+          ],
+          "hf": [
+            " 14",
+            "83",
+            " z",
+            " późn."
+          ],
+          "tokens_ours": 5,
+          "tokens_hf": 4
+        }
+      ],
+      "official": true
+    },
+    "granty_ogloszenia": {
+      "chunks": 33726,
+      "identical_chunks": 32231,
+      "identical_chunks_decoded": 33726,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.955672181699579,
+      "identical_ci_wilson": [
+        0.9534231183037103,
+        0.9578174491586642
+      ],
+      "tokens_ours": 180076,
+      "tokens_hf": 179350,
+      "token_delta": -726,
+      "token_delta_pct": -0.004031631089095715,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.18286742577022122,
+          "lift": 5.468442483881914
+        },
+        "4+_cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.041667959417951664,
+          "lift": 23.999255398361875
+        },
+        "kropka": {
+          "share_in_different": 0.09966555183946488,
+          "share_in_identical": 0.22127765194998603,
+          "lift": 0.450409478594755
+        },
+        "przecinek": {
+          "share_in_different": 0.40936454849498327,
+          "share_in_identical": 0.0845769600694983,
+          "lift": 4.840142612817978
+        },
+        "myslnik": {
+          "share_in_different": 0.22207357859531773,
+          "share_in_identical": 0.05488504855573827,
+          "lift": 4.046158005486538
+        },
+        "ukosnik": {
+          "share_in_different": 0.004013377926421404,
+          "share_in_identical": 0.009680121622040893,
+          "lift": 0.4145999485464368
+        },
+        "procent": {
+          "share_in_different": 0.0006688963210702341,
+          "share_in_identical": 0.002792342775588719,
+          "lift": 0.2395466369379413
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.19732441471571907,
+          "share_in_identical": 0.06245540008066768,
+          "lift": 3.159445211476573
+        },
+        "skrot": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.023517731376624988,
+          "lift": 0.0
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.00046539046259811985,
+          "lift": 0.0
+        }
+      },
+      "examples": [
+        {
+          "chunk": "na lata 2021-2030, którego przedmiotem było:",
+          "ours": [
+            "na",
+            " lata",
+            " 2021",
+            "-",
+            "203",
+            "0",
+            ", którego",
+            " przedmiotem",
+            " było",
+            ":"
+          ],
+          "hf": [
+            "na",
+            " lata",
+            " 2021",
+            "-20",
+            "30",
+            ", którego",
+            " przedmiotem",
+            " było",
+            ":"
+          ],
+          "tokens_ours": 10,
+          "tokens_hf": 9
+        },
+        {
+          "chunk": "Obywatelskich na lata 2021-2030, Priorytet 4” (EU-Consult sp.",
+          "ours": [
+            "O",
+            "bywa",
+            "tel",
+            "skich",
+            " na lata",
+            " 2021",
+            "-",
+            "203",
+            "0,",
+            " P",
+            "rioryte",
+            "t",
+            " 4",
+            "” ("
+          ],
+          "hf": [
+            "O",
+            "bywa",
+            "tel",
+            "skich",
+            " na lata",
+            " 2021",
+            "-20",
+            "30",
+            ", P",
+            "rioryte",
+            "t",
+            " 4",
+            "” (",
+            "E"
+          ],
+          "tokens_ours": 21,
+          "tokens_hf": 20
+        },
+        {
+          "chunk": "Fundusz Inicjatyw Obywatelskich na lata 2021-2030, Priorytet 4”, który opracowała firma EU-Consult sp.",
+          "ours": [
+            "F",
+            "undu",
+            "sz",
+            " Inicja",
+            "tyw",
+            " Obywatel",
+            "skich",
+            " na lata",
+            " 2021",
+            "-",
+            "203",
+            "0,",
+            " P",
+            "rioryte"
+          ],
+          "hf": [
+            "F",
+            "undu",
+            "sz",
+            " Inicja",
+            "tyw",
+            " Obywatel",
+            "skich",
+            " na lata",
+            " 2021",
+            "-20",
+            "30",
+            ", P",
+            "rioryte",
+            "t"
+          ],
+          "tokens_ours": 27,
+          "tokens_hf": 26
+        },
+        {
+          "chunk": "bieżąca Rządowego Programu Fundusz Inicjatyw Obywatelskich na lata 2021 -2030, Priorytet 4”, które",
+          "ours": [
+            "bie",
+            "żą",
+            "ca",
+            " Rzą",
+            "dowego",
+            " Programu",
+            " Fundusz",
+            " Inicja",
+            "tyw",
+            " Obywatel",
+            "skich",
+            " na lata",
+            " 2021",
+            " -"
+          ],
+          "hf": [
+            "bie",
+            "żą",
+            "ca",
+            " Rzą",
+            "dowego",
+            " Programu",
+            " Fundusz",
+            " Inicja",
+            "tyw",
+            " Obywatel",
+            "skich",
+            " na lata",
+            " 2021",
+            " -"
+          ],
+          "tokens_ours": 21,
+          "tokens_hf": 21
+        },
+        {
+          "chunk": "Jak wskazują wynik i badania, Rządowy Program Fundusz Inicjatyw Obywatelskich na lata 2021 -2030,",
+          "ours": [
+            "Jak",
+            " wskazują",
+            " wynik",
+            " i",
+            " badania",
+            ",",
+            " Rzą",
+            "dowy",
+            " Program",
+            " Fundusz",
+            " Inicja",
+            "tyw",
+            " Obywatel",
+            "skich"
+          ],
+          "hf": [
+            "Jak",
+            " wskazują",
+            " wynik",
+            " i",
+            " badania",
+            ",",
+            " Rzą",
+            "dowy",
+            " Program",
+            " Fundusz",
+            " Inicja",
+            "tyw",
+            " Obywatel",
+            "skich"
+          ],
+          "tokens_ours": 19,
+          "tokens_hf": 20
+        },
+        {
+          "chunk": "Programu Fundusz Inicjatyw Obywatelskich na lata 2021-2030, Priorytet 4.",
+          "ours": [
+            "Pro",
+            "gra",
+            "mu",
+            " Fundusz",
+            " Inicja",
+            "tyw",
+            " Obywatel",
+            "skich",
+            " na lata",
+            " 2021",
+            "-",
+            "203",
+            "0,",
+            " P"
+          ],
+          "hf": [
+            "Pro",
+            "gra",
+            "mu",
+            " Fundusz",
+            " Inicja",
+            "tyw",
+            " Obywatel",
+            "skich",
+            " na lata",
+            " 2021",
+            "-20",
+            "30",
+            ", P",
+            "rioryte"
+          ],
+          "tokens_ours": 17,
+          "tokens_hf": 16
+        },
+        {
+          "chunk": "Młodzieżowy na lata 2022-2033, edycja 2026",
+          "ours": [
+            "Młodzież",
+            "owy",
+            " na lata",
+            " 2022",
+            "-",
+            "203",
+            "3,",
+            " edycja",
+            " 202",
+            "6"
+          ],
+          "hf": [
+            "Młodzież",
+            "owy",
+            " na lata",
+            " 2022",
+            "-20",
+            "33",
+            ",",
+            " edycja",
+            " 202",
+            "6"
+          ],
+          "tokens_ours": 10,
+          "tokens_hf": 10
+        },
+        {
+          "chunk": "Program Fundusz Młodzieżowy na lata 2022-2033, edycja 2026, ustalonym przez Dyrektora",
+          "ours": [
+            "Program",
+            " Fundusz",
+            " Młodzież",
+            "owy",
+            " na lata",
+            " 2022",
+            "-",
+            "203",
+            "3,",
+            " edycja",
+            " 202",
+            "6,",
+            " usta",
+            "lonym"
+          ],
+          "hf": [
+            "Program",
+            " Fundusz",
+            " Młodzież",
+            "owy",
+            " na lata",
+            " 2022",
+            "-20",
+            "33",
+            ",",
+            " edycja",
+            " 202",
+            "6,",
+            " usta",
+            "lonym"
+          ],
+          "tokens_ours": 16,
+          "tokens_hf": 16
+        }
+      ],
+      "official": true
+    },
+    "prawo_eli": {
+      "chunks": 40138,
+      "identical_chunks": 39355,
+      "identical_chunks_decoded": 40138,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9804923015596193,
+      "identical_ci_wilson": [
+        0.979092584476607,
+        0.9818000517994525
+      ],
+      "tokens_ours": 204825,
+      "tokens_hf": 204346,
+      "token_delta": -479,
+      "token_delta_pct": -0.002338581716099109,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 0.9974457215836526,
+          "share_in_identical": 0.31012577817304027,
+          "lift": 3.216261890448558
+        },
+        "4+_cyfry": {
+          "share_in_different": 0.9961685823754789,
+          "share_in_identical": 0.05587600050819464,
+          "lift": 17.828201254837186
+        },
+        "kropka": {
+          "share_in_different": 0.42656449553001274,
+          "share_in_identical": 0.33708550374793544,
+          "lift": 1.2654489462975766
+        },
+        "przecinek": {
+          "share_in_different": 0.34355044699872284,
+          "share_in_identical": 0.1618345826451531,
+          "lift": 2.1228494020465907
+        },
+        "myslnik": {
+          "share_in_different": 0.13154533844189017,
+          "share_in_identical": 0.06746283826705628,
+          "lift": 1.949893331216794
+        },
+        "ukosnik": {
+          "share_in_different": 0.07535121328224777,
+          "share_in_identical": 0.00886799644263753,
+          "lift": 8.496982804363498
+        },
+        "procent": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0014483547198577056,
+          "lift": 0.0
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.11749680715197956,
+          "share_in_identical": 0.03935967475543133,
+          "lift": 2.9852077762854456
+        },
+        "skrot": {
+          "share_in_different": 0.0280970625798212,
+          "share_in_identical": 0.14925676534112564,
+          "lift": 0.18824649265047044
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.001277139208173691,
+          "share_in_identical": 7.62291957819845e-05,
+          "lift": 16.75393784589187
+        }
+      },
+      "examples": [
+        {
+          "chunk": " 881 i 1019 oraz z 2026 r.",
+          "ours": [
+            " 88",
+            "1",
+            " i ",
+            "101",
+            "9",
+            " oraz z",
+            " 202",
+            "6 r."
+          ],
+          "hf": [
+            " 88",
+            "1",
+            " i",
+            " 10",
+            "19",
+            " oraz z",
+            " 202",
+            "6 r."
+          ],
+          "tokens_ours": 8,
+          "tokens_hf": 8
+        },
+        {
+          "chunk": " 3 ustawy z dnia 20 lipca 2000 r.",
+          "ours": [
+            " 3",
+            " ustawy z dnia",
+            " 20",
+            " lipca",
+            " 2000",
+            " r."
+          ],
+          "hf": [
+            " 3",
+            " ustawy z dnia",
+            " 20",
+            " lipca",
+            " 20",
+            "00",
+            " r."
+          ],
+          "tokens_ours": 6,
+          "tokens_hf": 7
+        },
+        {
+          "chunk": " 1461 oraz z 2026 r.",
+          "ours": [
+            " 14",
+            "6",
+            "1",
+            " oraz z",
+            " 202",
+            "6 r."
+          ],
+          "hf": [
+            " 14",
+            "61",
+            " oraz z",
+            " 202",
+            "6 r."
+          ],
+          "tokens_ours": 6,
+          "tokens_hf": 5
+        },
+        {
+          "chunk": " 1851), z uwzględnieniem zmiany wprowadzonej rozporządzeniem Ministra Zdrowia z dnia 9 lipca",
+          "ours": [
+            " ",
+            "185",
+            "1",
+            "),",
+            " z",
+            " uwzględnieniem",
+            " zmiany",
+            " wprowa",
+            "dzonej",
+            " rozporzą",
+            "dzeniem",
+            " Ministra",
+            " Zdrowia",
+            " z dnia"
+          ],
+          "hf": [
+            " 18",
+            "51",
+            "),",
+            " z",
+            " uwzględnieniem",
+            " zmiany",
+            " wprowa",
+            "dzonej",
+            " rozporzą",
+            "dzeniem",
+            " Ministra",
+            " Zdrowia",
+            " z dnia",
+            " 9"
+          ],
+          "tokens_ours": 16,
+          "tokens_hf": 15
+        },
+        {
+          "chunk": " 1461, z późn.",
+          "ours": [
+            " 14",
+            "6",
+            "1",
+            ", z",
+            " późn."
+          ],
+          "hf": [
+            " 14",
+            "61",
+            ", z",
+            " późn."
+          ],
+          "tokens_ours": 5,
+          "tokens_hf": 4
+        },
+        {
+          "chunk": " 1537 i 1739 oraz z 2026 r.",
+          "ours": [
+            " 15",
+            "3",
+            "7",
+            " i",
+            " 17",
+            "3",
+            "9",
+            " oraz z",
+            " 202",
+            "6 r."
+          ],
+          "hf": [
+            " 15",
+            "37",
+            " i",
+            " 17",
+            "39",
+            " oraz z",
+            " 202",
+            "6 r."
+          ],
+          "tokens_ours": 10,
+          "tokens_hf": 8
+        },
+        {
+          "chunk": " 3 ustawy z dnia 20 lipca 2000 r.",
+          "ours": [
+            " 3",
+            " ustawy z dnia",
+            " 20",
+            " lipca",
+            " 2000",
+            " r."
+          ],
+          "hf": [
+            " 3",
+            " ustawy z dnia",
+            " 20",
+            " lipca",
+            " 20",
+            "00",
+            " r."
+          ],
+          "tokens_ours": 6,
+          "tokens_hf": 7
+        },
+        {
+          "chunk": " 1461 oraz z 2026 r.",
+          "ours": [
+            " 14",
+            "6",
+            "1",
+            " oraz z",
+            " 202",
+            "6 r."
+          ],
+          "hf": [
+            " 14",
+            "61",
+            " oraz z",
+            " 202",
+            "6 r."
+          ],
+          "tokens_ours": 6,
+          "tokens_hf": 5
+        }
+      ],
+      "official": true
+    },
+    "ocr_prasa": {
+      "chunks": 9942,
+      "identical_chunks": 9563,
+      "identical_chunks_decoded": 9942,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9618788976061154,
+      "identical_ci_wilson": [
+        0.9579328885270664,
+        0.965468103501602
+      ],
+      "tokens_ours": 175075,
+      "tokens_hf": 175015,
+      "token_delta": -60,
+      "token_delta_pct": -0.0003427102670284164,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 0.9762532981530343,
+          "share_in_identical": 0.27763254208930255,
+          "lift": 3.5163503918031886
+        },
+        "4+_cyfry": {
+          "share_in_different": 0.9656992084432717,
+          "share_in_identical": 0.0061696120464289446,
+          "lift": 156.5251106837798
+        },
+        "kropka": {
+          "share_in_different": 0.8891820580474934,
+          "share_in_identical": 0.7740248875875771,
+          "lift": 1.1487770901253958
+        },
+        "przecinek": {
+          "share_in_different": 0.45910290237467016,
+          "share_in_identical": 0.374882359092335,
+          "lift": 1.2246585928616376
+        },
+        "myslnik": {
+          "share_in_different": 0.18469656992084432,
+          "share_in_identical": 0.14085538011084386,
+          "lift": 1.3112496645531064
+        },
+        "ukosnik": {
+          "share_in_different": 0.0712401055408971,
+          "share_in_identical": 0.01725399979086061,
+          "lift": 4.128903813864237
+        },
+        "procent": {
+          "share_in_different": 0.005277044854881266,
+          "share_in_identical": 0.003973648436683049,
+          "lift": 1.328009998611304
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.20052770448548812,
+          "share_in_identical": 0.08365575656174841,
+          "lift": 2.3970580474934033
+        },
+        "skrot": {
+          "share_in_different": 0.044854881266490766,
+          "share_in_identical": 0.05040259332845341,
+          "lift": 0.8899320115175336
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.026385224274406333,
+          "share_in_identical": 0.012966642267071003,
+          "lift": 2.034854030130224
+        }
+      },
+      "examples": [
+        {
+          "chunk": " dnia 25 GO czerwca 1837.",
+          "ours": [
+            " dnia",
+            " 25",
+            " GO",
+            " czerwca",
+            " 18",
+            "3",
+            "7."
+          ],
+          "hf": [
+            " dnia",
+            " 25",
+            " GO",
+            " czerwca",
+            " 18",
+            "37",
+            "."
+          ],
+          "tokens_ours": 7,
+          "tokens_hf": 7
+        },
+        {
+          "chunk": " Paryż, w Księgarni Polskiej 1837.",
+          "ours": [
+            " Pary",
+            "ż",
+            ", w",
+            " Księ",
+            "gar",
+            "ni",
+            " Polskiej",
+            " 18",
+            "3",
+            "7."
+          ],
+          "hf": [
+            " Pary",
+            "ż",
+            ", w",
+            " Księ",
+            "gar",
+            "ni",
+            " Polskiej",
+            " 18",
+            "37",
+            "."
+          ],
+          "tokens_ours": 10,
+          "tokens_hf": 10
+        },
+        {
+          "chunk": " Beilage be$ M 30» ber ÂigL $reu|L Stegirrung» SDUrienwetber, Den 22ten Suit 1836, golge SSetfßgtin# ber Jténiglidjen Regierung ju SOïarientverôer vont 24gen v.",
+          "ours": [
+            " Be",
+            "i",
+            "la",
+            "ge",
+            " be",
+            "$",
+            " M",
+            " 30",
+            "»",
+            " ber",
+            " �",
+            "�",
+            "i",
+            "g"
+          ],
+          "hf": [
+            " Be",
+            "i",
+            "la",
+            "ge",
+            " be",
+            "$",
+            " M",
+            " 30",
+            "»",
+            " ber",
+            " �",
+            "�",
+            "i",
+            "g"
+          ],
+          "tokens_ours": 82,
+          "tokens_hf": 82
+        },
+        {
+          "chunk": " Sudjel, bett 14ten S'uli 1836.",
+          "ours": [
+            " Su",
+            "d",
+            "je",
+            "l,",
+            " be",
+            "tt",
+            " 14",
+            "ten",
+            " S",
+            "'",
+            "uli",
+            " 18",
+            "3",
+            "6."
+          ],
+          "hf": [
+            " Su",
+            "d",
+            "je",
+            "l,",
+            " be",
+            "tt",
+            " 14",
+            "ten",
+            " S",
+            "'",
+            "uli",
+            " 18",
+            "36",
+            "."
+          ],
+          "tokens_ours": 14,
+          "tokens_hf": 14
+        },
+        {
+          "chunk": " abgetvennt ig, welche beu Wluller SDlicjael unb Kuna gebotne (Sdjmibt ©raubtfdjen <S jeleuten gehören unb welche «uf 1767 JXtjlr.",
+          "ours": [
+            " ab",
+            "ge",
+            "t",
+            "ven",
+            "nt",
+            " i",
+            "g,",
+            " we",
+            "l",
+            "che",
+            " be",
+            "u",
+            " W",
+            "lu"
+          ],
+          "hf": [
+            " ab",
+            "ge",
+            "t",
+            "ven",
+            "nt",
+            " i",
+            "g,",
+            " we",
+            "l",
+            "che",
+            " be",
+            "u",
+            " W",
+            "lu"
+          ],
+          "tokens_ours": 72,
+          "tokens_hf": 71
+        },
+        {
+          "chunk": " gjlocfet, jufolge her nebg ^ppogjefengbein in bet Oîegigratur etm jufejenben *£ape, f o u am segen Kugug 1836 ?",
+          "ours": [
+            " g",
+            "j",
+            "lo",
+            "c",
+            "fe",
+            "t,",
+            " ju",
+            "fo",
+            "l",
+            "ge",
+            " her",
+            " ne",
+            "b",
+            "g"
+          ],
+          "hf": [
+            " g",
+            "j",
+            "lo",
+            "c",
+            "fe",
+            "t,",
+            " ju",
+            "fo",
+            "l",
+            "ge",
+            " her",
+            " ne",
+            "b",
+            "g"
+          ],
+          "tokens_ours": 59,
+          "tokens_hf": 58
+        },
+        {
+          "chunk": " 469» bdegette, auf 1348 Sit^iv, 26 fgv» 4 pf.",
+          "ours": [
+            " 46",
+            "9",
+            "»",
+            " b",
+            "de",
+            "ge",
+            "tte",
+            ",",
+            " au",
+            "f",
+            " 13",
+            "4",
+            "8",
+            " Si"
+          ],
+          "hf": [
+            " 46",
+            "9",
+            "»",
+            " b",
+            "de",
+            "ge",
+            "tte",
+            ",",
+            " au",
+            "f",
+            " 13",
+            "48",
+            " Si",
+            "t"
+          ],
+          "tokens_ours": 26,
+          "tokens_hf": 25
+        },
+        {
+          "chunk": " ternber 1836 an fjiejîger ®crid>tô|leUe fubpajïirt roerben.",
+          "ours": [
+            " ter",
+            "n",
+            "ber",
+            " 18",
+            "3",
+            "6",
+            " an",
+            " f",
+            "j",
+            "ie",
+            "j",
+            "�",
+            "�",
+            "ger"
+          ],
+          "hf": [
+            " ter",
+            "n",
+            "ber",
+            " 18",
+            "36",
+            " an",
+            " f",
+            "j",
+            "ie",
+            "j",
+            "�",
+            "�",
+            "ger",
+            " �"
+          ],
+          "tokens_ours": 38,
+          "tokens_hf": 37
+        }
+      ],
+      "official": true
+    },
+    "tabele_json": {
+      "chunks": 17574,
+      "identical_chunks": 16643,
+      "identical_chunks_decoded": 17574,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9470240127461022,
+      "identical_ci_wilson": [
+        0.9436136153788625,
+        0.9502390178135994
+      ],
+      "tokens_ours": 138565,
+      "tokens_hf": 137842,
+      "token_delta": -723,
+      "token_delta_pct": -0.005217767834590265,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.6061407198221475,
+          "lift": 1.649781919111816
+        },
+        "4+_cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.04560475875743556,
+          "lift": 21.92753623188406
+        },
+        "kropka": {
+          "share_in_different": 0.7508055853920516,
+          "share_in_identical": 0.6409301207714955,
+          "lift": 1.171431270055303
+        },
+        "przecinek": {
+          "share_in_different": 0.4242749731471536,
+          "share_in_identical": 0.08333834044342966,
+          "lift": 5.090993783769343
+        },
+        "myslnik": {
+          "share_in_different": 0.4715359828141783,
+          "share_in_identical": 0.06363035510424803,
+          "lift": 7.410550861167488
+        },
+        "ukosnik": {
+          "share_in_different": 0.3447905477980666,
+          "share_in_identical": 0.024935408279757255,
+          "lift": 13.827347197598128
+        },
+        "procent": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0009613651384966652,
+          "lift": 0.0
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.5542427497314716,
+          "share_in_identical": 0.09187045604758758,
+          "lift": 6.032872520458392
+        },
+        "skrot": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.019948326623805804,
+          "lift": 0.0
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.04043742113801598,
+          "lift": 0.0
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.02040816326530612,
+          "share_in_identical": 0.004025716517454786,
+          "lift": 5.069448674992384
+        }
+      },
+      "examples": [
+        {
+          "chunk": " \"2026/BZP 00000001/01\",",
+          "ours": [
+            " \"",
+            "202",
+            "6",
+            "/",
+            "B",
+            "Z",
+            "P",
+            " 000",
+            "000",
+            "01",
+            "/",
+            "01",
+            "\","
+          ],
+          "hf": [
+            " \"",
+            "202",
+            "6",
+            "/",
+            "B",
+            "Z",
+            "P",
+            " 00",
+            "00",
+            "000",
+            "1/",
+            "01",
+            "\","
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 13
+        },
+        {
+          "chunk": "0937238Z\",",
+          "ours": [
+            "09",
+            "3",
+            "7",
+            "23",
+            "8",
+            "Z",
+            "\","
+          ],
+          "hf": [
+            "09",
+            "37",
+            "23",
+            "8",
+            "Z",
+            "\","
+          ],
+          "tokens_ours": 7,
+          "tokens_hf": 6
+        },
+        {
+          "chunk": " \"55524000-9 (Usługi dostarczania posiłków do szkół)\",",
+          "ours": [
+            " \"",
+            "55",
+            "5",
+            "240",
+            "00",
+            "-9",
+            " (U",
+            "sługi",
+            " dostar",
+            "czania",
+            " posiłków",
+            " do",
+            " szkół",
+            ")"
+          ],
+          "hf": [
+            " \"",
+            "55",
+            "5",
+            "24",
+            "000",
+            "-9",
+            " (U",
+            "sługi",
+            " dostar",
+            "czania",
+            " posiłków",
+            " do",
+            " szkół",
+            ")"
+          ],
+          "tokens_ours": 15,
+          "tokens_hf": 15
+        },
+        {
+          "chunk": " \"ocds-148610-ba11920e-0503-4d9a-9c77-5e25c98f98ce\",",
+          "ours": [
+            " \"o",
+            "c",
+            "ds",
+            "-14",
+            "8",
+            "6",
+            "10",
+            "-",
+            "ba",
+            "1",
+            "19",
+            "20",
+            "e",
+            "-0"
+          ],
+          "hf": [
+            " \"o",
+            "c",
+            "ds",
+            "-14",
+            "86",
+            "10",
+            "-",
+            "ba",
+            "1",
+            "19",
+            "20",
+            "e",
+            "-0",
+            "50"
+          ],
+          "tokens_ours": 32,
+          "tokens_hf": 31
+        },
+        {
+          "chunk": "pl/mp-client/search/list/ocds-148610-ba11920e-0503-4d9a-9c77-5e25c98f98ce\\n1.",
+          "ours": [
+            "pl/",
+            "mp",
+            "-",
+            "c",
+            "lie",
+            "nt",
+            "/",
+            "search",
+            "/",
+            "list",
+            "/o",
+            "c",
+            "ds",
+            "-14"
+          ],
+          "hf": [
+            "pl/",
+            "mp",
+            "-",
+            "c",
+            "lie",
+            "nt",
+            "/",
+            "search",
+            "/",
+            "list",
+            "/o",
+            "c",
+            "ds",
+            "-14"
+          ],
+          "tokens_ours": 44,
+          "tokens_hf": 43
+        },
+        {
+          "chunk": " ocds-148610-ba11920e-0503-4d9a-9c77-5e25c98f98ce\\n\\n2.",
+          "ours": [
+            " oc",
+            "ds",
+            "-14",
+            "8",
+            "6",
+            "10",
+            "-",
+            "ba",
+            "1",
+            "19",
+            "20",
+            "e",
+            "-0",
+            "50"
+          ],
+          "hf": [
+            " oc",
+            "ds",
+            "-14",
+            "86",
+            "10",
+            "-",
+            "ba",
+            "1",
+            "19",
+            "20",
+            "e",
+            "-0",
+            "50",
+            "3"
+          ],
+          "tokens_ours": 35,
+          "tokens_hf": 34
+        },
+        {
+          "chunk": " 2026/BZP 00000001\\n\\n2.",
+          "ours": [
+            " 202",
+            "6",
+            "/",
+            "B",
+            "Z",
+            "P",
+            " 000",
+            "000",
+            "01",
+            "\\",
+            "n",
+            "\\",
+            "n",
+            "2."
+          ],
+          "hf": [
+            " 202",
+            "6",
+            "/",
+            "B",
+            "Z",
+            "P",
+            " 00",
+            "00",
+            "000",
+            "1",
+            "\\",
+            "n",
+            "\\",
+            "n"
+          ],
+          "tokens_ours": 14,
+          "tokens_hf": 15
+        },
+        {
+          "chunk": " 2025/BZP 00109117/01/P\\n\\n2.",
+          "ours": [
+            " 202",
+            "5/",
+            "B",
+            "Z",
+            "P",
+            " 00",
+            "1",
+            "09",
+            "1",
+            "17",
+            "/",
+            "01",
+            "/",
+            "P"
+          ],
+          "hf": [
+            " 202",
+            "5/",
+            "B",
+            "Z",
+            "P",
+            " 00",
+            "10",
+            "9",
+            "11",
+            "7",
+            "/",
+            "01",
+            "/",
+            "P"
+          ],
+          "tokens_ours": 19,
+          "tokens_hf": 19
+        }
+      ],
+      "official": true
+    },
+    "web": {
+      "chunks": 20344,
+      "identical_chunks": 20214,
+      "identical_chunks_decoded": 20344,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.993609909555643,
+      "identical_ci_wilson": [
+        0.9924178993767899,
+        0.994615536149856
+      ],
+      "tokens_ours": 219425,
+      "tokens_hf": 219391,
+      "token_delta": -34,
+      "token_delta_pct": -0.00015495043864646233,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.12699119422182645,
+          "lift": 7.874561745227893
+        },
+        "4+_cyfry": {
+          "share_in_different": 0.9923076923076923,
+          "share_in_identical": 0.027703571781933313,
+          "lift": 35.81876373626374
+        },
+        "kropka": {
+          "share_in_different": 0.7923076923076923,
+          "share_in_identical": 0.513901256554863,
+          "lift": 1.5417508367643138
+        },
+        "przecinek": {
+          "share_in_different": 0.5846153846153846,
+          "share_in_identical": 0.28752349856535075,
+          "lift": 2.033278627772778
+        },
+        "myslnik": {
+          "share_in_different": 0.23846153846153847,
+          "share_in_identical": 0.1146729989116454,
+          "lift": 2.0794916041680493
+        },
+        "ukosnik": {
+          "share_in_different": 0.06153846153846154,
+          "share_in_identical": 0.011130899376669634,
+          "lift": 5.528615384615385
+        },
+        "procent": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0045018304145641634,
+          "lift": 0.0
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.26153846153846155,
+          "share_in_identical": 0.07000098941327793,
+          "lift": 3.7362109268823054
+        },
+        "skrot": {
+          "share_in_different": 0.015384615384615385,
+          "share_in_identical": 0.005837538339764519,
+          "lift": 2.6354628422425037
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.003462946472741664,
+          "lift": 0.0
+        }
+      },
+      "examples": [
+        {
+          "chunk": " Przedział wydatków przypadających na wynajem prywatnego pokoju i podstawowe potrzeby waha się pomiędzy 1550 a 1750 zł miesięcznie.",
+          "ours": [
+            " Prze",
+            "dział",
+            " wydatków",
+            " przypada",
+            "jących na",
+            " wynajem",
+            " prywatnego",
+            " pokoju",
+            " i",
+            " podstawowe",
+            " potrzeby",
+            " waha",
+            " się",
+            " pomiędzy"
+          ],
+          "hf": [
+            " Prze",
+            "dział",
+            " wydatków",
+            " przypada",
+            "jących na",
+            " wynajem",
+            " prywatnego",
+            " pokoju",
+            " i",
+            " podstawowe",
+            " potrzeby",
+            " waha",
+            " się",
+            " pomiędzy"
+          ],
+          "tokens_ours": 23,
+          "tokens_hf": 22
+        },
+        {
+          "chunk": " akt II FSK 1634/07.",
+          "ours": [
+            " akt",
+            " II",
+            " F",
+            "SK",
+            " 16",
+            "3",
+            "4",
+            "/",
+            "07."
+          ],
+          "hf": [
+            " akt",
+            " II",
+            " F",
+            "SK",
+            " 16",
+            "34",
+            "/",
+            "07."
+          ],
+          "tokens_ours": 9,
+          "tokens_hf": 8
+        },
+        {
+          "chunk": "Transjordania (czyli \"kraj za Jordanem\") - emirat utworzony w 1921 we wschodniej części terytorium mandatowego Palestyny na Bliskim Wschodzie.",
+          "ours": [
+            "Trans",
+            "jor",
+            "dania",
+            " (czyli",
+            " \"",
+            "kraj",
+            " za",
+            " Jor",
+            "da",
+            "nem",
+            "\"",
+            ") -",
+            " emi",
+            "ra"
+          ],
+          "hf": [
+            "Trans",
+            "jor",
+            "dania",
+            " (czyli",
+            " \"",
+            "kraj",
+            " za",
+            " Jor",
+            "da",
+            "nem",
+            "\"",
+            ") -",
+            " emi",
+            "ra"
+          ],
+          "tokens_ours": 33,
+          "tokens_hf": 33
+        },
+        {
+          "chunk": "tapeta audi r8 1366x768",
+          "ours": [
+            "ta",
+            "pe",
+            "ta",
+            " audi",
+            " r",
+            "8",
+            " 13",
+            "6",
+            "6",
+            "x",
+            "7",
+            "68"
+          ],
+          "hf": [
+            "ta",
+            "pe",
+            "ta",
+            " audi",
+            " r",
+            "8",
+            " 13",
+            "66",
+            "x",
+            "7",
+            "68"
+          ],
+          "tokens_ours": 12,
+          "tokens_hf": 11
+        },
+        {
+          "chunk": "pl/forum/f,49353,Nikiszowiec",
+          "ours": [
+            "pl/",
+            "forum",
+            "/",
+            "f",
+            ",",
+            "49",
+            "3",
+            "53",
+            ",",
+            "Ni",
+            "ki",
+            "sz",
+            "owiec"
+          ],
+          "hf": [
+            "pl/",
+            "forum",
+            "/",
+            "f",
+            ",",
+            "49",
+            "35",
+            "3,",
+            "Ni",
+            "ki",
+            "sz",
+            "owiec"
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 12
+        },
+        {
+          "chunk": "pl/forum/f,49353,Nikiszowiec",
+          "ours": [
+            "pl/",
+            "forum",
+            "/",
+            "f",
+            ",",
+            "49",
+            "3",
+            "53",
+            ",",
+            "Ni",
+            "ki",
+            "sz",
+            "owiec"
+          ],
+          "hf": [
+            "pl/",
+            "forum",
+            "/",
+            "f",
+            ",",
+            "49",
+            "35",
+            "3,",
+            "Ni",
+            "ki",
+            "sz",
+            "owiec"
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 12
+        },
+        {
+          "chunk": " Po raz pierwszy, obejmuje oprócz zawodników z Major League Soccer i rosyjskiej Premier League, zwiększenie liczby dostępnych graczy do 8000 z 30 lig.",
+          "ours": [
+            " Po raz pierwszy",
+            ",",
+            " obejmuje",
+            " oprócz",
+            " zawodników",
+            " z",
+            " Maj",
+            "or",
+            " League",
+            " So",
+            "c",
+            "cer",
+            " i",
+            " rosyjskiej"
+          ],
+          "hf": [
+            " Po raz pierwszy",
+            ",",
+            " obejmuje",
+            " oprócz",
+            " zawodników",
+            " z",
+            " Maj",
+            "or",
+            " League",
+            " So",
+            "c",
+            "cer",
+            " i",
+            " rosyjskiej"
+          ],
+          "tokens_ours": 28,
+          "tokens_hf": 27
+        },
+        {
+          "chunk": "com/11147001",
+          "ours": [
+            "com/",
+            "11",
+            "1",
+            "4",
+            "70",
+            "01"
+          ],
+          "hf": [
+            "com/",
+            "11",
+            "14",
+            "700",
+            "1"
+          ],
+          "tokens_ours": 6,
+          "tokens_hf": 5
+        }
+      ],
+      "official": false
+    },
+    "wikipedia": {
+      "chunks": 23172,
+      "identical_chunks": 21537,
+      "identical_chunks_decoded": 23172,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9294407042982911,
+      "identical_ci_wilson": [
+        0.9260716967312748,
+        0.9326673447022842
+      ],
+      "tokens_ours": 257369,
+      "tokens_hf": 256994,
+      "token_delta": -375,
+      "token_delta_pct": -0.001457051937101982,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 0.999388379204893,
+          "share_in_identical": 0.13753076101592607,
+          "lift": 7.26665345136252
+        },
+        "4+_cyfry": {
+          "share_in_different": 0.998776758409786,
+          "share_in_identical": 0.06853322189720017,
+          "lift": 14.57361452972328
+        },
+        "kropka": {
+          "share_in_different": 0.7143730886850153,
+          "share_in_identical": 0.3922551887449505,
+          "lift": 1.821194745621351
+        },
+        "przecinek": {
+          "share_in_different": 0.42629969418960245,
+          "share_in_identical": 0.2158610762873195,
+          "lift": 1.974879869598079
+        },
+        "myslnik": {
+          "share_in_different": 0.30642201834862387,
+          "share_in_identical": 0.10739657333890514,
+          "lift": 2.8531824510048907
+        },
+        "ukosnik": {
+          "share_in_different": 0.011009174311926606,
+          "share_in_identical": 0.003714537772205971,
+          "lift": 2.9638073394495414
+        },
+        "procent": {
+          "share_in_different": 0.001834862385321101,
+          "share_in_identical": 0.004921762548172912,
+          "lift": 0.372805954647741
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.1510703363914373,
+          "share_in_identical": 0.06314714212750151,
+          "lift": 2.392354290339989
+        },
+        "skrot": {
+          "share_in_different": 0.017737003058103974,
+          "share_in_identical": 0.012025816037516832,
+          "lift": 1.4749105593142289
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.012844036697247707,
+          "share_in_identical": 0.0035752426057482473,
+          "lift": 3.5924937447873226
+        }
+      },
+      "examples": [
+        {
+          "chunk": " wczesny okres (do 1900), okres przedklasyczny (1900–1940), okres klasyczny (1935–1960) i okres nowoczesny (po 1955).",
+          "ours": [
+            " wczes",
+            "ny",
+            " okres",
+            " (do",
+            " 190",
+            "0",
+            "),",
+            " okres",
+            " przed",
+            "kla",
+            "sy",
+            "czny",
+            " (",
+            "190"
+          ],
+          "hf": [
+            " wczes",
+            "ny",
+            " okres",
+            " (do",
+            " 19",
+            "00",
+            "),",
+            " okres",
+            " przed",
+            "kla",
+            "sy",
+            "czny",
+            " (",
+            "19"
+          ],
+          "tokens_ours": 35,
+          "tokens_hf": 35
+        },
+        {
+          "chunk": " 7 stycznia 2020 w Santa Monica) – kanadyjski perkusista rockowy.",
+          "ours": [
+            " 7",
+            " stycznia",
+            " 2020",
+            " w",
+            " Santa",
+            " Mo",
+            "nica",
+            ") –",
+            " kanady",
+            "jski",
+            " perku",
+            "si",
+            "sta",
+            " rock"
+          ],
+          "hf": [
+            " 7",
+            " stycznia",
+            " 20",
+            "20",
+            " w",
+            " Santa",
+            " Mo",
+            "nica",
+            ") –",
+            " kanady",
+            "jski",
+            " perku",
+            "si",
+            "sta"
+          ],
+          "tokens_ours": 15,
+          "tokens_hf": 16
+        },
+        {
+          "chunk": " Swoistą odpowiedzią Pearta był tekst do „2112”, pochodzącego z tak samo zatytułowanej płyty, wydanej rok później.",
+          "ours": [
+            " Swo",
+            "i",
+            "stą",
+            " odpowiedzi",
+            "ą",
+            " Pe",
+            "ar",
+            "ta",
+            " był",
+            " tekst",
+            " do",
+            " „",
+            "2",
+            "11"
+          ],
+          "hf": [
+            " Swo",
+            "i",
+            "stą",
+            " odpowiedzi",
+            "ą",
+            " Pe",
+            "ar",
+            "ta",
+            " był",
+            " tekst",
+            " do",
+            " „",
+            "21",
+            "12"
+          ],
+          "tokens_ours": 28,
+          "tokens_hf": 27
+        },
+        {
+          "chunk": " Zmarł na tę chorobę 7 stycznia 2020.",
+          "ours": [
+            " Zmar",
+            "ł na",
+            " tę",
+            " chorobę",
+            " 7",
+            " stycznia",
+            " 2020."
+          ],
+          "hf": [
+            " Zmar",
+            "ł na",
+            " tę",
+            " chorobę",
+            " 7",
+            " stycznia",
+            " 20",
+            "20."
+          ],
+          "tokens_ours": 7,
+          "tokens_hf": 8
+        },
+        {
+          "chunk": "planetoida 23469 Neilpeart",
+          "ours": [
+            "pla",
+            "ne",
+            "to",
+            "ida",
+            " 23",
+            "4",
+            "69",
+            " Ne",
+            "il",
+            "pe",
+            "art"
+          ],
+          "hf": [
+            "pla",
+            "ne",
+            "to",
+            "ida",
+            " 23",
+            "46",
+            "9",
+            " Ne",
+            "il",
+            "pe",
+            "art"
+          ],
+          "tokens_ours": 11,
+          "tokens_hf": 11
+        },
+        {
+          "chunk": "Zostało założone w 1662 r.",
+          "ours": [
+            "Zosta",
+            "ło",
+            " zało",
+            "żone",
+            " w",
+            " 16",
+            "6",
+            "2 r."
+          ],
+          "hf": [
+            "Zosta",
+            "ło",
+            " zało",
+            "żone",
+            " w",
+            " 16",
+            "62",
+            " r."
+          ],
+          "tokens_ours": 8,
+          "tokens_hf": 8
+        },
+        {
+          "chunk": " W 1772 znalazło się w zaborze austriackim, a w 1801 zostało odkupione od Potockich przez rząd austriacki.",
+          "ours": [
+            " W",
+            " 17",
+            "7",
+            "2",
+            " znalazło",
+            " się w",
+            " za",
+            "borze",
+            " austria",
+            "ckim",
+            ", a",
+            " w ",
+            "180",
+            "1"
+          ],
+          "hf": [
+            " W",
+            " 17",
+            "72",
+            " znalazło",
+            " się w",
+            " za",
+            "borze",
+            " austria",
+            "ckim",
+            ", a w",
+            " 18",
+            "01",
+            " zostało",
+            " odku"
+          ],
+          "tokens_ours": 25,
+          "tokens_hf": 23
+        },
+        {
+          "chunk": " Od maja 1919 w granicach Polski, stolica województwa stanisławowskiego.",
+          "ours": [
+            " Od",
+            " maja",
+            " 191",
+            "9",
+            " w",
+            " granicach",
+            " Polski,",
+            " sto",
+            "lica",
+            " województwa",
+            " sta",
+            "ni",
+            "sław",
+            "owskiego."
+          ],
+          "hf": [
+            " Od",
+            " maja",
+            " 19",
+            "19",
+            " w",
+            " granicach",
+            " Polski,",
+            " sto",
+            "lica",
+            " województwa",
+            " sta",
+            "ni",
+            "sław",
+            "owskiego."
+          ],
+          "tokens_ours": 14,
+          "tokens_hf": 14
+        }
+      ],
+      "official": false
+    },
+    "literatura": {
+      "chunks": 32479,
+      "identical_chunks": 32395,
+      "identical_chunks_decoded": 32479,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9974137134764002,
+      "identical_ci_wilson": [
+        0.996799424574436,
+        0.9979103486000882
+      ],
+      "tokens_ours": 282987,
+      "tokens_hf": 282934,
+      "token_delta": -53,
+      "token_delta_pct": -0.00018728775526790983,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.003488192622318259,
+          "lift": 286.6814159292035
+        },
+        "4+_cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.0006173792251890724,
+          "lift": 1619.75
+        },
+        "kropka": {
+          "share_in_different": 0.38095238095238093,
+          "share_in_identical": 0.25615064053094616,
+          "lift": 1.4872200989337647
+        },
+        "przecinek": {
+          "share_in_different": 0.39285714285714285,
+          "share_in_identical": 0.31909245253897206,
+          "lift": 1.2311702759850192
+        },
+        "myslnik": {
+          "share_in_different": 0.44047619047619047,
+          "share_in_identical": 0.006328137058187992,
+          "lift": 69.60598141695702
+        },
+        "ukosnik": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.00033955857385398983,
+          "lift": 0.0
+        },
+        "procent": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.40476190476190477,
+          "share_in_identical": 0.0034573236610588053,
+          "lift": 117.07376700680273
+        },
+        "skrot": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.00024695169007562894,
+          "lift": 0.0
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.011904761904761904,
+          "share_in_identical": 0.003642537428615527,
+          "lift": 3.2682606941081516
+        }
+      },
+      "examples": [
+        {
+          "chunk": "ISBN 978-83-288-2461-4",
+          "ours": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-24",
+            "6",
+            "1",
+            "-4"
+          ],
+          "hf": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-24",
+            "61",
+            "-4"
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 12
+        },
+        {
+          "chunk": "ISBN 978-83-288-5475-8",
+          "ours": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-5",
+            "47",
+            "5",
+            "-8"
+          ],
+          "hf": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-",
+            "54",
+            "75",
+            "-8"
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 13
+        },
+        {
+          "chunk": " Opowiadanie określone jest dniem, kiedy mur zamknięto jesienią 1940 roku, i „wielką akcją” w 1942, kiedy w części dzielnicy przestał czemukolwiek służyć.",
+          "ours": [
+            " O",
+            "powiada",
+            "nie",
+            " określone",
+            " jest",
+            " dniem",
+            ", kiedy",
+            " mu",
+            "r",
+            " zamknię",
+            "to",
+            " jesienią",
+            " 194",
+            "0 roku"
+          ],
+          "hf": [
+            " O",
+            "powiada",
+            "nie",
+            " określone",
+            " jest",
+            " dniem",
+            ", kiedy",
+            " mu",
+            "r",
+            " zamknię",
+            "to",
+            " jesienią",
+            " 19",
+            "40"
+          ],
+          "tokens_ours": 31,
+          "tokens_hf": 32
+        },
+        {
+          "chunk": "1867, novembris, Parisiorum-Lutheciae",
+          "ours": [
+            "186",
+            "7",
+            ", no",
+            "v",
+            "em",
+            "b",
+            "ris",
+            ", P",
+            "ari",
+            "sio",
+            "rum",
+            "-",
+            "L",
+            "ut"
+          ],
+          "hf": [
+            "18",
+            "67",
+            ", no",
+            "v",
+            "em",
+            "b",
+            "ris",
+            ", P",
+            "ari",
+            "sio",
+            "rum",
+            "-",
+            "L",
+            "ut"
+          ],
+          "tokens_ours": 17,
+          "tokens_hf": 17
+        },
+        {
+          "chunk": "ISBN 978-83-288-2690-8",
+          "ours": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-26",
+            "9",
+            "0",
+            "-8"
+          ],
+          "hf": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-26",
+            "90",
+            "-8"
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 12
+        },
+        {
+          "chunk": "ISBN 978-83-288-2685-4",
+          "ours": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-26",
+            "8",
+            "5",
+            "-4"
+          ],
+          "hf": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-26",
+            "85",
+            "-4"
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 12
+        },
+        {
+          "chunk": "ISBN 978-83-288-5832-9",
+          "ours": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-",
+            "58",
+            "3",
+            "2",
+            "-9"
+          ],
+          "hf": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-",
+            "58",
+            "32",
+            "-9"
+          ],
+          "tokens_ours": 14,
+          "tokens_hf": 13
+        },
+        {
+          "chunk": "ISBN 978-83-288-2625-0",
+          "ours": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-26",
+            "2",
+            "5",
+            "-0"
+          ],
+          "hf": [
+            "IS",
+            "B",
+            "N",
+            " 9",
+            "78",
+            "-",
+            "83",
+            "-28",
+            "8",
+            "-26",
+            "25",
+            "-0"
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 12
+        }
+      ],
+      "official": false
+    },
+    "prawo": {
+      "chunks": 75300,
+      "identical_chunks": 73948,
+      "identical_chunks_decoded": 75300,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9820451527224435,
+      "identical_ci_wilson": [
+        0.9810718151983852,
+        0.9829693075057718
+      ],
+      "tokens_ours": 275820,
+      "tokens_hf": 274891,
+      "token_delta": -929,
+      "token_delta_pct": -0.0033681386411427744,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.2448071617893655,
+          "lift": 4.084847815279235
+        },
+        "4+_cyfry": {
+          "share_in_different": 0.9992603550295858,
+          "share_in_identical": 0.03610645318331801,
+          "lift": 27.67539503135873
+        },
+        "kropka": {
+          "share_in_different": 0.5628698224852071,
+          "share_in_identical": 0.2387623735597988,
+          "lift": 2.3574477590131453
+        },
+        "przecinek": {
+          "share_in_different": 0.47781065088757396,
+          "share_in_identical": 0.14884783902201548,
+          "lift": 3.2100610531329443
+        },
+        "myslnik": {
+          "share_in_different": 0.057692307692307696,
+          "share_in_identical": 0.027695137123384,
+          "lift": 2.0831204927884617
+        },
+        "ukosnik": {
+          "share_in_different": 0.09615384615384616,
+          "share_in_identical": 0.004503164385784605,
+          "lift": 21.352506352506353
+        },
+        "procent": {
+          "share_in_different": 0.0036982248520710057,
+          "share_in_identical": 0.0026234651376643046,
+          "lift": 1.4096718111389006
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.09541420118343195,
+          "share_in_identical": 0.008519500189322226,
+          "lift": 11.199506903353058
+        },
+        "skrot": {
+          "share_in_different": 0.13831360946745563,
+          "share_in_identical": 0.11713636609509386,
+          "lift": 1.1807913637611878
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        }
+      },
+      "examples": [
+        {
+          "chunk": "wysokość należnego wynagrodzenia dla zespołu nie może przekroczyć 3000 zł.",
+          "ours": [
+            "wy",
+            "so",
+            "kość",
+            " należ",
+            "nego",
+            " wynagrodzenia",
+            " dla",
+            " zespołu",
+            " nie może",
+            " przekroczyć",
+            " 300",
+            "0",
+            " zł."
+          ],
+          "hf": [
+            "wy",
+            "so",
+            "kość",
+            " należ",
+            "nego",
+            " wynagrodzenia",
+            " dla",
+            " zespołu",
+            " nie może",
+            " przekroczyć",
+            " 3",
+            "000",
+            " zł."
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 13
+        },
+        {
+          "chunk": " 486, 805, 915 i 1310 oraz z 2015 r.",
+          "ours": [
+            " 48",
+            "6",
+            ", ",
+            "80",
+            "5",
+            ", 9",
+            "15",
+            " i",
+            " 13",
+            "1",
+            "0",
+            " oraz z",
+            " 2015 r."
+          ],
+          "hf": [
+            " 48",
+            "6",
+            ", ",
+            "80",
+            "5",
+            ", 9",
+            "15",
+            " i",
+            " 13",
+            "10",
+            " oraz z",
+            " 2015 r."
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 12
+        },
+        {
+          "chunk": " 211, 390, 978, 1269 i 1273.",
+          "ours": [
+            " 2",
+            "11",
+            ", 3",
+            "90",
+            ", 9",
+            "78",
+            ", 12",
+            "6",
+            "9",
+            " i",
+            " 12",
+            "7",
+            "3."
+          ],
+          "hf": [
+            " 2",
+            "11",
+            ", 3",
+            "90",
+            ", 9",
+            "78",
+            ", 12",
+            "69",
+            " i",
+            " 12",
+            "73",
+            "."
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 12
+        },
+        {
+          "chunk": " 486, 805, 915 i 1310 oraz z 2015 r.",
+          "ours": [
+            " 48",
+            "6",
+            ", ",
+            "80",
+            "5",
+            ", 9",
+            "15",
+            " i",
+            " 13",
+            "1",
+            "0",
+            " oraz z",
+            " 2015 r."
+          ],
+          "hf": [
+            " 48",
+            "6",
+            ", ",
+            "80",
+            "5",
+            ", 9",
+            "15",
+            " i",
+            " 13",
+            "10",
+            " oraz z",
+            " 2015 r."
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 12
+        },
+        {
+          "chunk": " 211, 390, 978, 1269 i 1273.",
+          "ours": [
+            " 2",
+            "11",
+            ", 3",
+            "90",
+            ", 9",
+            "78",
+            ", 12",
+            "6",
+            "9",
+            " i",
+            " 12",
+            "7",
+            "3."
+          ],
+          "hf": [
+            " 2",
+            "11",
+            ", 3",
+            "90",
+            ", 9",
+            "78",
+            ", 12",
+            "69",
+            " i",
+            " 12",
+            "73",
+            "."
+          ],
+          "tokens_ours": 13,
+          "tokens_hf": 12
+        },
+        {
+          "chunk": " 1367, Nr 225, poz.",
+          "ours": [
+            " 13",
+            "6",
+            "7,",
+            " Nr",
+            " 2",
+            "25",
+            ", poz."
+          ],
+          "hf": [
+            " 13",
+            "67",
+            ",",
+            " Nr",
+            " 2",
+            "25",
+            ", poz."
+          ],
+          "tokens_ours": 7,
+          "tokens_hf": 7
+        },
+        {
+          "chunk": " 1486, Nr 227, poz.",
+          "ours": [
+            " 14",
+            "8",
+            "6,",
+            " Nr",
+            " 22",
+            "7",
+            ", poz."
+          ],
+          "hf": [
+            " 14",
+            "86",
+            ",",
+            " Nr",
+            " 22",
+            "7",
+            ", poz."
+          ],
+          "tokens_ours": 7,
+          "tokens_hf": 7
+        },
+        {
+          "chunk": " 1505, Nr 234, poz.",
+          "ours": [
+            " 150",
+            "5,",
+            " Nr",
+            " 23",
+            "4,",
+            " poz."
+          ],
+          "hf": [
+            " 15",
+            "05",
+            ",",
+            " Nr",
+            " 23",
+            "4,",
+            " poz."
+          ],
+          "tokens_ours": 6,
+          "tokens_hf": 7
+        }
+      ],
+      "official": false
+    },
+    "sejm": {
+      "chunks": 30212,
+      "identical_chunks": 30054,
+      "identical_chunks_decoded": 30212,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9947702899510128,
+      "identical_ci_wilson": [
+        0.9938916786197813,
+        0.9955230924716847
+      ],
+      "tokens_ours": 204773,
+      "tokens_hf": 204710,
+      "token_delta": -63,
+      "token_delta_pct": -0.00030765774784761665,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.09429693218872696,
+          "lift": 10.604798870853916
+        },
+        "4+_cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.015305782924070007,
+          "lift": 65.33478260869566
+        },
+        "kropka": {
+          "share_in_different": 0.7088607594936709,
+          "share_in_identical": 0.3454115924668929,
+          "lift": 2.0522205245952017
+        },
+        "przecinek": {
+          "share_in_different": 0.5126582278481012,
+          "share_in_identical": 0.33000598921940505,
+          "lift": 1.553481586987985
+        },
+        "myslnik": {
+          "share_in_different": 0.27848101265822783,
+          "share_in_identical": 0.034304917814600384,
+          "lift": 8.117816056673501
+        },
+        "ukosnik": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0001663672056964131,
+          "lift": 0.0
+        },
+        "procent": {
+          "share_in_different": 0.056962025316455694,
+          "share_in_identical": 0.004924469288613828,
+          "lift": 11.567139924734862
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.11392405063291139,
+          "share_in_identical": 0.024156518267119186,
+          "lift": 4.716079087770687
+        },
+        "skrot": {
+          "share_in_different": 0.012658227848101266,
+          "share_in_identical": 0.03227523790510414,
+          "lift": 0.39219626778024275
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0001330937645571305,
+          "lift": 0.0
+        }
+      },
+      "examples": [
+        {
+          "chunk": "na terytorium tego państwa oraz niektórych innych ustaw, druk nr 1492.",
+          "ours": [
+            "na",
+            " terytorium",
+            " tego",
+            " państwa",
+            " oraz",
+            " niektórych",
+            " innych",
+            " ustaw",
+            ",",
+            " dru",
+            "k",
+            " nr",
+            " 14",
+            "9"
+          ],
+          "hf": [
+            "na",
+            " terytorium",
+            " tego",
+            " państwa",
+            " oraz",
+            " niektórych",
+            " innych",
+            " ustaw",
+            ",",
+            " dru",
+            "k",
+            " nr",
+            " 14",
+            "92"
+          ],
+          "tokens_ours": 15,
+          "tokens_hf": 15
+        },
+        {
+          "chunk": "20 marca 1950 r.",
+          "ours": [
+            "20",
+            " marca",
+            " 195",
+            "0 r."
+          ],
+          "hf": [
+            "20",
+            " marca",
+            " 19",
+            "50",
+            " r."
+          ],
+          "tokens_ours": 4,
+          "tokens_hf": 5
+        },
+        {
+          "chunk": "GUS 1135 tys.",
+          "ours": [
+            "G",
+            "US",
+            " 11",
+            "3",
+            "5",
+            " tys."
+          ],
+          "hf": [
+            "G",
+            "US",
+            " 11",
+            "35",
+            " tys."
+          ],
+          "tokens_ours": 6,
+          "tokens_hf": 5
+        },
+        {
+          "chunk": "tego roku to 1500 prób przekroczenia granicy.",
+          "ours": [
+            "tego",
+            " roku",
+            " to",
+            " 1500",
+            " prób",
+            " przekro",
+            "czenia",
+            " granicy",
+            "."
+          ],
+          "hf": [
+            "tego",
+            " roku",
+            " to",
+            " 15",
+            "00",
+            " prób",
+            " przekro",
+            "czenia",
+            " granicy",
+            "."
+          ],
+          "tokens_ours": 9,
+          "tokens_hf": 10
+        },
+        {
+          "chunk": "wysokim, jeżeli chodzi o te liczby, było 1200 prób, więc ciągle żyjemy w warunkach wysokiej",
+          "ours": [
+            "wy",
+            "so",
+            "kim",
+            ", jeżeli",
+            " chodzi o",
+            " te",
+            " liczby",
+            ", było",
+            " 120",
+            "0",
+            " prób",
+            ", więc",
+            " ciągle",
+            " ży"
+          ],
+          "hf": [
+            "wy",
+            "so",
+            "kim",
+            ", jeżeli",
+            " chodzi o",
+            " te",
+            " liczby",
+            ", było",
+            " 1",
+            "200",
+            " prób",
+            ", więc",
+            " ciągle",
+            " ży"
+          ],
+          "tokens_ours": 17,
+          "tokens_hf": 17
+        },
+        {
+          "chunk": "Kto z państwa posłów jest za przyjęciem projektu ustawy z druku 1201 o zmianie ustawy",
+          "ours": [
+            "Kto",
+            " z",
+            " państwa",
+            " posłów",
+            " jest za",
+            " przyję",
+            "ciem",
+            " projektu",
+            " ustawy",
+            " z",
+            " druku",
+            " 120",
+            "1",
+            " o"
+          ],
+          "hf": [
+            "Kto",
+            " z",
+            " państwa",
+            " posłów",
+            " jest za",
+            " przyję",
+            "ciem",
+            " projektu",
+            " ustawy",
+            " z",
+            " druku",
+            " 1",
+            "201",
+            " o"
+          ],
+          "tokens_ours": 16,
+          "tokens_hf": 16
+        },
+        {
+          "chunk": "Na dzisiaj, na teraz, mamy 3791 przyjętych policjantów.",
+          "ours": [
+            "Na",
+            " dzisiaj",
+            ", na",
+            " teraz",
+            ", mamy",
+            " 37",
+            "9",
+            "1",
+            " przyję",
+            "tych",
+            " policjantów",
+            "."
+          ],
+          "hf": [
+            "Na",
+            " dzisiaj",
+            ", na",
+            " teraz",
+            ", mamy",
+            " 37",
+            "91",
+            " przyję",
+            "tych",
+            " policjantów",
+            "."
+          ],
+          "tokens_ours": 12,
+          "tokens_hf": 11
+        },
+        {
+          "chunk": " W tej chwili to jest 3791.",
+          "ours": [
+            " W tej chwili",
+            " to jest",
+            " 37",
+            "9",
+            "1."
+          ],
+          "hf": [
+            " W tej chwili",
+            " to jest",
+            " 37",
+            "91",
+            "."
+          ],
+          "tokens_ours": 5,
+          "tokens_hf": 5
+        }
+      ],
+      "official": false
+    },
+    "nauka": {
+      "chunks": 65407,
+      "identical_chunks": 64908,
+      "identical_chunks_decoded": 65407,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9923708471570322,
+      "identical_ci_wilson": [
+        0.991674486810015,
+        0.9930093733040858
+      ],
+      "tokens_ours": 312217,
+      "tokens_hf": 312073,
+      "token_delta": -144,
+      "token_delta_pct": -0.0004612176787298578,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 0.9779559118236473,
+          "share_in_identical": 0.15494237998397734,
+          "lift": 6.311739318350332
+        },
+        "4+_cyfry": {
+          "share_in_different": 0.9579158316633266,
+          "share_in_identical": 0.020968139520552168,
+          "lift": 45.68435033181719
+        },
+        "kropka": {
+          "share_in_different": 0.3967935871743487,
+          "share_in_identical": 0.1997288469834227,
+          "lift": 1.986661382004985
+        },
+        "przecinek": {
+          "share_in_different": 0.40480961923847697,
+          "share_in_identical": 0.12825845812534664,
+          "lift": 3.1562021339977253
+        },
+        "myslnik": {
+          "share_in_different": 0.2725450901803607,
+          "share_in_identical": 0.08391877734639798,
+          "lift": 3.247724750032468
+        },
+        "ukosnik": {
+          "share_in_different": 0.06613226452905811,
+          "share_in_identical": 0.0074875207986688855,
+          "lift": 8.832331329325317
+        },
+        "procent": {
+          "share_in_different": 0.006012024048096192,
+          "share_in_identical": 0.004745177790102915,
+          "lift": 1.2669755094604793
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.1903807615230461,
+          "share_in_identical": 0.043492327602144575,
+          "lift": 4.377341292574522
+        },
+        "skrot": {
+          "share_in_different": 0.002004008016032064,
+          "share_in_identical": 0.006455290565107537,
+          "lift": 0.31044427757663295
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        }
+      },
+      "examples": [
+        {
+          "chunk": "com/issue/052018/",
+          "ours": [
+            "com/",
+            "is",
+            "su",
+            "e",
+            "/",
+            "05",
+            "2",
+            "0",
+            "18",
+            "/"
+          ],
+          "hf": [
+            "com/",
+            "is",
+            "su",
+            "e",
+            "/",
+            "05",
+            "2018",
+            "/"
+          ],
+          "tokens_ours": 10,
+          "tokens_hf": 8
+        },
+        {
+          "chunk": "(który w 1783 roku doznał udaru i w tym samym roku opisał swoje",
+          "ours": [
+            "(",
+            "który",
+            " w",
+            " 17",
+            "8",
+            "3 roku",
+            " doznał",
+            " udar",
+            "u i",
+            " w tym samym",
+            " roku",
+            " opisa",
+            "ł",
+            " swoje"
+          ],
+          "hf": [
+            "(",
+            "który",
+            " w",
+            " 17",
+            "83",
+            " roku",
+            " doznał",
+            " udar",
+            "u i",
+            " w tym samym",
+            " roku",
+            " opisa",
+            "ł",
+            " swoje"
+          ],
+          "tokens_ours": 14,
+          "tokens_hf": 14
+        },
+        {
+          "chunk": "rował w roku 1866 i wtedy też tę chorobę opisał).",
+          "ours": [
+            "rował",
+            " w roku",
+            " 186",
+            "6",
+            " i wtedy",
+            " też",
+            " tę",
+            " chorobę",
+            " opisa",
+            "ł",
+            ")."
+          ],
+          "hf": [
+            "rował",
+            " w roku",
+            " 18",
+            "66",
+            " i wtedy",
+            " też",
+            " tę",
+            " chorobę",
+            " opisa",
+            "ł",
+            ")."
+          ],
+          "tokens_ours": 11,
+          "tokens_hf": 11
+        },
+        {
+          "chunk": " W 1866 roku zdiagnozowano u niego zapalenie opon mózgo-",
+          "ours": [
+            " W",
+            " 186",
+            "6 roku",
+            " zdiagno",
+            "zowano",
+            " u niego",
+            " zapalenie",
+            " opon",
+            " móz",
+            "go",
+            "-"
+          ],
+          "hf": [
+            " W",
+            " 18",
+            "66",
+            " roku",
+            " zdiagno",
+            "zowano",
+            " u niego",
+            " zapalenie",
+            " opon",
+            " móz",
+            "go",
+            "-"
+          ],
+          "tokens_ours": 11,
+          "tokens_hf": 12
+        },
+        {
+          "chunk": " Zaledwie pięć lat wcześniej, w 1861",
+          "ours": [
+            " Zale",
+            "dwie",
+            " pięć",
+            " lat",
+            " wcześniej",
+            ", w",
+            " 186",
+            "1"
+          ],
+          "hf": [
+            " Zale",
+            "dwie",
+            " pięć",
+            " lat",
+            " wcześniej",
+            ", w",
+            " 18",
+            "61"
+          ],
+          "tokens_ours": 8,
+          "tokens_hf": 8
+        },
+        {
+          "chunk": " Gdy 17 kwietnia 1861 roku Leborgne",
+          "ours": [
+            " Gdy",
+            " 17",
+            " kwietnia",
+            " 186",
+            "1 roku",
+            " Le",
+            "bor",
+            "gne"
+          ],
+          "hf": [
+            " Gdy",
+            " 17",
+            " kwietnia",
+            " 18",
+            "61",
+            " roku",
+            " Le",
+            "bor",
+            "gne"
+          ],
+          "tokens_ours": 8,
+          "tokens_hf": 9
+        },
+        {
+          "chunk": "Na tego typu obserwacji opiera się klasyﬁ kacja pochodząca z 1935 roku,",
+          "ours": [
+            "Na",
+            " tego typu",
+            " obserwacji",
+            " opiera",
+            " się",
+            " klasy",
+            "�",
+            "�",
+            "�",
+            " ka",
+            "cja",
+            " pochodzą",
+            "ca z",
+            " 193"
+          ],
+          "hf": [
+            "Na",
+            " tego typu",
+            " obserwacji",
+            " opiera",
+            " się",
+            " klasy",
+            "�",
+            "�",
+            "�",
+            " ka",
+            "cja",
+            " pochodzą",
+            "ca z",
+            " 19"
+          ],
+          "tokens_ours": 16,
+          "tokens_hf": 16
+        },
+        {
+          "chunk": "To właśnie w 1945 roku Lipski zamilkł na trzy lata16.",
+          "ours": [
+            "To",
+            " właśnie",
+            " w 194",
+            "5 roku",
+            " Lip",
+            "ski",
+            " za",
+            "mi",
+            "lk",
+            "ł na",
+            " trzy lata",
+            "16."
+          ],
+          "hf": [
+            "To",
+            " właśnie",
+            " w ",
+            "19",
+            "45",
+            " roku",
+            " Lip",
+            "ski",
+            " za",
+            "mi",
+            "lk",
+            "ł na",
+            " trzy lata",
+            "16."
+          ],
+          "tokens_ours": 12,
+          "tokens_hf": 14
+        }
+      ],
+      "official": false
+    },
+    "dyskusje": {
+      "chunks": 26038,
+      "identical_chunks": 25596,
+      "identical_chunks_decoded": 26038,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9830248098932329,
+      "identical_ci_wilson": [
+        0.981382986144947,
+        0.9845241254319854
+      ],
+      "tokens_ours": 265308,
+      "tokens_hf": 265226,
+      "token_delta": -82,
+      "token_delta_pct": -0.00030907473577879293,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 0.995475113122172,
+          "share_in_identical": 0.2176902641037662,
+          "lift": 4.572896804643775
+        },
+        "4+_cyfry": {
+          "share_in_different": 0.9524886877828054,
+          "share_in_identical": 0.08852945772776996,
+          "lift": 10.759002847523693
+        },
+        "kropka": {
+          "share_in_different": 0.4479638009049774,
+          "share_in_identical": 0.3924050632911392,
+          "lift": 1.1415851700481683
+        },
+        "przecinek": {
+          "share_in_different": 0.5769230769230769,
+          "share_in_identical": 0.2851617440225035,
+          "lift": 2.0231433178412215
+        },
+        "myslnik": {
+          "share_in_different": 0.49547511312217196,
+          "share_in_identical": 0.08583372401937803,
+          "lift": 5.772499315191221
+        },
+        "ukosnik": {
+          "share_in_different": 0.08597285067873303,
+          "share_in_identical": 0.020237537115174245,
+          "lift": 4.248187424658013
+        },
+        "procent": {
+          "share_in_different": 0.01583710407239819,
+          "share_in_identical": 0.003945929051414283,
+          "lift": 4.013529859773308
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.2398190045248869,
+          "share_in_identical": 0.132364431942491,
+          "lift": 1.811808512343272
+        },
+        "skrot": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.005625879043600563,
+          "lift": 0.0
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.01809954751131222,
+          "share_in_identical": 0.0035552430067198,
+          "lift": 5.0909452538411815
+        }
+      },
+      "examples": [
+        {
+          "chunk": " --matusz d 10:",
+          "ours": [
+            " --",
+            "matu",
+            "sz",
+            " d",
+            " 10:"
+          ],
+          "hf": [
+            " -",
+            "-ma",
+            "tu",
+            "sz",
+            " d",
+            " 10:"
+          ],
+          "tokens_ours": 5,
+          "tokens_hf": 6
+        },
+        {
+          "chunk": "Dobry pomysł --B3 (@) 10:",
+          "ours": [
+            "Dobry",
+            " pomysł",
+            " --",
+            "B",
+            "3",
+            " (@",
+            ")",
+            " 10:"
+          ],
+          "hf": [
+            "Dobry",
+            " pomysł",
+            " -",
+            "-B",
+            "3",
+            " (@",
+            ")",
+            " 10:"
+          ],
+          "tokens_ours": 8,
+          "tokens_hf": 8
+        },
+        {
+          "chunk": "Gorzej, uświadomiłem sobie, ze wtedy ((a,b),c)=((a,c),b).",
+          "ours": [
+            "Go",
+            "rzej",
+            ",",
+            " uświado",
+            "mi",
+            "łem sobie",
+            ", ze",
+            " wtedy",
+            " (",
+            "(",
+            "a,",
+            "b",
+            "),",
+            "c)"
+          ],
+          "hf": [
+            "Go",
+            "rzej",
+            ",",
+            " uświado",
+            "mi",
+            "łem sobie",
+            ", ze",
+            " wtedy",
+            " (",
+            "(a",
+            ",",
+            "b",
+            "),",
+            "c)"
+          ],
+          "tokens_ours": 22,
+          "tokens_hf": 22
+        },
+        {
+          "chunk": "52, 5 maj 2020 (CEST)",
+          "ours": [
+            "52",
+            ", 5",
+            " maj",
+            " 2020",
+            " (",
+            "CE",
+            "ST",
+            ")"
+          ],
+          "hf": [
+            "52",
+            ", 5",
+            " maj",
+            " 20",
+            "20",
+            " (",
+            "CE",
+            "ST",
+            ")"
+          ],
+          "tokens_ours": 8,
+          "tokens_hf": 9
+        },
+        {
+          "chunk": " Zresztą widać to też na tym planie z roku 1904 (południe jest u góry!",
+          "ours": [
+            " Zresztą",
+            " widać",
+            " to też",
+            " na tym",
+            " planie",
+            " z",
+            " roku",
+            " 190",
+            "4",
+            " (po",
+            "łudnie",
+            " jest u",
+            " góry",
+            "!"
+          ],
+          "hf": [
+            " Zresztą",
+            " widać",
+            " to też",
+            " na tym",
+            " planie",
+            " z",
+            " roku",
+            " 19",
+            "04",
+            " (po",
+            "łudnie",
+            " jest u",
+            " góry",
+            "!"
+          ],
+          "tokens_ours": 14,
+          "tokens_hf": 14
+        },
+        {
+          "chunk": "Na mapie z 1904 roku tego dodatkowego toru też nie ma, jest ciągła linia od rozgałęzienia na zachodzie (na tej odwróconej mapce to jest po prawej) aż na wschód;",
+          "ours": [
+            "Na",
+            " mapie",
+            " z",
+            " 190",
+            "4 roku",
+            " tego",
+            " dodatkowego",
+            " toru",
+            " też",
+            " nie ma",
+            ", jest",
+            " cią",
+            "gła",
+            " linia"
+          ],
+          "hf": [
+            "Na",
+            " mapie",
+            " z",
+            " 19",
+            "04",
+            " roku",
+            " tego",
+            " dodatkowego",
+            " toru",
+            " też",
+            " nie ma",
+            ", jest",
+            " cią",
+            "gła"
+          ],
+          "tokens_ours": 36,
+          "tokens_hf": 37
+        },
+        {
+          "chunk": "pl/3375124,foto.",
+          "ours": [
+            "pl/",
+            "33",
+            "7",
+            "5",
+            "12",
+            "4,",
+            "fo",
+            "to."
+          ],
+          "hf": [
+            "pl/",
+            "33",
+            "75",
+            "12",
+            "4,",
+            "fo",
+            "to."
+          ],
+          "tokens_ours": 8,
+          "tokens_hf": 7
+        },
+        {
+          "chunk": " Potem pada data 1500 i podmiot \"hetycka Anatolia\" co wg mnie przenosi nas już w epokę brązu (żelaza ?",
+          "ours": [
+            " Potem",
+            " pada",
+            " data",
+            " 1500",
+            " i",
+            " podmiot",
+            " \"",
+            "he",
+            "ty",
+            "cka",
+            " Ana",
+            "to",
+            "lia",
+            "\""
+          ],
+          "hf": [
+            " Potem",
+            " pada",
+            " data",
+            " 15",
+            "00",
+            " i",
+            " podmiot",
+            " \"",
+            "he",
+            "ty",
+            "cka",
+            " Ana",
+            "to",
+            "lia"
+          ],
+          "tokens_ours": 29,
+          "tokens_hf": 30
+        }
+      ],
+      "official": false
+    },
+    "angielski": {
+      "chunks": 7456,
+      "identical_chunks": 7078,
+      "identical_chunks_decoded": 7456,
+      "identical_share_decoded": 1.0,
+      "identical_share": 0.9493025751072961,
+      "identical_ci_wilson": [
+        0.9440874606454605,
+        0.9540549342279104
+      ],
+      "tokens_ours": 273469,
+      "tokens_hf": 273344,
+      "token_delta": -125,
+      "token_delta_pct": -0.0004570902003517766,
+      "causes": {
+        "cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.32028821701045496,
+          "lift": 3.1221879135421258
+        },
+        "4+_cyfry": {
+          "share_in_different": 1.0,
+          "share_in_identical": 0.08194405199208817,
+          "lift": 12.203448275862069
+        },
+        "kropka": {
+          "share_in_different": 0.9497354497354498,
+          "share_in_identical": 0.7863803334275219,
+          "lift": 1.20773041919287
+        },
+        "przecinek": {
+          "share_in_different": 0.7248677248677249,
+          "share_in_identical": 0.4905340491664312,
+          "lift": 1.4777113354302296
+        },
+        "myslnik": {
+          "share_in_different": 0.25925925925925924,
+          "share_in_identical": 0.138739756993501,
+          "lift": 1.8686731538055366
+        },
+        "ukosnik": {
+          "share_in_different": 0.013227513227513227,
+          "share_in_identical": 0.011161345012715457,
+          "lift": 1.185118210434666
+        },
+        "procent": {
+          "share_in_different": 0.0026455026455026454,
+          "share_in_identical": 0.004238485447866629,
+          "lift": 0.6241622574955907
+        },
+        "wielkie_litery": {
+          "share_in_different": 0.20105820105820105,
+          "share_in_identical": 0.10115851935575021,
+          "lift": 1.9875557920250657
+        },
+        "skrot": {
+          "share_in_different": 0.015873015873015872,
+          "share_in_identical": 0.003390788358293303,
+          "lift": 4.681216931216931
+        },
+        "wiele_spacji": {
+          "share_in_different": 0.0,
+          "share_in_identical": 0.0,
+          "lift": null
+        },
+        "dlugi_fragment": {
+          "share_in_different": 0.0291005291005291,
+          "share_in_identical": 0.008900819440519922,
+          "lift": 3.2694213487864277
+        }
+      },
+      "examples": [
+        {
+          "chunk": " The mixed ceramics have been dated to the San Lorenzo and Villa Alta phases ( approximately 1400 – 1000 BC and 800 – 1000 AD respectively ) .",
+          "ours": [
+            " The",
+            " mi",
+            "x",
+            "ed",
+            " cerami",
+            "cs",
+            " ha",
+            "ve",
+            " be",
+            "en",
+            " da",
+            "ted",
+            " to",
+            " the"
+          ],
+          "hf": [
+            " The",
+            " mi",
+            "x",
+            "ed",
+            " cerami",
+            "cs",
+            " ha",
+            "ve",
+            " be",
+            "en",
+            " da",
+            "ted",
+            " to",
+            " the"
+          ],
+          "tokens_ours": 52,
+          "tokens_hf": 51
+        },
+        {
+          "chunk": " In 1970 it was transported to the Metropolitan Museum of Art in New York for the museum 's centenary exhibition .",
+          "ours": [
+            " In",
+            " 197",
+            "0",
+            " it",
+            " was",
+            " transpor",
+            "ted",
+            " to",
+            " the",
+            " Me",
+            "tropoli",
+            "tan",
+            " Mu",
+            "se"
+          ],
+          "hf": [
+            " In",
+            " 19",
+            "70",
+            " it",
+            " was",
+            " transpor",
+            "ted",
+            " to",
+            " the",
+            " Me",
+            "tropoli",
+            "tan",
+            " Mu",
+            "se"
+          ],
+          "tokens_ours": 37,
+          "tokens_hf": 37
+        },
+        {
+          "chunk": " The latter , the first of the La Venta heads to be discovered , was found during archaeological exploration of La Venta in 1925 ;",
+          "ours": [
+            " The",
+            " lat",
+            "ter",
+            " ,",
+            " the",
+            " fir",
+            "st",
+            " of the",
+            " La",
+            " V",
+            "en",
+            "ta",
+            " he",
+            "ad"
+          ],
+          "hf": [
+            " The",
+            " lat",
+            "ter",
+            " ,",
+            " the",
+            " fir",
+            "st",
+            " of the",
+            " La",
+            " V",
+            "en",
+            "ta",
+            " he",
+            "ad"
+          ],
+          "tokens_ours": 45,
+          "tokens_hf": 45
+        },
+        {
+          "chunk": " the other three remained unknown to archaeologists until a local boy guided Matthew Stirling to them while he was excavating the first head in 1940 .",
+          "ours": [
+            " the",
+            " ot",
+            "her",
+            " th",
+            "ree",
+            " re",
+            "mai",
+            "ne",
+            "d",
+            " u",
+            "nk",
+            "now",
+            "n to",
+            " ar"
+          ],
+          "hf": [
+            " the",
+            " ot",
+            "her",
+            " th",
+            "ree",
+            " re",
+            "mai",
+            "ne",
+            "d",
+            " u",
+            "nk",
+            "now",
+            "n to",
+            " ar"
+          ],
+          "tokens_ours": 60,
+          "tokens_hf": 60
+        },
+        {
+          "chunk": " The head was first described by Franz Blom and Oliver La Farge who investigated the La Venta remains on behalf of Tulane University in 1925 .",
+          "ours": [
+            " The",
+            " he",
+            "ad",
+            " was",
+            " fir",
+            "st",
+            " de",
+            "sc",
+            "ri",
+            "be",
+            "d",
+            " by",
+            " Fran",
+            "z"
+          ],
+          "hf": [
+            " The",
+            " he",
+            "ad",
+            " was",
+            " fir",
+            "st",
+            " de",
+            "sc",
+            "ri",
+            "be",
+            "d",
+            " by",
+            " Fran",
+            "z"
+          ],
+          "tokens_ours": 51,
+          "tokens_hf": 51
+        },
+        {
+          "chunk": " Matthew Stirling fully excavated the monument in 1940 , after clearing the thick vegetation that had covered it in the intervening years .",
+          "ours": [
+            " Ma",
+            "tt",
+            "he",
+            "w",
+            " S",
+            "ti",
+            "r",
+            "ling",
+            " f",
+            "ul",
+            "ly",
+            " ex",
+            "ca",
+            "va"
+          ],
+          "hf": [
+            " Ma",
+            "tt",
+            "he",
+            "w",
+            " S",
+            "ti",
+            "r",
+            "ling",
+            " f",
+            "ul",
+            "ly",
+            " ex",
+            "ca",
+            "va"
+          ],
+          "tokens_ours": 54,
+          "tokens_hf": 54
+        },
+        {
+          "chunk": " At some point it was moved to the plaza of the modern village , probably in the early 1960s .",
+          "ours": [
+            " At",
+            " so",
+            "me",
+            " po",
+            "int",
+            " it",
+            " was",
+            " mo",
+            "ve",
+            "d",
+            " to",
+            " the",
+            " pla",
+            "za"
+          ],
+          "hf": [
+            " At",
+            " so",
+            "me",
+            " po",
+            "int",
+            " it",
+            " was",
+            " mo",
+            "ve",
+            "d",
+            " to",
+            " the",
+            " pla",
+            "za"
+          ],
+          "tokens_ours": 35,
+          "tokens_hf": 35
+        },
+        {
+          "chunk": " The La Cobata colossal head was discovered in 1970 and was the fifteenth to be recorded .",
+          "ours": [
+            " The",
+            " La",
+            " C",
+            "oba",
+            "ta",
+            " co",
+            "lo",
+            "ssa",
+            "l",
+            " he",
+            "ad",
+            " was",
+            " dis",
+            "co"
+          ],
+          "hf": [
+            " The",
+            " La",
+            " C",
+            "oba",
+            "ta",
+            " co",
+            "lo",
+            "ssa",
+            "l",
+            " he",
+            "ad",
+            " was",
+            " dis",
+            "co"
+          ],
+          "tokens_ours": 34,
+          "tokens_hf": 34
+        }
+      ],
+      "official": false
+    }
+  },
+  "causes": {
+    "cyfry": {
+      "mean_share_in_different": 0.9960048418118607,
+      "mean_share_in_identical": 0.2571536467505259,
+      "lift": 3.873189645170077
+    },
+    "4+_cyfry": {
+      "mean_share_in_different": 0.990068847475697,
+      "mean_share_in_identical": 0.04586795084054904,
+      "lift": 21.585199018754462
+    },
+    "kropka": {
+      "mean_share_in_different": 0.568013765046357,
+      "mean_share_in_identical": 0.4417437737650057,
+      "lift": 1.285844416561088
+    },
+    "przecinek": {
+      "mean_share_in_different": 0.42448861377074265,
+      "mean_share_in_identical": 0.2236201539845739,
+      "lift": 1.8982574075144645
+    },
+    "myslnik": {
+      "mean_share_in_different": 0.2754445631369281,
+      "mean_share_in_identical": 0.07082476889977611,
+      "lift": 3.889099356281822
+    },
+    "ukosnik": {
+      "mean_share_in_different": 0.09248781952619466,
+      "mean_share_in_identical": 0.011713170964187083,
+      "lift": 7.8960530678648295
+    },
+    "procent": {
+      "mean_share_in_different": 0.006706567982989232,
+      "mean_share_in_identical": 0.003141811560826378,
+      "lift": 2.1346181504358683
+    },
+    "wielkie_litery": {
+      "mean_share_in_different": 0.22166408395682205,
+      "mean_share_in_identical": 0.06159350524469458,
+      "lift": 3.5988223608351193
+    },
+    "skrot": {
+      "mean_share_in_different": 0.02773204722105569,
+      "mean_share_in_identical": 0.05702799925640456,
+      "lift": 0.4862882721234732
+    },
+    "wiele_spacji": {
+      "mean_share_in_different": 0.0,
+      "mean_share_in_identical": 0.002695828075867732,
+      "lift": 0.0
+    },
+    "dlugi_fragment": {
+      "mean_share_in_different": 0.01056158194732518,
+      "mean_share_in_identical": 0.004297407006658668,
+      "lift": 2.4576638728797184
+    }
+  },
+  "h8": {
+    "official_parity": 0.9726875922716477,
+    "web_parity": 0.993609909555643,
+    "official_domains_below_99": [
+      "przetargi_ogloszenia",
+      "przetargi_kio",
+      "samorzad_uchwaly",
+      "granty_ogloszenia",
+      "prawo_eli",
+      "ocr_prasa",
+      "tabele_json"
+    ],
+    "z_official_vs_web": -31.044581048468842,
+    "confirmed": true
+  }
+}

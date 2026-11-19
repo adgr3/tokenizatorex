@@ -1,0 +1,198 @@
+{
+  "definition": "CHUNK_RE.findall(text); identical if ref.encode_ordinary(chunk) == hf.encode(chunk, add_special_tokens=False).ids; delta = hf_tokens - ref_tokens",
+  "domain": "przetargi_ogloszenia",
+  "docs": 60,
+  "chunk_pattern": "[^\\r\\n.!?;:…]+[.!?;:…]*|[.!?;:…]+|[\\r\\n]+",
+  "chunks": 48145,
+  "identical_chunks": 47380,
+  "share_identical_chunks": 0.9841104995326617,
+  "unique_chunks": 7006,
+  "unique_identical_chunks": 6409,
+  "share_identical_unique_chunks": 0.9147873251498715,
+  "ref_tokens": 211560,
+  "hf_tokens": 211179,
+  "token_delta_hf_minus_ref": -381,
+  "relative_token_delta": -0.0018009075439591605,
+  "top_differing_chunks": [
+    {
+      "chunk": " z 2020 r.",
+      "count": 12,
+      "ref": 2,
+      "hf": 4
+    },
+    {
+      "chunk": " 33600000-6 - Produkty farmaceutyczne",
+      "count": 11,
+      "ref": 9,
+      "hf": 9
+    },
+    {
+      "chunk": " 45000000-7 - Roboty budowlane",
+      "count": 10,
+      "ref": 8,
+      "hf": 9
+    },
+    {
+      "chunk": " 85000000-9 - Usługi w zakresie zdrowia i opieki społecznej",
+      "count": 9,
+      "ref": 12,
+      "hf": 12
+    },
+    {
+      "chunk": " 90620000-9 - Usługi odśnieżania",
+      "count": 8,
+      "ref": 11,
+      "hf": 11
+    },
+    {
+      "chunk": " 80000000-4 - Usługi edukacyjne i szkoleniowe",
+      "count": 8,
+      "ref": 11,
+      "hf": 11
+    },
+    {
+      "chunk": " 85312100-0 - Usługi opieki dziennej",
+      "count": 6,
+      "ref": 12,
+      "hf": 11
+    },
+    {
+      "chunk": "85312400-3 - Usługi opieki społecznej nieświadczone przez ośrodki pobytowe",
+      "count": 6,
+      "ref": 19,
+      "hf": 18
+    },
+    {
+      "chunk": "33600000-6 - Produkty farmaceutyczne",
+      "count": 6,
+      "ref": 9,
+      "hf": 9
+    },
+    {
+      "chunk": " 33696300-8 - Odczynniki chemiczne",
+      "count": 4,
+      "ref": 12,
+      "hf": 11
+    },
+    {
+      "chunk": " 38000000-5 - Sprzęt laboratoryjny, optyczny i precyzyjny (z wyjątkiem szklanego)",
+      "count": 4,
+      "ref": 20,
+      "hf": 20
+    },
+    {
+      "chunk": "33793000-5 - Laboratoryjne wyroby szklane",
+      "count": 4,
+      "ref": 13,
+      "hf": 12
+    },
+    {
+      "chunk": " 15110000-2 - Mięso",
+      "count": 4,
+      "ref": 8,
+      "hf": 8
+    },
+    {
+      "chunk": "80500000-9 - Usługi szkoleniowe",
+      "count": 4,
+      "ref": 10,
+      "hf": 9
+    },
+    {
+      "chunk": "1801).",
+      "count": 4,
+      "ref": 2,
+      "hf": 3
+    },
+    {
+      "chunk": " Zamawiający, zgodnie z Rozporządzeniem Prezesa Rady Ministrów z dnia 30 grudnia 2020r.",
+      "count": 3,
+      "ref": 12,
+      "hf": 13
+    },
+    {
+      "chunk": " 33181520-3 - Wyroby do dializy nerkowej",
+      "count": 3,
+      "ref": 15,
+      "hf": 14
+    },
+    {
+      "chunk": "45442100-8 - Roboty malarskie",
+      "count": 3,
+      "ref": 11,
+      "hf": 10
+    },
+    {
+      "chunk": "45232410-9 - Roboty w zakresie kanalizacji ściekowej",
+      "count": 3,
+      "ref": 13,
+      "hf": 12
+    },
+    {
+      "chunk": "45400000-1 - Roboty wykończeniowe w zakresie obiektów budowlanych",
+      "count": 3,
+      "ref": 14,
+      "hf": 13
+    },
+    {
+      "chunk": " James Wood, Jak działa literatura w ilości 1500 egzemplarzy dla Wydawnictwa Ossolineum Zakładu Narodowego im.",
+      "count": 3,
+      "ref": 22,
+      "hf": 23
+    },
+    {
+      "chunk": " 5 pkt 2 ustawy z dnia 9 listopada 2000 r.",
+      "count": 3,
+      "ref": 8,
+      "hf": 9
+    },
+    {
+      "chunk": "pl/transakcja/1226160",
+      "count": 3,
+      "ref": 10,
+      "hf": 8
+    },
+    {
+      "chunk": "45421100-5 - Instalowanie drzwi i okien, i podobnych elementów",
+      "count": 3,
+      "ref": 15,
+      "hf": 14
+    },
+    {
+      "chunk": "pl/transakcja/1229443",
+      "count": 3,
+      "ref": 10,
+      "hf": 9
+    },
+    {
+      "chunk": " 15131100-6 - Produkty mięsno-wędliniarskie",
+      "count": 3,
+      "ref": 15,
+      "hf": 14
+    },
+    {
+      "chunk": "15131700-2 - Przetwory mięsne",
+      "count": 3,
+      "ref": 12,
+      "hf": 11
+    },
+    {
+      "chunk": "15110000-2 - Mięso",
+      "count": 3,
+      "ref": 8,
+      "hf": 8
+    },
+    {
+      "chunk": "15131130-5 - Wędliny",
+      "count": 3,
+      "ref": 10,
+      "hf": 9
+    },
+    {
+      "chunk": "85121270-6 - Usługi psychiatryczne lub psychologiczne",
+      "count": 3,
+      "ref": 14,
+      "hf": 13
+    }
+  ]
+}

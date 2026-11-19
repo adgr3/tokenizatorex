@@ -1,0 +1,1041 @@
+{
+  "meta": {
+    "tokenizer": "tokenizers/tokenizatorex-32k.json",
+    "vocab": 31999,
+    "corpus_uses": 3245161,
+    "domains": [
+      "przetargi_ogloszenia",
+      "przetargi_kio",
+      "samorzad_uchwaly",
+      "granty_ogloszenia",
+      "prawo_eli",
+      "ocr_prasa",
+      "tabele_json",
+      "web",
+      "wikipedia",
+      "literatura",
+      "prawo",
+      "sejm",
+      "nauka",
+      "dyskusje",
+      "angielski"
+    ],
+    "split": "test",
+    "top_words": 2000,
+    "midword_criterion": "token nie zaczyna się spacją; pierwszy segment przed spacją zawiera literę i nie jest formą występującą w korpusie testowym ≥ 5 razy (słownik frekwencyjny); boilerplate wyłączony"
+  },
+  "vocab": {
+    "superwords": 4922,
+    "superwords_share": 0.15381730679083722,
+    "midword_start": 170,
+    "midword_share_of_superwords": 0.034538805363673306,
+    "sensible": 146,
+    "suspect": 24,
+    "suspect_share_of_superwords": 0.004876066639577408,
+    "suspect_examples": [
+      "Skopiuj i wklej",
+      "Skopiuj i wklej ten",
+      "owane przez",
+      "owany przez",
+      "mentuj obrazkiem",
+      "towany przez",
+      "towane przez",
+      "ki, które",
+      "towy Dzień",
+      "-letni mieszkaniec",
+      "liśmy o",
+      "łam sobie",
+      "orąc pod uwagę",
+      "ina Łęgów Odrzańskich",
+      "óki co",
+      "owe, które",
+      "owana przez",
+      "łość o",
+      "głoś naruszenie",
+      "owych, które",
+      "owane są",
+      "k, który",
+      "mi, które",
+      "nku węgla"
+    ]
+  },
+  "vocab_sensitivity": {
+    "strict_lex5": {
+      "count": 170,
+      "share_of_superwords": 0.034538805363673306,
+      "usage_share": 0.0009167495849974778
+    },
+    "any_lex1": {
+      "count": 77,
+      "share_of_superwords": 0.01564404713531085,
+      "usage_share": 0.0004314115694105778
+    },
+    "loose_top2000": {
+      "count": 648,
+      "share_of_superwords": 0.13165379926859,
+      "usage_share": 0.005926054208096301
+    }
+  },
+  "usage": {
+    "superword_uses_share": 0.06943415134102746,
+    "midword_uses_share": 0.0009167495849974778,
+    "sensible_uses_share": 0.0008440259204396947,
+    "suspect_uses_share": 7.272366455778311e-05,
+    "boilerplate_tokens": 30,
+    "boilerplate_uses_share": 0.00012326044840302221,
+    "boilerplate_by_phrase": {
+      "Czytaj więcej": {
+        "tokens": [
+          "Czytaj więcej",
+          "czytaj więcej",
+          " Czytaj więcej",
+          " czytaj więcej"
+        ],
+        "uses": 44
+      },
+      "Zobacz także": {
+        "tokens": [
+          "Zobacz także:"
+        ],
+        "uses": 0
+      },
+      "Zobacz też": {
+        "tokens": [
+          "Zobacz też:"
+        ],
+        "uses": 4
+      },
+      "Czytaj dalej": {
+        "tokens": [
+          " Czytaj dalej",
+          "Czytaj dalej",
+          "czytaj dalej",
+          " czytaj dalej"
+        ],
+        "uses": 34
+      },
+      "Więcej": {
+        "tokens": [
+          "Czytaj więcej",
+          " więcej niż",
+          "czytaj więcej",
+          " coraz więcej",
+          " Czytaj więcej",
+          " Co więcej",
+          "Zobacz więcej",
+          " mniej więcej",
+          " się więcej",
+          " czytaj więcej",
+          " jak najwięcej",
+          " Co więcej,",
+          "Więcej »",
+          "Więcej informacji",
+          " więcej o",
+          " Więcej informacji",
+          " więcej czasu",
+          " lub więcej",
+          " więcej »",
+          "więcej »"
+        ],
+        "uses": 329
+      },
+      "Kontakt": {
+        "tokens": [
+          " kontakt z",
+          " kontaktu z",
+          " skontaktować się z",
+          " prosimy o kontakt"
+        ],
+        "uses": 33
+      }
+    }
+  },
+  "fragmentation": {
+    "occurrences": 712952,
+    "split_any": 166226,
+    "split_superword": 20198,
+    "split_any_share": 0.23315174093066574,
+    "split_superword_share": 0.028330097958908874,
+    "examples": [
+      {
+        "word": "ujęte",
+        "domain": "przetargi_ogloszenia",
+        "tokens": [
+          " uję",
+          "te w"
+        ]
+      },
+      {
+        "word": "Oferta",
+        "domain": "przetargi_ogloszenia",
+        "tokens": [
+          " Ofer",
+          "ta -"
+        ]
+      },
+      {
+        "word": "środowiskowe",
+        "domain": "przetargi_ogloszenia",
+        "tokens": [
+          " środowisk",
+          "owe lub"
+        ]
+      },
+      {
+        "word": "środowiskowe",
+        "domain": "przetargi_ogloszenia",
+        "tokens": [
+          " środowisk",
+          "owe lub"
+        ]
+      },
+      {
+        "word": "środowiskowe",
+        "domain": "przetargi_ogloszenia",
+        "tokens": [
+          " środowisk",
+          "owe lub"
+        ]
+      },
+      {
+        "word": "środowiskowe",
+        "domain": "przetargi_ogloszenia",
+        "tokens": [
+          " środowisk",
+          "owe lub"
+        ]
+      },
+      {
+        "word": "środowiskowe",
+        "domain": "przetargi_ogloszenia",
+        "tokens": [
+          " środowisk",
+          "owe lub"
+        ]
+      },
+      {
+        "word": "WARUNKI",
+        "domain": "przetargi_ogloszenia",
+        "tokens": [
+          " - W",
+          "AR",
+          "UN",
+          "KI"
+        ]
+      }
+    ]
+  },
+  "weird_tokens": [
+    {
+      "id": 30074,
+      "token": "Czytaj całość »...",
+      "repr": "'Czytaj całość »...'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0043 U+007A U+0079 U+0074 U+0061 U+006A U+0020 U+0063 U+0061 U+0142 U+006F U+015B U+0107 U+0020 U+00BB U+002E U+002E U"
+    },
+    {
+      "id": 29579,
+      "token": " WordPressa, aby osadzić element",
+      "repr": "' WordPressa, aby osadzić element'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0057 U+006F U+0072 U+0064 U+0050 U+0072 U+0065 U+0073 U+0073 U+0061 U+002C U+0020 U+0061 U+0062 U+0079 U+0020 U"
+    },
+    {
+      "id": 28675,
+      "token": "Wezwanie do działania:",
+      "repr": "'Wezwanie do działania:'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0057 U+0065 U+007A U+0077 U+0061 U+006E U+0069 U+0065 U+0020 U+0064 U+006F U+0020 U+0064 U+007A U+0069 U+0061 U+0142 U"
+    },
+    {
+      "id": 28404,
+      "token": " 2019 roku.",
+      "repr": "' 2019 roku.'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0032 U+0030 U+0031 U+0039 U+0020 U+0072 U+006F U+006B U+0075 U+002E "
+    },
+    {
+      "id": 30258,
+      "token": " 2021 roku.",
+      "repr": "' 2021 roku.'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0032 U+0030 U+0032 U+0031 U+0020 U+0072 U+006F U+006B U+0075 U+002E "
+    },
+    {
+      "id": 30232,
+      "token": " Regionalnego Programu Operacyjnego",
+      "repr": "' Regionalnego Programu Operacyjnego'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0052 U+0065 U+0067 U+0069 U+006F U+006E U+0061 U+006C U+006E U+0065 U+0067 U+006F U+0020 U+0050 U+0072 U+006F U"
+    },
+    {
+      "id": 25579,
+      "token": "Czytaj całość »",
+      "repr": "'Czytaj całość »'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0043 U+007A U+0079 U+0074 U+0061 U+006A U+0020 U+0063 U+0061 U+0142 U+006F U+015B U+0107 U+0020 U+00BB "
+    },
+    {
+      "id": 23399,
+      "token": " Upewnij się, że",
+      "repr": "' Upewnij się, że'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0055 U+0070 U+0065 U+0077 U+006E U+0069 U+006A U+0020 U+0073 U+0069 U+0119 U+002C U+0020 U+017C U+0065 "
+    },
+    {
+      "id": 28396,
+      "token": "Kraina Łęgów Odrzańskich",
+      "repr": "'Kraina Łęgów Odrzańskich'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+004B U+0072 U+0061 U+0069 U+006E U+0061 U+0020 U+0141 U+0119 U+0067 U+00F3 U+0077 U+0020 U+004F U+0064 U+0072 U+007A U"
+    },
+    {
+      "id": 28405,
+      "token": " 2012 -",
+      "repr": "' 2012 -'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0032 U+0030 U+0031 U+0032 U+0020 U+002D "
+    },
+    {
+      "id": 27605,
+      "token": ", 2021",
+      "repr": "', 2021'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002C U+0020 U+0032 U+0030 U+0032 U+0031 "
+    },
+    {
+      "id": 28409,
+      "token": " · szczegóły wpisu » -",
+      "repr": "' · szczegóły wpisu » -'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+00B7 U+0020 U+0073 U+007A U+0063 U+007A U+0065 U+0067 U+00F3 U+0142 U+0079 U+0020 U+0077 U+0070 U+0069 U+0073 U"
+    },
+    {
+      "id": 26389,
+      "token": "ina Łęgów Odrzańskich",
+      "repr": "'ina Łęgów Odrzańskich'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0069 U+006E U+0061 U+0020 U+0141 U+0119 U+0067 U+00F3 U+0077 U+0020 U+004F U+0064 U+0072 U+007A U+0061 U+0144 U+0073 U"
+    },
+    {
+      "id": 31881,
+      "token": " Miejsce pracy:",
+      "repr": "' Miejsce pracy:'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+004D U+0069 U+0065 U+006A U+0073 U+0063 U+0065 U+0020 U+0070 U+0072 U+0061 U+0063 U+0079 U+003A "
+    },
+    {
+      "id": 22442,
+      "token": "Zobacz także:",
+      "repr": "'Zobacz także:'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+005A U+006F U+0062 U+0061 U+0063 U+007A U+0020 U+0074 U+0061 U+006B U+017C U+0065 U+003A "
+    },
+    {
+      "id": 30699,
+      "token": "Czytaj także:",
+      "repr": "'Czytaj także:'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0043 U+007A U+0079 U+0074 U+0061 U+006A U+0020 U+0074 U+0061 U+006B U+017C U+0065 U+003A "
+    },
+    {
+      "id": 25572,
+      "token": "Pamiętaj, że",
+      "repr": "'Pamiętaj, że'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0050 U+0061 U+006D U+0069 U+0119 U+0074 U+0061 U+006A U+002C U+0020 U+017C U+0065 "
+    },
+    {
+      "id": 21262,
+      "token": "- Szczegóły",
+      "repr": "'- Szczegóły'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002D U+0020 U+0053 U+007A U+0063 U+007A U+0065 U+0067 U+00F3 U+0142 U+0079 "
+    },
+    {
+      "id": 28411,
+      "token": "Wezwanie do działania",
+      "repr": "'Wezwanie do działania'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0057 U+0065 U+007A U+0077 U+0061 U+006E U+0069 U+0065 U+0020 U+0064 U+006F U+0020 U+0064 U+007A U+0069 U+0061 U+0142 U"
+    },
+    {
+      "id": 23114,
+      "token": " Łęgów Odrzańskich",
+      "repr": "' Łęgów Odrzańskich'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0141 U+0119 U+0067 U+00F3 U+0077 U+0020 U+004F U+0064 U+0072 U+007A U+0061 U+0144 U+0073 U+006B U+0069 U+0063 U"
+    },
+    {
+      "id": 26305,
+      "token": " Świątecznej Pomocy",
+      "repr": "' Świątecznej Pomocy'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+015A U+0077 U+0069 U+0105 U+0074 U+0065 U+0063 U+007A U+006E U+0065 U+006A U+0020 U+0050 U+006F U+006D U+006F U"
+    },
+    {
+      "id": 23161,
+      "token": "- Artykuł",
+      "repr": "'- Artykuł'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002D U+0020 U+0041 U+0072 U+0074 U+0079 U+006B U+0075 U+0142 "
+    },
+    {
+      "id": 24624,
+      "token": "Więcej »",
+      "repr": "'Więcej »'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0057 U+0069 U+0119 U+0063 U+0065 U+006A U+0020 U+00BB "
+    },
+    {
+      "id": 28072,
+      "token": " Więcej informacji",
+      "repr": "' Więcej informacji'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0057 U+0069 U+0119 U+0063 U+0065 U+006A U+0020 U+0069 U+006E U+0066 U+006F U+0072 U+006D U+0061 U+0063 U+006A U"
+    },
+    {
+      "id": 22308,
+      "token": "Skopiuj i wklej ten",
+      "repr": "'Skopiuj i wklej ten'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0053 U+006B U+006F U+0070 U+0069 U+0075 U+006A U+0020 U+0069 U+0020 U+0077 U+006B U+006C U+0065 U+006A U+0020 U+0074 U"
+    },
+    {
+      "id": 22901,
+      "token": " Szkole Podstawowej",
+      "repr": "' Szkole Podstawowej'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0053 U+007A U+006B U+006F U+006C U+0065 U+0020 U+0050 U+006F U+0064 U+0073 U+0074 U+0061 U+0077 U+006F U+0077 U"
+    },
+    {
+      "id": 28887,
+      "token": " – Nie",
+      "repr": "' – Nie'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+2013 U+0020 U+004E U+0069 U+0065 "
+    },
+    {
+      "id": 23096,
+      "token": "gów Odrzańskich",
+      "repr": "'gów Odrzańskich'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0067 U+00F3 U+0077 U+0020 U+004F U+0064 U+0072 U+007A U+0061 U+0144 U+0073 U+006B U+0069 U+0063 U+0068 "
+    },
+    {
+      "id": 29840,
+      "token": " Światowy Dzień",
+      "repr": "' Światowy Dzień'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+015A U+0077 U+0069 U+0061 U+0074 U+006F U+0077 U+0079 U+0020 U+0044 U+007A U+0069 U+0065 U+0144 "
+    },
+    {
+      "id": 23822,
+      "token": "Czytaj całość",
+      "repr": "'Czytaj całość'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0043 U+007A U+0079 U+0074 U+0061 U+006A U+0020 U+0063 U+0061 U+0142 U+006F U+015B U+0107 "
+    },
+    {
+      "id": 28412,
+      "token": "Zbigniew Posacki",
+      "repr": "'Zbigniew Posacki'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+005A U+0062 U+0069 U+0067 U+006E U+0069 U+0065 U+0077 U+0020 U+0050 U+006F U+0073 U+0061 U+0063 U+006B U+0069 "
+    },
+    {
+      "id": 30264,
+      "token": "- Doda",
+      "repr": "'- Doda'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002D U+0020 U+0044 U+006F U+0064 U+0061 "
+    },
+    {
+      "id": 22305,
+      "token": "Skopiuj i wklej",
+      "repr": "'Skopiuj i wklej'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0053 U+006B U+006F U+0070 U+0069 U+0075 U+006A U+0020 U+0069 U+0020 U+0077 U+006B U+006C U+0065 U+006A "
+    },
+    {
+      "id": 24959,
+      "token": "- Roz",
+      "repr": "'- Roz'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002D U+0020 U+0052 U+006F U+007A "
+    },
+    {
+      "id": 26225,
+      "token": "- Pod",
+      "repr": "'- Pod'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002D U+0020 U+0050 U+006F U+0064 "
+    },
+    {
+      "id": 29217,
+      "token": " Polska Energia",
+      "repr": "' Polska Energia'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0050 U+006F U+006C U+0073 U+006B U+0061 U+0020 U+0045 U+006E U+0065 U+0072 U+0067 U+0069 U+0061 "
+    },
+    {
+      "id": 30088,
+      "token": " z Uniwersytetu",
+      "repr": "' z Uniwersytetu'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+007A U+0020 U+0055 U+006E U+0069 U+0077 U+0065 U+0072 U+0073 U+0079 U+0074 U+0065 U+0074 U+0075 "
+    },
+    {
+      "id": 26694,
+      "token": " Zachęcamy do",
+      "repr": "' Zachęcamy do'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+005A U+0061 U+0063 U+0068 U+0119 U+0063 U+0061 U+006D U+0079 U+0020 U+0064 U+006F "
+    },
+    {
+      "id": 22105,
+      "token": " · szczegóły wpisu »",
+      "repr": "' · szczegóły wpisu »'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+00B7 U+0020 U+0073 U+007A U+0063 U+007A U+0065 U+0067 U+00F3 U+0142 U+0079 U+0020 U+0077 U+0070 U+0069 U+0073 U"
+    },
+    {
+      "id": 25344,
+      "token": " z okazji Dnia",
+      "repr": "' z okazji Dnia'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+007A U+0020 U+006F U+006B U+0061 U+007A U+006A U+0069 U+0020 U+0044 U+006E U+0069 U+0061 "
+    },
+    {
+      "id": 28410,
+      "token": "Zbigniew Posa",
+      "repr": "'Zbigniew Posa'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+005A U+0062 U+0069 U+0067 U+006E U+0069 U+0065 U+0077 U+0020 U+0050 U+006F U+0073 U+0061 "
+    },
+    {
+      "id": 26651,
+      "token": " Jeśli masz",
+      "repr": "' Jeśli masz'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+004A U+0065 U+015B U+006C U+0069 U+0020 U+006D U+0061 U+0073 U+007A "
+    },
+    {
+      "id": 28196,
+      "token": " Dzięki nim",
+      "repr": "' Dzięki nim'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0044 U+007A U+0069 U+0119 U+006B U+0069 U+0020 U+006E U+0069 U+006D "
+    },
+    {
+      "id": 23495,
+      "token": "Odpowiedz Ko",
+      "repr": "'Odpowiedz Ko'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+004F U+0064 U+0070 U+006F U+0077 U+0069 U+0065 U+0064 U+007A U+0020 U+004B U+006F "
+    },
+    {
+      "id": 24673,
+      "token": "towy Dzień",
+      "repr": "'towy Dzień'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0074 U+006F U+0077 U+0079 U+0020 U+0044 U+007A U+0069 U+0065 U+0144 "
+    },
+    {
+      "id": 30601,
+      "token": "W kategorii",
+      "repr": "'W kategorii'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0057 U+0020 U+006B U+0061 U+0074 U+0065 U+0067 U+006F U+0072 U+0069 U+0069 "
+    },
+    {
+      "id": 21770,
+      "token": " Oto kilka",
+      "repr": "' Oto kilka'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+004F U+0074 U+006F U+0020 U+006B U+0069 U+006C U+006B U+0061 "
+    },
+    {
+      "id": 23192,
+      "token": " Read More",
+      "repr": "' Read More'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0052 U+0065 U+0061 U+0064 U+0020 U+004D U+006F U+0072 U+0065 "
+    },
+    {
+      "id": 25366,
+      "token": " W sobotę",
+      "repr": "' W sobotę'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0057 U+0020 U+0073 U+006F U+0062 U+006F U+0074 U+0119 "
+    },
+    {
+      "id": 22525,
+      "token": "Read More",
+      "repr": "'Read More'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0052 U+0065 U+0061 U+0064 U+0020 U+004D U+006F U+0072 U+0065 "
+    },
+    {
+      "id": 23275,
+      "token": "We wtorek",
+      "repr": "'We wtorek'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0057 U+0065 U+0020 U+0077 U+0074 U+006F U+0072 U+0065 U+006B "
+    },
+    {
+      "id": 25135,
+      "token": "Czym jest",
+      "repr": "'Czym jest'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0043 U+007A U+0079 U+006D U+0020 U+006A U+0065 U+0073 U+0074 "
+    },
+    {
+      "id": 25198,
+      "token": "Read more",
+      "repr": "'Read more'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0052 U+0065 U+0061 U+0064 U+0020 U+006D U+006F U+0072 U+0065 "
+    },
+    {
+      "id": 27156,
+      "token": " o Puchar",
+      "repr": "' o Puchar'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+006F U+0020 U+0050 U+0075 U+0063 U+0068 U+0061 U+0072 "
+    },
+    {
+      "id": 31406,
+      "token": " lat pozbawienia wolności.",
+      "repr": "' lat pozbawienia wolności.'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+006C U+0061 U+0074 U+0020 U+0070 U+006F U+007A U+0062 U+0061 U+0077 U+0069 U+0065 U+006E U+0069 U+0061 U+0020 U"
+    },
+    {
+      "id": 28597,
+      "token": "Za nami",
+      "repr": "'Za nami'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+005A U+0061 U+0020 U+006E U+0061 U+006D U+0069 "
+    },
+    {
+      "id": 22307,
+      "token": ", aby osadzić element",
+      "repr": "', aby osadzić element'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002C U+0020 U+0061 U+0062 U+0079 U+0020 U+006F U+0073 U+0061 U+0064 U+007A U+0069 U+0107 U+0020 U+0065 U+006C U+0065 U"
+    },
+    {
+      "id": 21868,
+      "token": " szczegóły wpisu »",
+      "repr": "' szczegóły wpisu »'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0073 U+007A U+0063 U+007A U+0065 U+0067 U+00F3 U+0142 U+0079 U+0020 U+0077 U+0070 U+0069 U+0073 U+0075 U+0020 U"
+    },
+    {
+      "id": 30424,
+      "token": " na lata 2014-2020",
+      "repr": "' na lata 2014-2020'",
+      "freq": 3,
+      "superword": true,
+      "chars": "U+0020 U+006E U+0061 U+0020 U+006C U+0061 U+0074 U+0061 U+0020 U+0032 U+0030 U+0031 U+0034 U+002D U+0032 U+0030 U+0032 U"
+    },
+    {
+      "id": 30590,
+      "token": " naszej szkoły.",
+      "repr": "' naszej szkoły.'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+006E U+0061 U+0073 U+007A U+0065 U+006A U+0020 U+0073 U+007A U+006B U+006F U+0142 U+0079 U+002E "
+    },
+    {
+      "id": 29531,
+      "token": " adres na swoją witrynę",
+      "repr": "' adres na swoją witrynę'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0061 U+0064 U+0072 U+0065 U+0073 U+0020 U+006E U+0061 U+0020 U+0073 U+0077 U+006F U+006A U+0105 U+0020 U+0077 U"
+    },
+    {
+      "id": 21918,
+      "token": ", aby osadzić",
+      "repr": "', aby osadzić'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002C U+0020 U+0061 U+0062 U+0079 U+0020 U+006F U+0073 U+0061 U+0064 U+007A U+0069 U+0107 "
+    },
+    {
+      "id": 29738,
+      "token": ", które warto",
+      "repr": "', które warto'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002C U+0020 U+006B U+0074 U+00F3 U+0072 U+0065 U+0020 U+0077 U+0061 U+0072 U+0074 U+006F "
+    },
+    {
+      "id": 23853,
+      "token": "Komentarze (0)",
+      "repr": "'Komentarze (0)'",
+      "freq": 1,
+      "superword": true,
+      "chars": "U+004B U+006F U+006D U+0065 U+006E U+0074 U+0061 U+0072 U+007A U+0065 U+0020 U+0028 U+0030 U+0029 "
+    },
+    {
+      "id": 24951,
+      "token": " kod na swoją witrynę",
+      "repr": "' kod na swoją witrynę'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+006B U+006F U+0064 U+0020 U+006E U+0061 U+0020 U+0073 U+0077 U+006F U+006A U+0105 U+0020 U+0077 U+0069 U+0074 U"
+    },
+    {
+      "id": 28577,
+      "token": " – opowiada",
+      "repr": "' – opowiada'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+2013 U+0020 U+006F U+0070 U+006F U+0077 U+0069 U+0061 U+0064 U+0061 "
+    },
+    {
+      "id": 26874,
+      "token": " czerwca br.",
+      "repr": "' czerwca br.'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0063 U+007A U+0065 U+0072 U+0077 U+0063 U+0061 U+0020 U+0062 U+0072 U+002E "
+    },
+    {
+      "id": 25625,
+      "token": " miejsce –",
+      "repr": "' miejsce –'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+006D U+0069 U+0065 U+006A U+0073 U+0063 U+0065 U+0020 U+2013 "
+    },
+    {
+      "id": 23150,
+      "token": " - mówił",
+      "repr": "' - mówił'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+002D U+0020 U+006D U+00F3 U+0077 U+0069 U+0142 "
+    },
+    {
+      "id": 23710,
+      "token": " świeżym powietrzu",
+      "repr": "' świeżym powietrzu'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+015B U+0077 U+0069 U+0065 U+017C U+0079 U+006D U+0020 U+0070 U+006F U+0077 U+0069 U+0065 U+0074 U+0072 U+007A U"
+    },
+    {
+      "id": 25680,
+      "token": " 2 łyżki",
+      "repr": "' 2 łyżki'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0032 U+0020 U+0142 U+0079 U+017C U+006B U+0069 "
+    },
+    {
+      "id": 31724,
+      "token": ", dodajemy",
+      "repr": "', dodajemy'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002C U+0020 U+0064 U+006F U+0064 U+0061 U+006A U+0065 U+006D U+0079 "
+    },
+    {
+      "id": 25573,
+      "token": " przyszedł czas na",
+      "repr": "' przyszedł czas na'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0070 U+0072 U+007A U+0079 U+0073 U+007A U+0065 U+0064 U+0142 U+0020 U+0063 U+007A U+0061 U+0073 U+0020 U+006E U"
+    },
+    {
+      "id": 31992,
+      "token": " akcji „",
+      "repr": "' akcji „'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0061 U+006B U+0063 U+006A U+0069 U+0020 U+201E "
+    },
+    {
+      "id": 22295,
+      "token": " na swoją witrynę",
+      "repr": "' na swoją witrynę'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+006E U+0061 U+0020 U+0073 U+0077 U+006F U+006A U+0105 U+0020 U+0077 U+0069 U+0074 U+0072 U+0079 U+006E U+0119 "
+    },
+    {
+      "id": 27961,
+      "token": " Covid-19",
+      "repr": "' Covid-19'",
+      "freq": 0,
+      "superword": false,
+      "chars": "U+0020 U+0043 U+006F U+0076 U+0069 U+0064 U+002D U+0031 U+0039 "
+    },
+    {
+      "id": 29412,
+      "token": " przygotowane przez",
+      "repr": "' przygotowane przez'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0070 U+0072 U+007A U+0079 U+0067 U+006F U+0074 U+006F U+0077 U+0061 U+006E U+0065 U+0020 U+0070 U+0072 U+007A U"
+    },
+    {
+      "id": 24925,
+      "token": " dla najmłodszych",
+      "repr": "' dla najmłodszych'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0064 U+006C U+0061 U+0020 U+006E U+0061 U+006A U+006D U+0142 U+006F U+0064 U+0073 U+007A U+0079 U+0063 U+0068 "
+    },
+    {
+      "id": 31323,
+      "token": ", dodać",
+      "repr": "', dodać'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002C U+0020 U+0064 U+006F U+0064 U+0061 U+0107 "
+    },
+    {
+      "id": 31510,
+      "token": " prosimy o kontakt",
+      "repr": "' prosimy o kontakt'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0070 U+0072 U+006F U+0073 U+0069 U+006D U+0079 U+0020 U+006F U+0020 U+006B U+006F U+006E U+0074 U+0061 U+006B U"
+    },
+    {
+      "id": 29266,
+      "token": "głoś naruszenie",
+      "repr": "'głoś naruszenie'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0067 U+0142 U+006F U+015B U+0020 U+006E U+0061 U+0072 U+0075 U+0073 U+007A U+0065 U+006E U+0069 U+0065 "
+    },
+    {
+      "id": 22187,
+      "token": " w naszej szkole",
+      "repr": "' w naszej szkole'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0077 U+0020 U+006E U+0061 U+0073 U+007A U+0065 U+006A U+0020 U+0073 U+007A U+006B U+006F U+006C U+0065 "
+    },
+    {
+      "id": 28001,
+      "token": " co jakiś czas",
+      "repr": "' co jakiś czas'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0063 U+006F U+0020 U+006A U+0061 U+006B U+0069 U+015B U+0020 U+0063 U+007A U+0061 U+0073 "
+    },
+    {
+      "id": 28106,
+      "token": " ząbki czosnku",
+      "repr": "' ząbki czosnku'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+007A U+0105 U+0062 U+006B U+0069 U+0020 U+0063 U+007A U+006F U+0073 U+006E U+006B U+0075 "
+    },
+    {
+      "id": 24047,
+      "token": " nie zabrakło",
+      "repr": "' nie zabrakło'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+006E U+0069 U+0065 U+0020 U+007A U+0061 U+0062 U+0072 U+0061 U+006B U+0142 U+006F "
+    },
+    {
+      "id": 25742,
+      "token": " zachęcamy do",
+      "repr": "' zachęcamy do'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+007A U+0061 U+0063 U+0068 U+0119 U+0063 U+0061 U+006D U+0079 U+0020 U+0064 U+006F "
+    },
+    {
+      "id": 26851,
+      "token": "– W",
+      "repr": "'– W'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+2013 U+0020 U+0057 "
+    },
+    {
+      "id": 27674,
+      "token": " uczniów klas",
+      "repr": "' uczniów klas'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0075 U+0063 U+007A U+006E U+0069 U+00F3 U+0077 U+0020 U+006B U+006C U+0061 U+0073 "
+    },
+    {
+      "id": 24175,
+      "token": " pierwszy rzut",
+      "repr": "' pierwszy rzut'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0070 U+0069 U+0065 U+0072 U+0077 U+0073 U+007A U+0079 U+0020 U+0072 U+007A U+0075 U+0074 "
+    },
+    {
+      "id": 27339,
+      "token": " módl się za",
+      "repr": "' módl się za'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+006D U+00F3 U+0064 U+006C U+0020 U+0073 U+0069 U+0119 U+0020 U+007A U+0061 "
+    },
+    {
+      "id": 22936,
+      "token": "- P",
+      "repr": "'- P'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+002D U+0020 U+0050 "
+    },
+    {
+      "id": 24686,
+      "token": " czytaj dalej",
+      "repr": "' czytaj dalej'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0063 U+007A U+0079 U+0074 U+0061 U+006A U+0020 U+0064 U+0061 U+006C U+0065 U+006A "
+    },
+    {
+      "id": 30301,
+      "token": " przez całą",
+      "repr": "' przez całą'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0070 U+0072 U+007A U+0065 U+007A U+0020 U+0063 U+0061 U+0142 U+0105 "
+    },
+    {
+      "id": 30653,
+      "token": " może pomóc",
+      "repr": "' może pomóc'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+006D U+006F U+017C U+0065 U+0020 U+0070 U+006F U+006D U+00F3 U+0063 "
+    },
+    {
+      "id": 24300,
+      "token": " przygodę z",
+      "repr": "' przygodę z'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0070 U+0072 U+007A U+0079 U+0067 U+006F U+0064 U+0119 U+0020 U+007A "
+    },
+    {
+      "id": 31977,
+      "token": " swoich sił",
+      "repr": "' swoich sił'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0073 U+0077 U+006F U+0069 U+0063 U+0068 U+0020 U+0073 U+0069 U+0142 "
+    },
+    {
+      "id": 24363,
+      "token": " zaprasza na",
+      "repr": "' zaprasza na'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+007A U+0061 U+0070 U+0072 U+0061 U+0073 U+007A U+0061 U+0020 U+006E U+0061 "
+    },
+    {
+      "id": 25028,
+      "token": " 2020 roku.",
+      "repr": "' 2020 roku.'",
+      "freq": 3,
+      "superword": true,
+      "chars": "U+0020 U+0032 U+0030 U+0032 U+0030 U+0020 U+0072 U+006F U+006B U+0075 U+002E "
+    },
+    {
+      "id": 29463,
+      "token": " to jedno z",
+      "repr": "' to jedno z'",
+      "freq": 0,
+      "superword": true,
+      "chars": "U+0020 U+0074 U+006F U+0020 U+006A U+0065 U+0064 U+006E U+006F U+0020 U+007A "
+    },
+    {
+      "id": 29585,
+      "token": " 2022 roku.",
+      "repr": "' 2022 roku.'",
+      "freq": 1,
+      "superword": true,
+      "chars": "U+0020 U+0032 U+0030 U+0032 U+0032 U+0020 U+0072 U+006F U+006B U+0075 U+002E "
+    }
+  ],
+  "h6": {
+    "confirmed": false,
+    "status": "obalona",
+    "midword_share_of_superwords": 0.034538805363673306,
+    "midword_uses_share": 0.0009167495849974778
+  },
+  "h7": {
+    "top1000_with_own_token": 0.882,
+    "split_superword_share": 0.028330097958908874,
+    "confirmed": false
+  }
+}

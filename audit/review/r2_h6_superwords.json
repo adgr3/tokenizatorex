@@ -1,0 +1,146 @@
+{
+  "definition": {
+    "superword": "b' ' in vocab[t].lstrip(b' ')",
+    "starts_mid_word": "first segment (before first space, leading spaces stripped) contains a Unicode letter and is not a standalone text.split() word in the TEST corpus",
+    "dict_share": "suspicious superwords / all superwords",
+    "usage_share": "freq(suspicious) / all token occurrences"
+  },
+  "vocab_bytes": 31999,
+  "n_superwords": 4922,
+  "n_suspicious_superwords": 99,
+  "dict_share": 0.020113774888256806,
+  "unique_split_words_test": 290969,
+  "usage_all_test": {
+    "total_token_occurrences": 3245161,
+    "superword_occurrences": 225325,
+    "suspicious_occurrences": 1885,
+    "share_of_all_occurrences": 0.0005808648630992422,
+    "share_of_superword_occurrences": 0.008365693997559081
+  },
+  "usage_official7": {
+    "total_token_occurrences": 1153793,
+    "superword_occurrences": 77708,
+    "suspicious_occurrences": 532,
+    "share_of_all_occurrences": 0.0004610879074496032,
+    "share_of_superword_occurrences": 0.006846141967365008
+  },
+  "per_domain_suspicious_occurrences": {
+    "angielski": 0,
+    "dyskusje": 199,
+    "granty_ogloszenia": 125,
+    "literatura": 260,
+    "nauka": 150,
+    "ocr_prasa": 120,
+    "prawo": 207,
+    "prawo_eli": 100,
+    "przetargi_kio": 94,
+    "przetargi_ogloszenia": 35,
+    "samorzad_uchwaly": 26,
+    "sejm": 143,
+    "tabele_json": 32,
+    "web": 229,
+    "wikipedia": 165
+  },
+  "top20_suspicious": [
+    {
+      "id": 20651,
+      "freq": 133,
+      "token": "ć w"
+    },
+    {
+      "id": 24166,
+      "freq": 81,
+      "token": "owy w"
+    },
+    {
+      "id": 20798,
+      "freq": 74,
+      "token": "ć się"
+    },
+    {
+      "id": 20521,
+      "freq": 66,
+      "token": "ć na"
+    },
+    {
+      "id": 21775,
+      "freq": 64,
+      "token": "lnych i"
+    },
+    {
+      "id": 21723,
+      "freq": 63,
+      "token": "cznych i"
+    },
+    {
+      "id": 21263,
+      "freq": 63,
+      "token": "lne i"
+    },
+    {
+      "id": 20681,
+      "freq": 58,
+      "token": "ć i"
+    },
+    {
+      "id": 20944,
+      "freq": 53,
+      "token": "ć z"
+    },
+    {
+      "id": 20719,
+      "freq": 47,
+      "token": "ć do"
+    },
+    {
+      "id": 21400,
+      "freq": 46,
+      "token": "ła, że"
+    },
+    {
+      "id": 29517,
+      "freq": 44,
+      "token": "ckiego i"
+    },
+    {
+      "id": 21557,
+      "freq": 39,
+      "token": "owy i"
+    },
+    {
+      "id": 22685,
+      "freq": 33,
+      "token": "owanie i"
+    },
+    {
+      "id": 23122,
+      "freq": 32,
+      "token": "ć, że"
+    },
+    {
+      "id": 26362,
+      "freq": 32,
+      "token": "suje się"
+    },
+    {
+      "id": 24677,
+      "freq": 31,
+      "token": "zują się"
+    },
+    {
+      "id": 23027,
+      "freq": 31,
+      "token": "owania i"
+    },
+    {
+      "id": 28339,
+      "freq": 31,
+      "token": "ńskiego i"
+    },
+    {
+      "id": 22110,
+      "freq": 29,
+      "token": "sz, że"
+    }
+  ]
+}

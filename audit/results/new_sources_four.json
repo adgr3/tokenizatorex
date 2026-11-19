@@ -1,0 +1,57 @@
+{
+  "label": "R3-extra-cztery-zrodla",
+  "excluded": "samorzad_slask_pdf (to pełny PDF zamrożonych id śląskich, nie nowe źródło)",
+  "domains": [
+    "granty_ogloszenia",
+    "przetargi_kio",
+    "przetargi_ogloszenia",
+    "samorzad_uchwaly"
+  ],
+  "rows": {
+    "TOKENIZATOREX": {
+      "docs": 160,
+      "tokens": 1115910,
+      "words": 773286,
+      "fertility": 1.4430753951319435
+    },
+    "TOKENIZATOREX-HF": {
+      "docs": 160,
+      "tokens": 1114038,
+      "words": 773286,
+      "fertility": 1.4406545573048006
+    },
+    "Slayer1B": {
+      "docs": 160,
+      "tokens": 1350433,
+      "words": 773286,
+      "fertility": 1.746356458024586
+    },
+    "Pollock-2.0": {
+      "docs": 160,
+      "tokens": 1188533,
+      "words": 773286,
+      "fertility": 1.536990195089527
+    },
+    "APT3-1B": {
+      "docs": 160,
+      "tokens": 1210290,
+      "words": 773286,
+      "fertility": 1.5651259689170631
+    }
+  },
+  "rank_fertility": [
+    "TOKENIZATOREX-HF",
+    "TOKENIZATOREX",
+    "Pollock-2.0",
+    "APT3-1B",
+    "Slayer1B"
+  ],
+  "tkx_fewer_tokens_than": {
+    "TOKENIZATOREX": 0.0,
+    "TOKENIZATOREX-HF": -0.0016803735599683278,
+    "Slayer1B": 0.17366503928739893,
+    "Pollock-2.0": 0.061103057298366945,
+    "APT3-1B": 0.07798131026448207
+  },
+  "note": "Suma tokenów / suma słów z r3_extra_fertility.json. tkx_fewer_tokens_than to 1 - fert(TKX)/fert(inny); wartość ujemna znaczy, że TKX ma więcej tokenów."
+}

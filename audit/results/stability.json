@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "shard": "https://huggingface.co/datasets/SlayerLab/hplt-v3-pl-cleaned/resolve/main/data/european_hplt_v3_pl_bin8_5_p2.parquet",
+    "stage1_mb": 300,
+    "stage2_mb": 100,
+    "transition": 20000,
+    "vocab": 32000,
+    "max_words": 4,
+    "note": "trening tymczasowy w audit/tmp, nie zastępuje repo"
+  },
+  "status": "OK",
+  "reason": "",
+  "train_bytes_available": 400160750,
+  "stage1_pretokens": {
+    "unique": 1225754,
+    "total": 50102670,
+    "seconds": 17.7
+  },
+  "stage1_seconds": 97.4,
+  "stage2_chunks": {
+    "unique": 1118871,
+    "total": 1795278,
+    "seconds": 2.8
+  },
+  "stage2_seconds": 216.3,
+  "tokenizer_file": "audit\\tmp\\stability-tokenizer-32k.json",
+  "vocab": 32001,
+  "transition": 20000,
+  "train_seconds": 345.1,
+  "vocab_coverage": {
+    "common_tokens": 28576,
+    "share_of_reference": 0.8930279071220976,
+    "share_of_new": 0.893
+  },
+  "stage1_coverage": {
+    "common_tokens": 18652,
+    "share_of_reference": 0.9326
+  },
+  "fertility": {
+    "przetargi_ogloszenia": {
+      "documents": 25,
+      "words": 58053,
+      "tokens_reference": 89757,
+      "tokens_new": 88767,
+      "fertility_reference": 1.5461216474600796,
+      "fertility_new": 1.5290682652059324,
+      "delta_pct": -0.011029780407099168
+    },
+    "przetargi_kio": {
+      "documents": 25,
+      "words": 32917,
+      "tokens_reference": 46892,
+      "tokens_new": 46740,
+      "fertility_reference": 1.4245526627578455,
+      "fertility_new": 1.4199349880001215,
+      "delta_pct": -0.0032414910858995136
+    },
+    "prawo_eli": {
+      "documents": 25,
+      "words": 42534,
+      "tokens_reference": 62115,
+      "tokens_new": 63331,
+      "fertility_reference": 1.4603611228664128,
+      "fertility_new": 1.4889500164574223,
+      "delta_pct": 0.019576591805522014
+    },
+    "web": {
+      "documents": 25,
+      "words": 6611,
+      "tokens_reference": 9163,
+      "tokens_new": 9152,
+      "fertility_reference": 1.3860232945091515,
+      "fertility_new": 1.3843594009983362,
+      "delta_pct": -0.0012004801920768306
+    }
+  }
+}
