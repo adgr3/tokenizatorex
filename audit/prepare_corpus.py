@@ -337,7 +337,12 @@ def _sitemap_urls(url: str, refresh: bool) -> list[tuple[str, str]]:
 
 
 def collect_granty(refresh: bool = False, limit: int = 110) -> list[Document]:
-    """Ogłoszenia konkursów i regulaminy: NIW (strony, aktualności, PDF-y)."""
+    """Ogłoszenia konkursów i regulaminy: NIW (strony, aktualności, publiczne PDF-y).
+
+    Data dokumentu: dla PDF — rok/miesiąc z katalogu uploadu (``/uploads/RRRR/MM``),
+    dla stron HTML — ``datePublished`` z JSON-LD (bez daty = pomijamy). Dwa przebiegi:
+    najpierw dokumenty z 2026 r. (by spełnić warunek ≥50%), potem reszta.
+    """
     from pypdf import PdfReader
     import io
 
@@ -347,50 +352,70 @@ def collect_granty(refresh: bool = False, limit: int = 110) -> list[Document]:
     cand += _sitemap_urls("https://niw.gov.pl/nasze_programy-sitemap.xml", refresh)
     for i in range(1, 5):
         cand += _sitemap_urls(f"https://niw.gov.pl/post-sitemap{i}.xml", refresh)
-    seen = set()
-    uniq = []
+    seen, uniq = set(), []
     for u, d in cand:
         if u in seen or "niw.gov.pl" not in u:
             continue
         seen.add(u)
         uniq.append((u, d))
-    # 2026 najpierw, potem reszta; w obrębie roku deterministycznie
     uniq.sort(key=lambda x: (not x[1].startswith("2026"), x[0]))
-    random.Random(SEED).shuffle(uniq[int(len(uniq) * 0.6):])
+    random.Random(SEED).shuffle(uniq[int(len(uniq) * 0.7):])
+
     docs: list[Document] = []
     pdf_seen: set[str] = set()
-    for u, d in uniq:
-        if len(docs) >= limit:
-            break
-        try:
-            h = fetch(u, refresh=refresh).decode("utf-8", errors="replace")
-        except Exception:  # noqa: BLE001
-            continue
-        body = extract_div(h, "entry-content") or ""
-        u_kw = any(k in u.lower() for k in ("konkurs", "nabor", "regulamin", "ogloszenie",
-                                            "dotacj", "grant", "fundusz", "wniosk", "projekt", "program"))
-        b_kw = sum(1 for k in NIW_KW if k in body.lower())
-        if word_count(body) >= 300 and u_kw and b_kw >= 3:
-            docs.append(Document(id="grant-" + sha256_text(u)[:12], domain="", url=u,
-                                 date=d, text=body,
-                                 source="Narodowy Instytut Wolności (strona publiczna)"))
-        # PDF-y (regulaminy, ogłoszenia) — tylko z domeny NIW
-        for pu in re.findall(r'href="(https://niw\.gov\.pl/[^"]+\.pdf)"', h, re.I)[:4]:
+    seen_text: set[str] = set()
+
+    def add(url: str, date: str, text: str, source: str) -> bool:
+        if len(docs) >= limit or not date:
+            return False
+        h = sha256_text(text)
+        if h in seen_text:
+            return False
+        seen_text.add(h)
+        docs.append(Document(id="grant-" + sha256_text(url)[:12], domain="", url=url,
+                             date=date, text=text, source=source))
+        return True
+
+    for phase in ("2026", "all"):
+        for u, lm in uniq:
             if len(docs) >= limit:
                 break
-            if pu in pdf_seen:
-                continue
-            pdf_seen.add(pu)
             try:
-                raw = fetch(pu, refresh=refresh, timeout=120)
-                text = clean_text("\n".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(raw)).pages))
+                h = fetch(u, refresh=refresh).decode("utf-8", errors="replace")
             except Exception:  # noqa: BLE001
                 continue
-            if word_count(text) < 200 or not any(k in text.lower() for k in NIW_KW):
-                continue
-            docs.append(Document(id="grant-" + sha256_text(pu)[:12], domain="", url=pu,
-                                 date=d, text=text,
-                                 source="Narodowy Instytut Wolności (PDF publiczny)"))
+            m = re.search(r'"datePublished"\s*:\s*"([^"]+)"', h)
+            page_date = m.group(1)[:10] if m else ""
+            body = extract_div(h, "entry-content") or ""
+            u_kw = any(k in u.lower() for k in ("konkurs", "nabor", "regulamin", "ogloszenie",
+                                                "dotacj", "grant", "fundusz", "wniosk", "projekt", "program"))
+            b_kw = sum(1 for k in NIW_KW if k in body.lower())
+            if (page_date and word_count(body) >= 300 and u_kw and b_kw >= 3
+                    and (phase == "all" or page_date.startswith("2026"))):
+                add(u, page_date, body, "Narodowy Instytut Wolności (strona publiczna)")
+            for pu in re.findall(r'href="(https://niw\.gov\.pl/[^"]+\.pdf)"', h, re.I)[:10]:
+                if len(docs) >= limit:
+                    break
+                if pu in pdf_seen:
+                    continue
+                pdf_seen.add(pu)
+                mm = re.search(r"/uploads/(\d{4})/(\d{2})/", pu)
+                pdf_date = f"{mm.group(1)}-{mm.group(2)}-01" if mm else lm
+                if phase == "2026" and not pdf_date.startswith("2026"):
+                    continue
+                try:
+                    raw = fetch(pu, refresh=refresh, timeout=120)
+                    text = clean_text("\n".join((p.extract_text() or "") for p in
+                                                 PdfReader(io.BytesIO(raw)).pages))
+                except Exception:  # noqa: BLE001
+                    continue
+                if word_count(text) < 200 or not any(k in text.lower() for k in NIW_KW):
+                    continue
+                add(pu, pdf_date, text, "Narodowy Instytut Wolności (PDF publiczny)")
+            if phase == "2026" and len(docs) >= 55:
+                # wystarczająco dużo 2026; dalej dobieramy już dowolne
+                if len(docs) >= limit:
+                    break
     return docs
 
 

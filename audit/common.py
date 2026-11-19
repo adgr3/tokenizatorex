@@ -111,7 +111,7 @@ def save_document(doc: Document, raw_dir: str = RAW_DIR) -> None:
     path = os.path.join(d, doc.id.replace("/", "_").replace("\\", "_") + ".json")
     write_json(path, {
         "id": doc.id, "domain": doc.domain, "url": doc.url, "date": doc.date,
-        "source": doc.source, "text": doc.text,
+        "source": doc.source, "split": doc.split, "text": doc.text,
         "words": word_count(doc.text), "nfd": is_nfd(doc.text),
         "sha256": sha256_text(doc.text),
     })
