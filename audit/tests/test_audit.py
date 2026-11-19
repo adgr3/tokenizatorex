@@ -115,3 +115,48 @@ def test_manifest_domains_cover_requirements():
     for dom in ("przetargi_ogloszenia", "przetargi_kio", "samorzad_uchwaly",
                 "granty_ogloszenia", "prawo_eli"):
         assert m["domains"][dom]["share_2026"] >= 0.5, dom
+
+
+def test_renyi_reports_both_forms():
+    path = os.path.join(RESULTS_DIR, "vocab_usage.json")
+    if not os.path.exists(path):
+        pytest.skip("brak vocab_usage.json")
+    d = json.load(open(path, encoding="utf-8"))
+    for lab, r in d["tokenizers"].items():
+        assert "H_over_logV" in r["renyi"], lab
+        assert "exp_H_over_V" in r["renyi"], lab
+    assert d["tokenizers"]["APT3-1B"]["renyi"]["H_over_logV"] >         d["tokenizers"]["TOKENIZATOREX"]["renyi"]["H_over_logV"]
+
+
+def test_digits_cost_lower_upper():
+    path = os.path.join(RESULTS_DIR, "digits_cost.json")
+    if not os.path.exists(path):
+        pytest.skip("brak digits_cost.json")
+    d = json.load(open(path, encoding="utf-8"))
+    for dom, r in d["domains"].items():
+        assert 0 <= r["lower_pct_of_tokens"] <= r["upper_pct_of_tokens"], dom
+    p = d["official_pooled"]
+    assert p["lower_pct_of_tokens"] > 0.05
+    assert p["upper_pct_of_tokens"] > p["lower_pct_of_tokens"]
+
+
+def test_hf_parity_decoded_control():
+    path = os.path.join(RESULTS_DIR, "hf_parity.json")
+    if not os.path.exists(path):
+        pytest.skip("brak hf_parity.json")
+    d = json.load(open(path, encoding="utf-8"))
+    for dom, r in d["domains"].items():
+        assert r["identical_share_decoded"] == 1.0, dom
+
+
+def test_bootstrap_rng_is_deterministic():
+    from common import bootstrap_indices
+    a = bootstrap_indices(50, n=10, seed=20261119)
+    b = bootstrap_indices(50, n=10, seed=20261119)
+    assert (a == b).all()
+
+
+def test_independent_reviews_present():
+    for rel in ("audit/independent/codex/REVIEW_CODEX_R2.md",
+                "audit/independent/grok/RED_TEAM_GROK_R3.md"):
+        assert os.path.exists(os.path.join(ROOT, rel)), rel

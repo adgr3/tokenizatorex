@@ -232,3 +232,24 @@ Protokół merytoryczny (definicje, progi, podział) nie zmienił się.
    temu wszystkie 110 dokumentów ma realną datę 2026 (a nie datę lastmod strony).
 6. **`stability.py` zakończył się OK** (nie UNKNOWN): 300 MB + 100 MB z innego
    shardu HPLT, 345 s treningu; pokrycie słownika 89,3%.
+7. **Rényi — obie formy (post hoc, po rundzie 3 Grok).** Dodano standardową
+   `H_α / ln|V|` (Zouhar i in. 2023) obok `exp(H_α)/|V|`. Wycofano zdanie o
+   „najmocniejszej przewadze inżynierskiej”: APT3 wygrywa obie formy. Rényi jest
+   miarą opisową i nie przewiduje jakości modelu (Cognetta i in. 2024).
+8. **Koszt cyfr — nowy pomiar (post hoc, po rundzie 2 Codex).**
+   `audit/digits_cost.py` liczy dolną granicę metodą Codex A7 i górną metodą
+   Grok. To szacunek, nie tokenizer po retreningu; prawdziwy koszt zmierzy
+   TKX-C.
+9. **Pełne PDF uchwał i 4 nowe źródła (runda 3 Grok).** HTML dziennika to
+   pierwsza strona; na pełnym PDF przewaga nad APT3 spada do 0,55% (HF 0,82%).
+   Na 4 nowych źródłach przewaga nad Pollockiem to −6,11%. To pomiary
+   zewnętrzne, raportowane obok, nie zmiana protokołu rundy 1.
+10. **Parytet HF na ciągach (post hoc, po rundzie 2).** Dodano
+    `identical_share_decoded` obok `identical_share` (ID). Ciągi: 100%, ID:
+    97,27% na urzędowych. Wniosek H8 bez zmian.
+11. **Bootstrap — jeden RNG (post hoc, po rundzie 2).** `common.bootstrap_ci`
+    i `fertility.py` używają `numpy.random.default_rng(seed)`. Przedziały CI
+    mogą się minimalnie różnić od wersji sprzed korekty.
+12. **Rundy 2 i 3.** `REVIEW_R2.md` i `RED_TEAM_R3.md` to samoocena wykonawcy;
+    niezależne raporty Codex i Grok są w `audit/independent/`. Liczby
+    z niezależnych rund mają pierwszeństwo.

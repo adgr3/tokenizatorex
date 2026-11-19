@@ -34,18 +34,25 @@ w sekcji „Zmiany po fakcie”). Korpus: `audit/data/MANIFEST.json`.
    tokenów — nie 19,4%. Artefakt istnieje (`nk`/`ne przez`), ale jest rzadszy.
 9. **H7 częściowo:** 88,2% z top 1000 słów ma własny token (próg 90% nie
    osiągnięty); 2,83% wystąpień częstych słów jest rozbite z superwordem.
-10. **H8 potwierdzona mocno:** eksport HF odtwarza 97,27% fragmentów na
-    dziedzinach urzędowych i 99,36% na web (z = −31,0). Różnica tokenów sięga
-    −0,52% (tabele) i +0,04% (KIO). Trening i ocena muszą używać tego samego
-    enkodera.
-11. **Słownik jest w pełni wykorzystany:** 1,8% tokenów martwych, Rényi 7,4‰
-    (Slayer 2,7‰, Pollock 1,6‰). To najmocniejsza „zdrowotna” przewaga.
-12. **Stabilność:** retrening na innym shardzie HPLT daje 89,3% wspólnego
+10. **H8 potwierdzona mocno:** eksport HF odtwarza 97,27% fragmentów (ID) na
+    dziedzinach urzędowych i 99,36% na web (z = −31,0), ale **100% zdekodowanych
+    ciągów jest identycznych** — to scalanie, nie utrata tekstu. Różnica tokenów
+    sięga −0,52% (tabele) i +0,04% (KIO). Trening i ocena muszą używać tego
+    samego enkodera.
+11. **Słownik jest zdrowy, ale Rényi jest opisowy:** 1,8% tokenów martwych
+    (Slayer 8,9%), natomiast Rényi w obu formach wygrywa APT3 (0,531 i 0,00768
+    vs TKX 0,527 i 0,00742). Rényi nie przewiduje jakości modelu (Cognetta i in.
+    2024); zdanie o „najmocniejszej przewadze” wycofane.
+12. **Cyfry i pełne PDF:** rozbicie cyfr kosztuje +6,7–15,0% tokenów na
+    dziedzinach urzędowych (+16,6% na pełnym ogłoszeniu); na pełnym PDF uchwał
+    przewaga nad APT3 spada do 0,55% (HF 0,82%). Kontekst 2048 nie mieści
+    mediany pełnego ogłoszenia (3984).
+13. **Stabilność:** retrening na innym shardzie HPLT daje 89,3% wspólnego
     słownika, ale fertility różni się tylko −0,12%…+1,96%. Wydajność jest
     stabilna, dokładny słownik — nie.
-13. **Szybkość:** referencyjny Python 176 tys. tok/s (0,91 MB/s), HF 575 tys.
+14. **Szybkość:** referencyjny Python 176 tys. tok/s (0,91 MB/s), HF 575 tys.
     tok/s (2,98 MB/s). Referencja jest ~3,3× wolniejsza od eksportu.
-14. **Morfologia:** MorphScore precision 0,023 (Slayer 0,082, Bielik 0,135);
+15. **Morfologia:** MorphScore precision 0,023 (Slayer 0,082, Bielik 0,135);
     spójność rdzenia 93,3% (Slayer 92,6%). Zgodnie z literaturą to słaby
     predyktor jakości modelu — raportujemy, nie optymalizujemy.
 
@@ -69,7 +76,7 @@ w sekcji „Zmiany po fakcie”). Korpus: `audit/data/MANIFEST.json`.
 | `dyskusje` | 386 | 278 317 | 154/232 | 0 | — |
 | `angielski` | 118 | 230 201 | 47/71 | 0 | — |
 
-Razem 4 834 dokumenty i 3 313 586 słów (wszystkie splity). Wszystkie nowe
+Razem 4 586 dokumentów i 3 313 586 słów (wszystkie splity). Wszystkie nowe
 dziedziny urzędowe mają ≥100 dokumentów i ≥91 tys. słów; `ocr_prasa` 151 tys.
 słów. Dokumenty przycięte do 20 tys. znaków; bez NFC.
 
@@ -103,6 +110,11 @@ słów. Dokumenty przycięte do 20 tys. znaków; bez NFC.
   −0,58%, ale CI [−0,0401; +0,0228] zawiera zero → nieistotne.
 * Eksport HF jest minimalnie lepszy od referencji (0,0–0,5%), ale to ta sama
   rodzina; różnica wynika z pretokenizacji (patrz 3.8).
+* **Pełne PDF uchwał (niezależna runda 3):** HTML dziennika to zwykle pierwsza
+  strona. Na pełnym PDF przewaga nad APT3 spada do **0,55%** (HF 0,82%) —
+  poniżej progu 1%; APT3 jest przy tym stratny (round-trip 6/1010). Na 4 nowych
+  źródłach (Dolny Śląsk, TED, SAOS, NCN) przewaga nad Pollockiem to **−6,11%**.
+  Źródła: `results/full_pdf_uchwaly.json`, `results/new_sources_four.json`.
 
 ### 3.2 Zapisy urzędowe i liczby — `results/notations.json`
 
@@ -150,6 +162,26 @@ liniowo, ale koszt na cyfrę jest w przybliżeniu stały (~0,46–0,64). To nie
 (patrz 3.3): CPV 21,7%, znak sprawy 27,6%, uchwała 23,6%, NIP 46,4% innych
 podziałów. **H2 częściowo potwierdzona** (chaos kontekstowy tak, rosnący koszt
 na cyfrę nie).
+
+### 3.2a Koszt „każda cyfra osobno” — `results/digits_cost.json`
+
+Dolna granica (Codex A7) i górna (Grok) na teście, dokumenty przycięte do 20k:
+
+| dziedzina | udział cyfr | dolna | górna |
+|---|---:|---:|---:|
+| przetargi_ogloszenia | 4,06% | +5,63% | +17,10% |
+| przetargi_kio | 2,41% | +4,51% | +10,52% |
+| samorzad_uchwaly | 7,62% | +12,42% | +25,83% |
+| granty_ogloszenia | 5,07% | +9,46% | +16,05% |
+| prawo_eli | 3,97% | +6,86% | +15,38% |
+| ocr_prasa | 1,93% | +2,12% | +4,62% |
+| tabele_json | 7,27% | +7,73% | +19,03% |
+| web | 0,84% | +1,95% | +3,45% |
+| **7 dziedzin urzędowych** | **4,36%** | **+6,68%** | **+15,04%** |
+
+Na pełnym ogłoszeniu: mediana 3984 → 4646 tokenów (+16,6%), w 4096 mieści się
+53,3% dziś i 33,3% po rozbiciu. To szacunek, nie tokenizer po retreningu;
+prawdziwy koszt zmierzy TKX-C.
 
 ### 3.3 Spójność podziału — `results/consistency.json`
 
@@ -239,44 +271,55 @@ Zgodnie z literaturą (R² ≈ 0,02) nie przekładamy tego wprost na jakość mo
 
 ### 3.7 Słownik — `results/vocab_usage.json`
 
-| tokenizer | słownik | martwe | <5 użyć | Rényi 2,5 | top-1000 |
-|---|---:|---:|---:|---:|---:|
-| TOKENIZATOREX | 32 000 | **1,8%** | 8,6% | **0,0074** | 52,0% |
-| TOKENIZATOREX-HF | 32 000 | **1,8%** | 8,6% | **0,0074** | 51,9% |
-| TOKENIZATOREX-base | 32 000 | 2,2% | 11,6% | 0,0032 | 63,3% |
-| Slayer1B | 32 768 | 8,9% | 16,9% | 0,0027 | 62,4% |
-| APT3-1B | 31 980 | 2,6% | 8,4% | 0,0077 | 57,1% |
-| Pollock-2.0 | 49 152 | 9,4% | 16,6% | 0,0016 | 59,8% |
-| Bielik-v3 | 32 128 | 38,4% | 26,4% | 0,0044 | 90,3% |
-| PLLuM-12B | 131 072 | 72,6% | 15,0% | 0,0013 | 75,5% |
-| GPT-4o | 200 019 | 78,9% | 11,9% | 0,0010 | 72,5% |
+| tokenizer | słownik | martwe | <5 użyć | Rényi H/ln(V) | exp(H)/V | top-1000 |
+|---|---:|---:|---:|---:|---:|---:|
+| TOKENIZATOREX | 32 000 | **1,8%** | 8,6% | 0,5273 | 0,00742 | 52,0% |
+| TOKENIZATOREX-HF | 32 000 | **1,8%** | 8,6% | 0,5271 | 0,00740 | 51,9% |
+| TOKENIZATOREX-base | 32 000 | 2,2% | 11,6% | 0,4451 | 0,00316 | 63,3% |
+| Slayer1B | 32 768 | 8,9% | 16,9% | 0,4309 | 0,00269 | 62,4% |
+| APT3-1B | 31 980 | 2,6% | 8,4% | **0,5306** | **0,00768** | 57,1% |
+| Pollock-2.0 | 49 152 | 9,4% | 16,6% | 0,4021 | 0,00157 | 59,8% |
+| Bielik-v3 | 32 128 | 38,4% | 26,4% | 0,4762 | 0,00436 | 90,3% |
+| PLLuM-12B | 131 072 | 72,6% | 15,0% | 0,4378 | 0,00133 | 75,5% |
+| GPT-4o | 200 019 | 78,9% | 11,9% | 0,4306 | 0,00096 | 72,5% |
 
-SuperBPE jest **najbardziej efektywny** wśród polskich 32k (obok APT3), a base
-ma 2× niższą efektywność Rényiego. Duże słowniki światowe są w większości
-martwe na polskim; to nie jest wada tokenizera, tylko miara niedopasowania.
+**APT3 wygrywa obie formy Rényiego** (0,5306 i 0,00768 vs TKX 0,5273 i 0,00742).
+1,8% martwych tokenów TKX zostaje faktem, ale Rényi jest miarą opisową i nie
+przewiduje jakości modelu (Cognetta i in. 2024). Nie używać go do wyboru
+wariantu TKX-C.
 
 ### 3.8 Parytet eksportu HF — `results/hf_parity.json`
 
-| dziedzina | identyczne fragmenty | Δ tokenów (HF − ref) |
-|---|---:|---:|
-| przetargi_ogloszenia | 98,411% | −381 (−0,180%) |
-| przetargi_kio | 98,065% | +55 (+0,041%) |
-| samorzad_uchwaly | 97,945% | −339 (−0,309%) |
-| granty_ogloszenia | 95,567% | −726 (−0,403%) |
-| prawo_eli | 98,049% | −479 (−0,234%) |
-| ocr_prasa | 96,188% | −60 (−0,034%) |
-| tabele_json | 94,702% | **−723 (−0,522%)** |
-| web | **99,361%** | −34 (−0,015%) |
-| wikipedia | 92,944% | −375 (−0,146%) |
-| literatura | 99,741% | −53 (−0,019%) |
-| sejm | 99,477% | −63 (−0,031%) |
+| dziedzina | identyczne (ID) | identyczne (ciągi) | Δ tokenów (HF − ref) |
+|---|---:|---:|---:|
+| przetargi_ogloszenia | 98,411% | 100% | −381 (−0,180%) |
+| przetargi_kio | 98,065% | 100% | +55 (+0,041%) |
+| samorzad_uchwaly | 97,945% | 100% | −339 (−0,309%) |
+| granty_ogloszenia | 95,567% | 100% | −726 (−0,403%) |
+| prawo_eli | 98,049% | 100% | −479 (−0,234%) |
+| ocr_prasa | 96,188% | 100% | −60 (−0,034%) |
+| tabele_json | 94,702% | 100% | **−723 (−0,522%)** |
+| web | **99,361%** | 100% | −34 (−0,015%) |
+| wikipedia | 92,944% | 100% | −375 (−0,146%) |
+| literatura | 99,741% | 100% | −53 (−0,019%) |
+| sejm | 99,477% | 100% | −63 (−0,031%) |
 
-**H8 potwierdzona:** parytet urzędowy 97,27% vs web 99,36% (z = −31,0), wszystkie
-7 dziedzin urzędowych <99%. Dominujące przyczyny różnic: cyfry (szczególnie
+**H8 potwierdzona:** parytet urzędowy 97,27% (ID) vs web 99,36% (z = −31,0),
+wszystkie 7 dziedzin urzędowych <99%. **Po zdekodowaniu 100% fragmentów jest
+identycznych** — różnica dotyczy scalania, nie utraty znaków/spacji; kontrolę
+dodano po rundzie 2 (`identical_share_decoded`). Dominujące przyczyny różnic: cyfry (szczególnie
 4+), kropki/skróty, fragmenty z wieloma spacjami. Eksport jest **nieco bardziej
 kompresyjny** niż referencja, bo HF stosuje merge'e w jednym przebiegu na całym
 fragmencie; to nie jest „lepszy tokenizer”, tylko inny. Skutek: trening i ocena
 muszą używać **tego samego** pliku `tokenizer.json`.
+
+### 3.8a Kontekst 2048/4096 (niezależna runda 3)
+
+Pełny tekst bez cięcia 20k, tokenizer HF: ogłoszenie przetargowe mediana 3984,
+p90 7396, w 2048 1,7%, w 4096 53,3%; po rozbiciu cyfr mediana 4646 i w 4096
+33,3%. Pełny akt śląski: mediana 2403, p90 7408, w 2048 40%, w 4096 72,5%.
+Źródło: `audit/results/context_full.json`,
+`results/doc_lengths_extra.json`. To decyzja o oknie modelu, nie o tokenizerze.
 
 ### 3.9 Szybkość — `results/speed.json`
 
@@ -339,17 +382,31 @@ innych tokenów). To ryzyko dla reprodukowalności i dla parytetu HF.
 * APT3 jest stratny (NFKC), więc jego wynik jest zaniżony kosztem wierności.
 * OCR z Polony ma błędy rozpoznawania — celowo.
 * ELI 2026 to PDF-y; pypdf może łamać linie — identycznie dla wszystkich.
-* Dokumenty przycięte do 20 tys. znaków (jak w README).
+* Dokumenty przycięte do 20 tys. znaków (jak w README); na pełnym PDF uchwał
+  przewaga nad APT3 spada do 0,55% (HF 0,82%), a APT3 jest stratny (6/1010).
+* „Tabele JSON” to ten sam strumień BZP co ogłoszenia — nie siódma niezależna
+  dziedzina.
+* Szacunek cyfr (+6,7–15,0% na urzędowych, +16,6% na pełnym ogłoszeniu) nie jest
+  tokenizerem po retreningu; prawdziwy koszt zmierzy TKX-C.
 * H6/H1/consistency mają korekty implementacji opisane w „Zmianach po fakcie”;
   H6 jest oznaczone jako post hoc.
 * Stabilność to jeden retrening na jednym innym shardzie, nie distribution shift.
 * Morfologia: SuperBPE oceniany na izolowanych formach (oficjalny kod MorphScore
   nie ma kontekstu); to może zaniżać wynik superwordów.
 
-## 7. Runda 2 i 3
+## 7. Rundy 2 i 3 — samoocena i niezależne
 
-* Runda 2 (`audit/REVIEW_R2.md`): niezależny agent odtworzył 5 liczb; fertility
-  i parytet HF zgodne do 0,0000%, H5 różnice wyjaśnione doborem dokumentów,
-  H1 liczniki (+0,77%) wyjaśnione regexem, H6 zgłoszony jako błąd (zawyżenie
-  i logika statusu) → poprawiony, werdykt końcowy **PASS**.
-* Runda 3: `audit/RED_TEAM_R3.md` (adwokat diabła).
+`REVIEW_R2.md` i `RED_TEAM_R3.md` to **samoocena wykonawcy**, nie niezależne
+rundy. Niezależne rundy zrobili osobno Codex i Grok; ich liczby mają
+pierwszeństwo.
+
+* **Runda 2 — Codex:** gałąź `review/tkx-a-r2-codex` @ `47e9cb2`;
+  `audit/independent/codex/REVIEW_CODEX_R2.md`; werdykt **PASS_Z_UWAGAMI**,
+  12/12 liczb powtórzonych. Uwagi: brak pomiaru cyfr, Rényi tylko `exp(H)/|V|`,
+  HF #1 wynika ze scalania (ciągi 100%), bootstrap RNG, parytet przez ID.
+* **Runda 3 — Grok:** gałąź `review/tkx-a-r3-grok` @ `686cbce`;
+  `audit/independent/grok/RED_TEAM_GROK_R3.md`; werdykt **zmienia 2, osłabia 2,
+  nie zmienia 3**. Zmienia: Rényi i kryterium sukcesu modelu. Osłabia: pełne PDF
+  uchwał i „tokeny albo bajty”. Nie zmienia: 4 nowe źródła, round-trip, 2048, H1.
+* Po tych rundach: dodano `digits_cost.py`, obie formy Rényiego, pełne PDF
+  uchwał, sekcję o kontekście, parytet HF na ciągach i jeden RNG bootstrapu.

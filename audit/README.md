@@ -23,6 +23,7 @@ python audit/hf_parity.py
 python audit/speed.py
 python audit/stability.py               # opcjonalny retrening; może dać UNKNOWN
 python audit/official_aggregate.py
+python audit/digits_cost.py
 # 3) wykresy i testy
 python audit/make_charts.py
 python -m pytest -q
@@ -49,6 +50,8 @@ wykresy, skrypty recenzji (`review/`) i red teamu (`redteam/`).
 | `vocab_usage.py` | martwe/rzadkie tokeny, Zipf, Rényi |
 | `hf_parity.py` | parytet eksportu HF, H8 |
 | `speed.py` | tokeny/s i MB/s (Python vs HF) |
+| `digits_cost.py` | szacunek kosztu „każda cyfra osobno” (dolna/górna granica) |
+| `official_aggregate.py` | agregat 7 dziedzin i całego korpusu z CI |
 | `stability.py` | tymczasowy retrening na innym shardzie HPLT |
 | `official_aggregate.py` | agregat 7 dziedzin urzędowych i całego korpusu z CI |
 | `make_charts.py` | wykresy PNG do raportu |
@@ -57,4 +60,6 @@ wykresy, skrypty recenzji (`review/`) i red teamu (`redteam/`).
 | `RED_TEAM_R3.md` | adwokat diabła: odporność wniosków, najgorsze przypadki, 2048 |
 | `RAPORT_SLABOSCI.md` | raport końcowy (profesjonalny) |
 | `RAPORT_PROSTY.md` | raport końcowy (prosty język) |
+| `independent/codex/` | niezależna runda 2 (Codex, commit `47e9cb2`) |
+| `independent/grok/` | niezależna runda 3 (Grok, commit `686cbce`) |
 | `tests/test_audit.py` | testy audytu (H9, załącznik A, manifest, parytet) |
