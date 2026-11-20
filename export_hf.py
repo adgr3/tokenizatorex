@@ -50,6 +50,8 @@ def to_hf(tok: SuperBPETokenizer) -> Tokenizer:
         # A1: cyfry są pojedynczymi pretokenami także w eksporcie; stage2 nie ma
         # merge'y z cyframi, więc nic się nie sklei z powrotem.
         pre.append(pre_tokenizers.Digits(individual_digits=True))
+    # V2b (space_first) i V3 (groups3) NIE używają Digits(): wymuszone merge'e
+    # „cyfra ze spacją” / „grupa 3 cyfr” muszą móc się skleić w ramach fragmentu.
     pre.append(pre_tokenizers.ByteLevel(add_prefix_space=False, use_regex=False))
     hf.pre_tokenizer = pre_tokenizers.Sequence(pre)
     hf.decoder = decoders.ByteLevel()

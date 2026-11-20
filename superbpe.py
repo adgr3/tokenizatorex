@@ -42,12 +42,32 @@ WORD_PATTERN = (
 
 # Wariant TKX-C: każda cyfra osobno (bez grup \p{N}{1,3}).
 WORD_PATTERN_SINGLE_DIGITS = WORD_PATTERN.replace(r"\p{N}{1,3}", r"\p{Nd}")
+# V2b: spacja przed liczbą dokleja się do PIERWSZEJ cyfry (tokeny ·0…·9).
+WORD_PATTERN_SPACE_FIRST = WORD_PATTERN.replace(r"\p{N}{1,3}", r"[^\S\r\n]?\p{Nd}")
+# V3: cały ciąg cyfr jednym pretokenem; dzieli go BPE (wymuszone merges 000–999).
+WORD_PATTERN_GROUPS3 = WORD_PATTERN.replace(r"\p{N}{1,3}", r"[^\S\r\n]?\p{N}+")
+_GROUP3_RUN_RE = re.compile(r"([^\S\r\n]*)(\p{N}+)")
 
 CHUNK_RE = re.compile(CHUNK_PATTERN)
 WORD_RE = re.compile(WORD_PATTERN)
 _WORDCOUNT_RE = re.compile(r"[\p{L}\p{M}]+|\p{N}+")
 _DIGIT_RE = re.compile(r"\p{Nd}")
 _WORD_PATTERN_CACHE: dict[str, re.Pattern] = {}
+
+_DIGIT_MODES = ("grouped", "single", "space_first", "groups3")
+
+
+def split_groups3(pretoken: str) -> list[str]:
+    """Dzieli pretoken z ciągiem cyfr na grupy po 3 od prawej (2024 -> 2|024)."""
+    m = _GROUP3_RUN_RE.fullmatch(pretoken)
+    if m is None:
+        return [pretoken]
+    ws, digits = m.group(1), m.group(2)
+    n = len(digits)
+    first = n % 3 or 3
+    groups = [digits[:first]]
+    groups += [digits[i:i + 3] for i in range(first, n, 3)]
+    return [ws + groups[0]] + groups[1:]
 
 
 def normalize_text(text: str, mode: str = "none") -> str:
@@ -76,7 +96,11 @@ def pretokens(text: str, word_pattern: str = WORD_PATTERN, normalize: str = "non
     out: list[str] = []
     rx = word_regex(word_pattern)
     for ch in CHUNK_RE.findall(normalize_text(text, normalize)):
-        out.extend(rx.findall(ch))
+        if word_pattern == WORD_PATTERN_GROUPS3:
+            for pt in rx.findall(ch):
+                out.extend(split_groups3(pt))
+        else:
+            out.extend(rx.findall(ch))
     return out
 
 
@@ -202,13 +226,17 @@ def bpe_train_loop(
 
 class SuperBPETokenizer:
     def __init__(self, digits: str = "grouped", normalize: str = "none") -> None:
-        if digits not in ("grouped", "single"):
+        if digits not in _DIGIT_MODES:
             raise ValueError(f"nieznany tryb cyfr: {digits}")
         normalize_text("", normalize)  # walidacja trybu
         self.digits = digits
         self.normalize = normalize
-        self.word_pattern = (WORD_PATTERN_SINGLE_DIGITS if digits == "single"
-                             else WORD_PATTERN)
+        self.word_pattern = {
+            "grouped": WORD_PATTERN,
+            "single": WORD_PATTERN_SINGLE_DIGITS,
+            "space_first": WORD_PATTERN_SPACE_FIRST,
+            "groups3": WORD_PATTERN_GROUPS3,
+        }[digits]
         self._word_re = word_regex(self.word_pattern)
         self.vocab: list[bytes] = [bytes([i]) for i in range(256)]
         self.stage1: list[tuple[int, int, int]] = []
@@ -242,11 +270,68 @@ class SuperBPETokenizer:
         return b" " in self.vocab[tid].lstrip(b" ")
 
     # ---- trening
+    def _add_merge(self, a: int, b: int) -> int:
+        """Dodaje wymuszony merge na koniec listy i słownika; zwraca nowy ID."""
+        new_id = len(self.vocab)
+        self.vocab.append(self.vocab[a] + self.vocab[b])
+        self.stage1.append((a, b, new_id))
+        return new_id
+
+    def _seed_forced_merges(self) -> None:
+        """V2b/V3: wymuszone tokeny cyfrowe.
+
+        V2b: spacja + cyfra (·0…·9). V3: pełny zestaw 000–999 i 0–99 oraz
+        wersje ze spacją wiodącą, żeby żaden rok ani kod nie był „obcy”.
+        Kolejność merges jest ważna: najpierw gołe grupy 2-/3-cyfrowe, potem
+        spacja+cyfra, potem spacja+grupa — dzięki temu BPE składa grupy od prawej.
+        """
+        if self.stage1:
+            return
+        b = {bytes([i]): i for i in range(256)}
+        if self.digits == "groups3":
+            # 1) gołe grupy 2-cyfrowe (0–99), 2) gołe grupy 3-cyfrowe (000–999).
+            # Trójka składana jest jako (lewa dwójka, ostatnia cyfra) — BPE
+            # zawsze łączy najpierw lewą parę, bo dwójki mają niższą rangę.
+            two = {}
+            for n in range(100):
+                s = f"{n:02d}"
+                two[s] = self._add_merge(b[s[0].encode()], b[s[1].encode()])
+            three = {}
+            for n in range(1000):
+                s = f"{n:03d}"
+                three[s] = self._add_merge(two[s[:2]], b[s[2].encode()])
+        if self.digits in ("space_first", "groups3"):
+            # 3) spacja+cyfra (·0…·9)
+            for d in range(10):
+                self._add_merge(b[b" "], b[str(d).encode()])
+        if self.digits == "groups3":
+            # 4) spacja+dwójka, 5) spacja+trójka (pierwsza grupa liczby)
+            for n in range(100):
+                self._add_merge(b[b" "], two[f"{n:02d}"])
+            for n in range(1000):
+                self._add_merge(b[b" "], three[f"{n:03d}"])
+        self._rebuild()
+
+    def _stage1_allowed(self, p: tuple[int, int], new_bytes: bytes):
+        if self.digits in ("single", "space_first", "groups3"):
+            if _DIGIT_RE.search(new_bytes.decode("utf-8", errors="ignore")):
+                return False
+        if self.digits in ("space_first", "groups3"):
+            if new_bytes.endswith((b" ", b"\t")):
+                return False
+        return True
+
     def train_stage1(self, pretoken_counts: Counter, target_vocab: int, log=print) -> None:
+        self._seed_forced_merges()
+        forced = list(self.stage1)
         items = list(pretoken_counts.items())
         seqs = [list(w.encode("utf-8")) for w, _ in items]
+        if forced:
+            seqs = [merge_by_rank(s, self.ranks1) for s in seqs]
         freqs = [f for _, f in items]
-        self.stage1 = bpe_train_loop(seqs, freqs, self.vocab, target_vocab, log=log)
+        learned = bpe_train_loop(seqs, freqs, self.vocab, target_vocab,
+                                 allowed=self._stage1_allowed, log=log)
+        self.stage1 = forced + learned
         self._rebuild()
 
     def truncate_stage1(self, transition: int) -> None:
@@ -268,8 +353,10 @@ class SuperBPETokenizer:
             if p in stage1_pairs:           # para już ma merge z etapu 1 — nie dublujemy
                 return False
             text = new_bytes.decode("utf-8", errors="ignore")
-            if self.digits == "single" and _DIGIT_RE.search(text):
+            if self.digits in ("single", "space_first", "groups3") and _DIGIT_RE.search(text):
                 return False                # A1: superwordy nie mogą zawierać cyfr
+            if self.digits in ("space_first", "groups3") and new_bytes.endswith((b" ", b"\t")):
+                return False                # V2b/V3: zakaz superwordów z końcową spacją
             words = _WORDCOUNT_RE.findall(text)
             return len(words) <= max_words
 
@@ -367,12 +454,13 @@ class SuperBPETokenizer:
         word_pattern = data.get("word_pattern", WORD_PATTERN)
         digits = data.get("digits")
         if digits is None:
-            if word_pattern == WORD_PATTERN:
-                digits = "grouped"
-            elif word_pattern == WORD_PATTERN_SINGLE_DIGITS:
-                digits = "single"
-            else:
+            by_pattern = {WORD_PATTERN: "grouped",
+                          WORD_PATTERN_SINGLE_DIGITS: "single",
+                          WORD_PATTERN_SPACE_FIRST: "space_first",
+                          WORD_PATTERN_GROUPS3: "groups3"}
+            if word_pattern not in by_pattern:
                 raise ValueError("plik zapisany z nieznanym word_pattern")
+            digits = by_pattern[word_pattern]
         normalize = data.get("normalize", "none")
         tok = cls(digits=digits, normalize=normalize)
         assert word_pattern == tok.word_pattern, "plik zapisany z innymi regexami"

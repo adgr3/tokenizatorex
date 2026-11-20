@@ -71,7 +71,8 @@ def main() -> None:
     ap.add_argument("--transition", type=int, help="punkt przejścia t (rozmiar słownika po etapie 1)")
     ap.add_argument("--stage2-mb", type=int, default=60)
     ap.add_argument("--max-words", type=int, default=4)
-    ap.add_argument("--digits", choices=["grouped", "single"], default="grouped")
+    ap.add_argument("--digits", choices=["grouped", "single", "space_first", "groups3"],
+                    default="grouped")
     ap.add_argument("--normalize", choices=["none", "nfc"], default="none")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()

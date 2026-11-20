@@ -6,8 +6,9 @@ import unicodedata
 
 import pytest
 
-from superbpe import (WORD_PATTERN, WORD_PATTERN_SINGLE_DIGITS, SuperBPETokenizer,
-                      normalize_text, pretokens)
+from superbpe import (WORD_PATTERN, WORD_PATTERN_GROUPS3, WORD_PATTERN_SINGLE_DIGITS,
+                      WORD_PATTERN_SPACE_FIRST, SuperBPETokenizer, normalize_text,
+                      pretokens, split_groups3)
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 V1 = os.path.join(ROOT, "tokenizers", "tokenizatorex-32k.json")
@@ -41,6 +42,53 @@ def test_digits_and_nfc_pretokens_equal_after_nfc():
     a = pretokens(nfd, WORD_PATTERN_SINGLE_DIGITS, normalize="nfc")
     b = pretokens(unicodedata.normalize("NFC", nfd), WORD_PATTERN_SINGLE_DIGITS)
     assert a == b
+
+
+def test_v2b_space_attaches_to_first_digit():
+    pts = pretokens("w roku 2024 r. kwota 1 234 zł", WORD_PATTERN_SPACE_FIRST)
+    assert " 2" in pts and " 1" in pts
+    assert "roku " not in pts
+    assert all(not (p.endswith(" ") and p.strip().isalpha()) for p in pts)
+
+
+def test_v3_groups_from_right():
+    assert split_groups3("2024") == ["2", "024"]
+    assert split_groups3("45233140") == ["45", "233", "140"]
+    assert split_groups3(" 45233140") == [" 45", "233", "140"]
+    assert split_groups3("12345") == ["12", "345"]
+    assert pretokens("w roku 2024 r.", WORD_PATTERN_GROUPS3)[:4] == ["w", " roku", " 2", "024"]
+
+
+def test_v3_forced_tokens_present_after_small_train():
+    from collections import Counter
+    from superbpe import chunks
+    tok = SuperBPETokenizer(digits="groups3", normalize="nfc")
+    cnt1 = Counter(pretokens("2024 45233140 000 999 w roku 2035", tok.word_pattern))
+    tok.train_stage1(cnt1, 4000, log=None)
+    have = set(tok.vocab)
+    for s in ("000", "999", "024", "233", "45", "99", "0"):
+        assert s.encode() in have, s
+
+
+def test_v2b_and_v3_roundtrip_via_hf_export(tmp_path):
+    from tokenizers import Tokenizer
+    from collections import Counter
+    from superbpe import chunks
+    from export_hf import to_hf
+    text = "w roku 2024 r. zadanie 1 234 567,89 zł CPV 45233140-2"
+    for mode in ("space_first", "groups3"):
+        tok = SuperBPETokenizer(digits=mode, normalize="nfc")
+        cnt1 = Counter(pretokens(text * 4, tok.word_pattern))
+        tok.train_stage1(cnt1, 4000, log=None)
+        tok.train_stage2(Counter(chunks(text * 4)), 4200, log=None)
+        tok.add_specials(["<|endoftext|>"])
+        path = str(tmp_path / (mode + ".json"))
+        to_hf(tok).save(path)
+        hf = Tokenizer.from_file(path)
+        for s in ("w roku 2024 r. zadanie", "1 234 567,89 zł", "45233140-2"):
+            ids = hf.encode(s, add_special_tokens=False).ids
+            assert hf.decode(ids, skip_special_tokens=False) == s
+            assert ids == tok.encode(s), (mode, s)
 
 
 def test_load_v1_keeps_defaults():
