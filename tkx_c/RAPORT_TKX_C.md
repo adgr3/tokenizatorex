@@ -8,6 +8,12 @@ Data: 19.11.2026 · Repo: `adgr3/tokenizatorex`, gałąź `feat/tkx-c-19-11`
 · **Aktualizacja 20.11 (decyzja właściciela, PR #3 wciąż draft):** dodano warianty
   **V2b** i **V3** (32k/24k/16k) na tej samej próbce p2; pomiary i golden w CI
   oznaczone jako **post hoc** w `results/digits_cost_new.json`.
+· **Aktualizacja — poprawki po recenzjach (Codex r2, Grok r3):** naprawiono V3.
+  Kanoniczny enkoder HF **nie realizował** reguły „grupy po 3 od prawej” —
+  dawał 96/856 kształtu 2+3+3 i 505/1000 grup jako jeden token. Po naprawie
+  jest to 100% (szczegóły: §4.9 i nowa sekcja „Recenzje”). Wszystkie poniższe
+  liczby V3 są **po naprawie**; stare wartości zachowano w nawiasie jako
+  „przed naprawą”.
 
 ## 1. Podsumowanie w 10 zdaniach
 
@@ -44,21 +50,27 @@ Data: 19.11.2026 · Repo: `adgr3/tokenizatorex`, gałąź `feat/tkx-c-19-11`
     16k — 8,2%. V0 to **nowa baza na p2**, nie kopia v1: 89,3% wspólnego
     słownika, 1,6842 vs 1,6825 fertility na urzędowych.
 11. **V2b i V3 obniżają koszt cyfr:** na 7 dziedzinach urzędowych V2b kosztuje
-    **+11,08%** [+10,32; +11,96], a V3 **+5,26%** [+4,85; +5,72] względem V0 —
-    wobec +13,99% dla V2. V3 wygrywa kosztem, ale ma 4,9% martwych tokenów
-    (wymuszony pełny zestaw grup 000–999 i 0–99).
+    **+11,08%** [+10,32; +11,96], a V3 **+4,58%** [+4,15; +5,05] względem V0 —
+    wobec +13,99% dla V2 (przed naprawą V3 +5,26% [+4,85; +5,72]). V3 ma
+    **1,80%** martwych tokenów (przed: 4,88%); spadek to efekt naprawy enkodera,
+    nie strojenia pod wynik.
 12. **V2b usuwa duplikat „roku”:** w V2 `w roku 2024 r.` daje `w|·roku·|2|0|2|4|·r.`
     (dwie wersje słowa: `·roku` i `·roku·`); w V2b jest zawsze `w|·roku|·2|0|2|4|·r.`,
     a w V3 `w|·roku|·2|024|·r.`. Kalendarz pozostaje płaski (V2b 8, V3 6 tokenów).
 13. **Jakość bez regresji:** V2b/V3 mają round-trip 2752/2752, NFD +0,0%,
     spójność data/CPV 0% i zgodność z Pythonem 99,98%; golden (1240 zdań × 14
-    wariantów) przechodzi w CI. Ostateczny wybór V2/V2b/V3 zapada w TKX-D na
-    małych modelach (BPB + sonda + koszt w tokenach).
+    wariantów, zaktualizowany tylko dla V3-32k) przechodzi w CI. Ostateczny
+    wybór V2/V2b/V3 zapada w TKX-D na małych modelach (**BPB + sonda**, nie
+    koszt w tokenach na teście).
 
 ### Skąd część kosztu pojedynczych cyfr
 
 Dwa źródła zbędnego kosztu widać już w samych kawałkach (kanoniczny HF,
-`results/examples.json`; `·` = spacja):
+`results/examples.json`; `·` = spacja). Kawałki są dekodowane **każdy token
+osobno** (`tokenizer.decode([id])`), dzięki czemu `ł` wypisuje się jako `ł`,
+a nie jako `ÅĤ` z reprezentacji ByteLevel; to samo dotyczy `examples.json`.
+Różnice w przedziałach ufności między CI wykonawcy i recenzentem (0,05–0,1 p.p.)
+wynikają z innej realizacji generatora RNG bootstrapu przy tym samym seedzie.
 
 1. **Spacja przed liczbą przykleja się do poprzedniego słowa.** W V2 mamy
    `·roku` i `·roku·` — ten sam wyraz w dwóch wersjach, zależnie od tego, czy
@@ -69,14 +81,14 @@ Dwa źródła zbędnego kosztu widać już w samych kawałkach (kanoniczny HF,
    — cyfry i spacje osobnymi tokenami; całość z groszami i `zł` ma 13 kawałków.
    W przykładzie z decyzji było to 9 → 14; na naszym V0/V2 wychodzi 7 → 13
    (inna próbka p2), ale mechanizm jest ten sam. V2b sprowadza to do 11, a V3
-   do 6 kawałków (`1|·234|·567|,|89|·zÅĤ`).
+   do 6 kawałków (`1|·234|·567|,|89|·zł`).
 
 | wariant | `w roku 2024 r.` | kawałki | `1 234 567,89 zł` | kawałki |
 |---|---|---:|---|---:|
-| V0-32k | `w\|·roku\|·202\|4·r.` | 4 | `1\|·23\|4\|·56\|7,\|89\|·zÅĤ` | 7 |
-| V2-32k | `w\|·roku·\|2\|0\|2\|4\|·r.` | 6 | `1\|·\|2\|3\|4\|·\|5\|6\|7\|,\|8\|9\|·zÅĤ` | 13 |
-| V2b-32k | `w\|·roku\|·2\|0\|2\|4\|·r.` | 6 | `1\|·2\|3\|4\|·5\|6\|7\|,\|8\|9\|·zÅĤ` | 11 |
-| V3-32k | `w\|·roku\|·2\|024\|·r.` | 5 | `1\|·234\|·567\|,\|89\|·zÅĤ` | 6 |
+| V0-32k | `w\|·roku\|·202\|4·r.` | 4 | `1\|·23\|4\|·56\|7,\|89\|·zł` | 7 |
+| V2-32k | `w\|·roku·\|2\|0\|2\|4\|·r.` | 7 | `1\|·\|2\|3\|4\|·\|5\|6\|7\|,\|8\|9\|·zł` | 13 |
+| V2b-32k | `w\|·roku\|·2\|0\|2\|4\|·r.` | 7 | `1\|·2\|3\|4\|·5\|6\|7\|,\|8\|9\|·zł` | 11 |
+| V3-32k | `w\|·roku\|·2\|024\|·r.` | 5 | `1\|·234\|·567\|,\|89\|·zł` | 6 |
 
 Wariant, który usuwa **obie** przyczyny, to V3; V2b usuwa tylko pierwszą
 (duplikat słowa), zachowując pojedyncze cyfry. Ostateczny wybór — w TKX-D.
@@ -96,7 +108,7 @@ Wariant, który usuwa **obie** przyczyny, to V3; V2b usuwa tylko pierwszą
 | **V2b-32k** (post hoc) | spacja→1. cyfra | tak | 32 000 | 20 000 | tak | 1,8708 [1,8220; 1,9214] |
 | V2b-24k | spacja→1. cyfra | tak | 24 000 | 15 000 | tak | 1,9573 [1,9074; 2,0098] |
 | V2b-16k | spacja→1. cyfra | tak | 16 000 | 10 000 | tak | 2,1185 [2,0676; 2,1732] |
-| **V3-32k** (post hoc) | grupy po 3 od prawej | tak | 32 000 | 20 000 | tak | 1,7729 [1,7294; 1,8203] |
+| **V3-32k** (post hoc, po naprawie) | grupy po 3 od prawej | tak | 32 000 | 20 000 | tak | 1,7613 [1,7184; 1,8083] (przed: 1,7729) |
 | V3-24k | grupy po 3 od prawej | tak | 24 000 | 15 000 | tak | 1,8624 [1,8178; 1,9105] |
 | V3-16k | grupy po 3 od prawej | tak | 16 000 | 10 000 | tak | 2,0412 [1,9969; 2,0894] |
 
@@ -235,12 +247,25 @@ To decyzja o oknie/dzieleniu w TKX-D, nie o tokenizerze. Wykres
 Przy stałym budżecie 150M większy słownik zabiera parametry z reszty modelu —
 dlatego TKX-D musi porównywać BPB przy wyrównanym budżecie, nie samą fertility.
 
-### 4.9 V2b i V3 (post hoc, decyzja z 20.11)
+### 4.9 V2b i V3 (post hoc, decyzja z 20.11; V3 po naprawie)
 
 Wszystkie warianty trenowano na tej samej próbce p2 (300 MB etap 1, 100 MB
 etap 2, seed i procedura jak V0–V2). V3 ma wymuszone w słowniku **wszystkie**
 grupy `000`–`999` i `0`–`99` oraz wersje ze spacją wiodącą (2210 wymuszonych
-merges); dzięki temu żaden rok ani kod nie jest „obcy”.
+merges + 2000 aliasów scalen do istniejących tokenów — słownik się nie
+powiększa). Wymuszone grupy nie oznaczają jednak, że enkoder je emituje.
+
+**Naprawa V3 (WAŻNE-1 / ataki 1, 2, 8).** Przed naprawą `split_groups3`
+(`superbpe.py:60-70`) działał tylko w `pretokens()` podczas treningu; ścieżka
+kodowania i eksport HF stosowały wyłącznie `Split` + `ByteLevel`, więc BPE
+scalał najpierw tańszą parę i `950` wychodziło jako `9|50`. Obecnie ten sam
+regex z lookaheadem (`\p{N}{1,3}(?=(?:\p{N}{3})*(?!\p{N}))`, obsługiwany przez
+`tokenizers` 0.23.3) izoluje grupy w treningu, w enkoderze Pythona i w eksporcie
+HF, a aliasy gwarantują jeden token niezależnie od kolejności par. Siatka
+`000`–`999`: **1000/1000** jeden token (przed: 505/1000); `00`–`99`: 100/100;
+kody CPV w kształcie `2+3+3`: **596/596** (przed: 65/596 wg identycznej metody,
+96/856 wg recenzji Groka). Znak `§` pozostaje dwoma kawałkami bajtowymi —
+naprawa dotyczyła wyłącznie grup cyfr i nie zmienia tego faktu.
 
 **Koszt względem V0** (`results/digits_cost_new.json`, parowany bootstrap
 1000×, seed 20261119; 7 dziedzin urzędowych razem):
@@ -249,15 +274,33 @@ merges); dzięki temu żaden rok ani kod nie jest „obcy”.
 |---|---:|---:|---:|---:|---:|
 | V2-32k | +13,99% [+13,08; +15,07] | +16,8% | +22,4% | +18,9% | +15,3% |
 | V2b-32k | **+11,08%** [+10,32; +11,96] | +14,4% | +17,3% | +16,8% | +11,4% |
-| V3-32k | **+5,26%** [+4,85; +5,72] | +9,5% | +5,4% | +8,9% | +4,4% |
+| V3-32k (po naprawie) | **+4,58%** [+4,15; +5,05] | +8,9% | +4,1% | +7,8% | +3,3% |
+| V3-32k (przed naprawą) | +5,26% [+4,85; +5,72] | +9,5% | +5,4% | +8,9% | +4,4% |
 
-Spójność zapisów: data cyfrowa i CPV 0% dla V2/V2b/V3 (V0 17,1%/23,9%);
-znak sprawy V2b 12,1% vs V2 13,0%; kwota i przepis bez zmian (27,1%/14,9%).
+Spójność zapisów: data cyfrowa i CPV 0% dla V2/V2b/V3 (V0 17,1%/23,9%).
+**0% oznacza stabilność podziału między kontekstami, nie zgodność z hierarchią
+kodu CPV** — grupowanie od prawej z natury przecina hierarchię od lewej
+(`45|233|140` vs grupa `452` i klasa `4523`); V2/V2b zachowują każdy prefiks
+(856/856). V2b dokleja spację tylko wtedy, gdy stoi przed liczbą: dotyczy
+**49,6%** ciągów cyfr na urzędowych, a ten sam ciąg ma dwa różne pierwsze
+tokeny w **1004/2070** powtórzeń (V2: 0) — V2b usuwa duplikaty `·roku·`, ale
+wprowadza nową niespójność pierwszej cyfry.
+
 NFD: V2/V2b/V3 **+0,0%** (V0 +45,4%). Kalendarz 2015–2035 płaski: V2b **8**,
-V3 **6** tokenów w szablonie (V0 4/5/6). Round-trip: **2752/2752** dla każdego
-z 14 wariantów; zgodność z Pythonem V2b 99,975%, V3 99,985%.
-Słownik: V2b 2,01% martwych (jak V2), V3 **4,88%** — cena wymuszonego
-pełnego zestawu grup. Golden: 1240 zdań × 14 wariantów, testy w CI przechodzą.
+V3 **6** tokenów w szablonie (V0 4/5/6) — ale **stały licznik nie dowodzi
+uogólnienia**: w V3 `024` i `025` to osobne tokeny, kształt roku skacze przy
+1999/2000 (2+2 → 1+3), a o uogólnieniu rozstrzygnie sonda w TKX-D. Round-trip:
+**2752/2752** dla każdego z 14 wariantów; zgodność z Pythonem V2b 99,975%,
+V3 99,985%. Słownik: V2b 2,01% martwych (jak V2), V3 **1,80%** (przed: 4,88%);
+przy 16k wymuszone grupy to nadal 13,81% słownika, martwe 7,03%, a 500 z 1100
+gołych trójek nie ma użyć — dlatego V3-16k/24k odrzucamy przed TKX-D. Golden:
+1240 zdań × 14 wariantów (zaktualizowany tylko V3-32k), testy w CI przechodzą.
+
+**+4,58% nie jest stałą kosztem.** Na 32 nowych ogłoszeniach TED (zestaw
+R3-extra z recenzji Groka; URL/SHA w `tkx_c/review_grok/r3_extra_manifest.json`,
+treści poza repozytorium) V3 kosztuje **+2,93% [2,69; 3,16]** względem V0 —
+przedział nie nachodzi na urzędowy [4,15; 5,05]. Kolejność V3 < V2b < V2
+trzyma się w 35/35 dokumentów, ale sama liczba +5,26% się nie przenosi.
 Wykres `figures/05_varianty.png`.
 
 ## 5. Progi akceptacji
@@ -270,8 +313,8 @@ Wykres `figures/05_varianty.png`.
 | A2: NFD ≤1% w V2/V2b/V3 | +0,0% | **SPEŁNIONY** |
 | A3: round-trip 100% na teście | 2752/2752 dla 14 wariantów | **SPEŁNIONY** |
 | A3: golden sequences w CI | 1240 zdań × 14, testy przechodzą | **SPEŁNIONY** |
-| Koszt cyfr podany z CI | V2 +13,997%; V2b +11,08%; V3 +5,26% (urzędowe) | **RAPORT** |
-| Wybór sposobu cięcia liczb | V2 / V2b / V3 — do TKX-D (BPB + sonda + koszt) | **ZGODNIE Z DECYZJĄ** |
+| Koszt cyfr podany z CI | V2 +13,997%; V2b +11,08%; V3 +4,58% (po naprawie; urzędowe) | **RAPORT** |
+| Wybór sposobu cięcia liczb | V2 / V2b / V3 — do TKX-D (BPB + sonda; nie koszt w tokenach) | **ZGODNIE Z DECYZJĄ** |
 | Wybór słownika | brak — do TKX-D | **ZGODNIE Z PROTOKOŁEM** |
 
 ## 6. Koszt vs zysk (jedna tabela)
@@ -281,17 +324,24 @@ Wykres `figures/05_varianty.png`.
 | Kalendarz 2015–2035 | 4/5/6 | 8/8/8 | 8/8/8 | **6/6/6** |
 | Kawałki `1 234 567,89 zł` | 7 | 13 | 11 | **6** |
 | Duplikat `·roku` / `·roku·` | nie | **tak** | nie | nie |
-| Fertility urzędowe | 1,6842 | 1,9200 | 1,8708 | **1,7729** |
-| Koszt vs V0 (urzędowe) | — | +13,99% | +11,08% | **+5,26%** |
-| Spójność data/CPV | 17,1%/23,9% | 0%/0% | 0%/0% | 0%/0% |
+| Fertility urzędowe | 1,6842 | 1,9200 | 1,8708 | **1,7613** (przed: 1,7729) |
+| Koszt vs V0 (urzędowe) | — | +13,99% | +11,08% | **+4,58%** (przed: +5,26%) |
+| Spójność data/CPV | 17,1%/23,9% | 0%/0% | 0%/0% | 0%/0% (stabilność, nie hierarchia) |
 | NFD | +45,4% | 0,0% | 0,0% | 0,0% |
-| Martwe tokeny | 1,95% | 2,01% | 2,01% | 4,88% |
+| Martwe tokeny | 1,95% | 2,01% | 2,01% | 1,80% (przed: 4,88%) |
 | HF vs Python | 97,08% | 99,975% | 99,975% | 99,985% |
 
-Nie ma progu „za drogo”: wybór między +14% (V2), +11% (V2b) i +5% (V3) to
-decyzja właściciela po TKX-D — czy stały kalendarz i spójność są warte ceny,
-a BPB i sonda potwierdzą zysk na modelu. Wszystkie trzy warianty zachowują
-te same korzyści jakościowe (NFD 0%, spójność, round-trip 100%).
+Nie ma progu „za drogo”: wybór między +14% (V2), +11% (V2b) i +4,6% (V3 po
+naprawie) to decyzja właściciela po TKX-D — czy stały kalendarz i spójność są
+warte ceny, a BPB i sonda potwierdzą zysk na modelu. Sama niższa fertility
+V3 **nie jest** przesłanką jakości dla małego modelu: na literaturze V3 jest
+droższy od V2 o 0,65%, a literatura (Zhou 2024, Yang 2025) przemawia za
+pojedynczymi cyframi przy treningu od zera poniżej 1B parametrów.
+
+**Długości a okno (A9 z recenzji Codexa):** z pojedynczymi cyframi odsetek
+ogłoszeń przetargowych mieszczących się w oknie 4096 spada z **55% (V0) do
+30% (V2)**. To praktyczny koszt dla modelu 150M i argument za decyzją o
+oknie/dzieleniu w TKX-D.
 
 ## 7. Wykresy
 
@@ -319,8 +369,14 @@ te same korzyści jakościowe (NFD 0%, spójność, round-trip 100%).
 * **Golden** pochodzi z `dev`, nie z `test`; regresja, nie dowód jakości.
 * **V1 i V2** mają ten sam słownik, bo p2 jest już NFC; różnią się tylko
   normalizacją wejścia (V2).
-* **V3 ma 4,88% martwych tokenów** — to celowy koszt wymuszenia pełnego zestawu
-  grup `000`–`999` i `0`–`99` (żaden rok/kod nie jest „obcy”).
+* **V3 ma 1,80% martwych tokenów po naprawie** (przed: 4,88%) — to celowy
+  koszt wymuszenia pełnego zestawu grup `000`–`999` i `0`–`99`. Przy 16k
+  wymuszone grupy to 13,81% słownika, martwe 7,03%, a 500/1000 gołych trójek
+  ma zero użyć; dlatego V3-16k/24k są **odrzucone przed TKX-D**.
+* **Grupowanie od prawej przecina hierarchię CPV od lewej** — to nie jest
+  wada implementacji, lecz własność reguły: prefiks grupy `452` nie jest
+  tokenem w kodzie `45233140` (podział `45|233|140`). V2/V2b zachowują
+  każdy prefiks. Wybór między tymi schematami należy do sondy w TKX-D.
 * **Wybór V2/V2b/V3 jest otwarty:** koszt w tokenach zmierzono, ale ostatecznie
   rozstrzygnie BPB + sonda na małych modelach w TKX-D.
 * Nie trenowano modeli 150M; obliczenia TKX-D zaplanowano na wynajętej RTX 5090.
@@ -341,15 +397,58 @@ te same korzyści jakościowe (NFD 0%, spójność, round-trip 100%).
   stabilności, nie twierdzenie o identyczności.
 * **V2b/V3 (20.11):** nowe warianty i wszystkie ich pomiary (`digits_cost_new.json`,
   `examples.json`, golden 14 plików, wykres `05_varianty.png`) są **post hoc** —
-  decyzja zapadła po zamrożeniu protokołu. Nie zmieniają wcześniejszych liczb
-  V0/V1/V2. V2b/V3 wygenerowano tymi samymi skryptami `train.py` na p2; nowe
-  opcje w `superbpe.py` są domyślnie wyłączone (v1 bez zmian).
+  decyzja zapadła po zamrożeniu protokołu. Jawny łańcuch commitów to
+  `9bd1aa5` (pomiary i raporty V0/V1/V2 na `test`) → `ce72c3f` / `b44fee7`
+  (implementacja i pomiary V2b/V3) → `d3a004e` (raporty). Te same dokumenty
+  `test` posłużyły więc zarówno do zaprojektowania reguł V2b/V3, jak i do
+  końcowego pomiaru ich kosztu. **Liczby V2b/V3 z testu nie służą do wyboru
+  wariantu** — wybór należy do BPB i sondy na `dev` w TKX-D. Nie zmieniają
+  wcześniejszych liczb V0/V1/V2. V2b/V3 wygenerowano tymi samymi skryptami
+  `train.py` na p2; nowe opcje w `superbpe.py` są domyślnie wyłączone (v1
+  bez zmian).
+
+## 9a. Literatura — mały model, schemat cyfr, rozmiar słownika
+
+Krótka sekcja z recenzji Groka (atak 7). To **zadania liczbowe**, nie BPB
+tekstu urzędowego; żadna z prac nie mierzy perplexity polskiego tekstu
+urzędowego ani tekstu prawie bez cyfr.
+
+* Dla modeli < 1B trenowanych od zera pojedyncze cyfry są lepiej uzasadnione
+  niż grupy trzycyfrowe: Zhou i in. 2024 (arXiv 2409.17391; podstawy 10 / 100 /
+  1000 — dziesięć konsekwentnie oszczędniejsza danymi) oraz Yang i in. 2025
+  (arXiv 2411.03766; modele 0,1B–3B, przy 0,9B jednocyfrowy wygrywa,
+  trzycyfrowy wypada słabo).
+* Grupowanie od prawej pomaga arytmetyce **dużych** modeli (Singh i Strouse
+  2024, arXiv 2402.14903); luka między kierunkami maleje ze skalą — przeniesienie
+  zwycięzcy sondy z ~30M na 150M jest hipotezą, nie wynikiem.
+* Rozmiar słownika rośnie z budżetem obliczeń (Tao i in. 2024,
+  arXiv 2407.13623); nie wybiera się go samym kosztem tokenów na jednej próbce.
+* Wniosek dla nas: niższa fertility V3 nie jest dowodem jakości dla małego
+  modelu, a „mniej tokenów = lepszy tokenizer” literatura nie popiera.
+
+## 9b. Recenzje (runda 2 i 3)
+
+Do gałęzi dołączono ślad audytu obu niezależnych recenzji:
+
+| recenzja | pliki | werdykt | co zmieniła |
+|---|---|---|---|
+| Codex r2 | `tkx_c/review_codex/REVIEW_CODEX_R2.md`, `results_codex.json` | **PASS_Z_UWAGAMI**, 27/29 liczb odtworzonych | WAŻNE-1: reguła grup po 3 nie jest egzekwowana w enkoderze HF; WAŻNE-2: V2b/V3 post hoc; DROBNE: 6 zamiast 7 kawałków `w roku 2024 r.` |
+| Grok r3 | `tkx_c/review_grok/RED_TEAM_GROK_R3.md`, `attack*.json` | zmienia 3 / osłabia 5 wniosków | kody CPV i lata w V3, spójność V2b, koszt 4,88%, stałość +5,26%, sprzeczność w planie TKX-D |
+
+Co poprawiono po recenzjach: (1) naprawa V3 — jedna reguła w trzech
+miejscach + aliasy, ponowny trening na tej samej próbce p2; (2) korekta 12
+zdań w raportach (koszt V3, CPV, kalendarz, V2b, martwe tokeny, R3-extra,
+literatura, długości, 7 kawałków, `zł`, post hoc, kryterium wyboru);
+(3) zamrożenie kandydatów i kryteriów w `TKX_D_PLAN.md`; (4) nowe testy w CI
+(82 przechodzi). Nie poprawiano: liczb V0/V1/V2 ani ich goldenów.
 
 ## 10. TKX-D
 
-Plan: `tkx_c/TKX_D_PLAN.md`. Decyzja z 20.11: **TKX-D realizujemy**. Kandydaci:
-V0-32k, V2-16k/24k/32k, V2b i V3 (najlepszy rozmiar), tokenizer Slayera v6;
-BPB na tych samych bajtach, sonda dat/kwot/CPV/skrótów, budżet z embeddingami.
+Plan: `tkx_c/TKX_D_PLAN.md`. Decyzja z 20.11: **TKX-D realizujemy**. Kandydaci
+w rundzie 1 (wszyscy 32k, ten sam budżet bajtów): V0-32k, V2-32k, V2b-32k,
+**V3-32k po naprawie** (jako „folia kompresji”, nie faworyt), tokenizer
+Slayera v6. V3-16k/24k odrzucone przed treningiem. BPB na `dev` TKX-A jako
+kryterium + sonda roku/kwoty/CPV; test TKX-A raz, po wyborze.
 `TokenizerTest-32m-A/B` to gotowy wzór (38,9M, BPB 1,0583 vs 1,0622);
 checkpointy Slayer1B-1.09 to punkt odniesienia BPB na tych samych tekstach.
 Obliczenia: **wynajęta 1× RTX 5090 na vast.ai** (bf16, budżet ≤5 USD, stop
@@ -361,8 +460,9 @@ przetrenujemy później na pełnych danych p0 (Kaggle, CPU, ~30 GB RAM).
 
 ## 11. Komunikat
 
-Stan: warianty V0/V1/V2 + V2b/V3 zbudowane, pomiary i testy zakończone
-(59 testów przechodzi), raporty gotowe. PR #3 pozostaje **draftem**; kolejność:
-V2b/V3 (te commity) → niezależne rundy 2 (Codex) i 3 (Grok) → poprawki →
-GO MERGE. Push i PR czekają na zgodę właściciela (zasada nr 1).
+Stan: warianty V0/V1/V2 + V2b/V3 zbudowane, V3 naprawiony, pomiary i testy
+zakończone (**82 testy przechodzą**), raporty poprawione po recenzjach.
+PR #3 pozostaje **draftem**; kolejność: V2b/V3 → recenzje r2 (Codex) i r3
+(Grok) → niniejsze poprawki → krótka kontrola Codexa → GO MERGE. Push i PR
+czekają na zgodę właściciela (zasada nr 1).
 Ostatnia linia: `STATUS=CZEKA_NA_DECYZJE`.
