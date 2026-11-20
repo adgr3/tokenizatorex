@@ -1,0 +1,1646 @@
+{
+  "meta": {
+    "tokenizer": "hf/variants/V3-32k/tokenizer.json (+ V2/V2b/V0 dla szablonu)",
+    "definition_right_groups": "długości od prawej, reszta z lewej (8->2+3+3, 4->1+3)",
+    "atomic3": "czy ciąg 000–999 jest dokładnie jednym tokenem HF"
+  },
+  "atomic3": {
+    "n": 1000,
+    "one_token": 505,
+    "shapes": {
+      "3": 505,
+      "1+2": 495
+    },
+    "not_one_token": 495,
+    "failures_head": [
+      {
+        "n": "100",
+        "pieces": [
+          "1",
+          "00"
+        ]
+      },
+      {
+        "n": "101",
+        "pieces": [
+          "1",
+          "01"
+        ]
+      },
+      {
+        "n": "102",
+        "pieces": [
+          "1",
+          "02"
+        ]
+      },
+      {
+        "n": "103",
+        "pieces": [
+          "1",
+          "03"
+        ]
+      },
+      {
+        "n": "104",
+        "pieces": [
+          "1",
+          "04"
+        ]
+      },
+      {
+        "n": "105",
+        "pieces": [
+          "1",
+          "05"
+        ]
+      },
+      {
+        "n": "106",
+        "pieces": [
+          "1",
+          "06"
+        ]
+      },
+      {
+        "n": "107",
+        "pieces": [
+          "1",
+          "07"
+        ]
+      },
+      {
+        "n": "108",
+        "pieces": [
+          "1",
+          "08"
+        ]
+      },
+      {
+        "n": "109",
+        "pieces": [
+          "1",
+          "09"
+        ]
+      },
+      {
+        "n": "110",
+        "pieces": [
+          "1",
+          "10"
+        ]
+      },
+      {
+        "n": "200",
+        "pieces": [
+          "2",
+          "00"
+        ]
+      },
+      {
+        "n": "201",
+        "pieces": [
+          "2",
+          "01"
+        ]
+      },
+      {
+        "n": "202",
+        "pieces": [
+          "2",
+          "02"
+        ]
+      },
+      {
+        "n": "203",
+        "pieces": [
+          "2",
+          "03"
+        ]
+      },
+      {
+        "n": "204",
+        "pieces": [
+          "2",
+          "04"
+        ]
+      },
+      {
+        "n": "205",
+        "pieces": [
+          "2",
+          "05"
+        ]
+      },
+      {
+        "n": "206",
+        "pieces": [
+          "2",
+          "06"
+        ]
+      },
+      {
+        "n": "207",
+        "pieces": [
+          "2",
+          "07"
+        ]
+      },
+      {
+        "n": "208",
+        "pieces": [
+          "2",
+          "08"
+        ]
+      },
+      {
+        "n": "209",
+        "pieces": [
+          "2",
+          "09"
+        ]
+      },
+      {
+        "n": "210",
+        "pieces": [
+          "2",
+          "10"
+        ]
+      },
+      {
+        "n": "211",
+        "pieces": [
+          "2",
+          "11"
+        ]
+      },
+      {
+        "n": "212",
+        "pieces": [
+          "2",
+          "12"
+        ]
+      },
+      {
+        "n": "213",
+        "pieces": [
+          "2",
+          "13"
+        ]
+      },
+      {
+        "n": "214",
+        "pieces": [
+          "2",
+          "14"
+        ]
+      },
+      {
+        "n": "215",
+        "pieces": [
+          "2",
+          "15"
+        ]
+      },
+      {
+        "n": "216",
+        "pieces": [
+          "2",
+          "16"
+        ]
+      },
+      {
+        "n": "217",
+        "pieces": [
+          "2",
+          "17"
+        ]
+      },
+      {
+        "n": "218",
+        "pieces": [
+          "2",
+          "18"
+        ]
+      }
+    ]
+  },
+  "atomic2": {
+    "n": 100,
+    "one_token": 100,
+    "not_one_token": 0
+  },
+  "year_bands": {
+    "1990_1999": {
+      "n": 10,
+      "v3_shapes": {
+        "2+2": 10
+      },
+      "v3_template_token_counts": {
+        "6": 10
+      },
+      "v2_shapes": {
+        "1+1+1+1": 10
+      }
+    },
+    "2000_2014": {
+      "n": 15,
+      "v3_shapes": {
+        "1+3": 15
+      },
+      "v3_template_token_counts": {
+        "6": 15
+      },
+      "v2_shapes": {
+        "1+1+1+1": 15
+      }
+    },
+    "2015_2035": {
+      "n": 21,
+      "v3_shapes": {
+        "1+3": 21
+      },
+      "v3_template_token_counts": {
+        "6": 21
+      },
+      "v2_shapes": {
+        "1+1+1+1": 21
+      }
+    },
+    "2036_2040": {
+      "n": 5,
+      "v3_shapes": {
+        "1+3": 5
+      },
+      "v3_template_token_counts": {
+        "6": 5
+      },
+      "v2_shapes": {
+        "1+1+1+1": 5
+      }
+    },
+    "1900_2099": {
+      "n": 200,
+      "v3_shapes": {
+        "2+2": 100,
+        "1+3": 100
+      },
+      "v3_template_token_counts": {
+        "6": 200
+      },
+      "v2_shapes": {
+        "1+1+1+1": 200
+      }
+    }
+  },
+  "year_examples": {
+    "1990": {
+      "template_tokens": 6,
+      "template_year_shape": "2+2",
+      "template_year_pieces": [
+        " 19",
+        "90"
+      ],
+      "bare_shape": "2+2",
+      "bare_tokens_all": 2,
+      "iso_shape": "2+2",
+      "iso_tokens_all": 6,
+      "dotted_shape": "2+2",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "2+2",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 5,
+        "year_shape": "3+1"
+      }
+    },
+    "1999": {
+      "template_tokens": 6,
+      "template_year_shape": "2+2",
+      "template_year_pieces": [
+        " 19",
+        "99"
+      ],
+      "bare_shape": "2+2",
+      "bare_tokens_all": 2,
+      "iso_shape": "2+2",
+      "iso_tokens_all": 6,
+      "dotted_shape": "2+2",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "2+2",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 5,
+        "year_shape": "3+1"
+      }
+    },
+    "2000": {
+      "template_tokens": 6,
+      "template_year_shape": "1+3",
+      "template_year_pieces": [
+        " 2",
+        "000"
+      ],
+      "bare_shape": "1+3",
+      "bare_tokens_all": 2,
+      "iso_shape": "1+3",
+      "iso_tokens_all": 6,
+      "dotted_shape": "1+3",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "1+3",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 6,
+        "year_shape": "2+2"
+      }
+    },
+    "2015": {
+      "template_tokens": 6,
+      "template_year_shape": "1+3",
+      "template_year_pieces": [
+        " 2",
+        "015"
+      ],
+      "bare_shape": "1+3",
+      "bare_tokens_all": 2,
+      "iso_shape": "1+3",
+      "iso_tokens_all": 6,
+      "dotted_shape": "1+3",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "1+3",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 4,
+        "year_shape": "4"
+      }
+    },
+    "2019": {
+      "template_tokens": 6,
+      "template_year_shape": "1+3",
+      "template_year_pieces": [
+        " 2",
+        "019"
+      ],
+      "bare_shape": "1+3",
+      "bare_tokens_all": 2,
+      "iso_shape": "1+3",
+      "iso_tokens_all": 6,
+      "dotted_shape": "1+3",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "1+3",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 4,
+        "year_shape": "4"
+      }
+    },
+    "2020": {
+      "template_tokens": 6,
+      "template_year_shape": "1+3",
+      "template_year_pieces": [
+        " 2",
+        "020"
+      ],
+      "bare_shape": "1+3",
+      "bare_tokens_all": 2,
+      "iso_shape": "1+3",
+      "iso_tokens_all": 6,
+      "dotted_shape": "1+3",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "1+3",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 6,
+        "year_shape": "2+2"
+      }
+    },
+    "2024": {
+      "template_tokens": 6,
+      "template_year_shape": "1+3",
+      "template_year_pieces": [
+        " 2",
+        "024"
+      ],
+      "bare_shape": "1+3",
+      "bare_tokens_all": 2,
+      "iso_shape": "1+3",
+      "iso_tokens_all": 6,
+      "dotted_shape": "1+3",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "1+3",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 5,
+        "year_shape": "3+1"
+      }
+    },
+    "2025": {
+      "template_tokens": 6,
+      "template_year_shape": "1+3",
+      "template_year_pieces": [
+        " 2",
+        "025"
+      ],
+      "bare_shape": "1+3",
+      "bare_tokens_all": 2,
+      "iso_shape": "1+3",
+      "iso_tokens_all": 6,
+      "dotted_shape": "1+3",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "1+3",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 5,
+        "year_shape": "3+1"
+      }
+    },
+    "2026": {
+      "template_tokens": 6,
+      "template_year_shape": "1+3",
+      "template_year_pieces": [
+        " 2",
+        "026"
+      ],
+      "bare_shape": "1+3",
+      "bare_tokens_all": 2,
+      "iso_shape": "1+3",
+      "iso_tokens_all": 6,
+      "dotted_shape": "1+3",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "1+3",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 5,
+        "year_shape": "3+1"
+      }
+    },
+    "2027": {
+      "template_tokens": 6,
+      "template_year_shape": "1+3",
+      "template_year_pieces": [
+        " 2",
+        "027"
+      ],
+      "bare_shape": "1+3",
+      "bare_tokens_all": 2,
+      "iso_shape": "1+3",
+      "iso_tokens_all": 6,
+      "dotted_shape": "1+3",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "1+3",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 5,
+        "year_shape": "3+1"
+      }
+    },
+    "2030": {
+      "template_tokens": 6,
+      "template_year_shape": "1+3",
+      "template_year_pieces": [
+        " 2",
+        "030"
+      ],
+      "bare_shape": "1+3",
+      "bare_tokens_all": 2,
+      "iso_shape": "1+3",
+      "iso_tokens_all": 6,
+      "dotted_shape": "1+3",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "1+3",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 6,
+        "year_shape": "2+2"
+      }
+    },
+    "2035": {
+      "template_tokens": 6,
+      "template_year_shape": "1+3",
+      "template_year_pieces": [
+        " 2",
+        "035"
+      ],
+      "bare_shape": "1+3",
+      "bare_tokens_all": 2,
+      "iso_shape": "1+3",
+      "iso_tokens_all": 6,
+      "dotted_shape": "1+3",
+      "dotted_tokens_all": 6,
+      "nospace_shape": "1+3",
+      "nospace_tokens_all": 3,
+      "V2-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V2b-32k": {
+        "template_tokens": 8,
+        "year_shape": "1+1+1+1"
+      },
+      "V0-32k": {
+        "template_tokens": 6,
+        "year_shape": "2+2"
+      }
+    }
+  },
+  "amounts": [
+    {
+      "digits": "1234",
+      "spaced": "1 234",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1234",
+      "spaced": "1 234",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1234",
+      "spaced": "1 234",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "12",
+        "34"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "234"
+      ],
+      "same_digit_pieces": false
+    },
+    {
+      "digits": "12345",
+      "spaced": "12 345",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "12345",
+      "spaced": "12 345",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "12345",
+      "spaced": "12 345",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "12",
+        "345"
+      ],
+      "spaced_digit_pieces": [
+        "12",
+        "345"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "123456",
+      "spaced": "123 456",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "123456",
+      "spaced": "123 456",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "123456",
+      "spaced": "123 456",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "12",
+        "34",
+        "56"
+      ],
+      "spaced_digit_pieces": [
+        "123",
+        "456"
+      ],
+      "same_digit_pieces": false
+    },
+    {
+      "digits": "1234567",
+      "spaced": "1 234 567",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1234567",
+      "spaced": "1 234 567",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1234567",
+      "spaced": "1 234 567",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "12",
+        "34",
+        "567"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "234",
+        "567"
+      ],
+      "same_digit_pieces": false
+    },
+    {
+      "digits": "12345678",
+      "spaced": "12 345 678",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "12345678",
+      "spaced": "12 345 678",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "12345678",
+      "spaced": "12 345 678",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "12",
+        "34",
+        "56",
+        "78"
+      ],
+      "spaced_digit_pieces": [
+        "12",
+        "345",
+        "678"
+      ],
+      "same_digit_pieces": false
+    },
+    {
+      "digits": "123456789",
+      "spaced": "123 456 789",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "123456789",
+      "spaced": "123 456 789",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "123456789",
+      "spaced": "123 456 789",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "12",
+        "34",
+        "56",
+        "789"
+      ],
+      "spaced_digit_pieces": [
+        "123",
+        "456",
+        "789"
+      ],
+      "same_digit_pieces": false
+    },
+    {
+      "digits": "2024",
+      "spaced": "2 024",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "2",
+        "0",
+        "2",
+        "4"
+      ],
+      "spaced_digit_pieces": [
+        "2",
+        "0",
+        "2",
+        "4"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "2024",
+      "spaced": "2 024",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "2",
+        "0",
+        "2",
+        "4"
+      ],
+      "spaced_digit_pieces": [
+        "2",
+        "0",
+        "2",
+        "4"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "2024",
+      "spaced": "2 024",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "2",
+        "024"
+      ],
+      "spaced_digit_pieces": [
+        "2",
+        "024"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1999",
+      "spaced": "1 999",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "1",
+        "9",
+        "9",
+        "9"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "9",
+        "9",
+        "9"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1999",
+      "spaced": "1 999",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "1",
+        "9",
+        "9",
+        "9"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "9",
+        "9",
+        "9"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1999",
+      "spaced": "1 999",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "19",
+        "99"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "999"
+      ],
+      "same_digit_pieces": false
+    },
+    {
+      "digits": "950",
+      "spaced": "950",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "9",
+        "5",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "9",
+        "5",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "950",
+      "spaced": "950",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "9",
+        "5",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "9",
+        "5",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "950",
+      "spaced": "950",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "9",
+        "50"
+      ],
+      "spaced_digit_pieces": [
+        "9",
+        "50"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "950950",
+      "spaced": "950 950",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "9",
+        "5",
+        "0",
+        "9",
+        "5",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "9",
+        "5",
+        "0",
+        "9",
+        "5",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "950950",
+      "spaced": "950 950",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "9",
+        "5",
+        "0",
+        "9",
+        "5",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "9",
+        "5",
+        "0",
+        "9",
+        "5",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "950950",
+      "spaced": "950 950",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "95",
+        "09",
+        "50"
+      ],
+      "spaced_digit_pieces": [
+        "9",
+        "50",
+        "9",
+        "50"
+      ],
+      "same_digit_pieces": false
+    },
+    {
+      "digits": "1000",
+      "spaced": "1 000",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1000",
+      "spaced": "1 000",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1000",
+      "spaced": "1 000",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "1",
+        "000"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "000"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1000000",
+      "spaced": "1 000 000",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1000000",
+      "spaced": "1 000 000",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "1000000",
+      "spaced": "1 000 000",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "1",
+        "00",
+        "00",
+        "00"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "000",
+        "000"
+      ],
+      "same_digit_pieces": false
+    },
+    {
+      "digits": "45233140",
+      "spaced": "45 233 140",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "4",
+        "5",
+        "2",
+        "3",
+        "3",
+        "1",
+        "4",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "4",
+        "5",
+        "2",
+        "3",
+        "3",
+        "1",
+        "4",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "45233140",
+      "spaced": "45 233 140",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "4",
+        "5",
+        "2",
+        "3",
+        "3",
+        "1",
+        "4",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "4",
+        "5",
+        "2",
+        "3",
+        "3",
+        "1",
+        "4",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "45233140",
+      "spaced": "45 233 140",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "45",
+        "233",
+        "140"
+      ],
+      "spaced_digit_pieces": [
+        "45",
+        "233",
+        "140"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "9876543210",
+      "spaced": "9 876 543 210",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "9",
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "9",
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "9876543210",
+      "spaced": "9 876 543 210",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "9",
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "9",
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "9876543210",
+      "spaced": "9 876 543 210",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "98",
+        "76",
+        "54",
+        "32",
+        "10"
+      ],
+      "spaced_digit_pieces": [
+        "9",
+        "8",
+        "76",
+        "5",
+        "43",
+        "2",
+        "10"
+      ],
+      "same_digit_pieces": false
+    },
+    {
+      "digits": "11111111",
+      "spaced": "11 111 111",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "11111111",
+      "spaced": "11 111 111",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "spaced_digit_pieces": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "11111111",
+      "spaced": "11 111 111",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "11",
+        "11",
+        "11",
+        "11"
+      ],
+      "spaced_digit_pieces": [
+        "11",
+        "111",
+        "111"
+      ],
+      "same_digit_pieces": false
+    },
+    {
+      "digits": "2000",
+      "spaced": "2 000",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "2000",
+      "spaced": "2 000",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      "spaced_digit_pieces": [
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "2000",
+      "spaced": "2 000",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "2",
+        "000"
+      ],
+      "spaced_digit_pieces": [
+        "2",
+        "000"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "2026",
+      "spaced": "2 026",
+      "variant": "V2-32k",
+      "compact_digit_pieces": [
+        "2",
+        "0",
+        "2",
+        "6"
+      ],
+      "spaced_digit_pieces": [
+        "2",
+        "0",
+        "2",
+        "6"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "2026",
+      "spaced": "2 026",
+      "variant": "V2b-32k",
+      "compact_digit_pieces": [
+        "2",
+        "0",
+        "2",
+        "6"
+      ],
+      "spaced_digit_pieces": [
+        "2",
+        "0",
+        "2",
+        "6"
+      ],
+      "same_digit_pieces": true
+    },
+    {
+      "digits": "2026",
+      "spaced": "2 026",
+      "variant": "V3-32k",
+      "compact_digit_pieces": [
+        "2",
+        "026"
+      ],
+      "spaced_digit_pieces": [
+        "2",
+        "026"
+      ],
+      "same_digit_pieces": true
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "label": "R3-extra",
+  "n": 35,
+  "docs": [
+    {
+      "id": "R3-extra-ted-3-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/3-2025/xml",
+      "sha256": "1328b3c878ae98c5a3d7cc0beab69228de7cbcbeb497c8b2ca9ac28340a01e07",
+      "words": 2814
+    },
+    {
+      "id": "R3-extra-ted-5-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/5-2025/xml",
+      "sha256": "1efd6ebc3cab03b76bbfce76ab9ec9685c68ca37c9f46db052a9be734c4c254a",
+      "words": 658
+    },
+    {
+      "id": "R3-extra-ted-8-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/8-2025/xml",
+      "sha256": "c6f29b19f670975f4caeb923781a647c92ca7028a28782a0887f5d46c812daa5",
+      "words": 307
+    },
+    {
+      "id": "R3-extra-ted-9-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/9-2025/xml",
+      "sha256": "17518f6e18fb022fa60722f25d605b10658ace9bbb40d79cad169f4c77b2dda0",
+      "words": 3737
+    },
+    {
+      "id": "R3-extra-ted-11-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/11-2025/xml",
+      "sha256": "b2e272097edb47323bce076bf07f6ada8e540c727d9e6d5270939356ba7b6ff1",
+      "words": 365
+    },
+    {
+      "id": "R3-extra-ted-13-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/13-2025/xml",
+      "sha256": "7d7b68f9967649eb43fcaf889e29cac4ede1fa9ce7ba8071f0750c8f9a9293f6",
+      "words": 2653
+    },
+    {
+      "id": "R3-extra-ted-15-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/15-2025/xml",
+      "sha256": "eaa8a86833b407b7f6576ee8cc13505d425ccece9724a293e13d496b0bb8e997",
+      "words": 1503
+    },
+    {
+      "id": "R3-extra-ted-16-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/16-2025/xml",
+      "sha256": "d7a34a18d5f7ee842e3cdfd050208aba47cd6a1cb558327b476c968e2510e613",
+      "words": 7974
+    },
+    {
+      "id": "R3-extra-ted-19-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/19-2025/xml",
+      "sha256": "3a2a9d2500e6fa78e506ad0f1fa5d3786eaad3332b893ac994a7dffd158a71b0",
+      "words": 918
+    },
+    {
+      "id": "R3-extra-ted-24-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/24-2025/xml",
+      "sha256": "a963a083bb72468d47257e7476bcf6cfc68c3e0eb1b1d889be52be6cad84a211",
+      "words": 7951
+    },
+    {
+      "id": "R3-extra-ted-27-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/27-2025/xml",
+      "sha256": "6d8c25b86d772cbff9a46b4411303de1a76e53b4a0ab06f7bb5afcac5b2be63c",
+      "words": 859
+    },
+    {
+      "id": "R3-extra-ted-29-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/29-2025/xml",
+      "sha256": "03b0a0327e5346720f5ffa8ae0c4feecc24907bfce5028b7f7836b249f9fbec5",
+      "words": 7687
+    },
+    {
+      "id": "R3-extra-ted-31-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/31-2025/xml",
+      "sha256": "2bf8491f585bf9851b399b8dc8801550f4b4ba791dfd190751952f0c9874a3bc",
+      "words": 410
+    },
+    {
+      "id": "R3-extra-ted-33-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/33-2025/xml",
+      "sha256": "f17333ff8af6e7d173b3e48f81dda760684378e29a9fc21b60e735bf489a8541",
+      "words": 2531
+    },
+    {
+      "id": "R3-extra-ted-37-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/37-2025/xml",
+      "sha256": "34a86dbd3b3c05f4623d26c9759795d0eee0c66cc62fd702a76cad734721c4e0",
+      "words": 1479
+    },
+    {
+      "id": "R3-extra-ted-42-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/42-2025/xml",
+      "sha256": "e0bc64d93fe999f2285ccbaf0516d0cdfc8a8679c9b47f8075ac2cb928b33bad",
+      "words": 317
+    },
+    {
+      "id": "R3-extra-ted-51-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/51-2025/xml",
+      "sha256": "6265d63f1aeb5e8ba741163cc0ff10275ede5fa65bb0a31473594efd36b9a280",
+      "words": 984
+    },
+    {
+      "id": "R3-extra-ted-54-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/54-2025/xml",
+      "sha256": "d2fa825fb7ca688f6eaef2eb5b583b483a9462b686a36b6db8a27bf9cc624a98",
+      "words": 1875
+    },
+    {
+      "id": "R3-extra-ted-63-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/63-2025/xml",
+      "sha256": "3a233810b455204355dd6dbae4e47f7a6ccf8fb4cd035a37a16c514cf7642147",
+      "words": 1530
+    },
+    {
+      "id": "R3-extra-ted-73-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/73-2025/xml",
+      "sha256": "252df3631792b20f81e7297cbbb609f0cce0dc47e4a239eb1ef0137b2a474f34",
+      "words": 792
+    },
+    {
+      "id": "R3-extra-ted-78-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/78-2025/xml",
+      "sha256": "4b6b14306a093d1876d5f7ca6b08a4049713180c5ca149817bb22e2fdd6a4809",
+      "words": 215
+    },
+    {
+      "id": "R3-extra-ted-98-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/98-2025/xml",
+      "sha256": "fb6c61a469e279b0a5a0ffe4452692fa42065156a27dc80e282c14294ba97f15",
+      "words": 1069
+    },
+    {
+      "id": "R3-extra-ted-101-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/101-2025/xml",
+      "sha256": "e287bfbb565fcf87d9f134c8befcd4cc1e73b6c485e8e8af9a19657188061403",
+      "words": 3814
+    },
+    {
+      "id": "R3-extra-ted-105-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/105-2025/xml",
+      "sha256": "b8c8d307a9e8e350a221fb06df4c1ec6e48e23923c696d5d83d98d0de0b313b1",
+      "words": 8109
+    },
+    {
+      "id": "R3-extra-ted-106-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/106-2025/xml",
+      "sha256": "c28d8913fd482cd685bf97afdd7b2f5feb58a1687315d4ba526f8900119e19c9",
+      "words": 609
+    },
+    {
+      "id": "R3-extra-bipkrk-3ed46ec069",
+      "source_tag": "R3-extra",
+      "source": "bip_krakow",
+      "url": "https://www.bip.krakow.pl/zarzadzenia",
+      "sha256": "ab6edc7b1d81d7059df91c05df83365cf6ead715cbdd6e346adfe0cf1fd9924e",
+      "words": 290
+    },
+    {
+      "id": "R3-extra-ted-50-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/50-2025/xml",
+      "sha256": "c5ddc1db5ab041cfcaf6ccbea38302a8d8486add9b21abfb909af96a38c603dd",
+      "words": 379
+    },
+    {
+      "id": "R3-extra-ted-57-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/57-2025/xml",
+      "sha256": "ca4a359c521d5ea32cbd9f582e97b0c205b93e08b8bed60065daf92d7f224847",
+      "words": 690
+    },
+    {
+      "id": "R3-extra-ted-68-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/68-2025/xml",
+      "sha256": "d065b3d93ee2868fe00e2fde6e51397ef5d394dc60120e4fb622bf422a5c5acb",
+      "words": 317
+    },
+    {
+      "id": "R3-extra-ted-84-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/84-2025/xml",
+      "sha256": "2eefeb1ad4d351ad769d0c79013cee1a717842677e1a3e685e46cb750fc7738e",
+      "words": 1181
+    },
+    {
+      "id": "R3-extra-ted-86-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/86-2025/xml",
+      "sha256": "0526c7974279885cbf4dc75f390a265f990b43c93ae6b32faca5b311220aa8c0",
+      "words": 7531
+    },
+    {
+      "id": "R3-extra-ted-108-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/108-2025/xml",
+      "sha256": "60fd0cb3c926b0c19529a92452ebb1cf850492c5cd19cf1a3846239dac3417b1",
+      "words": 1949
+    },
+    {
+      "id": "R3-extra-ted-109-2025",
+      "source_tag": "R3-extra",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/109-2025/xml",
+      "sha256": "b033f129d48967acc2d072916ca9e5020108c634b6c414e1ae4af85c35d021fe",
+      "words": 1078
+    },
+    {
+      "id": "R3-extra-maz-1765",
+      "source_tag": "R3-extra",
+      "source": "edziennik_mazowieckie",
+      "url": "https://edziennik.mazowieckie.pl/WDU_W/2024/1765/akt.pdf",
+      "sha256": "0d1a77a3f1c766edcd233145d4f921e9bae31ecd0f16f3e00a0d0d12ad96ee98",
+      "words": 7997,
+      "pages": 71,
+      "thin_pages": 1,
+      "full_words_before_cap": 27528,
+      "truncated": true
+    },
+    {
+      "id": "R3-extra-maz-7371",
+      "source_tag": "R3-extra",
+      "source": "edziennik_mazowieckie",
+      "url": "https://edziennik.mazowieckie.pl/WDU_W/2024/7371/akt.pdf",
+      "sha256": "027279207189ec6123e12443277b41ff608b025135ee1abb3e33b0fde43e4533",
+      "words": 8132,
+      "pages": 36,
+      "thin_pages": 1,
+      "full_words_before_cap": 14202,
+      "truncated": true
+    }
+  ]
+}

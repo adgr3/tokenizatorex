@@ -1,0 +1,867 @@
+{
+  "meta": {
+    "label": "R3-extra",
+    "tokenizer": "hf/variants/*/tokenizer.json",
+    "variants": [
+      "V0-32k",
+      "V2-32k",
+      "V2b-32k",
+      "V3-32k"
+    ],
+    "add_special_tokens": false,
+    "words": "text.split() na tekście, który wszedł do enkodera",
+    "delta": "(tokens_v - tokens_v0) / tokens_v0",
+    "bootstrap": "1000x, seed 20261119, common.bootstrap_indices, pary dokumentów",
+    "ci": "percentyl 2.5/97.5 różnicy tokenów/słowo, podzielony przez fertility V0",
+    "note": "Tekst lokalny w raw_extra (gitignored). Ten plik nie zawiera treści.",
+    "genre_note": "TED to ogłoszenia zamówień (inny host niż ezamowienia). Dziennik mazowiecki i BIP to inne gatunki."
+  },
+  "n": 35,
+  "aggregates": {
+    "ALL": {
+      "V0-32k": {
+        "docs": 35,
+        "words": 90704,
+        "tokens": 182528,
+        "fertility": 2.0123478567648614
+      },
+      "V2-32k": {
+        "docs": 35,
+        "words": 90704,
+        "tokens_v0": 182528,
+        "tokens": 206344,
+        "delta_pct": 0.13047861150070125,
+        "delta_pct_ci95": [
+          0.11132096078847625,
+          0.1611722450085521
+        ],
+        "fertility_v0": 2.0123478567648614,
+        "fertility": 2.2749162109719525
+      },
+      "V2b-32k": {
+        "docs": 35,
+        "words": 90704,
+        "tokens_v0": 182528,
+        "tokens": 201976,
+        "delta_pct": 0.10654803646563815,
+        "delta_pct_ci95": [
+          0.0907233139110706,
+          0.1322125528315819
+        ],
+        "fertility_v0": 2.0123478567648614,
+        "fertility": 2.226759569588993
+      },
+      "V3-32k": {
+        "docs": 35,
+        "words": 90704,
+        "tokens_v0": 182528,
+        "tokens": 188625,
+        "delta_pct": 0.033403094319775596,
+        "delta_pct_ci95": [
+          0.02923908936776878,
+          0.03777613103294471
+        ],
+        "fertility_v0": 2.0123478567648614,
+        "fertility": 2.0795665020285763
+      },
+      "order_by_delta": [
+        "V3-32k",
+        "V2b-32k",
+        "V2-32k"
+      ]
+    },
+    "bip_krakow": {
+      "V0-32k": {
+        "docs": 1,
+        "words": 290,
+        "tokens": 1432,
+        "fertility": 4.937931034482759
+      },
+      "V2-32k": {
+        "docs": 1,
+        "words": 290,
+        "tokens_v0": 1432,
+        "tokens": 1634,
+        "delta_pct": 0.14106145251396648,
+        "delta_pct_ci95": [
+          0.14106145251396646,
+          0.14106145251396646
+        ],
+        "fertility_v0": 4.937931034482759,
+        "fertility": 5.63448275862069
+      },
+      "V2b-32k": {
+        "docs": 1,
+        "words": 290,
+        "tokens_v0": 1432,
+        "tokens": 1586,
+        "delta_pct": 0.10754189944134078,
+        "delta_pct_ci95": [
+          0.10754189944134077,
+          0.10754189944134077
+        ],
+        "fertility_v0": 4.937931034482759,
+        "fertility": 5.468965517241379
+      },
+      "V3-32k": {
+        "docs": 1,
+        "words": 290,
+        "tokens_v0": 1432,
+        "tokens": 1480,
+        "delta_pct": 0.0335195530726257,
+        "delta_pct_ci95": [
+          0.0335195530726257,
+          0.0335195530726257
+        ],
+        "fertility_v0": 4.937931034482759,
+        "fertility": 5.103448275862069
+      },
+      "order_by_delta": [
+        "V3-32k",
+        "V2b-32k",
+        "V2-32k"
+      ]
+    },
+    "edziennik_mazowieckie": {
+      "V0-32k": {
+        "docs": 2,
+        "words": 16129,
+        "tokens": 26416,
+        "fertility": 1.6377952755905512
+      },
+      "V2-32k": {
+        "docs": 2,
+        "words": 16129,
+        "tokens_v0": 26416,
+        "tokens": 28725,
+        "delta_pct": 0.0874091459721381,
+        "delta_pct_ci95": [
+          0.08446864713004654,
+          0.09039928434701475
+        ],
+        "fertility_v0": 1.6377952755905512,
+        "fertility": 1.7809535619071237
+      },
+      "V2b-32k": {
+        "docs": 2,
+        "words": 16129,
+        "tokens_v0": 26416,
+        "tokens": 28420,
+        "delta_pct": 0.07586311326468807,
+        "delta_pct_ci95": [
+          0.07410715974876084,
+          0.07764870961225845
+        ],
+        "fertility_v0": 1.6377952755905512,
+        "fertility": 1.7620435240870482
+      },
+      "V3-32k": {
+        "docs": 2,
+        "words": 16129,
+        "tokens_v0": 26416,
+        "tokens": 27936,
+        "delta_pct": 0.05754088431253786,
+        "delta_pct_ci95": [
+          0.05661276438760453,
+          0.05848467213666664
+        ],
+        "fertility_v0": 1.6377952755905512,
+        "fertility": 1.7320354640709281
+      },
+      "order_by_delta": [
+        "V3-32k",
+        "V2b-32k",
+        "V2-32k"
+      ]
+    },
+    "ted": {
+      "V0-32k": {
+        "docs": 32,
+        "words": 74285,
+        "tokens": 154680,
+        "fertility": 2.082250790872989
+      },
+      "V2-32k": {
+        "docs": 32,
+        "words": 74285,
+        "tokens_v0": 154680,
+        "tokens": 175985,
+        "delta_pct": 0.13773597103697957,
+        "delta_pct_ci95": [
+          0.11902370009093116,
+          0.16778345943450976
+        ],
+        "fertility_v0": 2.082250790872989,
+        "fertility": 2.369051625496399
+      },
+      "V2b-32k": {
+        "docs": 32,
+        "words": 74285,
+        "tokens_v0": 154680,
+        "tokens": 171970,
+        "delta_pct": 0.11177915696922679,
+        "delta_pct_ci95": [
+          0.09532068377996523,
+          0.1378907045761436
+        ],
+        "fertility_v0": 2.082250790872989,
+        "fertility": 2.3150030288752776
+      },
+      "V3-32k": {
+        "docs": 32,
+        "words": 74285,
+        "tokens_v0": 154680,
+        "tokens": 159209,
+        "delta_pct": 0.029279803465218517,
+        "delta_pct_ci95": [
+          0.026949396007965535,
+          0.03162223871506794
+        ],
+        "fertility_v0": 2.082250790872989,
+        "fertility": 2.143218684795046
+      },
+      "order_by_delta": [
+        "V3-32k",
+        "V2b-32k",
+        "V2-32k"
+      ]
+    }
+  },
+  "median_doc_delta_pct": {
+    "V2-32k": 0.1501865671641791,
+    "V2b-32k": 0.12018489984591679,
+    "V3-32k": 0.028276652655712647
+  },
+  "docs": [
+    {
+      "id": "R3-extra-ted-3-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/3-2025/xml",
+      "sha256": "1328b3c878ae98c5a3d7cc0beab69228de7cbcbeb497c8b2ca9ac28340a01e07",
+      "words": 2814,
+      "tokens": {
+        "V0-32k": 6415,
+        "V2-32k": 7249,
+        "V2b-32k": 7070,
+        "V3-32k": 6617
+      },
+      "delta_pct": {
+        "V2-32k": 0.13000779423226813,
+        "V2b-32k": 0.10210444271239283,
+        "V3-32k": 0.03148869836321122
+      }
+    },
+    {
+      "id": "R3-extra-ted-5-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/5-2025/xml",
+      "sha256": "1efd6ebc3cab03b76bbfce76ab9ec9685c68ca37c9f46db052a9be734c4c254a",
+      "words": 658,
+      "tokens": {
+        "V0-32k": 2144,
+        "V2-32k": 2466,
+        "V2b-32k": 2424,
+        "V3-32k": 2181
+      },
+      "delta_pct": {
+        "V2-32k": 0.1501865671641791,
+        "V2b-32k": 0.13059701492537312,
+        "V3-32k": 0.017257462686567165
+      }
+    },
+    {
+      "id": "R3-extra-ted-8-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/8-2025/xml",
+      "sha256": "c6f29b19f670975f4caeb923781a647c92ca7028a28782a0887f5d46c812daa5",
+      "words": 307,
+      "tokens": {
+        "V0-32k": 1429,
+        "V2-32k": 1627,
+        "V2b-32k": 1612,
+        "V3-32k": 1456
+      },
+      "delta_pct": {
+        "V2-32k": 0.13855843247025892,
+        "V2b-32k": 0.12806158152554234,
+        "V3-32k": 0.018894331700489854
+      }
+    },
+    {
+      "id": "R3-extra-ted-9-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/9-2025/xml",
+      "sha256": "17518f6e18fb022fa60722f25d605b10658ace9bbb40d79cad169f4c77b2dda0",
+      "words": 3737,
+      "tokens": {
+        "V0-32k": 6796,
+        "V2-32k": 7677,
+        "V2b-32k": 7421,
+        "V3-32k": 7032
+      },
+      "delta_pct": {
+        "V2-32k": 0.129635079458505,
+        "V2b-32k": 0.09196586227192466,
+        "V3-32k": 0.034726309593878756
+      }
+    },
+    {
+      "id": "R3-extra-ted-11-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/11-2025/xml",
+      "sha256": "b2e272097edb47323bce076bf07f6ada8e540c727d9e6d5270939356ba7b6ff1",
+      "words": 365,
+      "tokens": {
+        "V0-32k": 1702,
+        "V2-32k": 2008,
+        "V2b-32k": 1969,
+        "V3-32k": 1713
+      },
+      "delta_pct": {
+        "V2-32k": 0.1797884841363102,
+        "V2b-32k": 0.15687426556991774,
+        "V3-32k": 0.006462984723854289
+      }
+    },
+    {
+      "id": "R3-extra-ted-13-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/13-2025/xml",
+      "sha256": "7d7b68f9967649eb43fcaf889e29cac4ede1fa9ce7ba8071f0750c8f9a9293f6",
+      "words": 2653,
+      "tokens": {
+        "V0-32k": 4560,
+        "V2-32k": 5510,
+        "V2b-32k": 5258,
+        "V3-32k": 4735
+      },
+      "delta_pct": {
+        "V2-32k": 0.20833333333333334,
+        "V2b-32k": 0.1530701754385965,
+        "V3-32k": 0.03837719298245614
+      }
+    },
+    {
+      "id": "R3-extra-ted-15-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/15-2025/xml",
+      "sha256": "eaa8a86833b407b7f6576ee8cc13505d425ccece9724a293e13d496b0bb8e997",
+      "words": 1503,
+      "tokens": {
+        "V0-32k": 3632,
+        "V2-32k": 4114,
+        "V2b-32k": 4026,
+        "V3-32k": 3713
+      },
+      "delta_pct": {
+        "V2-32k": 0.1327092511013216,
+        "V2b-32k": 0.10848017621145374,
+        "V3-32k": 0.022301762114537445
+      }
+    },
+    {
+      "id": "R3-extra-ted-16-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/16-2025/xml",
+      "sha256": "d7a34a18d5f7ee842e3cdfd050208aba47cd6a1cb558327b476c968e2510e613",
+      "words": 7974,
+      "tokens": {
+        "V0-32k": 13837,
+        "V2-32k": 15554,
+        "V2b-32k": 15177,
+        "V3-32k": 14267
+      },
+      "delta_pct": {
+        "V2-32k": 0.12408759124087591,
+        "V2b-32k": 0.096841800968418,
+        "V3-32k": 0.031076100310761003
+      }
+    },
+    {
+      "id": "R3-extra-ted-19-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/19-2025/xml",
+      "sha256": "3a2a9d2500e6fa78e506ad0f1fa5d3786eaad3332b893ac994a7dffd158a71b0",
+      "words": 918,
+      "tokens": {
+        "V0-32k": 2418,
+        "V2-32k": 2922,
+        "V2b-32k": 2855,
+        "V3-32k": 2506
+      },
+      "delta_pct": {
+        "V2-32k": 0.20843672456575682,
+        "V2b-32k": 0.18072787427626139,
+        "V3-32k": 0.036393713813068655
+      }
+    },
+    {
+      "id": "R3-extra-ted-24-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/24-2025/xml",
+      "sha256": "a963a083bb72468d47257e7476bcf6cfc68c3e0eb1b1d889be52be6cad84a211",
+      "words": 7951,
+      "tokens": {
+        "V0-32k": 19972,
+        "V2-32k": 22570,
+        "V2b-32k": 22148,
+        "V3-32k": 20451
+      },
+      "delta_pct": {
+        "V2-32k": 0.13008211496094532,
+        "V2b-32k": 0.10895253354696575,
+        "V3-32k": 0.023983577007810935
+      }
+    },
+    {
+      "id": "R3-extra-ted-27-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/27-2025/xml",
+      "sha256": "6d8c25b86d772cbff9a46b4411303de1a76e53b4a0ab06f7bb5afcac5b2be63c",
+      "words": 859,
+      "tokens": {
+        "V0-32k": 5490,
+        "V2-32k": 6447,
+        "V2b-32k": 6338,
+        "V3-32k": 5580
+      },
+      "delta_pct": {
+        "V2-32k": 0.17431693989071037,
+        "V2b-32k": 0.15446265938069217,
+        "V3-32k": 0.01639344262295082
+      }
+    },
+    {
+      "id": "R3-extra-ted-29-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/29-2025/xml",
+      "sha256": "03b0a0327e5346720f5ffa8ae0c4feecc24907bfce5028b7f7836b249f9fbec5",
+      "words": 7687,
+      "tokens": {
+        "V0-32k": 14738,
+        "V2-32k": 16153,
+        "V2b-32k": 15931,
+        "V3-32k": 15195
+      },
+      "delta_pct": {
+        "V2-32k": 0.0960103134753698,
+        "V2b-32k": 0.08094721129054146,
+        "V3-32k": 0.03100827792102049
+      }
+    },
+    {
+      "id": "R3-extra-ted-31-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/31-2025/xml",
+      "sha256": "2bf8491f585bf9851b399b8dc8801550f4b4ba791dfd190751952f0c9874a3bc",
+      "words": 410,
+      "tokens": {
+        "V0-32k": 1569,
+        "V2-32k": 1833,
+        "V2b-32k": 1801,
+        "V3-32k": 1596
+      },
+      "delta_pct": {
+        "V2-32k": 0.1682600382409178,
+        "V2b-32k": 0.1478648820905035,
+        "V3-32k": 0.017208413001912046
+      }
+    },
+    {
+      "id": "R3-extra-ted-33-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/33-2025/xml",
+      "sha256": "f17333ff8af6e7d173b3e48f81dda760684378e29a9fc21b60e735bf489a8541",
+      "words": 2531,
+      "tokens": {
+        "V0-32k": 4989,
+        "V2-32k": 5567,
+        "V2b-32k": 5444,
+        "V3-32k": 5107
+      },
+      "delta_pct": {
+        "V2-32k": 0.11585488073762278,
+        "V2b-32k": 0.09120064141110443,
+        "V3-32k": 0.023652034475846864
+      }
+    },
+    {
+      "id": "R3-extra-ted-37-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/37-2025/xml",
+      "sha256": "34a86dbd3b3c05f4623d26c9759795d0eee0c66cc62fd702a76cad734721c4e0",
+      "words": 1479,
+      "tokens": {
+        "V0-32k": 3125,
+        "V2-32k": 3528,
+        "V2b-32k": 3453,
+        "V3-32k": 3180
+      },
+      "delta_pct": {
+        "V2-32k": 0.12896,
+        "V2b-32k": 0.10496,
+        "V3-32k": 0.0176
+      }
+    },
+    {
+      "id": "R3-extra-ted-42-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/42-2025/xml",
+      "sha256": "e0bc64d93fe999f2285ccbaf0516d0cdfc8a8679c9b47f8075ac2cb928b33bad",
+      "words": 317,
+      "tokens": {
+        "V0-32k": 1063,
+        "V2-32k": 1245,
+        "V2b-32k": 1220,
+        "V3-32k": 1099
+      },
+      "delta_pct": {
+        "V2-32k": 0.17121354656632173,
+        "V2b-32k": 0.14769520225776106,
+        "V3-32k": 0.03386641580432737
+      }
+    },
+    {
+      "id": "R3-extra-ted-51-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/51-2025/xml",
+      "sha256": "6265d63f1aeb5e8ba741163cc0ff10275ede5fa65bb0a31473594efd36b9a280",
+      "words": 984,
+      "tokens": {
+        "V0-32k": 2356,
+        "V2-32k": 2613,
+        "V2b-32k": 2573,
+        "V3-32k": 2401
+      },
+      "delta_pct": {
+        "V2-32k": 0.10908319185059423,
+        "V2b-32k": 0.09210526315789473,
+        "V3-32k": 0.019100169779286927
+      }
+    },
+    {
+      "id": "R3-extra-ted-54-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/54-2025/xml",
+      "sha256": "d2fa825fb7ca688f6eaef2eb5b583b483a9462b686a36b6db8a27bf9cc624a98",
+      "words": 1875,
+      "tokens": {
+        "V0-32k": 3612,
+        "V2-32k": 4173,
+        "V2b-32k": 4046,
+        "V3-32k": 3694
+      },
+      "delta_pct": {
+        "V2-32k": 0.1553156146179402,
+        "V2b-32k": 0.12015503875968993,
+        "V3-32k": 0.022702104097452935
+      }
+    },
+    {
+      "id": "R3-extra-ted-63-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/63-2025/xml",
+      "sha256": "3a233810b455204355dd6dbae4e47f7a6ccf8fb4cd035a37a16c514cf7642147",
+      "words": 1530,
+      "tokens": {
+        "V0-32k": 3023,
+        "V2-32k": 3356,
+        "V2b-32k": 3288,
+        "V3-32k": 3093
+      },
+      "delta_pct": {
+        "V2-32k": 0.11015547469401257,
+        "V2b-32k": 0.08766126364538537,
+        "V3-32k": 0.023155805491233875
+      }
+    },
+    {
+      "id": "R3-extra-ted-73-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/73-2025/xml",
+      "sha256": "252df3631792b20f81e7297cbbb609f0cce0dc47e4a239eb1ef0137b2a474f34",
+      "words": 792,
+      "tokens": {
+        "V0-32k": 1979,
+        "V2-32k": 2283,
+        "V2b-32k": 2229,
+        "V3-32k": 2034
+      },
+      "delta_pct": {
+        "V2-32k": 0.15361293582617483,
+        "V2b-32k": 0.12632642748863063,
+        "V3-32k": 0.027791814047498736
+      }
+    },
+    {
+      "id": "R3-extra-ted-78-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/78-2025/xml",
+      "sha256": "4b6b14306a093d1876d5f7ca6b08a4049713180c5ca149817bb22e2fdd6a4809",
+      "words": 215,
+      "tokens": {
+        "V0-32k": 1451,
+        "V2-32k": 1732,
+        "V2b-32k": 1697,
+        "V3-32k": 1458
+      },
+      "delta_pct": {
+        "V2-32k": 0.19365954514128186,
+        "V2b-32k": 0.1695382494831151,
+        "V3-32k": 0.004824259131633356
+      }
+    },
+    {
+      "id": "R3-extra-ted-98-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/98-2025/xml",
+      "sha256": "fb6c61a469e279b0a5a0ffe4452692fa42065156a27dc80e282c14294ba97f15",
+      "words": 1069,
+      "tokens": {
+        "V0-32k": 2617,
+        "V2-32k": 3080,
+        "V2b-32k": 2961,
+        "V3-32k": 2691
+      },
+      "delta_pct": {
+        "V2-32k": 0.176920137562094,
+        "V2b-32k": 0.13144822315628582,
+        "V3-32k": 0.028276652655712647
+      }
+    },
+    {
+      "id": "R3-extra-ted-101-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/101-2025/xml",
+      "sha256": "e287bfbb565fcf87d9f134c8befcd4cc1e73b6c485e8e8af9a19657188061403",
+      "words": 3814,
+      "tokens": {
+        "V0-32k": 6177,
+        "V2-32k": 7143,
+        "V2b-32k": 6989,
+        "V3-32k": 6462
+      },
+      "delta_pct": {
+        "V2-32k": 0.15638659543467703,
+        "V2b-32k": 0.13145539906103287,
+        "V3-32k": 0.04613890237979602
+      }
+    },
+    {
+      "id": "R3-extra-ted-105-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/105-2025/xml",
+      "sha256": "b8c8d307a9e8e350a221fb06df4c1ec6e48e23923c696d5d83d98d0de0b313b1",
+      "words": 8109,
+      "tokens": {
+        "V0-32k": 12307,
+        "V2-32k": 13737,
+        "V2b-32k": 13385,
+        "V3-32k": 12707
+      },
+      "delta_pct": {
+        "V2-32k": 0.1161940359145202,
+        "V2b-32k": 0.08759242707402291,
+        "V3-32k": 0.032501828227837815
+      }
+    },
+    {
+      "id": "R3-extra-ted-106-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/106-2025/xml",
+      "sha256": "c28d8913fd482cd685bf97afdd7b2f5feb58a1687315d4ba526f8900119e19c9",
+      "words": 609,
+      "tokens": {
+        "V0-32k": 2226,
+        "V2-32k": 2654,
+        "V2b-32k": 2586,
+        "V3-32k": 2241
+      },
+      "delta_pct": {
+        "V2-32k": 0.19227313566936208,
+        "V2b-32k": 0.16172506738544473,
+        "V3-32k": 0.006738544474393531
+      }
+    },
+    {
+      "id": "R3-extra-bipkrk-3ed46ec069",
+      "source": "bip_krakow",
+      "url": "https://www.bip.krakow.pl/zarzadzenia",
+      "sha256": "ab6edc7b1d81d7059df91c05df83365cf6ead715cbdd6e346adfe0cf1fd9924e",
+      "words": 290,
+      "tokens": {
+        "V0-32k": 1432,
+        "V2-32k": 1634,
+        "V2b-32k": 1586,
+        "V3-32k": 1480
+      },
+      "delta_pct": {
+        "V2-32k": 0.14106145251396648,
+        "V2b-32k": 0.10754189944134078,
+        "V3-32k": 0.0335195530726257
+      }
+    },
+    {
+      "id": "R3-extra-ted-50-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/50-2025/xml",
+      "sha256": "c5ddc1db5ab041cfcaf6ccbea38302a8d8486add9b21abfb909af96a38c603dd",
+      "words": 379,
+      "tokens": {
+        "V0-32k": 1309,
+        "V2-32k": 1586,
+        "V2b-32k": 1549,
+        "V3-32k": 1327
+      },
+      "delta_pct": {
+        "V2-32k": 0.21161191749427044,
+        "V2b-32k": 0.18334606569900688,
+        "V3-32k": 0.013750954927425516
+      }
+    },
+    {
+      "id": "R3-extra-ted-57-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/57-2025/xml",
+      "sha256": "ca4a359c521d5ea32cbd9f582e97b0c205b93e08b8bed60065daf92d7f224847",
+      "words": 690,
+      "tokens": {
+        "V0-32k": 2030,
+        "V2-32k": 2299,
+        "V2b-32k": 2259,
+        "V3-32k": 2061
+      },
+      "delta_pct": {
+        "V2-32k": 0.13251231527093596,
+        "V2b-32k": 0.11280788177339901,
+        "V3-32k": 0.015270935960591134
+      }
+    },
+    {
+      "id": "R3-extra-ted-68-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/68-2025/xml",
+      "sha256": "d065b3d93ee2868fe00e2fde6e51397ef5d394dc60120e4fb622bf422a5c5acb",
+      "words": 317,
+      "tokens": {
+        "V0-32k": 1062,
+        "V2-32k": 1248,
+        "V2b-32k": 1224,
+        "V3-32k": 1098
+      },
+      "delta_pct": {
+        "V2-32k": 0.1751412429378531,
+        "V2b-32k": 0.15254237288135594,
+        "V3-32k": 0.03389830508474576
+      }
+    },
+    {
+      "id": "R3-extra-ted-84-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/84-2025/xml",
+      "sha256": "2eefeb1ad4d351ad769d0c79013cee1a717842677e1a3e685e46cb750fc7738e",
+      "words": 1181,
+      "tokens": {
+        "V0-32k": 2596,
+        "V2-32k": 2992,
+        "V2b-32k": 2908,
+        "V3-32k": 2670
+      },
+      "delta_pct": {
+        "V2-32k": 0.15254237288135594,
+        "V2b-32k": 0.12018489984591679,
+        "V3-32k": 0.028505392912172575
+      }
+    },
+    {
+      "id": "R3-extra-ted-86-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/86-2025/xml",
+      "sha256": "0526c7974279885cbf4dc75f390a265f990b43c93ae6b32faca5b311220aa8c0",
+      "words": 7531,
+      "tokens": {
+        "V0-32k": 12058,
+        "V2-32k": 13694,
+        "V2b-32k": 13345,
+        "V3-32k": 12623
+      },
+      "delta_pct": {
+        "V2-32k": 0.13567755846740753,
+        "V2b-32k": 0.10673411842759993,
+        "V3-32k": 0.046856858517167026
+      }
+    },
+    {
+      "id": "R3-extra-ted-108-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/108-2025/xml",
+      "sha256": "60fd0cb3c926b0c19529a92452ebb1cf850492c5cd19cf1a3846239dac3417b1",
+      "words": 1949,
+      "tokens": {
+        "V0-32k": 3543,
+        "V2-32k": 4076,
+        "V2b-32k": 3980,
+        "V3-32k": 3691
+      },
+      "delta_pct": {
+        "V2-32k": 0.15043748235958226,
+        "V2b-32k": 0.12334180073384138,
+        "V3-32k": 0.04177250917301722
+      }
+    },
+    {
+      "id": "R3-extra-ted-109-2025",
+      "source": "ted",
+      "url": "https://ted.europa.eu/en/notice/109-2025/xml",
+      "sha256": "b033f129d48967acc2d072916ca9e5020108c634b6c414e1ae4af85c35d021fe",
+      "words": 1078,
+      "tokens": {
+        "V0-32k": 2455,
+        "V2-32k": 2849,
+        "V2b-32k": 2804,
+        "V3-32k": 2530
+      },
+      "delta_pct": {
+        "V2-32k": 0.1604887983706721,
+        "V2b-32k": 0.14215885947046844,
+        "V3-32k": 0.03054989816700611
+      }
+    },
+    {
+      "id": "R3-extra-maz-1765",
+      "source": "edziennik_mazowieckie",
+      "url": "https://edziennik.mazowieckie.pl/WDU_W/2024/1765/akt.pdf",
+      "sha256": "0d1a77a3f1c766edcd233145d4f921e9bae31ecd0f16f3e00a0d0d12ad96ee98",
+      "words": 7997,
+      "tokens": {
+        "V0-32k": 13074,
+        "V2-32k": 14258,
+        "V2b-32k": 14091,
+        "V3-32k": 13840
+      },
+      "delta_pct": {
+        "V2-32k": 0.09056141961144255,
+        "V2b-32k": 0.07778797613584212,
+        "V3-32k": 0.058589567079700165
+      }
+    },
+    {
+      "id": "R3-extra-maz-7371",
+      "source": "edziennik_mazowieckie",
+      "url": "https://edziennik.mazowieckie.pl/WDU_W/2024/7371/akt.pdf",
+      "sha256": "027279207189ec6123e12443277b41ff608b025135ee1abb3e33b0fde43e4533",
+      "words": 8132,
+      "tokens": {
+        "V0-32k": 13342,
+        "V2-32k": 14467,
+        "V2b-32k": 14329,
+        "V3-32k": 14096
+      },
+      "delta_pct": {
+        "V2-32k": 0.08432019187528107,
+        "V2b-32k": 0.07397691500524659,
+        "V3-32k": 0.05651326637685505
+      }
+    }
+  ]
+}
