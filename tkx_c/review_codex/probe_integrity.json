@@ -1,0 +1,20 @@
+{
+  "golden_sentences": 1240,
+  "golden_lens": {
+    "V0-32k.json": 1240,
+    "V1-32k.json": 1240,
+    "V2-16k.json": 1240,
+    "V2-24k.json": 1240,
+    "V2-32k.json": 1240,
+    "V2-base-16k.json": 1240,
+    "V2-base-24k.json": 1240,
+    "V2-base-32k.json": 1240,
+    "V2b-16k.json": 1240,
+    "V2b-24k.json": 1240,
+    "V2b-32k.json": 1240,
+    "V3-16k.json": 1240,
+    "V3-24k.json": 1240,
+    "V3-32k.json": 1240
+  },
+  "manifest_hash_problems": []
+}
