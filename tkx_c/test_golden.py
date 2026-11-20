@@ -9,7 +9,9 @@ import pytest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GOLD = os.path.join(ROOT, "tkx_c", "golden")
 VARIANTS = ["V0-32k", "V1-32k", "V2-32k", "V2-24k", "V2-16k",
-            "V2-base-32k", "V2-base-24k", "V2-base-16k"]
+            "V2-base-32k", "V2-base-24k", "V2-base-16k",
+            "V2b-32k", "V2b-24k", "V2b-16k",
+            "V3-32k", "V3-24k", "V3-16k"]
 
 
 def _load(name):
@@ -47,10 +49,33 @@ def test_no_multidigit_tokens(name):
             assert all(len(x) == 1 for x in re.findall(r"\d+", token)), (name, token)
 
 
-def test_calendar_is_flat_in_v1_and_v2():
-    for name in ("V1-32k", "V2-32k", "V2-24k", "V2-16k"):
+def test_calendar_is_flat_in_v1_v2_v2b_v3():
+    for name in ("V1-32k", "V2-32k", "V2-24k", "V2-16k",
+                 "V2b-32k", "V2b-24k", "V2b-16k",
+                 "V3-32k", "V3-24k", "V3-16k"):
         tok, _ = _load(name)
         counts = set()
         for y in range(2015, 2036):
             counts.add(len(tok.encode(f"w roku {y} r. zadanie", add_special_tokens=False).ids))
         assert len(counts) == 1, (name, counts)
+
+
+def test_v3_has_all_forced_digit_groups():
+    tok, _ = _load("V3-32k")
+    vocab = set(tok.get_vocab())
+    missing = []
+    for n in range(100):
+        if f"{n:02d}" not in vocab:
+            missing.append(f"{n:02d}")
+    for n in range(1000):
+        if f"{n:03d}" not in vocab:
+            missing.append(f"{n:03d}")
+    assert not missing, missing[:20]
+
+
+def test_v2b_has_space_digit_tokens_without_trailing_space_superwords():
+    tok, _ = _load("V2b-32k")
+    vocab = set(tok.get_vocab())
+    for d in "0123456789":
+        assert "Ġ" + d in vocab, d
+    assert not any(len(t) > 1 and t.endswith("Ġ") for t in vocab), "superword z końcową spacją"

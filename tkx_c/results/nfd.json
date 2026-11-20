@@ -35,6 +35,24 @@
             0.0,
             0.0
           ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 238839,
+          "tokens_nfd": 238839,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 228734,
+          "tokens_nfd": 228734,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
         }
       }
     },
@@ -62,6 +80,24 @@
         "V2-32k": {
           "tokens_nfc": 145847,
           "tokens_nfd": 145847,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 142462,
+          "tokens_nfd": 142462,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 137269,
+          "tokens_nfd": 137269,
           "increase": 0.0,
           "increase_ci": [
             0.0,
@@ -99,6 +135,24 @@
             0.0,
             0.0
           ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 130980,
+          "tokens_nfd": 130980,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 117748,
+          "tokens_nfd": 117748,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
         }
       }
     },
@@ -126,6 +180,24 @@
         "V2-32k": {
           "tokens_nfc": 208877,
           "tokens_nfd": 208877,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 201875,
+          "tokens_nfd": 201875,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 189071,
+          "tokens_nfd": 189071,
           "increase": 0.0,
           "increase_ci": [
             0.0,
@@ -163,6 +235,24 @@
             0.0,
             0.0
           ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 228227,
+          "tokens_nfd": 228227,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 216098,
+          "tokens_nfd": 216098,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
         }
       }
     },
@@ -190,6 +280,24 @@
         "V2-32k": {
           "tokens_nfc": 182444,
           "tokens_nfd": 182444,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 179550,
+          "tokens_nfd": 179550,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 176802,
+          "tokens_nfd": 176802,
           "increase": 0.0,
           "increase_ci": [
             0.0,
@@ -227,6 +335,24 @@
             0.0,
             0.0
           ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 160975,
+          "tokens_nfd": 160975,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 150036,
+          "tokens_nfd": 150036,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
         }
       }
     }
@@ -254,6 +380,24 @@
       "V2-32k": {
         "tokens_nfc": 1316574,
         "tokens_nfd": 1316574,
+        "increase": 0.0,
+        "increase_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "V2b-32k": {
+        "tokens_nfc": 1282908,
+        "tokens_nfd": 1282908,
+        "increase": 0.0,
+        "increase_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "V3-32k": {
+        "tokens_nfc": 1215758,
+        "tokens_nfd": 1215758,
         "increase": 0.0,
         "increase_ci": [
           0.0,

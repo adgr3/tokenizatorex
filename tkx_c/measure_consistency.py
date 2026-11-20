@@ -9,12 +9,12 @@ from collections import Counter
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.join(ROOT, "audit"))
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from measure_lib import DOMAINS, OFFICIAL, load_hf, docs  # noqa: E402
+from measure_lib import COMPARE4, DOMAINS, OFFICIAL, load_hf, docs  # noqa: E402
 from notation_patterns import ABBREVIATIONS, PATTERNS, extract  # noqa: E402
 from consistency import abbr_contexts, contexts, span_signature  # noqa: E402
 
 RES = os.path.join(ROOT, "tkx_c", "results")
-VARIANTS = ["V0-32k", "V1-32k", "V2-32k"]
+VARIANTS = ["V0-32k", "V1-32k", "V2-32k", "V2b-32k", "V3-32k"]
 MAX_STRINGS = 100
 
 

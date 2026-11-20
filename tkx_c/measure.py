@@ -132,6 +132,40 @@ def core() -> None:
                          "delta_pct_ci": [c / (a.sum() / w.sum()) for c in _ci(diff)]}
     write("digits_cost.json", digits)
 
+    # V2b/V3 (i V2 dla porównania) vs V0 — ten sam parowany bootstrap po dokumentach.
+    new = {"meta": {"comparison": "V2/V2b/V3 vs V0-32k", "split": "test",
+                    "bootstrap_n": 1000, "seed": 20261119, "post_hoc": True},
+           "domains": {}, "official": {}}
+    for v in ("V2-32k", "V2b-32k", "V3-32k"):
+        new["domains"][v] = {}
+    for d in DOMAINS:
+        a = np.array(doc_counts["V0-32k"][d], dtype=float)
+        w = np.array(words[d], dtype=float)
+        idx = bootstrap_indices(len(w))
+        for v in ("V2-32k", "V2b-32k", "V3-32k"):
+            b = np.array(doc_counts[v][d], dtype=float)
+            diff = (b[idx] - a[idx]).sum(1) / w[idx].sum(1)
+            new["domains"][v][d] = {
+                "docs": len(w), "tokens_v0": int(a.sum()), "tokens_v": int(b.sum()),
+                "delta_pct": float((b.sum() - a.sum()) / a.sum()),
+                "delta_pct_ci": [c / (a.sum() / w.sum()) for c in _ci(diff)],
+                "delta_tokens_per_word": float((b.sum() - a.sum()) / w.sum()),
+                "audit_lower_pct": audit["domains"].get(d, {}).get("lower_pct_of_tokens"),
+                "audit_upper_pct": audit["domains"].get(d, {}).get("upper_pct_of_tokens")}
+    for label, doms in (("official", OFFICIAL), ("all", DOMAINS)):
+        a = np.array([x for d in doms for x in doc_counts["V0-32k"][d]], dtype=float)
+        w = np.array([x for d in doms for x in words[d]], dtype=float)
+        idx = bootstrap_indices(len(w))
+        new[label] = {}
+        for v in ("V2-32k", "V2b-32k", "V3-32k"):
+            b = np.array([x for d in doms for x in doc_counts[v][d]], dtype=float)
+            diff = (b[idx] - a[idx]).sum(1) / w[idx].sum(1)
+            new[label][v] = {"docs": len(w), "tokens_v0": int(a.sum()),
+                             "tokens_v": int(b.sum()),
+                             "delta_pct": float((b.sum() - a.sum()) / a.sum()),
+                             "delta_pct_ci": [c / (a.sum() / w.sum()) for c in _ci(diff)]}
+    write("digits_cost_new.json", new)
+
     # kalendarz
     cal = {"template": "w roku {year} r. zadanie", "years": list(range(2015, 2036)),
            "variants": {}, "flat": {}}

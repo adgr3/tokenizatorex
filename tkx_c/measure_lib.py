@@ -14,7 +14,10 @@ sys.path.append(ROOT)
 from common import load_domain  # noqa: E402
 
 VARIANTS = ["V0-32k", "V1-32k", "V2-32k", "V2-24k", "V2-16k",
-            "V2-base-32k", "V2-base-24k", "V2-base-16k"]
+            "V2-base-32k", "V2-base-24k", "V2-base-16k",
+            "V2b-32k", "V2b-24k", "V2b-16k",
+            "V3-32k", "V3-24k", "V3-16k"]
+COMPARE4 = ["V0-32k", "V2-32k", "V2b-32k", "V3-32k"]
 DOMAINS = ["przetargi_ogloszenia", "przetargi_kio", "samorzad_uchwaly",
            "granty_ogloszenia", "prawo_eli", "ocr_prasa", "tabele_json",
            "web", "wikipedia", "literatura", "prawo", "sejm", "nauka",

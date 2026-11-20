@@ -13,7 +13,7 @@ from superbpe import CHUNK_RE, SuperBPETokenizer  # noqa: E402
 from measure_lib import DOMAINS, OFFICIAL, VARIANTS, docs, hf_encode, load_hf  # noqa: E402
 
 RES = os.path.join(ROOT, "tkx_c", "results")
-PY_VARIANTS = ["V0-32k", "V1-32k", "V2-32k"]
+PY_VARIANTS = ["V0-32k", "V1-32k", "V2-32k", "V2b-32k", "V3-32k"]
 
 
 def main() -> None:
@@ -25,7 +25,7 @@ def main() -> None:
         for d in DOMAINS:
             for doc in docs(d):
                 text = doc["text"]
-                target = unicodedata.normalize("NFC", text) if v.startswith("V2") else text
+                target = unicodedata.normalize("NFC", text) if v.startswith(("V2", "V3")) else text
                 ids = hf_encode(tok, text)
                 if tok.decode(ids, skip_special_tokens=False) == target:
                     ok += 1
@@ -50,7 +50,7 @@ def main() -> None:
             ds = docs(d)[:50]
             for doc in ds:
                 text = doc["text"]
-                if v.startswith("V2"):
+                if v.startswith(("V2", "V3")):
                     text = unicodedata.normalize("NFC", text)
                 for ch in CHUNK_RE.findall(text):
                     a = py.encode_ordinary(ch)

@@ -11,7 +11,9 @@ from tokenizers import Tokenizer
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GOLD = os.path.join(ROOT, "tkx_c", "golden")
 VARIANTS = ["V0-32k", "V1-32k", "V2-32k", "V2-24k", "V2-16k",
-            "V2-base-32k", "V2-base-24k", "V2-base-16k"]
+            "V2-base-32k", "V2-base-24k", "V2-base-16k",
+            "V2b-32k", "V2b-24k", "V2b-16k",
+            "V3-32k", "V3-24k", "V3-16k"]
 
 
 def sha(path: str) -> str:

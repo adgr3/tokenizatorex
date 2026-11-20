@@ -12,13 +12,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.join(ROOT, "audit"))
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from common import bootstrap_indices  # noqa: E402
-from measure_lib import OFFICIAL, VARIANTS, docs, hf_encode, load_hf  # noqa: E402
+from measure_lib import OFFICIAL, docs, hf_encode, load_hf  # noqa: E402
 
 RES = os.path.join(ROOT, "tkx_c", "results")
+NFD_VARIANTS = ["V0-32k", "V1-32k", "V2-32k", "V2b-32k", "V3-32k"]
 
 
 def main() -> None:
-    toks = {v: load_hf(v) for v in ("V0-32k", "V1-32k", "V2-32k")}
+    toks = {v: load_hf(v) for v in NFD_VARIANTS}
     out = {"meta": {"split": "test", "comparison": "NFD vs NFC", "bootstrap_n": 1000,
                     "seed": 20261119}, "domains": {}, "official": {}}
     for d in OFFICIAL:

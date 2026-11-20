@@ -14,7 +14,8 @@ RES = os.path.join(ROOT, "tkx_c", "results")
 FIG = os.path.join(ROOT, "tkx_c", "figures")
 os.makedirs(FIG, exist_ok=True)
 COLS = {"V0-32k": "#6b7280", "V1-32k": "#1d4ed8", "V2-32k": "#16a34a",
-        "V2-24k": "#f59e0b", "V2-16k": "#dc2626"}
+        "V2-24k": "#f59e0b", "V2-16k": "#dc2626",
+        "V2b-32k": "#7c3aed", "V3-32k": "#0891b2"}
 
 
 def j(name):
@@ -35,15 +36,16 @@ def chart_calendar():
     years = [int(y) for y in d["years"]]
     fig, ax = plt.subplots(figsize=(12, 5.4))
     for v, col in (("V0-32k", COLS["V0-32k"]), ("V1-32k", COLS["V1-32k"]),
-                   ("V2-32k", COLS["V2-32k"])):
+                   ("V2-32k", COLS["V2-32k"]), ("V2b-32k", COLS["V2b-32k"]),
+                   ("V3-32k", COLS["V3-32k"])):
         ax.plot(years, [d["variants"][v][str(y)] for y in years], marker="o",
                 ms=3, label=v, color=col)
     ax.set_ylabel("tokeny w zdaniu `w roku RRRR r. zadanie`")
     ax.set_xticks(years[::2])
     ax.tick_params(axis="x", rotation=45)
-    head(fig, "Kalendarz: V0 ma schodki 4/5/6, V1/V2 są płaskie 2015–2035",
+    head(fig, "Kalendarz: V0 ma schodki 4/5/6, V1/V2/V2b/V3 są płaskie 2015–2035",
          "Miara: liczba tokenów zdania-kontrolnego; kanoniczny eksport HF; "
-         "V2 pokrywa się z V1 (korpus treningowy już NFC)")
+         "V2b i V3 dodane post hoc (decyzja właściciela 20.11)")
     ax.grid(alpha=0.25)
     ax.legend(frameon=False)
     fig.tight_layout(rect=(0, 0.05, 1, 0.86))
@@ -92,17 +94,17 @@ def chart_digits():
 def chart_nfd():
     d = j("nfd.json")
     doms = list(d["domains"])
-    labs = ["V0-32k", "V1-32k", "V2-32k"]
+    labs = ["V0-32k", "V1-32k", "V2-32k", "V2b-32k", "V3-32k"]
     fig, ax = plt.subplots(figsize=(13, 5.6))
-    w = 0.26
+    w = 0.16
     for k, v in enumerate(labs):
         vals = [d["domains"][x]["variants"][v]["increase"] * 100 for x in doms]
-        ax.bar([i + (k - 1) * w for i in range(len(doms))], vals, width=w,
+        ax.bar([i + (k - 2) * w for i in range(len(doms))], vals, width=w,
                label=v, color=COLS[v])
     ax.set_xticks(range(len(doms)))
     ax.set_xticklabels(doms, rotation=30, ha="right", fontsize=8.5)
     ax.set_ylabel("wzrost tokenów NFD vs NFC [%]")
-    head(fig, "NFC w potoku usuwa koszt PDF: V2 +0,0%, V1 +39,9%, V0 +45,4%",
+    head(fig, "NFC w potoku usuwa koszt PDF: V2/V2b/V3 +0,0%, V0 +45,4%",
          "Miara: (tokeny(tekst NFD) − tokeny(tekst NFC)) / tokeny(NFC), "
          "7 dziedzin urzędowych; słupki = punktowa różnica")
     ax.grid(axis="y", alpha=0.25)
@@ -149,9 +151,38 @@ def chart_context():
     plt.close(fig)
 
 
+def chart_variants():
+    d = j("digits_cost_new.json")
+    doms = list(d["domains"]["V2-32k"])
+    labs = ["V2-32k", "V2b-32k", "V3-32k"]
+    fig, ax = plt.subplots(figsize=(13, 5.8))
+    w = 0.26
+    for k, v in enumerate(labs):
+        vals = [d["domains"][v][x]["delta_pct"] * 100 for x in doms]
+        ax.bar([i + (k - 1) * w for i in range(len(doms))], vals, width=w,
+               label=v, color=COLS[v])
+    ax.axhline(0, color="#111827", lw=0.8)
+    ax.set_xticks(range(len(doms)))
+    ax.set_xticklabels(doms, rotation=30, ha="right", fontsize=8.5)
+    ax.set_ylabel("wzrost tokenów vs V0 [%]")
+    o = {v: d["official"][v]["delta_pct"] * 100 for v in labs}
+    head(fig, "V2b i V3 tną liczby taniej niż V2; wybór ostateczny w TKX-D na BPB",
+         f"Miara: (tokeny wariantu − tokeny V0) / V0, 7 dziedzin urzędowych; "
+         f"urzędowe razem: V2 {o['V2-32k']:+.1f}%, V2b {o['V2b-32k']:+.1f}%, "
+         f"V3 {o['V3-32k']:+.1f}%")
+    ax.grid(axis="y", alpha=0.25)
+    ax.legend(frameon=False)
+    fig.tight_layout(rect=(0, 0.05, 1, 0.86))
+    footer(fig, "Dane: tkx_c/results/digits_cost_new.json · test TKX-A · kanoniczny HF · "
+                "bootstrap 1000× · seed 20261119 (post hoc)")
+    fig.savefig(os.path.join(FIG, "05_varianty.png"), dpi=150)
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     chart_calendar()
     chart_digits()
     chart_nfd()
     chart_context()
+    chart_variants()
     print("wykresy w", FIG)

@@ -28,6 +28,22 @@
       "tokens_python": 961998,
       "tokens_hf": 962005,
       "token_delta": 7
+    },
+    "V2b-32k": {
+      "chunks": 129767,
+      "identical": 129735,
+      "identical_share": 0.999753404178258,
+      "tokens_python": 939839,
+      "tokens_hf": 939845,
+      "token_delta": 6
+    },
+    "V3-32k": {
+      "chunks": 129767,
+      "identical": 129748,
+      "identical_share": 0.9998535837308407,
+      "tokens_python": 896373,
+      "tokens_hf": 896356,
+      "token_delta": -17
     }
   }
 }

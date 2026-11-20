@@ -10,6 +10,7 @@
     "stage2_merges": 11999,
     "digits": "grouped",
     "normalize": "none",
+    "forced_merges": 0,
     "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
   },
   "V1-32k": {
@@ -23,6 +24,7 @@
     "stage2_merges": 11999,
     "digits": "single",
     "normalize": "none",
+    "forced_merges": 0,
     "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
   },
   "V2-32k": {
@@ -36,6 +38,7 @@
     "stage2_merges": 11999,
     "digits": "single",
     "normalize": "nfc",
+    "forced_merges": 0,
     "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
   },
   "V2-24k": {
@@ -49,6 +52,7 @@
     "stage2_merges": 8999,
     "digits": "single",
     "normalize": "nfc",
+    "forced_merges": 0,
     "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
   },
   "V2-16k": {
@@ -62,6 +66,7 @@
     "stage2_merges": 5999,
     "digits": "single",
     "normalize": "nfc",
+    "forced_merges": 0,
     "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
   },
   "V2-base-32k": {
@@ -75,6 +80,91 @@
     "stage2_merges": 0,
     "digits": "single",
     "normalize": "nfc",
+    "forced_merges": 0,
+    "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
+  },
+  "V2b-32k": {
+    "superbpe": "tokenizers\\variants\\V2b-32k\\superbpe.json",
+    "hf": "hf\\variants\\V2b-32k\\tokenizer.json",
+    "sha256_superbpe": "051ce76079c56e93dc9a9290cbe88ce06e3cffdd5fc26723b6d97977cd4e9693",
+    "sha256_hf": "430b86da2b183d1dcf485b7427041a3f63ccf4e7e63b5b57ed7a1ca1037e04f1",
+    "vocab": 32000,
+    "transition": 20000,
+    "stage1_merges": 19744,
+    "stage2_merges": 11999,
+    "digits": "space_first",
+    "normalize": "nfc",
+    "forced_merges": 0,
+    "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
+  },
+  "V2b-24k": {
+    "superbpe": "tokenizers\\variants\\V2b-24k\\superbpe.json",
+    "hf": "hf\\variants\\V2b-24k\\tokenizer.json",
+    "sha256_superbpe": "3c89176f51a25c8c22fe4b54fb03f033eef14628236c4e0b9e329af1e20fa6ba",
+    "sha256_hf": "feb265b98d8c04704295fa06607a1f17f8060819fbbd86d677699601cfd1b336",
+    "vocab": 24000,
+    "transition": 15000,
+    "stage1_merges": 14744,
+    "stage2_merges": 8999,
+    "digits": "space_first",
+    "normalize": "nfc",
+    "forced_merges": 0,
+    "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
+  },
+  "V2b-16k": {
+    "superbpe": "tokenizers\\variants\\V2b-16k\\superbpe.json",
+    "hf": "hf\\variants\\V2b-16k\\tokenizer.json",
+    "sha256_superbpe": "2ff113d372910dbec4ea906d3e683513c24babd87f293bba78cb4a9e00f29f2c",
+    "sha256_hf": "7f9add8b144db2fe6f971eabe9832cec59ded8c69695fe36848c81fc7d5e1def",
+    "vocab": 16000,
+    "transition": 10000,
+    "stage1_merges": 9744,
+    "stage2_merges": 5999,
+    "digits": "space_first",
+    "normalize": "nfc",
+    "forced_merges": 0,
+    "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
+  },
+  "V3-32k": {
+    "superbpe": "tokenizers\\variants\\V3-32k\\superbpe.json",
+    "hf": "hf\\variants\\V3-32k\\tokenizer.json",
+    "sha256_superbpe": "09ceeb14acc0b3113937daaf181c452e8a76eb2a472d341f748631f6e1bbfc05",
+    "sha256_hf": "1581347a020aa70186b89ddbd7b028cf14302e176afa44b00a8407f5e90b948b",
+    "vocab": 32000,
+    "transition": 20000,
+    "stage1_merges": 19744,
+    "stage2_merges": 11999,
+    "digits": "groups3",
+    "normalize": "nfc",
+    "forced_merges": 0,
+    "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
+  },
+  "V3-24k": {
+    "superbpe": "tokenizers\\variants\\V3-24k\\superbpe.json",
+    "hf": "hf\\variants\\V3-24k\\tokenizer.json",
+    "sha256_superbpe": "f5360e5b10572ba3919e7b966a441fdc2f2f4fe908dc60becf85e20e9a175ef5",
+    "sha256_hf": "852a2d69ddc3e1c1ee3086095a61f6df67861d010082506c298a1d303486d478",
+    "vocab": 24000,
+    "transition": 15000,
+    "stage1_merges": 14744,
+    "stage2_merges": 8999,
+    "digits": "groups3",
+    "normalize": "nfc",
+    "forced_merges": 0,
+    "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
+  },
+  "V3-16k": {
+    "superbpe": "tokenizers\\variants\\V3-16k\\superbpe.json",
+    "hf": "hf\\variants\\V3-16k\\tokenizer.json",
+    "sha256_superbpe": "748c866625fa8a3b3e4ddc36b2c4d246ec84835ed8d00031b28f2b0e789e1363",
+    "sha256_hf": "776a2d5258ea23e1fab8a58a50cd3b4479fcab755d371dfcc8bcbea0912cecff",
+    "vocab": 16000,
+    "transition": 10000,
+    "stage1_merges": 9744,
+    "stage2_merges": 5999,
+    "digits": "groups3",
+    "normalize": "nfc",
+    "forced_merges": 0,
     "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
   },
   "V2-base-24k": {
@@ -88,6 +178,7 @@
     "stage2_merges": 0,
     "digits": "single",
     "normalize": "nfc",
+    "forced_merges": 0,
     "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
   },
   "V2-base-16k": {
@@ -101,6 +192,7 @@
     "stage2_merges": 0,
     "digits": "single",
     "normalize": "nfc",
+    "forced_merges": 0,
     "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
   }
 }

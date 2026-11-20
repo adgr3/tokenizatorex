@@ -24,6 +24,12 @@ SOURCES = {
     "V2-24k": os.path.join(TMP, "V2-24k.json"),
     "V2-16k": os.path.join(TMP, "V2-16k.json"),
     "V2-base-32k": os.path.join(TMP, "V2-base-32k.json"),
+    "V2b-32k": os.path.join(TMP, "V2b-32k.json"),
+    "V2b-24k": os.path.join(TMP, "V2b-24k.json"),
+    "V2b-16k": os.path.join(TMP, "V2b-16k.json"),
+    "V3-32k": os.path.join(TMP, "V3-32k.json"),
+    "V3-24k": os.path.join(TMP, "V3-24k.json"),
+    "V3-16k": os.path.join(TMP, "V3-16k.json"),
 }
 
 
@@ -72,6 +78,7 @@ def main() -> None:
             "stage2_merges": len(tok.stage2),
             "digits": tok.digits,
             "normalize": tok.normalize,
+            "forced_merges": tok.meta.get("forced_merges", 0),
             "data_source": data_source,
         }
         print(name, manifest[name]["vocab"], manifest[name]["sha256_hf"][:12])
