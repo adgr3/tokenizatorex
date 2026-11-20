@@ -8,6 +8,8 @@ zgodność Python == HF.
 from __future__ import annotations
 
 import os
+import pathlib
+import random
 import re
 import sys
 
@@ -23,6 +25,11 @@ from superbpe import SuperBPETokenizer  # noqa: E402
 HF_V3 = os.path.join(ROOT, "hf", "variants", "V3-32k", "tokenizer.json")
 PY_V3 = os.path.join(ROOT, "tokenizers", "variants", "V3-32k", "superbpe.json")
 DIGIT_RUN = re.compile(r"\d+")
+RAW_DIR = os.path.join(ROOT, "audit", "data", "raw")
+RAW_AVAILABLE = os.path.isdir(RAW_DIR) and any(os.scandir(RAW_DIR))
+skip_without_raw = pytest.mark.skipif(
+    not RAW_AVAILABLE, reason="dane lokalne, poza gitem")
+CPV_FIXTURE = os.path.join(ROOT, "tests", "fixtures", "cpv_codes.txt")
 
 
 @pytest.fixture(scope="module")
@@ -82,6 +89,7 @@ def test_v3_amounts_same_digit_groups_in_both_notations(hf_v3, bare, spaced):
     assert stripped == [p.lstrip("·") for p in pieces(hf_v3, spaced)]
 
 
+@skip_without_raw
 def test_v3_cpv_body_is_always_two_three_three(hf_v3):
     # Kanoniczny HF na zamrożonym teście: wszystkie kody CPV mają kształt 2+3+3.
     import importlib.util
@@ -104,6 +112,7 @@ def test_v3_cpv_body_is_always_two_three_three(hf_v3):
     assert found > 100
 
 
+@skip_without_raw
 def test_v3_python_matches_hf_on_all_dev_digit_runs(hf_v3, py_v3):
     from common import load_domain
     checked = 0
@@ -114,6 +123,53 @@ def test_v3_python_matches_hf_on_all_dev_digit_runs(hf_v3, py_v3):
                 assert py_v3.encode_ordinary(run) == hf_v3.encode(run, add_special_tokens=False).ids, run
                 checked += 1
     assert checked > 1000
+
+
+def _synthetic_digit_texts() -> list[str]:
+    """Zbiór CI: bez surowych tekstów, deterministyczny (seed 20261119)."""
+    rng = random.Random(20261119)
+    texts = [str(n) for n in range(100_000)]           # 0–99 999
+    texts += ["".join(str(rng.randrange(10))
+                      for _ in range(rng.randint(6, 20))) for _ in range(2000)]
+    bases = ["1234", "1234567", "1000000", "1999", "2024", "2027",
+             "00-950", "ZP.271.12.2026"]
+    prefixes = [" ", "(", ".", "\n", "X"]
+    for base in bases:
+        forms = [base]
+        if base.isdigit():
+            grouped = f"{int(base):,}".replace(",", " ")
+            forms += [grouped, grouped.replace(" ", "."), f"{base},89"]
+        for form in forms:
+            texts += [prefix + form for prefix in prefixes]
+    return texts
+
+
+def test_v3_python_matches_hf_on_synthetic_digit_texts(hf_v3, py_v3):
+    """Odpowiednik testu korpusowego dla czystego CI (bez danych lokalnych)."""
+    texts = _synthetic_digit_texts()
+    assert len(texts) > 100_000
+    for text in texts:
+        assert py_v3.encode_ordinary(text) == hf_v3.encode(
+            text, add_special_tokens=False).ids, text
+
+
+def _cpv_codes() -> list[str]:
+    frozen = pathlib.Path(CPV_FIXTURE).read_text(encoding="utf-8").split()
+    rng = random.Random(20261119)
+    synthetic = [f"{rng.randrange(10**8):08d}-{rng.randrange(10)}"
+                 for _ in range(1000)]
+    return frozen + synthetic
+
+
+def test_v3_cpv_body_is_two_three_three_on_frozen_and_synthetic(hf_v3):
+    """Kody CPV bez otaczającego tekstu: zamrożone z test + syntetyczne."""
+    codes = _cpv_codes()
+    assert len(codes) > 1000
+    for code in codes:
+        assert re.fullmatch(r"\d{8}-\d", code), code
+        groups = [p[1:] if p.startswith("\u0120") else p
+                  for p in hf_v3.encode(code[:8], add_special_tokens=False).tokens]
+        assert tuple(len(group) for group in groups) == (2, 3, 3), code
 
 
 def test_v3_paragraph_sign_is_recorded_as_two_byte_pieces(hf_v3):
