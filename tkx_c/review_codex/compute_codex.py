@@ -144,9 +144,10 @@ def main():
     nfd_counts = {v: {"nfc": [], "nfd": []} for v in MAIN}
 
     for i, doc in enumerate(test):
-        t = doc["text_nfc"]
-        t_nfd = unicodedata.normalize("NFD", t)
+        t_nfd = unicodedata.normalize("NFD", doc["text_nfc"])
         for v in VARIANTS:
+            # PROTOKOL: NFC w potoku tylko dla V2+; V0/V1 dostaja surowy tekst.
+            t = doc["text"] if v in ("V0-32k", "V1-32k") else doc["text_nfc"]
             enc = toks[v].encode(t, add_special_tokens=False)
             counts_test[v].append(len(enc.ids))
             used_test[v].update(enc.ids)
@@ -163,14 +164,15 @@ def main():
             elif len(roundtrip[v]["bad"]) < 3:
                 roundtrip[v]["bad"].append(doc["id"])
             if v in MAIN:
-                nfd_counts[v]["nfc"].append(len(enc.ids))
+                # A6 mierzy NFD wzgledem tekstu po NFC (tak jak protokol/nfd.json)
+                nfd_counts[v]["nfc"].append(len(toks[v].encode(doc["text_nfc"], add_special_tokens=False).ids))
                 nfd_counts[v]["nfd"].append(len(toks[v].encode(t_nfd, add_special_tokens=False).ids))
         if (i + 1) % 500 == 0:
             print(f"  test {i+1}/{len(test)}", flush=True)
 
     for i, doc in enumerate(dev):
-        t = doc["text_nfc"]
         for v in MAIN:
+            t = doc["text"] if v in ("V0-32k", "V1-32k") else doc["text_nfc"]
             enc = toks[v].encode(t, add_special_tokens=False)
             counts_dev[v].append(len(enc.ids))
             used_dev[v].update(enc.ids)
@@ -328,7 +330,8 @@ def main():
     for v in VARIANTS:
         if v in A8:
             continue
-        encs = toks[v].encode_batch([d["text_nfc"] for d in test], add_special_tokens=False)
+        txts = [d["text"] if v in ("V0-32k", "V1-32k") else d["text_nfc"] for d in test]
+        encs = toks[v].encode_batch(txts, add_special_tokens=False)
         used = set()
         for e in encs:
             used.update(e.ids)
@@ -338,7 +341,8 @@ def main():
                  "used_dev": None, "dead_dev": None, "dead_dev_pct": None,
                  "forced_group_tokens": None, "forced_group_dead_test": None}
         # dev dla nie-main
-        encs_d = toks[v].encode_batch([d["text_nfc"] for d in dev], add_special_tokens=False)
+        txts_d = [d["text"] if v in ("V0-32k", "V1-32k") else d["text_nfc"] for d in dev]
+        encs_d = toks[v].encode_batch(txts_d, add_special_tokens=False)
         usedd = set()
         for e in encs_d:
             usedd.update(e.ids)
