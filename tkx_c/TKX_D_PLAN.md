@@ -1,8 +1,9 @@
 # TKX-D — plan małych modeli i pomiaru BPB (bez trenowania tutaj)
 
-Data: 19.11.2026 · Wejście: warianty TKX-C (`tokenizers/variants/`,
-`hf/variants/`) · Cel: wybrać tokenizer **na podstawie jakości modelu**, nie
-fertility.
+Data: 19.11.2026 · Aktualizacja: 20.11.2026 (decyzja właściciela: **TKX-D
+realizujemy**, obliczenia na wynajętej RTX 5090) · Wejście: warianty TKX-C
+(`tokenizers/variants/`, `hf/variants/`) · Cel: wybrać tokenizer i sposób cięcia
+liczb **na podstawie jakości modelu**, nie fertility.
 
 ## 1. Protokół eksperymentu
 
@@ -25,14 +26,19 @@ fertility.
   * **sonda:** daty, kwoty, CPV, skróty urzędowe (`Dz.U.`, `lit.`, `art.`),
     lata 2015–2035; dokładność/EM, nie tylko perplexity;
   * opcjonalnie: czas kroku, VRAM, przepustowość.
-* **Kandydaci:** V0-32k, V2-16k, V2-24k, V2-32k, tokenizer Slayer1B (SHA-256
-  `0640d3bd3674d7a6e59c540d945a2ad275a12e1bcaeb6007c37a90751f9815dd`).
-  V0 jako kontrola „przed poprawkami”; V2-* jako poprawione.
+* **Kandydaci:** V0-32k, V2-16k, V2-24k, V2-32k, **V2b i V3** (najlepszy
+  rozmiar spośród 16k/24k/32k wyznaczony z kosztu w tokenach z
+  `digits_cost_new.json`: V3-32k < V2b-32k < V2-32k), tokenizer Slayera v6
+  (SHA-256 `0640d3bd3674d7a6e59c540d945a2ad275a12e1bcaeb6007c37a90751f9815dd`).
+  V0 jako kontrola „przed poprawkami”; V2/V2b/V3 jako poprawione. Decyzja
+  ostatecznie zapada między V2 / V2b / V3 na małych modelach: **BPB + sonda
+  dat/kwot/CPV + koszt w tokenach**.
 * **Kryterium:** najniższy BPB na walidacji **i** nie gorsza sonda; różnica
   musi być większa niż szum między seedami (co najmniej 2 seedY albo bootstrap
   po dokumentach). Fertility i Rényi **nie** są kryterium wyboru.
-* **Limit:** jeden przebieg ≤ 9 h, łącznie ≤ 10 h GPU; T4/P100 bez bf16 →
-  fp32; zapisać kartę i wersje.
+* **Budżet i precision:** **bf16 na RTX 5090**. Jeden przebieg ≤ 2 h, łącznie
+  ≤ 10 h GPU, ale **twardy limit kosztu 5 USD** (stop i pytanie przy 4 USD).
+  Zapisać kartę, wersje torch/CUDA i sumy SHA-256 wyników.
 
 ## 2. Co już wiadomo z TKX-C
 
@@ -45,6 +51,12 @@ fertility.
   99,975% dla V1/V2 (V0 97,08%).
 * 16k/24k/32k: fertility rośnie w dół (V2-16k 2,168 vs V2-32k 1,920), ale to
   **nie** rozstrzyga; potrzebny BPB i budżet embeddingów.
+* **V2b/V3 (post hoc, 20.11):** koszt vs V0 na 7 dziedzinach urzędowych to
+  +11,08% [10,32; 11,96] dla V2b i +5,26% [4,85; 5,72] dla V3 (V2: +13,99%);
+  kalendarz płaski (V2b 8, V3 6 tokenów); NFD 0%; round-trip 2752/2752.
+  V3 ma 4,88% martwych tokenów z powodu wymuszonych grup `000`–`999`.
+  Szczegóły w `results/digits_cost_new.json`. To jedyna różnica między
+  kandydatami, którą zmierzono w TKX-C — resztę rozstrzyga TKX-D.
 
 ## 3. `SlayerLab/TokenizerTest-32m-A/B` — gotowy wzór
 
@@ -81,29 +93,52 @@ Sprawdzone na HF:
   `train_gpt_ref_r24_2.py` (SHA-256 `46f83b51…`), sprawdza tokenizer
   SHA-256 `0640d3bd…`, robi `torch.load(..., weights_only=True, mmap=True)`,
   `head.weight = tok.weight`, i liczy CE/BPB na bajtach.
-* **Na T4/P100:** 1B w fp32 to ok. 4,4 GB — mieści się w 16 GB. **Nie używać
-  bf16** (T4/P100 nie mają bf16); fp32, bez kwantyzacji. Zapisać kartę.
+* **Rola:** Slayer1B-1.09 z checkpointami to **punkt odniesienia BPB na tych
+  samych tekstach co nasze małe modele** (reguła właściciela). Nie jest
+  kandydatem do wyboru tokenizera — jest kotwicą porównawczą.
+* **Na RTX 5090 (32 GB):** 1B w bf16 mieści się bez kwantyzacji. Wagi ładujemy
+  `torch.load(..., weights_only=True, mmap=True)`, `head.weight = tok.weight`.
+  (Na zapasowej karcie bez bf16 — np. T4/P100 — 1B w fp32 to ok. 4,4 GB i
+  mieści się w 16 GB; wtedy fp32, bez kwantyzacji, z adnotacją w karcie.)
 * **Mały test na jednym checkpoincie:** `wagi_60000.pt` (lub `wagi_50000.pt`),
   tokenizer Slayer1B, 200–500 dokumentów z dev TKX-A, kontekst 1024/2048;
-  policzyć BPB i porównać z V2-32k po treningu TKX-D. Jeśli pamięć nie
+  policzyć BPB na tych samych bajtach co V2/V2b/V3. Jeśli pamięć nie
   wystarczy — UNKNOWN z powodem, bez kwantyzacji.
 * `hf_do_ckpt.py` w `Slayer1B-1.09` służy do konwersji **HF → ckpt trenera**
   (dla `--init-from`), a nie do odczytu `wagi_*.pt`; do ewaluacji używać
   `inspect_checkpoint.py`/`torch.load`.
 
-## 5. Kroki TKX-D
+## 5. Kolejność prac (PR #3 zostaje draftem)
 
-1. Zamrozić protokół TKX-D (architektura, dane, seed, BPB, sondy, budżet
-   parametrów, 2 seedy).
-2. Zbudować packi treningowe w **bajtach** (nie tokenach), wspólne dla
-   wszystkich tokenizerów; decontaminacja 13-gramów względem dev/test TKX-A.
-3. Wytrenować 5 modeli (V0-32k, V2-16k, V2-24k, V2-32k, Slayer1B) na tym
-   samym budżecie bajtów; zapisać BPB co 10k kroków.
-4. Sonda dat/kwot/CPV/skrótów na dev; finalny BPB na teście TKX-A (raz).
-5. Raport: tabela BPB + sonda + udział embeddingów + koszt; decyzja o
-   tokenizerze i słowniku.
-6. Ewentualnie powtórzyć zwycięzcę z drugim seedem; różnice < szum oznaczyć
-   jako remis.
+1. **Najpierw na CPU, lokalnie (0 USD):** zamrozić protokół TKX-D (architektura,
+   dane, seed, BPB, sondy, budżet parametrów z embeddingami, 2 seedy),
+   zbudować packi treningowe w **bajtach** (nie tokenach), wspólne dla
+   wszystkich tokenizerów, z decontaminacją 13-gramów względem dev/test TKX-A,
+   przygotować skrypty treningowe i ewaluacyjne oraz gotowe komendy. Nic nie
+   zaczynamy na karcie „na próbę”.
+2. **Niezależne rundy 2 (Codex) i 3 (Grok)** na tym samym PR #3, jak w TKX-A →
+   poprawki → dopiero `GO MERGE`. Push/PR zawsze po zgodzie właściciela.
+3. **Wynajęcie karty:** agent **nie dostaje klucza API vast.ai**. Przygotowuje
+   dla właściciela „kartkę do wynajmu”: `1× RTX 5090`, obraz **PyTorch z CUDA
+   12.8+**, szacunek godzin i USD (przy ok. 0,43 USD/h), region i ustawienia.
+   Właściciel wynajmuje i przekazuje SSH; agent loguje się tylko po SSH.
+4. **Trening na karcie:** modele ~30M dla V0-32k, V2-16k/24k/32k, V2b,
+   V3 (najlepszy rozmiar) i tokenizer Slayera v6 — **ta sama liczba bajtów
+   treningu**, ten sam seed, bf16, wyrównany budżet parametrów z embeddingami.
+   BPB zapisywany co 10k kroków; sonda dat/kwot/CPV/skrótów na dev; finalny
+   BPB na teście TKX-A (raz, po decyzji). Slayer1B-1.09 (checkpointy) jako
+   punkt odniesienia BPB na tych samych tekstach.
+5. **Koszt narastająco** w `results/koszt.jsonl` (czas, stawka, USD, kumulatywnie).
+   Przy **4 USD stop i pytanie do właściciela**; twardy sufit 5 USD.
+6. **Zakończenie:** pobranie wyników, sumy **SHA-256** każdego pliku, raport
+   (tabela BPB + sonda + udział embeddingów + koszt w USD i w tokenach) i
+   komunikat: **„GOTOWE, można kliknąć Destroy"**. **Destroy klika właściciel** —
+   agent nigdy nie niszczy instancji sam. Zapas: Kaggle (karta laptopa się
+   zawiesza).
+7. **Krok końcowy (po wyborze):** zwycięski wariant **przetrenujemy na pełnych
+   danych p0** później, na Kaggle (CPU, ok. 30 GB RAM) — małe modele TKX-D
+   służą tylko do wyboru, nie są wynikiem końcowym. Wynik p0 zapisujemy jako
+   nową bazę z jawnym SHA-256 i porównaniem z p2.
 
 ## 6. Ograniczenia
 
@@ -111,5 +146,10 @@ Sprawdzone na HF:
 * BPB zależy od danych walidacji; dev/test TKX-A to polszczyzna urzędowa +
   ogólna, nie cały świat.
 * Slayer1B 1.09 to trening w toku; checkpointy mogą się zmieniać.
-* T4/P100 bez bf16; fp32 jest wolniejszy i nie testuje docelowego bf16.
-* Nie trenujemy modeli w TKX-C; ten plik to plan, nie wynik.
+* V3 ma nieużyteczne (martwe) tokeny z wymuszonych grup — BPB przy stałym
+  budżecie parametrów może to „przepłacić”; dlatego V2/V2b/V3 porównujemy
+  wyłącznie na modelach.
+* Budżet 5 USD ogranicza liczbę przebiegów; priorytet: 2 seedy zwycięzcy
+  i kotwica Slayer1B przed dodatkowymi rozmiarami słownika.
+* Nie trenujemy modeli w TKX-C; ten plik to plan, nie wynik. Agent nie ma
+  klucza vast.ai i nie klika Destroy.

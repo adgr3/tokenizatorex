@@ -1,6 +1,6 @@
 # TOKENIZATOREX — raport prosty po TKX-C
 
-Data: 19.11.2026 · Szczegóły: `tkx_c/RAPORT_TKX_C.md`
+Data: 19.11.2026 · Aktualizacja: 20.11.2026 (V2b, V3) · Szczegóły: `tkx_c/RAPORT_TKX_C.md`
 
 ## Co poprawiliśmy
 
@@ -17,14 +17,52 @@ Data: 19.11.2026 · Szczegóły: `tkx_c/RAPORT_TKX_C.md`
    dokumentach testu. Eksport HF i Python zgadzają się w **99,975%**
    (wcześniej 97,08%). Zamrożone 1240 zdań (`tkx_c/golden/`) pilnuje, żeby
    przyszła zmiana kodu nie zmieniła tokenizacji po cichu.
+4. **Dwa nowe sposoby cięcia liczb (na prośbę właściciela, 20.11).** V2b dokleja
+   spację przed liczbą do pierwszej cyfry, więc słowo „roku” ma już tylko jedną
+   wersję. V3 dodatkowo tnie liczby na trójki od prawej i ma w słowniku **wszystkie**
+   trójki `000`–`999` — żaden rok ani kod nie jest „obcy”. Oba warianty są
+   zbudowane dla 16k/24k/32k i przeszły te same testy co V2.
+
+## Skąd część kosztu pojedynczych cyfr
+
+Są dwie proste przyczyny, dla których samo „rozbicie cyfr” kosztuje więcej
+kawałków, niż się spodziewaliśmy (`·` oznacza spację):
+
+1. **Spacja przykleja się do poprzedniego słowa.** Gdy po słowie „roku” stoi
+   liczba, powstaje kawałek `·roku·` (ze spacją na końcu). Gdy nie stoi — jest
+   zwykłe `·roku`. Czyli to samo słowo w dwóch wersjach, co marnuje miejsce
+   w słowniku. V2b temu zapobiega: spacja idzie do cyfry (`·2`) i `·roku·`
+   nie powstaje.
+2. **Spacje w kwotach są osobnymi kawałkami.** W V2 kwota `1 234 567` to
+   `1|·|2|3|4|·|5|6|7` — same cyfry i spacje. Całość z groszami i `zł` rośnie
+   z 7 kawałków (V0) do 13 (V2). W przykładzie z decyzji było to 9 → 14;
+   u nas wychodzi 7 → 13, bo V0 wytrenowaliśmy na innej próbce. Kierunek jest
+   ten sam. V2b daje 11 kawałków, a V3 tylko 6.
+
+| wariant | `w roku 2024 r.` | `1 234 567,89 zł` (liczba kawałków) |
+|---|---|---:|
+| V0 | `w\|·roku\|·202\|4·r.` (4) | 7 |
+| V2 | `w\|·roku·\|2\|0\|2\|4\|·r.` (6) | 13 |
+| V2b | `w\|·roku\|·2\|0\|2\|4\|·r.` (6) | 11 |
+| V3 | `w\|·roku\|·2\|024\|·r.` (5) | **6** |
+
+Widzisz to w tabeli: V3 usuwa obie przyczyny naraz, V2b tylko pierwszą.
 
 ## Ile to kosztuje
 
-Pojedyncze cyfry **wydłużają** tekst. Na 7 dziedzinach urzędowych: **+14,0%**
-tokenów (95% CI +13,1%…+15,1%). Najdroższe: uchwały +22,5%, tabele JSON +18,9%,
-przetargi +16,8%; najtańsze: literatura +0,03%, web +3,0%, OCR +4,0%.
-To mieści się w górnej części przedziału, który przewidział audyt
-(+6,7%…+15,0%). Prawdziwy koszt po treningu to ten zmierzony, nie szacunek.
+Pojedyncze cyfry **wydłużają** tekst. Na 7 dziedzinach urzędowych V2 kosztuje
+**+14,0%** tokenów (95% CI +13,1%…+15,1%). Najdroższe: uchwały +22,5%, tabele
+JSON +18,9%, przetargi +16,8%; najtańsze: literatura +0,03%, web +3,0%,
+OCR +4,0%. To mieści się w górnej części przedziału z audytu (+6,7%…+15,0%).
+
+Nowe warianty są tańsze: **V2b +11,1%**, a **V3 +5,3%** względem V0
+(na tych samych dokumentach, z przedziałem niepewności). V3 ma w słowniku
+4,9% kawałków, których tekst nie używa — to cena za to, że każda trójka cyfr
+jest gotowa.
+
+**Zysk we wszystkich trzech wariantach jest ten sam:** kalendarz się nie zmienia
+(co roku tyle samo kawałków), NFD 0%, data i CPV zawsze dzielone tak samo,
+`decode(encode(x))` zawsze daje oryginał. Różnica jest tylko w cenie.
 
 **Zysk:** stały kalendarz, zero tokenów wielocyfrowych, data/CPV dzielone
 identycznie w każdym kontekście (spójność 17–24% → 0%), NFD 0%, HF prawie 1:1.
@@ -56,10 +94,12 @@ Zbudowaliśmy 8 wariantów:
 | V2-32k | cyfry + NFC |
 | V2-24k / V2-16k | to samo, mniejszy słownik |
 | V2-base-32k/24k/16k | bez etapu SuperBPE (kontrola) |
+| **V2b-32k/24k/16k** | spacja do pierwszej cyfry, NFC (nowe, 20.11) |
+| **V3-32k/24k/16k** | trójki cyfr od prawej + pełny zestaw `000`–`999` (nowe) |
 
-**Nie wybraliśmy jeszcze słownika.** Fertility zawsze faworyzuje większy
-słownik (V2-16k 2,168 vs V2-32k 1,920), więc wybór zrobimy w TKX-D na małych
-modelach: **BPB** na tych samych bajtach + sonda dat/kwot/CPV/skrótów.
+**Nie wybraliśmy jeszcze słownika ani sposobu cięcia liczb.** Fertility zawsze
+faworyzuje większy słownik, więc wybór zrobimy w TKX-D na małych modelach:
+**BPB** na tych samych bajtach + sonda dat/kwot/CPV/skrótów + koszt w tokenach.
 32k zabiera 16,4% parametrów modelu 150M na embeddingi, 16k — 8,2%; to trzeba
 wliczyć w budżet.
 
@@ -89,13 +129,20 @@ i raporcie.
 
 ## Co dalej (TKX-D)
 
-1. Małe modele ~30M na tych samych bajtach, dla V0/V2-16k/V2-24k/V2-32k
-   i Slayera.
-2. BPB na walidacji + sonda dat/kwot/CPV/skrótów.
-3. Wybór tokenizera i słownika **na podstawie BPB**, nie fertility.
-4. Wzór: `TokenizerTest-32m-A/B` (BPB 1,0583 vs 1,0622); checkpointy
-   Slayer1B 1.09 ładowane w fp32 (bez bf16 na T4/P100).
-   Szczegóły: `tkx_c/TKX_D_PLAN.md`.
+1. Małe modele ~30M na tych samych bajtach: V0, V2-16k/24k/32k, V2b, V3
+   (najlepszy rozmiar) i tokenizer Slayera; wzór: `TokenizerTest-32m-A/B`.
+2. BPB na walidacji + sonda dat/kwot/CPV/skrótów; checkpointy Slayer1B 1.09
+   jako punkt odniesienia BPB na tych samych tekstach.
+3. Wybór tokenizera, słownika i sposobu cięcia liczb **na podstawie BPB**,
+   nie fertility.
+4. Liczymy na **wynajętej karcie RTX 5090** (bf16). Agent przygotuje dane i kod
+   na zwykłym procesorze i przygotuje dla właściciela kartkę do wynajmu;
+   właściciel wynajmuje i daje SSH. Budżet **co najwyżej 5 dolarów**, przy
+   4 dolarach stop i pytanie. Każdy wydatek zapisujemy w `results/koszt.jsonl`.
+   Na koniec: sumy SHA-256 wyników i „GOTOWE, można kliknąć Destroy” —
+   przycisk klika właściciel. Zapas: Kaggle (karta w laptopie się zawiesza).
+5. Zwycięski wariant na koniec przetrenujemy na **pełnych danych p0** na Kaggle
+   (procesor, ok. 30 GB pamięci). Szczegóły: `tkx_c/TKX_D_PLAN.md`.
 
 ## Słowniczek
 

@@ -151,3 +151,15 @@ Bootstrap po dokumentach 1000×, seed 20261119, jeden generator NumPy
    różnicę.
 6. **Golden:** 1240 zdań z `dev` + załącznik A; test CI porównuje ID i
    round-trip. To regresja, nie dowód jakości.
+7. **V2b i V3 (decyzja właściciela 20.11, post hoc):** po zamrożeniu protokołu
+   dodano dwa warianty cięcia liczb. **V2b** = V2 + spacja przed liczbą
+   doklejana do pierwszej cyfry (tokeny `·0`…`·9`) + zakaz superwordów
+   z końcową spacją (brak `·roku·`). **V3** = grupy po 3 cyfry od prawej
+   (`45233140 → 45|233|140`, `2024 → 2|024`) + wymuszony pełny zestaw
+   `000`–`999` i `0`–`99` w słowniku (2210 wymuszonych merges) + spacja jak
+   w V2b. Oba: NFC, 32k/24k/16k, t = 20k/15k/10k, **ta sama próbka p2** co
+   V0–V2, te same skrypty i seed. Nowe pomiary (`digits_cost_new.json`,
+   `examples.json`, golden ×14, `05_varianty.png`) są oznaczone jako post hoc;
+   wcześniejsze wyniki V0/V1/V2 pozostają bez zmian. Nowe opcje w
+   `superbpe.py` (`space_first`, `groups3`) są domyślnie wyłączone, więc v1
+   i V0–V2 da się odtworzyć bit w bit. Ostateczny wybór V2/V2b/V3 w TKX-D.
