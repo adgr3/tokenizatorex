@@ -288,8 +288,10 @@ wprowadza nową niespójność pierwszej cyfry.
 
 NFD: V2/V2b/V3 **+0,0%** (V0 +45,4%). Kalendarz 2015–2035 płaski: V2b **8**,
 V3 **6** tokenów w szablonie (V0 4/5/6) — ale **stały licznik nie dowodzi
-uogólnienia**: w V3 `024` i `025` to osobne tokeny, kształt roku skacze przy
-1999/2000 (2+2 → 1+3), a o uogólnieniu rozstrzygnie sonda w TKX-D. Round-trip:
+uogólnienia**: przed naprawą `1999` dawało `19│99` (2+2), a `2000` — `2│000`;
+po naprawie wszystkie lata mają kształt 1+3 (`1999` → `1│999`, `2000` →
+`2│000`), a `024`, `025` i `999` to osobne tokeny. O uogólnieniu rozstrzygnie
+sonda w TKX-D. Round-trip:
 **2752/2752** dla każdego z 14 wariantów; zgodność z Pythonem V2b 99,975%,
 V3 99,985%. Słownik: V2b 2,01% martwych (jak V2), V3 **1,80%** (przed: 4,88%);
 przy 16k wymuszone grupy to nadal 13,81% słownika, martwe 7,03%, a 500 z 1100
@@ -441,6 +443,8 @@ zdań w raportach (koszt V3, CPV, kalendarz, V2b, martwe tokeny, R3-extra,
 literatura, długości, 7 kawałków, `zł`, post hoc, kryterium wyboru);
 (3) zamrożenie kandydatów i kryteriów w `TKX_D_PLAN.md`; (4) nowe testy w CI
 (82 przechodzi). Nie poprawiano: liczb V0/V1/V2 ani ich goldenów.
+
+Kontrola poprawek (Codex, 20.11): PASS 16/16; DROBNE-1 poprawione.
 
 ## 10. TKX-D
 

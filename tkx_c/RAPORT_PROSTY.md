@@ -73,9 +73,10 @@ recenzji Groka, treści poza repozytorium) V3 kosztuje **+2,9%** [2,7; 3,2].
 **Zysk we wszystkich trzech wariantach jest ten sam:** kalendarz się nie zmienia
 (co roku tyle samo kawałków), NFD 0%, data i CPV zawsze dzielone tak samo,
 `decode(encode(x))` zawsze daje oryginał. Różnica jest tylko w cenie — ale
-**stały licznik nie znaczy, że model uogólni niewidziany rok**: w V3 `024` i
-`025` to osobne kawałki, a przy przejściu 1999 → 2000 kształt roku skacze
-z 2+2 na 1+3. Rozstrzygnie to sonda w TKX-D.
+**stały licznik nie znaczy, że model uogólni niewidziany rok**: przed naprawą
+`1999` dawało `19│99` (2+2), a `2000` — `2│000`; po naprawie wszystkie lata
+mają kształt 1+3 (`1999` → `1│999`, `2000` → `2│000`), a `024`, `025` i `999`
+to osobne kawałki. Rozstrzygnie to sonda w TKX-D.
 
 **Uwaga o V2b:** spacja dokleja się tylko wtedy, gdy stoi przed liczbą —
 dotyczy to 49,6% ciągów cyfr na urzędowych. Ten sam ciąg cyfr ma dwa różne
@@ -103,6 +104,8 @@ runda 3 (Grok) — zmienia 3 i osłabia 5 wniosków. Obie znalazły ten sam bł�
 Pliki: `tkx_c/review_codex/REVIEW_CODEX_R2.md` i
 `tkx_c/review_grok/RED_TEAM_GROK_R3.md`. Poprawiono V3, wnioski w raportach
 i plan TKX-D; liczby V0/V1/V2 zostały bez zmian.
+
+Kontrola poprawek (Codex, 20.11): PASS 16/16; DROBNE-1 poprawione.
 
 **Post hoc:** V2b i V3 zaprojektowano po obejrzeniu V2 na teście — commity
 `9bd1aa5` → `ce72c3f`/`b44fee7`. **Liczby V2b/V3 z testu nie służą do wyboru
