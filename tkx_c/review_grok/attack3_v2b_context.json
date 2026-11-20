@@ -1,0 +1,443 @@
+{
+  "meta": {
+    "split": "test",
+    "domains": "7 urzędowych + web",
+    "run": "maksymalny ciąg \\d+",
+    "glued": "pierwszy token V2b zaczyna się od spacji (projekt: ·0…·9)",
+    "distinct": "ile różnych pierwszych tokenów ma ten sam ciąg cyfr, gdy występuje ≥2 razy"
+  },
+  "counts": {
+    "official_n": 106720,
+    "official_left_space": 52960,
+    "official_V2b-32k_first": 106720,
+    "official_V2b-32k_glued_space": 52960,
+    "official_v2b_left_space": 52960,
+    "official_v2b_glued_when_space": 52960,
+    "official_V2-32k_first": 106720,
+    "official_V2-32k_not_glued": 106720,
+    "official_left_hyphen": 4561,
+    "official_V2b-32k_not_glued": 53760,
+    "official_v2b_left_hyphen": 4561,
+    "official_left_newline": 16277,
+    "official_v2b_left_newline": 16277,
+    "official_left_dot": 18209,
+    "official_v2b_left_dot": 18209,
+    "official_left_letter": 7651,
+    "official_v2b_left_letter": 7651,
+    "official_left_other": 4130,
+    "official_v2b_left_other": 4130,
+    "official_left_slash": 2110,
+    "official_v2b_left_slash": 2110,
+    "official_left_paren": 296,
+    "official_v2b_left_paren": 296,
+    "official_left_quote": 519,
+    "official_v2b_left_quote": 519,
+    "official_left_nr_no_space": 1,
+    "official_v2b_left_nr_no_space": 1,
+    "official_left_start": 6,
+    "official_v2b_left_start": 6,
+    "web_n": 4205,
+    "web_left_space": 2647,
+    "web_V2b-32k_first": 4205,
+    "web_V2b-32k_glued_space": 2647,
+    "web_V2-32k_first": 4205,
+    "web_V2-32k_not_glued": 4205,
+    "web_left_other": 396,
+    "web_V2b-32k_not_glued": 1558,
+    "web_left_paren": 106,
+    "web_left_hyphen": 259,
+    "web_left_letter": 220,
+    "web_left_newline": 246,
+    "web_left_start": 13,
+    "web_left_dot": 215,
+    "web_left_slash": 93,
+    "web_left_quote": 10
+  },
+  "v2b_digit_strings_with_ge2": 2070,
+  "v2b_digit_strings_with_gt1_first_token": 1004,
+  "v2b_share_inconsistent": 0.485024154589372,
+  "v2b_distinct_first_hist": {
+    "2": 1004,
+    "1": 1066
+  },
+  "v2_digit_strings_with_ge2": 2070,
+  "v2_digit_strings_with_gt1_first_token": 0,
+  "v2_distinct_first_hist": {
+    "1": 2070
+  },
+  "examples_inconsistent": [
+    {
+      "digits": "2026",
+      "first_tokens": [
+        [
+          " 2",
+          3426
+        ],
+        [
+          "2",
+          678
+        ]
+      ],
+      "n": 4104
+    },
+    {
+      "digits": "01",
+      "first_tokens": [
+        [
+          "0",
+          753
+        ],
+        [
+          " 0",
+          227
+        ]
+      ],
+      "n": 980
+    },
+    {
+      "digits": "1",
+      "first_tokens": [
+        [
+          "1",
+          7013
+        ],
+        [
+          " 1",
+          6304
+        ]
+      ],
+      "n": 13317
+    },
+    {
+      "digits": "2",
+      "first_tokens": [
+        [
+          "2",
+          6515
+        ],
+        [
+          " 2",
+          3430
+        ]
+      ],
+      "n": 9945
+    },
+    {
+      "digits": "3",
+      "first_tokens": [
+        [
+          "3",
+          5691
+        ],
+        [
+          " 3",
+          2493
+        ]
+      ],
+      "n": 8184
+    },
+    {
+      "digits": "4",
+      "first_tokens": [
+        [
+          "4",
+          5625
+        ],
+        [
+          " 4",
+          1496
+        ]
+      ],
+      "n": 7121
+    },
+    {
+      "digits": "5",
+      "first_tokens": [
+        [
+          "5",
+          3602
+        ],
+        [
+          " 5",
+          1296
+        ]
+      ],
+      "n": 4898
+    },
+    {
+      "digits": "50",
+      "first_tokens": [
+        [
+          " 5",
+          469
+        ],
+        [
+          "5",
+          81
+        ]
+      ],
+      "n": 550
+    },
+    {
+      "digits": "78",
+      "first_tokens": [
+        [
+          " 7",
+          47
+        ],
+        [
+          "7",
+          25
+        ]
+      ],
+      "n": 72
+    },
+    {
+      "digits": "600",
+      "first_tokens": [
+        [
+          " 6",
+          52
+        ],
+        [
+          "6",
+          15
+        ]
+      ],
+      "n": 67
+    },
+    {
+      "digits": "6",
+      "first_tokens": [
+        [
+          "6",
+          2704
+        ],
+        [
+          " 6",
+          946
+        ]
+      ],
+      "n": 3650
+    },
+    {
+      "digits": "427",
+      "first_tokens": [
+        [
+          "4",
+          7
+        ],
+        [
+          " 4",
+          1
+        ]
+      ],
+      "n": 8
+    },
+    {
+      "digits": "9",
+      "first_tokens": [
+        [
+          "9",
+          959
+        ],
+        [
+          " 9",
+          627
+        ]
+      ],
+      "n": 1586
+    },
+    {
+      "digits": "10",
+      "first_tokens": [
+        [
+          "1",
+          820
+        ],
+        [
+          " 1",
+          674
+        ]
+      ],
+      "n": 1494
+    },
+    {
+      "digits": "7",
+      "first_tokens": [
+        [
+          "7",
+          1902
+        ],
+        [
+          " 7",
+          738
+        ]
+      ],
+      "n": 2640
+    }
+  ],
+  "examples_left": {
+    "left_hyphen": [
+      {
+        "digits": "01",
+        "left": "hyphen",
+        "v2b_first": "0"
+      },
+      {
+        "digits": "01",
+        "left": "hyphen",
+        "v2b_first": "0"
+      },
+      {
+        "digits": "600",
+        "left": "hyphen",
+        "v2b_first": "6"
+      },
+      {
+        "digits": "148610",
+        "left": "hyphen",
+        "v2b_first": "1"
+      }
+    ],
+    "left_newline": [
+      {
+        "digits": "1",
+        "left": "newline",
+        "v2b_first": "1"
+      },
+      {
+        "digits": "1",
+        "left": "newline",
+        "v2b_first": "1"
+      },
+      {
+        "digits": "1",
+        "left": "newline",
+        "v2b_first": "1"
+      },
+      {
+        "digits": "1",
+        "left": "newline",
+        "v2b_first": "1"
+      }
+    ],
+    "left_dot": [
+      {
+        "digits": "1",
+        "left": "dot",
+        "v2b_first": "1"
+      },
+      {
+        "digits": "2",
+        "left": "dot",
+        "v2b_first": "2"
+      },
+      {
+        "digits": "3",
+        "left": "dot",
+        "v2b_first": "3"
+      },
+      {
+        "digits": "4",
+        "left": "dot",
+        "v2b_first": "4"
+      }
+    ],
+    "left_slash": [
+      {
+        "digits": "679",
+        "left": "slash",
+        "v2b_first": "6"
+      },
+      {
+        "digits": "46",
+        "left": "slash",
+        "v2b_first": "4"
+      },
+      {
+        "digits": "382",
+        "left": "slash",
+        "v2b_first": "3"
+      },
+      {
+        "digits": "2026",
+        "left": "slash",
+        "v2b_first": "2"
+      }
+    ],
+    "left_paren": [
+      {
+        "digits": "18",
+        "left": "paren",
+        "v2b_first": "1"
+      },
+      {
+        "digits": "65",
+        "left": "paren",
+        "v2b_first": "6"
+      },
+      {
+        "digits": "65",
+        "left": "paren",
+        "v2b_first": "6"
+      },
+      {
+        "digits": "02",
+        "left": "paren",
+        "v2b_first": "0"
+      }
+    ],
+    "left_quote": [
+      {
+        "digits": "20",
+        "left": "quote",
+        "v2b_first": "2"
+      },
+      {
+        "digits": "40",
+        "left": "quote",
+        "v2b_first": "4"
+      },
+      {
+        "digits": "0",
+        "left": "quote",
+        "v2b_first": "0"
+      },
+      {
+        "digits": "40",
+        "left": "quote",
+        "v2b_first": "4"
+      }
+    ],
+    "left_nr_no_space": [
+      {
+        "digits": "5",
+        "left": "nr_no_space",
+        "v2b_first": "5"
+      }
+    ],
+    "left_start": [
+      {
+        "digits": "1",
+        "left": "start",
+        "v2b_first": "1"
+      },
+      {
+        "digits": "1",
+        "left": "start",
+        "v2b_first": "1"
+      },
+      {
+        "digits": "1",
+        "left": "start",
+        "v2b_first": "1"
+      },
+      {
+        "digits": "1",
+        "left": "start",
+        "v2b_first": "1"
+      }
+    ]
+  }
+}

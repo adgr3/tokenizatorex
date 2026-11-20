@@ -1,7 +1,7 @@
 regex
 polars
 tiktoken
-tokenizers
+tokenizers==0.23.3
 huggingface_hub
 pytest
 

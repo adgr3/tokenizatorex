@@ -1,0 +1,409 @@
+{
+  "meta": {
+    "split": "test",
+    "comparison": "NFD vs NFC",
+    "bootstrap_n": 1000,
+    "seed": 20261119
+  },
+  "domains": {
+    "przetargi_ogloszenia": {
+      "docs": 60,
+      "variants": {
+        "V0-32k": {
+          "tokens_nfc": 208825,
+          "tokens_nfd": 328104,
+          "increase": 0.5711911887944451,
+          "increase_ci": [
+            0.5556466520452112,
+            0.5868545455282799
+          ]
+        },
+        "V1-32k": {
+          "tokens_nfc": 243827,
+          "tokens_nfd": 363300,
+          "increase": 0.48999085417119514,
+          "increase_ci": [
+            0.4742003741321096,
+            0.5061008461646397
+          ]
+        },
+        "V2-32k": {
+          "tokens_nfc": 243827,
+          "tokens_nfd": 243827,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 238839,
+          "tokens_nfd": 238839,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 227489,
+          "tokens_nfd": 227489,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "przetargi_kio": {
+      "docs": 66,
+      "variants": {
+        "V0-32k": {
+          "tokens_nfc": 133938,
+          "tokens_nfd": 221144,
+          "increase": 0.6510922964356642,
+          "increase_ci": [
+            0.628504212939741,
+            0.6742912869323604
+          ]
+        },
+        "V1-32k": {
+          "tokens_nfc": 145847,
+          "tokens_nfd": 233304,
+          "increase": 0.5996489471843781,
+          "increase_ci": [
+            0.5768114010550122,
+            0.6226125763124567
+          ]
+        },
+        "V2-32k": {
+          "tokens_nfc": 145847,
+          "tokens_nfd": 145847,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 142462,
+          "tokens_nfd": 142462,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 136755,
+          "tokens_nfd": 136755,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "samorzad_uchwaly": {
+      "docs": 240,
+      "variants": {
+        "V0-32k": {
+          "tokens_nfc": 111648,
+          "tokens_nfd": 152424,
+          "increase": 0.36521926053310405,
+          "increase_ci": [
+            0.3524844695155562,
+            0.3769868403706199
+          ]
+        },
+        "V1-32k": {
+          "tokens_nfc": 136774,
+          "tokens_nfd": 177885,
+          "increase": 0.3005761328907541,
+          "increase_ci": [
+            0.28954758698231514,
+            0.31029758992025813
+          ]
+        },
+        "V2-32k": {
+          "tokens_nfc": 136774,
+          "tokens_nfd": 136774,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 130980,
+          "tokens_nfd": 130980,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 116324,
+          "tokens_nfd": 116324,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "granty_ogloszenia": {
+      "docs": 66,
+      "variants": {
+        "V0-32k": {
+          "tokens_nfc": 181138,
+          "tokens_nfd": 256608,
+          "increase": 0.41664366394682506,
+          "increase_ci": [
+            0.3776562270330205,
+            0.4535724483991366
+          ]
+        },
+        "V1-32k": {
+          "tokens_nfc": 208877,
+          "tokens_nfd": 284576,
+          "increase": 0.3624094562828842,
+          "increase_ci": [
+            0.31570246159822357,
+            0.40753139916054765
+          ]
+        },
+        "V2-32k": {
+          "tokens_nfc": 208877,
+          "tokens_nfd": 208877,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 201875,
+          "tokens_nfd": 201875,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 187104,
+          "tokens_nfd": 187104,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "prawo_eli": {
+      "docs": 78,
+      "variants": {
+        "V0-32k": {
+          "tokens_nfc": 206186,
+          "tokens_nfd": 300706,
+          "increase": 0.4584210373158216,
+          "increase_ci": [
+            0.4248205690286489,
+            0.49264235300890935
+          ]
+        },
+        "V1-32k": {
+          "tokens_nfc": 234936,
+          "tokens_nfd": 329642,
+          "increase": 0.40311403956822284,
+          "increase_ci": [
+            0.3728456941310181,
+            0.4339218513163989
+          ]
+        },
+        "V2-32k": {
+          "tokens_nfc": 234936,
+          "tokens_nfd": 234936,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 228227,
+          "tokens_nfd": 228227,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 215138,
+          "tokens_nfd": 215138,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "ocr_prasa": {
+      "docs": 36,
+      "variants": {
+        "V0-32k": {
+          "tokens_nfc": 175391,
+          "tokens_nfd": 234815,
+          "increase": 0.3388087188054119,
+          "increase_ci": [
+            0.25799466498564133,
+            0.4259399193682935
+          ]
+        },
+        "V1-32k": {
+          "tokens_nfc": 182444,
+          "tokens_nfd": 241950,
+          "increase": 0.32616035605446053,
+          "increase_ci": [
+            0.24711477457076808,
+            0.41227683932979525
+          ]
+        },
+        "V2-32k": {
+          "tokens_nfc": 182444,
+          "tokens_nfd": 182444,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 179550,
+          "tokens_nfd": 179550,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 176487,
+          "tokens_nfd": 176487,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "tabele_json": {
+      "docs": 60,
+      "variants": {
+        "V0-32k": {
+          "tokens_nfc": 137782,
+          "tokens_nfd": 185667,
+          "increase": 0.3475417688812762,
+          "increase_ci": [
+            0.32460937811251883,
+            0.37044052562447044
+          ]
+        },
+        "V1-32k": {
+          "tokens_nfc": 163869,
+          "tokens_nfd": 211807,
+          "increase": 0.29253855213615754,
+          "increase_ci": [
+            0.2717972382600406,
+            0.31270642621040484
+          ]
+        },
+        "V2-32k": {
+          "tokens_nfc": 163869,
+          "tokens_nfd": 163869,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V2b-32k": {
+          "tokens_nfc": 160975,
+          "tokens_nfd": 160975,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "V3-32k": {
+          "tokens_nfc": 148549,
+          "tokens_nfd": 148549,
+          "increase": 0.0,
+          "increase_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "official": {
+    "variants": {
+      "V0-32k": {
+        "tokens_nfc": 1154908,
+        "tokens_nfd": 1679468,
+        "increase": 0.4542006809200387,
+        "increase_ci": [
+          0.4320092058636156,
+          0.47463732840933703
+        ]
+      },
+      "V1-32k": {
+        "tokens_nfc": 1316574,
+        "tokens_nfd": 1842464,
+        "increase": 0.39943823894441177,
+        "increase_ci": [
+          0.3801954258612394,
+          0.4170470971769514
+        ]
+      },
+      "V2-32k": {
+        "tokens_nfc": 1316574,
+        "tokens_nfd": 1316574,
+        "increase": 0.0,
+        "increase_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "V2b-32k": {
+        "tokens_nfc": 1282908,
+        "tokens_nfd": 1282908,
+        "increase": 0.0,
+        "increase_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "V3-32k": {
+        "tokens_nfc": 1207846,
+        "tokens_nfd": 1207846,
+        "increase": 0.0,
+        "increase_ci": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  }
+}

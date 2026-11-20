@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "split": "test",
+    "sample_docs_per_domain": 50,
+    "note": "porównanie list kawałków na fragmentach; informacyjne"
+  },
+  "variants": {
+    "V0-32k": {
+      "chunks": 129767,
+      "identical": 125977,
+      "identical_share": 0.9707938073624265,
+      "tokens_python": 855591,
+      "tokens_hf": 853562,
+      "token_delta": -2029
+    },
+    "V1-32k": {
+      "chunks": 129767,
+      "identical": 129735,
+      "identical_share": 0.999753404178258,
+      "tokens_python": 962053,
+      "tokens_hf": 962060,
+      "token_delta": 7
+    },
+    "V2-32k": {
+      "chunks": 129767,
+      "identical": 129735,
+      "identical_share": 0.999753404178258,
+      "tokens_python": 961998,
+      "tokens_hf": 962005,
+      "token_delta": 7
+    },
+    "V2b-32k": {
+      "chunks": 129767,
+      "identical": 129735,
+      "identical_share": 0.999753404178258,
+      "tokens_python": 939839,
+      "tokens_hf": 939845,
+      "token_delta": 6
+    },
+    "V3-32k": {
+      "chunks": 129767,
+      "identical": 129748,
+      "identical_share": 0.9998535837308407,
+      "tokens_python": 891245,
+      "tokens_hf": 891228,
+      "token_delta": -17
+    }
+  }
+}

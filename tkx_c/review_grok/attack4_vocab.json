@@ -1,0 +1,1977 @@
+{
+  "meta": {
+    "split": "test",
+    "dead": "rozmiar słownika minus liczba typów zaobserwowanych w encode(test), jak tkx_c/measure.py",
+    "bare1100": "00–99 oraz 000–999 (1100), bez wersji ze spacją",
+    "forced2210": "bare + spacja+cyfra + spacja+00–99 + spacja+000–999",
+    "ordinary": "token V2, którego powierzchni nie ma w V3 i który nie jest samymi cyframi",
+    "trailing_space_dup": "kończy się spacją, a ten sam napis bez ostatniej spacji jest w V3"
+  },
+  "variants": {
+    "V2-32k": {
+      "vocab": 32000,
+      "used_types": 31356,
+      "dead": 644,
+      "dead_share": 0.020125,
+      "forced_kinds": {},
+      "bare_00_99_and_000_999": 0,
+      "bare_share_of_vocab": 0.0,
+      "bare_dead": 0,
+      "bare_dead_share_of_vocab": 0.0,
+      "all_forced_incl_space": 0,
+      "all_forced_share_of_vocab": 0.0,
+      "all_forced_dead": 0,
+      "all_forced_dead_share_of_vocab": 0.0
+    },
+    "V2-24k": {
+      "vocab": 24000,
+      "used_types": 23726,
+      "dead": 274,
+      "dead_share": 0.011416666666666667,
+      "forced_kinds": {},
+      "bare_00_99_and_000_999": 0,
+      "bare_share_of_vocab": 0.0,
+      "bare_dead": 0,
+      "bare_dead_share_of_vocab": 0.0,
+      "all_forced_incl_space": 0,
+      "all_forced_share_of_vocab": 0.0,
+      "all_forced_dead": 0,
+      "all_forced_dead_share_of_vocab": 0.0
+    },
+    "V2-16k": {
+      "vocab": 16000,
+      "used_types": 15870,
+      "dead": 130,
+      "dead_share": 0.008125,
+      "forced_kinds": {},
+      "bare_00_99_and_000_999": 0,
+      "bare_share_of_vocab": 0.0,
+      "bare_dead": 0,
+      "bare_dead_share_of_vocab": 0.0,
+      "all_forced_incl_space": 0,
+      "all_forced_share_of_vocab": 0.0,
+      "all_forced_dead": 0,
+      "all_forced_dead_share_of_vocab": 0.0
+    },
+    "V3-32k": {
+      "vocab": 32000,
+      "used_types": 30440,
+      "dead": 1560,
+      "dead_share": 0.04875,
+      "forced_kinds": {
+        "bare2": {
+          "in_vocab": 100,
+          "used": 100,
+          "dead": 0,
+          "rare_lt5": 0,
+          "uses": 51696
+        },
+        "bare3": {
+          "in_vocab": 1000,
+          "used": 500,
+          "dead": 500,
+          "rare_lt5": 62,
+          "uses": 23792
+        },
+        "sp1": {
+          "in_vocab": 10,
+          "used": 10,
+          "dead": 0,
+          "rare_lt5": 0,
+          "uses": 54352
+        },
+        "sp2": {
+          "in_vocab": 100,
+          "used": 100,
+          "dead": 0,
+          "rare_lt5": 0,
+          "uses": 37699
+        },
+        "sp3": {
+          "in_vocab": 1000,
+          "used": 484,
+          "dead": 516,
+          "rare_lt5": 128,
+          "uses": 9271
+        }
+      },
+      "bare_00_99_and_000_999": 1100,
+      "bare_share_of_vocab": 0.034375,
+      "bare_dead": 500,
+      "bare_dead_share_of_vocab": 0.015625,
+      "all_forced_incl_space": 2210,
+      "all_forced_share_of_vocab": 0.0690625,
+      "all_forced_dead": 1016,
+      "all_forced_dead_share_of_vocab": 0.03175
+    },
+    "V3-24k": {
+      "vocab": 24000,
+      "used_types": 22762,
+      "dead": 1238,
+      "dead_share": 0.051583333333333335,
+      "forced_kinds": {
+        "bare2": {
+          "in_vocab": 100,
+          "used": 100,
+          "dead": 0,
+          "rare_lt5": 0,
+          "uses": 51696
+        },
+        "bare3": {
+          "in_vocab": 1000,
+          "used": 500,
+          "dead": 500,
+          "rare_lt5": 62,
+          "uses": 23792
+        },
+        "sp1": {
+          "in_vocab": 10,
+          "used": 10,
+          "dead": 0,
+          "rare_lt5": 0,
+          "uses": 54352
+        },
+        "sp2": {
+          "in_vocab": 100,
+          "used": 100,
+          "dead": 0,
+          "rare_lt5": 0,
+          "uses": 37699
+        },
+        "sp3": {
+          "in_vocab": 1000,
+          "used": 484,
+          "dead": 516,
+          "rare_lt5": 128,
+          "uses": 9271
+        }
+      },
+      "bare_00_99_and_000_999": 1100,
+      "bare_share_of_vocab": 0.04583333333333333,
+      "bare_dead": 500,
+      "bare_dead_share_of_vocab": 0.020833333333333332,
+      "all_forced_incl_space": 2210,
+      "all_forced_share_of_vocab": 0.09208333333333334,
+      "all_forced_dead": 1016,
+      "all_forced_dead_share_of_vocab": 0.042333333333333334
+    },
+    "V3-16k": {
+      "vocab": 16000,
+      "used_types": 14875,
+      "dead": 1125,
+      "dead_share": 0.0703125,
+      "forced_kinds": {
+        "bare2": {
+          "in_vocab": 100,
+          "used": 100,
+          "dead": 0,
+          "rare_lt5": 0,
+          "uses": 51696
+        },
+        "bare3": {
+          "in_vocab": 1000,
+          "used": 500,
+          "dead": 500,
+          "rare_lt5": 62,
+          "uses": 23792
+        },
+        "sp1": {
+          "in_vocab": 10,
+          "used": 10,
+          "dead": 0,
+          "rare_lt5": 0,
+          "uses": 54352
+        },
+        "sp2": {
+          "in_vocab": 100,
+          "used": 100,
+          "dead": 0,
+          "rare_lt5": 0,
+          "uses": 37699
+        },
+        "sp3": {
+          "in_vocab": 1000,
+          "used": 484,
+          "dead": 516,
+          "rare_lt5": 128,
+          "uses": 9271
+        }
+      },
+      "bare_00_99_and_000_999": 1100,
+      "bare_share_of_vocab": 0.06875,
+      "bare_dead": 500,
+      "bare_dead_share_of_vocab": 0.03125,
+      "all_forced_incl_space": 2210,
+      "all_forced_share_of_vocab": 0.138125,
+      "all_forced_dead": 1016,
+      "all_forced_dead_share_of_vocab": 0.0635
+    }
+  },
+  "v2_tokens_test": 3531112,
+  "v2_uses_missing_from_v3": 84863,
+  "v2_uses_missing_share": 0.024032939198756653,
+  "v2_uses_trailing_space_dup": 45450,
+  "top50_ordinary_missing_incl_space_dups": [
+    {
+      "surface": ", ",
+      "uses_test": 4809,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        ",",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "........",
+      "uses_test": 4447,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "....",
+        "...."
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " pkt ",
+      "uses_test": 3228,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " pkt",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " nr ",
+      "uses_test": 2794,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " nr",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " z ",
+      "uses_test": 2681,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " z",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " Nr ",
+      "uses_test": 2222,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " Nr",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "§",
+      "uses_test": 1991,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "�",
+        "�"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " z dnia ",
+      "uses_test": 1881,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " z dnia",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " i ",
+      "uses_test": 1693,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " i",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " ustawy z dnia ",
+      "uses_test": 1479,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " ustawy z dnia",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " § ",
+      "uses_test": 1362,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " §",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " dnia ",
+      "uses_test": 1195,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " dnia",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " – ",
+      "uses_test": 1062,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " –",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " w ",
+      "uses_test": 998,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " w",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": ") ",
+      "uses_test": 990,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        ")",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " do ",
+      "uses_test": 878,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " do",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " września ",
+      "uses_test": 768,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " września",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "r ",
+      "uses_test": 729,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        "r",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " marca ",
+      "uses_test": 680,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " marca",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " grudnia ",
+      "uses_test": 680,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " grudnia",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " sierpnia ",
+      "uses_test": 603,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " sierpnia",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " lipca ",
+      "uses_test": 557,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " lipca",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "t ",
+      "uses_test": 544,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        "t",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "s ",
+      "uses_test": 514,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        "s",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " kwietnia ",
+      "uses_test": 474,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " kwietnia",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " października ",
+      "uses_test": 474,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " października",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "łącznik",
+      "uses_test": 462,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "łą",
+        "cznik"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " czerwca ",
+      "uses_test": 455,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " czerwca",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " od ",
+      "uses_test": 440,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " od",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " na ",
+      "uses_test": 437,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " na",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " stycznia ",
+      "uses_test": 420,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " stycznia",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " załączniku",
+      "uses_test": 397,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " załą",
+        "czniku"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " listopada ",
+      "uses_test": 382,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " listopada",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " maja ",
+      "uses_test": 358,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " maja",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " dniem ",
+      "uses_test": 307,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " dniem",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " najkorzyst",
+      "uses_test": 302,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " naj",
+        "korzyst"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " W ",
+      "uses_test": 298,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " W",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " lutego ",
+      "uses_test": 297,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " lutego",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " niż ",
+      "uses_test": 268,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " niż",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "polskie",
+      "uses_test": 264,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "pol",
+        "skie"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " - ",
+      "uses_test": 239,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " -",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " - U",
+      "uses_test": 231,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " -",
+        " U"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " około ",
+      "uses_test": 219,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " około",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "ring",
+      "uses_test": 217,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "r",
+        "ing"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " o ",
+      "uses_test": 215,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " o",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "ber ",
+      "uses_test": 206,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        "ber",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " ponad ",
+      "uses_test": 199,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " ponad",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "W ",
+      "uses_test": 196,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        "W",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " kwotę ",
+      "uses_test": 191,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " kwotę",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " roku ",
+      "uses_test": 186,
+      "trailing_space_dup": true,
+      "numberish": false,
+      "v3_pieces": [
+        " roku",
+        " "
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    }
+  ],
+  "top50_ordinary_missing_excl_space_dups": [
+    {
+      "surface": "........",
+      "uses_test": 4447,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "....",
+        "...."
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "§",
+      "uses_test": 1991,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "�",
+        "�"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "łącznik",
+      "uses_test": 462,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "łą",
+        "cznik"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " załączniku",
+      "uses_test": 397,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " załą",
+        "czniku"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " najkorzyst",
+      "uses_test": 302,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " naj",
+        "korzyst"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "polskie",
+      "uses_test": 264,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "pol",
+        "skie"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " - U",
+      "uses_test": 231,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " -",
+        " U"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "ring",
+      "uses_test": 217,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "r",
+        "ing"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "ving",
+      "uses_test": 174,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "v",
+        "ing"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " publiczny",
+      "uses_test": 153,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " publi",
+        "czny"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "Dzia",
+      "uses_test": 143,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "Dz",
+        "ia"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "kalizacja",
+      "uses_test": 137,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "kali",
+        "zacja"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "cyklo",
+      "uses_test": 136,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "cy",
+        "klo"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "cation",
+      "uses_test": 130,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "ca",
+        "tion"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " aktów",
+      "uses_test": 129,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " ak",
+        "tów"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " rzekł",
+      "uses_test": 123,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " rze",
+        "kł"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " o ochronie",
+      "uses_test": 117,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " o",
+        " ochronie"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " American",
+      "uses_test": 116,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " America",
+        "n"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "mieś",
+      "uses_test": 110,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "mie",
+        "ś"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "d-",
+      "uses_test": 109,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "d",
+        "-"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " dostawa",
+      "uses_test": 103,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " dosta",
+        "wa"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " Obrony Narodowej",
+      "uses_test": 103,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " Obrony",
+        " Narodowej"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " Witam",
+      "uses_test": 100,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " Wi",
+        "tam"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " bieżące",
+      "uses_test": 98,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " bieżą",
+        "ce"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " zasiłku",
+      "uses_test": 94,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " zasił",
+        "ku"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " sprost",
+      "uses_test": 91,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " sp",
+        "rost"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " National",
+      "uses_test": 88,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " Na",
+        "tional"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "edu",
+      "uses_test": 85,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "e",
+        "du"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "bas",
+      "uses_test": 85,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "ba",
+        "s"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " w części",
+      "uses_test": 84,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " w",
+        " części"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " kierownika",
+      "uses_test": 83,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " kierow",
+        "nika"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "polski",
+      "uses_test": 81,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "pol",
+        "ski"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " przekazywania",
+      "uses_test": 80,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " przeka",
+        "zywania"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " norm",
+      "uses_test": 79,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " nor",
+        "m"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " pri",
+      "uses_test": 79,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " p",
+        "ri"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " światłowo",
+      "uses_test": 77,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " świat",
+        "łowo"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " Reje",
+      "uses_test": 76,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " Re",
+        "je"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " nadania",
+      "uses_test": 76,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " nada",
+        "nia"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " śród",
+      "uses_test": 75,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " ś",
+        "ród"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " bor",
+      "uses_test": 75,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " b",
+        "or"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "Tech",
+      "uses_test": 74,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "Te",
+        "ch"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " cor",
+      "uses_test": 74,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " c",
+        "or"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " Danych",
+      "uses_test": 73,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " Da",
+        "nych"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "c-",
+      "uses_test": 73,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "c",
+        "-"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " wzoru",
+      "uses_test": 73,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " wzo",
+        "ru"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " wydane",
+      "uses_test": 73,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " wyda",
+        "ne"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "/u",
+      "uses_test": 73,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "/",
+        "u"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": " kujawsko-po",
+      "uses_test": 72,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        " ku",
+        "jawsko-po"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "lnika",
+      "uses_test": 72,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "l",
+        "nika"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    },
+    {
+      "surface": "niesione",
+      "uses_test": 71,
+      "trailing_space_dup": false,
+      "numberish": false,
+      "v3_pieces": [
+        "niesi",
+        "one"
+      ],
+      "v3_len": 2,
+      "extra_per_use": 1
+    }
+  ],
+  "web_wiki_lit_missing_uses": {
+    "web": {
+      "v2_tokens": 225302,
+      "uses_of_types_missing_in_v3": 4499,
+      "share_missing": 0.019968753051459818,
+      "missing_numberish": 0,
+      "missing_trailing_space_dup": 1428,
+      "missing_other_ordinary": 3071
+    },
+    "wikipedia": {
+      "v2_tokens": 272436,
+      "uses_of_types_missing_in_v3": 6639,
+      "share_missing": 0.02436902611989605,
+      "missing_numberish": 0,
+      "missing_trailing_space_dup": 3486,
+      "missing_other_ordinary": 3153
+    },
+    "literatura": {
+      "v2_tokens": 284861,
+      "uses_of_types_missing_in_v3": 3160,
+      "share_missing": 0.011093129631644907,
+      "missing_numberish": 0,
+      "missing_trailing_space_dup": 158,
+      "missing_other_ordinary": 3002
+    }
+  },
+  "cost_vs_v0_and_v2": {
+    "per_domain": {
+      "przetargi_ogloszenia": {
+        "V2-32k": {
+          "docs": 60,
+          "words": 136034,
+          "tokens_a": 208825,
+          "tokens_b": 243827,
+          "delta_pct": 0.16761403088710644,
+          "delta_pct_ci95": [
+            0.15799782171367815,
+            0.17813554479265648
+          ],
+          "fertility_a": 1.535094167634562,
+          "fertility_b": 1.7923974888630783
+        },
+        "V2b-32k": {
+          "docs": 60,
+          "words": 136034,
+          "tokens_a": 208825,
+          "tokens_b": 238839,
+          "delta_pct": 0.14372800191547946,
+          "delta_pct_ci95": [
+            0.1347401604713069,
+            0.15337907902149772
+          ],
+          "fertility_a": 1.535094167634562,
+          "fertility_b": 1.7557301851007836
+        },
+        "V3-32k": {
+          "docs": 60,
+          "words": 136034,
+          "tokens_a": 208825,
+          "tokens_b": 228734,
+          "delta_pct": 0.095338201843649,
+          "delta_pct_ci95": [
+            0.0883259573058865,
+            0.10272474012072765
+          ],
+          "fertility_a": 1.535094167634562,
+          "fertility_b": 1.6814472852375142
+        }
+      },
+      "przetargi_kio": {
+        "V2-32k": {
+          "docs": 66,
+          "words": 95409,
+          "tokens_a": 133938,
+          "tokens_b": 145847,
+          "delta_pct": 0.08891427376846003,
+          "delta_pct_ci95": [
+            0.0818813656747028,
+            0.096173539848362
+          ],
+          "fertility_a": 1.403829827374776,
+          "fertility_b": 1.5286503369703068
+        },
+        "V2b-32k": {
+          "docs": 66,
+          "words": 95409,
+          "tokens_a": 133938,
+          "tokens_b": 142462,
+          "delta_pct": 0.06364138631307023,
+          "delta_pct_ci95": [
+            0.05771191890636001,
+            0.06954426964373447
+          ],
+          "fertility_a": 1.403829827374776,
+          "fertility_b": 1.4931715037365447
+        },
+        "V3-32k": {
+          "docs": 66,
+          "words": 95409,
+          "tokens_a": 133938,
+          "tokens_b": 137269,
+          "delta_pct": 0.024869715838671626,
+          "delta_pct_ci95": [
+            0.022249779853157174,
+            0.02737764139396898
+          ],
+          "fertility_a": 1.403829827374776,
+          "fertility_b": 1.438742676267438
+        }
+      },
+      "samorzad_uchwaly": {
+        "V2-32k": {
+          "docs": 240,
+          "words": 71910,
+          "tokens_a": 111703,
+          "tokens_b": 136774,
+          "delta_pct": 0.22444339006114428,
+          "delta_pct_ci95": [
+            0.21557444315046548,
+            0.23272916328943244
+          ],
+          "fertility_a": 1.5533722708941733,
+          "fertility_b": 1.9020164094006398
+        },
+        "V2b-32k": {
+          "docs": 240,
+          "words": 71910,
+          "tokens_a": 111703,
+          "tokens_b": 130980,
+          "delta_pct": 0.17257369990062935,
+          "delta_pct_ci95": [
+            0.1659065618547806,
+            0.17904741296492585
+          ],
+          "fertility_a": 1.5533722708941733,
+          "fertility_b": 1.8214434710054235
+        },
+        "V3-32k": {
+          "docs": 240,
+          "words": 71910,
+          "tokens_a": 111703,
+          "tokens_b": 117748,
+          "delta_pct": 0.054116720231327714,
+          "delta_pct_ci95": [
+            0.051749578809169965,
+            0.05629468947254797
+          ],
+          "fertility_a": 1.5533722708941733,
+          "fertility_b": 1.6374356834932555
+        }
+      },
+      "granty_ogloszenia": {
+        "V2-32k": {
+          "docs": 66,
+          "words": 100550,
+          "tokens_a": 181138,
+          "tokens_b": 208877,
+          "delta_pct": 0.1531373869646347,
+          "delta_pct_ci95": [
+            0.10727045085343703,
+            0.20511366766953693
+          ],
+          "fertility_a": 1.801471904525112,
+          "fertility_b": 2.0773446046742916
+        },
+        "V2b-32k": {
+          "docs": 66,
+          "words": 100550,
+          "tokens_a": 181138,
+          "tokens_b": 201875,
+          "delta_pct": 0.1144817763252327,
+          "delta_pct_ci95": [
+            0.08025478534855497,
+            0.15273140642286984
+          ],
+          "fertility_a": 1.801471904525112,
+          "fertility_b": 2.0077076081551466
+        },
+        "V3-32k": {
+          "docs": 66,
+          "words": 100550,
+          "tokens_a": 181138,
+          "tokens_b": 189071,
+          "delta_pct": 0.04379533836080778,
+          "delta_pct_ci95": [
+            0.029111139448256225,
+            0.060616792850948426
+          ],
+          "fertility_a": 1.801471904525112,
+          "fertility_b": 1.880367976131278
+        }
+      },
+      "prawo_eli": {
+        "V2-32k": {
+          "docs": 78,
+          "words": 137764,
+          "tokens_a": 206186,
+          "tokens_b": 234936,
+          "delta_pct": 0.13943720718186492,
+          "delta_pct_ci95": [
+            0.12639162163357,
+            0.15444613007941224
+          ],
+          "fertility_a": 1.4966609564182225,
+          "fertility_b": 1.7053511802793182
+        },
+        "V2b-32k": {
+          "docs": 78,
+          "words": 137764,
+          "tokens_a": 206186,
+          "tokens_b": 228227,
+          "delta_pct": 0.10689862551288642,
+          "delta_pct_ci95": [
+            0.09603812990757399,
+            0.11910710130560206
+          ],
+          "fertility_a": 1.4966609564182225,
+          "fertility_b": 1.6566519555181325
+        },
+        "V3-32k": {
+          "docs": 78,
+          "words": 137764,
+          "tokens_a": 206186,
+          "tokens_b": 216098,
+          "delta_pct": 0.048073099046492006,
+          "delta_pct_ci95": [
+            0.043685503812519844,
+            0.05230243380833848
+          ],
+          "fertility_a": 1.4966609564182225,
+          "fertility_b": 1.5686100868151331
+        }
+      },
+      "ocr_prasa": {
+        "V2-32k": {
+          "docs": 36,
+          "words": 91388,
+          "tokens_a": 175391,
+          "tokens_b": 182444,
+          "delta_pct": 0.04021300978955591,
+          "delta_pct_ci95": [
+            0.027026304101656004,
+            0.057904291294122556
+          ],
+          "fertility_a": 1.9191907033746225,
+          "fertility_b": 1.9963671379174508
+        },
+        "V2b-32k": {
+          "docs": 36,
+          "words": 91388,
+          "tokens_a": 175391,
+          "tokens_b": 179550,
+          "delta_pct": 0.023712733264534668,
+          "delta_pct_ci95": [
+            0.015429034288331903,
+            0.03491030604247794
+          ],
+          "fertility_a": 1.9191907033746225,
+          "fertility_b": 1.9646999606075195
+        },
+        "V3-32k": {
+          "docs": 36,
+          "words": 91388,
+          "tokens_a": 175391,
+          "tokens_b": 176802,
+          "delta_pct": 0.008044882576643044,
+          "delta_pct_ci95": [
+            0.005903750390372974,
+            0.009801141490144868
+          ],
+          "fertility_a": 1.9191907033746225,
+          "fertility_b": 1.9346303672254563
+        }
+      },
+      "tabele_json": {
+        "V2-32k": {
+          "docs": 60,
+          "words": 52698,
+          "tokens_a": 137782,
+          "tokens_b": 163869,
+          "delta_pct": 0.1893353268206297,
+          "delta_pct_ci95": [
+            0.17445987764171703,
+            0.20395586457410342
+          ],
+          "fertility_a": 2.6145584272647917,
+          "fertility_b": 3.109586701582603
+        },
+        "V2b-32k": {
+          "docs": 60,
+          "words": 52698,
+          "tokens_a": 137782,
+          "tokens_b": 160975,
+          "delta_pct": 0.16833113178789683,
+          "delta_pct_ci95": [
+            0.15528143034623074,
+            0.18153932557627842
+          ],
+          "fertility_a": 2.6145584272647917,
+          "fertility_b": 3.054670006451858
+        },
+        "V3-32k": {
+          "docs": 60,
+          "words": 52698,
+          "tokens_a": 137782,
+          "tokens_b": 150036,
+          "delta_pct": 0.08893759707363806,
+          "delta_pct_ci95": [
+            0.08089211254059016,
+            0.09784652811834531
+          ],
+          "fertility_a": 2.6145584272647917,
+          "fertility_b": 2.8470909711943526
+        }
+      }
+    },
+    "official": {
+      "V2-32k": {
+        "docs": 606,
+        "words": 685753,
+        "tokens_a": 1154963,
+        "tokens_b": 1316574,
+        "delta_pct": 0.13992742624655508,
+        "delta_pct_ci95": [
+          0.13076495133633573,
+          0.15067144161199897
+        ],
+        "fertility_a": 1.6842259530763992,
+        "fertility_b": 1.919895355908031
+      },
+      "V2b-32k": {
+        "docs": 606,
+        "words": 685753,
+        "tokens_a": 1154963,
+        "tokens_b": 1282908,
+        "delta_pct": 0.11077844052147125,
+        "delta_pct_ci95": [
+          0.10319807703942736,
+          0.11960164493004455
+        ],
+        "fertility_a": 1.6842259530763992,
+        "fertility_b": 1.8708018776439914
+      },
+      "V3-32k": {
+        "docs": 606,
+        "words": 685753,
+        "tokens_a": 1154963,
+        "tokens_b": 1215758,
+        "delta_pct": 0.052638049876922464,
+        "delta_pct_ci95": [
+          0.04852751684208202,
+          0.057151728479627205
+        ],
+        "fertility_a": 1.6842259530763992,
+        "fertility_b": 1.772880322798442
+      }
+    },
+    "web": {
+      "V2-32k_vs_V0": {
+        "docs": 421,
+        "words": 155005,
+        "tokens_a": 218817,
+        "tokens_b": 225302,
+        "delta_pct": 0.029636637007179514,
+        "delta_pct_ci95": [
+          0.024559838863117744,
+          0.03493396703244832
+        ],
+        "fertility_a": 1.4116770426760428,
+        "fertility_b": 1.4535144027612013
+      },
+      "V2b-32k_vs_V0": {
+        "docs": 421,
+        "words": 155005,
+        "tokens_a": 218817,
+        "tokens_b": 223650,
+        "delta_pct": 0.022086949368650518,
+        "delta_pct_ci95": [
+          0.017940246476788515,
+          0.026737091878838513
+        ],
+        "fertility_a": 1.4116770426760428,
+        "fertility_b": 1.4428566820425148
+      },
+      "V3-32k_vs_V0": {
+        "docs": 421,
+        "words": 155005,
+        "tokens_a": 218817,
+        "tokens_b": 222702,
+        "delta_pct": 0.017754562031286416,
+        "delta_pct_ci95": [
+          0.015988170200219733,
+          0.019592483033268535
+        ],
+        "fertility_a": 1.4116770426760428,
+        "fertility_b": 1.4367407502983776
+      },
+      "V3-32k_vs_V2-32k": {
+        "docs": 421,
+        "words": 155005,
+        "tokens_a": 225302,
+        "tokens_b": 222702,
+        "delta_pct": -0.011540066222226168,
+        "delta_pct_ci95": [
+          -0.015031820715226098,
+          -0.008035093452907647
+        ],
+        "fertility_a": 1.4535144027612013,
+        "fertility_b": 1.4367407502983776
+      },
+      "V3-32k_vs_V2b-32k": {
+        "docs": 421,
+        "words": 155005,
+        "tokens_a": 223650,
+        "tokens_b": 222702,
+        "delta_pct": -0.004238765928906774,
+        "delta_pct_ci95": [
+          -0.00713395672071065,
+          -0.0015440208218943387
+        ],
+        "fertility_a": 1.4428566820425148,
+        "fertility_b": 1.4367407502983776
+      }
+    },
+    "wikipedia": {
+      "V2-32k_vs_V0": {
+        "docs": 241,
+        "words": 144170,
+        "tokens_a": 257505,
+        "tokens_b": 272436,
+        "delta_pct": 0.05798334012931788,
+        "delta_pct_ci95": [
+          0.0489052579443775,
+          0.06863250607661794
+        ],
+        "fertility_a": 1.7861205521259624,
+        "fertility_b": 1.8896857876118471
+      },
+      "V2b-32k_vs_V0": {
+        "docs": 241,
+        "words": 144170,
+        "tokens_a": 257505,
+        "tokens_b": 269890,
+        "delta_pct": 0.0480961534727481,
+        "delta_pct_ci95": [
+          0.03970868751996328,
+          0.05801670709311653
+        ],
+        "fertility_a": 1.7861205521259624,
+        "fertility_b": 1.8720260803218423
+      },
+      "V3-32k_vs_V0": {
+        "docs": 241,
+        "words": 144170,
+        "tokens_a": 257505,
+        "tokens_b": 261000,
+        "delta_pct": 0.013572551989281761,
+        "delta_pct_ci95": [
+          0.012257636195918877,
+          0.015092908648139947
+        ],
+        "fertility_a": 1.7861205521259624,
+        "fertility_b": 1.8103627661788166
+      },
+      "V3-32k_vs_V2-32k": {
+        "docs": 241,
+        "words": 144170,
+        "tokens_a": 272436,
+        "tokens_b": 261000,
+        "delta_pct": -0.04197683125578117,
+        "delta_pct_ci95": [
+          -0.05159161114258967,
+          -0.033911185734783036
+        ],
+        "fertility_a": 1.8896857876118471,
+        "fertility_b": 1.8103627661788166
+      },
+      "V3-32k_vs_V2b-32k": {
+        "docs": 241,
+        "words": 144170,
+        "tokens_a": 269890,
+        "tokens_b": 261000,
+        "delta_pct": -0.03293934565934269,
+        "delta_pct_ci95": [
+          -0.04202511466570636,
+          -0.025390973169249063
+        ],
+        "fertility_a": 1.8720260803218423,
+        "fertility_b": 1.8103627661788166
+      }
+    },
+    "literatura": {
+      "V2-32k_vs_V0": {
+        "docs": 230,
+        "words": 174493,
+        "tokens_a": 284788,
+        "tokens_b": 284861,
+        "delta_pct": 0.00025633102518364537,
+        "delta_pct_ci95": [
+          -0.00036764131143243896,
+          0.0009086171655144419
+        ],
+        "fertility_a": 1.632088393230674,
+        "fertility_b": 1.6325067481217013
+      },
+      "V2b-32k_vs_V0": {
+        "docs": 230,
+        "words": 174493,
+        "tokens_a": 284788,
+        "tokens_b": 284540,
+        "delta_pct": -0.0008708232088430692,
+        "delta_pct_ci95": [
+          -0.001395065614439678,
+          -0.0003440585496349066
+        ],
+        "fertility_a": 1.632088393230674,
+        "fertility_b": 1.6306671327789652
+      },
+      "V3-32k_vs_V0": {
+        "docs": 230,
+        "words": 174493,
+        "tokens_a": 284788,
+        "tokens_b": 286718,
+        "delta_pct": 0.0067769709397867885,
+        "delta_pct_ci95": [
+          0.0062921977450001885,
+          0.007259599648328414
+        ],
+        "fertility_a": 1.632088393230674,
+        "fertility_b": 1.6431490088427616
+      },
+      "V3-32k_vs_V2-32k": {
+        "docs": 230,
+        "words": 174493,
+        "tokens_a": 284861,
+        "tokens_b": 286718,
+        "delta_pct": 0.0065189689006217065,
+        "delta_pct_ci95": [
+          0.0057343992502516825,
+          0.007246497768551872
+        ],
+        "fertility_a": 1.6325067481217013,
+        "fertility_b": 1.6431490088427616
+      },
+      "V3-32k_vs_V2b-32k": {
+        "docs": 230,
+        "words": 174493,
+        "tokens_a": 284540,
+        "tokens_b": 286718,
+        "delta_pct": 0.0076544598299008925,
+        "delta_pct_ci95": [
+          0.00699449197519936,
+          0.00830900824076405
+        ],
+        "fertility_a": 1.6306671327789652,
+        "fertility_b": 1.6431490088427616
+      }
+    }
+  }
+}

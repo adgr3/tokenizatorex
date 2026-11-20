@@ -12,9 +12,9 @@ może wybrać inną segmentację. `--check` mierzy, jak często — wynik raport
 import argparse
 import os
 
-from tokenizers import Regex, Tokenizer, decoders, models, pre_tokenizers
+from tokenizers import Regex, Tokenizer, decoders, models, normalizers, pre_tokenizers
 
-from superbpe import CHUNK_PATTERN, CHUNK_RE, WORD_PATTERN, SuperBPETokenizer
+from superbpe import CHUNK_PATTERN, CHUNK_RE, DIGIT_GROUP_PATTERN, SuperBPETokenizer
 
 
 def bytes_to_unicode() -> dict[int, str]:
@@ -38,12 +38,28 @@ def to_hf(tok: SuperBPETokenizer) -> Tokenizer:
         if s(b) in vocab:
             raise ValueError(f"zduplikowany token {b!r} (id {vocab[s(b)]} i {i}) — HF tego nie obsłuży")
         vocab[s(b)] = i
-    merges = [(s(tok.vocab[a]), s(tok.vocab[b])) for a, b, _ in tok.stage1 + tok.stage2]
+    # Aliasy (scalenia do istniejącego tokenu) idą po merges etapu 1, przed etapem 2 —
+    # dokładnie taką samą kolejność rangi mają w enkoderze Pythona.
+    merges = [(s(tok.vocab[a]), s(tok.vocab[b])) for a, b, _ in tok.stage1]
+    merges += [(s(tok.vocab[a]), s(tok.vocab[b])) for a, b, _ in tok.alias_merges]
+    merges += [(s(tok.vocab[a]), s(tok.vocab[b])) for a, b, _ in tok.stage2]
 
     hf = Tokenizer(models.BPE(vocab=vocab, merges=merges, ignore_merges=False))
+    if tok.normalize == "nfc":
+        hf.normalizer = normalizers.NFC()
     pre = [pre_tokenizers.Split(Regex(CHUNK_PATTERN), behavior="isolated")]
     if not tok.stage2:
-        pre.append(pre_tokenizers.Split(Regex(WORD_PATTERN), behavior="isolated"))
+        pre.append(pre_tokenizers.Split(Regex(tok.word_pattern), behavior="isolated"))
+    elif tok.digits == "single":
+        # A1: cyfry są pojedynczymi pretokenami także w eksporcie; stage2 nie ma
+        # merge'y z cyframi, więc nic się nie sklei z powrotem.
+        pre.append(pre_tokenizers.Digits(individual_digits=True))
+    # V2b (space_first) i V3 (groups3) NIE używają Digits(): wymuszone merge'e
+    # „cyfra ze spacją” / „grupa 3 cyfr” muszą móc się skleić w ramach fragmentu.
+    if tok.digits == "groups3":
+        # POPRAWKA: ten sam regex co w treningu i w enkoderze Pythona izoluje
+        # grupy po 3 od prawej JESZCZE PRZED ByteLevel (i przed BPE).
+        pre.append(pre_tokenizers.Split(Regex(DIGIT_GROUP_PATTERN), behavior="isolated"))
     pre.append(pre_tokenizers.ByteLevel(add_prefix_space=False, use_regex=False))
     hf.pre_tokenizer = pre_tokenizers.Sequence(pre)
     hf.decoder = decoders.ByteLevel()
@@ -72,13 +88,14 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("tokenizer")
     ap.add_argument("--out-dir", default="hf")
+    ap.add_argument("--name", help="nazwa katalogu wyjściowego (domyślnie nazwa pliku)")
     ap.add_argument("--check", help="plik tekstowy do porównania segmentacji")
     ap.add_argument("--check-mb", type=float, default=2)
     a = ap.parse_args()
 
     tok = SuperBPETokenizer.load(a.tokenizer)
     hf = to_hf(tok)
-    name = os.path.splitext(os.path.basename(a.tokenizer))[0]
+    name = a.name or os.path.splitext(os.path.basename(a.tokenizer))[0]
     out = os.path.join(a.out_dir, name)
     os.makedirs(out, exist_ok=True)
     hf.save(os.path.join(out, "tokenizer.json"))

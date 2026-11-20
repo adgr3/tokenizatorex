@@ -14,6 +14,7 @@ import argparse
 import os
 import time
 from collections import Counter
+from functools import partial
 from multiprocessing import Pool
 
 from superbpe import SuperBPETokenizer, chunks, pretokens
@@ -40,17 +41,21 @@ def read_blocks(path: str, max_bytes: int | None, block_chars: int = 2_000_000):
         yield "".join(buf)
 
 
-def _count_pretokens(block: str) -> Counter:
-    return Counter(pretokens(block))
+def _count_pretokens(block: str, word_pattern: str | None = None,
+                     normalize: str = "none") -> Counter:
+    if word_pattern is None:
+        return Counter(pretokens(block, normalize=normalize))
+    return Counter(pretokens(block, word_pattern=word_pattern, normalize=normalize))
 
 
-def _count_chunks(block: str) -> Counter:
-    return Counter(chunks(block))
+def _count_chunks(block: str, normalize: str = "none") -> Counter:
+    return Counter(chunks(block, normalize=normalize))
 
 
 def parallel_count(path: str, fn, max_bytes=None) -> Counter:
     total = Counter()
-    with Pool(max(1, os.cpu_count() - 2)) as pool:
+    workers = int(os.environ.get("TKX_WORKERS", max(1, os.cpu_count() - 2)))
+    with Pool(workers) as pool:
         for c in pool.imap_unordered(fn, read_blocks(path, max_bytes), chunksize=1):
             total.update(c)
     return total
@@ -66,6 +71,9 @@ def main() -> None:
     ap.add_argument("--transition", type=int, help="punkt przejścia t (rozmiar słownika po etapie 1)")
     ap.add_argument("--stage2-mb", type=int, default=60)
     ap.add_argument("--max-words", type=int, default=4)
+    ap.add_argument("--digits", choices=["grouped", "single", "space_first", "groups3"],
+                    default="grouped")
+    ap.add_argument("--normalize", choices=["none", "nfc"], default="none")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
 
@@ -74,9 +82,11 @@ def main() -> None:
 
     if a.mode == "baseline":
         mb = a.stage1_mb * 10**6 if a.stage1_mb else None
-        cnt = parallel_count(a.data, _count_pretokens, mb)
+        tok = SuperBPETokenizer(digits=a.digits, normalize=a.normalize)
+        fn = partial(_count_pretokens, word_pattern=tok.word_pattern,
+                     normalize=tok.normalize)
+        cnt = parallel_count(a.data, fn, mb)
         print(f"pretokeny: {len(cnt):,} unikalnych, {sum(cnt.values()):,} łącznie ({time.time()-t0:.0f}s)")
-        tok = SuperBPETokenizer()
         tok.train_stage1(cnt, target)
         tok.meta = {"kind": "baseline-bpe", "data": os.path.basename(a.data),
                     "stage1_bytes": mb or os.path.getsize(a.data)}
@@ -84,7 +94,8 @@ def main() -> None:
         tok = SuperBPETokenizer.load(a.src)
         tok.specials = {}
         tok.truncate_stage1(a.transition)
-        cnt = parallel_count(a.data, _count_chunks, a.stage2_mb * 10**6)
+        fn = partial(_count_chunks, normalize=tok.normalize)
+        cnt = parallel_count(a.data, fn, a.stage2_mb * 10**6)
         print(f"fragmenty: {len(cnt):,} unikalnych, {sum(cnt.values()):,} łącznie ({time.time()-t0:.0f}s)")
         tok.train_stage2(cnt, target, max_words=a.max_words)
         tok.meta = {**tok.meta, "kind": "superbpe", "from": os.path.basename(a.src),
