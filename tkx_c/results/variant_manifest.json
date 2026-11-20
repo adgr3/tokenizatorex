@@ -128,8 +128,8 @@
   "V3-32k": {
     "superbpe": "tokenizers\\variants\\V3-32k\\superbpe.json",
     "hf": "hf\\variants\\V3-32k\\tokenizer.json",
-    "sha256_superbpe": "09ceeb14acc0b3113937daaf181c452e8a76eb2a472d341f748631f6e1bbfc05",
-    "sha256_hf": "1581347a020aa70186b89ddbd7b028cf14302e176afa44b00a8407f5e90b948b",
+    "sha256_superbpe": "c17ef4b304e59bfe9bd5a1353a47a904a5c614e8151d0535587f1112603c3831",
+    "sha256_hf": "cc70b995180d9ba248d8b51e52e7e0adcbb99e2d5313c706eb1fabc3c0bcd4be",
     "vocab": 32000,
     "transition": 20000,
     "stage1_merges": 19744,
@@ -137,7 +137,9 @@
     "digits": "groups3",
     "normalize": "nfc",
     "forced_merges": 0,
-    "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)"
+    "data_source": "audit/tmp/stability_train.txt (HPLT p2, 400 MB; V0 retrained train.py on same sample)",
+    "alias_merges": 2000,
+    "fix": "WAZNE-1: grupy od prawej w kodowaniu i eksporcie HF + aliasy scalen"
   },
   "V3-24k": {
     "superbpe": "tokenizers\\variants\\V3-24k\\superbpe.json",

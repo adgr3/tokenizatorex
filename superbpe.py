@@ -44,8 +44,11 @@ WORD_PATTERN = (
 WORD_PATTERN_SINGLE_DIGITS = WORD_PATTERN.replace(r"\p{N}{1,3}", r"\p{Nd}")
 # V2b: spacja przed liczbą dokleja się do PIERWSZEJ cyfry (tokeny ·0…·9).
 WORD_PATTERN_SPACE_FIRST = WORD_PATTERN.replace(r"\p{N}{1,3}", r"[^\S\r\n]?\p{Nd}")
-# V3: cały ciąg cyfr jednym pretokenem; dzieli go BPE (wymuszone merges 000–999).
-WORD_PATTERN_GROUPS3 = WORD_PATTERN.replace(r"\p{N}{1,3}", r"[^\S\r\n]?\p{N}+")
+# V3 (poprawka WAŻNE-1): JEDNA reguła grupowania od prawej (lewy ogon 1–2 cyfry)
+# używana w treningu, w enkoderze Pythona i w eksporcie HF. Lookahead jest
+# obsługiwany przez `tokenizers` 0.23.3 (fancy-regex) — zweryfikowane.
+DIGIT_GROUP_PATTERN = r"[^\S\r\n]?\p{N}{1,3}(?=(?:\p{N}{3})*(?!\p{N}))"
+WORD_PATTERN_GROUPS3 = WORD_PATTERN.replace(r"\p{N}{1,3}", DIGIT_GROUP_PATTERN)
 _GROUP3_RUN_RE = re.compile(r"([^\S\r\n]*)(\p{N}+)")
 
 CHUNK_RE = re.compile(CHUNK_PATTERN)
@@ -241,6 +244,10 @@ class SuperBPETokenizer:
         self.vocab: list[bytes] = [bytes([i]) for i in range(256)]
         self.stage1: list[tuple[int, int, int]] = []
         self.stage2: list[tuple[int, int, int]] = []
+        # Alias merges: reguły scalenia reuse'ujące ISTNIEJĄCY token (bez nowego ID).
+        # Dzięki nim wynik kodowania grupy 3-cyfrowej nie zależy od kolejności par.
+        self.alias_merges: list[tuple[int, int, int]] = []
+        self._alias_seen: set[tuple[int, int]] = set()
         self.max_words = 4
         self.specials: dict[str, int] = {}
         self.meta: dict = {}
@@ -249,8 +256,13 @@ class SuperBPETokenizer:
     # ---- indeksy pomocnicze
     def _rebuild(self) -> None:
         self.ranks1 = {(a, b): (r, n) for r, (a, b, n) in enumerate(self.stage1)}
-        off = len(self.stage1)
+        n1 = len(self.stage1)
+        self.alias_ranks = {(a, b): (n1 + r, n)
+                            for r, (a, b, n) in enumerate(self.alias_merges)}
+        off = n1 + len(self.alias_merges)
         self.ranks2 = {(a, b): (off + r, n) for r, (a, b, n) in enumerate(self.stage2)}
+        # Rangi używane przy kodowaniu: zwykłe merges etapu 1 + aliasy.
+        self._ranks_all = {**self.ranks1, **self.alias_ranks}
         self._cache1: dict[str, list[int]] = {}
         self._cache2: dict[str, list[int]] = {}
         self.inv_specials = {v: k for k, v in self.specials.items()}
@@ -277,39 +289,59 @@ class SuperBPETokenizer:
         self.stage1.append((a, b, new_id))
         return new_id
 
+    def _add_alias(self, a: int, b: int, target: int) -> None:
+        """Dodaje regułę scalenia do istniejącego tokenu (bez powiększania słownika)."""
+        pair = (a, b)
+        if pair in self._alias_seen:
+            return
+        self._alias_seen.add(pair)
+        self.alias_merges.append((a, b, target))
+
     def _seed_forced_merges(self) -> None:
         """V2b/V3: wymuszone tokeny cyfrowe.
 
         V2b: spacja + cyfra (·0…·9). V3: pełny zestaw 000–999 i 0–99 oraz
         wersje ze spacją wiodącą, żeby żaden rok ani kod nie był „obcy”.
-        Kolejność merges jest ważna: najpierw gołe grupy 2-/3-cyfrowe, potem
-        spacja+cyfra, potem spacja+grupa — dzięki temu BPE składa grupy od prawej.
+
+        POPRAWKA (WAŻNE-1 / ataki 1, 2, 8): samo izolowanie grup regexem nie
+        wystarcza — BPE scala najpierw tańszą parę, więc `950` wychodziło jako
+        `9|50`. Dokładamy aliasy (scalenia do ISTNIEJĄCEGO tokenu) dla obu
+        możliwych kolejności par: (cyfra, dwójka) i (·cyfra, dwójka). Słownik
+        się nie powiększa (aliasy nie tworzą nowych ID).
         """
         if self.stage1:
             return
         b = {bytes([i]): i for i in range(256)}
+        two: dict[str, int] = {}
+        three: dict[str, int] = {}
+        space_digit: dict[int, int] = {}
+        space3: dict[str, int] = {}
         if self.digits == "groups3":
             # 1) gołe grupy 2-cyfrowe (0–99), 2) gołe grupy 3-cyfrowe (000–999).
-            # Trójka składana jest jako (lewa dwójka, ostatnia cyfra) — BPE
-            # zawsze łączy najpierw lewą parę, bo dwójki mają niższą rangę.
-            two = {}
             for n in range(100):
                 s = f"{n:02d}"
                 two[s] = self._add_merge(b[s[0].encode()], b[s[1].encode()])
-            three = {}
             for n in range(1000):
                 s = f"{n:03d}"
                 three[s] = self._add_merge(two[s[:2]], b[s[2].encode()])
         if self.digits in ("space_first", "groups3"):
             # 3) spacja+cyfra (·0…·9)
             for d in range(10):
-                self._add_merge(b[b" "], b[str(d).encode()])
+                space_digit[d] = self._add_merge(b[b" "], b[str(d).encode()])
         if self.digits == "groups3":
             # 4) spacja+dwójka, 5) spacja+trójka (pierwsza grupa liczby)
             for n in range(100):
                 self._add_merge(b[b" "], two[f"{n:02d}"])
             for n in range(1000):
-                self._add_merge(b[b" "], three[f"{n:03d}"])
+                s = f"{n:03d}"
+                space3[s] = self._add_merge(b[b" "], three[s])
+            # 6) aliasy: prawa kolejność par dla gołej i spacjowanej trójki.
+            #    rangi aliasów są po wszystkich zwykłych merge'ach etapu 1,
+            #    więc nie zmieniają wyboru pary w innych kontekstach.
+            for n in range(1000):
+                s = f"{n:03d}"
+                self._add_alias(b[s[0].encode()], two[s[1:]], three[s])
+                self._add_alias(space_digit[int(s[0])], two[s[1:]], space3[s])
         self._rebuild()
 
     def _stage1_allowed(self, p: tuple[int, int], new_bytes: bytes):
@@ -327,7 +359,7 @@ class SuperBPETokenizer:
         items = list(pretoken_counts.items())
         seqs = [list(w.encode("utf-8")) for w, _ in items]
         if forced:
-            seqs = [merge_by_rank(s, self.ranks1) for s in seqs]
+            seqs = [merge_by_rank(s, self._ranks_all) for s in seqs]
         freqs = [f for _, f in items]
         learned = bpe_train_loop(seqs, freqs, self.vocab, target_vocab,
                                  allowed=self._stage1_allowed, log=log)
@@ -373,7 +405,7 @@ class SuperBPETokenizer:
     def _encode_pretoken(self, pt: str) -> list[int]:
         ids = self._cache1.get(pt)
         if ids is None:
-            ids = merge_by_rank(list(pt.encode("utf-8")), self.ranks1)
+            ids = merge_by_rank(list(pt.encode("utf-8")), self._ranks_all)
             if len(self._cache1) < 2_000_000:
                 self._cache1[pt] = ids
         return ids
@@ -440,6 +472,7 @@ class SuperBPETokenizer:
             "vocab_size": self.vocab_size,
             "stage1_merges": [list(m) for m in self.stage1],
             "stage2_merges": [list(m) for m in self.stage2],
+            "alias_merges": [list(m) for m in self.alias_merges],
             "specials": self.specials,
             "meta": self.meta,
         }
@@ -470,6 +503,8 @@ class SuperBPETokenizer:
         for a, b, n in tok.stage1 + tok.stage2:
             assert n == len(tok.vocab), "niespójna numeracja merge'y"
             tok.vocab.append(tok.vocab[a] + tok.vocab[b])
+        tok.alias_merges = [tuple(m) for m in data.get("alias_merges", [])]
+        tok._alias_seen = {(a, b) for a, b, _ in tok.alias_merges}
         tok.max_words = data.get("max_words", 4)
         tok.specials = data.get("specials", {})
         tok.meta = data.get("meta", {})

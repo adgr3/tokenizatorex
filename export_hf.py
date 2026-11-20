@@ -14,7 +14,7 @@ import os
 
 from tokenizers import Regex, Tokenizer, decoders, models, normalizers, pre_tokenizers
 
-from superbpe import CHUNK_PATTERN, CHUNK_RE, SuperBPETokenizer
+from superbpe import CHUNK_PATTERN, CHUNK_RE, DIGIT_GROUP_PATTERN, SuperBPETokenizer
 
 
 def bytes_to_unicode() -> dict[int, str]:
@@ -38,7 +38,11 @@ def to_hf(tok: SuperBPETokenizer) -> Tokenizer:
         if s(b) in vocab:
             raise ValueError(f"zduplikowany token {b!r} (id {vocab[s(b)]} i {i}) — HF tego nie obsłuży")
         vocab[s(b)] = i
-    merges = [(s(tok.vocab[a]), s(tok.vocab[b])) for a, b, _ in tok.stage1 + tok.stage2]
+    # Aliasy (scalenia do istniejącego tokenu) idą po merges etapu 1, przed etapem 2 —
+    # dokładnie taką samą kolejność rangi mają w enkoderze Pythona.
+    merges = [(s(tok.vocab[a]), s(tok.vocab[b])) for a, b, _ in tok.stage1]
+    merges += [(s(tok.vocab[a]), s(tok.vocab[b])) for a, b, _ in tok.alias_merges]
+    merges += [(s(tok.vocab[a]), s(tok.vocab[b])) for a, b, _ in tok.stage2]
 
     hf = Tokenizer(models.BPE(vocab=vocab, merges=merges, ignore_merges=False))
     if tok.normalize == "nfc":
@@ -52,6 +56,10 @@ def to_hf(tok: SuperBPETokenizer) -> Tokenizer:
         pre.append(pre_tokenizers.Digits(individual_digits=True))
     # V2b (space_first) i V3 (groups3) NIE używają Digits(): wymuszone merge'e
     # „cyfra ze spacją” / „grupa 3 cyfr” muszą móc się skleić w ramach fragmentu.
+    if tok.digits == "groups3":
+        # POPRAWKA: ten sam regex co w treningu i w enkoderze Pythona izoluje
+        # grupy po 3 od prawej JESZCZE PRZED ByteLevel (i przed BPE).
+        pre.append(pre_tokenizers.Split(Regex(DIGIT_GROUP_PATTERN), behavior="isolated"))
     pre.append(pre_tokenizers.ByteLevel(add_prefix_space=False, use_regex=False))
     hf.pre_tokenizer = pre_tokenizers.Sequence(pre)
     hf.decoder = decoders.ByteLevel()

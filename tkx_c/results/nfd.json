@@ -46,8 +46,8 @@
           ]
         },
         "V3-32k": {
-          "tokens_nfc": 228734,
-          "tokens_nfd": 228734,
+          "tokens_nfc": 227489,
+          "tokens_nfd": 227489,
           "increase": 0.0,
           "increase_ci": [
             0.0,
@@ -96,8 +96,8 @@
           ]
         },
         "V3-32k": {
-          "tokens_nfc": 137269,
-          "tokens_nfd": 137269,
+          "tokens_nfc": 136755,
+          "tokens_nfd": 136755,
           "increase": 0.0,
           "increase_ci": [
             0.0,
@@ -146,8 +146,8 @@
           ]
         },
         "V3-32k": {
-          "tokens_nfc": 117748,
-          "tokens_nfd": 117748,
+          "tokens_nfc": 116324,
+          "tokens_nfd": 116324,
           "increase": 0.0,
           "increase_ci": [
             0.0,
@@ -196,8 +196,8 @@
           ]
         },
         "V3-32k": {
-          "tokens_nfc": 189071,
-          "tokens_nfd": 189071,
+          "tokens_nfc": 187104,
+          "tokens_nfd": 187104,
           "increase": 0.0,
           "increase_ci": [
             0.0,
@@ -246,8 +246,8 @@
           ]
         },
         "V3-32k": {
-          "tokens_nfc": 216098,
-          "tokens_nfd": 216098,
+          "tokens_nfc": 215138,
+          "tokens_nfd": 215138,
           "increase": 0.0,
           "increase_ci": [
             0.0,
@@ -296,8 +296,8 @@
           ]
         },
         "V3-32k": {
-          "tokens_nfc": 176802,
-          "tokens_nfd": 176802,
+          "tokens_nfc": 176487,
+          "tokens_nfd": 176487,
           "increase": 0.0,
           "increase_ci": [
             0.0,
@@ -346,8 +346,8 @@
           ]
         },
         "V3-32k": {
-          "tokens_nfc": 150036,
-          "tokens_nfd": 150036,
+          "tokens_nfc": 148549,
+          "tokens_nfd": 148549,
           "increase": 0.0,
           "increase_ci": [
             0.0,
@@ -396,8 +396,8 @@
         ]
       },
       "V3-32k": {
-        "tokens_nfc": 1215758,
-        "tokens_nfd": 1215758,
+        "tokens_nfc": 1207846,
+        "tokens_nfd": 1207846,
         "increase": 0.0,
         "increase_ci": [
           0.0,

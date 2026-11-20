@@ -23,7 +23,10 @@ EXAMPLES = [
 
 def pieces(tok, text: str) -> list[str]:
     ids = tok.encode(text, add_special_tokens=False).ids
-    return [tok.id_to_token(i).replace("Ġ", "·").replace("Ċ", "\\n") for i in ids]
+    # POPRAWKA: dekoduj KAŻDY token osobno (ByteLevel id_to_token dawało
+    # np. '·zÅĤ' zamiast '·zł'). Spacja byte-level jest wyświetlana jako '·'.
+    return [tok.decode([i], skip_special_tokens=False).replace(" ", "·").replace("\n", "\\n")
+            for i in ids]
 
 
 def main() -> None:
