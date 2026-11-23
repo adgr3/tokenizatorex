@@ -118,9 +118,9 @@ Segmentacja mierzona przez `encoding.offsets` (liczba kontekstów z identyczną 
 - TKX/V3-32k: identyczna segmentacja w 5/5 kontekstach dla 5/155 wzorców; wzorce ze sklejeniem z poprzedzającym znakiem: 150/155.
 - Slayer1B-1.08: identyczna segmentacja w 5/5 kontekstach dla 0/155 wzorców; wzorce ze sklejeniem z poprzedzającym znakiem: 155/155.
 
-## 6. Kandydat
+## 6. Kandydat i O1/O2
 
-Domyślny wariant v2.0: **V0-32k** (najniższa fertility na wszystkich 8 źródłach, `§` jako 1 token, round-trip NFC/NFD bez zmian w próbce syntetycznej).
-V3-32k: wariant eksperymentalny z cięciem cyfr; wygrywa na identyfikatorach/kodach/sygnaturach, przegrywa na datach i kwotach; nie ma `§` jako jednego tokena; normalizuje NFD→NFC (O1 FAIL, O2 PASS wg definicji Karty). Round-trip: 4/700 dokumentów BZP z NFD; osobno test syntetyczny potwierdza normalizację NFD→NFC.
+Domyślny wariant v2.0: **V0-32k** (najniższa fertility na wszystkich 8 źródłach, `§` jako 1 token, round-trip 0/700 na dokumentach; NFD na wejściu zachowuje, więc O2 FAIL dla wejścia NFD).
+V3-32k: wariant eksperymentalny z cięciem cyfr; wygrywa na identyfikatorach/kodach/sygnaturach, przegrywa na datach i kwotach; nie ma `§` jako jednego tokena; normalizuje NFD→NFC. O1 FAIL: **4/700** dokumentów (w tym 3 BZP + 1 KIO, wszystkie NFD; 4/500 BZP ma NFD). O2 PASS (wyjście NFC).
+Uwaga O1/O2: O1 (dokładny round-trip) i O2 (wyjście NFC) wykluczają się dla wejścia NFD; propozycja v2.1: korpus normalizowany do NFC przed tokenizacją, a wymaganie dla tokenizera = dokładny round-trip na wejściu NFC.
 Ostateczny wybór dopiero po TKX-D (małe modele, BPB, ≥ 3 seedy). Fertility to warunek konieczny, nie dowód jakości.
-

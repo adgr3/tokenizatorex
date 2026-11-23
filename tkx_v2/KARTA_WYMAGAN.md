@@ -10,15 +10,15 @@ Wartości z `results/*.json` i pomiarów opisanych w raportach. PASS/FAIL nie s�
 
 | Wymaganie | V0-32k | V3-32k | Slayer1B-1.08 | Dowód |
 |---|---:|---:|---:|---|
-| O1 Round-trip `decode(encode(x))==x` | PASS | FAIL (4/700 dokumentów BZP z NFD; w próbie syntetycznej NFD→NFC) | PASS | `tests/test_tkx_v2_r2.py` + manifest BZP |
-| O2 Brak NFD w słowniku i na wyjściu (100%) | FAIL (zachowuje NFD na wyjściu) | PASS (normalizuje do NFC) | FAIL (zachowuje NFD na wyjściu) | `tests/test_tkx_v2_r2.py` |
+| O1 Round-trip `decode(encode(x))==x` | PASS (0/700) | FAIL (4/700: 3 BZP + 1 KIO, NFD) | PASS (0/700) | `results/tkx_v2_roundtrip.json` |
+| O2 Brak NFD w słowniku i na wyjściu (100%) | FAIL (zachowuje NFD na wyjściu) | PASS (normalizuje do NFC) | FAIL (zachowuje NFD na wyjściu) | `results/tkx_v2_roundtrip.json` + `tests/test_tkx_v2_r2.py` |
 | O3 Znak `§` jako pojedynczy token | PASS (1 token) | FAIL (2 tokeny) | PASS (1 token) | `results/tkx_v2_special_chars.json` |
 | O4 Lata 2015–2035 (≤ 2 tokeny/rok w formatach) | UNKNOWN | UNKNOWN | UNKNOWN | nie zmierzono w tym raporcie |
-| O5 Kwoty (≤ 6 tokenów/kwota, spójnie) | FAIL | FAIL | FAIL | `results/tkx_v2_patterns.json` (kategoria kwoty, średnie > 6 nie spełniają progu) |
-| O6 Daty (≤ 5 tokenów/data) | FAIL | FAIL | FAIL | `results/tkx_v2_patterns.json` (kategoria daty_iso) |
-| O7 CPV (≤ 3 tokeny/kod) | FAIL | FAIL | FAIL | `results/tkx_v2_patterns.json` (kategoria cpv) |
+| O5 Kwoty (≤ 6 tokenów/kwota, spójnie) | FAIL (4/15 kwot > 6) | FAIL (2/15) | FAIL (6/15) | `results/tkx_v2_patterns.json` (kategoria kwoty) |
+| O6 Daty (≤ 5 tokenów/data) | FAIL (6/15 dat > 5) | FAIL (15/15) | FAIL (15/15) | `results/tkx_v2_patterns.json` (kategoria daty_iso) |
+| O7 CPV (≤ 3 tokeny/kod) | FAIL (15/15 kodów > 3) | FAIL (15/15) | FAIL (15/15) | `results/tkx_v2_patterns.json` (kategoria cpv) |
 | O8 Martwe tokeny ≤ 5% | FAIL (8,12%) | FAIL (7,83%) | FAIL (35,03%) | `results/tkx_v2_dead_tokens.json` |
-| O9 Przeciek 13-gram ≤ 20% | UNKNOWN | UNKNOWN | UNKNOWN | nie wykonano |
+| O9 Przeciek 13-gram ≤ 20% | UNKNOWN | UNKNOWN | UNKNOWN | nie wykonano dla HPLT; v21 mierzy tylko JSON |
 
 Uwaga: żaden z ocenianych wariantów (V0, V3, Slayer) nie spełnia O5–O8. Progi O5–O8 okazały się nierealne dla wszystkich tokenizerów (także Slayera) → do rewizji w v2.1 z uzasadnieniem, a nie po cichu.
 
@@ -40,5 +40,6 @@ Uwaga O1/O2: wymagania O1 (dokładny round-trip) i O2 (wyjście w NFC) wykluczaj
 
 ## Definicja gotowe
 - `pytest -q` zielone.
-- `python scripts/sprawdz_liczby_v2.py` exit 0.
-- Liczby w raportach z `results/tkx_v2_*.json`.
+- `python scripts/sprawdz_liczby_v2.py` exit 0 na wszystkich raportach (v2 i v21).
+- `python scripts/generuj_raporty_v2.py --check` nie zmienia plików.
+- Liczby w raportach z `results/*.json` (v2 i v21).

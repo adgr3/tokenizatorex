@@ -30,29 +30,24 @@ def test_special_chars_via_encode():
 
 
 def test_consistency_synthetic_contexts():
-    # Synthetic patterns/contexts: measure segmentation stability across contexts.
+    # Test, który może zawieść: mierzymy dwa znane przypadki.
+    # 1) "art. 12" skleja się z poprzedzającą spacją w części kontekstów.
+    # 2) "123" ma identyczną segmentację we wszystkich prostych kontekstach.
+    from tkx_v2.measure import _pattern_segmentation
+
     v0 = load_tok("V0-32k")
-    patterns = ["Warszawa", "2026-01-02", "KRS 0000123456"]
-    for pattern in patterns:
-        contexts = [
-            f"To jest {pattern} dzisiaj.",
-            f"Miasto {pattern} jest duże.",
-            f"Wartość {pattern} ok.",
-            f"A {pattern} B",
-            f"X {pattern} Y",
-        ]
-        segs = []
-        for ctx in contexts:
-            enc = v0.encode(ctx, add_special_tokens=False)
-            start = ctx.find(pattern)
-            end = start + len(pattern)
-            covered = [i for i, (s, e) in enumerate(enc.offsets) if not (e <= start or s >= end)]
-            segs.append(tuple(enc.ids[i] for i in covered))
-        # Expectation explicitly stated: segmentation is measurable in every context.
-        assert len(segs) == 5
-        assert all(len(s) > 0 for s in segs)
-        identical_count = sum(1 for s in segs if s == segs[0])
-        assert 1 <= identical_count <= 5
+    merged = _pattern_segmentation(
+        v0, "art. 12",
+        ["art. 12 jest elementem dokumentu.", "tekst art. 12 tekst",
+         "(art. 12) opis", "slowo, art. 12 slowo",
+         "jeden dwa art. 12 trzy cztery"])
+    assert merged["merged_with_prev_count"] >= 1
+    assert merged["contexts_identical"] is False
+    assert 1 <= merged["contexts_identical_count"] < 5
+
+    same = _pattern_segmentation(v0, "123", ["123", " 123", "123 ", " 123 "])
+    assert same["contexts_identical"] is True
+    assert same["contexts_identical_count"] == 4
 
 
 def test_number_gate_injected_bad_number(tmp_path):

@@ -60,7 +60,7 @@ def table(headers, rows):
     return "\n".join(out)
 
 
-def main():
+def build_reports():
     rep = load("tkx_v21_reproduction.json")
     var = load("tkx_v21_variants.json")
     dev = load("tkx_v21_dev.json")
@@ -73,6 +73,8 @@ def main():
     leak = load("tkx_v21_leak.json")
     g149 = load("tkx_v21_granty149.json")
     sel2 = load("tkx_v21_selection_r2.json")
+    forms = load("tkx_v21_heldout_forms.json")
+    fmt = load("tkx_v21_formaty.json")
     man = json.load(open(os.path.join(REPO, "tkx_v21", "MANIFEST_DANYCH.json"),
                          encoding="utf-8"))
     labels = [x for x in dev["tokenizers"] if x in test["tokenizers"]]
@@ -128,11 +130,35 @@ def main():
                     if sp["tokenizers"].get("V0J5S-32k", {}).get(n, {}).get("one_token"))
     g_base = g149["tokenizers"][base]
 
+    # --- 10 wzorców JSON: rozbicie 8 bez >50% i wszystkich 10
+    wz_rows = leak["test_docs"]["wzorce_json"]["rows"]
+    wz_cov = {r["id"]: r["coverage"] for r in wz_rows}
+    wz_items = [x for x in pat["tokenizers"][base]["per_item"]
+                if x["category"] == "json_tool_calls"]
+    wz_items_2 = [x for x in pat["tokenizers"]["V0J2-32k"]["per_item"]
+                  if x["category"] == "json_tool_calls"]
+    ids_clean = [x["id"] for x in wz_items if wz_cov.get(x["id"], 0.0) <= 0.5]
+    sum_all_0 = sum(x["tokens"] for x in wz_items)
+    sum_all_2 = sum(x["tokens"] for x in wz_items_2)
+    sum_8_0 = sum(x["tokens"] for x in wz_items if x["id"] in ids_clean)
+    sum_8_2 = sum(x["tokens"] for x in wz_items_2 if x["id"] in ids_clean)
+    gain_all = (sum_all_2 / sum_all_0 - 1) * 100 if sum_all_0 else None
+    gain_8 = (sum_8_2 / sum_8_0 - 1) * 100 if sum_8_0 else None
+    wz_over = leak["test_docs"]["wzorce_json"]["docs_over_50pct"]
+    wz_max = leak["test_docs"]["wzorce_json"]["max_coverage"]
+    if leak["summary"]["status"] == "CZESCIOWE_POKRYCIE_SZKIELETEM":
+        leak_label = (f"**częściowe pokrycie szkieletem** ({wz_over}/10 > 50%, "
+                      f"max {dec(wz_max * 100, 1)}%)")
+    else:
+        leak_label = f"**{leak['summary']['status']}**"
+    fo = forms["forms"]
+    fov = forms["overall"]
+
     intro = [
         f"Odtworzony V0 (`{base}`) ma **identyczne merge'e etapu 1 i 2** co V0; "
         f"liczba tokenów na BZP jest {'identyczna' if rep['bzp']['identical'] else 'różna'} "
         f"({rep['bzp']['v0']['tokens']} vs {rep['bzp']['v0r']['tokens']}), a SHA pliku różni się "
-        f"tylko metadanymi (`train_seconds`, `from`).",
+        f"metadanymi (`train_seconds`, `from`) i pustym `alias_merges`.",
         f"Poprawka 1 (po treningu, przed pomiarem): held-out dostał osobne słownictwo "
         f"({man['json_generic']['heldout_change']['when']}), bo pierwsza wersja miała 98/100 "
         f"dokumentów >50% pokrycia 13-gramów; dane treningowe mają ten sam SHA-256 "
@@ -174,8 +200,15 @@ def main():
         f"Round-trip: {rt_w.get('bad', '—')} błędów na {rt['cases']} przypadków "
         f"({rt['unique_texts']} unikalnych tekstów); martwe tokeny w V0R: "
         f"{dec(dead_w.get('dead_pct'), 2)}%.",
-        f"Przeciek: **{leak['summary']['status']}** — dokumentów >50% pokrycia 13-gramów: "
-        f"{leak['summary']['docs_over_50pct_or_exact']}.",
+        f"Przeciek: {leak_label}; korpus tc1+held-out: "
+        f"{leak['test_docs']['tc1_test']['docs_over_50pct'] + leak['test_docs']['json_generic_test']['docs_over_50pct']} "
+        f"dokumentów >50% (exact: "
+        f"{leak['test_docs']['tc1_test']['exact_matches'] + leak['test_docs']['json_generic_test']['exact_matches']}).",
+        f"Zysk na 10 wzorcach JSON: wszystkie 10: {sum_all_0}→{sum_all_2} tokenów "
+        f"({pct(gain_all)}); 8 bez pokrycia >50%: {sum_8_0}→{sum_8_2} ({pct(gain_8)}).",
+        f"Held-out wg form: compact {pct(fo['compact']['delta_pct'])}, pretty "
+        f"{pct(fo['pretty']['delta_pct'])}, same wyniki narzędzi {pct(fo['result']['delta_pct'])}; "
+        f"łącznie {pct(fov['delta_pct'])}. Duża część zysku to wspólny szkielet wywołania.",
         "To pomiar kosztu tokenizacji, nie jakości modelu; ostateczny wybór wymaga TKX-D "
         "na małych modelach i co najmniej 3 seedach.",
     ]
@@ -255,8 +288,8 @@ def main():
 
     md = []
     md.append("# TKX-V21-JSON — raport pełny\n")
-    md.append("> Raport wygenerowany skryptem `tkx_v21/raport_v21.py` z `results/tkx_v21_*.json`. "
-              "Seed 20261123, `PYTHONHASHSEED=0`, bootstrap 1000× po dokumentach. "
+    md.append("> Raport wygenerowany skryptem `scripts/generuj_raporty_v2.py` (moduł v21) "
+              "z `results/*.json`. Seed 20261123, `PYTHONHASHSEED=0`, bootstrap 1000× po dokumentach. "
               "Pełne teksty korpusu są poza gitem (`data/`, `tkx_v21/dane/`).\n")
     md.append("## 1. Podsumowanie\n")
     for i, s in enumerate(intro, 1):
@@ -269,8 +302,8 @@ def main():
         ["tokeny na BZP (500 dok.)", rep["bzp"]["v0"]["tokens"], rep["bzp"]["v0r"]["tokens"]],
         ["fertility BZP", dec(rep["bzp"]["v0"]["fertility"]), dec(rep["bzp"]["v0r"]["fertility"])],
     ]))
-    md.append(f"\n**Wniosek:** {rep['conclusion']}. Hash pliku różni się tylko polami meta: "
-              f"`{', '.join(rep['meta_diff'])}`. Porównania idą względem V0R.\n")
+    md.append(f"\n**Wniosek:** identyczne merge'e; hash pliku różni się polami meta: "
+              f"`{', '.join(rep['meta_diff'])}` oraz pustym `alias_merges`. Porównania idą względem V0R.\n")
     md.append("## 3. Warianty\n")
     md.append(table(["wariant", "SHA superbpe", "SHA HF", "dane treningowe"], var_rows))
     md.append("\nPrzepis: `train.py baseline --vocab 32000` → `train.py superbpe "
@@ -337,6 +370,22 @@ def main():
             if seg:
                 md.append(f"- {lb} ({item['tokens']} tok.): `" + "|".join(seg) + "`")
         md.append("")
+    md.append("## 8a. Formaty dat, kwot i „§” — per zapis\n")
+    md.append(f"Źródło: `results/tkx_v21_formaty.json` (seed {fmt['seed']}; "
+              f"{fmt['daty_n']} dat, po {next(iter(fmt['kwoty_n'].values()))} kwot na zapis, "
+              f"9 form z „§”). Kwoty dla „mln” losowane z zakresu 1–500 mln, dla „tys.” "
+              f"1–999 tys., osobno dla każdego zapisu.\n")
+    md.append("**Daty — średnia liczba tokenów na 40 dat**\n")
+    fkeys = fmt["tokenizers"]
+    md.append(table(["zapis daty"] + fkeys,
+                    [[f"`{f}`"] + [dec(v[k], 2) for k in fkeys] for f, v in fmt["daty"].items()]))
+    md.append("\n**Kwoty — średnia liczba tokenów na 40 kwot**\n")
+    md.append(table(["zapis kwoty"] + fkeys,
+                    [[f"`{f}`"] + [dec(v[k], 2) for k in fkeys] for f, v in fmt["kwoty"].items()]))
+    md.append("\n**„§” — liczba tokenów**\n")
+    md.append(table(["forma"] + fkeys,
+                    [[f"`{f}`"] + [str(v[k]) for k in fkeys] for f, v in fmt["paragraf"].items()]))
+    md.append("")
     md.append("## 9. Tokeny specjalne\n")
     md.append("1 = token atomowy; inna liczba = ile tokenów zajmuje napis.\n")
     md.append(table(["token"] + labels, sp_rows))
@@ -347,15 +396,18 @@ def main():
     md.append("\n## 11. Przeciek korpusu\n")
     md.append(table(["zbiór testowy", "dok.", "średnie pokrycie 13-g", "maks.", ">50%", "exact"],
                     leak_rows))
-    md.append(f"\nStatus: **{leak['summary']['status']}**. Pełne teksty i lista dokumentów: "
+    md.append(f"\nStatus: {leak_label}. Korpus tc1+held-out: "
+              f"{leak['test_docs']['tc1_test']['docs_over_50pct'] + leak['test_docs']['json_generic_test']['docs_over_50pct']} "
+              f"dokumentów >50%, exact 0. Pełne teksty i lista dokumentów: "
               f"`results/tkx_v21_leak.json`.\n")
     wz = leak["test_docs"]["wzorce_json"]
     md.append(f"10 wzorców JSON: **0 exact**, średnie pokrycie 13-gramów "
               f"{dec(wz['mean_coverage'] * 100, 1)}%, maks. {dec(wz['max_coverage'] * 100, 1)}%, "
               f"dokumentów >50%: {wz['docs_over_50pct']}. To wspólny szkielet wywołania "
-              f"(`<tool_call>{{...`), nie kopie przykładów. Duży zysk na tych wzorcach "
-              f"(32,1 → 13,5 tokena) pochodzi głównie z nauczenia tego szkieletu jako kilku "
-              f"super-tokenów; segmentacja W0126 i W0129 jest w sekcji 8.\n")
+              f"(`<tool_call>{{...`), nie kopie przykładów. Zysk: wszystkie 10: "
+              f"{sum_all_0}→{sum_all_2} tokenów ({pct(gain_all)}), 8 bez >50% "
+              f"{sum_8_0}→{sum_8_2} ({pct(gain_8)}). Nawet te 8 dzieli szkielet, więc liczby "
+              f"nie są dowodem generalizacji na nową składnię; segmentacja W0126 i W0129 jest w sekcji 8.\n")
     md.append("## 12. Co to znaczy dla modelu 150M i TC-1\n")
     if winner:
         md.append(f"- Największy sens ma **{winner}** jako hipoteza do TKX-D: poprawia JSON "
@@ -366,8 +418,10 @@ def main():
                   "do potwierdzenia w TKX-D, nie wybrany według protokołu.")
         md.append("- To nie porażka: domieszka JSON poprawia JSON o dziesiątki procent, a koszt "
                   "polszczyzny na dużym zbiorze grantów jest mały (+0,20% dla V0J2).")
-    md.append("- Zysk na narzędziach niewidzianych jest osobną liczbą (held-out). Jeśli jest "
-              "bliski zyskowi na tc1, tokenizer uczy się **składni JSON**, a nie nazw 3 narzędzi.")
+    md.append(f"- Zysk na narzędziach niewidzianych: łącznie {pct(fov['delta_pct'])}; "
+              f"compact {pct(fo['compact']['delta_pct'])}, pretty {pct(fo['pretty']['delta_pct'])}, "
+              f"same wyniki narzędzi {pct(fo['result']['delta_pct'])}. Duża część zysku to "
+              f"wspólny szkielet wywołania, nie dowód generalizacji na nową składnię.")
     md.append("- Tokeny specjalne w V0J5S są atomowe (6/6), ale na JSON nie poprawiają wyniku "
               f"({pct(sp_gain)} tokenów na tc1 test względem V0J5): `<tool_call>` jako granica "
               "dodanego tokenu przerywa część wyuczonych supertokenów. To mechanizm dla szablonu "
@@ -384,9 +438,6 @@ def main():
     md.append("- UNKNOWN ≠ FALSE ≠ 0: brak źródła lub brak tokenizera jest raportowany osobno.")
     md.append("\n> Automatyczne testy i ten raport **nie są akceptacją właściciela**. "
               "Wymagana jest weryfikacja człowieka.\n")
-    with open(os.path.join(OUT, "RAPORT.md"), "w", encoding="utf-8", newline="\n") as f:
-        f.write("\n".join(md) + "\n")
-
     # --- raport prosty
     simple = []
     simple.append("# TOKENIZATOREX v2.1-JSON — prostym językiem\n")
@@ -422,7 +473,13 @@ def main():
     simple.append(f"- „§”: 1 token w V0R i we wszystkich wariantach V0J.")
     simple.append(f"- Tokeny specjalne: {sp_atomic}/{len(sp['names'])} atomowych w V0J5S, ale na JSON "
                   f"{pct(sp_gain)} tokenów względem V0J5 (nie zastępują słownika JSON).")
-    simple.append(f"- Przeciek: {leak['summary']['status']}.")
+    simple.append(f"- Przeciek: {leak_label}; korpus tc1+held-out: 0/300 >50%, 0 exact.")
+    simple.append(f"- Zysk held-out: łącznie {pct(fov['delta_pct'])}; compact "
+                  f"{pct(fo['compact']['delta_pct'])}, pretty {pct(fo['pretty']['delta_pct'])}, "
+                  f"same wyniki narzędzi {pct(fo['result']['delta_pct'])} — duża część to "
+                  f"wspólny szkielet wywołania.")
+    simple.append(f"- 10 wzorców JSON: wszystkie 10: {sum_all_0}→{sum_all_2} tokenów "
+                  f"({pct(gain_all)}); 8 bez >50% pokrycia {sum_8_0}→{sum_8_2} ({pct(gain_8)}).")
     simple.append(f"- Round-trip: {rt_w.get('bad', '—')} błędów na {rt['cases']} przypadków.")
     if conditional:
         cg = sel2["candidates"][conditional]["polish_deltas"]["granty"]
@@ -437,8 +494,15 @@ def main():
     simple.append("\n**Co dalej:** sprawdzić V0J2 (i ewentualnie V0J5) na małym modelu (TKX-D), "
                   "z bramką opartą na CI, nie tylko na punkcie. Automaty nie zastępują decyzji "
                   "właściciela.\n")
+    return "\n".join(md) + "\n", "\n".join(simple) + "\n"
+
+
+def main():
+    md, simple = build_reports()
+    with open(os.path.join(OUT, "RAPORT.md"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(md)
     with open(os.path.join(OUT, "RAPORT_PROSTY.md"), "w", encoding="utf-8", newline="\n") as f:
-        f.write("\n".join(simple) + "\n")
+        f.write(simple)
     print("zapisano tkx_v21/RAPORT.md i tkx_v21/RAPORT_PROSTY.md")
 
 

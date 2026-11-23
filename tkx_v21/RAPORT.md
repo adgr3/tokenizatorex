@@ -1,10 +1,10 @@
 # TKX-V21-JSON — raport pełny
 
-> Raport wygenerowany skryptem `tkx_v21/raport_v21.py` z `results/tkx_v21_*.json`. Seed 20261123, `PYTHONHASHSEED=0`, bootstrap 1000× po dokumentach. Pełne teksty korpusu są poza gitem (`data/`, `tkx_v21/dane/`).
+> Raport wygenerowany skryptem `scripts/generuj_raporty_v2.py` (moduł v21) z `results/*.json`. Seed 20261123, `PYTHONHASHSEED=0`, bootstrap 1000× po dokumentach. Pełne teksty korpusu są poza gitem (`data/`, `tkx_v21/dane/`).
 
 ## 1. Podsumowanie
 
-1. Odtworzony V0 (`V0R-32k`) ma **identyczne merge'e etapu 1 i 2** co V0; liczba tokenów na BZP jest identyczna (2032561 vs 2032561), a SHA pliku różni się tylko metadanymi (`train_seconds`, `from`).
+1. Odtworzony V0 (`V0R-32k`) ma **identyczne merge'e etapu 1 i 2** co V0; liczba tokenów na BZP jest identyczna (2032561 vs 2032561), a SHA pliku różni się metadanymi (`train_seconds`, `from`) i pustym `alias_merges`.
 2. Poprawka 1 (po treningu, przed pomiarem): held-out dostał osobne słownictwo (2026-11-23 15:23), bo pierwsza wersja miała 98/100 dokumentów >50% pokrycia 13-gramów; dane treningowe mają ten sam SHA-256 `427acf85…` i warianty nie były ponownie trenowane.
 3. Na dev najniższą fertility JSON ma **V0J10-32k**: 2,9406 vs 3,9658 w V0R (-25,85%), ale nie przechodzi bramki polskiej.
 4. Zysk na dev rozkłada się nierówno: tc1 (całe rekordy, narzędzia widziane) -23,96%, tc1 tylko wywołania+odpowiedzi -59,15%, held-out (narzędzia niewidziane) -33,80%.
@@ -14,8 +14,10 @@
 8. Tokeny specjalne w V0J5S są atomowe (6/6), ale na tc1 test dają +0,22% tokenów względem V0J5 (same wywołania: +4,69%): `<tool_call>` jako granica dodanego tokenu przerywa część wyuczonych supertokenów.
 9. „§” jest 1 tokenem w V0R: True; w każdym wariancie z domieszką JSON również: True.
 10. Round-trip: 0 błędów na 700 przypadków (700 unikalnych tekstów); martwe tokeny w V0R: 8,11%.
-11. Przeciek: **OK** — dokumentów >50% pokrycia 13-gramów: 0.
-12. To pomiar kosztu tokenizacji, nie jakości modelu; ostateczny wybór wymaga TKX-D na małych modelach i co najmniej 3 seedach.
+11. Przeciek: **częściowe pokrycie szkieletem** (2/10 > 50%, max 54,4%); korpus tc1+held-out: 0 dokumentów >50% (exact: 0).
+12. Zysk na 10 wzorcach JSON: wszystkie 10: 321→135 tokenów (-57,94%); 8 bez pokrycia >50%: 234→111 (-52,56%).
+13. Held-out wg form: compact -43,75%, pretty -28,58%, same wyniki narzędzi -10,51%; łącznie -33,04%. Duża część zysku to wspólny szkielet wywołania.
+14. To pomiar kosztu tokenizacji, nie jakości modelu; ostateczny wybór wymaga TKX-D na małych modelach i co najmniej 3 seedach.
 
 ## 2. Odtworzenie V0
 
@@ -27,7 +29,7 @@
 | tokeny na BZP (500 dok.) | 2032561 | 2032561 |
 | fertility BZP | 1,4304 | 1,4304 |
 
-**Wniosek:** identyczne merge'e; hash pliku rozni sie tylko metadanymi. Hash pliku różni się tylko polami meta: `train_seconds, from`. Porównania idą względem V0R.
+**Wniosek:** identyczne merge'e; hash pliku różni się polami meta: `train_seconds, from` oraz pustym `alias_merges`. Porównania idą względem V0R.
 
 ## 3. Warianty
 
@@ -144,6 +146,55 @@ Segmentacja tekstowa dwóch przykładów JSON (tokeny HF, `Ġ` = spacja):
 - V0J2-32k (11 tok.): `{"kwota":|Ġ"1|Ġ23|4,|56|ĠzÅĤ|",Ġ"termin":|Ġ"2026-|01|-02|"}`
 - Slayer1B-1.08 (25 tok.): `{|"|kw|ota|":|Ġ"|1|Ġ23|4|,|56|ĠzÅĤ|",|Ġ"|termin|":|Ġ"|20|26|-|01|-|02|"|}`
 
+## 8a. Formaty dat, kwot i „§” — per zapis
+
+Źródło: `results/tkx_v21_formaty.json` (seed 20261123; 40 dat, po 40 kwot na zapis, 9 form z „§”). Kwoty dla „mln” losowane z zakresu 1–500 mln, dla „tys.” 1–999 tys., osobno dla każdego zapisu.
+
+**Daty — średnia liczba tokenów na 40 dat**
+
+| zapis daty | V0 | V0J2 | V3 | Slayer | GPT-4o |
+|---|---|---|---|---|---|
+| `RRRR.MM.DD` | 4,00 | 4,00 | 6,00 | 5,47 | 6,00 |
+| `RRRR-MM-DD` | 3,50 | 3,23 | 6,00 | 5,47 | 6,00 |
+| `DD.MM.RRRR` | 3,60 | 3,38 | 6,00 | 5,47 | 6,00 |
+| `D.MM.RRRR` | 3,60 | 3,38 | 6,00 | 5,47 | 6,00 |
+| `DD.MM.RRRR r.` | 4,12 | 4,05 | 7,00 | 7,47 | 8,00 |
+| `D.MM.RRRRr.` | 4,60 | 4,38 | 7,00 | 7,47 | 8,00 |
+| `DD/MM/RRRR` | 5,47 | 5,33 | 6,00 | 5,47 | 6,00 |
+| `D miesiąca RRRR r.` | 3,52 | 3,52 | 5,00 | 5,28 | 8,20 |
+| `D miesiąca RRRRr.` | 4,40 | 4,40 | 5,00 | 5,28 | 8,20 |
+| `z dnia D miesiąca RRRR r.` | 5,53 | 5,53 | 7,00 | 7,28 | 11,20 |
+| `D RZYM RRRR` | 3,45 | 3,45 | 4,05 | 3,27 | 5,00 |
+| `D.RZYM.RRRR` | 4,38 | 4,08 | 5,78 | 5,88 | 5,78 |
+
+**Kwoty — średnia liczba tokenów na 40 kwot**
+
+| zapis kwoty | V0 | V0J2 | V3 | Slayer | GPT-4o |
+|---|---|---|---|---|---|
+| `1 234,56 zł` | 6,10 | 6,10 | 5,15 | 6,53 | 6,30 |
+| `1234,56 zł` | 5,35 | 5,30 | 4,83 | 5,80 | 4,83 |
+| `1.234,56 zł` | 5,92 | 5,88 | 5,80 | 7,08 | 5,80 |
+| `1234.56 PLN` | 5,10 | 5,05 | 4,80 | 5,67 | 4,80 |
+| `1 234,56 PLN` | 5,83 | 5,70 | 4,95 | 6,17 | 5,90 |
+| `1 234 zł` | 4,12 | 4,10 | 2,85 | 4,10 | 3,70 |
+| `kwota brutto: 1 234,56 zł` | 9,93 | 8,88 | 9,07 | 10,43 | 12,15 |
+| `1,2 mln zł` | 3,83 | 3,83 | 4,00 | 5,78 | 5,00 |
+| `123 tys. zł` | 3,83 | 3,83 | 3,00 | 4,88 | 4,00 |
+
+**„§” — liczba tokenów**
+
+| forma | V0 | V0J2 | V3 | Slayer | GPT-4o |
+|---|---|---|---|---|---|
+| `§` | 1 | 1 | 2 | 1 | 1 |
+| `§ 5` | 2 | 2 | 3 | 2 | 3 |
+| `§ 12 ust. 3` | 4 | 4 | 5 | 5 | 7 |
+| `§ 12 ust. 3 pkt 4 lit. a` | 8 | 8 | 9 | 10 | 13 |
+| `§5` | 2 | 2 | 3 | 2 | 2 |
+| `§§ 3–5` | 5 | 5 | 7 | 5 | 6 |
+| `w § 2` | 3 | 3 | 3 | 3 | 4 |
+| `zgodnie z § 14 ust. 1` | 7 | 7 | 7 | 8 | 11 |
+| `art. 5 § 2` | 4 | 4 | 4 | 5 | 7 |
+
 ## 9. Tokeny specjalne
 
 1 = token atomowy; inna liczba = ile tokenów zajmuje napis.
@@ -189,15 +240,15 @@ Segmentacja tekstowa dwóch przykładów JSON (tokeny HF, `Ġ` = spacja):
 | json_generic_test | 100 | 20,7 | 41,7 | 0 | 0 |
 | wzorce_json | 10 | 33,8 | 54,4 | 2 | 0 |
 
-Status: **OK**. Pełne teksty i lista dokumentów: `results/tkx_v21_leak.json`.
+Status: **częściowe pokrycie szkieletem** (2/10 > 50%, max 54,4%). Korpus tc1+held-out: 0 dokumentów >50%, exact 0. Pełne teksty i lista dokumentów: `results/tkx_v21_leak.json`.
 
-10 wzorców JSON: **0 exact**, średnie pokrycie 13-gramów 33,8%, maks. 54,4%, dokumentów >50%: 2. To wspólny szkielet wywołania (`<tool_call>{...`), nie kopie przykładów. Duży zysk na tych wzorcach (32,1 → 13,5 tokena) pochodzi głównie z nauczenia tego szkieletu jako kilku super-tokenów; segmentacja W0126 i W0129 jest w sekcji 8.
+10 wzorców JSON: **0 exact**, średnie pokrycie 13-gramów 33,8%, maks. 54,4%, dokumentów >50%: 2. To wspólny szkielet wywołania (`<tool_call>{...`), nie kopie przykładów. Zysk: wszystkie 10: 321→135 tokenów (-57,94%), 8 bez >50% 234→111 (-52,56%). Nawet te 8 dzieli szkielet, więc liczby nie są dowodem generalizacji na nową składnię; segmentacja W0126 i W0129 jest w sekcji 8.
 
 ## 12. Co to znaczy dla modelu 150M i TC-1
 
 - Oryginalna reguła: **brak kandydata** (granty 12). Po Poprawce 2 (granty 149) kandydatem warunkowym jest **V0J2-32k** — do potwierdzenia w TKX-D, nie wybrany według protokołu.
 - To nie porażka: domieszka JSON poprawia JSON o dziesiątki procent, a koszt polszczyzny na dużym zbiorze grantów jest mały (+0,20% dla V0J2).
-- Zysk na narzędziach niewidzianych jest osobną liczbą (held-out). Jeśli jest bliski zyskowi na tc1, tokenizer uczy się **składni JSON**, a nie nazw 3 narzędzi.
+- Zysk na narzędziach niewidzianych: łącznie -33,04%; compact -43,75%, pretty -28,58%, same wyniki narzędzi -10,51%. Duża część zysku to wspólny szkielet wywołania, nie dowód generalizacji na nową składnię.
 - Tokeny specjalne w V0J5S są atomowe (6/6), ale na JSON nie poprawiają wyniku (+0,22% tokenów na tc1 test względem V0J5): `<tool_call>` jako granica dodanego tokenu przerywa część wyuczonych supertokenów. To mechanizm dla szablonu czatu, nie dla słownika JSON.
 - Decyzja o wdrożeniu należy do TKX-D: trening małych modeli, BPB, ≥ 3 seedy. Fertility nie jest jakością modelu.
 
@@ -210,4 +261,3 @@ Status: **OK**. Pełne teksty i lista dokumentów: `results/tkx_v21_leak.json`.
 - UNKNOWN ≠ FALSE ≠ 0: brak źródła lub brak tokenizera jest raportowany osobno.
 
 > Automatyczne testy i ten raport **nie są akceptacją właściciela**. Wymagana jest weryfikacja człowieka.
-

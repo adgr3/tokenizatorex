@@ -144,13 +144,15 @@ licznik par, indeks *para → sekwencje* i kopiec z leniwym usuwaniem. Wynik jes
 
 ```python
 from tokenizers import Tokenizer                       # format Hugging Face
-tok = Tokenizer.from_file("hf/tokenizatorex-32k/tokenizer.json")
+tok = Tokenizer.from_file("hf/variants/V0-32k/tokenizer.json")
 print(tok.encode("Na podstawie umowy, w ramach projektu.").tokens)
 
 from superbpe import SuperBPETokenizer                 # referencyjny enkoder (dokładny)
-tok = SuperBPETokenizer.load("tokenizers/tokenizatorex-32k.json")
+tok = SuperBPETokenizer.load("tokenizers/variants/V0-32k/superbpe.json")
 ids = tok.encode("Na podstawie umowy, w ramach projektu.")
 ```
+
+`hf/tokenizatorex-32k/tokenizer.json` i `tokenizers/tokenizatorex-32k.json` to starszy eksport TKX-A (inny słownik, BZP 1,4487), a nie benchmarkowany V0-32k (BZP 1,4304).
 
 ## Odtworzenie
 

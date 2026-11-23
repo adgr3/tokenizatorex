@@ -66,7 +66,18 @@ def main():
         'D RZYM RRRR': lambda y,m,d: f'{d} {R[m-1]} {y}',
         'D.RZYM.RRRR': lambda y,m,d: f'{d}.{R[m-1]}.{y}',
     }
-    amts = [rng.choice([rng.randint(100,999), rng.randint(1000,99999), rng.randint(100000,9999999)]) + rng.randint(0,99)/100 for _ in range(40)]
+
+    def standard_amounts(r, n=40):
+        return [r.choice([r.randint(100, 999), r.randint(1000, 99999),
+                          r.randint(100000, 9999999)]) + r.randint(0, 99) / 100
+                for _ in range(n)]
+
+    def mln_amounts(r, n=40):
+        return [round(r.uniform(1_000_000, 500_000_000), 2) for _ in range(n)]
+
+    def tys_amounts(r, n=40):
+        return [round(r.uniform(1_000, 999_000), 2) for _ in range(n)]
+
     def sp(x):
         return f'{int(x):,}'.replace(',',' ')
     A = {
@@ -82,17 +93,34 @@ def main():
     }
     P = ['§','§ 5','§ 12 ust. 3','§ 12 ust. 3 pkt 4 lit. a','§5','§§ 3–5','w § 2','zgodnie z § 14 ust. 1','art. 5 § 2']
 
-    out = {'seed': 20261123, 'daty': {}, 'kwoty': {}, 'paragraf': {}, 'tokenizers': list(toks.keys())}
+    # Każdy zapis kwoty ma własną, realistyczną próbę 40 kwot.
+    amount_sets = {}
+    for i, f in enumerate(A):
+        r = random.Random(20261123 + i)
+        if 'mln' in f:
+            amount_sets[f] = mln_amounts(r)
+        elif 'tys.' in f:
+            amount_sets[f] = tys_amounts(r)
+        else:
+            amount_sets[f] = standard_amounts(r)
+
+    out = {'seed': 20261123, 'daty': {}, 'kwoty': {}, 'paragraf': {},
+           'tokenizers': list(toks.keys()),
+           'daty_n': len(dates), 'kwoty_n': {f: len(v) for f, v in amount_sets.items()},
+           'kwoty_zakres': {f: [min(v), max(v)] for f, v in amount_sets.items()},
+           'samples': {}}
     hdr = 'format'.ljust(28) + ''.join(k.rjust(10) for k in toks)
     print('DATY (srednia liczba tokenow na 40 dat)'); print(hdr)
     for f, fn in F.items():
         row = {k: sum(n(t, fn(*d)) for d in dates)/len(dates) for k, t in toks.items()}
         out['daty'][f] = row
         print(f.ljust(28) + ''.join(f"{row[k]:10.2f}" for k in toks))
-    print('\nKWOTY (40 kwot)'); print(hdr)
+    print('\nKWOTY (40 kwot na zapis, zakres realistyczny)'); print(hdr)
     for f, fn in A.items():
+        amts = amount_sets[f]
         row = {k: sum(n(t, fn(a)) for a in amts)/len(amts) for k, t in toks.items()}
         out['kwoty'][f] = row
+        out['samples'][f] = [fn(a) for a in amts[:3]]
         print(f.ljust(28) + ''.join(f"{row[k]:10.2f}" for k in toks))
     print('\nPARAGRAF (tokeny)'); print(hdr)
     for ptn in P:

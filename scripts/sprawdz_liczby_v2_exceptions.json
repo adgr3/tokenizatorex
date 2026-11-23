@@ -114,6 +114,7 @@
     "008",
     "009",
     "95%",
+    "999",
     "+4,39%",
     "+6,18%",
     "+8,35%",
@@ -159,6 +160,29 @@
     "+0,4885%",
     "0,4885"
   ],
+  "generated_derived_numbers": [
+    "-25,85%",
+    "-23,96%",
+    "-59,15%",
+    "-33,80%",
+    "+4,69%",
+    "-52,56%",
+    "+26,51%",
+    "+78,88%",
+    "+62,56%",
+    "+22,67%",
+    "+70,91%",
+    "+27,71%",
+    "+57,67%",
+    "+16,23%",
+    "+43,83%",
+    "+16,22%",
+    "+32,02%",
+    "+18,47%",
+    "+55,03%",
+    "23,2%",
+    "33,0%"
+  ],
   "allowed_context_patterns": [
     "SHA-256",
     "sha256",
@@ -191,5 +215,5 @@
     "20261123",
     "20261119"
   ],
-  "notes": "Wyjątki: numery paragrafów/art., lata, rozmiary modeli/słowników, identyfikatory, daty zadania, stałe protokołu. Każdy wyjątek musi być uzasadniony kontekstem. R3: delty procentowe eksperymentu JSON wyliczone skryptem z results/tkx_v21_*.json (selection_r2/test/wzorce)."
+  "notes": "Wyjątki: numery paragrafów/art., lata, rozmiary modeli/słowników, identyfikatory, daty zadania, stałe protokołu. Każdy wyjątek musi być uzasadniony kontekstem. R4: 999 = górna granica zakresu losowania kwot 'tys.' (parametr, nie wynik); delty procentowe wyliczane przez generator są w generated_derived_numbers, a test tests/test_generator_sync.py pilnuje, że pliki raportów są dokładnie wynikiem generatora."
 }

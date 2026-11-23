@@ -1,6 +1,6 @@
 # Znane wady TOKENIZATOREX (v2.0)
 
-Każda wada z dowodem i propozycją naprawy (v2.1). Liczby z `results/tkx_v2_*.json`.
+Każda wada z dowodem i propozycją naprawy (v2.1). Liczby z `results/*.json`.
 
 ## W1. Znak `§` rozbity w wariancie V3-32k
 

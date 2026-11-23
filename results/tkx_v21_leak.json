@@ -1904,7 +1904,9 @@
     "docs_over_50pct_or_exact": 0,
     "corpus_docs_over_50pct_or_exact": 0,
     "wzorce_json_exact": 0,
-    "wzorce_json_note": "10 wzorcow JSON: 0 kopii; wysokie pokrycie to wspolny szkielet wywolania, nie przeciek przykladu",
-    "status": "OK"
+    "pattern_docs_over_50pct": 2,
+    "pattern_max_coverage": 0.5441176470588235,
+    "wzorce_json_note": "10 wzorcow JSON: 0 kopii; 2/10 > 50% pokrycia 13-gramow to wspolny szkielet wywolania, nie przeciek przykladu",
+    "status": "CZESCIOWE_POKRYCIE_SZKIELETEM"
   }
 }

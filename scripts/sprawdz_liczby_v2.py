@@ -24,6 +24,8 @@ DEFAULT_REPORTS = [
     "tkx_v2/ZNANE_WADY.md",
     "tkx_v2/KARTA_WYMAGAN.md",
     "tkx_v2/KORPUS_DOMENOWY.md",
+    "tkx_v21/RAPORT.md",
+    "tkx_v21/RAPORT_PROSTY.md",
 ]
 
 
@@ -85,7 +87,7 @@ def load_exceptions():
 def is_allowed(num_str: str, context: str, exc: dict) -> bool:
     norm = num_str.strip()
     norm_simple = norm.replace(" ", "").replace("\u00a0", "")
-    for a in exc.get("allowed_numbers", []):
+    for a in list(exc.get("allowed_numbers", [])) + list(exc.get("generated_derived_numbers", [])):
         if norm == str(a) or norm_simple == str(a).replace(" ", ""):
             return True
     # year-like 4 digits in dates/ranges often allowed by context patterns
@@ -156,7 +158,9 @@ def scan_file(path: Path, data_vals, data_raw, exc):
     errors = []
     warnings = []
     for i, line in enumerate(text.splitlines(), 1):
-        # skip code fences markers? keep content - numbers in code may matter; skip URLs partly by context
+        # Liczby w kodzie inline (np. tokeny `202|6|-01|-02`) nie są twierdzeniami
+        # raportowymi; maskujemy je, żeby nie robić fałszywych błędów.
+        line = re.sub(r"`[^`]*`", lambda m: " " * len(m.group(0)), line)
         for m in NUM_RE.finditer(line):
             num_str = m.group(0)
             # ignore obvious version-like in identifiers handled poorly? keep general

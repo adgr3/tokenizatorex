@@ -8,4 +8,6 @@ Martwe tokeny: V0-32k 8,12%, V3-32k 7,83%, Slayer1B-1.08 35,03% (`results/tkx_v2
 
 Znaki specjalne: V3-32k nie ma `§` jako jednego tokena (2 tokeny). V0-32k ma `§` jako 1 token. Dane: `results/tkx_v2_special_chars.json`.
 
-Kandydat domyślny v2.0: **V0-32k**. V3-32k to wariant eksperymentalny z cięciem cyfr i wadami (NFD→NFC, brak `§` jako 1 token, gorsza fertility na większości źródeł). Ostateczny wybór po TKX-D (małe modele, BPB, ≥ 3 seedy). Fertility to warunek konieczny, nie dowód jakości modelu.
+Round-trip: V0-32k i Slayer 0/700; V3-32k **4/700** (dokumenty NFD; 3 BZP + 1 KIO).
+
+Kandydat domyślny v2.0: **V0-32k**. V3-32k to wariant eksperymentalny z cięciem cyfr i wadami (NFD→NFC, brak `§` jako 1 token, gorsza fertility na wszystkich 8 źródłach). Ostateczny wybór po TKX-D (małe modele, BPB, ≥ 3 seedy). Fertility to warunek konieczny, nie dowód jakości modelu.

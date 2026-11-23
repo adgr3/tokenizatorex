@@ -8,10 +8,11 @@
 - JSON na teście dla najbliższego (V0J2-32k): tc1 -23,22%; nowe narzędzia -33,04%.
 - „§”: 1 token w V0R i we wszystkich wariantach V0J.
 - Tokeny specjalne: 6/6 atomowych w V0J5S, ale na JSON +0,22% tokenów względem V0J5 (nie zastępują słownika JSON).
-- Przeciek: OK.
+- Przeciek: **częściowe pokrycie szkieletem** (2/10 > 50%, max 54,4%); korpus tc1+held-out: 0/300 >50%, 0 exact.
+- Zysk held-out: łącznie -33,04%; compact -43,75%, pretty -28,58%, same wyniki narzędzi -10,51% — duża część to wspólny szkielet wywołania.
+- 10 wzorców JSON: wszystkie 10: 321→135 tokenów (-57,94%); 8 bez >50% pokrycia 234→111 (-52,56%).
 - Round-trip: 0 błędów na 700 przypadków.
 
 Poprawka 2 (po fakcie): na 149 ogłoszeniach grantowych V0J2-32k rośnie tylko o 0,20% (CI V0R 1,3798–1,4381 vs V0J2-32k 1,3828–1,4401), więc jest kandydatem warunkowym do TKX-D, a nie wybranym według protokołu. Ta poprawka jest jawna i po fakcie; oryginalny wynik „brak kandydata” zostaje na pierwszym miejscu. Testy JSON są na naszych danych syntetycznych (tc1 i generator), więc potwierdzenie musi przyjść z TKX-D.
 
 **Co dalej:** sprawdzić V0J2 (i ewentualnie V0J5) na małym modelu (TKX-D), z bramką opartą na CI, nie tylko na punkcie. Automaty nie zastępują decyzji właściciela.
-

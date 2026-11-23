@@ -15,7 +15,9 @@ import json
 import os
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(REPO, "tkx_v21", "dane")
+DATA = os.environ.get("TKX_V21_DATA", os.path.join(REPO, "tkx_v21", "dane"))
+if not os.path.isdir(DATA):
+    DATA = r"D:\VPS\fabryka\tkx-json\tkx_v21\dane"
 RESULTS = os.path.join(REPO, "results")
 TC1 = r"D:\VPS\fabryka\tc1\dane"
 N = 13
@@ -121,9 +123,13 @@ def main():
         "docs_over_50pct_or_exact": corpus_leaks + pattern_exact,
         "corpus_docs_over_50pct_or_exact": corpus_leaks,
         "wzorce_json_exact": pattern_exact,
-        "wzorce_json_note": ("10 wzorcow JSON: 0 kopii; wysokie pokrycie to wspolny "
-                             "szkielet wywolania, nie przeciek przykladu"),
-        "status": "PRZECIEK" if (corpus_leaks or pattern_exact) else "OK",
+        "pattern_docs_over_50pct": out["test_docs"]["wzorce_json"]["docs_over_50pct"],
+        "pattern_max_coverage": out["test_docs"]["wzorce_json"]["max_coverage"],
+        "wzorce_json_note": ("10 wzorcow JSON: 0 kopii; 2/10 > 50% pokrycia 13-gramow "
+                             "to wspolny szkielet wywolania, nie przeciek przykladu"),
+        "status": ("PRZECIEK" if (corpus_leaks or pattern_exact)
+                   else ("CZESCIOWE_POKRYCIE_SZKIELETEM"
+                         if out["test_docs"]["wzorce_json"]["docs_over_50pct"] else "OK")),
     }
     with open(os.path.join(RESULTS, "tkx_v21_leak.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
