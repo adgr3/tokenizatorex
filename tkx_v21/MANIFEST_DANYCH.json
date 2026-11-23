@@ -1,0 +1,110 @@
+{
+  "seed": 20261123,
+  "stability_train": {
+    "path": "data\\stability_train.txt",
+    "bytes": 400160750,
+    "sha256": "b0e7447cf94f8e0fa03edfeb3f6f10a2e63c9e32037f086cf5a434709ae6e558",
+    "source": "https://huggingface.co/datasets/SlayerLab/hplt-v3-pl-cleaned/resolve/main/data/european_hplt_v3_pl_bin8_5_p2.parquet",
+    "reused": true
+  },
+  "tc1_json_train": {
+    "path": "tkx_v21\\dane\\tc1_json_train.txt",
+    "docs": 1040,
+    "bytes": 150099,
+    "sha256": "1b3c4d8e8536c2c7aba94e4289e65a0ebff49546e16e5abbd536fb71478f9e2f",
+    "source": "D:\\VPS\\fabryka\\tc1\\dane\\train.jsonl"
+  },
+  "json_generic": {
+    "train_examples": 150000,
+    "heldout_dev": 100,
+    "heldout_test": 100,
+    "train_tools": [
+      "create_task",
+      "generate_report",
+      "dodaj_kontakt",
+      "sprawdz_bzp",
+      "fetch_exchange_rate",
+      "podaj_termin",
+      "lookup_company",
+      "pobierz_dokument",
+      "download_file",
+      "send_sms",
+      "utworz_oferte",
+      "zapisz_plik",
+      "utworz_zadanie",
+      "wyslij_email",
+      "pobierz_slownik",
+      "send_email",
+      "sprawdz_regon",
+      "create_invoice",
+      "pobierz_uchwale",
+      "pobierz_zalacznik",
+      "check_status",
+      "szukaj_konkursow",
+      "zarejestruj_wniosek",
+      "zaplanuj_spotkanie",
+      "podaj_statystyki",
+      "update_contact",
+      "wyszukaj_firme",
+      "pobierz_liste",
+      "schedule_meeting",
+      "sprawdz_cpv",
+      "przelicz_walute",
+      "sprawdz_krs",
+      "translate_text",
+      "kalkuluj_kwote",
+      "utworz_fakture",
+      "calculate_total",
+      "send_notification",
+      "search_documents",
+      "wygeneruj_raport",
+      "pobierz_pogode"
+    ],
+    "heldout_tools": [
+      "archive_record",
+      "convert_currency",
+      "fetch_invoice",
+      "validate_address",
+      "upload_document",
+      "list_projects",
+      "extract_entities",
+      "summarize_text",
+      "get_weather",
+      "create_calendar_event"
+    ],
+    "licencja": "dane syntetyczne wygenerowane lokalnie (nasze)"
+  },
+  "mixtures": {
+    "V0J2-32k": {
+      "path": "data\\mixed\\V0J2-32k.txt",
+      "hplt_bytes": 300000212,
+      "json_bytes": 6122375,
+      "bytes": 306122587,
+      "json_share_requested": 0.02,
+      "json_share_actual": 0.019999749316113025,
+      "json_blocks": 120,
+      "sha256": "3ba5ea6154410241f27df3bd5838aff47577d21441063a8bc3e674b537029255"
+    },
+    "V0J5-32k": {
+      "path": "data\\mixed\\V0J5-32k.txt",
+      "hplt_bytes": 300000212,
+      "json_bytes": 15789418,
+      "bytes": 315789630,
+      "json_share_requested": 0.05,
+      "json_share_actual": 0.0499997989167662,
+      "json_blocks": 120,
+      "sha256": "41b4dca331e3b70307b89a016de0e1156d97ccffdb24f572d36c660e2cc88f3c"
+    },
+    "V0J10-32k": {
+      "path": "data\\mixed\\V0J10-32k.txt",
+      "hplt_bytes": 300000212,
+      "json_bytes": 33333191,
+      "bytes": 333333403,
+      "json_share_requested": 0.1,
+      "json_share_actual": 0.0999995521000936,
+      "json_blocks": 120,
+      "sha256": "230b9a9a913cd7b2fd5c63c6cdf828f689da2b9bf73a903afcfdb377111d1be7"
+    }
+  },
+  "note": "pełne teksty w data/ i tkx_v21/dane/ poza gitem; w repo metadane"
+}
