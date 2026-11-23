@@ -1,0 +1,58 @@
+{
+  "tokenizers": {
+    "V0R-32k": {
+      "vocab": 32000,
+      "considered": 32000,
+      "dead": 2595,
+      "dead_pct": 8.109375,
+      "special_excluded": 0
+    },
+    "V0-32k": {
+      "vocab": 32000,
+      "considered": 32000,
+      "dead": 2595,
+      "dead_pct": 8.109375,
+      "special_excluded": 0
+    },
+    "V0J2-32k": {
+      "vocab": 32000,
+      "considered": 32000,
+      "dead": 3035,
+      "dead_pct": 9.484375,
+      "special_excluded": 0
+    },
+    "V0J5-32k": {
+      "vocab": 32000,
+      "considered": 32000,
+      "dead": 3479,
+      "dead_pct": 10.871875,
+      "special_excluded": 0
+    },
+    "V0J10-32k": {
+      "vocab": 32000,
+      "considered": 32000,
+      "dead": 3736,
+      "dead_pct": 11.675,
+      "special_excluded": 0
+    },
+    "V0J5S-32k": {
+      "vocab": 32004,
+      "considered": 32004,
+      "dead": 3486,
+      "dead_pct": 10.89238845144357,
+      "special_excluded": 0
+    },
+    "Slayer1B-1.08": {
+      "vocab": 32768,
+      "considered": 32768,
+      "dead": 11453,
+      "dead_pct": 34.9517822265625,
+      "special_excluded": 0
+    },
+    "GPT-4o-o200k": {
+      "vocab": null,
+      "dead": null,
+      "note": "brak get_vocab (tiktoken)"
+    }
+  }
+}

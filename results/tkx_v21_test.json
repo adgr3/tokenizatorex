@@ -1,0 +1,450 @@
+{
+  "stage": "test",
+  "seed": 20261123,
+  "tokenizers": {
+    "V0R-32k": {
+      "json_test_combined": {
+        "docs": 300,
+        "words": 26574,
+        "tokens": 104382,
+        "fertility": 3.927974712124633
+      },
+      "json_test_json_only_combined": {
+        "docs": 220,
+        "words": 4987,
+        "tokens": 28177,
+        "fertility": 5.650090234609986
+      }
+    },
+    "V0-32k": {
+      "json_test_combined": {
+        "docs": 300,
+        "words": 26574,
+        "tokens": 104382,
+        "fertility": 3.927974712124633
+      },
+      "json_test_json_only_combined": {
+        "docs": 220,
+        "words": 4987,
+        "tokens": 28177,
+        "fertility": 5.650090234609986
+      }
+    },
+    "V0J2-32k": {
+      "json_test_combined": {
+        "docs": 300,
+        "words": 26574,
+        "tokens": 79311,
+        "fertility": 2.9845337547979227
+      },
+      "json_test_json_only_combined": {
+        "docs": 220,
+        "words": 4987,
+        "tokens": 16546,
+        "fertility": 3.3178263485061157
+      }
+    },
+    "V0J5-32k": {
+      "json_test_combined": {
+        "docs": 300,
+        "words": 26574,
+        "tokens": 77341,
+        "fertility": 2.910401143975314
+      },
+      "json_test_json_only_combined": {
+        "docs": 220,
+        "words": 4987,
+        "tokens": 15857,
+        "fertility": 3.1796671345498297
+      }
+    },
+    "V0J10-32k": {
+      "json_test_combined": {
+        "docs": 300,
+        "words": 26574,
+        "tokens": 75126,
+        "fertility": 2.827048995258523
+      },
+      "json_test_json_only_combined": {
+        "docs": 220,
+        "words": 4987,
+        "tokens": 14219,
+        "fertility": 2.8512131542009223
+      }
+    },
+    "V0J5S-32k": {
+      "json_test_combined": {
+        "docs": 300,
+        "words": 26574,
+        "tokens": 77661,
+        "fertility": 2.9224429893881236
+      },
+      "json_test_json_only_combined": {
+        "docs": 220,
+        "words": 4987,
+        "tokens": 16497,
+        "fertility": 3.308000802085422
+      }
+    },
+    "Slayer1B-1.08": {
+      "json_test_combined": {
+        "docs": 300,
+        "words": 26574,
+        "tokens": 109349,
+        "fertility": 4.114886731391586
+      },
+      "json_test_json_only_combined": {
+        "docs": 220,
+        "words": 4987,
+        "tokens": 28231,
+        "fertility": 5.660918387808302
+      }
+    },
+    "GPT-4o-o200k": {
+      "json_test_combined": {
+        "docs": 300,
+        "words": 26574,
+        "tokens": 102273,
+        "fertility": 3.8486114247008354
+      },
+      "json_test_json_only_combined": {
+        "docs": 220,
+        "words": 4987,
+        "tokens": 24999,
+        "fertility": 5.01283336675356
+      }
+    }
+  },
+  "sources": {
+    "tc1_test": {
+      "docs": 200,
+      "words": 25645,
+      "tokenizers": {
+        "V0R-32k": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 95852,
+          "bytes": 254699,
+          "tokens_per_doc": 479.26,
+          "fertility": 3.737648664457009,
+          "bytes_per_token": 2.6572111171389223,
+          "ci": [
+            3.6238991311131916,
+            3.823984439756071
+          ]
+        },
+        "V0-32k": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 95852,
+          "bytes": 254699,
+          "tokens_per_doc": 479.26,
+          "fertility": 3.737648664457009,
+          "bytes_per_token": 2.6572111171389223,
+          "ci": [
+            3.6238991311131916,
+            3.823984439756071
+          ]
+        },
+        "V0J2-32k": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 73599,
+          "bytes": 254699,
+          "tokens_per_doc": 367.995,
+          "fertility": 2.869916162994736,
+          "bytes_per_token": 3.460631258576883,
+          "ci": [
+            2.8139693333915097,
+            2.9151441586499462
+          ]
+        },
+        "V0J5-32k": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 71727,
+          "bytes": 254699,
+          "tokens_per_doc": 358.635,
+          "fertility": 2.7969194774809902,
+          "bytes_per_token": 3.550950130355375,
+          "ci": [
+            2.7442689991431917,
+            2.8400017015137857
+          ]
+        },
+        "V0J10-32k": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 69541,
+          "bytes": 254699,
+          "tokens_per_doc": 347.705,
+          "fertility": 2.7116786898030805,
+          "bytes_per_token": 3.6625731582807264,
+          "ci": [
+            2.666276873663403,
+            2.750445236986084
+          ]
+        },
+        "V0J5S-32k": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 71887,
+          "bytes": 254699,
+          "tokens_per_doc": 359.435,
+          "fertility": 2.803158510430883,
+          "bytes_per_token": 3.5430467261118146,
+          "ci": [
+            2.7499592704151827,
+            2.846577929411785
+          ]
+        },
+        "Slayer1B-1.08": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 102191,
+          "bytes": 254699,
+          "tokens_per_doc": 510.955,
+          "fertility": 3.9848313511405733,
+          "bytes_per_token": 2.4923819123014748,
+          "ci": [
+            3.880516981901834,
+            4.068758278091392
+          ]
+        },
+        "GPT-4o-o200k": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 96273,
+          "bytes": 254699,
+          "tokens_per_doc": 481.365,
+          "fertility": 3.7540651199064143,
+          "bytes_per_token": 2.6455911834055237,
+          "ci": [
+            3.6918968355019524,
+            3.8049638240722743
+          ]
+        }
+      }
+    },
+    "json_generic_test": {
+      "docs": 100,
+      "words": 929,
+      "tokenizers": {
+        "V0R-32k": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 8530,
+          "bytes": 16724,
+          "tokens_per_doc": 85.3,
+          "fertility": 9.181916038751346,
+          "bytes_per_token": 1.960609613130129,
+          "ci": [
+            7.913147371820968,
+            10.683013088276246
+          ]
+        },
+        "V0-32k": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 8530,
+          "bytes": 16724,
+          "tokens_per_doc": 85.3,
+          "fertility": 9.181916038751346,
+          "bytes_per_token": 1.960609613130129,
+          "ci": [
+            7.913147371820968,
+            10.683013088276246
+          ]
+        },
+        "V0J2-32k": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 5712,
+          "bytes": 16724,
+          "tokens_per_doc": 57.12,
+          "fertility": 6.148546824542519,
+          "bytes_per_token": 2.9278711484593836,
+          "ci": [
+            5.477151347504585,
+            6.977228763572993
+          ]
+        },
+        "V0J5-32k": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 5614,
+          "bytes": 16724,
+          "tokens_per_doc": 56.14,
+          "fertility": 6.043057050592035,
+          "bytes_per_token": 2.9789811186319914,
+          "ci": [
+            5.385528270509978,
+            6.864401819699626
+          ]
+        },
+        "V0J10-32k": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 5585,
+          "bytes": 16724,
+          "tokens_per_doc": 55.85,
+          "fertility": 6.01184068891281,
+          "bytes_per_token": 2.994449418084154,
+          "ci": [
+            5.369308697881067,
+            6.818048150875107
+          ]
+        },
+        "V0J5S-32k": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 5774,
+          "bytes": 16724,
+          "tokens_per_doc": 57.74,
+          "fertility": 6.2152852529601725,
+          "bytes_per_token": 2.896432282646346,
+          "ci": [
+            5.505487804878049,
+            7.086453500394422
+          ]
+        },
+        "Slayer1B-1.08": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 7158,
+          "bytes": 16724,
+          "tokens_per_doc": 71.58,
+          "fertility": 7.705059203444564,
+          "bytes_per_token": 2.3364068175468007,
+          "ci": [
+            6.691411332977184,
+            8.927840476684656
+          ]
+        },
+        "GPT-4o-o200k": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 6000,
+          "bytes": 16724,
+          "tokens_per_doc": 60.0,
+          "fertility": 6.458557588805167,
+          "bytes_per_token": 2.787333333333333,
+          "ci": [
+            5.701891050542987,
+            7.3710934693754835
+          ]
+        }
+      }
+    },
+    "tc1_test_json_only": {
+      "docs": 120,
+      "words": 4058,
+      "tokenizers": {
+        "V0R-32k": {
+          "docs": 120,
+          "words": 4058,
+          "tokens": 19647,
+          "bytes": 46856,
+          "tokens_per_doc": 163.725,
+          "fertility": 4.841547560374568,
+          "bytes_per_token": 2.3848933679442155,
+          "ci": [
+            4.718905052551486,
+            4.988355162778943
+          ]
+        },
+        "V0-32k": {
+          "docs": 120,
+          "words": 4058,
+          "tokens": 19647,
+          "bytes": 46856,
+          "tokens_per_doc": 163.725,
+          "fertility": 4.841547560374568,
+          "bytes_per_token": 2.3848933679442155,
+          "ci": [
+            4.718905052551486,
+            4.988355162778943
+          ]
+        },
+        "V0J2-32k": {
+          "docs": 120,
+          "words": 4058,
+          "tokens": 10834,
+          "bytes": 46856,
+          "tokens_per_doc": 90.28333333333333,
+          "fertility": 2.669788072942336,
+          "bytes_per_token": 4.324903082887207,
+          "ci": [
+            2.6320441071164837,
+            2.709469950807307
+          ]
+        },
+        "V0J5-32k": {
+          "docs": 120,
+          "words": 4058,
+          "tokens": 10243,
+          "bytes": 46856,
+          "tokens_per_doc": 85.35833333333333,
+          "fertility": 2.524149827501232,
+          "bytes_per_token": 4.574441081714341,
+          "ci": [
+            2.487498142432556,
+            2.563270819635318
+          ]
+        },
+        "V0J10-32k": {
+          "docs": 120,
+          "words": 4058,
+          "tokens": 8634,
+          "bytes": 46856,
+          "tokens_per_doc": 71.95,
+          "fertility": 2.1276490882207986,
+          "bytes_per_token": 5.426916840398425,
+          "ci": [
+            2.0782362380116033,
+            2.1820198493395835
+          ]
+        },
+        "V0J5S-32k": {
+          "docs": 120,
+          "words": 4058,
+          "tokens": 10723,
+          "bytes": 46856,
+          "tokens_per_doc": 89.35833333333333,
+          "fertility": 2.6424346968950223,
+          "bytes_per_token": 4.369672666231465,
+          "ci": [
+            2.5981003751620126,
+            2.690961389180113
+          ]
+        },
+        "Slayer1B-1.08": {
+          "docs": 120,
+          "words": 4058,
+          "tokens": 21073,
+          "bytes": 46856,
+          "tokens_per_doc": 175.60833333333332,
+          "fertility": 5.19295219319862,
+          "bytes_per_token": 2.2235087552792674,
+          "ci": [
+            5.091068877839628,
+            5.313479016412627
+          ]
+        },
+        "GPT-4o-o200k": {
+          "docs": 120,
+          "words": 4058,
+          "tokens": 18999,
+          "bytes": 46856,
+          "tokens_per_doc": 158.325,
+          "fertility": 4.681862986692952,
+          "bytes_per_token": 2.466235065003421,
+          "ci": [
+            4.606096778010932,
+            4.768630799887245
+          ]
+        }
+      }
+    }
+  }
+}

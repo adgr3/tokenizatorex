@@ -1,0 +1,220 @@
+{
+  "names": [
+    "<|system|>",
+    "<|uzytkownik|>",
+    "<|asystent|>",
+    "<|narzedzie|>",
+    "<tool_call>",
+    "</tool_call>"
+  ],
+  "tokenizers": {
+    "V0R-32k": {
+      "<|system|>": {
+        "tokens": 5,
+        "one_token": false
+      },
+      "<|uzytkownik|>": {
+        "tokens": 8,
+        "one_token": false
+      },
+      "<|asystent|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<|narzedzie|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<tool_call>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "</tool_call>": {
+        "tokens": 8,
+        "one_token": false
+      }
+    },
+    "V0-32k": {
+      "<|system|>": {
+        "tokens": 5,
+        "one_token": false
+      },
+      "<|uzytkownik|>": {
+        "tokens": 8,
+        "one_token": false
+      },
+      "<|asystent|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<|narzedzie|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<tool_call>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "</tool_call>": {
+        "tokens": 8,
+        "one_token": false
+      }
+    },
+    "V0J2-32k": {
+      "<|system|>": {
+        "tokens": 5,
+        "one_token": false
+      },
+      "<|uzytkownik|>": {
+        "tokens": 8,
+        "one_token": false
+      },
+      "<|asystent|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<|narzedzie|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<tool_call>": {
+        "tokens": 1,
+        "one_token": true
+      },
+      "</tool_call>": {
+        "tokens": 1,
+        "one_token": true
+      }
+    },
+    "V0J5-32k": {
+      "<|system|>": {
+        "tokens": 5,
+        "one_token": false
+      },
+      "<|uzytkownik|>": {
+        "tokens": 8,
+        "one_token": false
+      },
+      "<|asystent|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<|narzedzie|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<tool_call>": {
+        "tokens": 1,
+        "one_token": true
+      },
+      "</tool_call>": {
+        "tokens": 1,
+        "one_token": true
+      }
+    },
+    "V0J10-32k": {
+      "<|system|>": {
+        "tokens": 5,
+        "one_token": false
+      },
+      "<|uzytkownik|>": {
+        "tokens": 8,
+        "one_token": false
+      },
+      "<|asystent|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<|narzedzie|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<tool_call>": {
+        "tokens": 1,
+        "one_token": true
+      },
+      "</tool_call>": {
+        "tokens": 1,
+        "one_token": true
+      }
+    },
+    "V0J5S-32k": {
+      "<|system|>": {
+        "tokens": 1,
+        "one_token": true
+      },
+      "<|uzytkownik|>": {
+        "tokens": 1,
+        "one_token": true
+      },
+      "<|asystent|>": {
+        "tokens": 1,
+        "one_token": true
+      },
+      "<|narzedzie|>": {
+        "tokens": 1,
+        "one_token": true
+      },
+      "<tool_call>": {
+        "tokens": 1,
+        "one_token": true
+      },
+      "</tool_call>": {
+        "tokens": 1,
+        "one_token": true
+      }
+    },
+    "Slayer1B-1.08": {
+      "<|system|>": {
+        "tokens": 3,
+        "one_token": false
+      },
+      "<|uzytkownik|>": {
+        "tokens": 6,
+        "one_token": false
+      },
+      "<|asystent|>": {
+        "tokens": 5,
+        "one_token": false
+      },
+      "<|narzedzie|>": {
+        "tokens": 6,
+        "one_token": false
+      },
+      "<tool_call>": {
+        "tokens": 6,
+        "one_token": false
+      },
+      "</tool_call>": {
+        "tokens": 6,
+        "one_token": false
+      }
+    },
+    "GPT-4o-o200k": {
+      "<|system|>": {
+        "tokens": 5,
+        "one_token": false
+      },
+      "<|uzytkownik|>": {
+        "tokens": 8,
+        "one_token": false
+      },
+      "<|asystent|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<|narzedzie|>": {
+        "tokens": 7,
+        "one_token": false
+      },
+      "<tool_call>": {
+        "tokens": 4,
+        "one_token": false
+      },
+      "</tool_call>": {
+        "tokens": 4,
+        "one_token": false
+      }
+    }
+  }
+}

@@ -94,6 +94,21 @@ AREAS = ["cyfryzacja", "edukacja", "zdrowie", "kultura", "środowisko",
 VOIVODESHIPS = ["mazowieckie", "małopolskie", "pomorskie", "dolnośląskie",
                 "wielkopolskie", "łódzkie", "lubelskie", "zachodniopomorskie"]
 CURRENCIES = ["PLN", "EUR", "USD", "CHF", "GBP"]
+HELDOUT_CITIES = ["Sopot", "Zakopane", "Olsztyn", "Kielce", "Opole", "Gorzów Wielkopolski",
+                  "Zielona Góra", "Nowy Sącz", "Elbląg", "Koszalin", "Płock", "Sieradz"]
+HELDOUT_PROPERTIES = [
+    ("lokalizacja", "string"), ("data_wizyty", "date"), ("budzet_pln", "amount"),
+    ("identyfikator_zlecenia", "string"), ("tryb", "string"), ("lista_pozycji", "array_object"),
+    ("odbiorca", "email"), ("temat", "string"), ("zalaczniki", "array_string"),
+    ("metryka", "string"), ("poziom", "integer"), ("notatka_robocza", "string"),
+    ("czas_trwania", "integer"), ("strefa", "string"), ("waluta_zrodlowa", "currency"),
+    ("waluta_docelowa", "currency"), ("kwota_zrodlowa", "amount"), ("rabat_procent", "number"),
+    ("miasto_docelowe", "string"), ("ulica_docelowa", "string"), ("kod_docelowy", "string"),
+    ("kanal", "string"), ("tresc_skrocona", "string"), ("znacznik_czasu", "date"),
+    ("poziom_dostepu", "string"), ("wersja", "integer"), ("zrodlo", "string"),
+    ("jezyk", "string"), ("format_wyniku", "string"), ("opiekun", "string"),
+    ("status_zlecenia", "status"), ("priorytet_wysoki", "boolean"), ("indeks", "integer"),
+]
 CPV = ["45000000-7", "48000000-8", "72000000-5", "30000000-9", "85000000-9",
        "79000000-4", "55500000-5", "90910000-9", "33100000-1", "80500000-9"]
 STATUSES = ["nowy", "w toku", "zaakceptowany", "odrzucony", "wstrzymany", "zakończony"]
@@ -351,6 +366,157 @@ def _result(t: dict[str, Any], rng: random.Random) -> str:
     return json.dumps(obj, ensure_ascii=False, indent=rng.choice([None, 2]))
 
 
+def _heldout_value(kind: str, rng: random.Random) -> Any:
+    if kind == "string":
+        return rng.choice(["Z-8842/27", "wersja robocza", "kanał główny", "opis skrócony",
+                           "zlecenie wewnętrzne", "format zwarty", "język polski"])
+    if kind == "city":
+        return rng.choice(HELDOUT_CITIES)
+    if kind == "street":
+        return rng.choice(["ul. Morska 14", "ul. Górska 3", "ul. Parkowa 27",
+                           "ul. Portowa 8", "ul. Zielona 19"])
+    if kind == "postal":
+        return f"{rng.randint(10, 89):02d}-{rng.randint(100, 999):03d}"
+    if kind == "date":
+        return f"2027-{rng.randint(1, 12):02d}-{rng.randint(1, 28):02d}"
+    if kind == "amount":
+        return f"{rng.randint(1000, 900000)},{rng.randint(0, 99):02d} PLN"
+    if kind == "metric":
+        return rng.choice(["czas", "koszt", "jakosc", "kompletnosc"])
+    if kind == "mode":
+        return rng.choice(["szybki", "pelny", "roboczy"])
+    if kind == "language":
+        return rng.choice(["polski", "angielski", "niemiecki"])
+    if kind == "format":
+        return rng.choice(["zwarty", "czytelny", "tabela"])
+    if kind == "channel":
+        return rng.choice(["email", "sms", "portal", "api"])
+    if kind == "timezone":
+        return rng.choice(["Europe/Warsaw", "UTC", "Europe/Berlin"])
+    if kind == "owner":
+        return rng.choice(["zespol_a", "zespol_b", "koordynator"])
+    if kind == "source":
+        return rng.choice(["bip", "api", "import", "formularz"])
+    if kind == "text":
+        return rng.choice(["krotki opis sprawy", "notatka robocza", "tresc do streszczenia"])
+    if kind == "currency":
+        return rng.choice(["PLN", "EUR", "USD", "CZK", "SEK"])
+    if kind == "array_object":
+        return [{"pozycja": rng.choice(["pozycja A", "pozycja B", "pozycja C"]),
+                 "liczba": rng.randint(1, 9), "cena_netto": rng.randint(20, 900)}
+                for _ in range(rng.randint(1, 3))]
+    if kind == "array_string":
+        return rng.sample(["zalacznik-1.pdf", "zalacznik-2.docx", "zalacznik-3.csv",
+                           "zalacznik-4.txt"], rng.randint(1, 3))
+    if kind == "integer":
+        return rng.randint(10, 900)
+    if kind == "number":
+        return round(rng.uniform(0, 40), 1)
+    if kind == "boolean":
+        return rng.choice([True, False])
+    if kind == "email":
+        return rng.choice(["odbiorca@example.net", "zespol@example.org", "kontakt@example.edu"])
+    if kind == "status":
+        return rng.choice(["przyjety", "w realizacji", "zamkniety"])
+    raise ValueError(kind)
+
+
+def _heldout_specs(held_tools: list[dict[str, Any]], rng: random.Random) -> None:
+    """Held-out: inne nazwy pól i wartości niż w treningu (ale ta sama gramatyka JSON)."""
+    tmap = {"date": "string", "amount": "string", "array_object": "array",
+            "array_string": "array", "email": "string", "status": "string",
+            "integer": "integer", "number": "number", "boolean": "boolean",
+            "currency": "string", "string": "string"}
+    for t in held_tools:
+        n = rng.randint(2, 5)
+        chosen = rng.sample(HELDOUT_PROPERTIES, n)
+        props: dict[str, Any] = {}
+        for name, kind in chosen:
+            spec: dict[str, Any] = {"type": tmap[kind],
+                                    "description": "Pole zestawu held-out."}
+            if kind == "date":
+                spec["format"] = "date"
+            elif kind == "email":
+                spec["format"] = "email"
+            elif kind == "array_object":
+                spec["items"] = {"type": "object", "properties": {
+                    "pozycja": {"type": "string"}, "liczba": {"type": "integer"},
+                    "cena_netto": {"type": "number"}}}
+            elif kind == "array_string":
+                spec["items"] = {"type": "string"}
+            props[name] = spec
+        t["schema"] = {"type": "object", "properties": props,
+                       "required": [chosen[0][0]], "additionalProperties": False}
+
+
+def _heldout_example(t: dict[str, Any], rng: random.Random) -> tuple[str, str]:
+    args = {}
+    for name, spec in t["schema"]["properties"].items():
+        kind = "string"
+        ty = spec.get("type")
+        if ty == "string":
+            kind = "date" if spec.get("format") == "date" else (
+                "email" if spec.get("format") == "email" else "string")
+            if "waluta" in name:
+                kind = "currency"
+            elif "budzet" in name or "kwota" in name:
+                kind = "amount"
+            elif "data_" in name or name.startswith("znacznik"):
+                kind = "date"
+            elif "rabat" in name:
+                kind = "number"
+            elif "odbiorca" in name:
+                kind = "email"
+            elif name.startswith("miasto") or name == "lokalizacja":
+                kind = "city"
+            elif name.startswith("ulica"):
+                kind = "street"
+            elif name.startswith("kod_"):
+                kind = "postal"
+            elif name.startswith("status"):
+                kind = "status"
+            elif name == "metryka":
+                kind = "metric"
+            elif name == "tryb":
+                kind = "mode"
+            elif name == "jezyk":
+                kind = "language"
+            elif name == "format_wyniku":
+                kind = "format"
+            elif name == "kanal":
+                kind = "channel"
+            elif name == "strefa":
+                kind = "timezone"
+            elif name == "opiekun":
+                kind = "owner"
+            elif name == "zrodlo":
+                kind = "source"
+            elif name == "tresc_skrocona":
+                kind = "text"
+        elif ty == "array":
+            kind = "array_object" if spec.get("items", {}).get("type") == "object" else "array_string"
+        elif ty == "integer":
+            kind = "integer"
+        elif ty == "number":
+            kind = "number"
+        elif ty == "boolean":
+            kind = "boolean"
+        args[name] = _heldout_value(kind, rng)
+    form = rng.choices(["compact", "pretty", "result"], weights=[50, 30, 20])[0]
+    if form == "compact":
+        return "<tool_call>" + json.dumps({"name": t["name"], "arguments": args},
+                                          ensure_ascii=False, separators=(",", ":")) + "</tool_call>", form
+    if form == "pretty":
+        return "<tool_call>\n" + json.dumps({"name": t["name"], "arguments": args},
+                                            ensure_ascii=False, indent=2) + "\n</tool_call>", form
+    obj: Any = {"ok": True, "identyfikator": f"Z-{rng.randint(1000, 9999)}",
+                "lokalizacja": rng.choice(HELDOUT_CITIES),
+                "budzet_pln": f"{rng.randint(1000, 90000)} PLN",
+                "tryb": rng.choice(["szybki", "pelny", "roboczy"]),
+                "metryka": rng.choice(["czas", "koszt", "jakosc"])}
+    return json.dumps(obj, ensure_ascii=False, indent=rng.choice([None, 2])), form
+
+
 def _example(t: dict[str, Any], rng: random.Random) -> tuple[str, str]:
     form = rng.choices(["compact", "pretty", "openai", "schema", "result"],
                        weights=[40, 25, 15, 10, 10])[0]
@@ -387,10 +553,11 @@ def generuj(out_dir: str, train_examples: int = 50000) -> dict[str, Any]:
 
     # held-out: 10 narzędzi x 20 przykładów = 100 dev + 100 test
     # (osobny RNG: zbiór held-out nie zależy od liczby przykładów treningowych)
+    _heldout_specs(held_tools, rng_held)
     held_items = []
     for t in held_tools:
         for _ in range(20):
-            text, form = _example(t, rng_held)
+            text, form = _heldout_example(t, rng_held)
             held_items.append({"text": text, "tool": t["name"], "form": form})
     rng_held.shuffle(held_items)
     dev = held_items[:100]

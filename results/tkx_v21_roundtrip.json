@@ -1,0 +1,62 @@
+{
+  "cases": 700,
+  "unique_texts": 700,
+  "tokenizers": {
+    "V0R-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "V0-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "V0J2-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "V0J5-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "V0J10-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "V0J5S-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "Slayer1B-1.08": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "GPT-4o-o200k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    }
+  }
+}
