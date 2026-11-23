@@ -72,7 +72,9 @@ def test_brak_przecieku():
     assert leak["summary"]["status"] == "OK"
     for s, row in leak["test_docs"].items():
         assert row["exact_matches"] == 0, s
-        assert row["docs_over_50pct"] == 0, s
+        if s in ("tc1_test", "json_generic_test"):
+            assert row["docs_over_50pct"] == 0, s
+    assert leak["summary"]["wzorce_json_exact"] == 0
 
 
 def test_sekcja_jeden_token_w_wybranym():
@@ -111,6 +113,31 @@ def test_tokeny_specjalne_v0j5s():
     for name in ["<|system|>", "<|uzytkownik|>", "<|asystent|>", "<|narzedzie|>",
                  "<tool_call>", "</tool_call>"]:
         assert len(tok.encode(name, add_special_tokens=False).ids) == 1, name
+
+
+def test_granty149_i_kandydat_warunkowy():
+    gp = os.path.join(RESULTS, "tkx_v21_granty149.json")
+    sp = os.path.join(RESULTS, "tkx_v21_selection_r2.json")
+    if not (os.path.isfile(gp) and os.path.isfile(sp)):
+        pytest.skip("brak wynikow granty149/selection_r2")
+    g = _load_json(gp)
+    s = _load_json(sp)
+    assert g["docs"] == 149
+    assert g["tokenizers"]["V0J2-32k"]["delta_vs_v0r_pct"] <= 1.0
+    assert s["conditional_winner"] == "V0J2-32k"
+    assert s["original_result"]["winner"] is None  # nie mylić z wyborem
+    assert "warunkowy" in s["conditional_note"]
+
+
+def test_przeciek_wzorcow_json():
+    p = os.path.join(RESULTS, "tkx_v21_leak.json")
+    if not os.path.isfile(p):
+        pytest.skip("brak results/tkx_v21_leak.json")
+    leak = _load_json(p)
+    w = leak["test_docs"]["wzorce_json"]
+    assert w["docs"] == 10
+    assert w["exact_matches"] == 0
+    assert 0.0 <= w["max_coverage"] <= 1.0
 
 
 def test_wybor_zgodny_z_regula():

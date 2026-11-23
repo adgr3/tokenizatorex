@@ -72,7 +72,16 @@
       "get_weather",
       "create_calendar_event"
     ],
-    "licencja": "dane syntetyczne wygenerowane lokalnie (nasze)"
+    "licencja": "dane syntetyczne wygenerowane lokalnie (nasze)",
+    "dev_sha256": "0b3f32a23d4a7ecaf294637052b3d9f076bb3ca2206e81b498c236174b21aa24",
+    "test_sha256": "62043bb0980540adbe968674fa842dfe7e1aae4d8954cf8311de098c7131614e",
+    "heldout_change": {
+      "when": "2026-11-23 15:23",
+      "why": "pierwsza wersja miala 98/100 dokumentow >50% pokrycia 13-gramow; dodano osobne slownictwo held-out",
+      "training_data_unchanged": true,
+      "json_train_sha256": "427acf8542628be88e1111ad2011d8e658ea0bc2407b2d77c78898308c7d2aeb",
+      "variants_retrained": false
+    }
   },
   "mixtures": {
     "V0J2-32k": {
@@ -106,5 +115,6 @@
       "sha256": "230b9a9a913cd7b2fd5c63c6cdf828f689da2b9bf73a903afcfdb377111d1be7"
     }
   },
-  "note": "pełne teksty w data/ i tkx_v21/dane/ poza gitem; w repo metadane"
+  "note": "pełne teksty w data/ i tkx_v21/dane/ poza gitem; w repo metadane",
+  "json_train_sha256": "427acf8542628be88e1111ad2011d8e658ea0bc2407b2d77c78898308c7d2aeb"
 }

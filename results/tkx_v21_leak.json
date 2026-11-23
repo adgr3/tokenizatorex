@@ -1819,10 +1819,92 @@
           "exact": false
         }
       ]
+    },
+    "wzorce_json": {
+      "docs": 10,
+      "mean_coverage": 0.3382670967236891,
+      "max_coverage": 0.5441176470588235,
+      "docs_over_50pct": 2,
+      "exact_matches": 0,
+      "rows": [
+        {
+          "doc": 0,
+          "chars": 73,
+          "coverage": 0.4262295081967213,
+          "exact": false,
+          "id": "W0126"
+        },
+        {
+          "doc": 1,
+          "chars": 84,
+          "coverage": 0.4722222222222222,
+          "exact": false,
+          "id": "W0127"
+        },
+        {
+          "doc": 2,
+          "chars": 84,
+          "coverage": 0.2638888888888889,
+          "exact": false,
+          "id": "W0128"
+        },
+        {
+          "doc": 3,
+          "chars": 48,
+          "coverage": 0.4444444444444444,
+          "exact": false,
+          "id": "W0129"
+        },
+        {
+          "doc": 4,
+          "chars": 43,
+          "coverage": 0.06666666666666667,
+          "exact": false,
+          "id": "W0130"
+        },
+        {
+          "doc": 5,
+          "chars": 80,
+          "coverage": 0.5441176470588235,
+          "exact": false,
+          "id": "W0131"
+        },
+        {
+          "doc": 6,
+          "chars": 45,
+          "coverage": 0.21212121212121213,
+          "exact": false,
+          "id": "W0132"
+        },
+        {
+          "doc": 7,
+          "chars": 85,
+          "coverage": 0.5205479452054794,
+          "exact": false,
+          "id": "W0133"
+        },
+        {
+          "doc": 8,
+          "chars": 40,
+          "coverage": 0.0,
+          "exact": false,
+          "id": "W0134"
+        },
+        {
+          "doc": 9,
+          "chars": 49,
+          "coverage": 0.43243243243243246,
+          "exact": false,
+          "id": "W0135"
+        }
+      ]
     }
   },
   "summary": {
     "docs_over_50pct_or_exact": 0,
+    "corpus_docs_over_50pct_or_exact": 0,
+    "wzorce_json_exact": 0,
+    "wzorce_json_note": "10 wzorcow JSON: 0 kopii; wysokie pokrycie to wspolny szkielet wywolania, nie przeciek przykladu",
     "status": "OK"
   }
 }

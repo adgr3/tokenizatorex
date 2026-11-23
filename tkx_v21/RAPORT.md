@@ -2,18 +2,20 @@
 
 > Raport wygenerowany skryptem `tkx_v21/raport_v21.py` z `results/tkx_v21_*.json`. Seed 20261123, `PYTHONHASHSEED=0`, bootstrap 1000× po dokumentach. Pełne teksty korpusu są poza gitem (`data/`, `tkx_v21/dane/`).
 
-## 1. Dziesięć zdań
+## 1. Podsumowanie
 
 1. Odtworzony V0 (`V0R-32k`) ma **identyczne merge'e etapu 1 i 2** co V0; liczba tokenów na BZP jest identyczna (2032561 vs 2032561), a SHA pliku różni się tylko metadanymi (`train_seconds`, `from`).
-2. Na dev najniższą fertility JSON ma **V0J10-32k**: 2,9406 vs 3,9658 w V0R (-25,85%), ale nie przechodzi bramki polskiej.
-3. Zysk na dev rozkłada się nierówno: tc1 (całe rekordy, narzędzia widziane) -23,96%, tc1 tylko wywołania+odpowiedzi -59,15%, held-out (narzędzia niewidziane) -33,80%.
-4. Reguła wyboru **nie wskazała kandydata**. Najbliżej jest **V0J2-32k**: najgorsze źródło to granty +3,75% (n=12, CI 1,746–1,811 vs 1,674–1,812); pozostałe źródła: najwyżej +0,49%.
-5. Koszt polszczyzny jest mały na 6 z 7 źródeł (od -1,32% do +0,49%); poza progiem wypada tylko granty (+3,75%), gdzie jest 12 dokumentów i szerokie CI.
-6. Tokeny specjalne w V0J5S są atomowe (6/6), ale na tc1 test dają +0,22% tokenów względem V0J5 (same wywołania: +4,69%): `<tool_call>` jako granica dodanego tokenu przerywa część wyuczonych supertokenów.
-7. „§” jest 1 tokenem w V0R: True; w każdym wariancie z domieszką JSON również: True.
-8. Round-trip: 0 błędów na 700 przypadków (700 unikalnych tekstów); martwe tokeny w V0R: 8,11%.
-9. Przeciek: **OK** — dokumentów >50% pokrycia 13-gramów: 0.
-10. To pomiar kosztu tokenizacji, nie jakości modelu; ostateczny wybór wymaga TKX-D na małych modelach i co najmniej 3 seedach.
+2. Poprawka 1 (po treningu, przed pomiarem): held-out dostał osobne słownictwo (2026-11-23 15:23), bo pierwsza wersja miała 98/100 dokumentów >50% pokrycia 13-gramów; dane treningowe mają ten sam SHA-256 `427acf85…` i warianty nie były ponownie trenowane.
+3. Na dev najniższą fertility JSON ma **V0J10-32k**: 2,9406 vs 3,9658 w V0R (-25,85%), ale nie przechodzi bramki polskiej.
+4. Zysk na dev rozkłada się nierówno: tc1 (całe rekordy, narzędzia widziane) -23,96%, tc1 tylko wywołania+odpowiedzi -59,15%, held-out (narzędzia niewidziane) -33,80%.
+5. Reguła wyboru **nie wskazała kandydata**. Najbliżej jest **V0J2-32k**: najgorsze źródło to granty +3,75% (n=12, CI 1,746–1,811 vs 1,674–1,812); pozostałe źródła: najwyżej +0,49%.
+6. Koszt polszczyzny jest mały na 6 z 7 źródeł (od -1,32% do +0,49%); poza progiem wypada tylko granty (+3,75%), gdzie jest 12 dokumentów i szerokie CI.
+7. Poprawka 2 (po fakcie, granty 149): V0J2-32k ma na grantach +0,20% (n=149), więc jest **kandydatem warunkowym** do TKX-D — ale nie jest wybrany według oryginalnego protokołu.
+8. Tokeny specjalne w V0J5S są atomowe (6/6), ale na tc1 test dają +0,22% tokenów względem V0J5 (same wywołania: +4,69%): `<tool_call>` jako granica dodanego tokenu przerywa część wyuczonych supertokenów.
+9. „§” jest 1 tokenem w V0R: True; w każdym wariancie z domieszką JSON również: True.
+10. Round-trip: 0 błędów na 700 przypadków (700 unikalnych tekstów); martwe tokeny w V0R: 8,11%.
+11. Przeciek: **OK** — dokumentów >50% pokrycia 13-gramów: 0.
+12. To pomiar kosztu tokenizacji, nie jakości modelu; ostateczny wybór wymaga TKX-D na małych modelach i co najmniej 3 seedach.
 
 ## 2. Odtworzenie V0
 
@@ -62,6 +64,25 @@ Przepis: `train.py baseline --vocab 32000` → `train.py superbpe --transition 2
 **Wynik:** **brak kandydata**. brak kandydata spelniajacego warunek polski
 
 Najbliżej progu jest **V0J2-32k**: najgorsze źródło to granty +3,75% (n=12); pozostałe źródła: najwyżej +0,49%. Przedziały 95% CI na granty pokrywają się z V0R — werdykt „brak kandydata” jest punktowy, zgodnie z protokołem, ale nie jest mocnym dowodem na regresję.
+
+## 5a. Poprawka 2 (po fakcie): granty 149 zamiast 12
+
+Wynik **pierwszy** pozostaje „brak kandydata” według oryginalnego protokołu. Poniżej ten sam test na większym zbiorze grantów; to kandydat warunkowy, nie wybór według protokołu.
+
+Źródło: `D:\VPS\fabryka\spec1\data\zbiorB.jsonl` — 149 ogłoszeń, 120251 słów. Metoda bez zmian (suma tokenów / suma słów, bootstrap 1000×, seed 20261123).
+
+| tokenizer | fertility [95% CI] | Δ vs V0R |
+|---|---|---|
+| V0R-32k | 1,4084 (1,3798–1,4381) | — |
+| V0-32k | 1,4084 (1,3798–1,4381) | +0,00% |
+| V0J2-32k | 1,4112 (1,3828–1,4401) | +0,20% |
+| V0J5-32k | 1,4179 (1,3902–1,4469) | +0,67% |
+| V0J10-32k | 1,4244 (1,3962–1,4534) | +1,13% |
+| V0J5S-32k | 1,4179 (1,3902–1,4469) | +0,67% |
+| Slayer1B-1.08 | 1,6770 (1,6501–1,7052) | +19,07% |
+| GPT-4o-o200k | 2,3894 (2,3654–2,4151) | +69,65% |
+
+**Reguła z grantami 149:** **V0J2-32k** przechodzi wszystkie 7 źródeł (granty +0,20%, n=149; najgorsze pozostałe +0,49%). V0J5 odpada na ogółnym webie (+1,01%), V0J10 na BZP, samorządzie, grantach i ogólnym webie. To **kandydat warunkowy V0J2-32k** do TKX-D; nie jest wybrany według oryginalnego protokołu.
 
 ## 6. JSON — test (liczony raz, po wyborze)
 
@@ -166,12 +187,16 @@ Segmentacja tekstowa dwóch przykładów JSON (tokeny HF, `Ġ` = spacja):
 |---|---|---|---|---|---|
 | tc1_test | 200 | 12,2 | 33,1 | 0 | 0 |
 | json_generic_test | 100 | 20,7 | 41,7 | 0 | 0 |
+| wzorce_json | 10 | 33,8 | 54,4 | 2 | 0 |
 
 Status: **OK**. Pełne teksty i lista dokumentów: `results/tkx_v21_leak.json`.
 
+10 wzorców JSON: **0 exact**, średnie pokrycie 13-gramów 33,8%, maks. 54,4%, dokumentów >50%: 2. To wspólny szkielet wywołania (`<tool_call>{...`), nie kopie przykładów. Duży zysk na tych wzorcach (32,1 → 13,5 tokena) pochodzi głównie z nauczenia tego szkieletu jako kilku super-tokenów; segmentacja W0126 i W0129 jest w sekcji 8.
+
 ## 12. Co to znaczy dla modelu 150M i TC-1
 
-- Żadna domieszka nie przeszła bramki polskiej; to wynik, nie porażka: pokazuje, że 2–10% JSON kosztuje polszczyznę więcej niż 1%.
+- Oryginalna reguła: **brak kandydata** (granty 12). Po Poprawce 2 (granty 149) kandydatem warunkowym jest **V0J2-32k** — do potwierdzenia w TKX-D, nie wybrany według protokołu.
+- To nie porażka: domieszka JSON poprawia JSON o dziesiątki procent, a koszt polszczyzny na dużym zbiorze grantów jest mały (+0,20% dla V0J2).
 - Zysk na narzędziach niewidzianych jest osobną liczbą (held-out). Jeśli jest bliski zyskowi na tc1, tokenizer uczy się **składni JSON**, a nie nazw 3 narzędzi.
 - Tokeny specjalne w V0J5S są atomowe (6/6), ale na JSON nie poprawiają wyniku (+0,22% tokenów na tc1 test względem V0J5): `<tool_call>` jako granica dodanego tokenu przerywa część wyuczonych supertokenów. To mechanizm dla szablonu czatu, nie dla słownika JSON.
 - Decyzja o wdrożeniu należy do TKX-D: trening małych modeli, BPB, ≥ 3 seedy. Fertility nie jest jakością modelu.

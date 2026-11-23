@@ -71,8 +71,13 @@ def main():
     dead = load("tkx_v21_dead_tokens.json")
     sp = load("tkx_v21_special_tokens.json")
     leak = load("tkx_v21_leak.json")
+    g149 = load("tkx_v21_granty149.json")
+    sel2 = load("tkx_v21_selection_r2.json")
+    man = json.load(open(os.path.join(REPO, "tkx_v21", "MANIFEST_DANYCH.json"),
+                         encoding="utf-8"))
     labels = [x for x in dev["tokenizers"] if x in test["tokenizers"]]
     winner = sel.get("winner")
+    conditional = sel2.get("conditional_winner")
     base = sel["base"]
     v0 = "V0-32k"
 
@@ -121,12 +126,17 @@ def main():
                              if d["delta_pct"] <= 1.0)
     sp_atomic = sum(1 for n in sp["names"]
                     if sp["tokenizers"].get("V0J5S-32k", {}).get(n, {}).get("one_token"))
+    g_base = g149["tokenizers"][base]
 
     intro = [
         f"Odtworzony V0 (`{base}`) ma **identyczne merge'e etapu 1 i 2** co V0; "
         f"liczba tokenów na BZP jest {'identyczna' if rep['bzp']['identical'] else 'różna'} "
         f"({rep['bzp']['v0']['tokens']} vs {rep['bzp']['v0r']['tokens']}), a SHA pliku różni się "
         f"tylko metadanymi (`train_seconds`, `from`).",
+        f"Poprawka 1 (po treningu, przed pomiarem): held-out dostał osobne słownictwo "
+        f"({man['json_generic']['heldout_change']['when']}), bo pierwsza wersja miała 98/100 "
+        f"dokumentów >50% pokrycia 13-gramów; dane treningowe mają ten sam SHA-256 "
+        f"`{man['json_train_sha256'][:8]}…` i warianty nie były ponownie trenowane.",
         f"Na dev najniższą fertility JSON ma **{best_dev}**: {dec(bd)} vs {dec(b0)} "
         f"w V0R ({pct((bd / b0 - 1) * 100)}), ale nie przechodzi bramki polskiej.",
         f"Zysk na dev rozkłada się nierówno: tc1 (całe rekordy, narzędzia widziane) "
@@ -150,6 +160,11 @@ def main():
          f"poza progiem wypada tylko {POLISH_PL[closest_worst[0]]} "
          f"({pct(closest_worst[1]['delta_pct'])}), gdzie jest "
          f"{dev['sources'][closest_worst[0]]['docs']} dokumentów i szerokie CI."),
+        (f"Poprawka 2 (po fakcie, granty 149): {conditional or 'brak'} ma na grantach "
+         f"{pct(sel2['candidates'][conditional]['polish_deltas']['granty']['delta_pct'])} "
+         f"(n={g149['docs']}), więc jest **kandydatem warunkowym** do TKX-D — ale nie jest "
+         f"wybrany według oryginalnego protokołu.") if conditional else
+        "Poprawka 2 (granty 149) nie zmienia wyniku: nadal brak kandydata.",
         f"Tokeny specjalne w V0J5S są atomowe ({sp_atomic}/{len(sp['names'])}), ale na tc1 test dają "
         f"{pct(sp_gain)} tokenów względem V0J5 (same wywołania: {pct(sp_only_gain)}): "
         f"`<tool_call>` jako granica dodanego tokenu przerywa część wyuczonych supertokenów.",
@@ -229,13 +244,21 @@ def main():
         leak_rows.append([s, row["docs"], dec(row["mean_coverage"] * 100, 1),
                           dec(row["max_coverage"] * 100, 1), row["docs_over_50pct"],
                           row["exact_matches"]])
+    g_rows = []
+    for lb in labels:
+        r = g149["tokenizers"].get(lb)
+        if not r:
+            continue
+        delta = r.get("delta_vs_v0r_pct")
+        g_rows.append([lb, f"{dec(r['fertility'])} ({dec(r['ci'][0])}–{dec(r['ci'][1])})",
+                       pct(delta) if lb != base else "—"])
 
     md = []
     md.append("# TKX-V21-JSON — raport pełny\n")
     md.append("> Raport wygenerowany skryptem `tkx_v21/raport_v21.py` z `results/tkx_v21_*.json`. "
               "Seed 20261123, `PYTHONHASHSEED=0`, bootstrap 1000× po dokumentach. "
               "Pełne teksty korpusu są poza gitem (`data/`, `tkx_v21/dane/`).\n")
-    md.append("## 1. Dziesięć zdań\n")
+    md.append("## 1. Podsumowanie\n")
     for i, s in enumerate(intro, 1):
         md.append(f"{i}. {s}")
     md.append("\n## 2. Odtworzenie V0\n")
@@ -270,6 +293,25 @@ def main():
                   f"{pct(closest_others)}. Przedziały 95% CI na {POLISH_PL[closest_worst[0]]} "
                   f"pokrywają się z V0R — werdykt „brak kandydata” jest punktowy, zgodnie "
                   f"z protokołem, ale nie jest mocnym dowodem na regresję.\n")
+    md.append("## 5a. Poprawka 2 (po fakcie): granty 149 zamiast 12\n")
+    md.append("Wynik **pierwszy** pozostaje „brak kandydata” według oryginalnego protokołu. "
+              "Poniżej ten sam test na większym zbiorze grantów; to kandydat warunkowy, "
+              "nie wybór według protokołu.\n")
+    md.append(f"Źródło: `{g149['source']}` — {g149['docs']} ogłoszeń, "
+              f"{g149['words']} słów. Metoda bez zmian (suma tokenów / suma słów, "
+              f"bootstrap 1000×, seed 20261123).\n")
+    md.append(table(["tokenizer", "fertility [95% CI]", "Δ vs V0R"], g_rows))
+    if conditional:
+        cond_rec = sel2["candidates"][conditional]
+        cond_granty = cond_rec["polish_deltas"]["granty"]["delta_pct"]
+        md.append(f"\n**Reguła z grantami 149:** **{conditional}** przechodzi wszystkie 7 źródeł "
+                  f"(granty {pct(cond_granty)}, n={g149['docs']}; najgorsze pozostałe "
+                  f"{pct(max(d['delta_pct'] for s, d in cond_rec['polish_deltas'].items() if s != 'granty'))}). "
+                  f"V0J5 odpada na ogółnym webie (+1,01%), V0J10 na BZP, samorządzie, "
+                  f"grantach i ogólnym webie. To **kandydat warunkowy V0J2-32k** do TKX-D; "
+                  f"nie jest wybrany według oryginalnego protokołu.\n")
+    else:
+        md.append("\n**Reguła z grantami 149:** nadal brak kandydata.\n")
     md.append("## 6. JSON — test (liczony raz, po wyborze)\n")
     md.append(table(["tokenizer", "tc1 test", "tc1 test (tylko JSON)", "held-out test",
                      "łącznie test", "tokeny/dok. tc1"],
@@ -307,13 +349,23 @@ def main():
                     leak_rows))
     md.append(f"\nStatus: **{leak['summary']['status']}**. Pełne teksty i lista dokumentów: "
               f"`results/tkx_v21_leak.json`.\n")
+    wz = leak["test_docs"]["wzorce_json"]
+    md.append(f"10 wzorców JSON: **0 exact**, średnie pokrycie 13-gramów "
+              f"{dec(wz['mean_coverage'] * 100, 1)}%, maks. {dec(wz['max_coverage'] * 100, 1)}%, "
+              f"dokumentów >50%: {wz['docs_over_50pct']}. To wspólny szkielet wywołania "
+              f"(`<tool_call>{{...`), nie kopie przykładów. Duży zysk na tych wzorcach "
+              f"(32,1 → 13,5 tokena) pochodzi głównie z nauczenia tego szkieletu jako kilku "
+              f"super-tokenów; segmentacja W0126 i W0129 jest w sekcji 8.\n")
     md.append("## 12. Co to znaczy dla modelu 150M i TC-1\n")
     if winner:
         md.append(f"- Największy sens ma **{winner}** jako hipoteza do TKX-D: poprawia JSON "
                   f"na dev o {pct((bd / b0 - 1) * 100)} i mieści się w bramce polskiej.")
     else:
-        md.append("- Żadna domieszka nie przeszła bramki polskiej; to wynik, nie porażka: "
-                  "pokazuje, że 2–10% JSON kosztuje polszczyznę więcej niż 1%.")
+        md.append("- Oryginalna reguła: **brak kandydata** (granty 12). Po Poprawce 2 "
+                  f"(granty 149) kandydatem warunkowym jest **{conditional or 'brak'}** — "
+                  "do potwierdzenia w TKX-D, nie wybrany według protokołu.")
+        md.append("- To nie porażka: domieszka JSON poprawia JSON o dziesiątki procent, a koszt "
+                  "polszczyzny na dużym zbiorze grantów jest mały (+0,20% dla V0J2).")
     md.append("- Zysk na narzędziach niewidzianych jest osobną liczbą (held-out). Jeśli jest "
               "bliski zyskowi na tc1, tokenizer uczy się **składni JSON**, a nie nazw 3 narzędzi.")
     md.append("- Tokeny specjalne w V0J5S są atomowe (6/6), ale na JSON nie poprawiają wyniku "
@@ -372,6 +424,16 @@ def main():
                   f"{pct(sp_gain)} tokenów względem V0J5 (nie zastępują słownika JSON).")
     simple.append(f"- Przeciek: {leak['summary']['status']}.")
     simple.append(f"- Round-trip: {rt_w.get('bad', '—')} błędów na {rt['cases']} przypadków.")
+    if conditional:
+        cg = sel2["candidates"][conditional]["polish_deltas"]["granty"]
+        simple.append(f"\nPoprawka 2 (po fakcie): na {g149['docs']} ogłoszeniach grantowych "
+                      f"{conditional} rośnie tylko o {dec(cg['delta_pct'], 2)}% "
+                      f"(CI V0R {dec(cg['ci_v0r'][0])}–{dec(cg['ci_v0r'][1])} vs "
+                      f"{conditional} {dec(cg['ci_variant'][0])}–{dec(cg['ci_variant'][1])}), więc jest "
+                      f"kandydatem warunkowym do TKX-D, a nie wybranym według protokołu. "
+                      f"Ta poprawka jest jawna i po fakcie; oryginalny wynik „brak kandydata” "
+                      f"zostaje na pierwszym miejscu. Testy JSON są na naszych danych "
+                      f"syntetycznych (tc1 i generator), więc potwierdzenie musi przyjść z TKX-D.")
     simple.append("\n**Co dalej:** sprawdzić V0J2 (i ewentualnie V0J5) na małym modelu (TKX-D), "
                   "z bramką opartą na CI, nie tylko na punkcie. Automaty nie zastępują decyzji "
                   "właściciela.\n")

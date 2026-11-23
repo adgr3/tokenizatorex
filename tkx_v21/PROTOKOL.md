@@ -81,7 +81,67 @@ polszczyznę o X%” albo „brak kandydata”.
 6. Test JSON liczymy **raz**, dla wszystkich wariantów, po wybraniu kandydata.
    Nie zmieniamy reguły po zobaczeniu testu.
 
-## 6. Czego ten protokół nie rozstrzyga
+## 6. Poprawka 1 (po treningu, przed pomiarem dev/test)
+
+Data: **23.11.2026, 15:23** — po zakończeniu treningu wariantów (V0J2 ok. 15:06,
+V0J10 ok. 15:16), przed uruchomieniem pomiarów dev/test.
+
+**Co zmieniono.** Generator `tkx_v21/generuj_json.py` dostał osobne słownictwo
+dla zbioru held-out: `HELDOUT_CITIES`, `HELDOUT_PROPERTIES`, funkcje
+`_heldout_value`, `_heldout_specs`, `_heldout_example`. Przykłady held-out są
+teraz tylko wywołaniami compact/pretty i odpowiedziami narzędzia, z innymi
+nazwami pól i wartościami niż w treningu; nie zawierają definicji schematów.
+Nazwy 10 narzędzi held-out były rozdzielone już wcześniej.
+
+**Dlaczego.** Pierwsza wersja held-out korzystała z tych samych szablonów co
+trening: 98/100 dokumentów miało >50% pokrycia 13-gramów (maks. 90,3%).
+To nie były kopie (0 exact), ale wspólny szkielet schema/JSON. Po zmianie:
+maks. pokrycie **54,4%** na 10 wzorcach JSON (świadomie wspólny szkielet
+wywołania) i **41,7%** na held-out; 0 dokumentów korpusu >50%.
+
+**Co się nie zmieniło.** `json_train.txt` ma ten sam SHA-256
+`427acf858...` przed i po (`tkx_v21/MANIFEST_DANYCH.json`); warianty
+V0J2/V0J5/V0J10 nie były ponownie trenowane. Zmieniły się wyłącznie pliki
+`json_generic_heldout_dev.jsonl` i `json_generic_heldout_test.jsonl`
+(nowe wartości, ten sam podział 100/100 i te same 10 narzędzi).
+To poprawka **przed** pomiarem, nie po zobaczeniu testu.
+
+## 7. Poprawka 2 (po fakcie, jawnie)
+
+Data: **23.11.2026, po pierwszym pomiarze i po regule wyboru**, przed
+ostatecznym raportem.
+
+**Powód.** Jedynym źródłem, które zablokowało V0J2, były granty: 12 dokumentów,
++3,75%, CI pokrywają się z V0R. Właściciel wskazał większy zbiór
+`D:\VPS\fabryka\spec1\data\zbiorB.jsonl`: **149 ogłoszeń** z lipca–listopada
+2026, 120 251 słów, dane osobowe zamaskowane. Tylko odczyt; do repo trafiają
+wyłącznie liczby (`results/tkx_v21_granty149.json`).
+
+**Metoda:** ta sama co w protokole — suma tokenów / suma słów (`str.split()`),
+bootstrap 1000× po dokumentach, seed 20261123.
+
+**Wynik granty 149 (fertility [95% CI]):**
+
+| tokenizer | fertility [CI] | Δ vs V0R |
+|---|---:|---:|
+| V0R-32k | 1,4084 [1,3798–1,4381] | — |
+| V0J2-32k | 1,4112 [1,3828–1,4401] | +0,20% |
+| V0J5-32k | 1,4179 [1,3902–1,4469] | +0,67% |
+| V0J10-32k | 1,4244 [1,3962–1,4534] | +1,13% |
+| V0J5S-32k | 1,4179 [1,3902–1,4469] | +0,67% |
+| Slayer1B-1.08 | 1,6770 [1,6501–1,7052] | +19,07% |
+| GPT-4o-o200k | 2,3894 [2,3654–2,4151] | +69,65% |
+
+**Reguła z grantami 149:** V0J2 przechodzi wszystkie 7 źródeł (granty +0,20%,
+najgorsze pozostałe +0,49%); V0J5 nadal odpada na ogólnym webie (+1,01%);
+V0J10 odpada na BZP, samorządzie, grantach i ogólnym webie. Wynik:
+**kandydat warunkowy V0J2-32k**, do potwierdzenia w TKX-D.
+
+**Ważne:** to jest wynik **obok** oryginalnego protokołu, nie zmiana reguły.
+Pierwszy wynik pozostaje „brak kandydata” według grantów 12; kandydat
+warunkowy **nie jest wybrany według protokołu** i nie wolno go tak przedstawiać.
+
+## 8. Czego ten protokół nie rozstrzyga
 
 * Nie mówi, czy kandydat jest lepszy **jakościowo** — to wymaga treningu
   małych modeli (TKX-D) na co najmniej 3 seedach i pomiaru BPB.

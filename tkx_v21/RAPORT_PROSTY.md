@@ -11,5 +11,7 @@
 - Przeciek: OK.
 - Round-trip: 0 błędów na 700 przypadków.
 
+Poprawka 2 (po fakcie): na 149 ogłoszeniach grantowych V0J2-32k rośnie tylko o 0,20% (CI V0R 1,3798–1,4381 vs V0J2-32k 1,3828–1,4401), więc jest kandydatem warunkowym do TKX-D, a nie wybranym według protokołu. Ta poprawka jest jawna i po fakcie; oryginalny wynik „brak kandydata” zostaje na pierwszym miejscu. Testy JSON są na naszych danych syntetycznych (tc1 i generator), więc potwierdzenie musi przyjść z TKX-D.
+
 **Co dalej:** sprawdzić V0J2 (i ewentualnie V0J5) na małym modelu (TKX-D), z bramką opartą na CI, nie tylko na punkcie. Automaty nie zastępują decyzji właściciela.
 
