@@ -1,0 +1,26 @@
+{
+  "note": "udzial macierzy embeddingow w parametrach (tied weights, liczone raz)",
+  "table": {
+    "16k": {
+      "30M": 6.1,
+      "60M": 8.2,
+      "150M": 12.3
+    },
+    "24k": {
+      "30M": 9.2,
+      "60M": 12.3,
+      "150M": 18.4
+    },
+    "32k": {
+      "30M": 12.3,
+      "60M": 16.4,
+      "150M": 24.6
+    },
+    "48k": {
+      "30M": 18.4,
+      "60M": 24.6,
+      "150M": 36.9
+    }
+  },
+  "unit": "mln parametrow"
+}

@@ -78,6 +78,14 @@ Wikipedii) pochodzą z [`SlayerLab/polish-dynaword`](https://huggingface.co/data
 `angielski` to wikitext-103 (test). Uwaga: trening był tylko na tekstach z sieci, więc pozostałe dziedziny
 są dla TOKENIZATOREX tekstem spoza domeny.
 
+## v2.0 — test domenowy
+
+TOKENIZATOREX v2.0 dodaje test domenowy na tekstach urzędowych (przetargi, Dz.U., KIO, samorząd, granty, JSON narzędzi)
+i kontrolę ogólną. Szczegóły: `tkx_v2/RAPORT_TEST_DOMENOWY.md`, `tkx_v2/RAPORT_PROSTY_V2.md`,
+`tkx_v2/ZNANE_WADY.md`, `RELEASE_NOTES_v2.0.md`. Wyniki TKX-A pozostają bez zmian.
+
+Weryfikacja: `python scripts/sprawdz_sam.py "tekst"`.
+
 ## Jak działa
 
 **Pretokenizacja jest dwupoziomowa:**

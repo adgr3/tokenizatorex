@@ -1,0 +1,1042 @@
+{
+  "sources": {
+    "1_bzp": {
+      "docs": 500,
+      "words": 1421000,
+      "bytes": 11359609,
+      "tokenizers": {
+        "TKX/V0-32k": {
+          "fertility": 1.4303736805066853,
+          "bytes_per_token": 5.588815784618518,
+          "fertility_ci_lo": 1.4224013727800549,
+          "fertility_ci_hi": 1.4391213821367606
+        },
+        "TKX/V1-32k": {
+          "fertility": 1.6986171710063336,
+          "bytes_per_token": 4.706237014419561,
+          "fertility_ci_lo": 1.684524002397286,
+          "fertility_ci_hi": 1.714679481707504
+        },
+        "TKX/V2-16k": {
+          "fertility": 1.9205812807881772,
+          "bytes_per_token": 4.162331000246963,
+          "fertility_ci_lo": 1.9050653958392296,
+          "fertility_ci_hi": 1.9384305767381647
+        },
+        "TKX/V2-24k": {
+          "fertility": 1.7905650950035186,
+          "bytes_per_token": 4.46456541894275,
+          "fertility_ci_lo": 1.7757057814450468,
+          "fertility_ci_hi": 1.807729587055749
+        },
+        "TKX/V2-32k": {
+          "fertility": 1.6986052076002816,
+          "bytes_per_token": 4.70627016080586,
+          "fertility_ci_lo": 1.6845124945076524,
+          "fertility_ci_hi": 1.7146715306402376
+        },
+        "TKX/V2-base-16k": {
+          "fertility": 2.046479239971851,
+          "bytes_per_token": 3.9062673333684086,
+          "fertility_ci_lo": 2.03314922630158,
+          "fertility_ci_hi": 2.0615312973925892
+        },
+        "TKX/V2-base-24k": {
+          "fertility": 1.950615763546798,
+          "bytes_per_token": 4.098241772117648,
+          "fertility_ci_lo": 1.9374019326206076,
+          "fertility_ci_hi": 1.9655006375960866
+        },
+        "TKX/V2-base-32k": {
+          "fertility": 1.8766868402533428,
+          "bytes_per_token": 4.259685117437861,
+          "fertility_ci_lo": 1.863541807774637,
+          "fertility_ci_hi": 1.891061848785158
+        },
+        "TKX/V2b-16k": {
+          "fertility": 1.8429366643209009,
+          "bytes_per_token": 4.337693833045734,
+          "fertility_ci_lo": 1.82904128319982,
+          "fertility_ci_hi": 1.8591117208068288
+        },
+        "TKX/V2b-24k": {
+          "fertility": 1.7173631245601688,
+          "bytes_per_token": 4.65486587501173,
+          "fertility_ci_lo": 1.7038404552560216,
+          "fertility_ci_hi": 1.73267373070315
+        },
+        "TKX/V2b-32k": {
+          "fertility": 1.6234159042927516,
+          "bytes_per_token": 4.924243370032347,
+          "fertility_ci_lo": 1.610803784445161,
+          "fertility_ci_hi": 1.6378380596145015
+        },
+        "TKX/V3-16k": {
+          "fertility": 1.8145869106263195,
+          "bytes_per_token": 4.405462729122973,
+          "fertility_ci_lo": 1.801532646093292,
+          "fertility_ci_hi": 1.829387226293569
+        },
+        "TKX/V3-24k": {
+          "fertility": 1.6611330049261084,
+          "bytes_per_token": 4.812435235355671,
+          "fertility_ci_lo": 1.6486306706409237,
+          "fertility_ci_hi": 1.6748536771110305
+        },
+        "TKX/V3-32k": {
+          "fertility": 1.5525439831104855,
+          "bytes_per_token": 5.149029651000719,
+          "fertility_ci_lo": 1.5408511249898,
+          "fertility_ci_hi": 1.565456687651333
+        },
+        "Slayer1B-1.08": {
+          "fertility": 1.8095552427867698,
+          "bytes_per_token": 4.417712603903432,
+          "fertility_ci_lo": 1.7999965014391572,
+          "fertility_ci_hi": 1.8209191297548866
+        },
+        "APT3-1B": {
+          "fertility": 1.662518648838846,
+          "bytes_per_token": 4.808424259843323,
+          "fertility_ci_lo": 1.6541634012934225,
+          "fertility_ci_hi": 1.671271660045675
+        },
+        "Qwen3.5": {
+          "fertility": 2.4735355383532722,
+          "bytes_per_token": 3.231849666021223,
+          "fertility_ci_lo": 2.4609843636755095,
+          "fertility_ci_hi": 2.4875995449779325
+        },
+        "Bielik-1.5B-v3": {
+          "fertility": 1.9555777621393384,
+          "bytes_per_token": 4.087843070363701,
+          "fertility_ci_lo": 1.9427816507438211,
+          "fertility_ci_hi": 1.9704800620395002
+        },
+        "PLLuM-12B": {
+          "fertility": 2.659064039408867,
+          "bytes_per_token": 3.0063567048561213,
+          "fertility_ci_lo": 2.6467218525608636,
+          "fertility_ci_hi": 2.6730904225363132
+        },
+        "GPT-4o-o200k": {
+          "fertility": 2.558610133708656,
+          "bytes_per_token": 3.124389643502022,
+          "fertility_ci_lo": 2.5482752651356555,
+          "fertility_ci_hi": 2.5695320675894977
+        }
+      }
+    },
+    "2_du_eli": {
+      "docs": 12,
+      "words": 25324,
+      "bytes": 178865,
+      "tokenizers": {
+        "TKX/V0-32k": {
+          "fertility": 1.4634733849312904,
+          "bytes_per_token": 4.82623242761933,
+          "fertility_ci_lo": 1.3639690156560498,
+          "fertility_ci_hi": 1.5807389744582305
+        },
+        "TKX/V1-32k": {
+          "fertility": 1.6881219396619807,
+          "bytes_per_token": 4.183976608187135,
+          "fertility_ci_lo": 1.5819168612842869,
+          "fertility_ci_hi": 1.8264738147845354
+        },
+        "TKX/V2-16k": {
+          "fertility": 1.8693729268677934,
+          "bytes_per_token": 3.778305872412336,
+          "fertility_ci_lo": 1.7625223000251036,
+          "fertility_ci_hi": 2.0135208338627333
+        },
+        "TKX/V2-24k": {
+          "fertility": 1.7580950876638761,
+          "bytes_per_token": 4.017452046179417,
+          "fertility_ci_lo": 1.6565352496896015,
+          "fertility_ci_hi": 1.8946838351349566
+        },
+        "TKX/V2-32k": {
+          "fertility": 1.6881219396619807,
+          "bytes_per_token": 4.183976608187135,
+          "fertility_ci_lo": 1.5819168612842869,
+          "fertility_ci_hi": 1.8264738147845354
+        },
+        "TKX/V2-base-16k": {
+          "fertility": 2.029853103775075,
+          "bytes_per_token": 3.479593027779939,
+          "fertility_ci_lo": 1.924136993681535,
+          "fertility_ci_hi": 2.174056248894644
+        },
+        "TKX/V2-base-24k": {
+          "fertility": 1.9425446217027327,
+          "bytes_per_token": 3.6359847945845956,
+          "fertility_ci_lo": 1.8355394342447986,
+          "fertility_ci_hi": 2.091801306717389
+        },
+        "TKX/V2-base-32k": {
+          "fertility": 1.882917390617596,
+          "bytes_per_token": 3.751127236121888,
+          "fertility_ci_lo": 1.7750998594236873,
+          "fertility_ci_hi": 2.029262370294134
+        },
+        "TKX/V2b-16k": {
+          "fertility": 1.8168140894013585,
+          "bytes_per_token": 3.8876089460757677,
+          "fertility_ci_lo": 1.709704745430625,
+          "fertility_ci_hi": 1.9624978958486323
+        },
+        "TKX/V2b-24k": {
+          "fertility": 1.6992971094613805,
+          "bytes_per_token": 4.156461320382032,
+          "fertility_ci_lo": 1.5980407096568947,
+          "fertility_ci_hi": 1.835914496007341
+        },
+        "TKX/V2b-32k": {
+          "fertility": 1.632088137734955,
+          "bytes_per_token": 4.327623333575282,
+          "fertility_ci_lo": 1.5284703401788344,
+          "fertility_ci_hi": 1.7700187581033446
+        },
+        "TKX/V3-16k": {
+          "fertility": 1.7473542884220503,
+          "bytes_per_token": 4.042146892655367,
+          "fertility_ci_lo": 1.6367756104474867,
+          "fertility_ci_hi": 1.8887607778965105
+        },
+        "TKX/V3-24k": {
+          "fertility": 1.6214263149581425,
+          "bytes_per_token": 4.356079978568471,
+          "fertility_ci_lo": 1.5145750586017162,
+          "fertility_ci_hi": 1.753047062935
+        },
+        "TKX/V3-32k": {
+          "fertility": 1.5430026851998104,
+          "bytes_per_token": 4.577479206653871,
+          "fertility_ci_lo": 1.4359830552492543,
+          "fertility_ci_hi": 1.6742941896480283
+        },
+        "Slayer1B-1.08": {
+          "fertility": 1.7710077396935713,
+          "bytes_per_token": 3.988160271132021,
+          "fertility_ci_lo": 1.6832007179612034,
+          "fertility_ci_hi": 1.8841153109568003
+        },
+        "APT3-1B": {
+          "fertility": 1.5325383035855316,
+          "bytes_per_token": 4.608734862148931,
+          "fertility_ci_lo": 1.462437114506181,
+          "fertility_ci_hi": 1.6272737943319857
+        },
+        "Qwen3.5": {
+          "fertility": 2.3731243089559313,
+          "bytes_per_token": 2.9762716940945473,
+          "fertility_ci_lo": 2.290726624195889,
+          "fertility_ci_hi": 2.4866650035744535
+        },
+        "Bielik-1.5B-v3": {
+          "fertility": 1.9047543831938083,
+          "bytes_per_token": 3.708122564060038,
+          "fertility_ci_lo": 1.7891862141701376,
+          "fertility_ci_hi": 2.0677244713580487
+        },
+        "PLLuM-12B": {
+          "fertility": 2.441952298215132,
+          "bytes_per_token": 2.8923835705045278,
+          "fertility_ci_lo": 2.3702367929494663,
+          "fertility_ci_hi": 2.547335161837314
+        },
+        "GPT-4o-o200k": {
+          "fertility": 2.379047543831938,
+          "bytes_per_token": 2.9688615200756883,
+          "fertility_ci_lo": 2.302099535482734,
+          "fertility_ci_hi": 2.4681351019234503
+        }
+      }
+    },
+    "3_kio": {
+      "docs": 66,
+      "words": 93179,
+      "bytes": 721697,
+      "tokenizers": {
+        "TKX/V0-32k": {
+          "fertility": 1.3983300958370448,
+          "bytes_per_token": 5.538946237384397,
+          "fertility_ci_lo": 1.3739188574724606,
+          "fertility_ci_hi": 1.4250432100265984
+        },
+        "TKX/V1-32k": {
+          "fertility": 1.5155560802326704,
+          "bytes_per_token": 5.11051707289439,
+          "fertility_ci_lo": 1.4826276772316982,
+          "fertility_ci_hi": 1.5530086419430345
+        },
+        "TKX/V2-16k": {
+          "fertility": 1.7277820109681366,
+          "bytes_per_token": 4.482784965805966,
+          "fertility_ci_lo": 1.688860462552117,
+          "fertility_ci_hi": 1.7707011431671076
+        },
+        "TKX/V2-24k": {
+          "fertility": 1.5872138571995835,
+          "bytes_per_token": 4.879793096453565,
+          "fertility_ci_lo": 1.5532621386664816,
+          "fertility_ci_hi": 1.6245434631359834
+        },
+        "TKX/V2-32k": {
+          "fertility": 1.5153092434990716,
+          "bytes_per_token": 5.111349552037962,
+          "fertility_ci_lo": 1.4821073157774547,
+          "fertility_ci_hi": 1.5527522616836469
+        },
+        "TKX/V2-base-16k": {
+          "fertility": 1.898163749342663,
+          "bytes_per_token": 4.080404140917855,
+          "fertility_ci_lo": 1.8597342638070913,
+          "fertility_ci_hi": 1.9428084652862934
+        },
+        "TKX/V2-base-24k": {
+          "fertility": 1.7707101385505317,
+          "bytes_per_token": 4.374106780287649,
+          "fertility_ci_lo": 1.7363157955663258,
+          "fertility_ci_hi": 1.8117539065823054
+        },
+        "TKX/V2-base-32k": {
+          "fertility": 1.7059208619968018,
+          "bytes_per_token": 4.540231258964745,
+          "fertility_ci_lo": 1.6722955359909417,
+          "fertility_ci_hi": 1.7457167685351773
+        },
+        "TKX/V2b-16k": {
+          "fertility": 1.6933536526470556,
+          "bytes_per_token": 4.57392654561587,
+          "fertility_ci_lo": 1.6559775723999075,
+          "fertility_ci_hi": 1.7336305904606937
+        },
+        "TKX/V2b-24k": {
+          "fertility": 1.553204048122431,
+          "bytes_per_token": 4.986643726766442,
+          "fertility_ci_lo": 1.522128746812107,
+          "fertility_ci_hi": 1.5870281292247022
+        },
+        "TKX/V2b-32k": {
+          "fertility": 1.4824906899623305,
+          "bytes_per_token": 5.2245017627427845,
+          "fertility_ci_lo": 1.4516520494080705,
+          "fertility_ci_hi": 1.5173044343475097
+        },
+        "TKX/V3-16k": {
+          "fertility": 1.6724583865463247,
+          "bytes_per_token": 4.631072010677755,
+          "fertility_ci_lo": 1.63904267875717,
+          "fertility_ci_hi": 1.7063740924563466
+        },
+        "TKX/V3-24k": {
+          "fertility": 1.5112954635701177,
+          "bytes_per_token": 5.124924549605527,
+          "fertility_ci_lo": 1.4847735005849032,
+          "fertility_ci_hi": 1.539590137821819
+        },
+        "TKX/V3-32k": {
+          "fertility": 1.4244947895985147,
+          "bytes_per_token": 5.4372085314126855,
+          "fertility_ci_lo": 1.3987487723539502,
+          "fertility_ci_hi": 1.4521139067800475
+        },
+        "Slayer1B-1.08": {
+          "fertility": 1.7152899258416596,
+          "bytes_per_token": 4.515432118076194,
+          "fertility_ci_lo": 1.6860567059478957,
+          "fertility_ci_hi": 1.7489387931674554
+        },
+        "APT3-1B": {
+          "fertility": 1.5807639060303287,
+          "bytes_per_token": 4.899703993373796,
+          "fertility_ci_lo": 1.5550613704589988,
+          "fertility_ci_hi": 1.6085824006151366
+        },
+        "Qwen3.5": {
+          "fertility": 2.293521072344627,
+          "bytes_per_token": 3.3770237894697437,
+          "fertility_ci_lo": 2.2652359200294816,
+          "fertility_ci_hi": 2.3253268998756162
+        },
+        "Bielik-1.5B-v3": {
+          "fertility": 1.8141319396001245,
+          "bytes_per_token": 4.2694112009654575,
+          "fertility_ci_lo": 1.7753535312688618,
+          "fertility_ci_hi": 1.8600090682462722
+        },
+        "PLLuM-12B": {
+          "fertility": 2.4354629261958167,
+          "bytes_per_token": 3.180206579886663,
+          "fertility_ci_lo": 2.410485105842311,
+          "fertility_ci_hi": 2.4630408825126
+        },
+        "GPT-4o-o200k": {
+          "fertility": 2.3899376468946865,
+          "bytes_per_token": 3.2407854794963447,
+          "fertility_ci_lo": 2.370385714130689,
+          "fertility_ci_hi": 2.4113337176231022
+        }
+      }
+    },
+    "4_samorzad": {
+      "docs": 240,
+      "words": 69521,
+      "bytes": 458906,
+      "tokenizers": {
+        "TKX/V0-32k": {
+          "fertility": 1.5501790825793644,
+          "bytes_per_token": 4.258198014289691,
+          "fertility_ci_lo": 1.5381236059240593,
+          "fertility_ci_hi": 1.5608929837490795
+        },
+        "TKX/V1-32k": {
+          "fertility": 1.8933271960990203,
+          "bytes_per_token": 3.4864388494674303,
+          "fertility_ci_lo": 1.8759199550994952,
+          "fertility_ci_hi": 1.91059992870014
+        },
+        "TKX/V2-16k": {
+          "fertility": 2.165518332590153,
+          "bytes_per_token": 3.048216859627098,
+          "fertility_ci_lo": 2.1467902249005384,
+          "fertility_ci_hi": 2.1828072173014186
+        },
+        "TKX/V2-24k": {
+          "fertility": 1.963003984407589,
+          "bytes_per_token": 3.362687770205906,
+          "fertility_ci_lo": 1.9455929267167964,
+          "fertility_ci_hi": 1.9799442233204634
+        },
+        "TKX/V2-32k": {
+          "fertility": 1.8933271960990203,
+          "bytes_per_token": 3.4864388494674303,
+          "fertility_ci_lo": 1.8759199550994952,
+          "fertility_ci_hi": 1.91059992870014
+        },
+        "TKX/V2-base-16k": {
+          "fertility": 2.378475568533249,
+          "bytes_per_token": 2.775294217255101,
+          "fertility_ci_lo": 2.3602770141994447,
+          "fertility_ci_hi": 2.396854045569217
+        },
+        "TKX/V2-base-24k": {
+          "fertility": 2.194286618431841,
+          "bytes_per_token": 3.008253085893713,
+          "fertility_ci_lo": 2.177038761307142,
+          "fertility_ci_hi": 2.2117613811337735
+        },
+        "TKX/V2-base-32k": {
+          "fertility": 2.142043411343335,
+          "bytes_per_token": 3.081622648858089,
+          "fertility_ci_lo": 2.1237857600472543,
+          "fertility_ci_hi": 2.159816815276834
+        },
+        "TKX/V2b-16k": {
+          "fertility": 2.093597617985932,
+          "bytes_per_token": 3.1529313152271743,
+          "fertility_ci_lo": 2.076012218946531,
+          "fertility_ci_hi": 2.1094851612205514
+        },
+        "TKX/V2b-24k": {
+          "fertility": 1.8819061866198703,
+          "bytes_per_token": 3.507597529656353,
+          "fertility_ci_lo": 1.8658409087397771,
+          "fertility_ci_hi": 1.8970693806274208
+        },
+        "TKX/V2b-32k": {
+          "fertility": 1.8139698796047237,
+          "bytes_per_token": 3.6389631192064007,
+          "fertility_ci_lo": 1.7981000746319247,
+          "fertility_ci_hi": 1.8294575023367257
+        },
+        "TKX/V3-16k": {
+          "fertility": 1.9286546511126135,
+          "bytes_per_token": 3.4225772288599514,
+          "fertility_ci_lo": 1.9132379621568814,
+          "fertility_ci_hi": 1.9421137373557218
+        },
+        "TKX/V3-24k": {
+          "fertility": 1.702046863537636,
+          "bytes_per_token": 3.8782536677709416,
+          "fertility_ci_lo": 1.6886611860613496,
+          "fertility_ci_hi": 1.7138367720425987
+        },
+        "TKX/V3-32k": {
+          "fertility": 1.6182160785949569,
+          "bytes_per_token": 4.079164444444444,
+          "fertility_ci_lo": 1.6046418363473827,
+          "fertility_ci_hi": 1.6303308673134898
+        },
+        "Slayer1B-1.08": {
+          "fertility": 1.9797615109103723,
+          "bytes_per_token": 3.33422457950376,
+          "fertility_ci_lo": 1.9650647265456096,
+          "fertility_ci_hi": 1.9927008566632938
+        },
+        "APT3-1B": {
+          "fertility": 1.7707455301275874,
+          "bytes_per_token": 3.727791135950091,
+          "fertility_ci_lo": 1.7570747598431915,
+          "fertility_ci_hi": 1.7826307997440984
+        },
+        "Qwen3.5": {
+          "fertility": 2.551257893298428,
+          "bytes_per_token": 2.5873391743626173,
+          "fertility_ci_lo": 2.5344211326256345,
+          "fertility_ci_hi": 2.567790369271808
+        },
+        "Bielik-1.5B-v3": {
+          "fertility": 2.310208426230923,
+          "bytes_per_token": 2.857304741980474,
+          "fertility_ci_lo": 2.2915351771614443,
+          "fertility_ci_hi": 2.328451007782318
+        },
+        "PLLuM-12B": {
+          "fertility": 2.6230347664734395,
+          "bytes_per_token": 2.516539077409024,
+          "fertility_ci_lo": 2.6090931063050213,
+          "fertility_ci_hi": 2.6383572564659867
+        },
+        "GPT-4o-o200k": {
+          "fertility": 2.4441967175385853,
+          "bytes_per_token": 2.700670303608105,
+          "fertility_ci_lo": 2.4296661843172296,
+          "fertility_ci_hi": 2.4576543275082106
+        }
+      }
+    },
+    "5_granty": {
+      "docs": 12,
+      "words": 26102,
+      "bytes": 219137,
+      "tokenizers": {
+        "TKX/V0-32k": {
+          "fertility": 1.7455367404796567,
+          "bytes_per_token": 4.809644001580264,
+          "fertility_ci_lo": 1.6744267631036134,
+          "fertility_ci_hi": 1.812378380903134
+        },
+        "TKX/V1-32k": {
+          "fertility": 1.879204658646847,
+          "bytes_per_token": 4.467533791360013,
+          "fertility_ci_lo": 1.7921008390342104,
+          "fertility_ci_hi": 1.9552951805126053
+        },
+        "TKX/V2-16k": {
+          "fertility": 2.1631292621255076,
+          "bytes_per_token": 3.881141298572491,
+          "fertility_ci_lo": 2.0425662072799535,
+          "fertility_ci_hi": 2.2774144026975995
+        },
+        "TKX/V2-24k": {
+          "fertility": 2.0183127729675885,
+          "bytes_per_token": 4.159618085873733,
+          "fertility_ci_lo": 1.8978783517471505,
+          "fertility_ci_hi": 2.133077316542899
+        },
+        "TKX/V2-32k": {
+          "fertility": 1.879204658646847,
+          "bytes_per_token": 4.467533791360013,
+          "fertility_ci_lo": 1.7921008390342104,
+          "fertility_ci_hi": 1.9552951805126053
+        },
+        "TKX/V2-base-16k": {
+          "fertility": 2.263083288636886,
+          "bytes_per_token": 3.709722198710027,
+          "fertility_ci_lo": 2.145559240436915,
+          "fertility_ci_hi": 2.3783609282520874
+        },
+        "TKX/V2-base-24k": {
+          "fertility": 2.0782315531376905,
+          "bytes_per_token": 4.039689562364045,
+          "fertility_ci_lo": 1.992279352198399,
+          "fertility_ci_hi": 2.1615038606221866
+        },
+        "TKX/V2-base-32k": {
+          "fertility": 2.010803769826067,
+          "bytes_per_token": 4.175151468963152,
+          "fertility_ci_lo": 1.9254491546654842,
+          "fertility_ci_hi": 2.094755428126004
+        },
+        "TKX/V2b-16k": {
+          "fertility": 2.124166730518734,
+          "bytes_per_token": 3.952331138966543,
+          "fertility_ci_lo": 2.0102477296530425,
+          "fertility_ci_hi": 2.232115499396125
+        },
+        "TKX/V2b-24k": {
+          "fertility": 1.9829514979695042,
+          "bytes_per_token": 4.233795088776831,
+          "fertility_ci_lo": 1.8698893656032531,
+          "fertility_ci_hi": 2.090850587799906
+        },
+        "TKX/V2b-32k": {
+          "fertility": 1.8451459658263734,
+          "bytes_per_token": 4.549997923674266,
+          "fertility_ci_lo": 1.7623432862523989,
+          "fertility_ci_hi": 1.9200255458383708
+        },
+        "TKX/V3-16k": {
+          "fertility": 2.1128649145659337,
+          "bytes_per_token": 3.9734723481414322,
+          "fertility_ci_lo": 2.0064659738517596,
+          "fertility_ci_hi": 2.2197584833752524
+        },
+        "TKX/V3-24k": {
+          "fertility": 1.9502720098076776,
+          "bytes_per_token": 4.304738144815936,
+          "fertility_ci_lo": 1.8433153953861263,
+          "fertility_ci_hi": 2.051849883008607
+        },
+        "TKX/V3-32k": {
+          "fertility": 1.8534211937782545,
+          "bytes_per_token": 4.529682913721113,
+          "fertility_ci_lo": 1.7539817085535798,
+          "fertility_ci_hi": 1.9480246081300023
+        },
+        "Slayer1B-1.08": {
+          "fertility": 2.028810052869512,
+          "bytes_per_token": 4.138095777626709,
+          "fertility_ci_lo": 1.9601301907744766,
+          "fertility_ci_hi": 2.097854962396637
+        },
+        "APT3-1B": {
+          "fertility": 2.0400735575817945,
+          "bytes_per_token": 4.11524882629108,
+          "fertility_ci_lo": 1.8720025633333504,
+          "fertility_ci_hi": 2.2241876857599503
+        },
+        "Qwen3.5": {
+          "fertility": 2.4538732664163665,
+          "bytes_per_token": 3.421289285100935,
+          "fertility_ci_lo": 2.409043041203488,
+          "fertility_ci_hi": 2.4924403104428166
+        },
+        "Bielik-1.5B-v3": {
+          "fertility": 2.1852731591448933,
+          "bytes_per_token": 3.841812762973352,
+          "fertility_ci_lo": 2.069199856730611,
+          "fertility_ci_hi": 2.2991444811510853
+        },
+        "PLLuM-12B": {
+          "fertility": 2.6116772661098766,
+          "bytes_per_token": 3.21456652486431,
+          "fertility_ci_lo": 2.5547987313428173,
+          "fertility_ci_hi": 2.6573573068611767
+        },
+        "GPT-4o-o200k": {
+          "fertility": 2.510688836104513,
+          "bytes_per_token": 3.3438673055207984,
+          "fertility_ci_lo": 2.4757683737329934,
+          "fertility_ci_hi": 2.5408714799288363
+        }
+      }
+    },
+    "6_json_narzedzia": {
+      "docs": 200,
+      "words": 25645,
+      "bytes": 254699,
+      "tokenizers": {
+        "TKX/V0-32k": {
+          "fertility": 3.737648664457009,
+          "bytes_per_token": 2.6572111171389223,
+          "fertility_ci_lo": 3.6238991311131916,
+          "fertility_ci_hi": 3.823984439756071
+        },
+        "TKX/V1-32k": {
+          "fertility": 4.192201208812634,
+          "bytes_per_token": 2.369094680445358,
+          "fertility_ci_lo": 4.049195198129258,
+          "fertility_ci_hi": 4.302395518351279
+        },
+        "TKX/V2-16k": {
+          "fertility": 4.733788262819263,
+          "bytes_per_token": 2.098049391258505,
+          "fertility_ci_lo": 4.58219713627385,
+          "fertility_ci_hi": 4.851887951937924
+        },
+        "TKX/V2-24k": {
+          "fertility": 4.313979333203354,
+          "bytes_per_token": 2.3022181647262996,
+          "fertility_ci_lo": 4.171275246413474,
+          "fertility_ci_hi": 4.423526406827071
+        },
+        "TKX/V2-32k": {
+          "fertility": 4.192201208812634,
+          "bytes_per_token": 2.369094680445358,
+          "fertility_ci_lo": 4.049195198129258,
+          "fertility_ci_hi": 4.302395518351279
+        },
+        "TKX/V2-base-16k": {
+          "fertility": 4.914135309027101,
+          "bytes_per_token": 2.021051712782587,
+          "fertility_ci_lo": 4.7649503986670965,
+          "fertility_ci_hi": 5.032746794980121
+        },
+        "TKX/V2-base-24k": {
+          "fertility": 4.5512965490349,
+          "bytes_per_token": 2.1821741290974828,
+          "fertility_ci_lo": 4.408168855059754,
+          "fertility_ci_hi": 4.663202159384477
+        },
+        "TKX/V2-base-32k": {
+          "fertility": 4.313784363423669,
+          "bytes_per_token": 2.3023222179034053,
+          "fertility_ci_lo": 4.183099172952606,
+          "fertility_ci_hi": 4.416169622699777
+        },
+        "TKX/V2b-16k": {
+          "fertility": 4.753168258919867,
+          "bytes_per_token": 2.089495057221379,
+          "fertility_ci_lo": 4.600495264510686,
+          "fertility_ci_hi": 4.872395613752262
+        },
+        "TKX/V2b-24k": {
+          "fertility": 4.336049912263599,
+          "bytes_per_token": 2.2904998291336174,
+          "fertility_ci_lo": 4.190877595828988,
+          "fertility_ci_hi": 4.447646234842123
+        },
+        "TKX/V2b-32k": {
+          "fertility": 4.114369272762722,
+          "bytes_per_token": 2.413911082046762,
+          "fertility_ci_lo": 3.9780640591083736,
+          "fertility_ci_hi": 4.220780869418041
+        },
+        "TKX/V3-16k": {
+          "fertility": 4.466328719048548,
+          "bytes_per_token": 2.2236880014667495,
+          "fertility_ci_lo": 4.335569294726573,
+          "fertility_ci_hi": 4.570284519086773
+        },
+        "TKX/V3-24k": {
+          "fertility": 4.251121076233184,
+          "bytes_per_token": 2.3362594019445972,
+          "fertility_ci_lo": 4.126078165380145,
+          "fertility_ci_hi": 4.350365402252687
+        },
+        "TKX/V3-32k": {
+          "fertility": 3.8406317020861764,
+          "bytes_per_token": 2.5859604235834017,
+          "fertility_ci_lo": 3.721459587549224,
+          "fertility_ci_hi": 3.932700257943559
+        },
+        "Slayer1B-1.08": {
+          "fertility": 3.9848313511405733,
+          "bytes_per_token": 2.4923819123014748,
+          "fertility_ci_lo": 3.880516981901834,
+          "fertility_ci_hi": 4.068758278091392
+        },
+        "APT3-1B": {
+          "fertility": 3.8109183076623125,
+          "bytes_per_token": 2.606122929265023,
+          "fertility_ci_lo": 3.706906747051049,
+          "fertility_ci_hi": 3.892025250576928
+        },
+        "Qwen3.5": {
+          "fertility": 4.0789237668161435,
+          "bytes_per_token": 2.434887767198195,
+          "fertility_ci_lo": 3.986766162898604,
+          "fertility_ci_hi": 4.150767119192037
+        },
+        "Bielik-1.5B-v3": {
+          "fertility": 4.32423474361474,
+          "bytes_per_token": 2.2967581946886693,
+          "fertility_ci_lo": 4.197588824448175,
+          "fertility_ci_hi": 4.423793675592979
+        },
+        "PLLuM-12B": {
+          "fertility": 4.243673230649249,
+          "bytes_per_token": 2.340359646785324,
+          "fertility_ci_lo": 4.1589420908192585,
+          "fertility_ci_hi": 4.3121540334224795
+        },
+        "GPT-4o-o200k": {
+          "fertility": 3.7540651199064143,
+          "bytes_per_token": 2.6455911834055237,
+          "fertility_ci_lo": 3.6918968355019524,
+          "fertility_ci_hi": 3.8049638240722743
+        }
+      }
+    },
+    "7_ogolny": {
+      "docs": 421,
+      "words": 155005,
+      "bytes": 1139692,
+      "tokenizers": {
+        "TKX/V0-32k": {
+          "fertility": 1.4116770426760428,
+          "bytes_per_token": 5.208425305163676,
+          "fertility_ci_lo": 1.394158902305373,
+          "fertility_ci_hi": 1.4296868365497541
+        },
+        "TKX/V1-32k": {
+          "fertility": 1.4535144027612013,
+          "bytes_per_token": 5.058508135746687,
+          "fertility_ci_lo": 1.4342542280999686,
+          "fertility_ci_hi": 1.4747731042729149
+        },
+        "TKX/V2-16k": {
+          "fertility": 1.6495532402180575,
+          "bytes_per_token": 4.457336842805127,
+          "fertility_ci_lo": 1.6283013149688517,
+          "fertility_ci_hi": 1.6711684728492058
+        },
+        "TKX/V2-24k": {
+          "fertility": 1.5308538434244057,
+          "bytes_per_token": 4.802949976821611,
+          "fertility_ci_lo": 1.5105952042341546,
+          "fertility_ci_hi": 1.552870142083455
+        },
+        "TKX/V2-32k": {
+          "fertility": 1.4535144027612013,
+          "bytes_per_token": 5.058508135746687,
+          "fertility_ci_lo": 1.4342542280999686,
+          "fertility_ci_hi": 1.4747731042729149
+        },
+        "TKX/V2-base-16k": {
+          "fertility": 1.7712589916454309,
+          "bytes_per_token": 4.151066821098946,
+          "fertility_ci_lo": 1.7521542175825415,
+          "fertility_ci_hi": 1.7926681833898062
+        },
+        "TKX/V2-base-24k": {
+          "fertility": 1.6674558885197253,
+          "bytes_per_token": 4.409480623994058,
+          "fertility_ci_lo": 1.6488863779912097,
+          "fertility_ci_hi": 1.6869841341391352
+        },
+        "TKX/V2-base-32k": {
+          "fertility": 1.6032966678494243,
+          "bytes_per_token": 4.585935079410428,
+          "fertility_ci_lo": 1.5860743328782554,
+          "fertility_ci_hi": 1.6216466272294343
+        },
+        "TKX/V2b-16k": {
+          "fertility": 1.637960065804329,
+          "bytes_per_token": 4.4888850377325795,
+          "fertility_ci_lo": 1.617053538986839,
+          "fertility_ci_hi": 1.6594852435440073
+        },
+        "TKX/V2b-24k": {
+          "fertility": 1.5199767749427437,
+          "bytes_per_token": 4.8373202492317615,
+          "fertility_ci_lo": 1.4999951082839669,
+          "fertility_ci_hi": 1.5412798387823938
+        },
+        "TKX/V2b-32k": {
+          "fertility": 1.4428566820425148,
+          "bytes_per_token": 5.095873015873016,
+          "fertility_ci_lo": 1.4239602254196797,
+          "fertility_ci_hi": 1.4628860794743104
+        },
+        "TKX/V3-16k": {
+          "fertility": 1.6615334989193897,
+          "bytes_per_token": 4.4251978287373905,
+          "fertility_ci_lo": 1.6411216136650633,
+          "fertility_ci_hi": 1.6824898953027367
+        },
+        "TKX/V3-24k": {
+          "fertility": 1.5220154188574562,
+          "bytes_per_token": 4.830840963038318,
+          "fertility_ci_lo": 1.503141230434548,
+          "fertility_ci_hi": 1.5414142208825052
+        },
+        "TKX/V3-32k": {
+          "fertility": 1.435353698267798,
+          "bytes_per_token": 5.122510528705048,
+          "fertility_ci_lo": 1.4177141206546617,
+          "fertility_ci_hi": 1.4534489481098194
+        },
+        "Slayer1B-1.08": {
+          "fertility": 1.6723976645914649,
+          "bytes_per_token": 4.396451028044593,
+          "fertility_ci_lo": 1.6562707672566548,
+          "fertility_ci_hi": 1.689628814286797
+        },
+        "APT3-1B": {
+          "fertility": 1.5568336505274023,
+          "bytes_per_token": 4.722800300020305,
+          "fertility_ci_lo": 1.540463195845669,
+          "fertility_ci_hi": 1.5743453506899228
+        },
+        "Qwen3.5": {
+          "fertility": 2.090306764297926,
+          "bytes_per_token": 3.517481049850621,
+          "fertility_ci_lo": 2.0711579659758943,
+          "fertility_ci_hi": 2.111950118710308
+        },
+        "Bielik-1.5B-v3": {
+          "fertility": 1.6611012547982322,
+          "bytes_per_token": 4.4263493333436905,
+          "fertility_ci_lo": 1.6417683015160416,
+          "fertility_ci_hi": 1.6812423942313617
+        },
+        "PLLuM-12B": {
+          "fertility": 2.2505467565562403,
+          "bytes_per_token": 3.2670347373912842,
+          "fertility_ci_lo": 2.2339314969194044,
+          "fertility_ci_hi": 2.2689977231330665
+        },
+        "GPT-4o-o200k": {
+          "fertility": 2.1885552078965196,
+          "bytes_per_token": 3.359574574707358,
+          "fertility_ci_lo": 2.170261283838653,
+          "fertility_ci_hi": 2.2091117880605466
+        }
+      }
+    },
+    "json_bzp_tabele": {
+      "docs": 18,
+      "words": 15095,
+      "bytes": 148703,
+      "tokenizers": {
+        "TKX/V0-32k": {
+          "fertility": 2.7356740642596886,
+          "bytes_per_token": 3.600992856278,
+          "fertility_ci_lo": 2.5610216139116657,
+          "fertility_ci_hi": 2.9050161304024726
+        },
+        "TKX/V1-32k": {
+          "fertility": 3.258098708181517,
+          "bytes_per_token": 3.023586344319961,
+          "fertility_ci_lo": 3.0233045844376867,
+          "fertility_ci_hi": 3.485444800641154
+        },
+        "TKX/V2-16k": {
+          "fertility": 3.590261676051673,
+          "bytes_per_token": 2.7438509087554204,
+          "fertility_ci_lo": 3.331534655754381,
+          "fertility_ci_hi": 3.834063380242542
+        },
+        "TKX/V2-24k": {
+          "fertility": 3.3794633984763167,
+          "bytes_per_token": 2.915002058298865,
+          "fertility_ci_lo": 3.134534042367792,
+          "fertility_ci_hi": 3.6091763794194676
+        },
+        "TKX/V2-32k": {
+          "fertility": 3.258098708181517,
+          "bytes_per_token": 3.023586344319961,
+          "fertility_ci_lo": 3.0233045844376867,
+          "fertility_ci_hi": 3.485444800641154
+        },
+        "TKX/V2-base-16k": {
+          "fertility": 3.6215303080490227,
+          "bytes_per_token": 2.720160242925348,
+          "fertility_ci_lo": 3.3809943263404816,
+          "fertility_ci_hi": 3.854463109555473
+        },
+        "TKX/V2-base-24k": {
+          "fertility": 3.477177873468036,
+          "bytes_per_token": 2.8330856576741352,
+          "fertility_ci_lo": 3.2407969976425224,
+          "fertility_ci_hi": 3.7062460597543043
+        },
+        "TKX/V2-base-32k": {
+          "fertility": 3.348989731699238,
+          "bytes_per_token": 2.9415267145372184,
+          "fertility_ci_lo": 3.1195342363050407,
+          "fertility_ci_hi": 3.571630501824993
+        },
+        "TKX/V2b-16k": {
+          "fertility": 3.5294468367008944,
+          "bytes_per_token": 2.791129380408056,
+          "fertility_ci_lo": 3.280017080681454,
+          "fertility_ci_hi": 3.77317242544588
+        },
+        "TKX/V2b-24k": {
+          "fertility": 3.3246107982775754,
+          "bytes_per_token": 2.963096542791671,
+          "fertility_ci_lo": 3.0905813515783023,
+          "fertility_ci_hi": 3.5503845781092025
+        },
+        "TKX/V2b-32k": {
+          "fertility": 3.1994700231864854,
+          "bytes_per_token": 3.0789920490309757,
+          "fertility_ci_lo": 2.9717096975906574,
+          "fertility_ci_hi": 3.422901967821371
+        },
+        "TKX/V3-16k": {
+          "fertility": 3.3600529976813513,
+          "bytes_per_token": 2.9318414826498422,
+          "fertility_ci_lo": 3.1379555866847433,
+          "fertility_ci_hi": 3.5746663759184463
+        },
+        "TKX/V3-24k": {
+          "fertility": 3.154620735342829,
+          "bytes_per_token": 3.122766122766123,
+          "fertility_ci_lo": 2.9372066000171273,
+          "fertility_ci_hi": 3.3593384932256303
+        },
+        "TKX/V3-32k": {
+          "fertility": 2.964094070884399,
+          "bytes_per_token": 3.3234919428737455,
+          "fertility_ci_lo": 2.760017314811258,
+          "fertility_ci_hi": 3.1571591250119972
+        },
+        "Slayer1B-1.08": {
+          "fertility": 3.1793971513746273,
+          "bytes_per_token": 3.0984310211905903,
+          "fertility_ci_lo": 2.9834417719602673,
+          "fertility_ci_hi": 3.374863316846104
+        },
+        "APT3-1B": {
+          "fertility": 2.9215634315998673,
+          "bytes_per_token": 3.371873653658647,
+          "fertility_ci_lo": 2.7454858824894974,
+          "fertility_ci_hi": 3.095931387646913
+        },
+        "Qwen3.5": {
+          "fertility": 3.7146074859224907,
+          "bytes_per_token": 2.6520009987159368,
+          "fertility_ci_lo": 3.5161062570135315,
+          "fertility_ci_hi": 3.9045182328861996
+        },
+        "Bielik-1.5B-v3": {
+          "fertility": 3.4275587943027492,
+          "bytes_per_token": 2.874098842265989,
+          "fertility_ci_lo": 3.2022543644919046,
+          "fertility_ci_hi": 3.6475585119744904
+        },
+        "PLLuM-12B": {
+          "fertility": 3.9208347134812853,
+          "bytes_per_token": 2.512511616118949,
+          "fertility_ci_lo": 3.7184649252159,
+          "fertility_ci_hi": 4.114903453422965
+        },
+        "GPT-4o-o200k": {
+          "fertility": 3.6115932427956277,
+          "bytes_per_token": 2.7276445879267017,
+          "fertility_ci_lo": 3.4423024021906268,
+          "fertility_ci_hi": 3.7663180894801402
+        }
+      }
+    }
+  },
+  "tokenizers": [
+    "TKX/V0-32k",
+    "TKX/V1-32k",
+    "TKX/V2-16k",
+    "TKX/V2-24k",
+    "TKX/V2-32k",
+    "TKX/V2-base-16k",
+    "TKX/V2-base-24k",
+    "TKX/V2-base-32k",
+    "TKX/V2b-16k",
+    "TKX/V2b-24k",
+    "TKX/V2b-32k",
+    "TKX/V3-16k",
+    "TKX/V3-24k",
+    "TKX/V3-32k",
+    "Slayer1B-1.08",
+    "APT3-1B",
+    "Qwen3.5",
+    "Bielik-1.5B-v3",
+    "PLLuM-12B",
+    "GPT-4o-o200k"
+  ]
+}
