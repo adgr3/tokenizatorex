@@ -191,6 +191,74 @@ def bootstrap_ratio_ci(toks_per_doc, words_per_doc, n=1000, seed=20261123):
     ratios = t[idx].sum(axis=1) / w[idx].sum(axis=1)
     return float(np.percentile(ratios, 2.5)), float(np.percentile(ratios, 97.5))
 
+def _encoding_offsets(tok, text, enc_obj):
+    offs = getattr(enc_obj, "offsets", None)
+    if offs is not None:
+        return list(offs)
+    ids = list(enc_obj.ids)
+    # Fallback: reconstruct char offsets by progressive decode.
+    try:
+        dec = getattr(tok, "decode", None)
+        if dec is None:
+            return None
+        out = []
+        prev = ""
+        for i in range(len(ids)):
+            cur = dec(ids[: i + 1])
+            out.append((len(prev), len(cur)))
+            prev = cur
+        # Verify reconstruction matches text length approximately; still useful for locating pattern.
+        return out
+    except Exception:
+        return None
+
+
+def _pattern_segmentation(tok, pattern, contexts):
+    standalone_enc = tok.encode(pattern, add_special_tokens=False)
+    standalone_ids = list(standalone_enc.ids)
+    standalone_text = [tok.decode([i]) for i in standalone_ids]
+    context_segs = []
+    merged_with_prev = 0
+    for ctx in contexts:
+        enc = tok.encode(ctx, add_special_tokens=False)
+        ids = list(enc.ids)
+        offs = _encoding_offsets(tok, ctx, enc)
+        start = ctx.find(pattern)
+        end = start + len(pattern)
+        covered = []
+        covered_ids = []
+        if offs and start >= 0:
+            for idx, (s, e) in enumerate(offs):
+                if e <= start or s >= end:
+                    continue
+                covered.append(idx)
+                covered_ids.append(ids[idx])
+            if covered and offs[covered[0]][0] < start:
+                merged_with_prev += 1
+        else:
+            # Fallback: compare standalone ids against any contiguous subsequence.
+            covered_ids = standalone_ids if standalone_ids == ids else []
+            for i in range(len(ids) - len(standalone_ids) + 1):
+                if ids[i : i + len(standalone_ids)] == standalone_ids:
+                    covered_ids = standalone_ids
+                    covered = list(range(i, i + len(standalone_ids)))
+                    break
+        context_segs.append({
+            "token_ids": covered_ids,
+            "tokens_text": [tok.decode([i]) for i in covered_ids],
+            "merged_with_prev": bool(covered and offs and start >= 0 and offs[covered[0]][0] < start),
+        })
+    identical = len({tuple(s["token_ids"]) for s in context_segs if s["token_ids"]}) <= 1 and all(s["token_ids"] for s in context_segs)
+    return {
+        "standalone_token_ids": standalone_ids,
+        "standalone_tokens_text": standalone_text,
+        "contexts_identical": identical,
+        "contexts_identical_count": sum(1 for s in context_segs if tuple(s["token_ids"]) == tuple(standalone_ids)),
+        "merged_with_prev_count": merged_with_prev,
+        "context_segmentations": context_segs,
+    }
+
+
 def main():
     os.makedirs(RESULTS, exist_ok=True)
     toks = load_tokenizers()
@@ -198,8 +266,7 @@ def main():
 
     # sources
     sources = {}
-    sources["bzp_ogloszenia"] = load_source("bzp_ogloszenia") if False else load_spec1()
-    # use audit bzp for domain source 1? Task says spec1 test.jsonl (500). We use spec1.
+    # Źródło 1: spec1 test.jsonl (500 ogłoszeń BZP), zgodnie z zadaniem v2.
     sources["bzp_ogloszenia"] = load_spec1()
     sources["du_eli"] = load_source("du_eli")
     sources["kio"] = load_source("kio")
@@ -269,20 +336,18 @@ def main():
         for it in wz["items"]:
             pat = it["pattern"]
             ctxs = it["contexts"]
-            segs = []
-            counts = []
-            for c in ctxs:
-                ids = encode_ids(tok, c)
-                # find pattern token slice? We'll just count full context tokens and pattern tokens
-                pid = encode_ids(tok, pat)
-                counts.append(len(pid))
-                segs.append(tok.decode(pid) if hasattr(tok, "decode") else "")
-            # consistency: pattern token sequence same in all contexts? Check if encode(pattern) same (trivially yes).
-            # We measure: are the pattern's tokens identical when encoded standalone vs extracted? Simple: count variance.
-            consistent = len(set(counts)) == 1
-            item_res.append({"id": it["id"], "category": it["category"], "pattern": pat,
-                            "tokens_per_pattern": counts[0], "consistent_counts": consistent})
-        # aggregate
+            seg = _pattern_segmentation(tok, pat, ctxs)
+            item_res.append({
+                "id": it["id"],
+                "category": it["category"],
+                "pattern": pat,
+                "tokens_per_pattern": len(seg["standalone_token_ids"]),
+                "segmentation_text": seg["standalone_tokens_text"],
+                "contexts_identical_count": seg["contexts_identical_count"],
+                "contexts_total": len(ctxs),
+                "merged_with_prev_count": seg["merged_with_prev_count"],
+                "contexts_identical": seg["contexts_identical"],
+            })
         cats = {}
         for it, r in zip(wz["items"], item_res):
             cats.setdefault(it["category"], []).append(r["tokens_per_pattern"])
@@ -294,22 +359,17 @@ def main():
     print("zapisano patterns")
 
     # special chars
-    SPECIAL = ["§","„","”","–","—","…","€","×","°","²","½","№","ó","ą","ę","ś","ć","ń","ź","ż",
-               "ł","µ","©","®","™","•","·","«","»","–","−","≥","≤","≠","≈","√","∞","∑","∏","∫"]
+    SPECIAL = ["§", "„", "”", "–", "—", "…", "€", "×", "°", "²", "½", "№", "ó", "ą", "ę", "ś", "ć", "ń", "ź", "ż",
+               "ł", "µ", "©", "®", "™", "•", "·", "«", "»", "−", "≥", "≤", "≠", "≈", "√", "∞", "∑", "∏", "∫"]
     sc = {"chars": SPECIAL, "tokenizers": {}}
     for tlabel, tok in toks.items():
-        vs = vocab_set(tok)
         row = {}
         for ch in SPECIAL:
-            if isinstance(tok, object) and hasattr(tok, "encode") and not vs:
-                # tiktoken path
-                try:
-                    ids = tok.encode(ch, add_special_tokens=False).ids
-                    row[ch] = (len(ids) == 1)
-                except Exception:
-                    row[ch] = False
-            else:
-                row[ch] = ch in vs
+            try:
+                ids = encode_ids(tok, ch)
+                row[ch] = len(ids) == 1
+            except Exception:
+                row[ch] = False
         sc["tokenizers"][tlabel] = row
     with open(os.path.join(RESULTS, "tkx_v2_special_chars.json"), "w", encoding="utf-8") as f:
         json.dump(sc, f, ensure_ascii=False, indent=2)

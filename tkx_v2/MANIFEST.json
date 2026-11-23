@@ -15611,5 +15611,29 @@
       "sha256": "6310a860bcab9daff70c7fb2da454c5f187dfc624350898bf32ee4aacd8de28e",
       "nfd": false
     }
+  ],
+  "v2_sources": [
+    {
+      "id": "bzp_spec1_test",
+      "name": "BZP 500 (spec1)",
+      "path": "D:\\VPS\\fabryka\\spec1\\data\\test.jsonl",
+      "source": "spec1/data/test.jsonl",
+      "split": "test",
+      "docs": 500,
+      "sha256": "a9085def4f0221c3789afe6413ea2459edb0aa1e29191465fc6e824a9575231b",
+      "in_repo": false,
+      "date": "2026-11-23"
+    },
+    {
+      "id": "tc1_json_tools_test",
+      "name": "JSON narz?dzi 200 (tc1)",
+      "path": "D:\\VPS\\fabryka\\tc1\\dane\\test.jsonl",
+      "source": "tc1/dane/test.jsonl",
+      "split": "test",
+      "docs": 200,
+      "sha256": "64cfb2f61ebd2375bc5bd420fea1b54d51ac3c7a96910ecf6e6b0bc0f3803cef",
+      "in_repo": false,
+      "date": "2026-11-23"
+    }
   ]
 }

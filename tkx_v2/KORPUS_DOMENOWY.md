@@ -1,30 +1,29 @@
 # Korpus testu domenowego TOKENIZATOREX v2.0
 
-Pełne teksty: `audit/data/raw/` (gitignore, poza gitem). W repo: ten plik + manifest (URL, data, domena, podział, słowa, SHA-256).
+Pełne teksty poza repo (zasada: bez surowych tekstów w git). W repo: manifest, metryki, ten opis.
 
-## Źródła
+## Źródła (zgodne z `results/tkx_v2_fertility.json`)
 
-| # | Domena | Źródło | Status | Dokumenty | Słowa (test) |
-|---|--------|--------|--------|-----------|--------------|
-| 1 | przetargi (BZP) | spec1/data/test.jsonl (pole `text`), 500 ogłoszeń oczyszczonych | OK | 500 | 1 421 000 |
-| 2 | akty prawne (Dz.U. 2026) | API ELI Sejmu, PDF | OK (limit 20) | 20 | 39 546 |
-| 3 | orzeczenia KIO | UZP wyszukiwarka, 2026 | OK | 110 | 153 324 |
-| 4 | samorząd (uchwały) | dziennik urzędowy woj. śląskiego (ELI) | OK | 400 | 116 864 |
-| 5 | granty | NIW (strony + PDF) | OK (limit 20) | 20 | 37 969 |
-| 6 | JSON narzędzi | tc1/dane/test.jsonl | OK | 200 | 25 645 |
-| 7 | kontrola ogólna | korpus TKX-A `web` (HPLT, test split) | OK | 421 | 155 005 |
+| # | Domena | Źródło | Dokumenty | Słowa | Bajty |
+|---:|---|---|---:|---:|---:|
+| 1_bzp | BZP (ogłoszenia) | patrz manifest/metryki | 500 | 1421000 | 11359609 |
+| 2_du_eli | Dz.U. 2026 ELI | patrz manifest/metryki | 12 | 25324 | 178865 |
+| 3_kio | KIO | patrz manifest/metryki | 66 | 93179 | 721697 |
+| 4_samorzad | Samorząd (uchwały) | patrz manifest/metryki | 240 | 69521 | 458906 |
+| 5_granty | Granty | patrz manifest/metryki | 12 | 26102 | 219137 |
+| 6_json_narzedzia | JSON narzędzi (tc1) | patrz manifest/metryki | 200 | 25645 | 254699 |
+| 7_ogolny | Kontrola ogólna (HPLT web) | patrz manifest/metryki | 421 | 155005 | 1139692 |
+| json_bzp_tabele | JSON BZP (tabele, extra) | patrz manifest/metryki | 18 | 15095 | 148703 |
 
-Uwaga: pełne teksty nie trafiają do gita (zasada nr 2). W repo tylko manifest i metryki.
+## Zestawy dodatkowe opisane w tkx_v2/MANIFEST.json
+- BZP 500 (spec1): `D:\VPSabryka\spec1\data	est.jsonl` (poza repo).
+- JSON narzędzi 200 (tc1): `D:\VPSabryka	c1\dane	est.jsonl` (poza repo).
+
+## Znane wyjątki jakości danych
+- 4/500 dokumentów BZP (spec1) nie jest w NFC. Zapisane jako znany wyjątek O1/O2; korpus testowy nie został znormalizowany przed pomiarem w tym wydaniu (wymagałoby przeliczenia). Do potwierdzenia/naprawy przed kolejnym pomiarem.
 
 ## Przeciek
+13-gramy vs próbka treningowa HPLT 400 MB — nie wykonano. Próg stopu: > 20% dokumentów z trafieniem.
 
-13-gramy znaków/słów korpusu domenowego vs próbka treningowa tokenizera (HPLT 400 MB) — do wykonania po zamrożeniu korpusu.
-Wynik: do uzupełnienia w RAPORT_TEST_DOMENOWY.md. Próg stopu: > 20% dokumentów z trafieniem.
-
-## Licencje / status prawny
-
-Dokumenty urzędowe (Dz.U., Monitor Polski, BZP, dzienniki urzędowe województw) są publiczne.
-Orzeczenia KIO są publiczne. Ogłoszenia konkursów z BIP/NIW są publiczne.
-Teksty z HPLT/FineWeb-2 na licencji ODC-By; Wikipedia CC BY-SA.
-Brak danych osobowych: spec1 już oczyszczony; pozostałe źródła przetwarzane własnym kodem (bez NERGAL).
-PY
+## Licencje / status
+Dokumenty urzędowe są publiczne. HPLT/FineWeb-2: ODC-By; Wikipedia: CC BY-SA.

@@ -5,9 +5,8 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def test_sprawdz_sam_runs():
     p = subprocess.run([sys.executable, os.path.join(REPO, "scripts", "sprawdz_sam.py"), "Test zdania."],
                        capture_output=True, text=True, timeout=300)
-    # may fail due to network, but should at least not crash on import
-    assert p.returncode in (0, 1)  # 0 success, 1 if no tokenizers? 
-    assert "Tekst:" in p.stdout or "brak tekstu" in p.stderr or p.returncode == 0
+    assert p.returncode == 0
+    assert "Tekst:" in p.stdout
 
 def test_wzorce_valid():
     import json

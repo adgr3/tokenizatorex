@@ -1,15 +1,11 @@
-# Raport prosty v2.0 (ok. 1 strona)
+# Raport prosty v2.0
 
-TOKENIZATOREX tnie polski tekst najlepiej z 20 tokenizerów (1,656 tokena na słowo).
-W wersji v2.0 sprawdziliśmy, jak tną teksty urzędowe (przetargi, ustawy, orzeczenia,
-samorząd, granty, JSON) i porównaliśmy 20 tokenizerów.
+TOKENIZATOREX ma warianty o niskiej fertility na polskim tekście. W v2.0 porównano warianty na 8 źródłach testowych (przetargi, Dz.U., KIO, samorząd, granty, JSON narzędzi, JSON BZP, kontrola ogólna).
 
-Wyniki: oryginalny wariant V0-32k nadal wygrywa kompresję na wszystkich źródłach.
-Wariant V3-32k (z poprawionymi cyframi) traci 8-12% kompresji, ale ma lepsze cięcie dat i kwot.
-Żaden wariant nie ma „§” w V3 jako jednego tokena — to wada do naprawy w v2.1.
+Wyniki z danych (`results/tkx_v2_fertility.json`): V0-32k ma najniższą fertility na wszystkich 8 źródłach (punktowo). V3-32k przegrywa z V0 na 7 z 8 źródeł; na 1 źródle (kontrola ogólna) też przegrywa punktowo. CI rozdzielają V0 od V3 wyraźnie tylko na części źródeł; Dz.U. i granty mają n=12, więc ranking jest niepewny.
 
-Martwe tokeny: ~8% u nas, ~35% u Slayera.
+Martwe tokeny: V0-32k 8,12%, V3-32k 7,83%, Slayer1B-1.08 35,03% (`results/tkx_v2_dead_tokens.json`). Uwaga: 35,03% Slayera dotyczy korpusu polskiego; w audycie szerszym 8,90%.
 
-Wybór kandydata do modelu 150M: V3-32k (hipoteza), do potwierdzenia na małych modelach (TKX-D).
-Fertility to warunek konieczny, nie dowód jakości modelu.
-PY
+Znaki specjalne: V3-32k nie ma `§` jako jednego tokena (2 tokeny). V0-32k ma `§` jako 1 token. Dane: `results/tkx_v2_special_chars.json`.
+
+Kandydat domyślny v2.0: **V0-32k**. V3-32k to wariant eksperymentalny z cięciem cyfr i wadami (NFD→NFC, brak `§` jako 1 token, gorsza fertility na większości źródeł). Ostateczny wybór po TKX-D (małe modele, BPB, ≥ 3 seedy). Fertility to warunek konieczny, nie dowód jakości modelu.

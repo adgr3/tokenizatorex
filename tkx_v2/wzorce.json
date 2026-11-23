@@ -438,14 +438,15 @@
     {
       "id": "W0037",
       "category": "identyfikatory",
-      "pattern": "NIP 5260250274",
+      "pattern": "NIP 0000000000",
       "contexts": [
-        "NIP 5260250274 jest elementem dokumentu.",
-        "tekst NIP 5260250274 tekst",
-        "(NIP 5260250274) opis",
-        "slowo, NIP 5260250274 slowo",
-        "jeden dwa NIP 5260250274 trzy cztery"
-      ]
+        "NIP 0000000000 jest elementem dokumentu.",
+        "tekst NIP 0000000000 tekst",
+        "(NIP 0000000000) opis",
+        "slowo, NIP 0000000000 slowo",
+        "jeden dwa NIP 0000000000 trzy cztery"
+      ],
+      "note": "jawnie fikcyjny numer z bledna suma kontrolna (zastepuje wczesniejszy przyklad)"
     },
     {
       "id": "W0038",
