@@ -17,11 +17,14 @@ SYNTHETIC_EMAILS = {
     "user@example.com", "biuro@urzad.gov.pl", "kontakt@firma.pl", "info@grant.org.pl", "a@b.pl",
     "przyklad@example.org", "sekretariat@urzad.gov.pl", "22wog.zamowienia@ron.mil.pl",
     "CWK@platformazakupowa.pl", "FIO@niw.gov.pl",
+    "kontakt@example.org", "biuro@firma.example", "oferty@urzad.example",
+    "odbiorca@example.net", "zespol@example.org", "kontakt@example.edu",
 }
 SYNTHETIC_PHONE_FILES = {
     "tests/test_no_pii_tracked.py",
     "tkx_c/review_grok/attack2_synthetic.json",
     "tkx_c/review_codex/REVIEW_CODEX_R2.md",
+    "tkx_v21/PROTOKOL.md",
 }
 ALLOW_EMAIL_FILES = {
     "tkx_v2/wzorce.json", "tkx_v2/gen_wzorce.py", "results/tkx_v2_patterns.json",
@@ -29,6 +32,7 @@ ALLOW_EMAIL_FILES = {
     "tkx_c/make_golden_dataset.py", "tkx_c/results/consistency.json",
     "tkx_c/review_codex/verify_consistency.json", "tkx_c/review_grok/attack2_synthetic.json",
     "tests/test_no_pii_tracked.py", "scripts/sprawdz_liczby_v2.py",
+    "tkx_v21/generuj_json.py",
 }
 
 

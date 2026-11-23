@@ -153,3 +153,17 @@ def test_wybor_zgodny_z_regula():
     assert rec["section_one_token"]
     for s, d in rec["polish_deltas"].items():
         assert d["delta_pct"] <= 1.0 + 1e-9, s
+
+
+def test_formaty_dat_kwot_paragraf():
+    p = os.path.join(RESULTS, "tkx_v21_formaty.json")
+    if not os.path.isfile(p):
+        pytest.skip("brak results/tkx_v21_formaty.json")
+    d = _load_json(p)
+    # "?" = 1 token w V0 i V0J2
+    par = d["paragraf"]["§"]
+    assert par["V0"] == 1
+    assert par["V0J2"] == 1
+    # ?rednia na datach V0J2 <= V0 + 0,1
+    da = d["summary"]["date_avg"]
+    assert da["V0J2"] <= da["V0"] + 0.1 + 1e-9

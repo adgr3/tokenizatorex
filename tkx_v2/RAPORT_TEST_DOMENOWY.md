@@ -121,6 +121,6 @@ Segmentacja mierzona przez `encoding.offsets` (liczba kontekstów z identyczną 
 ## 6. Kandydat
 
 Domyślny wariant v2.0: **V0-32k** (najniższa fertility na wszystkich 8 źródłach, `§` jako 1 token, round-trip NFC/NFD bez zmian w próbce syntetycznej).
-V3-32k: wariant eksperymentalny z cięciem cyfr; wygrywa na identyfikatorach/kodach/sygnaturach, przegrywa na datach i kwotach; nie ma `§` jako jednego tokena; normalizuje NFD→NFC (4 błędy round-trip w próbie).
+V3-32k: wariant eksperymentalny z cięciem cyfr; wygrywa na identyfikatorach/kodach/sygnaturach, przegrywa na datach i kwotach; nie ma `§` jako jednego tokena; normalizuje NFD→NFC (O1 FAIL, O2 PASS wg definicji Karty). Round-trip: 4/700 dokumentów BZP z NFD; osobno test syntetyczny potwierdza normalizację NFD→NFC.
 Ostateczny wybór dopiero po TKX-D (małe modele, BPB, ≥ 3 seedy). Fertility to warunek konieczny, nie dowód jakości.
 

@@ -135,7 +135,29 @@
     "5,43",
     "1,87",
     "2,76",
-    "1,68"
+    "1,68",
+    "-23,22%",
+    "-44,86%",
+    "-33,04%",
+    "-57,94%",
+    "23,22",
+    "44,86",
+    "33,04",
+    "57,94",
+    "+0,2013%",
+    "0,2013",
+    "+0,2219%",
+    "0,2219",
+    "+0,2860%",
+    "0,2860",
+    "-0,0806%",
+    "0,0806",
+    "+0,3739%",
+    "0,3739",
+    "-1,3174%",
+    "1,3174",
+    "+0,4885%",
+    "0,4885"
   ],
   "allowed_context_patterns": [
     "SHA-256",
@@ -169,5 +191,5 @@
     "20261123",
     "20261119"
   ],
-  "notes": "Wyjątki: numery paragrafów/art., lata, rozmiary modeli/słowników, identyfikatory, daty zadania, stałe protokołu. Każdy wyjątek musi być uzasadniony kontekstem."
+  "notes": "Wyjątki: numery paragrafów/art., lata, rozmiary modeli/słowników, identyfikatory, daty zadania, stałe protokołu. Każdy wyjątek musi być uzasadniony kontekstem. R3: delty procentowe eksperymentu JSON wyliczone skryptem z results/tkx_v21_*.json (selection_r2/test/wzorce)."
 }

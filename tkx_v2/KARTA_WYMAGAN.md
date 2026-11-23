@@ -10,8 +10,8 @@ Wartości z `results/*.json` i pomiarów opisanych w raportach. PASS/FAIL nie s�
 
 | Wymaganie | V0-32k | V3-32k | Slayer1B-1.08 | Dowód |
 |---|---:|---:|---:|---|
-| O1 Round-trip (NFC/NFD próbka syntetyczna) | PASS (NFC+NFD) | FAIL (4 błędy NFD→NFC w próbie) | PASS (NFC+NFD) | test `tests/test_tkx_v2_r2.py` |
-| O2 NFC (brak NFD na wyjściu / normalizacja) | PASS (zachowuje NFD) | FAIL (normalizuje NFD→NFC) | PASS (zachowuje NFD) | test `tests/test_tkx_v2_r2.py` |
+| O1 Round-trip `decode(encode(x))==x` | PASS | FAIL (4/700 dokumentów BZP z NFD; w próbie syntetycznej NFD→NFC) | PASS | `tests/test_tkx_v2_r2.py` + manifest BZP |
+| O2 Brak NFD w słowniku i na wyjściu (100%) | FAIL (zachowuje NFD na wyjściu) | PASS (normalizuje do NFC) | FAIL (zachowuje NFD na wyjściu) | `tests/test_tkx_v2_r2.py` |
 | O3 Znak `§` jako pojedynczy token | PASS (1 token) | FAIL (2 tokeny) | PASS (1 token) | `results/tkx_v2_special_chars.json` |
 | O4 Lata 2015–2035 (≤ 2 tokeny/rok w formatach) | UNKNOWN | UNKNOWN | UNKNOWN | nie zmierzono w tym raporcie |
 | O5 Kwoty (≤ 6 tokenów/kwota, spójnie) | FAIL | FAIL | FAIL | `results/tkx_v2_patterns.json` (kategoria kwoty, średnie > 6 nie spełniają progu) |
@@ -21,6 +21,8 @@ Wartości z `results/*.json` i pomiarów opisanych w raportach. PASS/FAIL nie s�
 | O9 Przeciek 13-gram ≤ 20% | UNKNOWN | UNKNOWN | UNKNOWN | nie wykonano |
 
 Uwaga: żaden z ocenianych wariantów (V0, V3, Slayer) nie spełnia O5–O8. Progi O5–O8 okazały się nierealne dla wszystkich tokenizerów (także Slayera) → do rewizji w v2.1 z uzasadnieniem, a nie po cichu.
+
+Uwaga O1/O2: wymagania O1 (dokładny round-trip) i O2 (wyjście w NFC) wykluczają się dla wejścia w NFD. Propozycja v2.1: korpus normalizowany do NFC przed tokenizacją (krok preprocessingu), a wymaganie dla tokenizera = dokładny round-trip na wejściu NFC. Wtedy O1 i O2 przestają się gryźć.
 
 ## Wymagania (skrót)
 
