@@ -5,7 +5,7 @@
 ## 1. Podsumowanie
 
 1. Odtworzony V0 (`V0R-32k`) ma **identyczne merge'e etapu 1 i 2** co V0; liczba tokenów na BZP jest identyczna (2032561 vs 2032561), a SHA pliku różni się metadanymi (`train_seconds`, `from`) i pustym `alias_merges`.
-2. Poprawka 1 (po treningu, przed pomiarem): held-out dostał osobne słownictwo (2026-11-23 15:23), bo pierwsza wersja miała 98/100 dokumentów >50% pokrycia 13-gramów; dane treningowe mają ten sam SHA-256 `427acf85…` i warianty nie były ponownie trenowane.
+2. Poprawka 1 (po treningu, przed pomiarem (deklaracja)): held-out dostał osobne słownictwo (2026-11-23 15:23), bo pierwsza wersja miała 98/100 dokumentów >50% pokrycia 13-gramów; dane treningowe mają ten sam SHA-256 `427acf85…` i warianty nie były ponownie trenowane.
 3. Na dev najniższą fertility JSON ma **V0J10-32k**: 2,9406 vs 3,9658 w V0R (-25,85%), ale nie przechodzi bramki polskiej.
 4. Zysk na dev rozkłada się nierówno: tc1 (całe rekordy, narzędzia widziane) -23,96%, tc1 tylko wywołania+odpowiedzi -59,15%, held-out (narzędzia niewidziane) -33,80%.
 5. Reguła wyboru **nie wskazała kandydata**. Najbliżej jest **V0J2-32k**: najgorsze źródło to granty +3,75% (n=12, CI 1,746–1,811 vs 1,674–1,812); pozostałe źródła: najwyżej +0,49%.
@@ -171,7 +171,7 @@ Segmentacja tekstowa dwóch przykładów JSON (tokeny HF, `Ġ` = spacja):
 
 | zapis kwoty | V0 | V0J2 | V3 | Slayer | GPT-4o |
 |---|---|---|---|---|---|
-| `1 234,56 zł` | 6,10 | 6,10 | 5,15 | 6,53 | 6,30 |
+| `kwota z odstępami (do 9,9 mln)` | 6,10 | 6,10 | 5,15 | 6,53 | 6,30 |
 | `1234,56 zł` | 5,35 | 5,30 | 4,83 | 5,80 | 4,83 |
 | `1.234,56 zł` | 5,92 | 5,88 | 5,80 | 7,08 | 5,80 |
 | `1234.56 PLN` | 5,10 | 5,05 | 4,80 | 5,67 | 4,80 |

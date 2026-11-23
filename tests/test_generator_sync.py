@@ -5,6 +5,7 @@ Uruchamiany w CI bez danych zewnętrznych; generator czyta tylko results/*.json.
 from __future__ import annotations
 
 import importlib.util
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -23,7 +24,9 @@ def _load_generator():
 
 def test_generator_check_clean():
     p = subprocess.run([sys.executable, str(REPO / "scripts" / "generuj_raporty_v2.py"),
-                        "--check"], cwd=REPO, capture_output=True, text=True, encoding="utf-8")
+                        "--check"], cwd=REPO, capture_output=True, text=True,
+                       encoding="utf-8", errors="replace",
+                       env={**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"})
     assert p.returncode == 0, p.stdout + p.stderr
     assert "STATUS=OK" in p.stdout
 

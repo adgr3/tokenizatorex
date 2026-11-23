@@ -1,4 +1,4 @@
-# PROTOKÓŁ TKX-V21-JSON (zapisany przed treningiem i przed commitem)
+# PROTOKÓŁ TKX-V21-JSON (zapisany przed treningiem (commit 5d1e50d); aneksy: Poprawka 1 (po treningu, przed pomiarem), Poprawka 2 (po fakcie))
 
 Data: 23.11.2026 · gałąź `feat/tkx-v2-1-json` · commit bazowy `688e0021`
 Seed: **20261123**, `PYTHONHASHSEED=0`, bootstrap 1000× po dokumentach.
@@ -81,7 +81,7 @@ polszczyznę o X%” albo „brak kandydata”.
 6. Test JSON liczymy **raz**, dla wszystkich wariantów, po wybraniu kandydata.
    Nie zmieniamy reguły po zobaczeniu testu.
 
-## 6. Poprawka 1 (po treningu, przed pomiarem dev/test)
+## 6. Poprawka 1 (po treningu, przed pomiarem dev/test (deklaracja))
 
 Data: **23.11.2026, 15:23** — po zakończeniu treningu wariantów (V0J2 ok. 15:06,
 V0J10 ok. 15:16), przed uruchomieniem pomiarów dev/test.
@@ -104,7 +104,7 @@ wywołania) i **41,7%** na held-out; 0 dokumentów korpusu >50%.
 V0J2/V0J5/V0J10 nie były ponownie trenowane. Zmieniły się wyłącznie pliki
 `json_generic_heldout_dev.jsonl` i `json_generic_heldout_test.jsonl`
 (nowe wartości, ten sam podział 100/100 i te same 10 narzędzi).
-To poprawka **przed** pomiarem, nie po zobaczeniu testu.
+To poprawka **przed** pomiarem, nie po zobaczeniu testu (deklaracja).
 
 ## 7. Poprawka 2 (po fakcie, jawnie)
 

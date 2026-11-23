@@ -81,7 +81,7 @@ def main():
     def sp(x):
         return f'{int(x):,}'.replace(',',' ')
     A = {
-        '1 234,56 zł': lambda a: f'{sp(a)},{round(a%1*100):02d} zł',
+        'kwota z odstępami (do 9,9 mln)': lambda a: f'{sp(a)},{round(a%1*100):02d} zł',
         '1234,56 zł': lambda a: f'{int(a)},{round(a%1*100):02d} zł',
         '1.234,56 zł': lambda a: f"{int(a):,}".replace(',','.') + f',{round(a%1*100):02d} zł',
         '1234.56 PLN': lambda a: f'{a:.2f} PLN',

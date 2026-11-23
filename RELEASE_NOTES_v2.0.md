@@ -10,6 +10,21 @@ v2.0 to stan po TKX-A + TKX-C + test domenowy na tekstach urzędowych (BZP, Dz.U
 
 Z danych (`results/tkx_v2_fertility.json`): **V0-32k ma najniższą fertility na wszystkich 8 źródłach** (punktowo). CI rozdzielają V0 od V3 wyraźnie tylko na części źródeł; Dz.U. i granty mają n=12, więc ranking jest niepewny.
 
+### Fertility v2.0 (V0 vs V3 vs Slayer)
+
+| Źródło | Dokumenty | V0-32k | V3-32k | Slayer1B-1.08 |
+|---|---:|---:|---:|---:|
+| BZP (ogłoszenia) | 500 | 1,430 | 1,553 | 1,810 |
+| Dz.U. 2026 ELI | 12 | 1,463 | 1,543 | 1,771 |
+| KIO | 66 | 1,398 | 1,424 | 1,715 |
+| Samorząd (uchwały) | 240 | 1,550 | 1,618 | 1,980 |
+| Granty | 12 | 1,746 | 1,853 | 2,029 |
+| JSON narzędzi (tc1) | 200 | 3,738 | 3,841 | 3,985 |
+| Kontrola ogólna (HPLT web) | 421 | 1,412 | 1,435 | 1,672 |
+| JSON BZP (tabele, extra) | 18 | 2,736 | 2,964 | 3,179 |
+
+To tabela v2.0 (test domenowy, `results/tkx_v2_fertility.json`); nie mylić ze starym benchmarkiem TKX-A w `README.md` (`results/benchmark.json`).
+
 **Domyślny wariant v2.0 = V0-32k.** Ma `§` jako 1 token i round-trip 0/700 na dokumentach.
 
 **V3-32k = wariant eksperymentalny z cięciem cyfr.** Wygrywa na identyfikatorach, kodach pocztowych, numerach BZP, skrótach i sygnaturach w wzorcach; przegrywa na datach i kwotach; nie ma `§` jako jednego tokena; normalizuje NFD→NFC. O1 FAIL: 4/700 dokumentów (3 BZP + 1 KIO, wszystkie NFD; 4/500 BZP ma NFD); O2 PASS. Na źródłach testowych traci vs V0: BZP +8,54%, Dz.U. +5,43%, KIO +1,87%, samorząd +4,39%, granty +6,18%, JSON narzędzi +2,76%, JSON BZP tabele +8,35%, ogólny +1,68% (liczone z fertility w `results/tkx_v2_fertility.json`).
@@ -38,6 +53,16 @@ Domyślnie lokalne tokenizery TOKENIZATOREX + Slayer; `--wszystkie` dodaje zewn�
 ## Eksperyment v2.1-JSON (kandydat warunkowy V0J2-32k)
 
 Dane: `results/tkx_v21_*.json` (gałąź `feat/tkx-v2-1-json`, cherry-pick do `feat/tkx-v2-0`). Reguła z protokołu: bramka JSON + brak regresji polskiego > 1% na 7 źródłach, `§` 1 token.
+
+### Chronologia protokołu
+
+Chronologia: protokół → trening → Poprawka 1 (po treningu, przed pomiarem; deklaracja) → pomiar → Poprawka 2 (po fakcie).
+
+| etap | kiedy | co |
+|---|---|---|
+| Protokół | przed treningiem, commit `5d1e50d` | zapisany przed treningiem; reguła wyboru i test bez podglądania |
+| Trening → Poprawka 1 | trening, potem Poprawka 1 po treningu, przed pomiarem (deklaracja) | warianty V0J2/V0J5/V0J10; held-out dostał osobne słownictwo; dane treningowe bez zmian |
+| Pomiar → Poprawka 2 | pomiar dev/test po Poprawce 1, potem Poprawka 2 po fakcie | oryginalna reguła: brak kandydata; granty 149: kandydat warunkowy V0J2-32k (nie wybrany według protokołu) |
 
 ### Wynik według reguły oryginalnej (na pierwszym miejscu)
 

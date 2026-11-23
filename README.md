@@ -31,6 +31,8 @@ Wydaje mi się, że nie tylko w Polsce jest to możliwe.
 
 ## Benchmark: TOKENIZATOREX vs tokenizery prawdziwych modeli
 
+**Uwaga:** tabela poniżej to **stary benchmark TKX-A** ([`results/benchmark.json`](results/benchmark.json)), **nie v2.0**. Wyniki testu domenowego v2.0 (8 źródeł, V0/V3/Slayer) są w tabeli [„Fertility v2.0” w RELEASE_NOTES](RELEASE_NOTES_v2.0.md#fertility-v20-v0-vs-v3-vs-slayer).
+
 Każdy tokenizer koduje te same teksty, po około 2 MB na dziedzinę. **Fertility** to liczba tokenów
 na słowo (słowo = `str.split()`): mniej oznacza tańsze wywołania, szybsze generowanie i więcej
 tekstu w oknie kontekstu modelu.

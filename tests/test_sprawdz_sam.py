@@ -4,7 +4,9 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def test_sprawdz_sam_runs():
     p = subprocess.run([sys.executable, os.path.join(REPO, "scripts", "sprawdz_sam.py"), "Test zdania."],
-                       capture_output=True, text=True, timeout=300)
+                       capture_output=True, text=True, timeout=300,
+                       encoding="utf-8", errors="replace",
+                       env={**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"})
     assert p.returncode == 0
     assert "Tekst:" in p.stdout
 

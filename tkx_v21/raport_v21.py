@@ -1,4 +1,7 @@
-"""Generuje tkx_v21/RAPORT.md i tkx_v21/RAPORT_PROSTY.md wyłącznie z results/*.json.
+"""Treść raportów v21 (RAPORT.md, RAPORT_PROSTY.md) wyłącznie z results/*.json.
+
+Moduł jest częścią jedynego źródła raportów: ``scripts/generuj_raporty_v2.py``.
+Uruchomienie tego pliku jest cienkim wywołaniem kanonicznego generatora:
 
   python tkx_v21/raport_v21.py
 
@@ -11,7 +14,6 @@ import os
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 R = os.path.join(REPO, "results")
-OUT = os.path.join(REPO, "tkx_v21")
 
 POLISH = ["bzp_ogloszenia", "du_eli", "kio", "samorzad", "granty",
           "json_bzp_tabele", "general_web"]
@@ -159,7 +161,7 @@ def build_reports():
         f"liczba tokenów na BZP jest {'identyczna' if rep['bzp']['identical'] else 'różna'} "
         f"({rep['bzp']['v0']['tokens']} vs {rep['bzp']['v0r']['tokens']}), a SHA pliku różni się "
         f"metadanymi (`train_seconds`, `from`) i pustym `alias_merges`.",
-        f"Poprawka 1 (po treningu, przed pomiarem): held-out dostał osobne słownictwo "
+        f"Poprawka 1 (po treningu, przed pomiarem (deklaracja)): held-out dostał osobne słownictwo "
         f"({man['json_generic']['heldout_change']['when']}), bo pierwsza wersja miała 98/100 "
         f"dokumentów >50% pokrycia 13-gramów; dane treningowe mają ten sam SHA-256 "
         f"`{man['json_train_sha256'][:8]}…` i warianty nie były ponownie trenowane.",
@@ -462,6 +464,8 @@ def build_reports():
                       f"granicy szumu, ale zgodnie z regułą: brak kandydata.")
     simple.append(f"\n- Odtworzenie V0: merge'e identyczne, tokeny na BZP "
                   f"{'identyczne' if rep['bzp']['identical'] else 'różne'}.")
+    simple.append("- Poprawka 1 (po treningu, przed pomiarem (deklaracja)): held-out dostał "
+                  "osobne słownictwo; dane treningowe bez zmian.")
     if winner:
         simple.append(f"- JSON na teście (tc1, narzędzia widziane): "
                       f"{pct(w_tc1_gain)}; same wywołania: {pct(w_tc1_only_gain)}; "
@@ -498,12 +502,14 @@ def build_reports():
 
 
 def main():
-    md, simple = build_reports()
-    with open(os.path.join(OUT, "RAPORT.md"), "w", encoding="utf-8", newline="\n") as f:
-        f.write(md)
-    with open(os.path.join(OUT, "RAPORT_PROSTY.md"), "w", encoding="utf-8", newline="\n") as f:
-        f.write(simple)
-    print("zapisano tkx_v21/RAPORT.md i tkx_v21/RAPORT_PROSTY.md")
+    """Cienkie wywołanie kanonicznego generatora — jedno źródło raportów."""
+    import sys
+    from pathlib import Path
+    repo = str(Path(__file__).resolve().parents[1])
+    if repo not in sys.path:
+        sys.path.insert(0, repo)
+    from scripts.generuj_raporty_v2 import main as generate
+    return generate()
 
 
 if __name__ == "__main__":

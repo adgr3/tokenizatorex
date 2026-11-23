@@ -58,7 +58,9 @@ def test_number_gate_injected_bad_number(tmp_path):
     dst.write_text(text + "\n\nWstrzyknięta liczba kontrolna: 9876543,21\n", encoding="utf-8")
     # Run gate on this single file
     p = subprocess.run([sys.executable, str(REPO / "scripts" / "sprawdz_liczby_v2.py"), str(dst)],
-                       cwd=REPO, capture_output=True, text=True)
+                       cwd=REPO, capture_output=True, text=True,
+                       encoding="utf-8", errors="replace",
+                       env={**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"})
     assert p.returncode != 0, p.stdout + p.stderr
 
 
