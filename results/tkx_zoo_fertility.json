@@ -1542,7 +1542,7 @@
           "origin": "existing:results/tkx_v21_granty149.json"
         }
       },
-      "note": "D:\\VPS\\fabryka\\spec1\\data\\zbiorB.jsonl, pole text, tylko odczyt"
+      "note": "<TKX_DANE>/spec1/zbiorB.jsonl, pole text, tylko odczyt"
     },
     "json_generic_heldout_test": {
       "docs": 100,

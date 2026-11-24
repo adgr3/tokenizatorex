@@ -74,9 +74,21 @@ SOURCES = {
 
 
 def find_snapshot(repo_dir: str) -> Path | None:
-    roots = [Path.home() / ".cache" / "huggingface" / "hub",
-             Path(r"D:\VPS\cache\huggingface\hub")]
+    """Szuka pliku w standardowym cache Hugging Face (HF_HOME / HF_HUB_CACHE)."""
+    roots = []
+    if os.environ.get("HF_HOME"):
+        roots.append(Path(os.environ["HF_HOME"]) / "hub")
+    try:
+        from huggingface_hub.constants import HF_HUB_CACHE
+        roots.append(Path(HF_HUB_CACHE))
+    except Exception:
+        pass
+    roots.append(Path.home() / ".cache" / "huggingface" / "hub")
+    seen = set()
     for root in roots:
+        if root in seen:
+            continue
+        seen.add(root)
         snaps = root / repo_dir / "snapshots"
         if not snaps.is_dir():
             continue

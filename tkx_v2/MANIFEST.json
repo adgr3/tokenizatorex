@@ -15616,7 +15616,7 @@
     {
       "id": "bzp_spec1_test",
       "name": "BZP 500 (spec1)",
-      "path": "D:\\VPS\\fabryka\\spec1\\data\\test.jsonl",
+      "path": "<TKX_DANE>/spec1/test.jsonl",
       "source": "spec1/data/test.jsonl",
       "split": "test",
       "docs": 500,
@@ -15627,7 +15627,7 @@
     {
       "id": "tc1_json_tools_test",
       "name": "JSON narz?dzi 200 (tc1)",
-      "path": "D:\\VPS\\fabryka\\tc1\\dane\\test.jsonl",
+      "path": "<TKX_DANE>/tc1/test.jsonl",
       "source": "tc1/dane/test.jsonl",
       "split": "test",
       "docs": 200,

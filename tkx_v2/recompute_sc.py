@@ -1,4 +1,5 @@
 import json, os, sys
+from pathlib import Path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from tokenizers import Tokenizer
 REPO=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,9 +36,22 @@ try:
     sc["tokenizers"]["GPT-4o-o200k"]=row
 except Exception as e:
     print("tiktoken err", e)
-# Slayer cached?
-sl_path=r"C:\Users\x\.cache\huggingface\hub\models--SlayerLab--Slayer1B-1.08\snapshots\ea0945b11153e67517b70d21192e6076d161f658\tokenizer.json"
-if os.path.isfile(sl_path):
+# Slayer cached? Standardowy cache HF (HF_HOME / HF_HUB_CACHE).
+sl_path = None
+try:
+    from huggingface_hub.constants import HF_HUB_CACHE
+    roots = [Path(HF_HUB_CACHE)]
+    if os.environ.get("HF_HOME"):
+        roots.insert(0, Path(os.environ["HF_HOME"]) / "hub")
+    for root in roots:
+        snaps = root / "models--SlayerLab--Slayer1B-1.08" / "snapshots"
+        found = sorted(snaps.glob("*/tokenizer.json"))
+        if found:
+            sl_path = str(found[0])
+            break
+except Exception as e:
+    print("Slayer cache err", e)
+if sl_path and os.path.isfile(sl_path):
     tok=Tokenizer.from_file(sl_path)
     row={}
     for ch in SPECIAL:

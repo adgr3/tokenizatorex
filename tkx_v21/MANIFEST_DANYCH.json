@@ -12,7 +12,7 @@
     "docs": 1040,
     "bytes": 150099,
     "sha256": "1b3c4d8e8536c2c7aba94e4289e65a0ebff49546e16e5abbd536fb71478f9e2f",
-    "source": "D:\\VPS\\fabryka\\tc1\\dane\\train.jsonl"
+    "source": "<TKX_DANE>/tc1/train.jsonl"
   },
   "json_generic": {
     "train_examples": 150000,

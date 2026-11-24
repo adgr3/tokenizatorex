@@ -1,7 +1,7 @@
 {
   "meta": {
     "script": "scripts/przeciek_slowny_r6c.py",
-    "train_file": "D:\\VPS\\cache\\tkx_r6\\stability_train.txt",
+    "train_file": "<TKX_DANE>/trening/stability_train.txt",
     "train_sha256": "b0e7447cf94f8e0fa03edfeb3f6f10a2e63c9e32037f086cf5a434709ae6e558",
     "train_bytes": 400160750,
     "train_chars": 378522161,
