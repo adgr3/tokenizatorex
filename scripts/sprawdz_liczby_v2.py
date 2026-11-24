@@ -81,9 +81,9 @@ def add_number_forms(vals: set[str], n: float):
 def load_derived_numbers():
     """Liczby pochodne wyliczane z wyników (nie wyjątki).
 
-    Post używa zaokrągleń typu „15 tokenizerów innych modeli” albo „ok. 20%
-    mniej tokenów”. Wyliczamy je z tych samych plików, z których pochodzą
-    liczby w raportach, i dokładamy do zbioru dopuszczalnych wartości.
+    Lokalne ogłoszenie używa zaokrągleń typu „15 tokenizerów innych modeli”
+    albo „ok. 20% mniej tokenów”. Wyliczamy je z tych samych plików, z których
+    pochodzą liczby w raportach, i dokładamy do zbioru dopuszczalnych wartości.
     """
     out = []
     try:
@@ -238,14 +238,14 @@ def main():
         pass
     args = [a for a in sys.argv[1:] if not a.startswith("-")]
     reports = [REPO / a for a in args] if args else [REPO / r for r in DEFAULT_REPORTS]
-    # Post jest lokalny i nie wchodzi do repo. Sprawdzamy go, jeśli istnieje;
+    # Lokalne ogłoszenie nie wchodzi do repo. Sprawdzamy je, jeśli istnieje;
     # w CI (brak pliku) pomijamy z jasnym komunikatem.
-    post = REPO / "DISCORD_TKX_V2.md"
     if not args:
-        if post.exists():
-            reports.append(post)
+        local_ads = sorted(REPO.glob("*.local.md"))
+        if local_ads:
+            reports.extend(local_ads)
         else:
-            print("INFO: pomijam DISCORD_TKX_V2.md (brak pliku lokalnego; w CI to normalne)")
+            print("INFO: pomijam lokalne ogłoszenie (brak pliku; w CI to normalne)")
     data_vals, data_raw = load_json_numbers()
     for n in load_derived_numbers():
         data_raw.append(n)

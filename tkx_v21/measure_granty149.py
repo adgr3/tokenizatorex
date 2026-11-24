@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+from pathlib import Path
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if REPO not in sys.path:
@@ -15,13 +16,15 @@ if REPO not in sys.path:
 
 from tkx_v21.measure_v21 import load_tokenizers, measure_source  # noqa: E402
 
-SRC = r"D:\VPS\fabryka\spec1\data\zbiorB.jsonl"
+TKX_DANE = Path(os.environ.get("TKX_DANE", "data"))
+SRC_PATH = TKX_DANE / "spec1" / "zbiorB.jsonl"
+SRC = "<TKX_DANE>/spec1/zbiorB.jsonl"
 OUT = os.path.join(REPO, "results", "tkx_v21_granty149.json")
 
 
 def main():
     docs = []
-    with open(SRC, encoding="utf-8") as f:
+    with open(SRC_PATH, encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if not line:

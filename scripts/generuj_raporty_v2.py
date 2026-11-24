@@ -856,8 +856,8 @@ def build_korpus():
         kd.append(f"| {sid} | {name} | patrz manifest/metryki | {s['docs']} | {s['words']} | {s['bytes']} |")
     kd.append("")
     kd.append("## Zestawy dodatkowe opisane w tkx_v2/MANIFEST.json")
-    kd.append("- BZP 500 (spec1): `D:\\VPS\\fabryka\\spec1\\data\\test.jsonl` (poza repo).")
-    kd.append("- JSON narzędzi 200 (tc1): `D:\\VPS\\fabryka\\tc1\\dane\\test.jsonl` (poza repo).")
+    kd.append("- BZP 500 (spec1): `<TKX_DANE>/spec1/test.jsonl` (poza repo).")
+    kd.append("- JSON narzędzi 200 (tc1): `<TKX_DANE>/tc1/test.jsonl` (poza repo).")
     kd.append("")
     kd.append("## Przeciek")
     rl = r6c

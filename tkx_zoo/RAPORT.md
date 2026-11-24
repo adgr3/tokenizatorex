@@ -1,4 +1,4 @@
-# TOKENIZATOREX ZOO — raport przed postem v2.0
+# TOKENIZATOREX ZOO - porównanie tokenizerów
 
 Gałąź `feat/tkx-zoo` od `f12fc2c` · commit autora `adgr3` · seed 20261123, `PYTHONHASHSEED=0`, bootstrap 1000× po dokumentach · `encode(..., add_special_tokens=False)`.
 Wszystkie liczby poniżej wygenerował `tkx_zoo/raport.py` z plików `results/tkx_zoo_*.json`. Wyniki V0, V0J2, Slayera, Bielika 1.5B, APT3 i GPT-4o zostały skopiowane z istniejących plików (pole `origin` w `tkx_zoo_fertility.json`) — bez przeliczania.
@@ -219,7 +219,7 @@ Przy braku współdzielenia embedingu wejściowego z wyjściem liczby parametró
 
 W nawiasie liczba tokenów; `same_as_v0` w `results/tkx_zoo_regression_split.json` mówi, czy podział jest identyczny jak V0-32k.
 
-## Propozycja zdań do posta
+## Wnioski
 
 1. Sprawdziliśmy 17 tokenizery — także PLLuM 4B/8B/12B, Bielika 11B v3.1 i 4.5B v3, Aster-0.5B i dwa DanielK 32k z PR #29 — na tych samych ośmiu polskich źródłach urzędowych.
 2. V0-32k vs V0J2-32k na polskim to remis w granicach CI: 0 rozłącznych przedziałów na 7 tabel (6 tekstowych v2 + granty 149). V0J2 jest wyraźnie lepszy tylko na JSON narzędzi: tc1 2,8699 vs 3,7376 i held-out 6,1485 vs 9,1819, przedziały rozłączne.

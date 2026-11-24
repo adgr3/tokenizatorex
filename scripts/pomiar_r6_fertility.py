@@ -25,8 +25,9 @@ sys.path.insert(0, str(REPO))
 
 from tokenizers import Tokenizer  # noqa: E402
 
-SPEC1 = Path(r"D:\VPS\fabryka\spec1\data\test.jsonl")
-TC1 = Path(r"D:\VPS\fabryka\tc1\dane\test.jsonl")
+TKX_DANE = Path(os.environ.get("TKX_DANE", "data"))
+SPEC1 = TKX_DANE / "spec1" / "test.jsonl"
+TC1 = TKX_DANE / "tc1" / "test.jsonl"
 AUDIT_RAW = REPO / "audit" / "data" / "raw"
 ALPHA = 2.5
 SEED = 20261123

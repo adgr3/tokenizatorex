@@ -27,7 +27,9 @@ def main():
     a = json.load(open(p_v0, encoding="utf-8"))
     b = json.load(open(p_v0r, encoding="utf-8"))
     docs = []
-    with open(r"D:\VPS\fabryka\spec1\data\test.jsonl", encoding="utf-8") as f:
+    spec1 = os.path.join(os.environ.get("TKX_DANE", "data"),
+                         "spec1", "test.jsonl")
+    with open(spec1, encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if line:

@@ -7,7 +7,6 @@ TOKENIZATOREX to byte-level BPE z drugim etapem treningu, opartym na pracy **Sup
 **przekraczać spację**, więc słownik uczy się całych polskich zwrotów: `" na podstawie"`,
 `" w ramach"`, `", że"`, `" w związku z"`, `" nie tylko"`. Trenowany na
 [`SlayerLab/hplt-v3-pl-cleaned`](https://huggingface.co/datasets/SlayerLab/hplt-v3-pl-cleaned).
-Powstał jako praca domowa na kursie [Fabryka AI](https://fabryka.ai/).
 
 ```
 Wydaje mi się, że nie tylko w Polsce jest to możliwe.
@@ -158,6 +157,34 @@ ids = tok.encode("Na podstawie umowy, w ramach projektu.")
 
 **Tokeny specjalne w tekście użytkownika.** Domyślnie biblioteka `tokenizers` zamienia literalny napis `<|endoftext|>` na ID specjalne 31999 — nawet przy `add_special_tokens=False`. W trybie zalecanym ustaw `tok.encode_special_tokens = True` (wersja z lock); wtedy napis jest zwykłym tekstem i round-trip działa. Dla `transformers` w katalogu tokenizera jest `tokenizer_config.json` z `"split_special_tokens": true`. Nie dotyczy to pomiarów fertility: w tekstach pomiarowych nie ma nazw dodanych jako `special=True` (sprawdzone w `results/tkx_v2_r6_special_tokens.json`).
 
+## Jak odtworzyć pomiary
+
+Dane wejściowe trzymamy poza repo. Ustaw zmienną środowiskową `TKX_DANE` na
+katalog, w którym leżą pliki w takim układzie:
+
+```
+<TKX_DANE>/spec1/test.jsonl
+<TKX_DANE>/spec1/zbiorB.jsonl
+<TKX_DANE>/tc1/test.jsonl
+<TKX_DANE>/tc1/train.jsonl
+<TKX_DANE>/tkx-json/tkx_v21/dane/json_generic_heldout_test.jsonl
+<TKX_DANE>/tkx-json/tkx_v21/dane/json_generic_heldout_dev.jsonl
+<TKX_DANE>/tkx-json/tkx_v21/dane/json_train.txt
+<TKX_DANE>/tkx-json/tkx_v21/dane/tc1_json_train.txt
+<TKX_DANE>/trening/stability_train.txt
+<TKX_DANE>/trening/train_doc_sha256.json
+```
+
+W raportach ścieżki są pokazywane względnie, np.
+`<TKX_DANE>/spec1/test.jsonl`. Skrypty pomiarowe czytają `TKX_DANE`; katalog
+`tkx_v21/dane` można też wskazać osobną zmienną `TKX_V21_DATA`.
+
+```bash
+export TKX_DANE=/ścieżka/do/danych       # Windows: set TKX_DANE=...
+python scripts/generuj_raporty_v2.py --check
+python scripts/sprawdz_liczby_v2.py
+```
+
 ## Odtworzenie
 
 ```bash
@@ -195,6 +222,6 @@ python demo.py "Twoje zdanie."
 
 - Liu i in. (2025), *SuperBPE: Space Travel for Language Models*, arXiv:2503.13423
 - Karpathy, *Let's build the GPT Tokenizer* · [minbpe](https://github.com/karpathy/minbpe)
-- Warsztat Slayer: [slayerlabs/tokenizer](https://github.com/slayerlabs/tokenizer)
+- Inspiracje: [slayerlabs/tokenizer](https://github.com/slayerlabs/tokenizer)
 - Dane: [SlayerLab/hplt-v3-pl-cleaned](https://huggingface.co/datasets/SlayerLab/hplt-v3-pl-cleaned),
   [SlayerLab/polish-dynaword](https://huggingface.co/datasets/SlayerLab/polish-dynaword), wikitext-103

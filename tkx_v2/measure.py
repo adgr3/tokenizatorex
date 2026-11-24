@@ -6,6 +6,7 @@ import json
 import os
 import sys
 import unicodedata
+from pathlib import Path
 
 # H9: najpierw HF, potem repo
 from tokenizers import Tokenizer as HFTokenizer  # noqa: E402
@@ -16,8 +17,9 @@ if REPO not in sys.path:
 
 AUDIT_RAW = os.path.join(REPO, "audit", "data", "raw")
 RESULTS = os.path.join(REPO, "results")
-SPEC1 = r"D:\VPS\fabryka\spec1\data\test.jsonl"
-TC1 = r"D:\VPS\fabryka\tc1\dane\test.jsonl"
+TKX_DANE = Path(os.environ.get("TKX_DANE", "data"))
+SPEC1 = str(TKX_DANE / "spec1" / "test.jsonl")
+TC1 = str(TKX_DANE / "tc1" / "test.jsonl")
 
 import numpy as np
 

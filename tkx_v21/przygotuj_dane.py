@@ -26,7 +26,8 @@ HPLT_P2 = ("https://huggingface.co/datasets/SlayerLab/hplt-v3-pl-cleaned/resolve
            "data/european_hplt_v3_pl_bin8_5_p2.parquet")
 STABILITY_SHA = "b0e7447cf94f8e0fa03edfeb3f6f10a2e63c9e32037f086cf5a434709ae6e558"
 STABILITY_BYTES = 400_160_750
-TC1_TRAIN = r"D:\VPS\fabryka\tc1\dane\train.jsonl"
+TC1_TRAIN = os.path.join(os.environ.get("TKX_DANE", "data"),
+                         "tc1", "train.jsonl")
 SEED = 20261123
 
 

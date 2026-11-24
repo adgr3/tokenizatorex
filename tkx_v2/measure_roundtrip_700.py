@@ -15,7 +15,8 @@ from tokenizers import Tokenizer
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 REPO = Path(__file__).resolve().parents[1]
 AUDIT_RAW = REPO / "audit" / "data" / "raw"
-SPEC1 = Path(r"D:\VPS\fabryka\spec1\data\test.jsonl")
+TKX_DANE = Path(os.environ.get("TKX_DANE", "data"))
+SPEC1 = TKX_DANE / "spec1" / "test.jsonl"
 POLISH = {
     "bzp_ogloszenia": "spec1",
     "du_eli": "prawo_eli",

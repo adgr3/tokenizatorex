@@ -15,11 +15,11 @@ import json
 import os
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.environ.get("TKX_V21_DATA", os.path.join(REPO, "tkx_v21", "dane"))
-if not os.path.isdir(DATA):
-    DATA = r"D:\VPS\fabryka\tkx-json\tkx_v21\dane"
+TKX_DANE = os.environ.get("TKX_DANE", "data")
+DATA = os.environ.get("TKX_V21_DATA", os.path.join(
+    TKX_DANE, "tkx-json", "tkx_v21", "dane"))
 RESULTS = os.path.join(REPO, "results")
-TC1 = r"D:\VPS\fabryka\tc1\dane"
+TC1 = os.path.join(TKX_DANE, "tc1")
 N = 13
 
 

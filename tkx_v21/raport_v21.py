@@ -332,7 +332,7 @@ def build_reports():
     md.append("Wynik **pierwszy** pozostaje „brak kandydata” według oryginalnego protokołu. "
               "Poniżej ten sam test na większym zbiorze grantów; to kandydat warunkowy, "
               "nie wybór według protokołu.\n")
-    md.append(f"Źródło: `{g149['source']}` — {g149['docs']} ogłoszeń, "
+    md.append(f"Źródło: `<TKX_DANE>/spec1/zbiorB.jsonl` - {g149['docs']} ogłoszeń, "
               f"{g149['words']} słów. Metoda bez zmian (suma tokenów / suma słów, "
               f"bootstrap 1000×, seed 20261123).\n")
     md.append(table(["tokenizer", "fertility [95% CI]", "Δ vs V0R"], g_rows))

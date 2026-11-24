@@ -24,9 +24,11 @@ import numpy as np  # noqa: E402
 
 RESULTS = os.path.join(REPO, "results")
 AUDIT_RAW = os.path.join(REPO, "audit", "data", "raw")
-TC1_DIR = r"D:\VPS\fabryka\tc1\dane"
-SPEC1 = r"D:\VPS\fabryka\spec1\data\test.jsonl"
-DATA = os.path.join(REPO, "tkx_v21", "dane")
+TKX_DANE = os.environ.get("TKX_DANE", "data")
+TC1_DIR = os.path.join(TKX_DANE, "tc1")
+SPEC1 = os.path.join(TKX_DANE, "spec1", "test.jsonl")
+DATA = os.environ.get("TKX_V21_DATA", os.path.join(
+    TKX_DANE, "tkx-json", "tkx_v21", "dane"))
 SEED = 20261123
 
 POLISH = {

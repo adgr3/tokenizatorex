@@ -71,7 +71,7 @@ Najbliżej progu jest **V0J2-32k**: najgorsze źródło to granty +3,75% (n=12);
 
 Wynik **pierwszy** pozostaje „brak kandydata” według oryginalnego protokołu. Poniżej ten sam test na większym zbiorze grantów; to kandydat warunkowy, nie wybór według protokołu.
 
-Źródło: `D:\VPS\fabryka\spec1\data\zbiorB.jsonl` — 149 ogłoszeń, 120251 słów. Metoda bez zmian (suma tokenów / suma słów, bootstrap 1000×, seed 20261123).
+Źródło: `<TKX_DANE>/spec1/zbiorB.jsonl` - 149 ogłoszeń, 120251 słów. Metoda bez zmian (suma tokenów / suma słów, bootstrap 1000×, seed 20261123).
 
 | tokenizer | fertility [95% CI] | Δ vs V0R |
 |---|---|---|

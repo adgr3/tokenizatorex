@@ -16,6 +16,6 @@ tkx_v2/data/
 tkx_v2/tmp/
 tkx_v2/raw/
 
-# lokalny post poza repo; bramka liczb sprawdza go tylko, gdy istnieje
-DISCORD_TKX_V2.md
+# lokalne ogłoszenie poza repo; bramka liczb sprawdza je tylko, gdy istnieje
+*.local.md
 tkx_zoo/hf/

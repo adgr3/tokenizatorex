@@ -113,7 +113,7 @@ ostatecznym raportem.
 
 **Powód.** Jedynym źródłem, które zablokowało V0J2, były granty: 12 dokumentów,
 +3,75%, CI pokrywają się z V0R. Właściciel wskazał większy zbiór
-`D:\VPS\fabryka\spec1\data\zbiorB.jsonl`: **149 ogłoszeń** z lipca–listopada
+`<TKX_DANE>/spec1/zbiorB.jsonl`: **149 ogłoszeń** z lipca–listopada
 2026, 120 251 słów, dane osobowe zamaskowane. Tylko odczyt; do repo trafiają
 wyłącznie liczby (`results/tkx_v21_granty149.json`).
 

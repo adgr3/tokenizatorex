@@ -110,7 +110,7 @@ def main():
     # ---------- RAPORT.md ----------
     L = []
     A = L.append
-    A("# TOKENIZATOREX ZOO — raport przed postem v2.0")
+    A("# TOKENIZATOREX ZOO - porównanie tokenizerów")
     A("")
     A(f"Gałąź `feat/tkx-zoo` od `f12fc2c` · commit autora `adgr3` · seed "
       f"{fert['seed']}, `PYTHONHASHSEED={fert['pythonhashseed']}`, bootstrap "
@@ -275,7 +275,7 @@ def main():
     A("W nawiasie liczba tokenów; `same_as_v0` w `results/tkx_zoo_regression_split.json` "
       "mówi, czy podział jest identyczny jak V0-32k.")
     A("")
-    A("## Propozycja zdań do posta")
+    A("## Wnioski")
     A("")
     A(f"1. Sprawdziliśmy {len(toks)} tokenizery — także PLLuM 4B/8B/12B, Bielika 11B v3.1 i 4.5B v3, "
       f"Aster-0.5B i dwa DanielK 32k z PR #29 — na tych samych ośmiu polskich źródłach urzędowych.")

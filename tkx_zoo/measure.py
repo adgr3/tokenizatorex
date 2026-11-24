@@ -36,10 +36,13 @@ RESULTS = os.path.join(REPO, "results")
 ZOO = os.path.join(REPO, "tkx_zoo")
 HF_DIR = os.path.join(ZOO, "hf")
 AUDIT_RAW = os.path.join(REPO, "audit", "data", "raw")
-SPEC1 = r"D:\VPS\fabryka\spec1\data\test.jsonl"
-ZBORB = r"D:\VPS\fabryka\spec1\data\zbiorB.jsonl"
-TC1 = r"D:\VPS\fabryka\tc1\dane\test.jsonl"
-GENERIC_TEST = os.path.join(REPO, "tkx_v21", "dane", "json_generic_heldout_test.jsonl")
+TKX_DANE = os.environ.get("TKX_DANE", "data")
+SPEC1 = os.path.join(TKX_DANE, "spec1", "test.jsonl")
+ZBORB = os.path.join(TKX_DANE, "spec1", "zbiorB.jsonl")
+TC1 = os.path.join(TKX_DANE, "tc1", "test.jsonl")
+GENERIC_TEST = os.environ.get("TKX_V21_DATA", os.path.join(
+    TKX_DANE, "tkx-json", "tkx_v21", "dane"))
+GENERIC_TEST = os.path.join(GENERIC_TEST, "json_generic_heldout_test.jsonl")
 SEED = 20261123
 BASE_COMMIT = "f12fc2c6bc35881887e57d76a9f5dd6284811ccf"
 
@@ -447,7 +450,7 @@ def main():
             row["tokenizers"][label] = dict(m, origin="new")
         fertility["sources"][sname] = row
         print(f"  {sname}: {row['docs']} dok., {row['words']} słów")
-    fertility["sources"]["granty_149"]["note"] = "D:\\VPS\\fabryka\\spec1\\data\\zbiorB.jsonl, pole text, tylko odczyt"
+    fertility["sources"]["granty_149"]["note"] = "<TKX_DANE>/spec1/zbiorB.jsonl, pole text, tylko odczyt"
     with open(os.path.join(RESULTS, "tkx_zoo_fertility.json"), "w", encoding="utf-8") as f:
         json.dump(fertility, f, ensure_ascii=False, indent=2)
         f.write("\n")

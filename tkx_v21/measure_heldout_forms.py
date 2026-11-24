@@ -1,7 +1,7 @@
 """Rozbicie zysku V0J2 vs V0 na held-out test wg formy (compact/pretty/result).
 
 Wynik: results/tkx_v21_heldout_forms.json. Czyta teksty z danych poza gitem
-(domyślnie tkx_v21/dane; fallback D:\\VPS\\fabryka\\tkx-json\\tkx_v21\\dane).
+(`TKX_V21_DATA` albo `<TKX_DANE>/tkx-json/tkx_v21/dane`).
 """
 from __future__ import annotations
 
@@ -15,9 +15,9 @@ from tokenizers import Tokenizer
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 REPO = Path(__file__).resolve().parents[1]
-DATA = Path(os.environ.get("TKX_V21_DATA", str(REPO / "tkx_v21" / "dane")))
-if not DATA.is_dir():
-    DATA = Path(r"D:\VPS\fabryka\tkx-json\tkx_v21\dane")
+TKX_DANE = Path(os.environ.get("TKX_DANE", "data"))
+DATA = Path(os.environ.get(
+    "TKX_V21_DATA", str(TKX_DANE / "tkx-json" / "tkx_v21" / "dane")))
 HELD = DATA / "json_generic_heldout_test.jsonl"
 
 

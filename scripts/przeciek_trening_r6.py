@@ -30,12 +30,14 @@ import numpy as np
 
 REPO = Path(__file__).resolve().parents[1]
 RESULTS = REPO / "results"
-TRAIN = Path(r"D:\VPS\cache\tkx_r6\stability_train.txt")
-TRAIN_HASHES = Path(r"D:\VPS\cache\tkx_r6\train_doc_sha256.json")
+TKX_DANE = Path(os.environ.get("TKX_DANE", "data"))
+TRAIN = TKX_DANE / "trening" / "stability_train.txt"
+TRAIN_HASHES = TKX_DANE / "trening" / "train_doc_sha256.json"
 TRAIN_SHA = "b0e7447cf94f8e0fa03edfeb3f6f10a2e63c9e32037f086cf5a434709ae6e558"
-SPEC1 = Path(r"D:\VPS\fabryka\spec1\data")
-TC1 = Path(r"D:\VPS\fabryka\tc1\dane\test.jsonl")
-JSON_HELDOUT = Path(r"D:\VPS\fabryka\tkx-json\tkx_v21\dane\json_generic_heldout_test.jsonl")
+SPEC1 = TKX_DANE / "spec1"
+TC1 = TKX_DANE / "tc1" / "test.jsonl"
+JSON_HELDOUT = (TKX_DANE / "tkx-json" / "tkx_v21" / "dane"
+                / "json_generic_heldout_test.jsonl")
 AUDIT_RAW = REPO / "audit" / "data" / "raw"
 N = 13
 THRESHOLD = 0.5
