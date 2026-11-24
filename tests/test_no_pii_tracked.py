@@ -31,6 +31,8 @@ R6_SYNTHETIC_REDTEAM = {
     "results/tkx_v2_r6_redteam_a_a2_regression.json",
     "results/tkx_v2_r6_redteam_a_a5_extremes.json",
     "tests/redteam_cases.py",
+    # syntetyczny przykład segmentacji cyfr, nie numer telefonu
+    "tkx_zoo/RAPORT.md",
 }
 SYNTHETIC_PHONE_FILES = {
     "tests/test_no_pii_tracked.py",

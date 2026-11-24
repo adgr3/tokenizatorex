@@ -78,6 +78,55 @@ def add_number_forms(vals: set[str], n: float):
     vals.add(str(n))
 
 
+def load_derived_numbers():
+    """Liczby pochodne wyliczane z wyników (nie wyjątki).
+
+    Post używa zaokrągleń typu „15 tokenizerów innych modeli” albo „ok. 20%
+    mniej tokenów”. Wyliczamy je z tych samych plików, z których pochodzą
+    liczby w raportach, i dokładamy do zbioru dopuszczalnych wartości.
+    """
+    out = []
+    try:
+        z = json.load(open(RESULTS / "tkx_zoo_fertility.json", encoding="utf-8"))
+        avail = [t for t in z["tokenizers"]
+                 if all(t in s["tokenizers"] for s in z["sources"].values())]
+        out.append(float(len([t for t in avail
+                              if t not in ("V0-32k", "V0J2-32k")])))
+    except Exception:
+        pass
+    try:
+        m = json.load(open(RESULTS / "tkx_v2_r6_measure.json", encoding="utf-8"))
+        v0 = m["results"]["V0-32k"]["1_bzp"]["fertility"]
+        base = m["results"]["TOKENIZATOREX-base-32k"]["1_bzp"]["fertility"]
+        out.append((1.0 - v0 / base) * 100.0)
+    except Exception:
+        pass
+    try:
+        h = json.load(open(RESULTS / "tkx_v21_heldout_forms.json", encoding="utf-8"))
+        out.append(float(h["overall"]["delta_pct"]))
+    except Exception:
+        pass
+    try:
+        v = json.load(open(RESULTS / "tkx_v21_variants.json", encoding="utf-8"))
+        share = v["_data"]["mixtures"]["V0J2-32k"]["json_share_requested"]
+        out.append(float(share) * 100.0)
+    except Exception:
+        pass
+    try:
+        s = json.load(open(RESULTS / "tkx_v2_r6_superwords.json", encoding="utf-8"))
+        out.append(float(s["tokenizers"]["V0-32k"]["usage"]["midword_uses_share"]) * 100.0)
+    except Exception:
+        pass
+    try:
+        e = json.load(open(RESULTS / "tkx_v2_embeddings.json", encoding="utf-8"))["r6"]
+        out.append(float(e["model_params_mln"]))
+        for k in e["table"]:
+            out.append(float(str(k).rstrip("k")))
+    except Exception:
+        pass
+    return out
+
+
 def load_exceptions():
     if not EXC_PATH.exists():
         return {"allowed_numbers": [], "allowed_context_patterns": []}
@@ -198,6 +247,9 @@ def main():
         else:
             print("INFO: pomijam DISCORD_TKX_V2.md (brak pliku lokalnego; w CI to normalne)")
     data_vals, data_raw = load_json_numbers()
+    for n in load_derived_numbers():
+        data_raw.append(n)
+        add_number_forms(data_vals, n)
     exc = load_exceptions()
 
     missing_files = [str(p.relative_to(REPO)) for p in reports if not p.exists()]
