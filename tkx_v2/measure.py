@@ -410,6 +410,25 @@ def main():
     # embeddings
     emb = {
         "note": "udzial macierzy embeddingow w parametrach (tied weights, liczone raz)",
+        "r6": {
+            "vocab": 32000,
+            "d_model": 768,
+            "model_params": 150000000,
+            "vocab_times_dmodel": 24576000,
+            "embedding_params_mln": 24.576,
+            "embedding_share_pct": 16.384,
+            "separate_output_matrix": True,
+            "embedding_plus_output_params_mln": 49.152,
+            "embedding_plus_output_share_pct": 32.768,
+            "note": "32 000 x 768 = 24,576 mln parametrów; 24,576/150 = 16,384%; "
+                    "z osobną macierzą wyjścia 2x = 49,152 mln i 32,768%",
+            "license": "Wydajemy tylko tokenizer (bez wag modelu). Dane treningowe: HPLT v3 "
+                       "(pakowanie CC0 1.0; HPLT nie rości praw do tekstów) — "
+                       "https://hplt-project.org/datasets/v2.0 ; podzbiór "
+                       "SlayerLab/hplt-v3-pl-cleaned ma licencję 'other / hplt-v3-derived' — "
+                       "https://huggingface.co/datasets/SlayerLab/hplt-v3-pl-cleaned . "
+                       "Repo nie ma osobnego pliku LICENSE — do decyzji właściciela.",
+        },
         "table": {
             "16k": {"30M": 6.1, "60M": 8.2, "150M": 12.3},
             "24k": {"30M": 9.2, "60M": 12.3, "150M": 18.4},

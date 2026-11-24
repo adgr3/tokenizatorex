@@ -55,6 +55,15 @@ v21_wz = load("tkx_v21_wzorce.json")
 v21_fmt = load("tkx_v21_formaty.json")
 v21_forms = load("tkx_v21_heldout_forms.json")
 v21_leak = load("tkx_v21_leak.json")
+r6_sw = load("tkx_v2_r6_superwords.json")
+r6_m = load("tkx_v2_r6_measure.json")
+r6_leak = load("tkx_v2_r6_leak.json")
+r6_spec = load("tkx_v2_r6_special_tokens.json")
+r6_a1 = load("tkx_v2_r6_redteam_a_a1_targeted.json")
+r6_a2 = load("tkx_v2_r6_redteam_a_a2_regression.json")
+r6_a5 = load("tkx_v2_r6_redteam_a_a5_extremes.json")
+r6_b = load("tkx_v2_r6_redteam_b_odtworz.json")
+r6_emb = load("tkx_v2_embeddings.json")["r6"]
 
 SOURCES = [
     ("1_bzp", "BZP (ogłoszenia)"),
@@ -70,6 +79,8 @@ TOKS = ["TKX/V0-32k", "TKX/V3-32k", "Slayer1B-1.08"]
 
 
 def f3(x):
+    if x is None or x != x:
+        return "—"
     return f"{x:.3f}".replace(".", ",")
 
 
@@ -85,6 +96,63 @@ def dec(x, n=4):
     if x is None:
         return "—"
     return f"{x:.{n}f}".replace(".", ",")
+
+
+def num(x, n=2):
+    return f"{x:.{n}f}".replace(".", ",")
+
+
+def pctv(x, n=2):
+    return num(x, n) + "%"
+
+
+R6_TOKS = [
+    ("V0-32k", "V0-32k"),
+    ("V0J2-32k", "V0J2-32k"),
+    ("TOKENIZATOREX-base-32k", "base-32k"),
+    ("Slayer1B-1.08", "Slayer1B"),
+    ("APT3-1B", "APT3"),
+    ("Bielik-1.5B-v3", "Bielik"),
+    ("GPT-4o-o200k", "GPT-4o"),
+]
+
+
+def r6val(tok, sid):
+    return r6_m["results"][tok][sid]
+
+
+def ci_cell(r):
+    return f"{f3(r['fertility'])} [{f3(r['fertility_ci_lo'])}; {f3(r['fertility_ci_hi'])}]"
+
+
+def sw(tok):
+    return r6_sw["tokenizers"][tok]["vocab_stats"], r6_sw["tokenizers"][tok]["usage"]
+
+
+def redteam_midword():
+    out = {}
+    for label, key in (("V0-32k", "TKX/V0-hf"), ("V0J2-32k", "TKX/V0J2-hf")):
+        out[label] = {
+            "a2": r6_a2["summary"][key]["zlamana_granica_przypadki"],
+            "a2_n": r6_a2["liczba_przypadkow"],
+            "pary": r6_a1["pary_slow"]["wyniki"][key]["bad"],
+            "pary_n": r6_a1["pary_slow"]["napisow"],
+            "fuzz": r6_a5["fuzzing"][key]["zlamana_granica"],
+            "fuzz_n": r6_a5["fuzzing"][key]["napisow"],
+        }
+    return out
+
+
+def redteam_examples():
+    rows = r6_a1["pary_slow"]["wyniki"]["TKX/V0-hf"]["przyklady_bad"]
+    by_text = {r["text"]: " | ".join(t.strip() if t.strip() else t for t in r["tokens"])
+               for r in rows}
+    picks = ["zgodność z", "kolejność z", "informacja z"]
+    return [(t, by_text.get(t, "")) for t in picks]
+
+
+R6_MID = redteam_midword()
+R6_EXAMPLES = redteam_examples()
 
 
 def table(headers, rows):
@@ -248,6 +316,43 @@ def build_raport_prosty():
     return "\n".join(rp) + "\n"
 
 
+def superbpe_lines():
+    v0, u0 = sw("V0-32k")
+    v2, u2 = sw("V0J2-32k")
+    lines = [
+        "- TOKENIZATOREX to **SuperBPE**: część tokenów (superwordy) łączy kawałki "
+        "sąsiednich słów. To obniża fertility, ale czasem tnie słowo w nienaturalnym "
+        "miejscu.",
+        f"- Superwordy w słowniku: **V0-32k {v0['superwords']}** "
+        f"(**{pctv(v0['superwords_share'] * 100)}** słownika), "
+        f"**V0J2-32k {v2['superwords']}** (**{pctv(v2['superwords_share'] * 100)}**). "
+        f"Zaczyna się w środku słowa: **V0 {v0['midword_start']}** "
+        f"(**{pctv(v0['midword_share_of_superwords'] * 100)}** superwordów), "
+        f"**V0J2 {v2['midword_start']}** "
+        f"(**{pctv(v2['midword_share_of_superwords'] * 100)}**); użycie superwordów: "
+        f"**V0 {pctv(u0['superword_uses_share'] * 100)}** tokenów, "
+        f"**V0J2 {pctv(u2['superword_uses_share'] * 100)}**; w tym od środka słowa: "
+        f"**V0 {pctv(u0['midword_uses_share'] * 100)}**, "
+        f"**V0J2 {pctv(u2['midword_uses_share'] * 100)}** "
+        f"(audyt H6 przeliczony na bieżących wariantach, "
+        f"`results/tkx_v2_r6_superwords.json`).",
+        f"- Red team A: w {R6_MID['V0-32k']['a2_n']} tekstach urzędowych granice od "
+        f"środka słowa wystąpiły w **{R6_MID['V0-32k']['a2']}/"
+        f"{R6_MID['V0-32k']['a2_n']}** (V0) i "
+        f"**{R6_MID['V0J2-32k']['a2']}/{R6_MID['V0J2-32k']['a2_n']}** (V0J2); "
+        f"w {R6_MID['V0-32k']['pary_n']} parach słów "
+        f"**{R6_MID['V0-32k']['pary']}/{R6_MID['V0-32k']['pary_n']}** i "
+        f"**{R6_MID['V0J2-32k']['pary']}/{R6_MID['V0J2-32k']['pary_n']}**; "
+        f"w fuzzingu {R6_MID['V0-32k']['fuzz_n']} napisów "
+        f"**{R6_MID['V0-32k']['fuzz']}** przypadków.",
+        "- Przykłady (V0/V0J2): " + "; ".join(
+            f"`{t}` → `{tok}`" for t, tok in R6_EXAMPLES) + ".",
+        "- **Plan v2.1:** superwordy tylko od początku słowa + pomiar kosztu "
+        "(fertility/latencja).",
+    ]
+    return lines
+
+
 def build_release():
     rn = []
     rn.append("# RELEASE NOTES — TOKENIZATOREX v2.0 (draft)")
@@ -256,23 +361,68 @@ def build_release():
     rn.append("")
     rn.append("## Co to jest v2.0")
     rn.append("")
-    rn.append("v2.0 to stan po TKX-A + TKX-C + test domenowy na tekstach urzędowych (BZP, Dz.U. ELI, KIO, samorząd, granty, JSON narzędzi, kontrola ogólna).")
+    rn.append("v2.0 to stan po TKX-A + TKX-C + test domenowy na tekstach urzędowych (BZP, Dz.U. ELI, KIO, samorząd, granty, JSON narzędzi, kontrola ogólna). TOKENIZATOREX to SuperBPE: część tokenów łączy kawałki sąsiednich słów (superwordy), co obniża fertility, ale czasem tnie słowo w nienaturalnym miejscu (szczegóły i liczby w `tkx_v2/ZNANE_WADY.md`, sekcja W5).")
+    rn.append("")
+    rn.append("### SuperBPE — ujawnienie")
+    rn.append("")
+    rn.extend(superbpe_lines())
     rn.append("")
     rn.append("## Wariant domyślny i kandydaci")
     rn.append("")
     rn.append("Z danych (`results/tkx_v2_fertility.json`): **V0-32k ma najniższą fertility na wszystkich 8 źródłach** (punktowo). CI rozdzielają V0 od V3 wyraźnie tylko na części źródeł; Dz.U. i granty mają n=12, więc ranking jest niepewny.")
     rn.append("")
-    rn.append("### Fertility v2.0 (V0 vs V3 vs Slayer)")
+    rn.append("**Zastrzeżenie:** przeciek do korpusu treningowego tokenizera przekracza 5% na większości źródeł (sekcja „Przeciek względem korpusu treningowego tokenizera”), więc teza o najniższej fertility dotyczy w dużej mierze tekstów, których tokenizer już widział; na BZP czysty podzbiór ma 0 dokumentów.")
     rn.append("")
-    rn.append("| Źródło | Dokumenty | V0-32k | V3-32k | Slayer1B-1.08 |")
-    rn.append("|---|---:|---:|---:|---:|")
+    rn.append("### Fertility v2.0 (V0 vs V3 vs base vs Slayer)")
+    rn.append("")
+    rn.append("| Źródło | Dokumenty | V0-32k | V3-32k | base-32k | Slayer1B-1.08 |")
+    rn.append("|---|---:|---:|---:|---:|---:|")
     for sid, name in SOURCES:
         s = fert["sources"][sid]
         vals = [f3(s["tokenizers"][tok]["fertility"])
-                for tok in ("TKX/V0-32k", "TKX/V3-32k", "Slayer1B-1.08")]
+                for tok in ("TKX/V0-32k", "TKX/V3-32k")]
+        vals.append(f3(r6val("TOKENIZATOREX-base-32k", sid)["fertility"]))
+        vals.append(f3(s["tokenizers"]["Slayer1B-1.08"]["fertility"]))
         rn.append(f"| {name} | {s['docs']} | " + " | ".join(vals) + " |")
     rn.append("")
-    rn.append("To tabela v2.0 (test domenowy, `results/tkx_v2_fertility.json`); nie mylić ze starym benchmarkiem TKX-A w `README.md` (`results/benchmark.json`).")
+    rn.append("To tabela v2.0 (test domenowy, `results/tkx_v2_fertility.json` i `results/tkx_v2_r6_measure.json`); nie mylić ze starym benchmarkiem TKX-A w `README.md` (`results/benchmark.json`).")
+    rn.append("")
+    rn.append("### Uczciwe porównanie: wariant bez superwordów (base-32k)")
+    rn.append("")
+    rn.append("`TOKENIZATOREX-base-32k` (`tokenizers/tokenizatorex-base-32k.json`) to ten sam trening etapu 1 z **0 merge'ów etapu 2** (log `results/train-bpe-32k.log`: `etap2=0`), czyli ten sam korpus i ustawienia bez superwordów; nie jest to inny trening. Eksport HF zgadza się z plikiem własnym na próbce "
+              f"{r6_m['meta']['base_check']['hf_sample_identical']}/"
+              f"{r6_m['meta']['base_check']['hf_sample_total']} dokumentów. "
+              "Fertility z 95% CI, ta sama metoda co v2.0:")
+    rn.append("")
+    headers = ["Źródło"] + [short for _tok, short in
+                            (("V0-32k", "V0"), ("TOKENIZATOREX-base-32k", "base"),
+                             ("Slayer1B-1.08", "Slayer"), ("APT3-1B", "APT3"),
+                             ("Bielik-1.5B-v3", "Bielik"), ("GPT-4o-o200k", "GPT-4o"))]
+    rn.append("| " + " | ".join(headers) + " |")
+    rn.append("|" + "|".join(["---"] + [":---:"] * 6) + "|")
+    for sid, name in SOURCES:
+        cells = [ci_cell(r6val(tok, sid)) for tok in
+                 ("V0-32k", "TOKENIZATOREX-base-32k", "Slayer1B-1.08",
+                  "APT3-1B", "Bielik-1.5B-v3", "GPT-4o-o200k")]
+        rn.append(f"| {name} | " + " | ".join(cells) + " |")
+    rn.append("")
+    cmp_v0 = r6_m["comparison"]["V0-32k"]
+    cmp_base = r6_m["comparison"]["TOKENIZATOREX-base-32k"]
+    rn.append(
+        "Bez superwordów base-32k zachowuje przewagę nad Slayerem na "
+        f"**{cmp_base['Slayer1B-1.08']['sources_lower']}/"
+        f"{cmp_base['Slayer1B-1.08']['sources_total']}** źródeł "
+        f"(przegrywa na Dz.U. i JSON narzędzi), nad Bielikiem na "
+        f"**{cmp_base['Bielik-1.5B-v3']['sources_lower']}/"
+        f"{cmp_base['Bielik-1.5B-v3']['sources_total']}**, ale nad APT3 tylko na "
+        f"**{cmp_base['APT3-1B']['sources_lower']}/"
+        f"{cmp_base['APT3-1B']['sources_total']}**. Łącznie na 8 źródłach V0 ma "
+        f"**{pctv(cmp_v0['Slayer1B-1.08']['tokens_reduction_pct'])}** mniej tokenów "
+        f"niż Slayer, a base **{pctv(cmp_base['Slayer1B-1.08']['tokens_reduction_pct'])}**; "
+        f"względem APT3 V0 **{pctv(cmp_v0['APT3-1B']['tokens_reduction_pct'])}** mniej, "
+        f"base **{pctv(abs(cmp_base['APT3-1B']['tokens_reduction_pct']))}** więcej; względem "
+        f"Bielika V0 **{pctv(cmp_v0['Bielik-1.5B-v3']['tokens_reduction_pct'])}** mniej, "
+        f"base **{pctv(cmp_base['Bielik-1.5B-v3']['tokens_reduction_pct'])}** mniej.")
     rn.append("")
     rn.append("**Domyślny wariant v2.0 = V0-32k.** Ma `§` jako 1 token i round-trip 0/700 na dokumentach.")
     rn.append("")
@@ -304,9 +454,98 @@ def build_release():
     rn.append("")
     rn.append("## Nie sprawdzono (wprost)")
     rn.append("")
-    rn.append("- Przeciek względem próbki treningowej HPLT (13-gramy) — nie wykonano.")
     rn.append("- Bielik-1.5B-v3 (APT4) jest obecny w wynikach fertility; testy downstream nie wykonane. Tokenizer Bielika jest przeliczony w `results/tkx_v2_special_chars.json` i `results/tkx_v2_patterns.json` po zalogowaniu HF.")
-    rn.append("- Efektywność Rényiego (TokEval) — zaplanowana, nie policzona.")
+    rn.append("- Przeciek względem **całego** HPLT (poza próbką treningową tokenizera) — nie wykonano; poniżej jest pomiar względem faktycznego korpusu treningowego tokenizera.")
+    rn.append("")
+    rn.append("### Przeciek względem korpusu treningowego tokenizera")
+    rn.append("")
+    rn.append("Korpus: `audit/tmp/stability_train.txt` (HPLT p2, 400 MB), odtworzony deterministycznie z `audit/stability.py`; SHA-256 `b0e7447c…` zgodny z `tkx_v21/MANIFEST_DANYCH.json`. V0 i V0J2 dzielą ten sam etap 1 i ten sam korpus treningowy, więc wynik przecieku jest dla nich wspólny. Próg zapisany przed pomiarem: dokument = przeciek, gdy > 50% jego unikalnych 13-gramów znakowych jest w korpusie treningowym albo cały dokument jest dokładnym podciągiem; tekst normalizowany NFC, CRLF→LF. Źródło: `results/tkx_v2_r6_leak.json`.")
+    rn.append("")
+    rn.append("| Źródło | Dokumenty | Exact | > 50% | Max pokrycie |")
+    rn.append("|---|---:|---:|---:|---:|")
+    for sid, name in list(SOURCES) + [("granty_149", "Granty (149)"),
+                                      ("json_heldout", "JSON held-out (100)")]:
+        r = r6_leak["sources"][sid]
+        rn.append(f"| {name} | {r['docs']} | {r['exact_matches']} | "
+                  f"{r['docs_over_threshold']} | {pctv(r['max_coverage'] * 100, 1)} |")
+    rn.append("")
+    bzp = r6_leak["sources"]["1_bzp"]
+    bzp_clean = r6_leak["clean_subset"].get("1_bzp")
+    if bzp_clean["docs_clean"] == 0:
+        bzp_clean_txt = ("**brak czystego podzbioru** (0/500 dokumentów), więc liczby "
+                         "1,43 nie da się obronić jako wyniku poza danymi treningowymi")
+    else:
+        bzp_clean_txt = (f"czysty podzbiór to **{bzp_clean['docs_clean']}/"
+                         f"{bzp_clean['docs_total']}** dokumentów "
+                         f"(V0 fertility "
+                         f"{f3(bzp_clean['tokenizers']['V0-32k']['fertility'])})")
+    rn.append(f"BZP (główna liczba 1,43): **{bzp['docs_over_threshold']}/{bzp['docs']}** "
+              f"dokumentów > 50% i **{bzp['exact_matches']}** dokładnych duplikatów — "
+              "liczba 1,43 jest mierzona na tekstach obecnych w korpusie treningowym "
+              f"tokenizera; {bzp_clean_txt}.")
+    over = [(sid, name) for sid, name in
+            list(SOURCES) + [("granty_149", "Granty (149)"),
+                             ("json_heldout", "JSON held-out (100)")]
+            if r6_leak["sources"][sid]["docs"] and
+            r6_leak["sources"][sid]["docs_over_threshold_pct"] > r6_leak["meta"]["warn_pct"]]
+    if over:
+        rn.append("")
+        rn.append("**Zastrzeżenie:** próg > 5% przekraczają: " +
+                  ", ".join(name for _sid, name in over) +
+                  ". Teza o najniższej fertility na tych źródłach wymaga zastrzeżenia. "
+                  "Fertility na podzbiorze bez przecieku:")
+        rn.append("")
+        rn.append("| Źródło | Czyste / wszystkie | V0-32k | V0J2-32k |")
+        rn.append("|---|---:|---:|---:|")
+        for sid, name in over:
+            c = r6_leak["clean_subset"].get(sid)
+            if not c:
+                continue
+            rn.append(f"| {name} | {c['docs_clean']}/{c['docs_total']} | "
+                      f"{f3(c['tokenizers']['V0-32k']['fertility'])} | "
+                      f"{f3(c['tokenizers']['V0J2-32k']['fertility'])} |")
+        small = [(name, r6_leak["clean_subset"][sid])
+                 for sid, name in over
+                 if sid in r6_leak["clean_subset"]
+                 and r6_leak["clean_subset"][sid]["docs_clean"] < 20]
+        if small:
+            rn.append("")
+            rn.append("Małe podzbiory czyste (" +
+                      ", ".join(f"{name} {c['docs_clean']}/{c['docs_total']}"
+                                for name, c in small) +
+                      ") są ilustracją, nie dowodem.")
+    else:
+        rn.append("")
+        rn.append("**Zastrzeżenie:** żadne źródło nie przekracza progu 5% dokumentów — "
+                  "teza o najniższej fertility nie wymaga korekty z tego powodu.")
+    rn.append("")
+    rn.append("### Rényi (TokEval) i słowa pocięte na > 1 token")
+    rn.append("")
+    rn.append("Efektywność Rényiego: α = 2,5 (jak TokEval; wyższe α mocniej karze ogon rozkładu), `H_α = 1/(1−α) · log2(Σ p_i^α)`, efektywność = `H_α / log2(|V|)`. „Słowa > 1 token” = odsetek słów (`\\S+`) pokrytych przez więcej niż jeden token na offsetach. Dane: `results/tkx_v2_r6_measure.json`.")
+    rn.append("")
+    r6cols = ["V0-32k", "V0J2-32k", "TOKENIZATOREX-base-32k", "Slayer1B-1.08",
+              "APT3-1B", "Bielik-1.5B-v3", "GPT-4o-o200k"]
+    rn.append("| Źródło | " + " | ".join(short for _t, short in
+                                       [("V0-32k", "V0"), ("V0J2-32k", "V0J2"),
+                                        ("TOKENIZATOREX-base-32k", "base"),
+                                        ("Slayer1B-1.08", "Slayer"), ("APT3-1B", "APT3"),
+                                        ("Bielik-1.5B-v3", "Bielik"),
+                                        ("GPT-4o-o200k", "GPT-4o")]) + " |")
+    rn.append("|" + "|".join(["---"] + [":---:"] * len(r6cols)) + "|")
+    for sid, name in SOURCES:
+        rn.append(f"| {name} | " + " | ".join(
+            num(r6val(tok, sid)["renyi_efficiency"], 3) for tok in r6cols) + " |")
+    rn.append("")
+    rn.append("| Źródło | " + " | ".join(short for _t, short in
+                                       [("V0-32k", "V0"), ("V0J2-32k", "V0J2"),
+                                        ("TOKENIZATOREX-base-32k", "base"),
+                                        ("Slayer1B-1.08", "Slayer"), ("APT3-1B", "APT3"),
+                                        ("Bielik-1.5B-v3", "Bielik"),
+                                        ("GPT-4o-o200k", "GPT-4o")]) + " |")
+    rn.append("|" + "|".join(["---"] + [":---:"] * len(r6cols)) + "|")
+    for sid, name in SOURCES:
+        rn.append(f"| {name} | " + " | ".join(
+            pctv(r6val(tok, sid)["split_words_pct"]) for tok in r6cols) + " |")
     rn.append("")
     rn.append("## Eksperyment v2.1-JSON (kandydat warunkowy V0J2-32k)")
     rn.append("")
@@ -334,11 +573,19 @@ def build_release():
     rn.append("### Zysk JSON (V0R vs V0J2, test)")
     rn.append("")
     s = v21_test["sources"]
+    held = s["json_generic_test"]["tokenizers"]
+    held_delta = (held["V0J2-32k"]["fertility"] / held["V0R-32k"]["fertility"] - 1) * 100
+    tc1_leak = r6_b["leak"]["JSON narzedzia (tc1)"]["docs_over_50pct_pct"]
+    tc1_delta = (s["tc1_test"]["tokenizers"]["V0J2-32k"]["fertility"] /
+                 s["tc1_test"]["tokenizers"]["V0R-32k"]["fertility"] - 1) * 100
     rows = [
-        ("JSON tc1 test", s["tc1_test"]["tokenizers"]["V0R-32k"]["fertility"], s["tc1_test"]["tokenizers"]["V0J2-32k"]["fertility"]),
-        ("JSON tc1 (same wywołania)", s["tc1_test_json_only"]["tokenizers"]["V0R-32k"]["fertility"], s["tc1_test_json_only"]["tokenizers"]["V0J2-32k"]["fertility"]),
-        ("JSON narzędzia niewidziane", s["json_generic_test"]["tokenizers"]["V0R-32k"]["fertility"], s["json_generic_test"]["tokenizers"]["V0J2-32k"]["fertility"]),
+        ("JSON held-out (główna liczba, czysty)", held["V0R-32k"]["fertility"], held["V0J2-32k"]["fertility"]),
+        ("JSON tc1 test (górna granica)", s["tc1_test"]["tokenizers"]["V0R-32k"]["fertility"], s["tc1_test"]["tokenizers"]["V0J2-32k"]["fertility"]),
+        ("JSON tc1 (same wywołania, górna granica)", s["tc1_test_json_only"]["tokenizers"]["V0R-32k"]["fertility"], s["tc1_test_json_only"]["tokenizers"]["V0J2-32k"]["fertility"]),
     ]
+    rn.append(f"Główna liczba to **JSON held-out {pct(held_delta)}** (czysty: 0 exact i brak dokumentów > 50% pokrycia w korpusie treningowym JSON). tc1 {pct(tc1_delta)} podajemy jako **górną granicę**: "
+              f"{pctv(tc1_leak, 1)} dokumentów tc1 ma > 50% pokrycia 13-gramów z danych treningowych JSON (red team B, `results/tkx_v2_r6_redteam_b_odtworz.json`).")
+    rn.append("")
     rn.append("| Miara | V0R-32k | V0J2-32k | Zmiana |")
     rn.append("|---|---:|---:|---:|")
     for name, a, b in rows:
@@ -387,6 +634,17 @@ def build_release():
     rn.append("")
     rn.append("Wniosek: po dodaniu JSON `§` pozostaje 1 tokenem w V0 i V0J2; średnia na datach V0J2 ≤ V0 + 0,1; kwoty bez istotnej zmiany. Kwoty dla „mln” i „tys.” są losowane w realistycznych zakresach (1–500 mln, 1–999 tys.).")
     rn.append("")
+    rn.append("## Koszt embeddingu i licencje")
+    rn.append("")
+    rn.append(f"Słownik {r6_emb['vocab']} × d_model {r6_emb['d_model']} = ok. "
+              f"**{num(r6_emb['embedding_params_mln'], 1)} mln parametrów** "
+              f"(**{pctv(r6_emb['embedding_share_pct'], 1)}** modelu "
+              f"{r6_emb['model_params_mln']}M; przy osobnej macierzy wyjścia — dwa razy "
+              f"tyle: **{num(r6_emb['embedding_plus_output_params_mln'], 1)} mln = "
+              f"{pctv(r6_emb['embedding_plus_output_share_pct'], 1)}**).")
+    rn.append("")
+    rn.append(r6_emb["license"])
+    rn.append("")
     rn.append("## Plan v2.1 i TKX-D")
     rn.append("")
     rn.append("- v2.1: naprawa `§` (V3), skróty prawne, tokeny JSON; mieszanka 10–30% tekstów urzędowych.")
@@ -426,7 +684,13 @@ def build_karta():
     ka.append(f"| O6 Daty (≤ 5 tokenów/data) | FAIL ({o6['TKX/V0-32k'][0]}/{o6['TKX/V0-32k'][1]} dat > 5) | FAIL ({o6['TKX/V3-32k'][0]}/{o6['TKX/V3-32k'][1]}) | FAIL ({o6['Slayer1B-1.08'][0]}/{o6['Slayer1B-1.08'][1]}) | `results/tkx_v2_patterns.json` (kategoria daty_iso) |")
     ka.append(f"| O7 CPV (≤ 3 tokeny/kod) | FAIL ({o7['TKX/V0-32k'][0]}/{o7['TKX/V0-32k'][1]} kodów > 3) | FAIL ({o7['TKX/V3-32k'][0]}/{o7['TKX/V3-32k'][1]}) | FAIL ({o7['Slayer1B-1.08'][0]}/{o7['Slayer1B-1.08'][1]}) | `results/tkx_v2_patterns.json` (kategoria cpv) |")
     ka.append(f"| O8 Martwe tokeny ≤ 5% | FAIL ({f2(dead['tokenizers']['TKX/V0-32k']['dead_pct'])}%) | FAIL ({f2(dead['tokenizers']['TKX/V3-32k']['dead_pct'])}%) | FAIL ({f2(dead['tokenizers']['Slayer1B-1.08']['dead_pct'])}%) | `results/tkx_v2_dead_tokens.json` |")
-    ka.append("| O9 Przeciek 13-gram ≤ 20% | UNKNOWN | UNKNOWN | UNKNOWN | nie wykonano dla HPLT; v21 mierzy tylko JSON |")
+    o9_max = max(r["docs_over_threshold_pct"] for r in r6_leak["sources"].values())
+    o9_ok = all(r["docs_over_threshold_pct"] <= 20.0
+                and not r["exact_matches"] for r in r6_leak["sources"].values())
+    ka.append(f"| O9 Przeciek 13-gram ≤ 20% | {'PASS' if o9_ok else 'FAIL'} "
+              f"(max {o9_max:.1f}% dok.) | {'PASS' if o9_ok else 'FAIL'} "
+              f"(max {o9_max:.1f}% dok.) | UNKNOWN (inny korpus) | "
+              "`results/tkx_v2_r6_leak.json` (korpus treningowy tokenizera) |")
     ka.append("")
     ka.append("Uwaga: żaden z ocenianych wariantów (V0, V3, Slayer) nie spełnia O5–O8. Progi O5–O8 okazały się nierealne dla wszystkich tokenizerów (także Slayera) → do rewizji w v2.1 z uzasadnieniem, a nie po cichu.")
     ka.append("")
@@ -486,14 +750,22 @@ def build_znane_wady():
     zw.append("- **Dowód:** TKX-A — fertility 1,97 vs Slayer 1,30 na angielskim (znany kompromis).")
     zw.append("- **Status:** akceptowany kompromis; bezpiecznik: brak regresji > 5%.")
     zw.append("")
-    zw.append("## W5. Artefakty SuperBPE")
-    zw.append("- Niektóre superwordy mogą zaczynać się w środku słowa; częste słowa mogą stracić własny token.")
-    zw.append("- **Naprawa:** audyt słownika, filtrowanie merge w v2.1.")
+    zw.append("## W5. Artefakty SuperBPE — ujawnienie")
+    zw.extend(superbpe_lines())
+    zw.append("- **Naprawa krótkoterminowa:** audyt słownika i filtrowanie merge (w toku).")
     zw.append("")
     zw.append("## W6. Martwe tokeny")
     zw.append("")
     zw.append("Uwaga: porównanie ze Slayerem nie jest bezpośrednie (słownik polsko-angielski). Na polskim korpusie 35,03% martwych; w audycie szerszym 8,90%.")
     zw.append(f"- **Dowód:** V0-32k {f2(dead['tokenizers']['TKX/V0-32k']['dead_pct'])}%, V3-32k {f2(dead['tokenizers']['TKX/V3-32k']['dead_pct'])}%, Slayer {f2(dead['tokenizers']['Slayer1B-1.08']['dead_pct'])}% (`results/tkx_v2_dead_tokens.json`).")
+    zw.append("")
+    zw.append("## W7. Tokeny specjalne w tekście użytkownika")
+    st = r6_spec["measurement_texts"]
+    zw.append("- **Domyślne zachowanie biblioteki `tokenizers`:** literalny `<|endoftext|>` w tekście użytkownika staje się ID specjalnym **31999**, także przy `add_special_tokens=False`; domyślny `decode` może go pominąć.")
+    zw.append("- **Tryb zalecany:** `tokenizer.encode_special_tokens = True` (wersja `tokenizers` z lock) rozbija taki napis na zwykłe tokeny; w `transformers` odpowiada temu `split_special_tokens: true` w `tokenizer_config.json` (dodane do `hf/tokenizatorex-32k`, `hf/variants/V0-32k`, `hf/variants/V0J2-32k`).")
+    zw.append("- `<tool_call>` i `</tool_call>` w V0J2 to **zwykłe tokeny słownika, nie ID specjalne**; nadal mogą wstrzyknąć tekst szablonu, więc szablon czatu nie może traktować tekstu użytkownika jak szablonu.")
+    zw.append(f"- **Pomiar:** w tekstach pomiarowych ({st['docs']} dok.) nazwy dodane jako `special=True` występują **{st['special_occurrences']}** razy; `<tool_call>`/`</tool_call>` występują {st['template_token_occurrences']} razy, ale tryb zalecany nie zmienia ich tokenizacji, więc fertility się nie zmienia (`results/tkx_v2_r6_special_tokens.json`).")
+    zw.append("- **Przed treningiem modelu Ogonek z szablonem czatu to musi być włączone.**")
     zw.append("")
     zw.append("## Czego nie sprawdzają testy")
     zw.append("- Jakość modelu downstream (wymaga TKX-D).")
@@ -522,7 +794,14 @@ def build_korpus():
     kd.append("- JSON narzędzi 200 (tc1): `D:\\VPS\\fabryka\\tc1\\dane\\test.jsonl` (poza repo).")
     kd.append("")
     kd.append("## Przeciek")
-    kd.append("13-gramy vs próbka treningowa HPLT 400 MB — nie wykonano. Próg stopu: > 20% dokumentów z trafieniem.")
+    rl = r6_leak
+    max_src = max(rl["sources"].items(),
+                  key=lambda kv: kv[1]["docs_over_threshold_pct"])
+    kd.append("13-gramy znakowe vs faktyczny korpus treningowy tokenizera "
+              "(`audit/tmp/stability_train.txt`, HPLT p2, 400 MB; SHA-256 zgodny z "
+              "manifestem). Próg: > 50% 13-gramów lub dokładny duplikat. "
+              f"Najwyższy odsetek dokumentów > 50%: {max_src[1]['docs_over_threshold_pct']:.1f}% "
+              f"({max_src[0]}). Szczegóły: `results/tkx_v2_r6_leak.json`.")
     kd.append("")
     kd.append("## Licencje / status")
     kd.append("Dokumenty urzędowe są publiczne. HPLT/FineWeb-2: ODC-By; Wikipedia: CC BY-SA.")

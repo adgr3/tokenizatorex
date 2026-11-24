@@ -1,0 +1,913 @@
+{
+  "opis": "Celowane kontrprzykłady; liczby w RAPORT.md pochodzą z tego pliku.",
+  "liczba_plus_slowo": {
+    "napisow": 17680,
+    "wyniki": {
+      "TKX/V0-py": {
+        "napisow": 17680,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "TKX/V0-hf": {
+        "napisow": 17680,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "TKX/V0J2-py": {
+        "napisow": 17680,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "TKX/V0J2-hf": {
+        "napisow": 17680,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "Slayer1B-1.08": {
+        "napisow": 17680,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "APT3-1B": {
+        "napisow": 17680,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 4420,
+        "przyklady_rt_fail": [
+          "0 mln",
+          "0 mld",
+          "0 tys",
+          "0 min",
+          "0 maj",
+          "0 maja",
+          "0 marca",
+          "0 metry",
+          "0 m",
+          "0 ml",
+          "0 mm",
+          "0 km"
+        ],
+        "wyjatki": 0
+      },
+      "Bielik-1.5B-v3": {
+        "napisow": 17680,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "GPT-4o-o200k": {
+        "napisow": 17680,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      }
+    }
+  },
+  "pary_slow": {
+    "napisow": 384,
+    "slowa1": 24,
+    "slowa2": 16,
+    "wyniki": {
+      "TKX/V0-py": {
+        "napisow": 384,
+        "bad": 38,
+        "przyklady_bad": [
+          {
+            "text": "zgodność z",
+            "tokens": [
+              "z",
+              "god",
+              "ność z"
+            ],
+            "bad": [
+              {
+                "granica": 4,
+                "kontekst": "zgodność z",
+                "lewy": "god",
+                "prawy": "ność z"
+              }
+            ]
+          },
+          {
+            "text": "zgodność i",
+            "tokens": [
+              "z",
+              "god",
+              "ność i"
+            ],
+            "bad": [
+              {
+                "granica": 4,
+                "kontekst": "zgodność i",
+                "lewy": "god",
+                "prawy": "ność i"
+              }
+            ]
+          },
+          {
+            "text": "kolejność z",
+            "tokens": [
+              "ko",
+              "lej",
+              "ność z"
+            ],
+            "bad": [
+              {
+                "granica": 5,
+                "kontekst": "kolejność z",
+                "lewy": "lej",
+                "prawy": "ność z"
+              }
+            ]
+          },
+          {
+            "text": "kolejność i",
+            "tokens": [
+              "ko",
+              "lej",
+              "ność i"
+            ],
+            "bad": [
+              {
+                "granica": 5,
+                "kontekst": "kolejność i",
+                "lewy": "lej",
+                "prawy": "ność i"
+              }
+            ]
+          },
+          {
+            "text": "odpowiedź do",
+            "tokens": [
+              "odpowie",
+              "dź do"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "odpowiedź do",
+                "lewy": "odpowie",
+                "prawy": "dź do"
+              }
+            ]
+          },
+          {
+            "text": "uchwała się",
+            "tokens": [
+              "uch",
+              "wała się"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "uchwała się",
+                "lewy": "uch",
+                "prawy": "wała się"
+              }
+            ]
+          },
+          {
+            "text": "informacja z",
+            "tokens": [
+              "informa",
+              "cja z"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja z",
+                "lewy": "informa",
+                "prawy": "cja z"
+              }
+            ]
+          },
+          {
+            "text": "informacja w",
+            "tokens": [
+              "informa",
+              "cja w"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja w",
+                "lewy": "informa",
+                "prawy": "cja w"
+              }
+            ]
+          },
+          {
+            "text": "informacja i",
+            "tokens": [
+              "informa",
+              "cja i"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja i",
+                "lewy": "informa",
+                "prawy": "cja i"
+              }
+            ]
+          },
+          {
+            "text": "informacja na",
+            "tokens": [
+              "informa",
+              "cja na"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja na",
+                "lewy": "informa",
+                "prawy": "cja na"
+              }
+            ]
+          },
+          {
+            "text": "kwota z",
+            "tokens": [
+              "k",
+              "wo",
+              "ta z"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "kwota z",
+                "lewy": "wo",
+                "prawy": "ta z"
+              }
+            ]
+          },
+          {
+            "text": "kwota w",
+            "tokens": [
+              "k",
+              "wo",
+              "ta w"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "kwota w",
+                "lewy": "wo",
+                "prawy": "ta w"
+              }
+            ]
+          }
+        ],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "TKX/V0-hf": {
+        "napisow": 384,
+        "bad": 38,
+        "przyklady_bad": [
+          {
+            "text": "zgodność z",
+            "tokens": [
+              "z",
+              "god",
+              "ność z"
+            ],
+            "bad": [
+              {
+                "granica": 4,
+                "kontekst": "zgodność z",
+                "lewy": "god",
+                "prawy": "ność z"
+              }
+            ]
+          },
+          {
+            "text": "zgodność i",
+            "tokens": [
+              "z",
+              "god",
+              "ność i"
+            ],
+            "bad": [
+              {
+                "granica": 4,
+                "kontekst": "zgodność i",
+                "lewy": "god",
+                "prawy": "ność i"
+              }
+            ]
+          },
+          {
+            "text": "kolejność z",
+            "tokens": [
+              "ko",
+              "lej",
+              "ność z"
+            ],
+            "bad": [
+              {
+                "granica": 5,
+                "kontekst": "kolejność z",
+                "lewy": "lej",
+                "prawy": "ność z"
+              }
+            ]
+          },
+          {
+            "text": "kolejność i",
+            "tokens": [
+              "ko",
+              "lej",
+              "ność i"
+            ],
+            "bad": [
+              {
+                "granica": 5,
+                "kontekst": "kolejność i",
+                "lewy": "lej",
+                "prawy": "ność i"
+              }
+            ]
+          },
+          {
+            "text": "odpowiedź do",
+            "tokens": [
+              "odpowie",
+              "dź do"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "odpowiedź do",
+                "lewy": "odpowie",
+                "prawy": "dź do"
+              }
+            ]
+          },
+          {
+            "text": "uchwała się",
+            "tokens": [
+              "uch",
+              "wała się"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "uchwała się",
+                "lewy": "uch",
+                "prawy": "wała się"
+              }
+            ]
+          },
+          {
+            "text": "informacja z",
+            "tokens": [
+              "informa",
+              "cja z"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja z",
+                "lewy": "informa",
+                "prawy": "cja z"
+              }
+            ]
+          },
+          {
+            "text": "informacja w",
+            "tokens": [
+              "informa",
+              "cja w"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja w",
+                "lewy": "informa",
+                "prawy": "cja w"
+              }
+            ]
+          },
+          {
+            "text": "informacja i",
+            "tokens": [
+              "informa",
+              "cja i"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja i",
+                "lewy": "informa",
+                "prawy": "cja i"
+              }
+            ]
+          },
+          {
+            "text": "informacja na",
+            "tokens": [
+              "informa",
+              "cja na"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja na",
+                "lewy": "informa",
+                "prawy": "cja na"
+              }
+            ]
+          },
+          {
+            "text": "kwota z",
+            "tokens": [
+              "k",
+              "wo",
+              "ta z"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "kwota z",
+                "lewy": "wo",
+                "prawy": "ta z"
+              }
+            ]
+          },
+          {
+            "text": "kwota w",
+            "tokens": [
+              "k",
+              "wo",
+              "ta w"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "kwota w",
+                "lewy": "wo",
+                "prawy": "ta w"
+              }
+            ]
+          }
+        ],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "TKX/V0J2-py": {
+        "napisow": 384,
+        "bad": 34,
+        "przyklady_bad": [
+          {
+            "text": "zgodność z",
+            "tokens": [
+              "z",
+              "god",
+              "ność z"
+            ],
+            "bad": [
+              {
+                "granica": 4,
+                "kontekst": "zgodność z",
+                "lewy": "god",
+                "prawy": "ność z"
+              }
+            ]
+          },
+          {
+            "text": "zgodność i",
+            "tokens": [
+              "z",
+              "god",
+              "ność i"
+            ],
+            "bad": [
+              {
+                "granica": 4,
+                "kontekst": "zgodność i",
+                "lewy": "god",
+                "prawy": "ność i"
+              }
+            ]
+          },
+          {
+            "text": "kolejność z",
+            "tokens": [
+              "ko",
+              "lej",
+              "ność z"
+            ],
+            "bad": [
+              {
+                "granica": 5,
+                "kontekst": "kolejność z",
+                "lewy": "lej",
+                "prawy": "ność z"
+              }
+            ]
+          },
+          {
+            "text": "kolejność i",
+            "tokens": [
+              "ko",
+              "lej",
+              "ność i"
+            ],
+            "bad": [
+              {
+                "granica": 5,
+                "kontekst": "kolejność i",
+                "lewy": "lej",
+                "prawy": "ność i"
+              }
+            ]
+          },
+          {
+            "text": "odpowiedź do",
+            "tokens": [
+              "odpowie",
+              "dź do"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "odpowiedź do",
+                "lewy": "odpowie",
+                "prawy": "dź do"
+              }
+            ]
+          },
+          {
+            "text": "uchwała się",
+            "tokens": [
+              "uch",
+              "wała się"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "uchwała się",
+                "lewy": "uch",
+                "prawy": "wała się"
+              }
+            ]
+          },
+          {
+            "text": "informacja z",
+            "tokens": [
+              "informa",
+              "cja z"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja z",
+                "lewy": "informa",
+                "prawy": "cja z"
+              }
+            ]
+          },
+          {
+            "text": "informacja w",
+            "tokens": [
+              "informa",
+              "cja w"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja w",
+                "lewy": "informa",
+                "prawy": "cja w"
+              }
+            ]
+          },
+          {
+            "text": "informacja i",
+            "tokens": [
+              "informa",
+              "cja i"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja i",
+                "lewy": "informa",
+                "prawy": "cja i"
+              }
+            ]
+          },
+          {
+            "text": "informacja na",
+            "tokens": [
+              "informa",
+              "cja na"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja na",
+                "lewy": "informa",
+                "prawy": "cja na"
+              }
+            ]
+          },
+          {
+            "text": "ilość z",
+            "tokens": [
+              "ilo",
+              "ść z"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "ilość z",
+                "lewy": "ilo",
+                "prawy": "ść z"
+              }
+            ]
+          },
+          {
+            "text": "ilość w",
+            "tokens": [
+              "ilo",
+              "ść w"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "ilość w",
+                "lewy": "ilo",
+                "prawy": "ść w"
+              }
+            ]
+          }
+        ],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "TKX/V0J2-hf": {
+        "napisow": 384,
+        "bad": 34,
+        "przyklady_bad": [
+          {
+            "text": "zgodność z",
+            "tokens": [
+              "z",
+              "god",
+              "ność z"
+            ],
+            "bad": [
+              {
+                "granica": 4,
+                "kontekst": "zgodność z",
+                "lewy": "god",
+                "prawy": "ność z"
+              }
+            ]
+          },
+          {
+            "text": "zgodność i",
+            "tokens": [
+              "z",
+              "god",
+              "ność i"
+            ],
+            "bad": [
+              {
+                "granica": 4,
+                "kontekst": "zgodność i",
+                "lewy": "god",
+                "prawy": "ność i"
+              }
+            ]
+          },
+          {
+            "text": "kolejność z",
+            "tokens": [
+              "ko",
+              "lej",
+              "ność z"
+            ],
+            "bad": [
+              {
+                "granica": 5,
+                "kontekst": "kolejność z",
+                "lewy": "lej",
+                "prawy": "ność z"
+              }
+            ]
+          },
+          {
+            "text": "kolejność i",
+            "tokens": [
+              "ko",
+              "lej",
+              "ność i"
+            ],
+            "bad": [
+              {
+                "granica": 5,
+                "kontekst": "kolejność i",
+                "lewy": "lej",
+                "prawy": "ność i"
+              }
+            ]
+          },
+          {
+            "text": "odpowiedź do",
+            "tokens": [
+              "odpowie",
+              "dź do"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "odpowiedź do",
+                "lewy": "odpowie",
+                "prawy": "dź do"
+              }
+            ]
+          },
+          {
+            "text": "uchwała się",
+            "tokens": [
+              "uch",
+              "wała się"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "uchwała się",
+                "lewy": "uch",
+                "prawy": "wała się"
+              }
+            ]
+          },
+          {
+            "text": "informacja z",
+            "tokens": [
+              "informa",
+              "cja z"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja z",
+                "lewy": "informa",
+                "prawy": "cja z"
+              }
+            ]
+          },
+          {
+            "text": "informacja w",
+            "tokens": [
+              "informa",
+              "cja w"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja w",
+                "lewy": "informa",
+                "prawy": "cja w"
+              }
+            ]
+          },
+          {
+            "text": "informacja i",
+            "tokens": [
+              "informa",
+              "cja i"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja i",
+                "lewy": "informa",
+                "prawy": "cja i"
+              }
+            ]
+          },
+          {
+            "text": "informacja na",
+            "tokens": [
+              "informa",
+              "cja na"
+            ],
+            "bad": [
+              {
+                "granica": 7,
+                "kontekst": "informacja na",
+                "lewy": "informa",
+                "prawy": "cja na"
+              }
+            ]
+          },
+          {
+            "text": "ilość z",
+            "tokens": [
+              "ilo",
+              "ść z"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "ilość z",
+                "lewy": "ilo",
+                "prawy": "ść z"
+              }
+            ]
+          },
+          {
+            "text": "ilość w",
+            "tokens": [
+              "ilo",
+              "ść w"
+            ],
+            "bad": [
+              {
+                "granica": 3,
+                "kontekst": "ilość w",
+                "lewy": "ilo",
+                "prawy": "ść w"
+              }
+            ]
+          }
+        ],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "Slayer1B-1.08": {
+        "napisow": 384,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "APT3-1B": {
+        "napisow": 384,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 39,
+        "przyklady_rt_fail": [
+          "zgodność §",
+          "możliwość §",
+          "kolejność §",
+          "odpowiedź §",
+          "uchwała §",
+          "informacja §",
+          "kwota §",
+          "liczba §",
+          "data §",
+          "suma §",
+          "wartość §",
+          "ilość §"
+        ],
+        "wyjatki": 0
+      },
+      "Bielik-1.5B-v3": {
+        "napisow": 384,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      },
+      "GPT-4o-o200k": {
+        "napisow": 384,
+        "bad": 0,
+        "przyklady_bad": [],
+        "roundtrip_fail": 0,
+        "przyklady_rt_fail": [],
+        "wyjatki": 0
+      }
+    }
+  }
+}

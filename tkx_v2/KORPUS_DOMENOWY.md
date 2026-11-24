@@ -20,7 +20,7 @@ Pełne teksty poza repo (zasada: bez surowych tekstów w git). W repo: manifest,
 - JSON narzędzi 200 (tc1): `D:\VPS\fabryka\tc1\dane\test.jsonl` (poza repo).
 
 ## Przeciek
-13-gramy vs próbka treningowa HPLT 400 MB — nie wykonano. Próg stopu: > 20% dokumentów z trafieniem.
+13-gramy znakowe vs faktyczny korpus treningowy tokenizera (`audit/tmp/stability_train.txt`, HPLT p2, 400 MB; SHA-256 zgodny z manifestem). Próg: > 50% 13-gramów lub dokładny duplikat. Najwyższy odsetek dokumentów > 50%: 100.0% (1_bzp). Szczegóły: `results/tkx_v2_r6_leak.json`.
 
 ## Licencje / status
 Dokumenty urzędowe są publiczne. HPLT/FineWeb-2: ODC-By; Wikipedia: CC BY-SA.

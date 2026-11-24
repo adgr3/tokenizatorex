@@ -23,14 +23,25 @@ Każda wada z dowodem i propozycją naprawy (v2.1). Liczby z `results/*.json`.
 - **Dowód:** TKX-A — fertility 1,97 vs Slayer 1,30 na angielskim (znany kompromis).
 - **Status:** akceptowany kompromis; bezpiecznik: brak regresji > 5%.
 
-## W5. Artefakty SuperBPE
-- Niektóre superwordy mogą zaczynać się w środku słowa; częste słowa mogą stracić własny token.
-- **Naprawa:** audyt słownika, filtrowanie merge w v2.1.
+## W5. Artefakty SuperBPE — ujawnienie
+- TOKENIZATOREX to **SuperBPE**: część tokenów (superwordy) łączy kawałki sąsiednich słów. To obniża fertility, ale czasem tnie słowo w nienaturalnym miejscu.
+- Superwordy w słowniku: **V0-32k 4982** (**15,57%** słownika), **V0J2-32k 4817** (**15,05%**). Zaczyna się w środku słowa: **V0 362** (**7,27%** superwordów), **V0J2 343** (**7,12%**); użycie superwordów: **V0 8,06%** tokenów, **V0J2 7,97%**; w tym od środka słowa: **V0 0,28%**, **V0J2 0,27%** (audyt H6 przeliczony na bieżących wariantach, `results/tkx_v2_r6_superwords.json`).
+- Red team A: w 172 tekstach urzędowych granice od środka słowa wystąpiły w **13/172** (V0) i **12/172** (V0J2); w 384 parach słów **38/384** i **34/384**; w fuzzingu 20000 napisów **5** przypadków.
+- Przykłady (V0/V0J2): `zgodność z` → `z | god | ność z`; `kolejność z` → `ko | lej | ność z`; `informacja z` → `informa | cja z`.
+- **Plan v2.1:** superwordy tylko od początku słowa + pomiar kosztu (fertility/latencja).
+- **Naprawa krótkoterminowa:** audyt słownika i filtrowanie merge (w toku).
 
 ## W6. Martwe tokeny
 
 Uwaga: porównanie ze Slayerem nie jest bezpośrednie (słownik polsko-angielski). Na polskim korpusie 35,03% martwych; w audycie szerszym 8,90%.
 - **Dowód:** V0-32k 8,12%, V3-32k 7,83%, Slayer 35,03% (`results/tkx_v2_dead_tokens.json`).
+
+## W7. Tokeny specjalne w tekście użytkownika
+- **Domyślne zachowanie biblioteki `tokenizers`:** literalny `<|endoftext|>` w tekście użytkownika staje się ID specjalnym **31999**, także przy `add_special_tokens=False`; domyślny `decode` może go pominąć.
+- **Tryb zalecany:** `tokenizer.encode_special_tokens = True` (wersja `tokenizers` z lock) rozbija taki napis na zwykłe tokeny; w `transformers` odpowiada temu `split_special_tokens: true` w `tokenizer_config.json` (dodane do `hf/tokenizatorex-32k`, `hf/variants/V0-32k`, `hf/variants/V0J2-32k`).
+- `<tool_call>` i `</tool_call>` w V0J2 to **zwykłe tokeny słownika, nie ID specjalne**; nadal mogą wstrzyknąć tekst szablonu, więc szablon czatu nie może traktować tekstu użytkownika jak szablonu.
+- **Pomiar:** w tekstach pomiarowych (1469 dok.) nazwy dodane jako `special=True` występują **0** razy; `<tool_call>`/`</tool_call>` występują 320 razy, ale tryb zalecany nie zmienia ich tokenizacji, więc fertility się nie zmienia (`results/tkx_v2_r6_special_tokens.json`).
+- **Przed treningiem modelu Ogonek z szablonem czatu to musi być włączone.**
 
 ## Czego nie sprawdzają testy
 - Jakość modelu downstream (wymaga TKX-D).
