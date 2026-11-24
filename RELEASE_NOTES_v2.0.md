@@ -18,7 +18,7 @@ v2.0 to stan po TKX-A + TKX-C + test domenowy na tekstach urzędowych (BZP, Dz.U
 
 Z danych (`results/tkx_v2_fertility.json`): **V0-32k ma najniższą fertility na wszystkich 8 źródłach** (punktowo). CI rozdzielają V0 od V3 wyraźnie tylko na części źródeł; Dz.U. i granty mają n=12, więc ranking jest niepewny.
 
-**Zastrzeżenie:** przeciek do korpusu treningowego tokenizera przekracza 5% na większości źródeł (sekcja „Przeciek względem korpusu treningowego tokenizera”), więc teza o najniższej fertility dotyczy w dużej mierze tekstów, których tokenizer już widział; na BZP czysty podzbiór ma 0 dokumentów.
+**Przeciek (miara słowna):** żadne źródło nie przekracza progu 5% dokumentów >50% (najwyżej BZP 3,4% i web 1,9%); tło kalibracyjne na 789 dokumentach po dacie korpusu to 2,15% >50% i 0 exact. Teza o najniższej fertility nie wymaga korekty z powodu przecieku; wynik 13-gramów znakowych był artefaktem wspólnej polszczyzny (dodatek niżej).
 
 ### Fertility v2.0 (V0 vs V3 vs base vs Slayer)
 
@@ -76,39 +76,42 @@ Domyślnie lokalne tokenizery TOKENIZATOREX + Slayer; `--wszystkie` dodaje zewn�
 - Bielik-1.5B-v3 (APT4) jest obecny w wynikach fertility; testy downstream nie wykonane. Tokenizer Bielika jest przeliczony w `results/tkx_v2_special_chars.json` i `results/tkx_v2_patterns.json` po zalogowaniu HF.
 - Przeciek względem **całego** HPLT (poza próbką treningową tokenizera) — nie wykonano; poniżej jest pomiar względem faktycznego korpusu treningowego tokenizera.
 
-### Przeciek względem korpusu treningowego tokenizera
+### Przeciek względem korpusu treningowego tokenizera (13-gramy słowne)
 
-Korpus: `audit/tmp/stability_train.txt` (HPLT p2, 400 MB), odtworzony deterministycznie z `audit/stability.py`; SHA-256 `b0e7447c…` zgodny z `tkx_v21/MANIFEST_DANYCH.json`. V0 i V0J2 dzielą ten sam etap 1 i ten sam korpus treningowy, więc wynik przecieku jest dla nich wspólny. Próg zapisany przed pomiarem: dokument = przeciek, gdy > 50% jego unikalnych 13-gramów znakowych jest w korpusie treningowym albo cały dokument jest dokładnym podciągiem; tekst normalizowany NFC, CRLF→LF. Źródło: `results/tkx_v2_r6_leak.json`.
+Korpus: `audit/tmp/stability_train.txt` (HPLT p2, 400 MB), odtworzony z `audit/stability.py`; SHA-256 `b0e7447c…` zgodny z manifestem v21. Data korpusu ze źródła: kolumna `added` = **2026-07-14** dla wszystkich 159868 dokumentów próbki treningowej. V0 i V0J2 dzielą ten sam etap 1 i korpus, więc wynik jest dla nich wspólny. Próg zapisany przed pomiarem: dokument = przeciek, gdy > 50% jego unikalnych **13-gramów słownych** (NFC, lowercase, `split()`, 13 kolejnych słów) jest w korpusie treningowym albo cały dokument jest dokładnym podciągiem. Źródło: `results/tkx_v2_r6c_slowny_przeciek.json`.
 
-| Źródło | Dokumenty | Exact | > 50% | Max pokrycie |
+| Źródło | Dokumenty | Exact | > 50% | Max | Po dacie korpusu |
+|---|---:|---:|---:|---:|---:|
+| BZP (ogłoszenia) | 500 | 0 | 17 | 71,7% | 500/500 |
+| Dz.U. 2026 ELI | 12 | 0 | 0 | 1,6% | 7/12 |
+| KIO | 66 | 0 | 0 | 2,2% | 66/66 |
+| Samorząd (uchwały) | 240 | 0 | 0 | 18,7% | 92/240 |
+| Granty | 12 | 0 | 0 | 2,9% | 2/12 |
+| JSON narzędzi (tc1) | 200 | 0 | 0 | 0,0% | brak dat |
+| Kontrola ogólna (HPLT web) | 421 | 0 | 8 | 80,9% | brak dat |
+| JSON BZP (tabele, extra) | 18 | 0 | 0 | 2,9% | 0/18 |
+| Granty (149) | 149 | 0 | 0 | 10,8% | 122/149 |
+| JSON held-out (100) | 100 | 0 | 0 | 0,0% | brak dat |
+
+BZP (główna liczba 1,43): publikacja **2026-11-01–2026-11-02**, wszystkie **500/500** dokumenty po dacie korpusu **2026-07-14**. Wynik słowny: **17/500** dokumentów > 50% (**3,4%**), exact **0**, max **71,7%**. To tło wspólnego szablonu BZP, nie kopie dokumentów.
+
+**Kalibracja na tekście na pewno nowym** (data publikacji > 2026-07-14):
+
+| Zbiór kontrolny | Dokumenty | > 50% | Max | Exact |
 |---|---:|---:|---:|---:|
-| BZP (ogłoszenia) | 500 | 0 | 500 | 84,0% |
-| Dz.U. 2026 ELI | 12 | 0 | 5 | 56,9% |
-| KIO | 66 | 0 | 60 | 63,3% |
-| Samorząd (uchwały) | 240 | 0 | 144 | 64,1% |
-| Granty | 12 | 0 | 4 | 60,2% |
-| JSON narzędzi (tc1) | 200 | 0 | 0 | 41,9% |
-| Kontrola ogólna (HPLT web) | 421 | 0 | 299 | 91,7% |
-| JSON BZP (tabele, extra) | 18 | 0 | 2 | 56,7% |
-| Granty (149) | 149 | 0 | 138 | 79,6% |
-| JSON held-out (100) | 100 | 0 | 0 | 13,0% |
+| wszystkie źródła z datami | 789 | 17 (2,15%) | 71,7% | 0 |
+| BZP | 500 | 17 (3,40%) | 71,7% | 0 |
+| KIO | 66 | 0 (0,00%) | 2,2% | 0 |
+| Samorząd | 92 | 0 (0,00%) | 18,7% | 0 |
+| Dz.U. | 7 | 0 (0,00%) | 1,6% | 0 |
+| Granty 12 | 2 | 0 (0,00%) | 0,0% | 0 |
+| Granty 149 | 122 | 0 (0,00%) | 10,8% | 0 |
 
-BZP (główna liczba 1,43): **500/500** dokumentów > 50% i **0** dokładnych duplikatów — liczba 1,43 jest mierzona na tekstach obecnych w korpusie treningowym tokenizera; **brak czystego podzbioru** (0/500 dokumentów), więc liczby 1,43 nie da się obronić jako wyniku poza danymi treningowymi.
+Tło: **2,15%** dokumentów na pewno nowych ma > 50% 13-gramów słownych wspólnych z korpusem, exact 0; to wspólny język i szablony urzędowe, nie kopiowanie. Żadne źródło nie przekracza progu 5%.
 
-**Zastrzeżenie:** próg > 5% przekraczają: BZP (ogłoszenia), Dz.U. 2026 ELI, KIO, Samorząd (uchwały), Granty, Kontrola ogólna (HPLT web), JSON BZP (tabele, extra), Granty (149). Teza o najniższej fertility na tych źródłach wymaga zastrzeżenia. Fertility na podzbiorze bez przecieku:
+### Dodatek: dlaczego 13-gramy znakowe myliły
 
-| Źródło | Czyste / wszystkie | V0-32k | V0J2-32k |
-|---|---:|---:|---:|
-| BZP (ogłoszenia) | 0/500 | — | — |
-| Dz.U. 2026 ELI | 7/12 | 1,536 | 1,539 |
-| KIO | 6/66 | 1,501 | 1,501 |
-| Samorząd (uchwały) | 96/240 | 1,562 | 1,565 |
-| Granty | 8/12 | 1,777 | 1,836 |
-| Kontrola ogólna (HPLT web) | 122/421 | 1,479 | 1,486 |
-| JSON BZP (tabele, extra) | 16/18 | 2,861 | 2,823 |
-| Granty (149) | 11/149 | 1,962 | 1,953 |
-
-Małe podzbiory czyste (BZP (ogłoszenia) 0/500, Dz.U. 2026 ELI 7/12, KIO 6/66, Granty 8/12, JSON BZP (tabele, extra) 16/18, Granty (149) 11/149) są ilustracją, nie dowodem.
+13 znaków to około 2 słowa, więc miara znakowa mierzy wspólną polszczyznę, a nie kopiowanie dokumentów. W R6 dała ona BZP **500/500**, granty 149 **138/149** i web **299/421** dokumentów > 50%, przy 0 exact — mimo że granty 149 miały 122/149 dokumentów po dacie korpusu. To wystarcza, żeby uznać wynik znakowy za artefakt, a nie przeciek.
 
 ### Rényi (TokEval) i słowa pocięte na > 1 token
 

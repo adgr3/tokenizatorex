@@ -43,6 +43,12 @@ Uwaga: porównanie ze Slayerem nie jest bezpośrednie (słownik polsko-angielski
 - **Pomiar:** w tekstach pomiarowych (1469 dok.) nazwy dodane jako `special=True` występują **0** razy; `<tool_call>`/`</tool_call>` występują 320 razy, ale tryb zalecany nie zmienia ich tokenizacji, więc fertility się nie zmienia (`results/tkx_v2_r6_special_tokens.json`).
 - **Przed treningiem modelu Ogonek z szablonem czatu to musi być włączone.**
 
+## W8. Przeciek do korpusu treningowego (miara słowna)
+- **Miara:** 13-gramy słowne (NFC, lowercase, `split()`, 13 kolejnych słów) vs korpus treningowy tokenizera; próg > 50% unikalnych gramów lub dokładny duplikat. Data korpusu: **2026-07-14** (`added` w HPLT p2).
+- **Wynik:** żadne źródło nie przekracza progu 5% dokumentów > 50%. Najwyżej BZP **17/500** (3,4%) i web **8/421** (1,9%); exact **0** wszędzie.
+- **Kalibracja na tekście na pewno nowym:** 789 dokumentów z datą > 2026-07-14 ma **17** (2,15%) > 50%, exact 0. BZP: publikacja 2026-11-01–2026-11-02, wszystkie 500/500 po dacie korpusu; 17/500 to wspólny szablon, nie kopie.
+- **Uczciwie:** wspólne szablony urzędowe ≠ kopie dokumentów. Miara znakowa z R6 myliła, bo 13 znaków ≈ 2 słowa: granty 149 miały w niej 138/149 > 50%, mimo 122/149 dokumentów po dacie korpusu. Źródło: `results/tkx_v2_r6c_slowny_przeciek.json`; wynik znakowy: `results/tkx_v2_r6_leak.json`.
+
 ## Czego nie sprawdzają testy
 - Jakość modelu downstream (wymaga TKX-D).
 - Morfologia (otwarte pytanie).

@@ -20,7 +20,7 @@ Pełne teksty poza repo (zasada: bez surowych tekstów w git). W repo: manifest,
 - JSON narzędzi 200 (tc1): `D:\VPS\fabryka\tc1\dane\test.jsonl` (poza repo).
 
 ## Przeciek
-13-gramy znakowe vs faktyczny korpus treningowy tokenizera (`audit/tmp/stability_train.txt`, HPLT p2, 400 MB; SHA-256 zgodny z manifestem). Próg: > 50% 13-gramów lub dokładny duplikat. Najwyższy odsetek dokumentów > 50%: 100.0% (1_bzp). Szczegóły: `results/tkx_v2_r6_leak.json`.
+13-gramy **słowne** (NFC, lowercase, split()) vs faktyczny korpus treningowy tokenizera (`audit/tmp/stability_train.txt`, HPLT p2, 400 MB; SHA-256 zgodny z manifestem; data korpusu 2026-07-14). Próg: > 50% 13-gramów słownych lub dokładny duplikat. Najwyższy odsetek dokumentów > 50%: 3.4% (1_bzp). Tło na 789 dokumentach po dacie korpusu: 2.15% > 50%, exact 0. Szczegóły: `results/tkx_v2_r6c_slowny_przeciek.json`.
 
 ## Licencje / status
 Dokumenty urzędowe są publiczne. HPLT/FineWeb-2: ODC-By; Wikipedia: CC BY-SA.

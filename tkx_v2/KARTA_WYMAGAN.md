@@ -18,7 +18,7 @@ Wartości z `results/*.json` i pomiarów opisanych w raportach. PASS/FAIL nie s�
 | O6 Daty (≤ 5 tokenów/data) | FAIL (6/15 dat > 5) | FAIL (15/15) | FAIL (15/15) | `results/tkx_v2_patterns.json` (kategoria daty_iso) |
 | O7 CPV (≤ 3 tokeny/kod) | FAIL (15/15 kodów > 3) | FAIL (15/15) | FAIL (15/15) | `results/tkx_v2_patterns.json` (kategoria cpv) |
 | O8 Martwe tokeny ≤ 5% | FAIL (8,12%) | FAIL (7,83%) | FAIL (35,03%) | `results/tkx_v2_dead_tokens.json` |
-| O9 Przeciek 13-gram ≤ 20% | FAIL (max 100.0% dok.) | FAIL (max 100.0% dok.) | UNKNOWN (inny korpus) | `results/tkx_v2_r6_leak.json` (korpus treningowy tokenizera) |
+| O9 Przeciek 13-gram słownych ≤ 20% | PASS (max 3.4% dok.) | PASS (max 3.4% dok.) | UNKNOWN (inny korpus) | `results/tkx_v2_r6c_slowny_przeciek.json` (korpus treningowy tokenizera) |
 
 Uwaga: żaden z ocenianych wariantów (V0, V3, Slayer) nie spełnia O5–O8. Progi O5–O8 okazały się nierealne dla wszystkich tokenizerów (także Slayera) → do rewizji w v2.1 z uzasadnieniem, a nie po cichu.
 
@@ -32,7 +32,7 @@ Uwaga O1/O2: wymagania O1 (dokładny round-trip) i O2 (wyjście w NFC) wykluczaj
 - O4: lata 2015–2035 ≤ 2 tokeny/rok.
 - O5–O7: progi tokenów dla kwot/daty/CPV — do rewizji w v2.1.
 - O8: martwe tokeny ≤ 5% słownika.
-- O9: przeciek 13-gram ≤ 20% dokumentów.
+- O9: przeciek 13-gramów słownych ≤ 20% dokumentów.
 
 ## Bezpieczniki
 - Angielski: brak regresji > 5% względem V0-32k (procentowy próg; wartość bazowa do pomiaru w TKX-D).

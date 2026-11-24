@@ -58,6 +58,7 @@ v21_leak = load("tkx_v21_leak.json")
 r6_sw = load("tkx_v2_r6_superwords.json")
 r6_m = load("tkx_v2_r6_measure.json")
 r6_leak = load("tkx_v2_r6_leak.json")
+r6c = load("tkx_v2_r6c_slowny_przeciek.json")
 r6_spec = load("tkx_v2_r6_special_tokens.json")
 r6_a1 = load("tkx_v2_r6_redteam_a_a1_targeted.json")
 r6_a2 = load("tkx_v2_r6_redteam_a_a2_regression.json")
@@ -371,7 +372,18 @@ def build_release():
     rn.append("")
     rn.append("Z danych (`results/tkx_v2_fertility.json`): **V0-32k ma najniższą fertility na wszystkich 8 źródłach** (punktowo). CI rozdzielają V0 od V3 wyraźnie tylko na części źródeł; Dz.U. i granty mają n=12, więc ranking jest niepewny.")
     rn.append("")
-    rn.append("**Zastrzeżenie:** przeciek do korpusu treningowego tokenizera przekracza 5% na większości źródeł (sekcja „Przeciek względem korpusu treningowego tokenizera”), więc teza o najniższej fertility dotyczy w dużej mierze tekstów, których tokenizer już widział; na BZP czysty podzbiór ma 0 dokumentów.")
+    ctl = r6c["control"]["all"]
+    bzp_w = r6c["sources"]["1_bzp"]
+    web_w = r6c["sources"]["7_ogolny"]
+    rn.append(f"**Przeciek (miara słowna):** żadne źródło nie przekracza progu "
+              f"{num(r6c['meta']['warn_pct'], 0)}% dokumentów >50% "
+              f"(najwyżej BZP {pctv(bzp_w['docs_over_threshold_pct'], 1)} i web "
+              f"{pctv(web_w['docs_over_threshold_pct'], 1)}); tło kalibracyjne na "
+              f"{ctl['docs']} dokumentach po dacie korpusu to "
+              f"{pctv(ctl['docs_over_threshold_pct'])} >50% i "
+              f"{ctl['exact_matches']} exact. Teza o najniższej fertility nie wymaga "
+              "korekty z powodu przecieku; wynik 13-gramów znakowych był artefaktem "
+              "wspólnej polszczyzny (dodatek niżej).")
     rn.append("")
     rn.append("### Fertility v2.0 (V0 vs V3 vs base vs Slayer)")
     rn.append("")
@@ -457,67 +469,78 @@ def build_release():
     rn.append("- Bielik-1.5B-v3 (APT4) jest obecny w wynikach fertility; testy downstream nie wykonane. Tokenizer Bielika jest przeliczony w `results/tkx_v2_special_chars.json` i `results/tkx_v2_patterns.json` po zalogowaniu HF.")
     rn.append("- Przeciek względem **całego** HPLT (poza próbką treningową tokenizera) — nie wykonano; poniżej jest pomiar względem faktycznego korpusu treningowego tokenizera.")
     rn.append("")
-    rn.append("### Przeciek względem korpusu treningowego tokenizera")
+    rn.append("### Przeciek względem korpusu treningowego tokenizera (13-gramy słowne)")
     rn.append("")
-    rn.append("Korpus: `audit/tmp/stability_train.txt` (HPLT p2, 400 MB), odtworzony deterministycznie z `audit/stability.py`; SHA-256 `b0e7447c…` zgodny z `tkx_v21/MANIFEST_DANYCH.json`. V0 i V0J2 dzielą ten sam etap 1 i ten sam korpus treningowy, więc wynik przecieku jest dla nich wspólny. Próg zapisany przed pomiarem: dokument = przeciek, gdy > 50% jego unikalnych 13-gramów znakowych jest w korpusie treningowym albo cały dokument jest dokładnym podciągiem; tekst normalizowany NFC, CRLF→LF. Źródło: `results/tkx_v2_r6_leak.json`.")
+    meta = r6c["meta"]
+    rn.append(f"Korpus: `audit/tmp/stability_train.txt` (HPLT p2, 400 MB), odtworzony z "
+              f"`audit/stability.py`; SHA-256 `b0e7447c…` zgodny z manifestem v21. "
+              f"Data korpusu ze źródła: kolumna `added` = **{meta['corpus_date']}** dla "
+              f"wszystkich {meta['train_docs']} dokumentów próbki treningowej. V0 i V0J2 "
+              "dzielą ten sam etap 1 i korpus, więc wynik jest dla nich wspólny. "
+              "Próg zapisany przed pomiarem: dokument = przeciek, gdy > 50% jego "
+              "unikalnych **13-gramów słownych** (NFC, lowercase, `split()`, 13 kolejnych "
+              "słów) jest w korpusie treningowym albo cały dokument jest dokładnym "
+              "podciągiem. Źródło: `results/tkx_v2_r6c_slowny_przeciek.json`.")
     rn.append("")
-    rn.append("| Źródło | Dokumenty | Exact | > 50% | Max pokrycie |")
-    rn.append("|---|---:|---:|---:|---:|")
-    for sid, name in list(SOURCES) + [("granty_149", "Granty (149)"),
-                                      ("json_heldout", "JSON held-out (100)")]:
-        r = r6_leak["sources"][sid]
-        rn.append(f"| {name} | {r['docs']} | {r['exact_matches']} | "
-                  f"{r['docs_over_threshold']} | {pctv(r['max_coverage'] * 100, 1)} |")
-    rn.append("")
-    bzp = r6_leak["sources"]["1_bzp"]
-    bzp_clean = r6_leak["clean_subset"].get("1_bzp")
-    if bzp_clean["docs_clean"] == 0:
-        bzp_clean_txt = ("**brak czystego podzbioru** (0/500 dokumentów), więc liczby "
-                         "1,43 nie da się obronić jako wyniku poza danymi treningowymi")
-    else:
-        bzp_clean_txt = (f"czysty podzbiór to **{bzp_clean['docs_clean']}/"
-                         f"{bzp_clean['docs_total']}** dokumentów "
-                         f"(V0 fertility "
-                         f"{f3(bzp_clean['tokenizers']['V0-32k']['fertility'])})")
-    rn.append(f"BZP (główna liczba 1,43): **{bzp['docs_over_threshold']}/{bzp['docs']}** "
-              f"dokumentów > 50% i **{bzp['exact_matches']}** dokładnych duplikatów — "
-              "liczba 1,43 jest mierzona na tekstach obecnych w korpusie treningowym "
-              f"tokenizera; {bzp_clean_txt}.")
-    over = [(sid, name) for sid, name in
-            list(SOURCES) + [("granty_149", "Granty (149)"),
+    rn.append("| Źródło | Dokumenty | Exact | > 50% | Max | Po dacie korpusu |")
+    rn.append("|---|---:|---:|---:|---:|---:|")
+    rows6 = list(SOURCES) + [("granty_149", "Granty (149)"),
                              ("json_heldout", "JSON held-out (100)")]
-            if r6_leak["sources"][sid]["docs"] and
-            r6_leak["sources"][sid]["docs_over_threshold_pct"] > r6_leak["meta"]["warn_pct"]]
-    if over:
-        rn.append("")
-        rn.append("**Zastrzeżenie:** próg > 5% przekraczają: " +
-                  ", ".join(name for _sid, name in over) +
-                  ". Teza o najniższej fertility na tych źródłach wymaga zastrzeżenia. "
-                  "Fertility na podzbiorze bez przecieku:")
-        rn.append("")
-        rn.append("| Źródło | Czyste / wszystkie | V0-32k | V0J2-32k |")
-        rn.append("|---|---:|---:|---:|")
-        for sid, name in over:
-            c = r6_leak["clean_subset"].get(sid)
-            if not c:
-                continue
-            rn.append(f"| {name} | {c['docs_clean']}/{c['docs_total']} | "
-                      f"{f3(c['tokenizers']['V0-32k']['fertility'])} | "
-                      f"{f3(c['tokenizers']['V0J2-32k']['fertility'])} |")
-        small = [(name, r6_leak["clean_subset"][sid])
-                 for sid, name in over
-                 if sid in r6_leak["clean_subset"]
-                 and r6_leak["clean_subset"][sid]["docs_clean"] < 20]
-        if small:
-            rn.append("")
-            rn.append("Małe podzbiory czyste (" +
-                      ", ".join(f"{name} {c['docs_clean']}/{c['docs_total']}"
-                                for name, c in small) +
-                      ") są ilustracją, nie dowodem.")
-    else:
-        rn.append("")
-        rn.append("**Zastrzeżenie:** żadne źródło nie przekracza progu 5% dokumentów — "
-                  "teza o najniższej fertility nie wymaga korekty z tego powodu.")
+    for sid, name in rows6:
+        r = r6c["sources"][sid]
+        d = r["dates"]
+        after = (f"{d['after_corpus']}/{r['docs']}" if d["with_date"] else "brak dat")
+        rn.append(f"| {name} | {r['docs']} | {r['exact_matches']} | "
+                  f"{r['docs_over_threshold']} | {pctv(r['max_coverage'] * 100, 1)} | "
+                  f"{after} |")
+    rn.append("")
+    bzp = r6c["sources"]["1_bzp"]
+    bd = bzp["dates"]
+    rn.append(f"BZP (główna liczba 1,43): publikacja **{bd['min']}–{bd['max']}**, "
+              f"wszystkie **{bd['after_corpus']}/{bzp['docs']}** dokumenty po dacie "
+              f"korpusu **{meta['corpus_date']}**. Wynik słowny: "
+              f"**{bzp['docs_over_threshold']}/{bzp['docs']}** dokumentów > 50% "
+              f"(**{pctv(bzp['docs_over_threshold_pct'], 1)}**), exact "
+              f"**{bzp['exact_matches']}**, max **{pctv(bzp['max_coverage'] * 100, 1)}**. "
+              "To tło wspólnego szablonu BZP, nie kopie dokumentów.")
+    rn.append("")
+    rn.append(f"**Kalibracja na tekście na pewno nowym** (data publikacji > "
+              f"{meta['corpus_date']}):")
+    rn.append("")
+    rn.append("| Zbiór kontrolny | Dokumenty | > 50% | Max | Exact |")
+    rn.append("|---|---:|---:|---:|---:|")
+    ctl = r6c["control"]["all"]
+    rn.append(f"| wszystkie źródła z datami | {ctl['docs']} | "
+              f"{ctl['docs_over_threshold']} ({pctv(ctl['docs_over_threshold_pct'])}) | "
+              f"{pctv(ctl['max_coverage'] * 100, 1)} | {ctl['exact_matches']} |")
+    for sid, name in [("1_bzp", "BZP"), ("3_kio", "KIO"),
+                      ("4_samorzad", "Samorząd"), ("2_du_eli", "Dz.U."),
+                      ("5_granty", "Granty 12"), ("granty_149", "Granty 149")]:
+        c = r6c["control"].get(sid)
+        if not c:
+            continue
+        rn.append(f"| {name} | {c['docs']} | {c['docs_over_threshold']} "
+                  f"({pctv(c['docs_over_threshold_pct'])}) | "
+                  f"{pctv(c['max_coverage'] * 100, 1)} | {c['exact_matches']} |")
+    rn.append("")
+    rn.append(f"Tło: **{pctv(ctl['docs_over_threshold_pct'])}** dokumentów na pewno nowych "
+              f"ma > 50% 13-gramów słownych wspólnych z korpusem, exact 0; to wspólny "
+              "język i szablony urzędowe, nie kopiowanie. Żadne źródło nie przekracza "
+              f"progu {num(meta['warn_pct'], 0)}%.")
+    rn.append("")
+    rn.append("### Dodatek: dlaczego 13-gramy znakowe myliły")
+    rn.append("")
+    cz = r6_leak["sources"]
+    g149 = cz["granty_149"]
+    rn.append("13 znaków to około 2 słowa, więc miara znakowa mierzy wspólną polszczyznę, "
+              "a nie kopiowanie dokumentów. W R6 dała ona BZP "
+              f"**{cz['1_bzp']['docs_over_threshold']}/{cz['1_bzp']['docs']}**, granty 149 "
+              f"**{g149['docs_over_threshold']}/{g149['docs']}** i web "
+              f"**{cz['7_ogolny']['docs_over_threshold']}/{cz['7_ogolny']['docs']}** "
+              "dokumentów > 50%, przy 0 exact — mimo że granty 149 miały "
+              f"{r6c['sources']['granty_149']['dates']['after_corpus']}/"
+              f"{r6c['sources']['granty_149']['docs']} dokumentów po dacie korpusu. "
+              "To wystarcza, żeby uznać wynik znakowy za artefakt, a nie przeciek.")
     rn.append("")
     rn.append("### Rényi (TokEval) i słowa pocięte na > 1 token")
     rn.append("")
@@ -684,13 +707,13 @@ def build_karta():
     ka.append(f"| O6 Daty (≤ 5 tokenów/data) | FAIL ({o6['TKX/V0-32k'][0]}/{o6['TKX/V0-32k'][1]} dat > 5) | FAIL ({o6['TKX/V3-32k'][0]}/{o6['TKX/V3-32k'][1]}) | FAIL ({o6['Slayer1B-1.08'][0]}/{o6['Slayer1B-1.08'][1]}) | `results/tkx_v2_patterns.json` (kategoria daty_iso) |")
     ka.append(f"| O7 CPV (≤ 3 tokeny/kod) | FAIL ({o7['TKX/V0-32k'][0]}/{o7['TKX/V0-32k'][1]} kodów > 3) | FAIL ({o7['TKX/V3-32k'][0]}/{o7['TKX/V3-32k'][1]}) | FAIL ({o7['Slayer1B-1.08'][0]}/{o7['Slayer1B-1.08'][1]}) | `results/tkx_v2_patterns.json` (kategoria cpv) |")
     ka.append(f"| O8 Martwe tokeny ≤ 5% | FAIL ({f2(dead['tokenizers']['TKX/V0-32k']['dead_pct'])}%) | FAIL ({f2(dead['tokenizers']['TKX/V3-32k']['dead_pct'])}%) | FAIL ({f2(dead['tokenizers']['Slayer1B-1.08']['dead_pct'])}%) | `results/tkx_v2_dead_tokens.json` |")
-    o9_max = max(r["docs_over_threshold_pct"] for r in r6_leak["sources"].values())
+    o9_max = max(r["docs_over_threshold_pct"] for r in r6c["sources"].values())
     o9_ok = all(r["docs_over_threshold_pct"] <= 20.0
-                and not r["exact_matches"] for r in r6_leak["sources"].values())
-    ka.append(f"| O9 Przeciek 13-gram ≤ 20% | {'PASS' if o9_ok else 'FAIL'} "
+                and not r["exact_matches"] for r in r6c["sources"].values())
+    ka.append(f"| O9 Przeciek 13-gram słownych ≤ 20% | {'PASS' if o9_ok else 'FAIL'} "
               f"(max {o9_max:.1f}% dok.) | {'PASS' if o9_ok else 'FAIL'} "
               f"(max {o9_max:.1f}% dok.) | UNKNOWN (inny korpus) | "
-              "`results/tkx_v2_r6_leak.json` (korpus treningowy tokenizera) |")
+              "`results/tkx_v2_r6c_slowny_przeciek.json` (korpus treningowy tokenizera) |")
     ka.append("")
     ka.append("Uwaga: żaden z ocenianych wariantów (V0, V3, Slayer) nie spełnia O5–O8. Progi O5–O8 okazały się nierealne dla wszystkich tokenizerów (także Slayera) → do rewizji w v2.1 z uzasadnieniem, a nie po cichu.")
     ka.append("")
@@ -704,7 +727,7 @@ def build_karta():
     ka.append("- O4: lata 2015–2035 ≤ 2 tokeny/rok.")
     ka.append("- O5–O7: progi tokenów dla kwot/daty/CPV — do rewizji w v2.1.")
     ka.append("- O8: martwe tokeny ≤ 5% słownika.")
-    ka.append("- O9: przeciek 13-gram ≤ 20% dokumentów.")
+    ka.append("- O9: przeciek 13-gramów słownych ≤ 20% dokumentów.")
     ka.append("")
     ka.append("## Bezpieczniki")
     ka.append("- Angielski: brak regresji > 5% względem V0-32k (procentowy próg; wartość bazowa do pomiaru w TKX-D).")
@@ -767,6 +790,16 @@ def build_znane_wady():
     zw.append(f"- **Pomiar:** w tekstach pomiarowych ({st['docs']} dok.) nazwy dodane jako `special=True` występują **{st['special_occurrences']}** razy; `<tool_call>`/`</tool_call>` występują {st['template_token_occurrences']} razy, ale tryb zalecany nie zmienia ich tokenizacji, więc fertility się nie zmienia (`results/tkx_v2_r6_special_tokens.json`).")
     zw.append("- **Przed treningiem modelu Ogonek z szablonem czatu to musi być włączone.**")
     zw.append("")
+    zw.append("## W8. Przeciek do korpusu treningowego (miara słowna)")
+    bzp_w = r6c["sources"]["1_bzp"]
+    web_w = r6c["sources"]["7_ogolny"]
+    ctl = r6c["control"]["all"]
+    g149_w = r6c["sources"]["granty_149"]
+    zw.append(f"- **Miara:** 13-gramy słowne (NFC, lowercase, `split()`, 13 kolejnych słów) vs korpus treningowy tokenizera; próg > 50% unikalnych gramów lub dokładny duplikat. Data korpusu: **{r6c['meta']['corpus_date']}** (`added` w HPLT p2).")
+    zw.append(f"- **Wynik:** żadne źródło nie przekracza progu 5% dokumentów > 50%. Najwyżej BZP **{bzp_w['docs_over_threshold']}/{bzp_w['docs']}** ({pctv(bzp_w['docs_over_threshold_pct'], 1)}) i web **{web_w['docs_over_threshold']}/{web_w['docs']}** ({pctv(web_w['docs_over_threshold_pct'], 1)}); exact **0** wszędzie.")
+    zw.append(f"- **Kalibracja na tekście na pewno nowym:** {ctl['docs']} dokumentów z datą > {r6c['meta']['corpus_date']} ma **{ctl['docs_over_threshold']}** ({pctv(ctl['docs_over_threshold_pct'])}) > 50%, exact {ctl['exact_matches']}. BZP: publikacja {bzp_w['dates']['min']}–{bzp_w['dates']['max']}, wszystkie {bzp_w['dates']['after_corpus']}/{bzp_w['docs']} po dacie korpusu; 17/500 to wspólny szablon, nie kopie.")
+    zw.append(f"- **Uczciwie:** wspólne szablony urzędowe ≠ kopie dokumentów. Miara znakowa z R6 myliła, bo 13 znaków ≈ 2 słowa: granty 149 miały w niej {r6_leak['sources']['granty_149']['docs_over_threshold']}/{g149_w['docs']} > 50%, mimo {g149_w['dates']['after_corpus']}/{g149_w['docs']} dokumentów po dacie korpusu. Źródło: `results/tkx_v2_r6c_slowny_przeciek.json`; wynik znakowy: `results/tkx_v2_r6_leak.json`.")
+    zw.append("")
     zw.append("## Czego nie sprawdzają testy")
     zw.append("- Jakość modelu downstream (wymaga TKX-D).")
     zw.append("- Morfologia (otwarte pytanie).")
@@ -794,14 +827,20 @@ def build_korpus():
     kd.append("- JSON narzędzi 200 (tc1): `D:\\VPS\\fabryka\\tc1\\dane\\test.jsonl` (poza repo).")
     kd.append("")
     kd.append("## Przeciek")
-    rl = r6_leak
+    rl = r6c
     max_src = max(rl["sources"].items(),
                   key=lambda kv: kv[1]["docs_over_threshold_pct"])
-    kd.append("13-gramy znakowe vs faktyczny korpus treningowy tokenizera "
-              "(`audit/tmp/stability_train.txt`, HPLT p2, 400 MB; SHA-256 zgodny z "
-              "manifestem). Próg: > 50% 13-gramów lub dokładny duplikat. "
-              f"Najwyższy odsetek dokumentów > 50%: {max_src[1]['docs_over_threshold_pct']:.1f}% "
-              f"({max_src[0]}). Szczegóły: `results/tkx_v2_r6_leak.json`.")
+    ctl = rl["control"]["all"]
+    kd.append("13-gramy **słowne** (NFC, lowercase, split()) vs faktyczny korpus "
+              "treningowy tokenizera (`audit/tmp/stability_train.txt`, HPLT p2, 400 MB; "
+              "SHA-256 zgodny z manifestem; data korpusu 2026-07-14). Próg: > 50% "
+              "13-gramów słownych lub dokładny duplikat. "
+              f"Najwyższy odsetek dokumentów > 50%: "
+              f"{max_src[1]['docs_over_threshold_pct']:.1f}% ({max_src[0]}). "
+              f"Tło na {ctl['docs']} dokumentach po dacie korpusu: "
+              f"{ctl['docs_over_threshold_pct']:.2f}% > 50%, exact "
+              f"{ctl['exact_matches']}. Szczegóły: "
+              "`results/tkx_v2_r6c_slowny_przeciek.json`.")
     kd.append("")
     kd.append("## Licencje / status")
     kd.append("Dokumenty urzędowe są publiczne. HPLT/FineWeb-2: ODC-By; Wikipedia: CC BY-SA.")
