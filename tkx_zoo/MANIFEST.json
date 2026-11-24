@@ -1,0 +1,435 @@
+{
+  "PLLuM-4B": {
+    "status": "ok",
+    "repo": "CYFRAGOVPL/PLLuM-4B-instruct-2512",
+    "revision": "32d70ef0de2e2359fdf94a5ba0735b8a27849a8b",
+    "note": "PLLuM 4B (instruct, 2512); tokenizer rozszerzony względem Gemma 3",
+    "gated": false,
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "86ff7e6ee278de8d39daf8196cfe92be98f16ed8b68df65e03084e672258362b",
+        "path": "tkx_zoo/hf/PLLuM-4B/tokenizer.json"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "cfbb540f1c01d3d04d77c91c87c7acc7438e04b75c7cbe353a0eb6b2f3380935",
+        "path": "tkx_zoo/hf/PLLuM-4B/tokenizer_config.json"
+      }
+    ],
+    "models_using": [
+      "CYFRAGOVPL/PLLuM-4B-instruct-2512"
+    ],
+    "vocab": 262147,
+    "tokenizer_json_sha256": "86ff7e6ee278de8d39daf8196cfe92be98f16ed8b68df65e03084e672258362b",
+    "same_tokenizer_as": null
+  },
+  "PLLuM-8B": {
+    "status": "ok",
+    "repo": "CYFRAGOVPL/Llama-PLLuM-8B-instruct-2512",
+    "revision": "35d90290f98abe7d2750796b5cd88096aa2219eb",
+    "note": "Llama-PLLuM 8B (instruct, 2512); baza Llama 3.1 niedostępna (gated)",
+    "gated": false,
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "7ece4c81b3e1a44942b37b1ea9ac51d98e2c574e2a0f7dca926d209449f0df77",
+        "path": "tkx_zoo/hf/PLLuM-8B/tokenizer.json"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "3fe3f9a928ddd37d26c1010a2f41f5a0a1ccc1ee17094a79a08f4a907b53ae13",
+        "path": "tkx_zoo/hf/PLLuM-8B/tokenizer_config.json"
+      }
+    ],
+    "models_using": [
+      "CYFRAGOVPL/Llama-PLLuM-8B-instruct-2512"
+    ],
+    "vocab": 128259,
+    "tokenizer_json_sha256": "7ece4c81b3e1a44942b37b1ea9ac51d98e2c574e2a0f7dca926d209449f0df77",
+    "same_tokenizer_as": null
+  },
+  "PLLuM-12B": {
+    "status": "ok",
+    "repo": "CYFRAGOVPL/PLLuM-12B-instruct-2512",
+    "revision": "2982a0b979c23af81a37cc47fa40007e2bd47e2a",
+    "note": "PLLuM 12B (instruct, 2512); tokenizer rozszerzony względem Mistral Nemo",
+    "gated": false,
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "b0240ce510f08e6c2041724e9043e33be9d251d1e4a4d94eb68cd47b954b61d2",
+        "path": "tkx_zoo/hf/PLLuM-12B/tokenizer.json"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "b784ceba83349fb8f7d77c386ba8c33cf299a7676982aa8c6008f7a1cba398de",
+        "path": "tkx_zoo/hf/PLLuM-12B/tokenizer_config.json"
+      }
+    ],
+    "models_using": [
+      "CYFRAGOVPL/PLLuM-12B-instruct-2512"
+    ],
+    "vocab": 131072,
+    "tokenizer_json_sha256": "b0240ce510f08e6c2041724e9043e33be9d251d1e4a4d94eb68cd47b954b61d2",
+    "same_tokenizer_as": null
+  },
+  "Bielik-11B-v3.1": {
+    "status": "ok",
+    "repo": "speakleash/Bielik-11B-v3.1-Instruct",
+    "revision": "d6e755d356ad418d0f0e30b8c428db267415ddb9",
+    "note": "Bielik 11B v3.1 Instruct (tokenizer Llama/APT4)",
+    "gated": "auto",
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "25b86f31c6e8d68de94205c8ba2ccf6a6f7ad0bc0689d53898a5a77e1f795bd5",
+        "path": "tkx_zoo/hf/Bielik-11B-v3.1/tokenizer.json"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "11c2051b68b2ca80a9cd3c3cf89bc5514b8154b8a238c1e9e901d6a6f25110b2",
+        "path": "tkx_zoo/hf/Bielik-11B-v3.1/tokenizer_config.json"
+      }
+    ],
+    "models_using": [
+      "speakleash/Bielik-11B-v3.1-Instruct"
+    ],
+    "vocab": 32128,
+    "tokenizer_json_sha256": "25b86f31c6e8d68de94205c8ba2ccf6a6f7ad0bc0689d53898a5a77e1f795bd5",
+    "same_tokenizer_as": null
+  },
+  "Bielik-4.5B-v3": {
+    "status": "ok",
+    "repo": "speakleash/Bielik-4.5B-v3",
+    "revision": "bbe76e983911839bb163138a65770ef0d2a9c18f",
+    "note": "Bielik 4.5B v3 (tokenizer inny niż 11B v3.1)",
+    "gated": "auto",
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "536b4dffbed89b3741d008a06c4308a42b3e3e969b92c7e3c6fd0ca1f40d04b1",
+        "path": "tkx_zoo/hf/Bielik-4.5B-v3/tokenizer.json"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "37488ceb848a2f19eec5f4d32c7c1c3a5e5d5ba497c52d406c88809868fdfd10",
+        "path": "tkx_zoo/hf/Bielik-4.5B-v3/tokenizer_config.json"
+      }
+    ],
+    "models_using": [
+      "speakleash/Bielik-4.5B-v3"
+    ],
+    "vocab": 32000,
+    "tokenizer_json_sha256": "536b4dffbed89b3741d008a06c4308a42b3e3e969b92c7e3c6fd0ca1f40d04b1",
+    "same_tokenizer_as": null
+  },
+  "Aster-0.5B": {
+    "status": "ok",
+    "repo": "OrisTeam/Aster-0.5B",
+    "revision": "97691358f355c9d3f57e5b1a8b31eb79d5c53f2f",
+    "note": "Aster 0.5B (PM: dodać do zoo)",
+    "gated": false,
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "740d3ffd7386a6e912cb3c67bc5faab263980d47aa48918a39d594f8ce2706b6",
+        "path": "tkx_zoo/hf/Aster-0.5B/tokenizer.json"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "b40f22ea631bbac6bbed14c12a25be47849f98bba0e28383ef6fb7b672f46cc4",
+        "path": "tkx_zoo/hf/Aster-0.5B/tokenizer_config.json"
+      }
+    ],
+    "models_using": [
+      "OrisTeam/Aster-0.5B"
+    ],
+    "vocab": 32000,
+    "tokenizer_json_sha256": "740d3ffd7386a6e912cb3c67bc5faab263980d47aa48918a39d594f8ce2706b6",
+    "same_tokenizer_as": null
+  },
+  "EuroLLM-1.7B": {
+    "status": "ok",
+    "repo": "utter-project/EuroLLM-1.7B-Instruct",
+    "revision": "a25c7fa65fc2a644e6270b8940dbe295b51da681",
+    "note": "EuroLLM 1.7B Instruct (najmniejszy)",
+    "gated": false,
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "e5345150649e70dbfde004a0deec153c5175af35f86dabf75892e9c6a88dea9a",
+        "path": "tkx_zoo/hf/EuroLLM-1.7B/tokenizer.json"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "68c4fc703b0728dcc855a90ea389d62dc7e9eb8a3ccacbbb28a70fbf7ea41949",
+        "path": "tkx_zoo/hf/EuroLLM-1.7B/tokenizer_config.json"
+      }
+    ],
+    "models_using": [
+      "utter-project/EuroLLM-1.7B-Instruct"
+    ],
+    "vocab": 128000,
+    "tokenizer_json_sha256": "e5345150649e70dbfde004a0deec153c5175af35f86dabf75892e9c6a88dea9a",
+    "same_tokenizer_as": null
+  },
+  "Mistral-Nemo": {
+    "status": "ok",
+    "repo": "mistralai/Mistral-Nemo-Base-2407",
+    "revision": "a4477a2f977929a969745b69bbd62e03043551a5",
+    "note": "Mistral Nemo Base 2407 (baza PLLuM 12B)",
+    "gated": false,
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "e11c71726323d33da7b8d6f6f269f1988931c0a52b7122bcdd8c05042974e0db",
+        "path": "tkx_zoo/hf/Mistral-Nemo/tokenizer.json"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "9d00d5a5310d73664463a50abefe9646a7f42d3a55f590edc4e967ff33e3e1e5",
+        "path": "tkx_zoo/hf/Mistral-Nemo/tokenizer_config.json"
+      }
+    ],
+    "models_using": [
+      "mistralai/Mistral-Nemo-Base-2407"
+    ],
+    "vocab": 131072,
+    "tokenizer_json_sha256": "e11c71726323d33da7b8d6f6f269f1988931c0a52b7122bcdd8c05042974e0db",
+    "same_tokenizer_as": null
+  },
+  "Gemma-3-4B": {
+    "status": "ok",
+    "repo": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "note": "Gemma 3 4B IT (baza PLLuM 4B)",
+    "gated": "manual",
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+        "path": "tkx_zoo/hf/Gemma-3-4B/tokenizer.json"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1",
+        "path": "tkx_zoo/hf/Gemma-3-4B/tokenizer_config.json"
+      }
+    ],
+    "models_using": [
+      "google/gemma-3-4b-it"
+    ],
+    "vocab": 262145,
+    "tokenizer_json_sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "same_tokenizer_as": null
+  },
+  "DanielK-t1-pl-polish-32k": {
+    "status": "ok",
+    "repo": "https://github.com/slayerlabs/tokenizer/pull/29",
+    "revision": "0cf4eff0e622d23cd38a6c6d190dbba5f5e0fec8",
+    "note": "PR https://github.com/slayerlabs/tokenizer/pull/29, t1 pl_polish 32k",
+    "gated": false,
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "d784f63a0d3f20660edd4e1eb2682ede6063b7e5698a17fdde3bac48daf0cda5",
+        "path": "tkx_zoo/hf/DanielK-t1-pl-polish-32k/tokenizer.json",
+        "source_path": "DanielK/artifacts/bpe2_t1_pl_polish_32k/tokenizer.json"
+      }
+    ],
+    "models_using": [
+      "https://github.com/slayerlabs/tokenizer/pull/29"
+    ],
+    "vocab": 32768,
+    "tokenizer_json_sha256": "d784f63a0d3f20660edd4e1eb2682ede6063b7e5698a17fdde3bac48daf0cda5",
+    "same_tokenizer_as": null
+  },
+  "DanielK-t2-pl-cnc-32k": {
+    "status": "ok",
+    "repo": "https://github.com/slayerlabs/tokenizer/pull/29",
+    "revision": "0cf4eff0e622d23cd38a6c6d190dbba5f5e0fec8",
+    "note": "PR https://github.com/slayerlabs/tokenizer/pull/29, t2 pl_cnc 32k",
+    "gated": false,
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "8bb98a27a0f1e019c13f5741bde5e7cbbad4a7be4178c428acffb07cd55ce4a1",
+        "path": "tkx_zoo/hf/DanielK-t2-pl-cnc-32k/tokenizer.json",
+        "source_path": "DanielK/artifacts/bpe2_t2_pl_cnc_32k/tokenizer.json"
+      }
+    ],
+    "models_using": [
+      "https://github.com/slayerlabs/tokenizer/pull/29"
+    ],
+    "vocab": 32768,
+    "tokenizer_json_sha256": "8bb98a27a0f1e019c13f5741bde5e7cbbad4a7be4178c428acffb07cd55ce4a1",
+    "same_tokenizer_as": null
+  },
+  "Llama-3.1-8B": {
+    "status": "unavailable",
+    "repo": "meta-llama/Llama-3.1-8B",
+    "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+    "note": "baza niedostępna (gated, czeka na zatwierdzenie Meta)",
+    "files": [],
+    "models_using": [
+      "meta-llama/Llama-3.1-8B"
+    ],
+    "vocab": null,
+    "tokenizer_json_sha256": null,
+    "same_tokenizer_as": null
+  },
+  "V0-32k": {
+    "status": "existing",
+    "path": "hf/variants/V0-32k/tokenizer.json",
+    "revision": null,
+    "note": "wyniki fertility z results/tkx_v2_fertility.json; plik lokalny, bez pobierania",
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "bd58400dc47f13f590ac4bcb382747d3353f354cba37eb8a549c2b1b094edb6e"
+      }
+    ],
+    "models_using": [
+      "hf/variants/V0-32k/tokenizer.json"
+    ],
+    "vocab": 32000,
+    "tokenizer_json_sha256": "bd58400dc47f13f590ac4bcb382747d3353f354cba37eb8a549c2b1b094edb6e",
+    "same_tokenizer_as": null
+  },
+  "V0J2-32k": {
+    "status": "existing",
+    "path": "hf/variants/V0J2-32k/tokenizer.json",
+    "revision": null,
+    "note": "wyniki fertility z results/tkx_v21_*.json; plik lokalny, bez pobierania",
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "00b5537260c3f0f46a960b4456e03a6675f213c425a3a178aa15ade360fb0e5e"
+      }
+    ],
+    "models_using": [
+      "hf/variants/V0J2-32k/tokenizer.json"
+    ],
+    "vocab": 32000,
+    "tokenizer_json_sha256": "00b5537260c3f0f46a960b4456e03a6675f213c425a3a178aa15ade360fb0e5e",
+    "same_tokenizer_as": null
+  },
+  "Slayer-v6": {
+    "status": "ok",
+    "repo": "SlayerLab/Slayer1B-1.08",
+    "revision": "ea0945b11153e67517b70d21192e6076d161f658",
+    "note": "wyniki fertility z istniejących plików (Slayer1B-1.08)",
+    "gated": false,
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "0640d3bd3674d7a6e59c540d945a2ad275a12e1bcaeb6007c37a90751f9815dd",
+        "path": "tkx_zoo/hf/Slayer-v6/tokenizer.json"
+      }
+    ],
+    "models_using": [
+      "SlayerLab/Slayer1B-1.08"
+    ],
+    "vocab": 32768,
+    "tokenizer_json_sha256": "0640d3bd3674d7a6e59c540d945a2ad275a12e1bcaeb6007c37a90751f9815dd",
+    "same_tokenizer_as": null
+  },
+  "Bielik-1.5B-v3": {
+    "status": "ok",
+    "repo": "speakleash/Bielik-1.5B-v3",
+    "revision": "4b25049621bf3952a1fc9314c89773102eda0333",
+    "note": "wyniki fertility z results/tkx_v2_fertility.json",
+    "gated": "auto",
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "04d51130a7b0d9413e7f12a4ebcaa56d687c0e09fdea2d9cd5bffa50375e4187",
+        "path": "tkx_zoo/hf/Bielik-1.5B-v3/tokenizer.json"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "f5379a9a7d1eb9ea16f1d2bca96ce84c1eda13676c096835546f4105dc22f04f",
+        "path": "tkx_zoo/hf/Bielik-1.5B-v3/tokenizer_config.json"
+      }
+    ],
+    "models_using": [
+      "speakleash/Bielik-1.5B-v3"
+    ],
+    "vocab": 32000,
+    "tokenizer_json_sha256": "04d51130a7b0d9413e7f12a4ebcaa56d687c0e09fdea2d9cd5bffa50375e4187",
+    "same_tokenizer_as": null
+  },
+  "APT3-1B": {
+    "status": "ok",
+    "repo": "Azurro/APT3-1B-Base",
+    "revision": "a9dbe5e7cc056eaaeef35ff73adedb9c0eb87179",
+    "note": "wyniki fertility z results/tkx_v2_fertility.json",
+    "gated": false,
+    "files": [
+      {
+        "name": "tokenizer.json",
+        "sha256": "25727675803559b9fb98a4952bfd3e046380a2cac3ab011c9473e9b4336de202",
+        "path": "tkx_zoo/hf/APT3-1B/tokenizer.json"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "sha256": "b7d42af2949d58e09dca00bdf3446490fc1bf2a3d3f931c22cd54c2eab5e42b6",
+        "path": "tkx_zoo/hf/APT3-1B/tokenizer_config.json"
+      }
+    ],
+    "models_using": [
+      "Azurro/APT3-1B-Base"
+    ],
+    "vocab": 31980,
+    "tokenizer_json_sha256": "25727675803559b9fb98a4952bfd3e046380a2cac3ab011c9473e9b4336de202",
+    "same_tokenizer_as": null
+  },
+  "GPT-4o-o200k": {
+    "status": "existing",
+    "repo": null,
+    "revision": null,
+    "note": "tiktoken o200k_base (lokalna biblioteka); wyniki fertility z istniejących plików",
+    "files": [],
+    "models_using": [
+      "tiktoken"
+    ],
+    "vocab": 200019,
+    "tokenizer_json_sha256": null,
+    "same_tokenizer_as": null
+  },
+  "base_comparison": {
+    "PLLuM-4B": {
+      "base": "Gemma-3-4B",
+      "status": "różny (rozszerzony)",
+      "detail": "PLLuM-4B-instruct tokenizer.json ≠ Gemma 3; PLLuM-4B-base-2512 ma hash identyczny z Gemma 3",
+      "tokenizer_sha256": "86ff7e6ee278de8d39daf8196cfe92be98f16ed8b68df65e03084e672258362b",
+      "base_sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+      "base_repo": "google/gemma-3-4b-it",
+      "base_status": "ok"
+    },
+    "PLLuM-8B": {
+      "base": "Llama-3.1-8B",
+      "status": "baza niedostępna (gated, czeka na zatwierdzenie Meta)",
+      "detail": "nie podstawiono innego repo; porównanie hashu do uzupełnienia",
+      "tokenizer_sha256": "7ece4c81b3e1a44942b37b1ea9ac51d98e2c574e2a0f7dca926d209449f0df77",
+      "base_sha256": null,
+      "base_repo": "meta-llama/Llama-3.1-8B",
+      "base_status": "unavailable"
+    },
+    "PLLuM-12B": {
+      "base": "Mistral-Nemo",
+      "status": "różny (rozszerzony)",
+      "detail": "PLLuM-12B tokenizer.json ≠ Mistral Nemo; PLLuM-12B-base-2508 ma ten sam hash co instruct-2512",
+      "tokenizer_sha256": "b0240ce510f08e6c2041724e9043e33be9d251d1e4a4d94eb68cd47b954b61d2",
+      "base_sha256": "e11c71726323d33da7b8d6f6f269f1988931c0a52b7122bcdd8c05042974e0db",
+      "base_repo": "mistralai/Mistral-Nemo-Base-2407",
+      "base_status": "ok"
+    }
+  },
+  "branch": "feat/tkx-zoo",
+  "base_commit": "f12fc2c6bc35881887e57d76a9f5dd6284811ccf",
+  "seed": 20261123,
+  "pythonhashseed": 0,
+  "bootstrap": 1000
+}

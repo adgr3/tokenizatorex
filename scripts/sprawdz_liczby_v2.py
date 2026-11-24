@@ -189,6 +189,14 @@ def main():
         pass
     args = [a for a in sys.argv[1:] if not a.startswith("-")]
     reports = [REPO / a for a in args] if args else [REPO / r for r in DEFAULT_REPORTS]
+    # Post jest lokalny i nie wchodzi do repo. Sprawdzamy go, jeśli istnieje;
+    # w CI (brak pliku) pomijamy z jasnym komunikatem.
+    post = REPO / "DISCORD_TKX_V2.md"
+    if not args:
+        if post.exists():
+            reports.append(post)
+        else:
+            print("INFO: pomijam DISCORD_TKX_V2.md (brak pliku lokalnego; w CI to normalne)")
     data_vals, data_raw = load_json_numbers()
     exc = load_exceptions()
 

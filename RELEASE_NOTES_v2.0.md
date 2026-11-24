@@ -58,6 +58,10 @@ Bez superwordów base-32k zachowuje przewagę nad Slayerem na **6/8** źródeł 
 
 Ostateczny wybór dopiero po TKX-D (małe modele, BPB, ≥ 3 seedy). Fertility to warunek konieczny, nie dowód jakości (Schmidt i in.).
 
+## TKX-ZOO — szersze porównanie tokenizerów
+
+TKX-ZOO (gałąź `feat/tkx-zoo`, 17 tokenizerów): na 10 źródłach V0-32k wygrywa 6, V0J2-32k 4. Na 8 polskich źródłach żaden PLLuM ani Bielik nie jest tańszy od V0 (0 przypadków). Wśród nowych tokenizerów najbliżej V0 na BZP jest Aster-0.5B z fertility 1,731 przy V0 1,430. Szczegóły: `tkx_zoo/RAPORT.md` i `results/tkx_zoo_fertility.json`.
+
 ## Znane wady
 
 Zob. `tkx_v2/ZNANE_WADY.md`. Uwaga: porównanie martwych tokenów ze Slayerem nie jest bezpośrednie (słownik polsko-angielski).

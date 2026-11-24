@@ -1,0 +1,72 @@
+{
+  "tokenizers": {
+    "PLLuM-4B": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "PLLuM-8B": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "PLLuM-12B": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "Bielik-11B-v3.1": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "Bielik-4.5B-v3": {
+      "tokens": 3,
+      "one_token": false
+    },
+    "Aster-0.5B": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "EuroLLM-1.7B": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "Mistral-Nemo": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "Gemma-3-4B": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "DanielK-t1-pl-polish-32k": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "DanielK-t2-pl-cnc-32k": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "V0-32k": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "V0J2-32k": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "Slayer-v6": {
+      "tokens": 1,
+      "one_token": true
+    },
+    "Bielik-1.5B-v3": {
+      "tokens": 3,
+      "one_token": false
+    },
+    "APT3-1B": {
+      "tokens": 2,
+      "one_token": false
+    },
+    "GPT-4o-o200k": {
+      "tokens": 1,
+      "one_token": true
+    }
+  }
+}

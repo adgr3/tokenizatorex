@@ -59,6 +59,7 @@ r6_sw = load("tkx_v2_r6_superwords.json")
 r6_m = load("tkx_v2_r6_measure.json")
 r6_leak = load("tkx_v2_r6_leak.json")
 r6c = load("tkx_v2_r6c_slowny_przeciek.json")
+zoo = load("tkx_zoo_fertility.json")
 r6_spec = load("tkx_v2_r6_special_tokens.json")
 r6_a1 = load("tkx_v2_r6_redteam_a_a1_targeted.json")
 r6_a2 = load("tkx_v2_r6_redteam_a_a2_regression.json")
@@ -450,6 +451,38 @@ def build_release():
               f"ogólny {pct(v3_delta('7_ogolny'))} (liczone z fertility w `results/tkx_v2_fertility.json`).")
     rn.append("")
     rn.append("Ostateczny wybór dopiero po TKX-D (małe modele, BPB, ≥ 3 seedy). Fertility to warunek konieczny, nie dowód jakości (Schmidt i in.).")
+    rn.append("")
+    rn.append("## TKX-ZOO — szersze porównanie tokenizerów")
+    rn.append("")
+    zs = zoo["sources"]
+    zt_all = zoo["tokenizers"]
+    zids = list(zs)
+    zt = [t for t in zt_all
+          if all(t in zs[sid]["tokenizers"] for sid in zids)]
+    wins = {t: 0 for t in zt}
+    for sid in zids:
+        f = {t: zs[sid]["tokenizers"][t]["fertility"] for t in zt}
+        best = min(f.values())
+        for t, v in f.items():
+            if v == best:
+                wins[t] += 1
+    pol8 = zids[:8]
+    pl_cheaper = sum(1 for sid in pol8 for t in zt
+                     if (t.startswith("PLLuM") or t.startswith("Bielik"))
+                     and zs[sid]["tokenizers"][t]["fertility"]
+                     < zs[sid]["tokenizers"]["V0-32k"]["fertility"])
+    bzp = zs["1_bzp"]["tokenizers"]
+    existing = {"V0-32k", "V0J2-32k", "Slayer-v6", "Bielik-1.5B-v3",
+                "APT3-1B", "GPT-4o-o200k"}
+    new_toks = {t: bzp[t]["fertility"] for t in zt if t not in existing}
+    closest = min(new_toks, key=new_toks.get)
+    rn.append(f"TKX-ZOO (gałąź `feat/tkx-zoo`, {len(zt)} tokenizerów): na {len(zids)} "
+              f"źródłach V0-32k wygrywa {wins['V0-32k']}, V0J2-32k "
+              f"{wins['V0J2-32k']}. Na 8 polskich źródłach żaden PLLuM ani Bielik nie "
+              f"jest tańszy od V0 ({pl_cheaper} przypadków). Wśród nowych tokenizerów "
+              f"najbliżej V0 na BZP jest {closest} z fertility "
+              f"{f3(new_toks[closest])} przy V0 {f3(bzp['V0-32k']['fertility'])}. "
+              "Szczegóły: `tkx_zoo/RAPORT.md` i `results/tkx_zoo_fertility.json`.")
     rn.append("")
     rn.append("## Znane wady")
     rn.append("")

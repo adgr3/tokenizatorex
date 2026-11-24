@@ -1,0 +1,3 @@
+# Pliki tokenizatorów pobrane z zewnętrznych repozytoriów (licencje/gated).
+# Zostają lokalnie; odtwarza je tkx_zoo/pobierz_tokenizery.py wg MANIFEST.json.
+hf/

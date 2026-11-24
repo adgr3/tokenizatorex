@@ -1,0 +1,354 @@
+{
+  "seed": 20261123,
+  "sources": {
+    "6_json_narzedzia": {
+      "docs": 200,
+      "words": 25645,
+      "bytes": 254699,
+      "tokenizers": {
+        "PLLuM-4B": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 105053,
+          "bytes": 254699,
+          "fertility": 4.09643205303178,
+          "bytes_per_token": 2.4244809762691215,
+          "fertility_ci_lo": 3.999138348506738,
+          "fertility_ci_hi": 4.172768803939643,
+          "origin": "new"
+        },
+        "PLLuM-8B": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 102620,
+          "bytes": 254699,
+          "fertility": 4.001559758237473,
+          "bytes_per_token": 2.4819625803936853,
+          "fertility_ci_lo": 3.9454354272294103,
+          "fertility_ci_hi": 4.049348801560019,
+          "origin": "new"
+        },
+        "PLLuM-12B": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 108829,
+          "bytes": 254699,
+          "fertility": 4.243673230649249,
+          "bytes_per_token": 2.340359646785324,
+          "fertility_ci_lo": 4.1589420908192585,
+          "fertility_ci_hi": 4.3121540334224795,
+          "origin": "new"
+        },
+        "Bielik-11B-v3.1": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 119994,
+          "bytes": 254699,
+          "fertility": 4.679040748683954,
+          "bytes_per_token": 2.1225977965564944,
+          "fertility_ci_lo": 4.601004260820606,
+          "fertility_ci_hi": 4.74264675875631,
+          "origin": "new"
+        },
+        "Bielik-4.5B-v3": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 110895,
+          "bytes": 254699,
+          "fertility": 4.32423474361474,
+          "bytes_per_token": 2.2967581946886693,
+          "fertility_ci_lo": 4.197588824448175,
+          "fertility_ci_hi": 4.423793675592979,
+          "origin": "new"
+        },
+        "Aster-0.5B": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 102970,
+          "bytes": 254699,
+          "fertility": 4.015207642815364,
+          "bytes_per_token": 2.4735262697873166,
+          "fertility_ci_lo": 3.9057913434957703,
+          "fertility_ci_hi": 4.102479804616772,
+          "origin": "new"
+        },
+        "EuroLLM-1.7B": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 112247,
+          "bytes": 254699,
+          "fertility": 4.376954572041334,
+          "bytes_per_token": 2.269094051511399,
+          "fertility_ci_lo": 4.257488048118348,
+          "fertility_ci_hi": 4.472430872694574,
+          "origin": "new"
+        },
+        "Mistral-Nemo": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 108829,
+          "bytes": 254699,
+          "fertility": 4.243673230649249,
+          "bytes_per_token": 2.340359646785324,
+          "fertility_ci_lo": 4.1589420908192585,
+          "fertility_ci_hi": 4.3121540334224795,
+          "origin": "new"
+        },
+        "Gemma-3-4B": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 105053,
+          "bytes": 254699,
+          "fertility": 4.09643205303178,
+          "bytes_per_token": 2.4244809762691215,
+          "fertility_ci_lo": 3.999138348506738,
+          "fertility_ci_hi": 4.172768803939643,
+          "origin": "new"
+        },
+        "DanielK-t1-pl-polish-32k": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 113571,
+          "bytes": 254699,
+          "fertility": 4.428582569701696,
+          "bytes_per_token": 2.242641167199373,
+          "fertility_ci_lo": 4.301837947107389,
+          "fertility_ci_hi": 4.5271151790479225,
+          "origin": "new"
+        },
+        "DanielK-t2-pl-cnc-32k": {
+          "docs": 200,
+          "words": 25645,
+          "tokens": 113540,
+          "bytes": 254699,
+          "fertility": 4.427373757067654,
+          "bytes_per_token": 2.24325347895015,
+          "fertility_ci_lo": 4.3008676503152685,
+          "fertility_ci_hi": 4.525119060173079,
+          "origin": "new"
+        },
+        "V0-32k": {
+          "fertility": 3.737648664457009,
+          "bytes_per_token": 2.6572111171389223,
+          "fertility_ci_lo": 3.6238991311131916,
+          "fertility_ci_hi": 3.823984439756071,
+          "origin": "existing:results/tkx_v2_fertility.json"
+        },
+        "V0J2-32k": {
+          "fertility": 2.869916162994736,
+          "bytes_per_token": 3.460631258576883,
+          "fertility_ci_lo": 2.8139693333915097,
+          "fertility_ci_hi": 2.9151441586499462,
+          "origin": "existing:results/tkx_v21_test.json"
+        },
+        "Slayer-v6": {
+          "fertility": 3.9848313511405733,
+          "bytes_per_token": 2.4923819123014748,
+          "fertility_ci_lo": 3.880516981901834,
+          "fertility_ci_hi": 4.068758278091392,
+          "origin": "existing:results/tkx_v2_fertility.json"
+        },
+        "Bielik-1.5B-v3": {
+          "fertility": 4.32423474361474,
+          "bytes_per_token": 2.2967581946886693,
+          "fertility_ci_lo": 4.197588824448175,
+          "fertility_ci_hi": 4.423793675592979,
+          "origin": "existing:results/tkx_v2_fertility.json"
+        },
+        "APT3-1B": {
+          "fertility": 3.8109183076623125,
+          "bytes_per_token": 2.606122929265023,
+          "fertility_ci_lo": 3.706906747051049,
+          "fertility_ci_hi": 3.892025250576928,
+          "origin": "existing:results/tkx_v2_fertility.json"
+        },
+        "GPT-4o-o200k": {
+          "fertility": 3.7540651199064143,
+          "bytes_per_token": 2.6455911834055237,
+          "fertility_ci_lo": 3.6918968355019524,
+          "fertility_ci_hi": 3.8049638240722743,
+          "origin": "existing:results/tkx_v2_fertility.json"
+        }
+      }
+    },
+    "json_generic_heldout_test": {
+      "docs": 100,
+      "words": 929,
+      "bytes": 16724,
+      "tokenizers": {
+        "PLLuM-4B": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 7236,
+          "bytes": 16724,
+          "fertility": 7.789020452099031,
+          "bytes_per_token": 2.3112216694306245,
+          "fertility_ci_lo": 6.900894423676759,
+          "fertility_ci_hi": 8.868887505188875,
+          "origin": "new"
+        },
+        "PLLuM-8B": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 6217,
+          "bytes": 16724,
+          "fertility": 6.692142088266953,
+          "bytes_per_token": 2.6900434293067397,
+          "fertility_ci_lo": 5.890325794776876,
+          "fertility_ci_hi": 7.644707110090653,
+          "origin": "new"
+        },
+        "PLLuM-12B": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 6684,
+          "bytes": 16724,
+          "fertility": 7.194833153928956,
+          "bytes_per_token": 2.502094554159186,
+          "fertility_ci_lo": 6.319744576271331,
+          "fertility_ci_hi": 8.261868103287547,
+          "origin": "new"
+        },
+        "Bielik-11B-v3.1": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 7335,
+          "bytes": 16724,
+          "fertility": 7.895586652314316,
+          "bytes_per_token": 2.280027266530334,
+          "fertility_ci_lo": 6.98142554685644,
+          "fertility_ci_hi": 8.987968166251557,
+          "origin": "new"
+        },
+        "Bielik-4.5B-v3": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 8154,
+          "bytes": 16724,
+          "fertility": 8.777179763186222,
+          "bytes_per_token": 2.0510179053225412,
+          "fertility_ci_lo": 7.678234115917043,
+          "fertility_ci_hi": 10.107573984224265,
+          "origin": "new"
+        },
+        "Aster-0.5B": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 8089,
+          "bytes": 16724,
+          "fertility": 8.707212055974166,
+          "bytes_per_token": 2.067499072814934,
+          "fertility_ci_lo": 7.450988880574328,
+          "fertility_ci_hi": 10.17760903204982,
+          "origin": "new"
+        },
+        "EuroLLM-1.7B": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 7907,
+          "bytes": 16724,
+          "fertility": 8.51130247578041,
+          "bytes_per_token": 2.1150878968003037,
+          "fertility_ci_lo": 7.42575575323145,
+          "fertility_ci_hi": 9.828305745814308,
+          "origin": "new"
+        },
+        "Mistral-Nemo": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 6684,
+          "bytes": 16724,
+          "fertility": 7.194833153928956,
+          "bytes_per_token": 2.502094554159186,
+          "fertility_ci_lo": 6.319744576271331,
+          "fertility_ci_hi": 8.261868103287547,
+          "origin": "new"
+        },
+        "Gemma-3-4B": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 7236,
+          "bytes": 16724,
+          "fertility": 7.789020452099031,
+          "bytes_per_token": 2.3112216694306245,
+          "fertility_ci_lo": 6.900894423676759,
+          "fertility_ci_hi": 8.868887505188875,
+          "origin": "new"
+        },
+        "DanielK-t1-pl-polish-32k": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 8878,
+          "bytes": 16724,
+          "fertility": 9.556512378902045,
+          "bytes_per_token": 1.883757603063753,
+          "fertility_ci_lo": 8.250819309008047,
+          "fertility_ci_hi": 11.103724747474747,
+          "origin": "new"
+        },
+        "DanielK-t2-pl-cnc-32k": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 8878,
+          "bytes": 16724,
+          "fertility": 9.556512378902045,
+          "bytes_per_token": 1.883757603063753,
+          "fertility_ci_lo": 8.250819309008047,
+          "fertility_ci_hi": 11.103724747474747,
+          "origin": "new"
+        },
+        "V0-32k": {
+          "fertility": 9.181916038751346,
+          "bytes_per_token": 1.960609613130129,
+          "fertility_ci_lo": 7.913147371820968,
+          "fertility_ci_hi": 10.683013088276246,
+          "origin": "existing:results/tkx_v21_test.json"
+        },
+        "V0J2-32k": {
+          "fertility": 6.148546824542519,
+          "bytes_per_token": 2.9278711484593836,
+          "fertility_ci_lo": 5.477151347504585,
+          "fertility_ci_hi": 6.977228763572993,
+          "origin": "existing:results/tkx_v21_test.json"
+        },
+        "Slayer-v6": {
+          "fertility": 7.705059203444564,
+          "bytes_per_token": 2.3364068175468007,
+          "fertility_ci_lo": 6.691411332977184,
+          "fertility_ci_hi": 8.927840476684656,
+          "origin": "existing:results/tkx_v21_test.json"
+        },
+        "Bielik-1.5B-v3": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 8154,
+          "bytes": 16724,
+          "fertility": 8.777179763186222,
+          "bytes_per_token": 2.0510179053225412,
+          "fertility_ci_lo": 7.678234115917043,
+          "fertility_ci_hi": 10.107573984224265,
+          "origin": "new"
+        },
+        "APT3-1B": {
+          "docs": 100,
+          "words": 929,
+          "tokens": 8361,
+          "bytes": 16724,
+          "fertility": 9.0,
+          "bytes_per_token": 2.0002392058366225,
+          "fertility_ci_lo": 7.678202870476358,
+          "fertility_ci_hi": 10.552219389553326,
+          "origin": "new"
+        },
+        "GPT-4o-o200k": {
+          "fertility": 6.458557588805167,
+          "bytes_per_token": 2.787333333333333,
+          "fertility_ci_lo": 5.701891050542987,
+          "fertility_ci_hi": 7.3710934693754835,
+          "origin": "existing:results/tkx_v21_test.json"
+        }
+      }
+    }
+  },
+  "note": " fertility skopiowana z results/tkx_zoo_fertility.json (origin wskazuje źródło)"
+}
