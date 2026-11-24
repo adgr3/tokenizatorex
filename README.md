@@ -156,6 +156,8 @@ ids = tok.encode("Na podstawie umowy, w ramach projektu.")
 
 `hf/tokenizatorex-32k/tokenizer.json` i `tokenizers/tokenizatorex-32k.json` to starszy eksport TKX-A (inny słownik, BZP 1,4487), a nie benchmarkowany V0-32k (BZP 1,4304).
 
+**Tokeny specjalne w tekście użytkownika.** Domyślnie biblioteka `tokenizers` zamienia literalny napis `<|endoftext|>` na ID specjalne 31999 — nawet przy `add_special_tokens=False`. W trybie zalecanym ustaw `tok.encode_special_tokens = True` (wersja z lock); wtedy napis jest zwykłym tekstem i round-trip działa. Dla `transformers` w katalogu tokenizera jest `tokenizer_config.json` z `"split_special_tokens": true`. Nie dotyczy to pomiarów fertility: w tekstach pomiarowych nie ma nazw dodanych jako `special=True` (sprawdzone w `results/tkx_v2_r6_special_tokens.json`).
+
 ## Odtworzenie
 
 ```bash

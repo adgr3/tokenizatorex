@@ -1,0 +1,5 @@
+{
+  "tokenizer_class": "PreTrainedTokenizerFast",
+  "split_special_tokens": true,
+  "clean_up_tokenization_spaces": false
+}

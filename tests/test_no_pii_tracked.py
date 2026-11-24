@@ -26,12 +26,18 @@ SYNTHETIC_EMAILS = {
     "kontakt@example.org", "biuro@firma.example", "oferty@urzad.example",
     "odbiorca@example.net", "zespol@example.org", "kontakt@example.edu",
 }
+R6_SYNTHETIC_REDTEAM = {
+    "results/tkx_v2_r6_redteam_a_a1_targeted.json",
+    "results/tkx_v2_r6_redteam_a_a2_regression.json",
+    "results/tkx_v2_r6_redteam_a_a5_extremes.json",
+    "tests/redteam_cases.py",
+}
 SYNTHETIC_PHONE_FILES = {
     "tests/test_no_pii_tracked.py",
     "tkx_c/review_grok/attack2_synthetic.json",
     "tkx_c/review_codex/REVIEW_CODEX_R2.md",
     "tkx_v21/PROTOKOL.md",
-}
+} | R6_SYNTHETIC_REDTEAM
 ALLOW_EMAIL_FILES = {
     "tkx_v2/wzorce.json", "tkx_v2/gen_wzorce.py", "results/tkx_v2_patterns.json",
     "audit/notations.py", "audit/results/notations.json",
@@ -39,10 +45,11 @@ ALLOW_EMAIL_FILES = {
     "tkx_c/review_codex/verify_consistency.json", "tkx_c/review_grok/attack2_synthetic.json",
     "tests/test_no_pii_tracked.py", "scripts/sprawdz_liczby_v2.py",
     "tkx_v21/generuj_json.py",
-}
+} | R6_SYNTHETIC_REDTEAM
 
 # Ten plik zawiera celowo syntetyczne PESEL/NIP do testu sum kontrolnych.
-ALLOW_PII_FILES = {"tests/test_no_pii_tracked.py"}
+# Pliki R6 to kopie wyników red teamu A z syntetycznymi NIP/PESEL/telefonami.
+ALLOW_PII_FILES = {"tests/test_no_pii_tracked.py"} | R6_SYNTHETIC_REDTEAM
 
 # NIP instytucji publicznych (nie osoby prywatne): świadome wyjątki z uzasadnieniem.
 # wartość -> (plik, uzasadnienie)
