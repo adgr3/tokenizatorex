@@ -1,0 +1,104 @@
+{
+  "tokenizers": {
+    "TKX/V0-32k": {
+      "vocab": 32000,
+      "dead": 2599,
+      "dead_pct": 8.12
+    },
+    "TKX/V1-32k": {
+      "vocab": 32000,
+      "dead": 2725,
+      "dead_pct": 8.52
+    },
+    "TKX/V2-16k": {
+      "vocab": 16000,
+      "dead": 384,
+      "dead_pct": 2.4
+    },
+    "TKX/V2-24k": {
+      "vocab": 24000,
+      "dead": 1170,
+      "dead_pct": 4.88
+    },
+    "TKX/V2-32k": {
+      "vocab": 32000,
+      "dead": 2725,
+      "dead_pct": 8.52
+    },
+    "TKX/V2-base-16k": {
+      "vocab": 16000,
+      "dead": 468,
+      "dead_pct": 2.92
+    },
+    "TKX/V2-base-24k": {
+      "vocab": 24000,
+      "dead": 1572,
+      "dead_pct": 6.55
+    },
+    "TKX/V2-base-32k": {
+      "vocab": 32000,
+      "dead": 3646,
+      "dead_pct": 11.39
+    },
+    "TKX/V2b-16k": {
+      "vocab": 16000,
+      "dead": 385,
+      "dead_pct": 2.41
+    },
+    "TKX/V2b-24k": {
+      "vocab": 24000,
+      "dead": 1187,
+      "dead_pct": 4.95
+    },
+    "TKX/V2b-32k": {
+      "vocab": 32000,
+      "dead": 2754,
+      "dead_pct": 8.61
+    },
+    "TKX/V3-16k": {
+      "vocab": 16000,
+      "dead": 1366,
+      "dead_pct": 8.54
+    },
+    "TKX/V3-24k": {
+      "vocab": 24000,
+      "dead": 1983,
+      "dead_pct": 8.26
+    },
+    "TKX/V3-32k": {
+      "vocab": 32000,
+      "dead": 2505,
+      "dead_pct": 7.83
+    },
+    "Slayer1B-1.08": {
+      "vocab": 32768,
+      "dead": 11477,
+      "dead_pct": 35.03
+    },
+    "APT3-1B": {
+      "vocab": 31980,
+      "dead": 4442,
+      "dead_pct": 13.89
+    },
+    "Qwen3.5": {
+      "vocab": 248070,
+      "dead": 231123,
+      "dead_pct": 93.17
+    },
+    "Bielik-1.5B-v3": {
+      "vocab": 32000,
+      "dead": 4801,
+      "dead_pct": 15.0
+    },
+    "PLLuM-12B": {
+      "vocab": 131072,
+      "dead": 116851,
+      "dead_pct": 89.15
+    },
+    "GPT-4o-o200k": {
+      "vocab": null,
+      "dead": null,
+      "note": "brak vocab (tiktoken)"
+    }
+  }
+}

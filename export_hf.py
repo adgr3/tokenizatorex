@@ -10,6 +10,7 @@ SuperBPE eksport dzieli tylko na fragmenty i w rzadkich przypadkach (np. liczby 
 może wybrać inną segmentację. `--check` mierzy, jak często — wynik raportujemy uczciwie.
 """
 import argparse
+import json
 import os
 
 from tokenizers import Regex, Tokenizer, decoders, models, normalizers, pre_tokenizers
@@ -99,7 +100,16 @@ def main() -> None:
     out = os.path.join(a.out_dir, name)
     os.makedirs(out, exist_ok=True)
     hf.save(os.path.join(out, "tokenizer.json"))
-    print(f"zapisano {out}/tokenizer.json")
+    # R6: literalne nazwy tokenów specjalnych w tekście użytkownika nie mogą
+    # zamieniać się w ID specjalne. `transformers` czyta tę flagę z configu.
+    with open(os.path.join(out, "tokenizer_config.json"), "w", encoding="utf-8",
+              newline="\n") as f:
+        json.dump({"tokenizer_class": "PreTrainedTokenizerFast",
+                   "split_special_tokens": True,
+                   "clean_up_tokenization_spaces": False}, f,
+                  ensure_ascii=False, indent=2)
+        f.write("\n")
+    print(f"zapisano {out}/tokenizer.json + tokenizer_config.json")
     if a.check:
         with open(a.check, encoding="utf-8") as f:
             text = f.read(int(a.check_mb * 10**6))

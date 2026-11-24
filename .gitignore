@@ -11,3 +11,11 @@ audit/tmp/
 tkx_c/tmp/
 tkx_c/data/
 tkx_c/review_grok/raw_extra/
+
+tkx_v2/data/
+tkx_v2/tmp/
+tkx_v2/raw/
+
+# lokalne ogłoszenie poza repo; bramka liczb sprawdza je tylko, gdy istnieje
+*.local.md
+tkx_zoo/hf/

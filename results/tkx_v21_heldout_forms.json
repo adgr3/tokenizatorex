@@ -1,0 +1,47 @@
+{
+  "source": "json_generic_heldout_test",
+  "docs": 100,
+  "forms": {
+    "compact": {
+      "docs": 49,
+      "tokens_v0": 4034,
+      "tokens_v0j2": 2269,
+      "words_v0": 89,
+      "delta_pct": -43.75309866137829,
+      "mean_tokens_per_doc_v0": 82.3265306122449,
+      "mean_tokens_per_doc_v0j2": 46.30612244897959,
+      "mean_coverage": 0.1906405938561659
+    },
+    "pretty": {
+      "docs": 32,
+      "tokens_v0": 3212,
+      "tokens_v0j2": 2294,
+      "words_v0": 557,
+      "delta_pct": -28.58032378580324,
+      "mean_tokens_per_doc_v0": 100.375,
+      "mean_tokens_per_doc_v0j2": 71.6875,
+      "mean_coverage": 0.313467258673375
+    },
+    "result": {
+      "docs": 19,
+      "tokens_v0": 1284,
+      "tokens_v0j2": 1149,
+      "words_v0": 283,
+      "delta_pct": -10.514018691588788,
+      "mean_tokens_per_doc_v0": 67.57894736842105,
+      "mean_tokens_per_doc_v0j2": 60.473684210526315,
+      "mean_coverage": 0.06797295325838358
+    }
+  },
+  "overall": {
+    "docs": 100,
+    "tokens_v0": 8530,
+    "tokens_v0j2": 5712,
+    "words_v0": 929,
+    "delta_pct": -33.03634232121922,
+    "mean_tokens_per_doc_v0": 85.3,
+    "mean_tokens_per_doc_v0j2": 57.12,
+    "mean_coverage": 0.20663827488409417
+  },
+  "note": "compact/pretty korzystają ze wspólnego szkieletu wywołania; result to odpowiedź narzędzia i jest bliższa nowej treści"
+}

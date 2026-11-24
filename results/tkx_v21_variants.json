@@ -1,0 +1,83 @@
+{
+  "V0J2-32k": {
+    "superbpe": "tokenizers\\variants\\V0J2-32k\\superbpe.json",
+    "hf": "hf\\variants\\V0J2-32k\\tokenizer.json",
+    "sha256_superbpe": "90e6253627ecfb65e354bc4aee16510c303c3d8a466b0552c47ba6babcf5cd51",
+    "sha256_hf": "00b5537260c3f0f46a960b4456e03a6675f213c425a3a178aa15ade360fb0e5e",
+    "train_data": "data/mixed/V0J2-32k.txt",
+    "train_data_sha256": "3ba5ea6154410241f27df3bd5838aff47577d21441063a8bc3e674b537029255",
+    "train_seconds": 298
+  },
+  "V0J5-32k": {
+    "superbpe": "tokenizers\\variants\\V0J5-32k\\superbpe.json",
+    "hf": "hf\\variants\\V0J5-32k\\tokenizer.json",
+    "sha256_superbpe": "b2491a9fdfbe4fe389734c066047669ceaf345396aff57b8aa615b343c904afc",
+    "sha256_hf": "e46ca54a44800097d15afdc7c829f820f89a9fb9650b65a0316ce42e526ccc69",
+    "train_data": "data/mixed/V0J5-32k.txt",
+    "train_data_sha256": "41b4dca331e3b70307b89a016de0e1156d97ccffdb24f572d36c660e2cc88f3c",
+    "train_seconds": 299
+  },
+  "V0J10-32k": {
+    "superbpe": "tokenizers\\variants\\V0J10-32k\\superbpe.json",
+    "hf": "hf\\variants\\V0J10-32k\\tokenizer.json",
+    "sha256_superbpe": "d73a56a4af63af5a22f45f84b693e3318defa27db5e5441b524a721385a68c62",
+    "sha256_hf": "d28400dc215f9b4d81e6829a98f91f51e1f40ceb08764117f014dcacccf5256a",
+    "train_data": "data/mixed/V0J10-32k.txt",
+    "train_data_sha256": "230b9a9a913cd7b2fd5c63c6cdf828f689da2b9bf73a903afcfdb377111d1be7",
+    "train_seconds": 281
+  },
+  "V0J5S-32k": {
+    "superbpe": "tokenizers\\variants\\V0J5S-32k\\superbpe.json",
+    "hf": "hf\\variants\\V0J5S-32k\\tokenizer.json",
+    "sha256_superbpe": "6fedc0a45b1897b2658ab85c87b3bc2392c17d1080be724118c53a0aa8065abd",
+    "sha256_hf": "f758ac85f493e9d9c6719ee025d0c33f1144b4ee2674e24d3bc18e1c1573b881",
+    "train_data": "data/mixed/V0J5-32k.txt",
+    "special_tokens": [
+      "<|system|>",
+      "<|uzytkownik|>",
+      "<|asystent|>",
+      "<|narzedzie|>",
+      "<tool_call>",
+      "</tool_call>"
+    ],
+    "vocab_size_unique": 32004
+  },
+  "_data": {
+    "stability_sha256": "b0e7447cf94f8e0fa03edfeb3f6f10a2e63c9e32037f086cf5a434709ae6e558",
+    "stability_bytes": 400160750,
+    "mixtures": {
+      "V0J2-32k": {
+        "path": "data\\mixed\\V0J2-32k.txt",
+        "hplt_bytes": 300000212,
+        "json_bytes": 6122375,
+        "bytes": 306122587,
+        "json_share_requested": 0.02,
+        "json_share_actual": 0.019999749316113025,
+        "json_blocks": 120,
+        "sha256": "3ba5ea6154410241f27df3bd5838aff47577d21441063a8bc3e674b537029255"
+      },
+      "V0J5-32k": {
+        "path": "data\\mixed\\V0J5-32k.txt",
+        "hplt_bytes": 300000212,
+        "json_bytes": 15789418,
+        "bytes": 315789630,
+        "json_share_requested": 0.05,
+        "json_share_actual": 0.0499997989167662,
+        "json_blocks": 120,
+        "sha256": "41b4dca331e3b70307b89a016de0e1156d97ccffdb24f572d36c660e2cc88f3c"
+      },
+      "V0J10-32k": {
+        "path": "data\\mixed\\V0J10-32k.txt",
+        "hplt_bytes": 300000212,
+        "json_bytes": 33333191,
+        "bytes": 333333403,
+        "json_share_requested": 0.1,
+        "json_share_actual": 0.0999995521000936,
+        "json_blocks": 120,
+        "sha256": "230b9a9a913cd7b2fd5c63c6cdf828f689da2b9bf73a903afcfdb377111d1be7"
+      }
+    },
+    "recipe": "train.py baseline --vocab 32000 (stage1 300MB) -> superbpe --transition 20000 --vocab 32000 --stage2-mb 100 --max-words 4",
+    "seed": 20261123
+  }
+}

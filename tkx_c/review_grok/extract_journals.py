@@ -14,10 +14,7 @@ import fitz
 HERE = os.path.dirname(os.path.abspath(__file__))
 RAW = os.path.join(HERE, "raw_extra")
 os.makedirs(RAW, exist_ok=True)
-DL = (
-    r"C:\Users\x\.grok\sessions\D%3A%5CVPS%5Cfabryka%5Ctokenizer%20ulepszenie%5CGrok"
-    r"\01a1f878-e9be-75b1-bc54-6f6eccd9e986\downloads"
-)
+DL = os.environ.get("TKX_GROK_DOWNLOADS", "grok-downloads")
 # Pełny akt bywa bardzo długi. Sufit znaków jak przy TED, żeby jeden PDF
 # nie zdominował bootstrapu dokumentów. Liczymy słowa na tekście, który
 # naprawdę idzie do tokenizera.

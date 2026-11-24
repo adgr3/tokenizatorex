@@ -1,0 +1,1578 @@
+{
+  "meta": {
+    "seed": 20261123,
+    "pythonhashseed": 0,
+    "method": "suma tokenow / suma slow split(), bootstrap 1000x po dokumentach"
+  },
+  "tokenizers": [
+    "V0-32k",
+    "V0J2-32k",
+    "V3-32k",
+    "Slayer1B-1.08",
+    "Bielik-1.5B-v3",
+    "APT3-1B",
+    "GPT-4o"
+  ],
+  "sources": {
+    "BZP (ogloszenia)": {
+      "docs": 500
+    },
+    "Dz.U. 2026 ELI": {
+      "docs": 12
+    },
+    "KIO": {
+      "docs": 66
+    },
+    "Samorzad (uchwaly)": {
+      "docs": 240
+    },
+    "Granty (12)": {
+      "docs": 12
+    },
+    "JSON narzedzia (tc1)": {
+      "docs": 200
+    },
+    "Kontrola ogolna (HPLT web)": {
+      "docs": 421
+    },
+    "JSON BZP (tabele)": {
+      "docs": 18
+    }
+  },
+  "fertility": {
+    "V0-32k": {
+      "BZP (ogloszenia)": {
+        "fertility": 1.4303736805066853,
+        "tokens": 2032561,
+        "words": 1421000,
+        "ci": [
+          1.4224013727800549,
+          1.4391213821367606
+        ],
+        "docs": 500
+      },
+      "Dz.U. 2026 ELI": {
+        "fertility": 1.4634733849312904,
+        "tokens": 37061,
+        "words": 25324,
+        "ci": [
+          1.3639690156560498,
+          1.5807389744582305
+        ],
+        "docs": 12
+      },
+      "KIO": {
+        "fertility": 1.3983300958370448,
+        "tokens": 130295,
+        "words": 93179,
+        "ci": [
+          1.3739188574724606,
+          1.4250432100265984
+        ],
+        "docs": 66
+      },
+      "Samorzad (uchwaly)": {
+        "fertility": 1.5501790825793644,
+        "tokens": 107770,
+        "words": 69521,
+        "ci": [
+          1.5381236059240593,
+          1.5608929837490795
+        ],
+        "docs": 240
+      },
+      "Granty (12)": {
+        "fertility": 1.7455367404796567,
+        "tokens": 45562,
+        "words": 26102,
+        "ci": [
+          1.6744267631036134,
+          1.812378380903134
+        ],
+        "docs": 12
+      },
+      "JSON narzedzia (tc1)": {
+        "fertility": 3.737648664457009,
+        "tokens": 95852,
+        "words": 25645,
+        "ci": [
+          3.6238991311131916,
+          3.823984439756071
+        ],
+        "docs": 200
+      },
+      "Kontrola ogolna (HPLT web)": {
+        "fertility": 1.4116770426760428,
+        "tokens": 218817,
+        "words": 155005,
+        "ci": [
+          1.394158902305373,
+          1.4296868365497541
+        ],
+        "docs": 421
+      },
+      "JSON BZP (tabele)": {
+        "fertility": 2.7356740642596886,
+        "tokens": 41295,
+        "words": 15095,
+        "ci": [
+          2.5610216139116657,
+          2.9050161304024726
+        ],
+        "docs": 18
+      },
+      "Granty (149)": {
+        "fertility": 1.408412404054852,
+        "tokens": 169363,
+        "words": 120251,
+        "ci": [
+          1.3798120587394105,
+          1.4380952482869143
+        ],
+        "docs": 149
+      },
+      "JSON held-out (gen)": {
+        "fertility": 9.181916038751346,
+        "tokens": 8530,
+        "words": 929,
+        "ci": [
+          7.913147371820968,
+          10.683013088276246
+        ],
+        "docs": 100
+      }
+    },
+    "V0J2-32k": {
+      "BZP (ogloszenia)": {
+        "fertility": 1.4335475017593244,
+        "tokens": 2037071,
+        "words": 1421000,
+        "ci": [
+          1.4257689237106403,
+          1.4426580465809367
+        ],
+        "docs": 500
+      },
+      "Dz.U. 2026 ELI": {
+        "fertility": 1.467659137577002,
+        "tokens": 37167,
+        "words": 25324,
+        "ci": [
+          1.368012488854376,
+          1.5866990016543945
+        ],
+        "docs": 12
+      },
+      "KIO": {
+        "fertility": 1.397203232488007,
+        "tokens": 130190,
+        "words": 93179,
+        "ci": [
+          1.373130522301324,
+          1.4221497681101563
+        ],
+        "docs": 66
+      },
+      "Samorzad (uchwaly)": {
+        "fertility": 1.5559758921764646,
+        "tokens": 108173,
+        "words": 69521,
+        "ci": [
+          1.5437970169609945,
+          1.566353650351065
+        ],
+        "docs": 240
+      },
+      "Granty (12)": {
+        "fertility": 1.811010650524864,
+        "tokens": 47271,
+        "words": 26102,
+        "ci": [
+          1.711701736703754,
+          1.9074621603215298
+        ],
+        "docs": 12
+      },
+      "JSON narzedzia (tc1)": {
+        "fertility": 2.869916162994736,
+        "tokens": 73599,
+        "words": 25645,
+        "ci": [
+          2.8139693333915097,
+          2.9151441586499462
+        ],
+        "docs": 200
+      },
+      "Kontrola ogolna (HPLT web)": {
+        "fertility": 1.4185735944001807,
+        "tokens": 219886,
+        "words": 155005,
+        "ci": [
+          1.4007805312806583,
+          1.4363162437421302
+        ],
+        "docs": 421
+      },
+      "JSON BZP (tabele)": {
+        "fertility": 2.6996356409407087,
+        "tokens": 40751,
+        "words": 15095,
+        "ci": [
+          2.5285755574076325,
+          2.863286944058585
+        ],
+        "docs": 18
+      },
+      "Granty (149)": {
+        "fertility": 1.411248139308613,
+        "tokens": 169704,
+        "words": 120251,
+        "ci": [
+          1.3828023176105821,
+          1.440124201268462
+        ],
+        "docs": 149
+      },
+      "JSON held-out (gen)": {
+        "fertility": 6.148546824542519,
+        "tokens": 5712,
+        "words": 929,
+        "ci": [
+          5.477151347504585,
+          6.977228763572993
+        ],
+        "docs": 100
+      }
+    },
+    "V3-32k": {
+      "BZP (ogloszenia)": {
+        "fertility": 1.5525439831104855,
+        "tokens": 2206165,
+        "words": 1421000,
+        "ci": [
+          1.5408511249898,
+          1.565456687651333
+        ],
+        "docs": 500
+      },
+      "Dz.U. 2026 ELI": {
+        "fertility": 1.5430026851998104,
+        "tokens": 39075,
+        "words": 25324,
+        "ci": [
+          1.4359830552492543,
+          1.6742941896480283
+        ],
+        "docs": 12
+      },
+      "KIO": {
+        "fertility": 1.4244947895985147,
+        "tokens": 132733,
+        "words": 93179,
+        "ci": [
+          1.3987487723539502,
+          1.4521139067800475
+        ],
+        "docs": 66
+      },
+      "Samorzad (uchwaly)": {
+        "fertility": 1.6182160785949569,
+        "tokens": 112500,
+        "words": 69521,
+        "ci": [
+          1.6046418363473827,
+          1.6303308673134898
+        ],
+        "docs": 240
+      },
+      "Granty (12)": {
+        "fertility": 1.8534211937782545,
+        "tokens": 48378,
+        "words": 26102,
+        "ci": [
+          1.7539817085535798,
+          1.9480246081300023
+        ],
+        "docs": 12
+      },
+      "JSON narzedzia (tc1)": {
+        "fertility": 3.8406317020861764,
+        "tokens": 98493,
+        "words": 25645,
+        "ci": [
+          3.721459587549224,
+          3.932700257943559
+        ],
+        "docs": 200
+      },
+      "Kontrola ogolna (HPLT web)": {
+        "fertility": 1.435353698267798,
+        "tokens": 222487,
+        "words": 155005,
+        "ci": [
+          1.4177141206546617,
+          1.4534489481098194
+        ],
+        "docs": 421
+      },
+      "JSON BZP (tabele)": {
+        "fertility": 2.964094070884399,
+        "tokens": 44743,
+        "words": 15095,
+        "ci": [
+          2.760017314811258,
+          3.1571591250119972
+        ],
+        "docs": 18
+      },
+      "Granty (149)": {
+        "fertility": 1.4540752259856466,
+        "tokens": 174854,
+        "words": 120251,
+        "ci": [
+          1.4227932914629706,
+          1.4859807142151713
+        ],
+        "docs": 149
+      },
+      "JSON held-out (gen)": {
+        "fertility": 9.413347685683531,
+        "tokens": 8745,
+        "words": 929,
+        "ci": [
+          8.133567990373045,
+          10.936540877411462
+        ],
+        "docs": 100
+      }
+    },
+    "Slayer1B-1.08": {
+      "BZP (ogloszenia)": {
+        "fertility": 1.8095552427867698,
+        "tokens": 2571378,
+        "words": 1421000,
+        "ci": [
+          1.7999965014391572,
+          1.8209191297548866
+        ],
+        "docs": 500
+      },
+      "Dz.U. 2026 ELI": {
+        "fertility": 1.7710077396935713,
+        "tokens": 44849,
+        "words": 25324,
+        "ci": [
+          1.6832007179612034,
+          1.8841153109568003
+        ],
+        "docs": 12
+      },
+      "KIO": {
+        "fertility": 1.7152899258416596,
+        "tokens": 159829,
+        "words": 93179,
+        "ci": [
+          1.6860567059478957,
+          1.7489387931674554
+        ],
+        "docs": 66
+      },
+      "Samorzad (uchwaly)": {
+        "fertility": 1.9797615109103723,
+        "tokens": 137635,
+        "words": 69521,
+        "ci": [
+          1.9650647265456096,
+          1.9927008566632938
+        ],
+        "docs": 240
+      },
+      "Granty (12)": {
+        "fertility": 2.028810052869512,
+        "tokens": 52956,
+        "words": 26102,
+        "ci": [
+          1.9601301907744766,
+          2.097854962396637
+        ],
+        "docs": 12
+      },
+      "JSON narzedzia (tc1)": {
+        "fertility": 3.9848313511405733,
+        "tokens": 102191,
+        "words": 25645,
+        "ci": [
+          3.880516981901834,
+          4.068758278091392
+        ],
+        "docs": 200
+      },
+      "Kontrola ogolna (HPLT web)": {
+        "fertility": 1.6723976645914649,
+        "tokens": 259230,
+        "words": 155005,
+        "ci": [
+          1.6562707672566548,
+          1.689628814286797
+        ],
+        "docs": 421
+      },
+      "JSON BZP (tabele)": {
+        "fertility": 3.1793971513746273,
+        "tokens": 47993,
+        "words": 15095,
+        "ci": [
+          2.9834417719602673,
+          3.374863316846104
+        ],
+        "docs": 18
+      },
+      "Granty (149)": {
+        "fertility": 1.676950711428595,
+        "tokens": 201655,
+        "words": 120251,
+        "ci": [
+          1.6501281840221542,
+          1.7052393877983159
+        ],
+        "docs": 149
+      },
+      "JSON held-out (gen)": {
+        "fertility": 7.705059203444564,
+        "tokens": 7158,
+        "words": 929,
+        "ci": [
+          6.691411332977184,
+          8.927840476684656
+        ],
+        "docs": 100
+      }
+    },
+    "Bielik-1.5B-v3": {
+      "BZP (ogloszenia)": {
+        "fertility": 1.9555777621393384,
+        "tokens": 2778876,
+        "words": 1421000,
+        "ci": [
+          1.9427816507438211,
+          1.9704800620395002
+        ],
+        "docs": 500
+      },
+      "Dz.U. 2026 ELI": {
+        "fertility": 1.9047543831938083,
+        "tokens": 48236,
+        "words": 25324,
+        "ci": [
+          1.7891862141701376,
+          2.0677244713580487
+        ],
+        "docs": 12
+      },
+      "KIO": {
+        "fertility": 1.8141319396001245,
+        "tokens": 169039,
+        "words": 93179,
+        "ci": [
+          1.7753535312688618,
+          1.8600090682462722
+        ],
+        "docs": 66
+      },
+      "Samorzad (uchwaly)": {
+        "fertility": 2.310208426230923,
+        "tokens": 160608,
+        "words": 69521,
+        "ci": [
+          2.2915351771614443,
+          2.328451007782318
+        ],
+        "docs": 240
+      },
+      "Granty (12)": {
+        "fertility": 2.1852731591448933,
+        "tokens": 57040,
+        "words": 26102,
+        "ci": [
+          2.069199856730611,
+          2.2991444811510853
+        ],
+        "docs": 12
+      },
+      "JSON narzedzia (tc1)": {
+        "fertility": 4.32423474361474,
+        "tokens": 110895,
+        "words": 25645,
+        "ci": [
+          4.197588824448175,
+          4.423793675592979
+        ],
+        "docs": 200
+      },
+      "Kontrola ogolna (HPLT web)": {
+        "fertility": 1.6611012547982322,
+        "tokens": 257479,
+        "words": 155005,
+        "ci": [
+          1.6417683015160416,
+          1.6812423942313617
+        ],
+        "docs": 421
+      },
+      "JSON BZP (tabele)": {
+        "fertility": 3.4275587943027492,
+        "tokens": 51739,
+        "words": 15095,
+        "ci": [
+          3.2022543644919046,
+          3.6475585119744904
+        ],
+        "docs": 18
+      },
+      "Granty (149)": {
+        "fertility": 1.7833614689274933,
+        "tokens": 214451,
+        "words": 120251,
+        "ci": [
+          1.740110363322186,
+          1.829949206176943
+        ],
+        "docs": 149
+      },
+      "JSON held-out (gen)": {
+        "fertility": 8.777179763186222,
+        "tokens": 8154,
+        "words": 929,
+        "ci": [
+          7.678234115917043,
+          10.107573984224265
+        ],
+        "docs": 100
+      }
+    },
+    "APT3-1B": {
+      "BZP (ogloszenia)": {
+        "fertility": 1.662518648838846,
+        "tokens": 2362439,
+        "words": 1421000,
+        "ci": [
+          1.6541634012934225,
+          1.671271660045675
+        ],
+        "docs": 500
+      },
+      "Dz.U. 2026 ELI": {
+        "fertility": 1.5325383035855316,
+        "tokens": 38810,
+        "words": 25324,
+        "ci": [
+          1.462437114506181,
+          1.6272737943319857
+        ],
+        "docs": 12
+      },
+      "KIO": {
+        "fertility": 1.5807639060303287,
+        "tokens": 147294,
+        "words": 93179,
+        "ci": [
+          1.5550613704589988,
+          1.6085824006151366
+        ],
+        "docs": 66
+      },
+      "Samorzad (uchwaly)": {
+        "fertility": 1.7707455301275874,
+        "tokens": 123104,
+        "words": 69521,
+        "ci": [
+          1.7570747598431915,
+          1.7826307997440984
+        ],
+        "docs": 240
+      },
+      "Granty (12)": {
+        "fertility": 2.0400735575817945,
+        "tokens": 53250,
+        "words": 26102,
+        "ci": [
+          1.8720025633333504,
+          2.2241876857599503
+        ],
+        "docs": 12
+      },
+      "JSON narzedzia (tc1)": {
+        "fertility": 3.8109183076623125,
+        "tokens": 97731,
+        "words": 25645,
+        "ci": [
+          3.706906747051049,
+          3.892025250576928
+        ],
+        "docs": 200
+      },
+      "Kontrola ogolna (HPLT web)": {
+        "fertility": 1.5568336505274023,
+        "tokens": 241317,
+        "words": 155005,
+        "ci": [
+          1.540463195845669,
+          1.5743453506899228
+        ],
+        "docs": 421
+      },
+      "JSON BZP (tabele)": {
+        "fertility": 2.9215634315998673,
+        "tokens": 44101,
+        "words": 15095,
+        "ci": [
+          2.7454858824894974,
+          3.095931387646913
+        ],
+        "docs": 18
+      },
+      "Granty (149)": {
+        "fertility": 1.5679038012157902,
+        "tokens": 188542,
+        "words": 120251,
+        "ci": [
+          1.541959973477129,
+          1.5952574130676391
+        ],
+        "docs": 149
+      },
+      "JSON held-out (gen)": {
+        "fertility": 9.0,
+        "tokens": 8361,
+        "words": 929,
+        "ci": [
+          7.678202870476358,
+          10.552219389553326
+        ],
+        "docs": 100
+      }
+    },
+    "GPT-4o": {
+      "BZP (ogloszenia)": {
+        "fertility": 2.558610133708656,
+        "tokens": 3635785,
+        "words": 1421000,
+        "ci": [
+          2.5482752651356555,
+          2.5695320675894977
+        ],
+        "docs": 500
+      },
+      "Dz.U. 2026 ELI": {
+        "fertility": 2.379047543831938,
+        "tokens": 60247,
+        "words": 25324,
+        "ci": [
+          2.302099535482734,
+          2.4681351019234503
+        ],
+        "docs": 12
+      },
+      "KIO": {
+        "fertility": 2.3899376468946865,
+        "tokens": 222692,
+        "words": 93179,
+        "ci": [
+          2.370385714130689,
+          2.4113337176231022
+        ],
+        "docs": 66
+      },
+      "Samorzad (uchwaly)": {
+        "fertility": 2.4441967175385853,
+        "tokens": 169923,
+        "words": 69521,
+        "ci": [
+          2.4296661843172296,
+          2.4576543275082106
+        ],
+        "docs": 240
+      },
+      "Granty (12)": {
+        "fertility": 2.510688836104513,
+        "tokens": 65534,
+        "words": 26102,
+        "ci": [
+          2.4757683737329934,
+          2.5408714799288363
+        ],
+        "docs": 12
+      },
+      "JSON narzedzia (tc1)": {
+        "fertility": 3.7540651199064143,
+        "tokens": 96273,
+        "words": 25645,
+        "ci": [
+          3.6918968355019524,
+          3.8049638240722743
+        ],
+        "docs": 200
+      },
+      "Kontrola ogolna (HPLT web)": {
+        "fertility": 2.1885552078965196,
+        "tokens": 339237,
+        "words": 155005,
+        "ci": [
+          2.170261283838653,
+          2.2091117880605466
+        ],
+        "docs": 421
+      },
+      "JSON BZP (tabele)": {
+        "fertility": 3.6115932427956277,
+        "tokens": 54517,
+        "words": 15095,
+        "ci": [
+          3.4423024021906268,
+          3.7663180894801402
+        ],
+        "docs": 18
+      },
+      "Granty (149)": {
+        "fertility": 2.389427114951227,
+        "tokens": 287331,
+        "words": 120251,
+        "ci": [
+          2.3653852439494227,
+          2.4150848294614073
+        ],
+        "docs": 149
+      },
+      "JSON held-out (gen)": {
+        "fertility": 6.458557588805167,
+        "tokens": 6000,
+        "words": 929,
+        "ci": [
+          5.701891050542987,
+          7.3710934693754835
+        ],
+        "docs": 100
+      }
+    }
+  },
+  "fertility_compare": [
+    {
+      "tokenizer": "V0-32k",
+      "source": "BZP (ogloszenia)",
+      "got": 1.4303736805066853,
+      "ref": 1.4303736805066853,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V0-32k",
+      "source": "Dz.U. 2026 ELI",
+      "got": 1.4634733849312904,
+      "ref": 1.4634733849312904,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V0-32k",
+      "source": "KIO",
+      "got": 1.3983300958370448,
+      "ref": 1.3983300958370448,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V0-32k",
+      "source": "Samorzad (uchwaly)",
+      "got": 1.5501790825793644,
+      "ref": 1.5501790825793644,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V0-32k",
+      "source": "Granty (12)",
+      "got": 1.7455367404796567,
+      "ref": 1.7455367404796567,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V0-32k",
+      "source": "JSON narzedzia (tc1)",
+      "got": 3.737648664457009,
+      "ref": 3.737648664457009,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V0-32k",
+      "source": "Kontrola ogolna (HPLT web)",
+      "got": 1.4116770426760428,
+      "ref": 1.4116770426760428,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V0-32k",
+      "source": "JSON BZP (tabele)",
+      "got": 2.7356740642596886,
+      "ref": 2.7356740642596886,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V3-32k",
+      "source": "BZP (ogloszenia)",
+      "got": 1.5525439831104855,
+      "ref": 1.5525439831104855,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V3-32k",
+      "source": "Dz.U. 2026 ELI",
+      "got": 1.5430026851998104,
+      "ref": 1.5430026851998104,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V3-32k",
+      "source": "KIO",
+      "got": 1.4244947895985147,
+      "ref": 1.4244947895985147,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V3-32k",
+      "source": "Samorzad (uchwaly)",
+      "got": 1.6182160785949569,
+      "ref": 1.6182160785949569,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V3-32k",
+      "source": "Granty (12)",
+      "got": 1.8534211937782545,
+      "ref": 1.8534211937782545,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V3-32k",
+      "source": "JSON narzedzia (tc1)",
+      "got": 3.8406317020861764,
+      "ref": 3.8406317020861764,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V3-32k",
+      "source": "Kontrola ogolna (HPLT web)",
+      "got": 1.435353698267798,
+      "ref": 1.435353698267798,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "V3-32k",
+      "source": "JSON BZP (tabele)",
+      "got": 2.964094070884399,
+      "ref": 2.964094070884399,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "source": "BZP (ogloszenia)",
+      "got": 1.8095552427867698,
+      "ref": 1.8095552427867698,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "source": "Dz.U. 2026 ELI",
+      "got": 1.7710077396935713,
+      "ref": 1.7710077396935713,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "source": "KIO",
+      "got": 1.7152899258416596,
+      "ref": 1.7152899258416596,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "source": "Samorzad (uchwaly)",
+      "got": 1.9797615109103723,
+      "ref": 1.9797615109103723,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "source": "Granty (12)",
+      "got": 2.028810052869512,
+      "ref": 2.028810052869512,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "source": "JSON narzedzia (tc1)",
+      "got": 3.9848313511405733,
+      "ref": 3.9848313511405733,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "source": "Kontrola ogolna (HPLT web)",
+      "got": 1.6723976645914649,
+      "ref": 1.6723976645914649,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "source": "JSON BZP (tabele)",
+      "got": 3.1793971513746273,
+      "ref": 3.1793971513746273,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "source": "BZP (ogloszenia)",
+      "got": 1.9555777621393384,
+      "ref": 1.9555777621393384,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "source": "Dz.U. 2026 ELI",
+      "got": 1.9047543831938083,
+      "ref": 1.9047543831938083,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "source": "KIO",
+      "got": 1.8141319396001245,
+      "ref": 1.8141319396001245,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "source": "Samorzad (uchwaly)",
+      "got": 2.310208426230923,
+      "ref": 2.310208426230923,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "source": "Granty (12)",
+      "got": 2.1852731591448933,
+      "ref": 2.1852731591448933,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "source": "JSON narzedzia (tc1)",
+      "got": 4.32423474361474,
+      "ref": 4.32423474361474,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "source": "Kontrola ogolna (HPLT web)",
+      "got": 1.6611012547982322,
+      "ref": 1.6611012547982322,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "source": "JSON BZP (tabele)",
+      "got": 3.4275587943027492,
+      "ref": 3.4275587943027492,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "source": "BZP (ogloszenia)",
+      "got": 1.662518648838846,
+      "ref": 1.662518648838846,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "source": "Dz.U. 2026 ELI",
+      "got": 1.5325383035855316,
+      "ref": 1.5325383035855316,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "source": "KIO",
+      "got": 1.5807639060303287,
+      "ref": 1.5807639060303287,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "source": "Samorzad (uchwaly)",
+      "got": 1.7707455301275874,
+      "ref": 1.7707455301275874,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "source": "Granty (12)",
+      "got": 2.0400735575817945,
+      "ref": 2.0400735575817945,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "source": "JSON narzedzia (tc1)",
+      "got": 3.8109183076623125,
+      "ref": 3.8109183076623125,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "source": "Kontrola ogolna (HPLT web)",
+      "got": 1.5568336505274023,
+      "ref": 1.5568336505274023,
+      "delta": 0.0,
+      "ok": true
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "source": "JSON BZP (tabele)",
+      "got": 2.9215634315998673,
+      "ref": 2.9215634315998673,
+      "delta": 0.0,
+      "ok": true
+    }
+  ],
+  "leak": {
+    "BZP (ogloszenia)": {
+      "docs": 500,
+      "exact_matches": 0,
+      "exact_pct": 0.0,
+      "mean_coverage_13gram": 0.8827550811565349,
+      "max_coverage_13gram": 0.9809974462971308,
+      "docs_over_50pct": 500,
+      "docs_over_50pct_pct": 100.0
+    },
+    "Dz.U. 2026 ELI": {
+      "docs": 12,
+      "exact_matches": 0,
+      "exact_pct": 0.0,
+      "mean_coverage_13gram": 0.24480718011933,
+      "max_coverage_13gram": 0.34438758556522897,
+      "docs_over_50pct": 0,
+      "docs_over_50pct_pct": 0.0
+    },
+    "KIO": {
+      "docs": 66,
+      "exact_matches": 0,
+      "exact_pct": 0.0,
+      "mean_coverage_13gram": 0.3816016817843435,
+      "max_coverage_13gram": 0.4686050108258583,
+      "docs_over_50pct": 0,
+      "docs_over_50pct_pct": 0.0
+    },
+    "Samorzad (uchwaly)": {
+      "docs": 240,
+      "exact_matches": 0,
+      "exact_pct": 0.0,
+      "mean_coverage_13gram": 0.29125385144667004,
+      "max_coverage_13gram": 0.41119221411192214,
+      "docs_over_50pct": 0,
+      "docs_over_50pct_pct": 0.0
+    },
+    "Granty (12)": {
+      "docs": 12,
+      "exact_matches": 0,
+      "exact_pct": 0.0,
+      "mean_coverage_13gram": 0.18806404123828413,
+      "max_coverage_13gram": 0.3614467803343817,
+      "docs_over_50pct": 0,
+      "docs_over_50pct_pct": 0.0
+    },
+    "JSON narzedzia (tc1)": {
+      "docs": 200,
+      "exact_matches": 0,
+      "exact_pct": 0.0,
+      "mean_coverage_13gram": 0.7149874918984958,
+      "max_coverage_13gram": 0.979552715654952,
+      "docs_over_50pct": 182,
+      "docs_over_50pct_pct": 91.0
+    },
+    "Kontrola ogolna (HPLT web)": {
+      "docs": 421,
+      "exact_matches": 0,
+      "exact_pct": 0.0,
+      "mean_coverage_13gram": 0.09055005936529063,
+      "max_coverage_13gram": 0.4165844027640671,
+      "docs_over_50pct": 0,
+      "docs_over_50pct_pct": 0.0
+    },
+    "JSON BZP (tabele)": {
+      "docs": 18,
+      "exact_matches": 0,
+      "exact_pct": 0.0,
+      "mean_coverage_13gram": 0.43527224919425933,
+      "max_coverage_13gram": 0.4856261166152347,
+      "docs_over_50pct": 0,
+      "docs_over_50pct_pct": 0.0
+    },
+    "Granty (149)": {
+      "docs": 149,
+      "exact_matches": 0,
+      "exact_pct": 0.0,
+      "mean_coverage_13gram": 0.3483283927121376,
+      "max_coverage_13gram": 0.5287210409393843,
+      "docs_over_50pct": 3,
+      "docs_over_50pct_pct": 2.013422818791946
+    },
+    "JSON held-out (gen)": {
+      "docs": 100,
+      "exact_matches": 0,
+      "exact_pct": 0.0,
+      "mean_coverage_13gram": 0.21060676922757918,
+      "max_coverage_13gram": 0.4166666666666667,
+      "docs_over_50pct": 0,
+      "docs_over_50pct_pct": 0.0
+    },
+    "wzorce_json": {
+      "docs": 10,
+      "exact_matches": 0,
+      "mean_coverage_13gram": 0.34183852529511766,
+      "max_coverage_13gram": 0.5441176470588235,
+      "docs_over_50pct": 2,
+      "ids": [
+        "W0126",
+        "W0127",
+        "W0128",
+        "W0129",
+        "W0130",
+        "W0131",
+        "W0132",
+        "W0133",
+        "W0134",
+        "W0135"
+      ],
+      "coverages": [
+        0.4262295081967213,
+        0.4722222222222222,
+        0.2638888888888889,
+        0.4444444444444444,
+        0.06666666666666667,
+        0.5441176470588235,
+        0.21212121212121213,
+        0.5205479452054794,
+        0.03571428571428571,
+        0.43243243243243246
+      ]
+    }
+  },
+  "formats": {
+    "daty": {
+      "RRRR.MM.DD": {
+        "V0": 4.0,
+        "V0J2": 4.0,
+        "V3": 6.0,
+        "Slayer": 5.475,
+        "GPT-4o": 6.0
+      },
+      "RRRR-MM-DD": {
+        "V0": 3.5,
+        "V0J2": 3.225,
+        "V3": 6.0,
+        "Slayer": 5.475,
+        "GPT-4o": 6.0
+      },
+      "DD.MM.RRRR": {
+        "V0": 3.6,
+        "V0J2": 3.375,
+        "V3": 6.0,
+        "Slayer": 5.475,
+        "GPT-4o": 6.0
+      },
+      "D.MM.RRRR": {
+        "V0": 3.6,
+        "V0J2": 3.375,
+        "V3": 6.0,
+        "Slayer": 5.475,
+        "GPT-4o": 6.0
+      },
+      "DD.MM.RRRR r.": {
+        "V0": 4.125,
+        "V0J2": 4.05,
+        "V3": 7.0,
+        "Slayer": 7.475,
+        "GPT-4o": 8.0
+      },
+      "D.MM.RRRRr.": {
+        "V0": 4.6,
+        "V0J2": 4.375,
+        "V3": 7.0,
+        "Slayer": 7.475,
+        "GPT-4o": 8.0
+      },
+      "DD/MM/RRRR": {
+        "V0": 5.475,
+        "V0J2": 5.325,
+        "V3": 6.0,
+        "Slayer": 5.475,
+        "GPT-4o": 6.0
+      },
+      "D miesiąca RRRR r.": {
+        "V0": 3.525,
+        "V0J2": 3.525,
+        "V3": 5.0,
+        "Slayer": 5.275,
+        "GPT-4o": 8.2
+      },
+      "D miesiąca RRRRr.": {
+        "V0": 4.4,
+        "V0J2": 4.4,
+        "V3": 5.0,
+        "Slayer": 5.275,
+        "GPT-4o": 8.2
+      },
+      "z dnia D miesiąca RRRR r.": {
+        "V0": 5.525,
+        "V0J2": 5.525,
+        "V3": 7.0,
+        "Slayer": 7.275,
+        "GPT-4o": 11.2
+      },
+      "D RZYM RRRR": {
+        "V0": 3.45,
+        "V0J2": 3.45,
+        "V3": 4.05,
+        "Slayer": 3.275,
+        "GPT-4o": 5.0
+      },
+      "D.RZYM.RRRR": {
+        "V0": 4.375,
+        "V0J2": 4.075,
+        "V3": 5.775,
+        "Slayer": 5.875,
+        "GPT-4o": 5.775
+      }
+    },
+    "kwoty": {
+      "kwota z odstępami (do 9,9 mln)": {
+        "V0": 8.2,
+        "V0J2": 8.075,
+        "V3": 6.0,
+        "Slayer": 8.625,
+        "GPT-4o": 8.0
+      },
+      "1234,56 zł": {
+        "V0": 5.35,
+        "V0J2": 5.3,
+        "V3": 4.825,
+        "Slayer": 5.8,
+        "GPT-4o": 4.825
+      },
+      "1.234,56 zł": {
+        "V0": 5.925,
+        "V0J2": 5.875,
+        "V3": 5.8,
+        "Slayer": 7.075,
+        "GPT-4o": 5.8
+      },
+      "1234.56 PLN": {
+        "V0": 5.1,
+        "V0J2": 5.05,
+        "V3": 4.8,
+        "Slayer": 5.675,
+        "GPT-4o": 4.8
+      },
+      "1 234,56 PLN": {
+        "V0": 5.825,
+        "V0J2": 5.7,
+        "V3": 4.95,
+        "Slayer": 6.175,
+        "GPT-4o": 5.9
+      },
+      "1 234 zł": {
+        "V0": 4.125,
+        "V0J2": 4.1,
+        "V3": 2.85,
+        "Slayer": 4.1,
+        "GPT-4o": 3.7
+      },
+      "kwota brutto: 1 234,56 zł": {
+        "V0": 9.925,
+        "V0J2": 8.875,
+        "V3": 9.075,
+        "Slayer": 10.425,
+        "GPT-4o": 12.15
+      },
+      "1,2 mln zł": {
+        "V0": 3.825,
+        "V0J2": 3.825,
+        "V3": 4.0,
+        "Slayer": 5.775,
+        "GPT-4o": 5.0
+      },
+      "123 tys. zł": {
+        "V0": 3.825,
+        "V0J2": 3.825,
+        "V3": 3.0,
+        "Slayer": 4.875,
+        "GPT-4o": 4.0
+      }
+    },
+    "paragraf": {
+      "§": {
+        "V0": 1,
+        "V0J2": 1,
+        "V3": 2,
+        "Slayer": 1,
+        "GPT-4o": 1
+      },
+      "§ 5": {
+        "V0": 2,
+        "V0J2": 2,
+        "V3": 3,
+        "Slayer": 2,
+        "GPT-4o": 3
+      },
+      "§ 12 ust. 3": {
+        "V0": 4,
+        "V0J2": 4,
+        "V3": 5,
+        "Slayer": 5,
+        "GPT-4o": 7
+      },
+      "§ 12 ust. 3 pkt 4 lit. a": {
+        "V0": 8,
+        "V0J2": 8,
+        "V3": 9,
+        "Slayer": 10,
+        "GPT-4o": 13
+      },
+      "§5": {
+        "V0": 2,
+        "V0J2": 2,
+        "V3": 3,
+        "Slayer": 2,
+        "GPT-4o": 2
+      },
+      "§§ 3–5": {
+        "V0": 5,
+        "V0J2": 5,
+        "V3": 7,
+        "Slayer": 5,
+        "GPT-4o": 6
+      },
+      "w § 2": {
+        "V0": 3,
+        "V0J2": 3,
+        "V3": 3,
+        "Slayer": 3,
+        "GPT-4o": 4
+      },
+      "zgodnie z § 14 ust. 1": {
+        "V0": 7,
+        "V0J2": 7,
+        "V3": 7,
+        "Slayer": 8,
+        "GPT-4o": 11
+      },
+      "art. 5 § 2": {
+        "V0": 4,
+        "V0J2": 4,
+        "V3": 4,
+        "Slayer": 5,
+        "GPT-4o": 7
+      }
+    },
+    "date_avg": {
+      "V0": 4.1812499999999995,
+      "V0J2": 4.058333333333334,
+      "V3": 5.902083333333334,
+      "Slayer": 5.7749999999999995,
+      "GPT-4o": 7.03125
+    },
+    "kwota_avg": {
+      "V0": 5.788888888888889,
+      "V0J2": 5.625,
+      "V3": 5.033333333333333,
+      "Slayer": 6.502777777777777,
+      "GPT-4o": 6.019444444444444
+    },
+    "v0_wins_date_formats_all": 4,
+    "v0_wins_date_formats_vs_sl": 11,
+    "v0_loses_date_formats": [
+      [
+        "RRRR-MM-DD",
+        "V0J2",
+        {
+          "V0": 3.5,
+          "V0J2": 3.225,
+          "V3": 6.0,
+          "Slayer": 5.475,
+          "GPT-4o": 6.0
+        }
+      ],
+      [
+        "DD.MM.RRRR",
+        "V0J2",
+        {
+          "V0": 3.6,
+          "V0J2": 3.375,
+          "V3": 6.0,
+          "Slayer": 5.475,
+          "GPT-4o": 6.0
+        }
+      ],
+      [
+        "D.MM.RRRR",
+        "V0J2",
+        {
+          "V0": 3.6,
+          "V0J2": 3.375,
+          "V3": 6.0,
+          "Slayer": 5.475,
+          "GPT-4o": 6.0
+        }
+      ],
+      [
+        "DD.MM.RRRR r.",
+        "V0J2",
+        {
+          "V0": 4.125,
+          "V0J2": 4.05,
+          "V3": 7.0,
+          "Slayer": 7.475,
+          "GPT-4o": 8.0
+        }
+      ],
+      [
+        "D.MM.RRRRr.",
+        "V0J2",
+        {
+          "V0": 4.6,
+          "V0J2": 4.375,
+          "V3": 7.0,
+          "Slayer": 7.475,
+          "GPT-4o": 8.0
+        }
+      ],
+      [
+        "DD/MM/RRRR",
+        "V0J2",
+        {
+          "V0": 5.475,
+          "V0J2": 5.325,
+          "V3": 6.0,
+          "Slayer": 5.475,
+          "GPT-4o": 6.0
+        }
+      ],
+      [
+        "D RZYM RRRR",
+        "Slayer",
+        {
+          "V0": 3.45,
+          "V0J2": 3.45,
+          "V3": 4.05,
+          "Slayer": 3.275,
+          "GPT-4o": 5.0
+        }
+      ],
+      [
+        "D.RZYM.RRRR",
+        "V0J2",
+        {
+          "V0": 4.375,
+          "V0J2": 4.075,
+          "V3": 5.775,
+          "Slayer": 5.875,
+          "GPT-4o": 5.775
+        }
+      ]
+    ]
+  },
+  "json_gain": {
+    "tc1_test_delta_pct": -23.215999666151976,
+    "heldout_test_delta_pct": -33.03634232121922,
+    "wzorce_sum_v0": 321,
+    "wzorce_sum_v0j2": 135,
+    "wzorce_delta_pct": -57.94392523364487,
+    "wzorce_8_sum_v0": 234,
+    "wzorce_8_sum_v0j2": 111,
+    "wzorce_8_delta_pct": -52.56410256410257,
+    "held_forms": {
+      "compact": {
+        "docs": 49,
+        "tokens_v0": 4034,
+        "tokens_v0j2": 2269,
+        "words": 89,
+        "delta_pct": -43.75309866137829,
+        "mean_coverage": 0.19525643309462737
+      },
+      "pretty": {
+        "docs": 32,
+        "tokens_v0": 3212,
+        "tokens_v0j2": 2294,
+        "words": 557,
+        "delta_pct": -28.58032378580324,
+        "mean_coverage": 0.3171309523346272
+      },
+      "result": {
+        "docs": 19,
+        "tokens_v0": 1284,
+        "tokens_v0j2": 1149,
+        "words": 283,
+        "delta_pct": -10.514018691588788,
+        "mean_coverage": 0.07078532770595287
+      },
+      "overall": {
+        "docs": 100,
+        "tokens_v0": 8530,
+        "tokens_v0j2": 5712,
+        "delta_pct": -33.03634232121922
+      }
+    }
+  },
+  "polish_cost_v0j2_vs_v0_pct": {
+    "BZP (ogloszenia)": 0.22188755958616468,
+    "Dz.U. 2026 ELI": 0.286014948328428,
+    "KIO": -0.08058636171763833,
+    "Samorzad (uchwaly)": 0.3739445114596007,
+    "Granty (12)": 3.75093279487293,
+    "JSON BZP (tabele)": -1.3173507688582164,
+    "Kontrola ogolna (HPLT web)": 0.4885360826626828
+  }
+}

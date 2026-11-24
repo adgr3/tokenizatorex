@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "script": "scripts/pomiar_r6_superwords.py",
+    "definition": "audit/superwords.py H6: token nie zaczyna się spacją; pierwszy segment przed spacją zawiera literę i nie jest formą występującą w korpusie testowym >= 5 razy; boilerplate wyłączony",
+    "note": "Liczby na bieżących wariantach V0-32k i V0J2-32k (nie na starym TKX-A)."
+  },
+  "tokenizers": {
+    "V0-32k": {
+      "tokenizer": "tokenizers/variants/V0-32k/superbpe.json",
+      "vocab": 31999,
+      "corpus_uses": 887968,
+      "domains": [
+        "przetargi_ogloszenia",
+        "przetargi_kio",
+        "samorzad_uchwaly",
+        "granty_ogloszenia",
+        "prawo_eli",
+        "ocr_prasa",
+        "tabele_json",
+        "web"
+      ],
+      "domains_missing": [
+        "wikipedia",
+        "literatura",
+        "prawo",
+        "sejm",
+        "nauka",
+        "dyskusje",
+        "angielski"
+      ],
+      "split": "test",
+      "vocab_stats": {
+        "superwords": 4982,
+        "superwords_share": 0.1556923653864183,
+        "midword_start": 362,
+        "midword_share_of_superwords": 0.07266158169409875,
+        "sensible": 298,
+        "suspect": 64,
+        "suspect_share_of_superwords": 0.012846246487354477,
+        "suspect_examples": [
+          "wane są",
+          "Warszawa, ",
+          "wane przez",
+          "owane przez",
+          "Wyraź swoją opinię",
+          "owany przez",
+          "towany przez",
+          "ć o",
+          "nymi przez",
+          "cja jest",
+          "wany jest",
+          "Szanowni Państwo"
+        ]
+      },
+      "usage": {
+        "superword_uses_share": 0.08056821867454683,
+        "midword_uses_share": 0.0027557299362139178,
+        "sensible_uses_share": 0.0023379220872824244,
+        "suspect_uses_share": 0.00041780784893149305
+      }
+    },
+    "V0J2-32k": {
+      "tokenizer": "tokenizers/variants/V0J2-32k/superbpe.json",
+      "vocab": 31999,
+      "corpus_uses": 890140,
+      "domains": [
+        "przetargi_ogloszenia",
+        "przetargi_kio",
+        "samorzad_uchwaly",
+        "granty_ogloszenia",
+        "prawo_eli",
+        "ocr_prasa",
+        "tabele_json",
+        "web"
+      ],
+      "domains_missing": [
+        "wikipedia",
+        "literatura",
+        "prawo",
+        "sejm",
+        "nauka",
+        "dyskusje",
+        "angielski"
+      ],
+      "split": "test",
+      "vocab_stats": {
+        "superwords": 4817,
+        "superwords_share": 0.15053595424857028,
+        "midword_start": 343,
+        "midword_share_of_superwords": 0.07120614490346688,
+        "sensible": 280,
+        "suspect": 63,
+        "suspect_share_of_superwords": 0.01307867967614698,
+        "suspect_examples": [
+          "wane są",
+          "\"Wniosek o dofinansowanie",
+          "owane przez",
+          "towany przez",
+          "\"analiza rynku",
+          "owany przez",
+          "Warszawa, ",
+          "wane przez",
+          "\"projekt graficzny",
+          "Wyraź swoją opinię",
+          "ć o",
+          "cja jest"
+        ]
+      },
+      "usage": {
+        "superword_uses_share": 0.07973015480710899,
+        "midword_uses_share": 0.0027400184240681242,
+        "sensible_uses_share": 0.002324353472487474,
+        "suspect_uses_share": 0.0004156649515806502
+      }
+    }
+  }
+}

@@ -96,7 +96,7 @@ Sprawdzone na HF (publiczne, bez logowania):
 * Oba: 38,9M parametrów, tied embeddings, d_model 384, 15 warstw, 6 głów,
   kontekst 1024, Muon, seed 1337, **te same ~12,4 GB** polskiego tekstu
   (`SlayerLab/slayer-pl-8x3b` @ `d50df04a`).
-* A = Fabryka AI BPE 32k; B = tokenizer stubbornGuy 32k. Wynik BPB:
+* A = BPE 32k (slayerlabs/tokenizer); B = tokenizer stubbornGuy 32k. Wynik BPB:
   walidacja **1,0583 vs 1,0622** (B gorszy o +0,37%), held-out W
   **1,0781 vs 1,0883** (+0,94%). To jest **dokładnie** schemat TKX-D:
   porównywać BPB na tych samych bajtach, nie loss/token.

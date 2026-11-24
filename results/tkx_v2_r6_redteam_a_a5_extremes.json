@@ -1,0 +1,1097 @@
+{
+  "opis": "A5: wejścia skrajne, fuzzing seed=20261124 (20000 napisów), determinizm.",
+  "fuzz_seed": 20261124,
+  "fuzz_alfabet_rozmiar": 71,
+  "ekstrema": [
+    {
+      "tokenizer": "TKX/V0-py",
+      "przypadek": "pusty",
+      "dlugosc_znakow": 0,
+      "czas_s": 4.2e-05,
+      "n_tokenow": 0,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0-py",
+      "przypadek": "sama_spacja",
+      "dlugosc_znakow": 1,
+      "czas_s": 6.8e-05,
+      "n_tokenow": 1,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0-py",
+      "przypadek": "slowo_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.002777,
+      "n_tokenow": 5000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0-py",
+      "przypadek": "a_100000",
+      "dlugosc_znakow": 100000,
+      "czas_s": 0.025382,
+      "n_tokenow": 50000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0-py",
+      "przypadek": "cyfry_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.003149,
+      "n_tokenow": 6667,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0-py",
+      "przypadek": "tekst_1mb",
+      "dlugosc_znakow": 994000,
+      "czas_s": 0.031518,
+      "n_tokenow": 294001,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0-hf",
+      "przypadek": "pusty",
+      "dlugosc_znakow": 0,
+      "czas_s": 0.000777,
+      "n_tokenow": 0,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0-hf",
+      "przypadek": "sama_spacja",
+      "dlugosc_znakow": 1,
+      "czas_s": 0.000118,
+      "n_tokenow": 1,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0-hf",
+      "przypadek": "slowo_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.002899,
+      "n_tokenow": 5000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0-hf",
+      "przypadek": "a_100000",
+      "dlugosc_znakow": 100000,
+      "czas_s": 0.035988,
+      "n_tokenow": 50000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0-hf",
+      "przypadek": "cyfry_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.002885,
+      "n_tokenow": 5000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0-hf",
+      "przypadek": "tekst_1mb",
+      "dlugosc_znakow": 994000,
+      "czas_s": 0.3411,
+      "n_tokenow": 294001,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-py",
+      "przypadek": "pusty",
+      "dlugosc_znakow": 0,
+      "czas_s": 0.002529,
+      "n_tokenow": 0,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-py",
+      "przypadek": "sama_spacja",
+      "dlugosc_znakow": 1,
+      "czas_s": 4.4e-05,
+      "n_tokenow": 1,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-py",
+      "przypadek": "slowo_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.00307,
+      "n_tokenow": 5000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-py",
+      "przypadek": "a_100000",
+      "dlugosc_znakow": 100000,
+      "czas_s": 0.026717,
+      "n_tokenow": 50000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-py",
+      "przypadek": "cyfry_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.00316,
+      "n_tokenow": 6667,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-py",
+      "przypadek": "tekst_1mb",
+      "dlugosc_znakow": 994000,
+      "czas_s": 0.033788,
+      "n_tokenow": 294001,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-hf",
+      "przypadek": "pusty",
+      "dlugosc_znakow": 0,
+      "czas_s": 0.000517,
+      "n_tokenow": 0,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-hf",
+      "przypadek": "sama_spacja",
+      "dlugosc_znakow": 1,
+      "czas_s": 2.9e-05,
+      "n_tokenow": 1,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-hf",
+      "przypadek": "slowo_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.002668,
+      "n_tokenow": 5000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-hf",
+      "przypadek": "a_100000",
+      "dlugosc_znakow": 100000,
+      "czas_s": 0.037161,
+      "n_tokenow": 50000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-hf",
+      "przypadek": "cyfry_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.003751,
+      "n_tokenow": 5000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "TKX/V0J2-hf",
+      "przypadek": "tekst_1mb",
+      "dlugosc_znakow": 994000,
+      "czas_s": 0.34191,
+      "n_tokenow": 294001,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "przypadek": "pusty",
+      "dlugosc_znakow": 0,
+      "czas_s": 0.002371,
+      "n_tokenow": 0,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "przypadek": "sama_spacja",
+      "dlugosc_znakow": 1,
+      "czas_s": 3e-05,
+      "n_tokenow": 1,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "przypadek": "slowo_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.003056,
+      "n_tokenow": 5000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "przypadek": "a_100000",
+      "dlugosc_znakow": 100000,
+      "czas_s": 0.043914,
+      "n_tokenow": 50000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "przypadek": "cyfry_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.003226,
+      "n_tokenow": 2500,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Slayer1B-1.08",
+      "przypadek": "tekst_1mb",
+      "dlugosc_znakow": 994000,
+      "czas_s": 0.739574,
+      "n_tokenow": 350002,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "przypadek": "pusty",
+      "dlugosc_znakow": 0,
+      "czas_s": 0.002559,
+      "n_tokenow": 0,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "przypadek": "sama_spacja",
+      "dlugosc_znakow": 1,
+      "czas_s": 4.9e-05,
+      "n_tokenow": 1,
+      "roundtrip": false,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "przypadek": "slowo_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.004092,
+      "n_tokenow": 5001,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "przypadek": "a_100000",
+      "dlugosc_znakow": 100000,
+      "czas_s": 0.041601,
+      "n_tokenow": 50001,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "przypadek": "cyfry_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.005457,
+      "n_tokenow": 5000,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "APT3-1B",
+      "przypadek": "tekst_1mb",
+      "dlugosc_znakow": 994000,
+      "czas_s": 0.500717,
+      "n_tokenow": 322001,
+      "roundtrip": false,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "przypadek": "pusty",
+      "dlugosc_znakow": 0,
+      "czas_s": 0.001906,
+      "n_tokenow": 0,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "przypadek": "sama_spacja",
+      "dlugosc_znakow": 1,
+      "czas_s": 6.2e-05,
+      "n_tokenow": 2,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "przypadek": "slowo_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.003718,
+      "n_tokenow": 5001,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "przypadek": "a_100000",
+      "dlugosc_znakow": 100000,
+      "czas_s": 0.040937,
+      "n_tokenow": 50001,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "przypadek": "cyfry_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.004557,
+      "n_tokenow": 10001,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "Bielik-1.5B-v3",
+      "przypadek": "tekst_1mb",
+      "dlugosc_znakow": 994000,
+      "czas_s": 0.686794,
+      "n_tokenow": 462001,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "GPT-4o-o200k",
+      "przypadek": "pusty",
+      "dlugosc_znakow": 0,
+      "czas_s": 0.003929,
+      "n_tokenow": 0,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "GPT-4o-o200k",
+      "przypadek": "sama_spacja",
+      "dlugosc_znakow": 1,
+      "czas_s": 0.000199,
+      "n_tokenow": 1,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "GPT-4o-o200k",
+      "przypadek": "slowo_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.001674,
+      "n_tokenow": 1250,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "GPT-4o-o200k",
+      "przypadek": "a_100000",
+      "dlugosc_znakow": 100000,
+      "czas_s": 0.020706,
+      "n_tokenow": 12500,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "GPT-4o-o200k",
+      "przypadek": "cyfry_10000",
+      "dlugosc_znakow": 10000,
+      "czas_s": 0.000723,
+      "n_tokenow": 3334,
+      "roundtrip": true,
+      "wyjatek": null
+    },
+    {
+      "tokenizer": "GPT-4o-o200k",
+      "przypadek": "tekst_1mb",
+      "dlugosc_znakow": 994000,
+      "czas_s": 0.104227,
+      "n_tokenow": 462001,
+      "roundtrip": true,
+      "wyjatek": null
+    }
+  ],
+  "fuzzing": {
+    "TKX/V0-py": {
+      "napisow": 20000,
+      "roundtrip_fail": 0,
+      "zlamana_granica": 5,
+      "wyjatki": 0,
+      "przyklady": [
+        {
+          "text": "8ąŁо ​✅- Ż…źоż’ĄA?о-Ąś z!о,ś%–Ćź\"¼оśń7.Åóﬀ§,Ń1Ą\"Ń;",
+          "type": "granica",
+          "tokens": [
+            "8",
+            "ą",
+            "Ł",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "-",
+            " Ż",
+            "…",
+            "ź",
+            "�",
+            "�",
+            "ż",
+            "’"
+          ]
+        },
+        {
+          "text": "ćŃрęﬀńŁćо„ąę4е﻿„ć zżź,1zсó”0Ń!źżŁ 41\"ń\r\na!0Ł;.\r\nĆ",
+          "type": "granica",
+          "tokens": [
+            "ć",
+            "Ń",
+            "�",
+            "�",
+            "ę",
+            "�",
+            "�",
+            "�",
+            "ń",
+            "Ł",
+            "ć",
+            "�",
+            "�",
+            "„",
+            "ą",
+            "ę",
+            "4",
+            "�",
+            "�",
+            "�"
+          ]
+        },
+        {
+          "text": "\tĆ”ł﻿6-7сÅ✅ 6\r\n,ęł6ą80;рŚź9óŹ”ż3ś z?’ﬂ;\r\n„;a%ęс\"Z",
+          "type": "granica",
+          "tokens": [
+            "\t",
+            "Ć",
+            "”",
+            "ł",
+            "�",
+            "�",
+            "�",
+            "6",
+            "-7",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "6",
+            "\r"
+          ]
+        },
+        {
+          "text": "8¼54Żń z\t0р;'ą✅ZŻaеż.ńÅ\"оó2ć—ż—!Źﬂa",
+          "type": "granica",
+          "tokens": [
+            "8",
+            "�",
+            "�",
+            "5",
+            "4",
+            "Ż",
+            "ń z",
+            "\t",
+            "0",
+            "�",
+            "�",
+            ";",
+            "'",
+            "ą",
+            "�",
+            "�",
+            "�",
+            "Z",
+            "Ż",
+            "a"
+          ]
+        },
+        {
+          "text": "✅śﬁ;ŃсоŃ198:śŹ2ĆŁ-ś ﬀś z;:2рż–0Ńą35​4ą;​Ó!",
+          "type": "granica",
+          "tokens": [
+            "�",
+            "�",
+            "�",
+            "ś",
+            "�",
+            "�",
+            "�",
+            ";",
+            "Ń",
+            "�",
+            "�",
+            "�",
+            "�",
+            "Ń",
+            "198",
+            ":",
+            "ś",
+            "Ź",
+            "2",
+            "Ć"
+          ]
+        }
+      ]
+    },
+    "TKX/V0-hf": {
+      "napisow": 20000,
+      "roundtrip_fail": 0,
+      "zlamana_granica": 5,
+      "wyjatki": 0,
+      "przyklady": [
+        {
+          "text": "8ąŁо ​✅- Ż…źоż’ĄA?о-Ąś z!о,ś%–Ćź\"¼оśń7.Åóﬀ§,Ń1Ą\"Ń;",
+          "type": "granica",
+          "tokens": [
+            "8",
+            "ą",
+            "Ł",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "-",
+            " Ż",
+            "…",
+            "ź",
+            "�",
+            "�",
+            "ż",
+            "’"
+          ]
+        },
+        {
+          "text": "ćŃрęﬀńŁćо„ąę4е﻿„ć zżź,1zсó”0Ń!źżŁ 41\"ń\r\na!0Ł;.\r\nĆ",
+          "type": "granica",
+          "tokens": [
+            "ć",
+            "Ń",
+            "�",
+            "�",
+            "ę",
+            "�",
+            "�",
+            "�",
+            "ń",
+            "Ł",
+            "ć",
+            "�",
+            "�",
+            "„",
+            "ą",
+            "ę",
+            "4",
+            "�",
+            "�",
+            "�"
+          ]
+        },
+        {
+          "text": "\tĆ”ł﻿6-7сÅ✅ 6\r\n,ęł6ą80;рŚź9óŹ”ż3ś z?’ﬂ;\r\n„;a%ęс\"Z",
+          "type": "granica",
+          "tokens": [
+            "\t",
+            "Ć",
+            "”",
+            "ł",
+            "�",
+            "�",
+            "�",
+            "6",
+            "-7",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "6",
+            "\r"
+          ]
+        },
+        {
+          "text": "8¼54Żń z\t0р;'ą✅ZŻaеż.ńÅ\"оó2ć—ż—!Źﬂa",
+          "type": "granica",
+          "tokens": [
+            "8",
+            "�",
+            "�",
+            "54",
+            "Ż",
+            "ń z",
+            "\t",
+            "0",
+            "�",
+            "�",
+            ";",
+            "'",
+            "ą",
+            "�",
+            "�",
+            "�",
+            "Z",
+            "Ż",
+            "a",
+            "�"
+          ]
+        },
+        {
+          "text": "✅śﬁ;ŃсоŃ198:śŹ2ĆŁ-ś ﬀś z;:2рż–0Ńą35​4ą;​Ó!",
+          "type": "granica",
+          "tokens": [
+            "�",
+            "�",
+            "�",
+            "ś",
+            "�",
+            "�",
+            "�",
+            ";",
+            "Ń",
+            "�",
+            "�",
+            "�",
+            "�",
+            "Ń",
+            "198",
+            ":",
+            "ś",
+            "Ź",
+            "2",
+            "Ć"
+          ]
+        }
+      ]
+    },
+    "TKX/V0J2-py": {
+      "napisow": 20000,
+      "roundtrip_fail": 0,
+      "zlamana_granica": 5,
+      "wyjatki": 0,
+      "przyklady": [
+        {
+          "text": "8ąŁо ​✅- Ż…źоż’ĄA?о-Ąś z!о,ś%–Ćź\"¼оśń7.Åóﬀ§,Ń1Ą\"Ń;",
+          "type": "granica",
+          "tokens": [
+            "8",
+            "ą",
+            "Ł",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "-",
+            " Ż",
+            "…",
+            "ź",
+            "�",
+            "�",
+            "ż",
+            "’"
+          ]
+        },
+        {
+          "text": "ćŃрęﬀńŁćо„ąę4е﻿„ć zżź,1zсó”0Ń!źżŁ 41\"ń\r\na!0Ł;.\r\nĆ",
+          "type": "granica",
+          "tokens": [
+            "ć",
+            "Ń",
+            "�",
+            "�",
+            "ę",
+            "�",
+            "�",
+            "�",
+            "ń",
+            "Ł",
+            "ć",
+            "�",
+            "�",
+            "„",
+            "ą",
+            "ę",
+            "4",
+            "�",
+            "�",
+            "�"
+          ]
+        },
+        {
+          "text": "\tĆ”ł﻿6-7сÅ✅ 6\r\n,ęł6ą80;рŚź9óŹ”ż3ś z?’ﬂ;\r\n„;a%ęс\"Z",
+          "type": "granica",
+          "tokens": [
+            "\t",
+            "Ć",
+            "”",
+            "ł",
+            "�",
+            "�",
+            "�",
+            "6",
+            "-7",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "6",
+            "\r"
+          ]
+        },
+        {
+          "text": "8¼54Żń z\t0р;'ą✅ZŻaеż.ńÅ\"оó2ć—ż—!Źﬂa",
+          "type": "granica",
+          "tokens": [
+            "8",
+            "�",
+            "�",
+            "5",
+            "4",
+            "Ż",
+            "ń z",
+            "\t",
+            "0",
+            "�",
+            "�",
+            ";",
+            "'",
+            "ą",
+            "�",
+            "�",
+            "�",
+            "Z",
+            "Ż",
+            "a"
+          ]
+        },
+        {
+          "text": "✅śﬁ;ŃсоŃ198:śŹ2ĆŁ-ś ﬀś z;:2рż–0Ńą35​4ą;​Ó!",
+          "type": "granica",
+          "tokens": [
+            "�",
+            "�",
+            "�",
+            "ś",
+            "�",
+            "�",
+            "�",
+            ";",
+            "Ń",
+            "�",
+            "�",
+            "�",
+            "�",
+            "Ń",
+            "198",
+            ":",
+            "ś",
+            "Ź",
+            "2",
+            "Ć"
+          ]
+        }
+      ]
+    },
+    "TKX/V0J2-hf": {
+      "napisow": 20000,
+      "roundtrip_fail": 0,
+      "zlamana_granica": 5,
+      "wyjatki": 0,
+      "przyklady": [
+        {
+          "text": "8ąŁо ​✅- Ż…źоż’ĄA?о-Ąś z!о,ś%–Ćź\"¼оśń7.Åóﬀ§,Ń1Ą\"Ń;",
+          "type": "granica",
+          "tokens": [
+            "8",
+            "ą",
+            "Ł",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "-",
+            " Ż",
+            "…",
+            "ź",
+            "�",
+            "�",
+            "ż",
+            "’"
+          ]
+        },
+        {
+          "text": "ćŃрęﬀńŁćо„ąę4е﻿„ć zżź,1zсó”0Ń!źżŁ 41\"ń\r\na!0Ł;.\r\nĆ",
+          "type": "granica",
+          "tokens": [
+            "ć",
+            "Ń",
+            "�",
+            "�",
+            "ę",
+            "�",
+            "�",
+            "�",
+            "ń",
+            "Ł",
+            "ć",
+            "�",
+            "�",
+            "„",
+            "ą",
+            "ę",
+            "4",
+            "�",
+            "�",
+            "�"
+          ]
+        },
+        {
+          "text": "\tĆ”ł﻿6-7сÅ✅ 6\r\n,ęł6ą80;рŚź9óŹ”ż3ś z?’ﬂ;\r\n„;a%ęс\"Z",
+          "type": "granica",
+          "tokens": [
+            "\t",
+            "Ć",
+            "”",
+            "ł",
+            "�",
+            "�",
+            "�",
+            "6",
+            "-7",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "�",
+            "6",
+            "\r"
+          ]
+        },
+        {
+          "text": "8¼54Żń z\t0р;'ą✅ZŻaеż.ńÅ\"оó2ć—ż—!Źﬂa",
+          "type": "granica",
+          "tokens": [
+            "8",
+            "�",
+            "�",
+            "54",
+            "Ż",
+            "ń z",
+            "\t",
+            "0",
+            "�",
+            "�",
+            ";",
+            "'",
+            "ą",
+            "�",
+            "�",
+            "�",
+            "Z",
+            "Ż",
+            "a",
+            "�"
+          ]
+        },
+        {
+          "text": "✅śﬁ;ŃсоŃ198:śŹ2ĆŁ-ś ﬀś z;:2рż–0Ńą35​4ą;​Ó!",
+          "type": "granica",
+          "tokens": [
+            "�",
+            "�",
+            "�",
+            "ś",
+            "�",
+            "�",
+            "�",
+            ";",
+            "Ń",
+            "�",
+            "�",
+            "�",
+            "�",
+            "Ń",
+            "198",
+            ":",
+            "ś",
+            "Ź",
+            "2",
+            "Ć"
+          ]
+        }
+      ]
+    },
+    "Slayer1B-1.08": {
+      "napisow": 20000,
+      "roundtrip_fail": 0,
+      "zlamana_granica": 0,
+      "wyjatki": 0,
+      "przyklady": []
+    },
+    "APT3-1B": {
+      "napisow": 20000,
+      "roundtrip_fail": 19498,
+      "zlamana_granica": 0,
+      "wyjatki": 0,
+      "przyklady": [
+        {
+          "text": "0ańÓﬁаŻ’«9żaśŚ'!ęÅ  żż✅ Ż'¼—7.., Óо…ę?ńŹę:сﬁ\tﬀ\tр«4–21",
+          "type": "roundtrip"
+        },
+        {
+          "text": "3а\r\n2ż”Z»",
+          "type": "roundtrip"
+        },
+        {
+          "text": "аĆﬁłﬀ„Ąłа5 еZŚﬁ—ł.\t﻿ о—Aą",
+          "type": "roundtrip"
+        },
+        {
+          "text": "Ó¼;8»¼",
+          "type": "roundtrip"
+        },
+        {
+          "text": "ż4ł’śa§ﬁ:ﬂ﻿2\t65\",4  ;ć aе§﻿ćÓ385¼",
+          "type": "roundtrip"
+        },
+        {
+          "text": "Śś5ń ń»ﬀ­?5A?✅;3żŹ—Óć​6»ń'",
+          "type": "roundtrip"
+        }
+      ]
+    },
+    "Bielik-1.5B-v3": {
+      "napisow": 20000,
+      "roundtrip_fail": 0,
+      "zlamana_granica": 0,
+      "wyjatki": 0,
+      "przyklady": []
+    },
+    "GPT-4o-o200k": {
+      "napisow": 20000,
+      "roundtrip_fail": 0,
+      "zlamana_granica": 0,
+      "wyjatki": 0,
+      "przyklady": []
+    }
+  },
+  "determinizm": {
+    "TKX/V0-py": {
+      "sample": 500,
+      "hash1": "469d648c1f231d58741901b91de22b7b5ca3afe138765582daaf69afeaf43b8d",
+      "hash2": "469d648c1f231d58741901b91de22b7b5ca3afe138765582daaf69afeaf43b8d",
+      "identyczne": true
+    },
+    "TKX/V0-hf": {
+      "sample": 500,
+      "hash1": "b83d33caef4ba8e0824c15c5e7a045f1a60978df57ca2e7a386c55efaf5d6d94",
+      "hash2": "b83d33caef4ba8e0824c15c5e7a045f1a60978df57ca2e7a386c55efaf5d6d94",
+      "identyczne": true
+    },
+    "TKX/V0J2-py": {
+      "sample": 500,
+      "hash1": "83d51f2c040e2451ea61601f5844cae4803faa260dd06165d37e6eb4d31d6048",
+      "hash2": "83d51f2c040e2451ea61601f5844cae4803faa260dd06165d37e6eb4d31d6048",
+      "identyczne": true
+    },
+    "TKX/V0J2-hf": {
+      "sample": 500,
+      "hash1": "8a240b48801954812ad171209a346ba8b22472b7036de51078509075172489f3",
+      "hash2": "8a240b48801954812ad171209a346ba8b22472b7036de51078509075172489f3",
+      "identyczne": true
+    },
+    "Slayer1B-1.08": {
+      "sample": 500,
+      "hash1": "ef46cb91d4939ebf8862a88cde16b5be5b08bb472241dc58d57a5aa8ab9ac16f",
+      "hash2": "ef46cb91d4939ebf8862a88cde16b5be5b08bb472241dc58d57a5aa8ab9ac16f",
+      "identyczne": true
+    },
+    "APT3-1B": {
+      "sample": 500,
+      "hash1": "5a7ad890a8534967c483c491d884862130e17bc1cea631d7e8ba0e4b836258db",
+      "hash2": "5a7ad890a8534967c483c491d884862130e17bc1cea631d7e8ba0e4b836258db",
+      "identyczne": true
+    },
+    "Bielik-1.5B-v3": {
+      "sample": 500,
+      "hash1": "ce956deb5c12e21484d2a93f24952aba2c167ec634e01997f9b043a17233effa",
+      "hash2": "ce956deb5c12e21484d2a93f24952aba2c167ec634e01997f9b043a17233effa",
+      "identyczne": true
+    },
+    "GPT-4o-o200k": {
+      "sample": 500,
+      "hash1": "170235f71a478887823458b97738d57b86f2621ff96013a0975c4d0ea3137e40",
+      "hash2": "170235f71a478887823458b97738d57b86f2621ff96013a0975c4d0ea3137e40",
+      "identyczne": true
+    }
+  },
+  "limit_1mb_s": 5.0
+}

@@ -1,0 +1,218 @@
+{
+  "cases": 700,
+  "unique_texts": 700,
+  "tokenizers": {
+    "V0-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "V0J2-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "V3-32k": {
+      "cases": 700,
+      "bad": 4,
+      "bad_nfd": 4,
+      "ok": false,
+      "examples_bad": [
+        {
+          "source": "bzp_ogloszenia",
+          "chars": 7859,
+          "nfd": true
+        },
+        {
+          "source": "kio",
+          "chars": 20000,
+          "nfd": true
+        },
+        {
+          "source": "bzp_ogloszenia",
+          "chars": 23308,
+          "nfd": true
+        },
+        {
+          "source": "bzp_ogloszenia",
+          "chars": 24486,
+          "nfd": true
+        }
+      ]
+    },
+    "Slayer1B-1.08": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    }
+  },
+  "per_source": {
+    "V0-32k": {
+      "bzp_ogloszenia": {
+        "n": 392,
+        "bad": 0,
+        "nfd": 3
+      },
+      "du_eli": {
+        "n": 12,
+        "bad": 0,
+        "nfd": 0
+      },
+      "kio": {
+        "n": 66,
+        "bad": 0,
+        "nfd": 1
+      },
+      "samorzad": {
+        "n": 100,
+        "bad": 0,
+        "nfd": 0
+      },
+      "granty": {
+        "n": 12,
+        "bad": 0,
+        "nfd": 0
+      },
+      "json_bzp_tabele": {
+        "n": 18,
+        "bad": 0,
+        "nfd": 0
+      },
+      "general_web": {
+        "n": 100,
+        "bad": 0,
+        "nfd": 0
+      }
+    },
+    "V0J2-32k": {
+      "bzp_ogloszenia": {
+        "n": 392,
+        "bad": 0,
+        "nfd": 3
+      },
+      "du_eli": {
+        "n": 12,
+        "bad": 0,
+        "nfd": 0
+      },
+      "kio": {
+        "n": 66,
+        "bad": 0,
+        "nfd": 1
+      },
+      "samorzad": {
+        "n": 100,
+        "bad": 0,
+        "nfd": 0
+      },
+      "granty": {
+        "n": 12,
+        "bad": 0,
+        "nfd": 0
+      },
+      "json_bzp_tabele": {
+        "n": 18,
+        "bad": 0,
+        "nfd": 0
+      },
+      "general_web": {
+        "n": 100,
+        "bad": 0,
+        "nfd": 0
+      }
+    },
+    "V3-32k": {
+      "bzp_ogloszenia": {
+        "n": 392,
+        "bad": 3,
+        "nfd": 3
+      },
+      "du_eli": {
+        "n": 12,
+        "bad": 0,
+        "nfd": 0
+      },
+      "kio": {
+        "n": 66,
+        "bad": 1,
+        "nfd": 1
+      },
+      "samorzad": {
+        "n": 100,
+        "bad": 0,
+        "nfd": 0
+      },
+      "granty": {
+        "n": 12,
+        "bad": 0,
+        "nfd": 0
+      },
+      "json_bzp_tabele": {
+        "n": 18,
+        "bad": 0,
+        "nfd": 0
+      },
+      "general_web": {
+        "n": 100,
+        "bad": 0,
+        "nfd": 0
+      }
+    },
+    "Slayer1B-1.08": {
+      "bzp_ogloszenia": {
+        "n": 392,
+        "bad": 0,
+        "nfd": 3
+      },
+      "du_eli": {
+        "n": 12,
+        "bad": 0,
+        "nfd": 0
+      },
+      "kio": {
+        "n": 66,
+        "bad": 0,
+        "nfd": 1
+      },
+      "samorzad": {
+        "n": 100,
+        "bad": 0,
+        "nfd": 0
+      },
+      "granty": {
+        "n": 12,
+        "bad": 0,
+        "nfd": 0
+      },
+      "json_bzp_tabele": {
+        "n": 18,
+        "bad": 0,
+        "nfd": 0
+      },
+      "general_web": {
+        "n": 100,
+        "bad": 0,
+        "nfd": 0
+      }
+    }
+  },
+  "nfd_by_source": {
+    "bzp_ogloszenia": 3,
+    "du_eli": 0,
+    "kio": 1,
+    "samorzad": 0,
+    "granty": 0,
+    "json_bzp_tabele": 0,
+    "general_web": 0
+  },
+  "bzp_full": {
+    "docs": 500,
+    "nfd": 4
+  }
+}

@@ -1,0 +1,666 @@
+{
+  "phrases": [
+    "15 maja",
+    "100 mln zł",
+    "3 miesiące",
+    "5 min"
+  ],
+  "reference": "V0-32k",
+  "tokenizers": {
+    "PLLuM-4B": {
+      "15 maja": {
+        "tokens": [
+          "1",
+          "5",
+          "▁maja"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "1",
+          "0",
+          "0",
+          "▁mln",
+          "▁zł"
+        ],
+        "n": 5,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          "▁miesią",
+          "ce"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          "▁min"
+        ],
+        "n": 2,
+        "same_as_v0": false
+      }
+    },
+    "PLLuM-8B": {
+      "15 maja": {
+        "tokens": [
+          "15",
+          "Ġm",
+          "aja"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "100",
+          "Ġm",
+          "ln",
+          "ĠzÅĤ"
+        ],
+        "n": 4,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          "Ġmies",
+          "iÄħ",
+          "ce"
+        ],
+        "n": 4,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          "Ġmin"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      }
+    },
+    "PLLuM-12B": {
+      "15 maja": {
+        "tokens": [
+          "1",
+          "5",
+          "Ġmaja"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "1",
+          "0",
+          "0",
+          "Ġmln",
+          "ĠzÅĤ"
+        ],
+        "n": 5,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          "Ġmies",
+          "iÄħ",
+          "ce"
+        ],
+        "n": 4,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          "Ġmin"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      }
+    },
+    "Bielik-11B-v3.1": {
+      "15 maja": {
+        "tokens": [
+          "▁",
+          "1",
+          "5",
+          "▁maj",
+          "a"
+        ],
+        "n": 5,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "▁",
+          "1",
+          "0",
+          "0",
+          "▁m",
+          "ln",
+          "▁z",
+          "ł"
+        ],
+        "n": 8,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "▁",
+          "3",
+          "▁m",
+          "ies",
+          "ią",
+          "ce"
+        ],
+        "n": 6,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "▁",
+          "5",
+          "▁min"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      }
+    },
+    "Bielik-4.5B-v3": {
+      "15 maja": {
+        "tokens": [
+          "▁",
+          "1",
+          "5",
+          "▁maja"
+        ],
+        "n": 4,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "▁",
+          "1",
+          "0",
+          "0",
+          "▁mln",
+          "▁zł"
+        ],
+        "n": 6,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "▁",
+          "3",
+          "▁miesiące"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "▁",
+          "5",
+          "▁min"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      }
+    },
+    "Aster-0.5B": {
+      "15 maja": {
+        "tokens": [
+          "15",
+          "Ġmaja"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "100 mln zł": {
+        "tokens": [
+          "100",
+          "Ġmln",
+          "ĠzÅĤ"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          "ĠmiesiÄħce"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          "Ġmin"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      }
+    },
+    "EuroLLM-1.7B": {
+      "15 maja": {
+        "tokens": [
+          "▁",
+          "1",
+          "5",
+          "▁maja"
+        ],
+        "n": 4,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "▁",
+          "1",
+          "0",
+          "0",
+          "▁mln",
+          "▁zł"
+        ],
+        "n": 6,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "▁",
+          "3",
+          "▁miesiące"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "▁",
+          "5",
+          "▁min"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      }
+    },
+    "Mistral-Nemo": {
+      "15 maja": {
+        "tokens": [
+          "1",
+          "5",
+          "Ġmaja"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "1",
+          "0",
+          "0",
+          "Ġmln",
+          "ĠzÅĤ"
+        ],
+        "n": 5,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          "Ġmies",
+          "iÄħ",
+          "ce"
+        ],
+        "n": 4,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          "Ġmin"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      }
+    },
+    "Gemma-3-4B": {
+      "15 maja": {
+        "tokens": [
+          "1",
+          "5",
+          "▁maja"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "1",
+          "0",
+          "0",
+          "▁mln",
+          "▁zł"
+        ],
+        "n": 5,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          "▁miesią",
+          "ce"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          "▁min"
+        ],
+        "n": 2,
+        "same_as_v0": false
+      }
+    },
+    "DanielK-t1-pl-polish-32k": {
+      "15 maja": {
+        "tokens": [
+          "15",
+          "Ġmaja"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "100 mln zł": {
+        "tokens": [
+          "100",
+          "Ġmln",
+          "ĠzÅĤ"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          "ĠmiesiÄħce"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          "Ġmin"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      }
+    },
+    "DanielK-t2-pl-cnc-32k": {
+      "15 maja": {
+        "tokens": [
+          "15",
+          "Ġm",
+          "aja"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "100",
+          "Ġm",
+          "ln",
+          "ĠzÅĤ"
+        ],
+        "n": 4,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          "Ġm",
+          "iesiÄħ",
+          "ce"
+        ],
+        "n": 4,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          "Ġm",
+          "in"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      }
+    },
+    "V0-32k": {
+      "15 maja": {
+        "tokens": [
+          "15",
+          "Ġmaja"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "100 mln zł": {
+        "tokens": [
+          "100",
+          "ĠmlnĠzÅĤ"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          "ĠmiesiÄħce"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          "Ġmin"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      }
+    },
+    "V0J2-32k": {
+      "15 maja": {
+        "tokens": [
+          "15",
+          "Ġmaja"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "100 mln zł": {
+        "tokens": [
+          "100",
+          "ĠmlnĠzÅĤ"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          "ĠmiesiÄħce"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          "Ġmin"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      }
+    },
+    "Slayer-v6": {
+      "15 maja": {
+        "tokens": [
+          "15",
+          "Ġmaja"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "100 mln zł": {
+        "tokens": [
+          "100",
+          "Ġmln",
+          "ĠzÅĤ"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          "ĠmiesiÄħce"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          "Ġmin"
+        ],
+        "n": 2,
+        "same_as_v0": true
+      }
+    },
+    "Bielik-1.5B-v3": {
+      "15 maja": {
+        "tokens": [
+          "▁",
+          "1",
+          "5",
+          "▁maja"
+        ],
+        "n": 4,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "▁",
+          "1",
+          "0",
+          "0",
+          "▁mln",
+          "▁zł"
+        ],
+        "n": 6,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "▁",
+          "3",
+          "▁miesiące"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "▁",
+          "5",
+          "▁min"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      }
+    },
+    "APT3-1B": {
+      "15 maja": {
+        "tokens": [
+          "▁15",
+          "▁maja"
+        ],
+        "n": 2,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "▁100",
+          "▁mln",
+          "▁zł"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "▁3",
+          "▁miesiące"
+        ],
+        "n": 2,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "▁5",
+          "▁min"
+        ],
+        "n": 2,
+        "same_as_v0": false
+      }
+    },
+    "GPT-4o-o200k": {
+      "15 maja": {
+        "tokens": [
+          "15",
+          " maja"
+        ],
+        "n": 2,
+        "same_as_v0": false
+      },
+      "100 mln zł": {
+        "tokens": [
+          "100",
+          " mln",
+          " zł"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "3 miesiące": {
+        "tokens": [
+          "3",
+          " miesią",
+          "ce"
+        ],
+        "n": 3,
+        "same_as_v0": false
+      },
+      "5 min": {
+        "tokens": [
+          "5",
+          " min"
+        ],
+        "n": 2,
+        "same_as_v0": false
+      }
+    }
+  }
+}

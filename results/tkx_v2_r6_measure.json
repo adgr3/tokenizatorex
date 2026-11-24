@@ -1,0 +1,1065 @@
+{
+  "meta": {
+    "script": "scripts/pomiar_r6_fertility.py",
+    "alpha": 2.5,
+    "alpha_justification": "alpha=2,5 jak w TokEval (Zouhar i in.); wyższe alpha mocniej karze ogon rozkładu tokenów",
+    "renyi_definition": "H_alpha=1/(1-alpha)*log2(sum p_i^alpha); efektywność=H_alpha/log2(|V|)",
+    "ci": "bootstrap 1000x po dokumentach, seed 20261123",
+    "split_words_definition": "słowo (\\S+) pokryte przez >1 token na offsetach; token przechodzący przez granicę słowa sam nie dzieli słowa",
+    "base_check": {
+      "file": "tokenizers/tokenizatorex-base-32k.json",
+      "transition": 31999,
+      "stage2_merges": 0,
+      "same_training": true,
+      "note": "ten sam etap 1; 0 mergeow etapu 2 (log results/train-bpe-32k.log: etap2=0)",
+      "hf_sample_identical": 100,
+      "hf_sample_total": 100
+    }
+  },
+  "sources": {
+    "1_bzp": {
+      "name": "BZP (ogłoszenia)",
+      "docs": 500
+    },
+    "2_du_eli": {
+      "name": "Dz.U. 2026 ELI",
+      "docs": 12
+    },
+    "3_kio": {
+      "name": "KIO",
+      "docs": 66
+    },
+    "4_samorzad": {
+      "name": "Samorząd (uchwały)",
+      "docs": 240
+    },
+    "5_granty": {
+      "name": "Granty",
+      "docs": 12
+    },
+    "6_json_narzedzia": {
+      "name": "JSON narzędzi (tc1)",
+      "docs": 200
+    },
+    "7_ogolny": {
+      "name": "Kontrola ogólna (HPLT web)",
+      "docs": 421
+    },
+    "json_bzp_tabele": {
+      "name": "JSON BZP (tabele, extra)",
+      "docs": 18
+    }
+  },
+  "results": {
+    "V0-32k": {
+      "1_bzp": {
+        "docs": 500,
+        "tokens": 2032561,
+        "words": 1421000,
+        "fertility": 1.4303736805066853,
+        "fertility_ci_lo": 1.4224013727800549,
+        "fertility_ci_hi": 1.4391213821367606,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.5344330608729393,
+        "vocab_size": 32000,
+        "split_words": 482795,
+        "split_words_pct": 33.97572132301196
+      },
+      "2_du_eli": {
+        "docs": 12,
+        "tokens": 37061,
+        "words": 25324,
+        "fertility": 1.4634733849312904,
+        "fertility_ci_lo": 1.3639690156560498,
+        "fertility_ci_hi": 1.5807389744582305,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.44630555965545154,
+        "vocab_size": 32000,
+        "split_words": 8661,
+        "split_words_pct": 34.20075817406413
+      },
+      "3_kio": {
+        "docs": 66,
+        "tokens": 130295,
+        "words": 93179,
+        "fertility": 1.3983300958370448,
+        "fertility_ci_lo": 1.3739188574724606,
+        "fertility_ci_hi": 1.4250432100265984,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.5725900897566006,
+        "vocab_size": 32000,
+        "split_words": 32623,
+        "split_words_pct": 35.01110765301195
+      },
+      "4_samorzad": {
+        "docs": 240,
+        "tokens": 107770,
+        "words": 69521,
+        "fertility": 1.5501790825793644,
+        "fertility_ci_lo": 1.5381236059240593,
+        "fertility_ci_hi": 1.5608929837490795,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.42789171100039347,
+        "vocab_size": 32000,
+        "split_words": 23812,
+        "split_words_pct": 34.25152112311388
+      },
+      "5_granty": {
+        "docs": 12,
+        "tokens": 45562,
+        "words": 26102,
+        "fertility": 1.7455367404796567,
+        "fertility_ci_lo": 1.6744267631036134,
+        "fertility_ci_hi": 1.812378380903134,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.4054529272930834,
+        "vocab_size": 32000,
+        "split_words": 10036,
+        "split_words_pct": 38.449160983832655
+      },
+      "6_json_narzedzia": {
+        "docs": 200,
+        "tokens": 95852,
+        "words": 25645,
+        "fertility": 3.737648664457009,
+        "fertility_ci_lo": 3.6238991311131916,
+        "fertility_ci_hi": 3.823984439756071,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.34633488761949915,
+        "vocab_size": 32000,
+        "split_words": 18357,
+        "split_words_pct": 71.58120491323845
+      },
+      "7_ogolny": {
+        "docs": 421,
+        "tokens": 218817,
+        "words": 155005,
+        "fertility": 1.4116770426760428,
+        "fertility_ci_lo": 1.394158902305373,
+        "fertility_ci_hi": 1.4296868365497541,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.5604245803744218,
+        "vocab_size": 32000,
+        "split_words": 53980,
+        "split_words_pct": 34.824683074739525
+      },
+      "json_bzp_tabele": {
+        "docs": 18,
+        "tokens": 41295,
+        "words": 15095,
+        "fertility": 2.7356740642596886,
+        "fertility_ci_lo": 2.5610216139116657,
+        "fertility_ci_hi": 2.9050161304024726,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3408501147640228,
+        "vocab_size": 32000,
+        "split_words": 7033,
+        "split_words_pct": 46.59158661808546
+      }
+    },
+    "V0J2-32k": {
+      "1_bzp": {
+        "docs": 500,
+        "tokens": 2037071,
+        "words": 1421000,
+        "fertility": 1.4335475017593244,
+        "fertility_ci_lo": 1.4257689237106403,
+        "fertility_ci_hi": 1.4426580465809367,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.5317692708125997,
+        "vocab_size": 32000,
+        "split_words": 490605,
+        "split_words_pct": 34.52533427163969
+      },
+      "2_du_eli": {
+        "docs": 12,
+        "tokens": 37167,
+        "words": 25324,
+        "fertility": 1.467659137577002,
+        "fertility_ci_lo": 1.368012488854376,
+        "fertility_ci_hi": 1.5866990016543945,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.44695251486756016,
+        "vocab_size": 32000,
+        "split_words": 8704,
+        "split_words_pct": 34.370557573842994
+      },
+      "3_kio": {
+        "docs": 66,
+        "tokens": 130190,
+        "words": 93179,
+        "fertility": 1.397203232488007,
+        "fertility_ci_lo": 1.373130522301324,
+        "fertility_ci_hi": 1.4221497681101563,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.5699047805760813,
+        "vocab_size": 32000,
+        "split_words": 32789,
+        "split_words_pct": 35.18925938247889
+      },
+      "4_samorzad": {
+        "docs": 240,
+        "tokens": 108173,
+        "words": 69521,
+        "fertility": 1.5559758921764646,
+        "fertility_ci_lo": 1.5437970169609945,
+        "fertility_ci_hi": 1.566353650351065,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.42862028994493556,
+        "vocab_size": 32000,
+        "split_words": 24028,
+        "split_words_pct": 34.56221861020411
+      },
+      "5_granty": {
+        "docs": 12,
+        "tokens": 47271,
+        "words": 26102,
+        "fertility": 1.811010650524864,
+        "fertility_ci_lo": 1.711701736703754,
+        "fertility_ci_hi": 1.9074621603215298,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3815913990483227,
+        "vocab_size": 32000,
+        "split_words": 10148,
+        "split_words_pct": 38.8782468776339
+      },
+      "6_json_narzedzia": {
+        "docs": 200,
+        "tokens": 73599,
+        "words": 25645,
+        "fertility": 2.869916162994736,
+        "fertility_ci_lo": 2.8139693333915097,
+        "fertility_ci_hi": 2.9151441586499462,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.41503447547058053,
+        "vocab_size": 32000,
+        "split_words": 17700,
+        "split_words_pct": 69.01930200818873
+      },
+      "7_ogolny": {
+        "docs": 421,
+        "tokens": 219886,
+        "words": 155005,
+        "fertility": 1.4185735944001807,
+        "fertility_ci_lo": 1.4007805312806583,
+        "fertility_ci_hi": 1.4363162437421302,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.5611056797521389,
+        "vocab_size": 32000,
+        "split_words": 54435,
+        "split_words_pct": 35.11822199283894
+      },
+      "json_bzp_tabele": {
+        "docs": 18,
+        "tokens": 40751,
+        "words": 15095,
+        "fertility": 2.6996356409407087,
+        "fertility_ci_lo": 2.5285755574076325,
+        "fertility_ci_hi": 2.863286944058585,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.33899752836987623,
+        "vocab_size": 32000,
+        "split_words": 7047,
+        "split_words_pct": 46.68433256045048
+      }
+    },
+    "TOKENIZATOREX-base-32k": {
+      "1_bzp": {
+        "docs": 500,
+        "tokens": 2549792,
+        "words": 1421000,
+        "fertility": 1.7943645320197044,
+        "fertility_ci_lo": 1.7825047202311421,
+        "fertility_ci_hi": 1.8080385355880284,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3746397348255789,
+        "vocab_size": 32000,
+        "split_words": 491460,
+        "split_words_pct": 34.58550316678396
+      },
+      "2_du_eli": {
+        "docs": 12,
+        "tokens": 45101,
+        "words": 25324,
+        "fertility": 1.780958774285263,
+        "fertility_ci_lo": 1.6872828792292112,
+        "fertility_ci_hi": 1.8981321066840884,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3866255320947554,
+        "vocab_size": 32000,
+        "split_words": 10157,
+        "split_words_pct": 40.108197757068396
+      },
+      "3_kio": {
+        "docs": 66,
+        "tokens": 152964,
+        "words": 93179,
+        "fertility": 1.641614526878374,
+        "fertility_ci_lo": 1.6146276043461514,
+        "fertility_ci_hi": 1.6725713983414514,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.42553916838806527,
+        "vocab_size": 32000,
+        "split_words": 33920,
+        "split_words_pct": 36.40305218987111
+      },
+      "4_samorzad": {
+        "docs": 240,
+        "tokens": 135100,
+        "words": 69521,
+        "fertility": 1.9432977086060328,
+        "fertility_ci_lo": 1.930005913054349,
+        "fertility_ci_hi": 1.9559743386133406,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3485397075658899,
+        "vocab_size": 32000,
+        "split_words": 29737,
+        "split_words_pct": 42.774125803713986
+      },
+      "5_granty": {
+        "docs": 12,
+        "tokens": 50704,
+        "words": 26102,
+        "fertility": 1.942533139223048,
+        "fertility_ci_lo": 1.8690496017701819,
+        "fertility_ci_hi": 2.0126691581041283,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3944522514185662,
+        "vocab_size": 32000,
+        "split_words": 10111,
+        "split_words_pct": 38.73649528771742
+      },
+      "6_json_narzedzia": {
+        "docs": 200,
+        "tokens": 104035,
+        "words": 25645,
+        "fertility": 4.056736205888087,
+        "fertility_ci_lo": 3.941338914863971,
+        "fertility_ci_hi": 4.145835697193764,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3435302157130675,
+        "vocab_size": 32000,
+        "split_words": 18252,
+        "split_words_pct": 71.17176837590173
+      },
+      "7_ogolny": {
+        "docs": 421,
+        "tokens": 245206,
+        "words": 155005,
+        "fertility": 1.5819231637689106,
+        "fertility_ci_lo": 1.5668351581263598,
+        "fertility_ci_hi": 1.5983521437604307,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.45783999166354367,
+        "vocab_size": 32000,
+        "split_words": 53054,
+        "split_words_pct": 34.22728299087126
+      },
+      "json_bzp_tabele": {
+        "docs": 18,
+        "tokens": 47144,
+        "words": 15095,
+        "fertility": 3.123153362040411,
+        "fertility_ci_lo": 2.9186093789186804,
+        "fertility_ci_hi": 3.314138583993026,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3360470559536503,
+        "vocab_size": 32000,
+        "split_words": 6931,
+        "split_words_pct": 45.915866180854586
+      }
+    },
+    "Slayer1B-1.08": {
+      "1_bzp": {
+        "docs": 500,
+        "tokens": 2571378,
+        "words": 1421000,
+        "fertility": 1.8095552427867698,
+        "fertility_ci_lo": 1.7999965014391572,
+        "fertility_ci_hi": 1.8209191297548866,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.42917148962680624,
+        "vocab_size": 32768,
+        "split_words": 603025,
+        "split_words_pct": 42.436664320900775
+      },
+      "2_du_eli": {
+        "docs": 12,
+        "tokens": 44849,
+        "words": 25324,
+        "fertility": 1.7710077396935713,
+        "fertility_ci_lo": 1.6832007179612034,
+        "fertility_ci_hi": 1.8841153109568003,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.4057607228650601,
+        "vocab_size": 32768,
+        "split_words": 11380,
+        "split_words_pct": 44.93760859263939
+      },
+      "3_kio": {
+        "docs": 66,
+        "tokens": 159829,
+        "words": 93179,
+        "fertility": 1.7152899258416596,
+        "fertility_ci_lo": 1.6860567059478957,
+        "fertility_ci_hi": 1.7489387931674554,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.4406898500948249,
+        "vocab_size": 32768,
+        "split_words": 39497,
+        "split_words_pct": 42.38830637804656
+      },
+      "4_samorzad": {
+        "docs": 240,
+        "tokens": 137635,
+        "words": 69521,
+        "fertility": 1.9797615109103723,
+        "fertility_ci_lo": 1.9650647265456096,
+        "fertility_ci_hi": 1.9927008566632938,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3383049183250249,
+        "vocab_size": 32768,
+        "split_words": 31802,
+        "split_words_pct": 45.744451316868286
+      },
+      "5_granty": {
+        "docs": 12,
+        "tokens": 52956,
+        "words": 26102,
+        "fertility": 2.028810052869512,
+        "fertility_ci_lo": 1.9601301907744766,
+        "fertility_ci_hi": 2.097854962396637,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.38800356261091123,
+        "vocab_size": 32768,
+        "split_words": 11664,
+        "split_words_pct": 44.68623094015784
+      },
+      "6_json_narzedzia": {
+        "docs": 200,
+        "tokens": 102191,
+        "words": 25645,
+        "fertility": 3.9848313511405733,
+        "fertility_ci_lo": 3.880516981901834,
+        "fertility_ci_hi": 4.068758278091392,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3553017108990903,
+        "vocab_size": 32768,
+        "split_words": 19046,
+        "split_words_pct": 74.26788847728602
+      },
+      "7_ogolny": {
+        "docs": 421,
+        "tokens": 259230,
+        "words": 155005,
+        "fertility": 1.6723976645914649,
+        "fertility_ci_lo": 1.6562707672566548,
+        "fertility_ci_hi": 1.689628814286797,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.46668823183679037,
+        "vocab_size": 32768,
+        "split_words": 61218,
+        "split_words_pct": 39.49420986419793
+      },
+      "json_bzp_tabele": {
+        "docs": 18,
+        "tokens": 47993,
+        "words": 15095,
+        "fertility": 3.1793971513746273,
+        "fertility_ci_lo": 2.9834417719602673,
+        "fertility_ci_hi": 3.374863316846104,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3586895444681887,
+        "vocab_size": 32768,
+        "split_words": 7894,
+        "split_words_pct": 52.29546207353428
+      }
+    },
+    "APT3-1B": {
+      "1_bzp": {
+        "docs": 500,
+        "tokens": 2362439,
+        "words": 1421000,
+        "fertility": 1.662518648838846,
+        "fertility_ci_lo": 1.6541634012934225,
+        "fertility_ci_hi": 1.671271660045675,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.4969443931857089,
+        "vocab_size": 31980,
+        "split_words": 505422,
+        "split_words_pct": 35.56805066854328
+      },
+      "2_du_eli": {
+        "docs": 12,
+        "tokens": 38810,
+        "words": 25324,
+        "fertility": 1.5325383035855316,
+        "fertility_ci_lo": 1.462437114506181,
+        "fertility_ci_hi": 1.6272737943319857,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.46084425704081944,
+        "vocab_size": 31980,
+        "split_words": 8885,
+        "split_words_pct": 35.0852945822145
+      },
+      "3_kio": {
+        "docs": 66,
+        "tokens": 147294,
+        "words": 93179,
+        "fertility": 1.5807639060303287,
+        "fertility_ci_lo": 1.5550613704589988,
+        "fertility_ci_hi": 1.6085824006151366,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.4813961847731682,
+        "vocab_size": 31980,
+        "split_words": 32475,
+        "split_words_pct": 34.85227358095708
+      },
+      "4_samorzad": {
+        "docs": 240,
+        "tokens": 123104,
+        "words": 69521,
+        "fertility": 1.7707455301275874,
+        "fertility_ci_lo": 1.7570747598431915,
+        "fertility_ci_hi": 1.7826307997440984,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.398092679549206,
+        "vocab_size": 31980,
+        "split_words": 26655,
+        "split_words_pct": 38.34093295550985
+      },
+      "5_granty": {
+        "docs": 12,
+        "tokens": 53250,
+        "words": 26102,
+        "fertility": 2.0400735575817945,
+        "fertility_ci_lo": 1.8720025633333504,
+        "fertility_ci_hi": 2.2241876857599503,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3244575027452234,
+        "vocab_size": 31980,
+        "split_words": 10954,
+        "split_words_pct": 41.966132863382114
+      },
+      "6_json_narzedzia": {
+        "docs": 200,
+        "tokens": 97731,
+        "words": 25645,
+        "fertility": 3.8109183076623125,
+        "fertility_ci_lo": 3.706906747051049,
+        "fertility_ci_hi": 3.892025250576928,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.36329544648944506,
+        "vocab_size": 31980,
+        "split_words": 18166,
+        "split_words_pct": 70.836420354845
+      },
+      "7_ogolny": {
+        "docs": 421,
+        "tokens": 241317,
+        "words": 155005,
+        "fertility": 1.5568336505274023,
+        "fertility_ci_lo": 1.540463195845669,
+        "fertility_ci_hi": 1.5743453506899228,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.5266754371071609,
+        "vocab_size": 31980,
+        "split_words": 54782,
+        "split_words_pct": 35.342085739169704
+      },
+      "json_bzp_tabele": {
+        "docs": 18,
+        "tokens": 44101,
+        "words": 15095,
+        "fertility": 2.9215634315998673,
+        "fertility_ci_lo": 2.7454858824894974,
+        "fertility_ci_hi": 3.095931387646913,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.35108430903912535,
+        "vocab_size": 31980,
+        "split_words": 7024,
+        "split_words_pct": 46.53196422656509
+      }
+    },
+    "Bielik-1.5B-v3": {
+      "1_bzp": {
+        "docs": 500,
+        "tokens": 2778876,
+        "words": 1421000,
+        "fertility": 1.9555777621393384,
+        "fertility_ci_lo": 1.9427816507438211,
+        "fertility_ci_hi": 1.9704800620395002,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.393351639586889,
+        "vocab_size": 32000,
+        "split_words": 552050,
+        "split_words_pct": 38.8494018296974
+      },
+      "2_du_eli": {
+        "docs": 12,
+        "tokens": 48236,
+        "words": 25324,
+        "fertility": 1.9047543831938083,
+        "fertility_ci_lo": 1.7891862141701376,
+        "fertility_ci_hi": 2.0677244713580487,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3743114834085911,
+        "vocab_size": 32000,
+        "split_words": 10453,
+        "split_words_pct": 41.277049439267095
+      },
+      "3_kio": {
+        "docs": 66,
+        "tokens": 169039,
+        "words": 93179,
+        "fertility": 1.8141319396001245,
+        "fertility_ci_lo": 1.7753535312688618,
+        "fertility_ci_hi": 1.8600090682462722,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.4210073503256389,
+        "vocab_size": 32000,
+        "split_words": 35461,
+        "split_words_pct": 38.05685830498288
+      },
+      "4_samorzad": {
+        "docs": 240,
+        "tokens": 160608,
+        "words": 69521,
+        "fertility": 2.310208426230923,
+        "fertility_ci_lo": 2.2915351771614443,
+        "fertility_ci_hi": 2.328451007782318,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.32983492502195344,
+        "vocab_size": 32000,
+        "split_words": 33617,
+        "split_words_pct": 48.35517325700148
+      },
+      "5_granty": {
+        "docs": 12,
+        "tokens": 57040,
+        "words": 26102,
+        "fertility": 2.1852731591448933,
+        "fertility_ci_lo": 2.069199856730611,
+        "fertility_ci_hi": 2.2991444811510853,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3759034345627974,
+        "vocab_size": 32000,
+        "split_words": 11374,
+        "split_words_pct": 43.57520496513677
+      },
+      "6_json_narzedzia": {
+        "docs": 200,
+        "tokens": 110895,
+        "words": 25645,
+        "fertility": 4.32423474361474,
+        "fertility_ci_lo": 4.197588824448175,
+        "fertility_ci_hi": 4.423793675592979,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.34213182216554877,
+        "vocab_size": 32000,
+        "split_words": 18656,
+        "split_words_pct": 72.74712419574966
+      },
+      "7_ogolny": {
+        "docs": 421,
+        "tokens": 257479,
+        "words": 155005,
+        "fertility": 1.6611012547982322,
+        "fertility_ci_lo": 1.6417683015160416,
+        "fertility_ci_hi": 1.6812423942313617,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.462269695872276,
+        "vocab_size": 32000,
+        "split_words": 56202,
+        "split_words_pct": 36.25818521983162
+      },
+      "json_bzp_tabele": {
+        "docs": 18,
+        "tokens": 51739,
+        "words": 15095,
+        "fertility": 3.4275587943027492,
+        "fertility_ci_lo": 3.2022543644919046,
+        "fertility_ci_hi": 3.6475585119744904,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.35011871154106133,
+        "vocab_size": 32000,
+        "split_words": 7192,
+        "split_words_pct": 47.64491553494535
+      }
+    },
+    "GPT-4o-o200k": {
+      "1_bzp": {
+        "docs": 500,
+        "tokens": 3635785,
+        "words": 1421000,
+        "fertility": 2.558610133708656,
+        "fertility_ci_lo": 2.5482752651356555,
+        "fertility_ci_hi": 2.5695320675894977,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3845930621825185,
+        "vocab_size": 200019,
+        "split_words": 1084365,
+        "split_words_pct": 76.30999296270232
+      },
+      "2_du_eli": {
+        "docs": 12,
+        "tokens": 60247,
+        "words": 25324,
+        "fertility": 2.379047543831938,
+        "fertility_ci_lo": 2.302099535482734,
+        "fertility_ci_hi": 2.4681351019234503,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.38467063903031107,
+        "vocab_size": 200019,
+        "split_words": 17658,
+        "split_words_pct": 69.72832096035381
+      },
+      "3_kio": {
+        "docs": 66,
+        "tokens": 222692,
+        "words": 93179,
+        "fertility": 2.3899376468946865,
+        "fertility_ci_lo": 2.370385714130689,
+        "fertility_ci_hi": 2.4113337176231022,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.41400337212068783,
+        "vocab_size": 200019,
+        "split_words": 68366,
+        "split_words_pct": 73.37060925745071
+      },
+      "4_samorzad": {
+        "docs": 240,
+        "tokens": 169923,
+        "words": 69521,
+        "fertility": 2.4441967175385853,
+        "fertility_ci_lo": 2.4296661843172296,
+        "fertility_ci_hi": 2.4576543275082106,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3444661494142348,
+        "vocab_size": 200019,
+        "split_words": 48215,
+        "split_words_pct": 69.35314509284964
+      },
+      "5_granty": {
+        "docs": 12,
+        "tokens": 65534,
+        "words": 26102,
+        "fertility": 2.510688836104513,
+        "fertility_ci_lo": 2.4757683737329934,
+        "fertility_ci_hi": 2.5408714799288363,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.4128740745597743,
+        "vocab_size": 200019,
+        "split_words": 19159,
+        "split_words_pct": 73.40050570837484
+      },
+      "6_json_narzedzia": {
+        "docs": 200,
+        "tokens": 96273,
+        "words": 25645,
+        "fertility": 3.7540651199064143,
+        "fertility_ci_lo": 3.6918968355019524,
+        "fertility_ci_hi": 3.8049638240722743,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.3191968810088879,
+        "vocab_size": 200019,
+        "split_words": 23286,
+        "split_words_pct": 90.80132579450185
+      },
+      "7_ogolny": {
+        "docs": 421,
+        "tokens": 339237,
+        "words": 155005,
+        "fertility": 2.1885552078965196,
+        "fertility_ci_lo": 2.170261283838653,
+        "fertility_ci_hi": 2.2091117880605466,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.44032778239002796,
+        "vocab_size": 200019,
+        "split_words": 115254,
+        "split_words_pct": 74.35502080578046
+      },
+      "json_bzp_tabele": {
+        "docs": 18,
+        "tokens": 54517,
+        "words": 15095,
+        "fertility": 3.6115932427956277,
+        "fertility_ci_lo": 3.4423024021906268,
+        "fertility_ci_hi": 3.7663180894801402,
+        "renyi_alpha": 2.5,
+        "renyi_efficiency": 0.35359663979492895,
+        "vocab_size": 200019,
+        "split_words": 12474,
+        "split_words_pct": 82.63663464723419
+      }
+    }
+  },
+  "comparison": {
+    "V0-32k": {
+      "V0J2-32k": {
+        "sources_lower": 5,
+        "sources_total": 8,
+        "tokens_reduction_pct": -0.5606679464965847,
+        "tokens_reduction_abs_pct": 0.5606679464965847
+      },
+      "TOKENIZATOREX-base-32k": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 18.643376097507357,
+        "tokens_reduction_abs_pct": 18.643376097507357
+      },
+      "Slayer1B-1.08": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 19.75224973719373,
+        "tokens_reduction_abs_pct": 19.75224973719373
+      },
+      "APT3-1B": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 12.832274683193233,
+        "tokens_reduction_abs_pct": 12.832274683193233
+      },
+      "Bielik-1.5B-v3": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 25.446378448349883,
+        "tokens_reduction_abs_pct": 25.446378448349883
+      },
+      "GPT-4o-o200k": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 41.664692881972556,
+        "tokens_reduction_abs_pct": 41.664692881972556
+      }
+    },
+    "V0J2-32k": {
+      "V0-32k": {
+        "sources_lower": 3,
+        "sources_total": 8,
+        "tokens_reduction_pct": 0.5575419872856036,
+        "tokens_reduction_abs_pct": 0.5575419872856036
+      },
+      "TOKENIZATOREX-base-32k": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 19.096973435201793,
+        "tokens_reduction_abs_pct": 19.096973435201793
+      },
+      "Slayer1B-1.08": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 20.19966463876097,
+        "tokens_reduction_abs_pct": 20.19966463876097
+      },
+      "APT3-1B": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 13.31827135119622,
+        "tokens_reduction_abs_pct": 13.31827135119622
+      },
+      "Bielik-1.5B-v3": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 25.862046191542344,
+        "tokens_reduction_abs_pct": 25.862046191542344
+      },
+      "GPT-4o-o200k": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 41.98993671256757,
+        "tokens_reduction_abs_pct": 41.98993671256757
+      }
+    },
+    "TOKENIZATOREX-base-32k": {
+      "V0-32k": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -22.915621621481954,
+        "tokens_reduction_abs_pct": 22.915621621481954
+      },
+      "V0J2-32k": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -23.60477011315063,
+        "tokens_reduction_abs_pct": 23.60477011315063
+      },
+      "Slayer1B-1.08": {
+        "sources_lower": 6,
+        "sources_total": 8,
+        "tokens_reduction_pct": 1.362978927217251,
+        "tokens_reduction_abs_pct": 1.362978927217251
+      },
+      "APT3-1B": {
+        "sources_lower": 1,
+        "sources_total": 8,
+        "tokens_reduction_pct": -7.142751426458949,
+        "tokens_reduction_abs_pct": 7.142751426458949
+      },
+      "Bielik-1.5B-v3": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 8.36195262846211,
+        "tokens_reduction_abs_pct": 8.36195262846211
+      },
+      "GPT-4o-o200k": {
+        "sources_lower": 7,
+        "sources_total": 8,
+        "tokens_reduction_pct": 28.29679463107595,
+        "tokens_reduction_abs_pct": 28.29679463107595
+      }
+    },
+    "Slayer1B-1.08": {
+      "V0-32k": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -24.614085345079918,
+        "tokens_reduction_abs_pct": 24.614085345079918
+      },
+      "V0J2-32k": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -25.312756578429664,
+        "tokens_reduction_abs_pct": 25.312756578429664
+      },
+      "TOKENIZATOREX-base-32k": {
+        "sources_lower": 2,
+        "sources_total": 8,
+        "tokens_reduction_pct": -1.3818127437278616,
+        "tokens_reduction_abs_pct": 1.3818127437278616
+      },
+      "APT3-1B": {
+        "sources_lower": 1,
+        "sources_total": 8,
+        "tokens_reduction_pct": -8.623263619650423,
+        "tokens_reduction_abs_pct": 8.623263619650423
+      },
+      "Bielik-1.5B-v3": {
+        "sources_lower": 7,
+        "sources_total": 8,
+        "tokens_reduction_pct": 7.095686411778823,
+        "tokens_reduction_abs_pct": 7.095686411778823
+      },
+      "GPT-4o-o200k": {
+        "sources_lower": 7,
+        "sources_total": 8,
+        "tokens_reduction_pct": 27.305990601626796,
+        "tokens_reduction_abs_pct": 27.305990601626796
+      }
+    },
+    "APT3-1B": {
+      "V0-32k": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -14.72136004072031,
+        "tokens_reduction_abs_pct": 14.72136004072031
+      },
+      "V0J2-32k": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -15.364565934253571,
+        "tokens_reduction_abs_pct": 15.364565934253571
+      },
+      "TOKENIZATOREX-base-32k": {
+        "sources_lower": 7,
+        "sources_total": 8,
+        "tokens_reduction_pct": 6.666574575846695,
+        "tokens_reduction_abs_pct": 6.666574575846695
+      },
+      "Slayer1B-1.08": {
+        "sources_lower": 7,
+        "sources_total": 8,
+        "tokens_reduction_pct": 7.938689496427942,
+        "tokens_reduction_abs_pct": 7.938689496427942
+      },
+      "Bielik-1.5B-v3": {
+        "sources_lower": 8,
+        "sources_total": 8,
+        "tokens_reduction_pct": 14.471071396335411,
+        "tokens_reduction_abs_pct": 14.471071396335411
+      },
+      "GPT-4o-o200k": {
+        "sources_lower": 7,
+        "sources_total": 8,
+        "tokens_reduction_pct": 33.076942290267795,
+        "tokens_reduction_abs_pct": 33.076942290267795
+      }
+    },
+    "Bielik-1.5B-v3": {
+      "V0-32k": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -34.13164634895816,
+        "tokens_reduction_abs_pct": 34.13164634895816
+      },
+      "V0J2-32k": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -34.88367949614493,
+        "tokens_reduction_abs_pct": 34.88367949614493
+      },
+      "TOKENIZATOREX-base-32k": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -9.124979054343395,
+        "tokens_reduction_abs_pct": 9.124979054343395
+      },
+      "Slayer1B-1.08": {
+        "sources_lower": 1,
+        "sources_total": 8,
+        "tokens_reduction_pct": -7.637628585502454,
+        "tokens_reduction_abs_pct": 7.637628585502454
+      },
+      "APT3-1B": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -16.91950505237052,
+        "tokens_reduction_abs_pct": 16.91950505237052
+      },
+      "GPT-4o-o200k": {
+        "sources_lower": 7,
+        "sources_total": 8,
+        "tokens_reduction_pct": 21.753892159868805,
+        "tokens_reduction_abs_pct": 21.753892159868805
+      }
+    },
+    "GPT-4o-o200k": {
+      "V0-32k": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -71.42277111471118,
+        "tokens_reduction_abs_pct": 71.42277111471118
+      },
+      "V0J2-32k": {
+        "sources_lower": 0,
+        "sources_total": 8,
+        "tokens_reduction_pct": -72.38388364534755,
+        "tokens_reduction_abs_pct": 72.38388364534755
+      },
+      "TOKENIZATOREX-base-32k": {
+        "sources_lower": 1,
+        "sources_total": 8,
+        "tokens_reduction_pct": -39.463779179026346,
+        "tokens_reduction_abs_pct": 39.463779179026346
+      },
+      "Slayer1B-1.08": {
+        "sources_lower": 1,
+        "sources_total": 8,
+        "tokens_reduction_pct": -37.56291725771543,
+        "tokens_reduction_abs_pct": 37.56291725771543
+      },
+      "APT3-1B": {
+        "sources_lower": 1,
+        "sources_total": 8,
+        "tokens_reduction_pct": -49.42533025572982,
+        "tokens_reduction_abs_pct": 49.42533025572982
+      },
+      "Bielik-1.5B-v3": {
+        "sources_lower": 1,
+        "sources_total": 8,
+        "tokens_reduction_pct": -27.801884030213174,
+        "tokens_reduction_abs_pct": 27.801884030213174
+      }
+    }
+  }
+}

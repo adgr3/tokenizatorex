@@ -1,0 +1,31 @@
+{
+  "v0_superbpe_sha256": "7ba5543d4e09cfb0d3c1f4be51845ba9dcb29b725df84183717721c7315e5e43",
+  "v0r_superbpe_sha256": "616842c119d544d07da28c14b4bb310c37473e7734a0a49eae45db9f488d83df",
+  "hash_equal": false,
+  "stage1_merges_equal": true,
+  "stage2_merges_equal": true,
+  "meta_diff": {
+    "train_seconds": [
+      185,
+      329
+    ],
+    "from": [
+      "V0-base-32k.json",
+      "V0R-base.json"
+    ]
+  },
+  "bzp": {
+    "v0": {
+      "tokens": 2032561,
+      "words": 1421000,
+      "fertility": 1.4303736805066853
+    },
+    "v0r": {
+      "tokens": 2032561,
+      "words": 1421000,
+      "fertility": 1.4303736805066853
+    },
+    "identical": true
+  },
+  "conclusion": "identyczne merge'e; hash pliku rozni sie tylko metadanymi"
+}

@@ -1,0 +1,1868 @@
+{
+  "version": "1.0",
+  "seed": 20261123,
+  "count": 155,
+  "items": [
+    {
+      "id": "W0001",
+      "category": "skroty_prawne",
+      "pattern": "art. 12",
+      "contexts": [
+        "art. 12 jest elementem dokumentu.",
+        "tekst art. 12 tekst",
+        "(art. 12) opis",
+        "slowo, art. 12 slowo",
+        "jeden dwa art. 12 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0002",
+      "category": "skroty_prawne",
+      "pattern": "art. 12 ust. 3",
+      "contexts": [
+        "art. 12 ust. 3 jest elementem dokumentu.",
+        "tekst art. 12 ust. 3 tekst",
+        "(art. 12 ust. 3) opis",
+        "slowo, art. 12 ust. 3 slowo",
+        "jeden dwa art. 12 ust. 3 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0003",
+      "category": "skroty_prawne",
+      "pattern": "ust. 4 pkt 2",
+      "contexts": [
+        "ust. 4 pkt 2 jest elementem dokumentu.",
+        "tekst ust. 4 pkt 2 tekst",
+        "(ust. 4 pkt 2) opis",
+        "slowo, ust. 4 pkt 2 slowo",
+        "jeden dwa ust. 4 pkt 2 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0004",
+      "category": "skroty_prawne",
+      "pattern": "pkt 3 lit. a",
+      "contexts": [
+        "pkt 3 lit. a jest elementem dokumentu.",
+        "tekst pkt 3 lit. a tekst",
+        "(pkt 3 lit. a) opis",
+        "slowo, pkt 3 lit. a slowo",
+        "jeden dwa pkt 3 lit. a trzy cztery"
+      ]
+    },
+    {
+      "id": "W0005",
+      "category": "skroty_prawne",
+      "pattern": "poz. 1539",
+      "contexts": [
+        "poz. 1539 jest elementem dokumentu.",
+        "tekst poz. 1539 tekst",
+        "(poz. 1539) opis",
+        "slowo, poz. 1539 slowo",
+        "jeden dwa poz. 1539 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0006",
+      "category": "skroty_prawne",
+      "pattern": "Dz. U. 2026 poz. 1",
+      "contexts": [
+        "Dz. U. 2026 poz. 1 jest elementem dokumentu.",
+        "tekst Dz. U. 2026 poz. 1 tekst",
+        "(Dz. U. 2026 poz. 1) opis",
+        "slowo, Dz. U. 2026 poz. 1 slowo",
+        "jeden dwa Dz. U. 2026 poz. 1 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0007",
+      "category": "skroty_prawne",
+      "pattern": "Dz.U. 2026 poz. 1",
+      "contexts": [
+        "Dz.U. 2026 poz. 1 jest elementem dokumentu.",
+        "tekst Dz.U. 2026 poz. 1 tekst",
+        "(Dz.U. 2026 poz. 1) opis",
+        "slowo, Dz.U. 2026 poz. 1 slowo",
+        "jeden dwa Dz.U. 2026 poz. 1 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0008",
+      "category": "skroty_prawne",
+      "pattern": "M.P. 2026 poz. 5",
+      "contexts": [
+        "M.P. 2026 poz. 5 jest elementem dokumentu.",
+        "tekst M.P. 2026 poz. 5 tekst",
+        "(M.P. 2026 poz. 5) opis",
+        "slowo, M.P. 2026 poz. 5 slowo",
+        "jeden dwa M.P. 2026 poz. 5 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0009",
+      "category": "skroty_prawne",
+      "pattern": "t.j. ustawy",
+      "contexts": [
+        "t.j. ustawy jest elementem dokumentu.",
+        "tekst t.j. ustawy tekst",
+        "(t.j. ustawy) opis",
+        "slowo, t.j. ustawy slowo",
+        "jeden dwa t.j. ustawy trzy cztery"
+      ]
+    },
+    {
+      "id": "W0010",
+      "category": "skroty_prawne",
+      "pattern": "tj. rozporzadzenie",
+      "contexts": [
+        "tj. rozporzadzenie jest elementem dokumentu.",
+        "tekst tj. rozporzadzenie tekst",
+        "(tj. rozporzadzenie) opis",
+        "slowo, tj. rozporzadzenie slowo",
+        "jeden dwa tj. rozporzadzenie trzy cztery"
+      ]
+    },
+    {
+      "id": "W0011",
+      "category": "skroty_prawne",
+      "pattern": "ze zm.",
+      "contexts": [
+        "ze zm. jest elementem dokumentu.",
+        "tekst ze zm. tekst",
+        "(ze zm.) opis",
+        "slowo, ze zm. slowo",
+        "jeden dwa ze zm. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0012",
+      "category": "skroty_prawne",
+      "pattern": "Pzp art. 96",
+      "contexts": [
+        "Pzp art. 96 jest elementem dokumentu.",
+        "tekst Pzp art. 96 tekst",
+        "(Pzp art. 96) opis",
+        "slowo, Pzp art. 96 slowo",
+        "jeden dwa Pzp art. 96 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0013",
+      "category": "skroty_prawne",
+      "pattern": "KPA art. 10",
+      "contexts": [
+        "KPA art. 10 jest elementem dokumentu.",
+        "tekst KPA art. 10 tekst",
+        "(KPA art. 10) opis",
+        "slowo, KPA art. 10 slowo",
+        "jeden dwa KPA art. 10 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0014",
+      "category": "skroty_prawne",
+      "pattern": "k.c. art. 415",
+      "contexts": [
+        "k.c. art. 415 jest elementem dokumentu.",
+        "tekst k.c. art. 415 tekst",
+        "(k.c. art. 415) opis",
+        "slowo, k.c. art. 415 slowo",
+        "jeden dwa k.c. art. 415 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0015",
+      "category": "skroty_prawne",
+      "pattern": "art. 96 ust. 1 pkt 4",
+      "contexts": [
+        "art. 96 ust. 1 pkt 4 jest elementem dokumentu.",
+        "tekst art. 96 ust. 1 pkt 4 tekst",
+        "(art. 96 ust. 1 pkt 4) opis",
+        "slowo, art. 96 ust. 1 pkt 4 slowo",
+        "jeden dwa art. 96 ust. 1 pkt 4 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0016",
+      "category": "skroty_prawne",
+      "pattern": "ust. 2",
+      "contexts": [
+        "ust. 2 jest elementem dokumentu.",
+        "tekst ust. 2 tekst",
+        "(ust. 2) opis",
+        "slowo, ust. 2 slowo",
+        "jeden dwa ust. 2 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0017",
+      "category": "skroty_prawne",
+      "pattern": "pkt 10",
+      "contexts": [
+        "pkt 10 jest elementem dokumentu.",
+        "tekst pkt 10 tekst",
+        "(pkt 10) opis",
+        "slowo, pkt 10 slowo",
+        "jeden dwa pkt 10 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0018",
+      "category": "skroty_prawne",
+      "pattern": "lit. b",
+      "contexts": [
+        "lit. b jest elementem dokumentu.",
+        "tekst lit. b tekst",
+        "(lit. b) opis",
+        "slowo, lit. b slowo",
+        "jeden dwa lit. b trzy cztery"
+      ]
+    },
+    {
+      "id": "W0019",
+      "category": "skroty_prawne",
+      "pattern": "poz. 100",
+      "contexts": [
+        "poz. 100 jest elementem dokumentu.",
+        "tekst poz. 100 tekst",
+        "(poz. 100) opis",
+        "slowo, poz. 100 slowo",
+        "jeden dwa poz. 100 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0020",
+      "category": "skroty_prawne",
+      "pattern": "Dz. U. poz. 5",
+      "contexts": [
+        "Dz. U. poz. 5 jest elementem dokumentu.",
+        "tekst Dz. U. poz. 5 tekst",
+        "(Dz. U. poz. 5) opis",
+        "slowo, Dz. U. poz. 5 slowo",
+        "jeden dwa Dz. U. poz. 5 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0021",
+      "category": "sygnatury",
+      "pattern": "KIO 1234/26",
+      "contexts": [
+        "KIO 1234/26 jest elementem dokumentu.",
+        "tekst KIO 1234/26 tekst",
+        "(KIO 1234/26) opis",
+        "slowo, KIO 1234/26 slowo",
+        "jeden dwa KIO 1234/26 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0022",
+      "category": "sygnatury",
+      "pattern": "KIO 89/25",
+      "contexts": [
+        "KIO 89/25 jest elementem dokumentu.",
+        "tekst KIO 89/25 tekst",
+        "(KIO 89/25) opis",
+        "slowo, KIO 89/25 slowo",
+        "jeden dwa KIO 89/25 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0023",
+      "category": "sygnatury",
+      "pattern": "II SA/Wa 123/26",
+      "contexts": [
+        "II SA/Wa 123/26 jest elementem dokumentu.",
+        "tekst II SA/Wa 123/26 tekst",
+        "(II SA/Wa 123/26) opis",
+        "slowo, II SA/Wa 123/26 slowo",
+        "jeden dwa II SA/Wa 123/26 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0024",
+      "category": "sygnatury",
+      "pattern": "II GSK 456/24",
+      "contexts": [
+        "II GSK 456/24 jest elementem dokumentu.",
+        "tekst II GSK 456/24 tekst",
+        "(II GSK 456/24) opis",
+        "slowo, II GSK 456/24 slowo",
+        "jeden dwa II GSK 456/24 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0025",
+      "category": "sygnatury",
+      "pattern": "I OSK 789/23",
+      "contexts": [
+        "I OSK 789/23 jest elementem dokumentu.",
+        "tekst I OSK 789/23 tekst",
+        "(I OSK 789/23) opis",
+        "slowo, I OSK 789/23 slowo",
+        "jeden dwa I OSK 789/23 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0026",
+      "category": "sygnatury",
+      "pattern": "KIO 1/26",
+      "contexts": [
+        "KIO 1/26 jest elementem dokumentu.",
+        "tekst KIO 1/26 tekst",
+        "(KIO 1/26) opis",
+        "slowo, KIO 1/26 slowo",
+        "jeden dwa KIO 1/26 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0027",
+      "category": "sygnatury",
+      "pattern": "KIO 9999/26",
+      "contexts": [
+        "KIO 9999/26 jest elementem dokumentu.",
+        "tekst KIO 9999/26 tekst",
+        "(KIO 9999/26) opis",
+        "slowo, KIO 9999/26 slowo",
+        "jeden dwa KIO 9999/26 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0028",
+      "category": "sygnatury",
+      "pattern": "V SA/Wa 10/25",
+      "contexts": [
+        "V SA/Wa 10/25 jest elementem dokumentu.",
+        "tekst V SA/Wa 10/25 tekst",
+        "(V SA/Wa 10/25) opis",
+        "slowo, V SA/Wa 10/25 slowo",
+        "jeden dwa V SA/Wa 10/25 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0029",
+      "category": "sygnatury",
+      "pattern": "III SA/Gd 44/24",
+      "contexts": [
+        "III SA/Gd 44/24 jest elementem dokumentu.",
+        "tekst III SA/Gd 44/24 tekst",
+        "(III SA/Gd 44/24) opis",
+        "slowo, III SA/Gd 44/24 slowo",
+        "jeden dwa III SA/Gd 44/24 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0030",
+      "category": "sygnatury",
+      "pattern": "KIO 500/26",
+      "contexts": [
+        "KIO 500/26 jest elementem dokumentu.",
+        "tekst KIO 500/26 tekst",
+        "(KIO 500/26) opis",
+        "slowo, KIO 500/26 slowo",
+        "jeden dwa KIO 500/26 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0031",
+      "category": "identyfikatory",
+      "pattern": "NIP 1234567890",
+      "contexts": [
+        "NIP 1234567890 jest elementem dokumentu.",
+        "tekst NIP 1234567890 tekst",
+        "(NIP 1234567890) opis",
+        "slowo, NIP 1234567890 slowo",
+        "jeden dwa NIP 1234567890 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0032",
+      "category": "identyfikatory",
+      "pattern": "NIP: 9876543210",
+      "contexts": [
+        "NIP: 9876543210 jest elementem dokumentu.",
+        "tekst NIP: 9876543210 tekst",
+        "(NIP: 9876543210) opis",
+        "slowo, NIP: 9876543210 slowo",
+        "jeden dwa NIP: 9876543210 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0033",
+      "category": "identyfikatory",
+      "pattern": "REGON 123456789",
+      "contexts": [
+        "REGON 123456789 jest elementem dokumentu.",
+        "tekst REGON 123456789 tekst",
+        "(REGON 123456789) opis",
+        "slowo, REGON 123456789 slowo",
+        "jeden dwa REGON 123456789 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0034",
+      "category": "identyfikatory",
+      "pattern": "REGON 12345678901234",
+      "contexts": [
+        "REGON 12345678901234 jest elementem dokumentu.",
+        "tekst REGON 12345678901234 tekst",
+        "(REGON 12345678901234) opis",
+        "slowo, REGON 12345678901234 slowo",
+        "jeden dwa REGON 12345678901234 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0035",
+      "category": "identyfikatory",
+      "pattern": "KRS 0000123456",
+      "contexts": [
+        "KRS 0000123456 jest elementem dokumentu.",
+        "tekst KRS 0000123456 tekst",
+        "(KRS 0000123456) opis",
+        "slowo, KRS 0000123456 slowo",
+        "jeden dwa KRS 0000123456 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0036",
+      "category": "identyfikatory",
+      "pattern": "KRS 0000987654",
+      "contexts": [
+        "KRS 0000987654 jest elementem dokumentu.",
+        "tekst KRS 0000987654 tekst",
+        "(KRS 0000987654) opis",
+        "slowo, KRS 0000987654 slowo",
+        "jeden dwa KRS 0000987654 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0037",
+      "category": "identyfikatory",
+      "pattern": "NIP 0000000000",
+      "contexts": [
+        "NIP 0000000000 jest elementem dokumentu.",
+        "tekst NIP 0000000000 tekst",
+        "(NIP 0000000000) opis",
+        "slowo, NIP 0000000000 slowo",
+        "jeden dwa NIP 0000000000 trzy cztery"
+      ],
+      "note": "jawnie fikcyjny numer z bledna suma kontrolna (zastepuje wczesniejszy przyklad)"
+    },
+    {
+      "id": "W0038",
+      "category": "identyfikatory",
+      "pattern": "REGON 012345678",
+      "contexts": [
+        "REGON 012345678 jest elementem dokumentu.",
+        "tekst REGON 012345678 tekst",
+        "(REGON 012345678) opis",
+        "slowo, REGON 012345678 slowo",
+        "jeden dwa REGON 012345678 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0039",
+      "category": "identyfikatory",
+      "pattern": "KRS 0000001234",
+      "contexts": [
+        "KRS 0000001234 jest elementem dokumentu.",
+        "tekst KRS 0000001234 tekst",
+        "(KRS 0000001234) opis",
+        "slowo, KRS 0000001234 slowo",
+        "jeden dwa KRS 0000001234 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0040",
+      "category": "identyfikatory",
+      "pattern": "NIP 1111111111",
+      "contexts": [
+        "NIP 1111111111 jest elementem dokumentu.",
+        "tekst NIP 1111111111 tekst",
+        "(NIP 1111111111) opis",
+        "slowo, NIP 1111111111 slowo",
+        "jeden dwa NIP 1111111111 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0041",
+      "category": "identyfikatory",
+      "pattern": "REGON 987654321",
+      "contexts": [
+        "REGON 987654321 jest elementem dokumentu.",
+        "tekst REGON 987654321 tekst",
+        "(REGON 987654321) opis",
+        "slowo, REGON 987654321 slowo",
+        "jeden dwa REGON 987654321 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0042",
+      "category": "identyfikatory",
+      "pattern": "KRS 0000555555",
+      "contexts": [
+        "KRS 0000555555 jest elementem dokumentu.",
+        "tekst KRS 0000555555 tekst",
+        "(KRS 0000555555) opis",
+        "slowo, KRS 0000555555 slowo",
+        "jeden dwa KRS 0000555555 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0043",
+      "category": "identyfikatory",
+      "pattern": "NIP 2222222222",
+      "contexts": [
+        "NIP 2222222222 jest elementem dokumentu.",
+        "tekst NIP 2222222222 tekst",
+        "(NIP 2222222222) opis",
+        "slowo, NIP 2222222222 slowo",
+        "jeden dwa NIP 2222222222 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0044",
+      "category": "identyfikatory",
+      "pattern": "REGON 111222333",
+      "contexts": [
+        "REGON 111222333 jest elementem dokumentu.",
+        "tekst REGON 111222333 tekst",
+        "(REGON 111222333) opis",
+        "slowo, REGON 111222333 slowo",
+        "jeden dwa REGON 111222333 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0045",
+      "category": "identyfikatory",
+      "pattern": "KRS 0000777777",
+      "contexts": [
+        "KRS 0000777777 jest elementem dokumentu.",
+        "tekst KRS 0000777777 tekst",
+        "(KRS 0000777777) opis",
+        "slowo, KRS 0000777777 slowo",
+        "jeden dwa KRS 0000777777 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0046",
+      "category": "kody_pocztowe",
+      "pattern": "00-001",
+      "contexts": [
+        "00-001 jest elementem dokumentu.",
+        "tekst 00-001 tekst",
+        "(00-001) opis",
+        "slowo, 00-001 slowo",
+        "jeden dwa 00-001 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0047",
+      "category": "kody_pocztowe",
+      "pattern": "35-001",
+      "contexts": [
+        "35-001 jest elementem dokumentu.",
+        "tekst 35-001 tekst",
+        "(35-001) opis",
+        "slowo, 35-001 slowo",
+        "jeden dwa 35-001 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0048",
+      "category": "kody_pocztowe",
+      "pattern": "02-679",
+      "contexts": [
+        "02-679 jest elementem dokumentu.",
+        "tekst 02-679 tekst",
+        "(02-679) opis",
+        "slowo, 02-679 slowo",
+        "jeden dwa 02-679 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0049",
+      "category": "kody_pocztowe",
+      "pattern": "80-123",
+      "contexts": [
+        "80-123 jest elementem dokumentu.",
+        "tekst 80-123 tekst",
+        "(80-123) opis",
+        "slowo, 80-123 slowo",
+        "jeden dwa 80-123 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0050",
+      "category": "kody_pocztowe",
+      "pattern": "61-890",
+      "contexts": [
+        "61-890 jest elementem dokumentu.",
+        "tekst 61-890 tekst",
+        "(61-890) opis",
+        "slowo, 61-890 slowo",
+        "jeden dwa 61-890 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0051",
+      "category": "kody_pocztowe",
+      "pattern": "15-001",
+      "contexts": [
+        "15-001 jest elementem dokumentu.",
+        "tekst 15-001 tekst",
+        "(15-001) opis",
+        "slowo, 15-001 slowo",
+        "jeden dwa 15-001 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0052",
+      "category": "kody_pocztowe",
+      "pattern": "20-030",
+      "contexts": [
+        "20-030 jest elementem dokumentu.",
+        "tekst 20-030 tekst",
+        "(20-030) opis",
+        "slowo, 20-030 slowo",
+        "jeden dwa 20-030 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0053",
+      "category": "kody_pocztowe",
+      "pattern": "40-001",
+      "contexts": [
+        "40-001 jest elementem dokumentu.",
+        "tekst 40-001 tekst",
+        "(40-001) opis",
+        "slowo, 40-001 slowo",
+        "jeden dwa 40-001 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0054",
+      "category": "kody_pocztowe",
+      "pattern": "90-001",
+      "contexts": [
+        "90-001 jest elementem dokumentu.",
+        "tekst 90-001 tekst",
+        "(90-001) opis",
+        "slowo, 90-001 slowo",
+        "jeden dwa 90-001 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0055",
+      "category": "kody_pocztowe",
+      "pattern": "05-090",
+      "contexts": [
+        "05-090 jest elementem dokumentu.",
+        "tekst 05-090 tekst",
+        "(05-090) opis",
+        "slowo, 05-090 slowo",
+        "jeden dwa 05-090 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0056",
+      "category": "numery_bzp",
+      "pattern": "2026/BZP 00514538",
+      "contexts": [
+        "2026/BZP 00514538 jest elementem dokumentu.",
+        "tekst 2026/BZP 00514538 tekst",
+        "(2026/BZP 00514538) opis",
+        "slowo, 2026/BZP 00514538 slowo",
+        "jeden dwa 2026/BZP 00514538 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0057",
+      "category": "numery_bzp",
+      "pattern": "2026/BZP 00000001",
+      "contexts": [
+        "2026/BZP 00000001 jest elementem dokumentu.",
+        "tekst 2026/BZP 00000001 tekst",
+        "(2026/BZP 00000001) opis",
+        "slowo, 2026/BZP 00000001 slowo",
+        "jeden dwa 2026/BZP 00000001 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0058",
+      "category": "numery_bzp",
+      "pattern": "2026/BZP 00123456",
+      "contexts": [
+        "2026/BZP 00123456 jest elementem dokumentu.",
+        "tekst 2026/BZP 00123456 tekst",
+        "(2026/BZP 00123456) opis",
+        "slowo, 2026/BZP 00123456 slowo",
+        "jeden dwa 2026/BZP 00123456 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0059",
+      "category": "numery_bzp",
+      "pattern": "2025/BZP 00999999",
+      "contexts": [
+        "2025/BZP 00999999 jest elementem dokumentu.",
+        "tekst 2025/BZP 00999999 tekst",
+        "(2025/BZP 00999999) opis",
+        "slowo, 2025/BZP 00999999 slowo",
+        "jeden dwa 2025/BZP 00999999 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0060",
+      "category": "numery_bzp",
+      "pattern": "2026/BZP 00432100",
+      "contexts": [
+        "2026/BZP 00432100 jest elementem dokumentu.",
+        "tekst 2026/BZP 00432100 tekst",
+        "(2026/BZP 00432100) opis",
+        "slowo, 2026/BZP 00432100 slowo",
+        "jeden dwa 2026/BZP 00432100 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0061",
+      "category": "numery_bzp",
+      "pattern": "2026/BZP 00777777",
+      "contexts": [
+        "2026/BZP 00777777 jest elementem dokumentu.",
+        "tekst 2026/BZP 00777777 tekst",
+        "(2026/BZP 00777777) opis",
+        "slowo, 2026/BZP 00777777 slowo",
+        "jeden dwa 2026/BZP 00777777 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0062",
+      "category": "numery_bzp",
+      "pattern": "2026/BZP 00111111",
+      "contexts": [
+        "2026/BZP 00111111 jest elementem dokumentu.",
+        "tekst 2026/BZP 00111111 tekst",
+        "(2026/BZP 00111111) opis",
+        "slowo, 2026/BZP 00111111 slowo",
+        "jeden dwa 2026/BZP 00111111 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0063",
+      "category": "numery_bzp",
+      "pattern": "2026/BZP 00222222",
+      "contexts": [
+        "2026/BZP 00222222 jest elementem dokumentu.",
+        "tekst 2026/BZP 00222222 tekst",
+        "(2026/BZP 00222222) opis",
+        "slowo, 2026/BZP 00222222 slowo",
+        "jeden dwa 2026/BZP 00222222 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0064",
+      "category": "numery_bzp",
+      "pattern": "2026/BZP 00333333",
+      "contexts": [
+        "2026/BZP 00333333 jest elementem dokumentu.",
+        "tekst 2026/BZP 00333333 tekst",
+        "(2026/BZP 00333333) opis",
+        "slowo, 2026/BZP 00333333 slowo",
+        "jeden dwa 2026/BZP 00333333 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0065",
+      "category": "numery_bzp",
+      "pattern": "2026/BZP 00444444",
+      "contexts": [
+        "2026/BZP 00444444 jest elementem dokumentu.",
+        "tekst 2026/BZP 00444444 tekst",
+        "(2026/BZP 00444444) opis",
+        "slowo, 2026/BZP 00444444 slowo",
+        "jeden dwa 2026/BZP 00444444 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0066",
+      "category": "daty_slowne",
+      "pattern": "1 stycznia 2026 r.",
+      "contexts": [
+        "1 stycznia 2026 r. jest elementem dokumentu.",
+        "tekst 1 stycznia 2026 r. tekst",
+        "(1 stycznia 2026 r.) opis",
+        "slowo, 1 stycznia 2026 r. slowo",
+        "jeden dwa 1 stycznia 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0067",
+      "category": "daty_slowne",
+      "pattern": "1 września 2026 r.",
+      "contexts": [
+        "1 września 2026 r. jest elementem dokumentu.",
+        "tekst 1 września 2026 r. tekst",
+        "(1 września 2026 r.) opis",
+        "slowo, 1 września 2026 r. slowo",
+        "jeden dwa 1 września 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0068",
+      "category": "daty_slowne",
+      "pattern": "1 grudnia 2026 r.",
+      "contexts": [
+        "1 grudnia 2026 r. jest elementem dokumentu.",
+        "tekst 1 grudnia 2026 r. tekst",
+        "(1 grudnia 2026 r.) opis",
+        "slowo, 1 grudnia 2026 r. slowo",
+        "jeden dwa 1 grudnia 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0069",
+      "category": "daty_slowne",
+      "pattern": "2 stycznia 2026 r.",
+      "contexts": [
+        "2 stycznia 2026 r. jest elementem dokumentu.",
+        "tekst 2 stycznia 2026 r. tekst",
+        "(2 stycznia 2026 r.) opis",
+        "slowo, 2 stycznia 2026 r. slowo",
+        "jeden dwa 2 stycznia 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0070",
+      "category": "daty_slowne",
+      "pattern": "2 września 2026 r.",
+      "contexts": [
+        "2 września 2026 r. jest elementem dokumentu.",
+        "tekst 2 września 2026 r. tekst",
+        "(2 września 2026 r.) opis",
+        "slowo, 2 września 2026 r. slowo",
+        "jeden dwa 2 września 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0071",
+      "category": "daty_slowne",
+      "pattern": "2 grudnia 2026 r.",
+      "contexts": [
+        "2 grudnia 2026 r. jest elementem dokumentu.",
+        "tekst 2 grudnia 2026 r. tekst",
+        "(2 grudnia 2026 r.) opis",
+        "slowo, 2 grudnia 2026 r. slowo",
+        "jeden dwa 2 grudnia 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0072",
+      "category": "daty_slowne",
+      "pattern": "15 stycznia 2026 r.",
+      "contexts": [
+        "15 stycznia 2026 r. jest elementem dokumentu.",
+        "tekst 15 stycznia 2026 r. tekst",
+        "(15 stycznia 2026 r.) opis",
+        "slowo, 15 stycznia 2026 r. slowo",
+        "jeden dwa 15 stycznia 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0073",
+      "category": "daty_slowne",
+      "pattern": "15 września 2026 r.",
+      "contexts": [
+        "15 września 2026 r. jest elementem dokumentu.",
+        "tekst 15 września 2026 r. tekst",
+        "(15 września 2026 r.) opis",
+        "slowo, 15 września 2026 r. slowo",
+        "jeden dwa 15 września 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0074",
+      "category": "daty_slowne",
+      "pattern": "15 grudnia 2026 r.",
+      "contexts": [
+        "15 grudnia 2026 r. jest elementem dokumentu.",
+        "tekst 15 grudnia 2026 r. tekst",
+        "(15 grudnia 2026 r.) opis",
+        "slowo, 15 grudnia 2026 r. slowo",
+        "jeden dwa 15 grudnia 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0075",
+      "category": "daty_slowne",
+      "pattern": "25 stycznia 2026 r.",
+      "contexts": [
+        "25 stycznia 2026 r. jest elementem dokumentu.",
+        "tekst 25 stycznia 2026 r. tekst",
+        "(25 stycznia 2026 r.) opis",
+        "slowo, 25 stycznia 2026 r. slowo",
+        "jeden dwa 25 stycznia 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0076",
+      "category": "daty_slowne",
+      "pattern": "25 września 2026 r.",
+      "contexts": [
+        "25 września 2026 r. jest elementem dokumentu.",
+        "tekst 25 września 2026 r. tekst",
+        "(25 września 2026 r.) opis",
+        "slowo, 25 września 2026 r. slowo",
+        "jeden dwa 25 września 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0077",
+      "category": "daty_slowne",
+      "pattern": "25 grudnia 2026 r.",
+      "contexts": [
+        "25 grudnia 2026 r. jest elementem dokumentu.",
+        "tekst 25 grudnia 2026 r. tekst",
+        "(25 grudnia 2026 r.) opis",
+        "slowo, 25 grudnia 2026 r. slowo",
+        "jeden dwa 25 grudnia 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0078",
+      "category": "daty_slowne",
+      "pattern": "31 stycznia 2026 r.",
+      "contexts": [
+        "31 stycznia 2026 r. jest elementem dokumentu.",
+        "tekst 31 stycznia 2026 r. tekst",
+        "(31 stycznia 2026 r.) opis",
+        "slowo, 31 stycznia 2026 r. slowo",
+        "jeden dwa 31 stycznia 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0079",
+      "category": "daty_slowne",
+      "pattern": "31 września 2026 r.",
+      "contexts": [
+        "31 września 2026 r. jest elementem dokumentu.",
+        "tekst 31 września 2026 r. tekst",
+        "(31 września 2026 r.) opis",
+        "slowo, 31 września 2026 r. slowo",
+        "jeden dwa 31 września 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0080",
+      "category": "daty_slowne",
+      "pattern": "31 grudnia 2026 r.",
+      "contexts": [
+        "31 grudnia 2026 r. jest elementem dokumentu.",
+        "tekst 31 grudnia 2026 r. tekst",
+        "(31 grudnia 2026 r.) opis",
+        "slowo, 31 grudnia 2026 r. slowo",
+        "jeden dwa 31 grudnia 2026 r. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0081",
+      "category": "kwoty",
+      "pattern": "1 234 567,89 zł",
+      "contexts": [
+        "1 234 567,89 zł jest elementem dokumentu.",
+        "tekst 1 234 567,89 zł tekst",
+        "(1 234 567,89 zł) opis",
+        "slowo, 1 234 567,89 zł slowo",
+        "jeden dwa 1 234 567,89 zł trzy cztery"
+      ]
+    },
+    {
+      "id": "W0082",
+      "category": "kwoty",
+      "pattern": "1.234.567,89 PLN",
+      "contexts": [
+        "1.234.567,89 PLN jest elementem dokumentu.",
+        "tekst 1.234.567,89 PLN tekst",
+        "(1.234.567,89 PLN) opis",
+        "slowo, 1.234.567,89 PLN slowo",
+        "jeden dwa 1.234.567,89 PLN trzy cztery"
+      ]
+    },
+    {
+      "id": "W0083",
+      "category": "kwoty",
+      "pattern": "1234567.89",
+      "contexts": [
+        "1234567.89 jest elementem dokumentu.",
+        "tekst 1234567.89 tekst",
+        "(1234567.89) opis",
+        "slowo, 1234567.89 slowo",
+        "jeden dwa 1234567.89 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0084",
+      "category": "kwoty",
+      "pattern": "45 000,00 zł",
+      "contexts": [
+        "45 000,00 zł jest elementem dokumentu.",
+        "tekst 45 000,00 zł tekst",
+        "(45 000,00 zł) opis",
+        "slowo, 45 000,00 zł slowo",
+        "jeden dwa 45 000,00 zł trzy cztery"
+      ]
+    },
+    {
+      "id": "W0085",
+      "category": "kwoty",
+      "pattern": "1 000 000,00 PLN",
+      "contexts": [
+        "1 000 000,00 PLN jest elementem dokumentu.",
+        "tekst 1 000 000,00 PLN tekst",
+        "(1 000 000,00 PLN) opis",
+        "slowo, 1 000 000,00 PLN slowo",
+        "jeden dwa 1 000 000,00 PLN trzy cztery"
+      ]
+    },
+    {
+      "id": "W0086",
+      "category": "kwoty",
+      "pattern": "999,99 zł",
+      "contexts": [
+        "999,99 zł jest elementem dokumentu.",
+        "tekst 999,99 zł tekst",
+        "(999,99 zł) opis",
+        "slowo, 999,99 zł slowo",
+        "jeden dwa 999,99 zł trzy cztery"
+      ]
+    },
+    {
+      "id": "W0087",
+      "category": "kwoty",
+      "pattern": "0,00 zł",
+      "contexts": [
+        "0,00 zł jest elementem dokumentu.",
+        "tekst 0,00 zł tekst",
+        "(0,00 zł) opis",
+        "slowo, 0,00 zł slowo",
+        "jeden dwa 0,00 zł trzy cztery"
+      ]
+    },
+    {
+      "id": "W0088",
+      "category": "kwoty",
+      "pattern": "12 345,67 zł",
+      "contexts": [
+        "12 345,67 zł jest elementem dokumentu.",
+        "tekst 12 345,67 zł tekst",
+        "(12 345,67 zł) opis",
+        "slowo, 12 345,67 zł slowo",
+        "jeden dwa 12 345,67 zł trzy cztery"
+      ]
+    },
+    {
+      "id": "W0089",
+      "category": "kwoty",
+      "pattern": "1.234,56 PLN",
+      "contexts": [
+        "1.234,56 PLN jest elementem dokumentu.",
+        "tekst 1.234,56 PLN tekst",
+        "(1.234,56 PLN) opis",
+        "slowo, 1.234,56 PLN slowo",
+        "jeden dwa 1.234,56 PLN trzy cztery"
+      ]
+    },
+    {
+      "id": "W0090",
+      "category": "kwoty",
+      "pattern": "500000.00",
+      "contexts": [
+        "500000.00 jest elementem dokumentu.",
+        "tekst 500000.00 tekst",
+        "(500000.00) opis",
+        "slowo, 500000.00 slowo",
+        "jeden dwa 500000.00 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0091",
+      "category": "kwoty",
+      "pattern": "3 456 789,01 zł",
+      "contexts": [
+        "3 456 789,01 zł jest elementem dokumentu.",
+        "tekst 3 456 789,01 zł tekst",
+        "(3 456 789,01 zł) opis",
+        "slowo, 3 456 789,01 zł slowo",
+        "jeden dwa 3 456 789,01 zł trzy cztery"
+      ]
+    },
+    {
+      "id": "W0092",
+      "category": "kwoty",
+      "pattern": "7.654.321,00 PLN",
+      "contexts": [
+        "7.654.321,00 PLN jest elementem dokumentu.",
+        "tekst 7.654.321,00 PLN tekst",
+        "(7.654.321,00 PLN) opis",
+        "slowo, 7.654.321,00 PLN slowo",
+        "jeden dwa 7.654.321,00 PLN trzy cztery"
+      ]
+    },
+    {
+      "id": "W0093",
+      "category": "kwoty",
+      "pattern": "100,00 zł",
+      "contexts": [
+        "100,00 zł jest elementem dokumentu.",
+        "tekst 100,00 zł tekst",
+        "(100,00 zł) opis",
+        "slowo, 100,00 zł slowo",
+        "jeden dwa 100,00 zł trzy cztery"
+      ]
+    },
+    {
+      "id": "W0094",
+      "category": "kwoty",
+      "pattern": "2 000 000,50 zł",
+      "contexts": [
+        "2 000 000,50 zł jest elementem dokumentu.",
+        "tekst 2 000 000,50 zł tekst",
+        "(2 000 000,50 zł) opis",
+        "slowo, 2 000 000,50 zł slowo",
+        "jeden dwa 2 000 000,50 zł trzy cztery"
+      ]
+    },
+    {
+      "id": "W0095",
+      "category": "kwoty",
+      "pattern": "9.999,99 PLN",
+      "contexts": [
+        "9.999,99 PLN jest elementem dokumentu.",
+        "tekst 9.999,99 PLN tekst",
+        "(9.999,99 PLN) opis",
+        "slowo, 9.999,99 PLN slowo",
+        "jeden dwa 9.999,99 PLN trzy cztery"
+      ]
+    },
+    {
+      "id": "W0096",
+      "category": "daty_iso",
+      "pattern": "2026-01-02",
+      "contexts": [
+        "2026-01-02 jest elementem dokumentu.",
+        "tekst 2026-01-02 tekst",
+        "(2026-01-02) opis",
+        "slowo, 2026-01-02 slowo",
+        "jeden dwa 2026-01-02 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0097",
+      "category": "daty_iso",
+      "pattern": "2026.01.02",
+      "contexts": [
+        "2026.01.02 jest elementem dokumentu.",
+        "tekst 2026.01.02 tekst",
+        "(2026.01.02) opis",
+        "slowo, 2026.01.02 slowo",
+        "jeden dwa 2026.01.02 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0098",
+      "category": "daty_iso",
+      "pattern": "02.01.2026",
+      "contexts": [
+        "02.01.2026 jest elementem dokumentu.",
+        "tekst 02.01.2026 tekst",
+        "(02.01.2026) opis",
+        "slowo, 02.01.2026 slowo",
+        "jeden dwa 02.01.2026 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0099",
+      "category": "daty_iso",
+      "pattern": "02/01/2026",
+      "contexts": [
+        "02/01/2026 jest elementem dokumentu.",
+        "tekst 02/01/2026 tekst",
+        "(02/01/2026) opis",
+        "slowo, 02/01/2026 slowo",
+        "jeden dwa 02/01/2026 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0100",
+      "category": "daty_iso",
+      "pattern": "2026/01/02",
+      "contexts": [
+        "2026/01/02 jest elementem dokumentu.",
+        "tekst 2026/01/02 tekst",
+        "(2026/01/02) opis",
+        "slowo, 2026/01/02 slowo",
+        "jeden dwa 2026/01/02 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0101",
+      "category": "daty_iso",
+      "pattern": "2026-09-25",
+      "contexts": [
+        "2026-09-25 jest elementem dokumentu.",
+        "tekst 2026-09-25 tekst",
+        "(2026-09-25) opis",
+        "slowo, 2026-09-25 slowo",
+        "jeden dwa 2026-09-25 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0102",
+      "category": "daty_iso",
+      "pattern": "2026.09.25",
+      "contexts": [
+        "2026.09.25 jest elementem dokumentu.",
+        "tekst 2026.09.25 tekst",
+        "(2026.09.25) opis",
+        "slowo, 2026.09.25 slowo",
+        "jeden dwa 2026.09.25 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0103",
+      "category": "daty_iso",
+      "pattern": "25.09.2026",
+      "contexts": [
+        "25.09.2026 jest elementem dokumentu.",
+        "tekst 25.09.2026 tekst",
+        "(25.09.2026) opis",
+        "slowo, 25.09.2026 slowo",
+        "jeden dwa 25.09.2026 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0104",
+      "category": "daty_iso",
+      "pattern": "25/09/2026",
+      "contexts": [
+        "25/09/2026 jest elementem dokumentu.",
+        "tekst 25/09/2026 tekst",
+        "(25/09/2026) opis",
+        "slowo, 25/09/2026 slowo",
+        "jeden dwa 25/09/2026 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0105",
+      "category": "daty_iso",
+      "pattern": "2026/09/25",
+      "contexts": [
+        "2026/09/25 jest elementem dokumentu.",
+        "tekst 2026/09/25 tekst",
+        "(2026/09/25) opis",
+        "slowo, 2026/09/25 slowo",
+        "jeden dwa 2026/09/25 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0106",
+      "category": "daty_iso",
+      "pattern": "2026-12-31",
+      "contexts": [
+        "2026-12-31 jest elementem dokumentu.",
+        "tekst 2026-12-31 tekst",
+        "(2026-12-31) opis",
+        "slowo, 2026-12-31 slowo",
+        "jeden dwa 2026-12-31 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0107",
+      "category": "daty_iso",
+      "pattern": "2026.12.31",
+      "contexts": [
+        "2026.12.31 jest elementem dokumentu.",
+        "tekst 2026.12.31 tekst",
+        "(2026.12.31) opis",
+        "slowo, 2026.12.31 slowo",
+        "jeden dwa 2026.12.31 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0108",
+      "category": "daty_iso",
+      "pattern": "31.12.2026",
+      "contexts": [
+        "31.12.2026 jest elementem dokumentu.",
+        "tekst 31.12.2026 tekst",
+        "(31.12.2026) opis",
+        "slowo, 31.12.2026 slowo",
+        "jeden dwa 31.12.2026 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0109",
+      "category": "daty_iso",
+      "pattern": "31/12/2026",
+      "contexts": [
+        "31/12/2026 jest elementem dokumentu.",
+        "tekst 31/12/2026 tekst",
+        "(31/12/2026) opis",
+        "slowo, 31/12/2026 slowo",
+        "jeden dwa 31/12/2026 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0110",
+      "category": "daty_iso",
+      "pattern": "2026/12/31",
+      "contexts": [
+        "2026/12/31 jest elementem dokumentu.",
+        "tekst 2026/12/31 tekst",
+        "(2026/12/31) opis",
+        "slowo, 2026/12/31 slowo",
+        "jeden dwa 2026/12/31 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0111",
+      "category": "cpv",
+      "pattern": "45000000-7",
+      "contexts": [
+        "45000000-7 jest elementem dokumentu.",
+        "tekst 45000000-7 tekst",
+        "(45000000-7) opis",
+        "slowo, 45000000-7 slowo",
+        "jeden dwa 45000000-7 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0112",
+      "category": "cpv",
+      "pattern": "45233120-6",
+      "contexts": [
+        "45233120-6 jest elementem dokumentu.",
+        "tekst 45233120-6 tekst",
+        "(45233120-6) opis",
+        "slowo, 45233120-6 slowo",
+        "jeden dwa 45233120-6 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0113",
+      "category": "cpv",
+      "pattern": "33600000-6",
+      "contexts": [
+        "33600000-6 jest elementem dokumentu.",
+        "tekst 33600000-6 tekst",
+        "(33600000-6) opis",
+        "slowo, 33600000-6 slowo",
+        "jeden dwa 33600000-6 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0114",
+      "category": "cpv",
+      "pattern": "72000000-5",
+      "contexts": [
+        "72000000-5 jest elementem dokumentu.",
+        "tekst 72000000-5 tekst",
+        "(72000000-5) opis",
+        "slowo, 72000000-5 slowo",
+        "jeden dwa 72000000-5 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0115",
+      "category": "cpv",
+      "pattern": "90910000-9",
+      "contexts": [
+        "90910000-9 jest elementem dokumentu.",
+        "tekst 90910000-9 tekst",
+        "(90910000-9) opis",
+        "slowo, 90910000-9 slowo",
+        "jeden dwa 90910000-9 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0116",
+      "category": "cpv",
+      "pattern": "48000000-8",
+      "contexts": [
+        "48000000-8 jest elementem dokumentu.",
+        "tekst 48000000-8 tekst",
+        "(48000000-8) opis",
+        "slowo, 48000000-8 slowo",
+        "jeden dwa 48000000-8 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0117",
+      "category": "cpv",
+      "pattern": "50000000-5",
+      "contexts": [
+        "50000000-5 jest elementem dokumentu.",
+        "tekst 50000000-5 tekst",
+        "(50000000-5) opis",
+        "slowo, 50000000-5 slowo",
+        "jeden dwa 50000000-5 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0118",
+      "category": "cpv",
+      "pattern": "60000000-8",
+      "contexts": [
+        "60000000-8 jest elementem dokumentu.",
+        "tekst 60000000-8 tekst",
+        "(60000000-8) opis",
+        "slowo, 60000000-8 slowo",
+        "jeden dwa 60000000-8 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0119",
+      "category": "cpv",
+      "pattern": "70000000-1",
+      "contexts": [
+        "70000000-1 jest elementem dokumentu.",
+        "tekst 70000000-1 tekst",
+        "(70000000-1) opis",
+        "slowo, 70000000-1 slowo",
+        "jeden dwa 70000000-1 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0120",
+      "category": "cpv",
+      "pattern": "71000000-8",
+      "contexts": [
+        "71000000-8 jest elementem dokumentu.",
+        "tekst 71000000-8 tekst",
+        "(71000000-8) opis",
+        "slowo, 71000000-8 slowo",
+        "jeden dwa 71000000-8 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0121",
+      "category": "cpv",
+      "pattern": "73000000-2",
+      "contexts": [
+        "73000000-2 jest elementem dokumentu.",
+        "tekst 73000000-2 tekst",
+        "(73000000-2) opis",
+        "slowo, 73000000-2 slowo",
+        "jeden dwa 73000000-2 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0122",
+      "category": "cpv",
+      "pattern": "75000000-6",
+      "contexts": [
+        "75000000-6 jest elementem dokumentu.",
+        "tekst 75000000-6 tekst",
+        "(75000000-6) opis",
+        "slowo, 75000000-6 slowo",
+        "jeden dwa 75000000-6 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0123",
+      "category": "cpv",
+      "pattern": "79000000-4",
+      "contexts": [
+        "79000000-4 jest elementem dokumentu.",
+        "tekst 79000000-4 tekst",
+        "(79000000-4) opis",
+        "slowo, 79000000-4 slowo",
+        "jeden dwa 79000000-4 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0124",
+      "category": "cpv",
+      "pattern": "80000000-4",
+      "contexts": [
+        "80000000-4 jest elementem dokumentu.",
+        "tekst 80000000-4 tekst",
+        "(80000000-4) opis",
+        "slowo, 80000000-4 slowo",
+        "jeden dwa 80000000-4 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0125",
+      "category": "cpv",
+      "pattern": "85000000-9",
+      "contexts": [
+        "85000000-9 jest elementem dokumentu.",
+        "tekst 85000000-9 tekst",
+        "(85000000-9) opis",
+        "slowo, 85000000-9 slowo",
+        "jeden dwa 85000000-9 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0126",
+      "category": "json_tool_calls",
+      "pattern": "<tool_call>{\"name\": \"szukaj\", \"arguments\": {\"q\": \"przetarg\"}}</tool_call>",
+      "contexts": [
+        "<tool_call>{\"name\": \"szukaj\", \"arguments\": {\"q\": \"przetarg\"}}</tool_call> jest elementem dokumentu.",
+        "tekst <tool_call>{\"name\": \"szukaj\", \"arguments\": {\"q\": \"przetarg\"}}</tool_call> tekst",
+        "(<tool_call>{\"name\": \"szukaj\", \"arguments\": {\"q\": \"przetarg\"}}</tool_call>) opis",
+        "slowo, <tool_call>{\"name\": \"szukaj\", \"arguments\": {\"q\": \"przetarg\"}}</tool_call> slowo",
+        "jeden dwa <tool_call>{\"name\": \"szukaj\", \"arguments\": {\"q\": \"przetarg\"}}</tool_call> trzy cztery"
+      ]
+    },
+    {
+      "id": "W0127",
+      "category": "json_tool_calls",
+      "pattern": "<tool_call>{\"name\": \"pobierz\", \"arguments\": {\"id\": \"2026/BZP 00514538\"}}</tool_call>",
+      "contexts": [
+        "<tool_call>{\"name\": \"pobierz\", \"arguments\": {\"id\": \"2026/BZP 00514538\"}}</tool_call> jest elementem dokumentu.",
+        "tekst <tool_call>{\"name\": \"pobierz\", \"arguments\": {\"id\": \"2026/BZP 00514538\"}}</tool_call> tekst",
+        "(<tool_call>{\"name\": \"pobierz\", \"arguments\": {\"id\": \"2026/BZP 00514538\"}}</tool_call>) opis",
+        "slowo, <tool_call>{\"name\": \"pobierz\", \"arguments\": {\"id\": \"2026/BZP 00514538\"}}</tool_call> slowo",
+        "jeden dwa <tool_call>{\"name\": \"pobierz\", \"arguments\": {\"id\": \"2026/BZP 00514538\"}}</tool_call> trzy cztery"
+      ]
+    },
+    {
+      "id": "W0128",
+      "category": "json_tool_calls",
+      "pattern": "<tool_call>{\"name\": \"klasyfikuj_cpv\", \"arguments\": {\"tekst\": \"dostawa\"}}</tool_call>",
+      "contexts": [
+        "<tool_call>{\"name\": \"klasyfikuj_cpv\", \"arguments\": {\"tekst\": \"dostawa\"}}</tool_call> jest elementem dokumentu.",
+        "tekst <tool_call>{\"name\": \"klasyfikuj_cpv\", \"arguments\": {\"tekst\": \"dostawa\"}}</tool_call> tekst",
+        "(<tool_call>{\"name\": \"klasyfikuj_cpv\", \"arguments\": {\"tekst\": \"dostawa\"}}</tool_call>) opis",
+        "slowo, <tool_call>{\"name\": \"klasyfikuj_cpv\", \"arguments\": {\"tekst\": \"dostawa\"}}</tool_call> slowo",
+        "jeden dwa <tool_call>{\"name\": \"klasyfikuj_cpv\", \"arguments\": {\"tekst\": \"dostawa\"}}</tool_call> trzy cztery"
+      ]
+    },
+    {
+      "id": "W0129",
+      "category": "json_tool_calls",
+      "pattern": "{\"kwota\": \"1 234,56 zł\", \"termin\": \"2026-01-02\"}",
+      "contexts": [
+        "{\"kwota\": \"1 234,56 zł\", \"termin\": \"2026-01-02\"} jest elementem dokumentu.",
+        "tekst {\"kwota\": \"1 234,56 zł\", \"termin\": \"2026-01-02\"} tekst",
+        "({\"kwota\": \"1 234,56 zł\", \"termin\": \"2026-01-02\"}) opis",
+        "slowo, {\"kwota\": \"1 234,56 zł\", \"termin\": \"2026-01-02\"} slowo",
+        "jeden dwa {\"kwota\": \"1 234,56 zł\", \"termin\": \"2026-01-02\"} trzy cztery"
+      ]
+    },
+    {
+      "id": "W0130",
+      "category": "json_tool_calls",
+      "pattern": "{\"nip\": \"1234567890\", \"regon\": \"123456789\"}",
+      "contexts": [
+        "{\"nip\": \"1234567890\", \"regon\": \"123456789\"} jest elementem dokumentu.",
+        "tekst {\"nip\": \"1234567890\", \"regon\": \"123456789\"} tekst",
+        "({\"nip\": \"1234567890\", \"regon\": \"123456789\"}) opis",
+        "slowo, {\"nip\": \"1234567890\", \"regon\": \"123456789\"} slowo",
+        "jeden dwa {\"nip\": \"1234567890\", \"regon\": \"123456789\"} trzy cztery"
+      ]
+    },
+    {
+      "id": "W0131",
+      "category": "json_tool_calls",
+      "pattern": "<tool_call>{\"name\": \"analizuj\", \"arguments\": {\"data\": \"2026-09-25\"}}</tool_call>",
+      "contexts": [
+        "<tool_call>{\"name\": \"analizuj\", \"arguments\": {\"data\": \"2026-09-25\"}}</tool_call> jest elementem dokumentu.",
+        "tekst <tool_call>{\"name\": \"analizuj\", \"arguments\": {\"data\": \"2026-09-25\"}}</tool_call> tekst",
+        "(<tool_call>{\"name\": \"analizuj\", \"arguments\": {\"data\": \"2026-09-25\"}}</tool_call>) opis",
+        "slowo, <tool_call>{\"name\": \"analizuj\", \"arguments\": {\"data\": \"2026-09-25\"}}</tool_call> slowo",
+        "jeden dwa <tool_call>{\"name\": \"analizuj\", \"arguments\": {\"data\": \"2026-09-25\"}}</tool_call> trzy cztery"
+      ]
+    },
+    {
+      "id": "W0132",
+      "category": "json_tool_calls",
+      "pattern": "{\"cpv\": \"45000000-7\", \"wartosc\": \"100000.00\"}",
+      "contexts": [
+        "{\"cpv\": \"45000000-7\", \"wartosc\": \"100000.00\"} jest elementem dokumentu.",
+        "tekst {\"cpv\": \"45000000-7\", \"wartosc\": \"100000.00\"} tekst",
+        "({\"cpv\": \"45000000-7\", \"wartosc\": \"100000.00\"}) opis",
+        "slowo, {\"cpv\": \"45000000-7\", \"wartosc\": \"100000.00\"} slowo",
+        "jeden dwa {\"cpv\": \"45000000-7\", \"wartosc\": \"100000.00\"} trzy cztery"
+      ]
+    },
+    {
+      "id": "W0133",
+      "category": "json_tool_calls",
+      "pattern": "<tool_call>{\"name\": \"sprawdz\", \"arguments\": {\"sygnatura\": \"KIO 1234/26\"}}</tool_call>",
+      "contexts": [
+        "<tool_call>{\"name\": \"sprawdz\", \"arguments\": {\"sygnatura\": \"KIO 1234/26\"}}</tool_call> jest elementem dokumentu.",
+        "tekst <tool_call>{\"name\": \"sprawdz\", \"arguments\": {\"sygnatura\": \"KIO 1234/26\"}}</tool_call> tekst",
+        "(<tool_call>{\"name\": \"sprawdz\", \"arguments\": {\"sygnatura\": \"KIO 1234/26\"}}</tool_call>) opis",
+        "slowo, <tool_call>{\"name\": \"sprawdz\", \"arguments\": {\"sygnatura\": \"KIO 1234/26\"}}</tool_call> slowo",
+        "jeden dwa <tool_call>{\"name\": \"sprawdz\", \"arguments\": {\"sygnatura\": \"KIO 1234/26\"}}</tool_call> trzy cztery"
+      ]
+    },
+    {
+      "id": "W0134",
+      "category": "json_tool_calls",
+      "pattern": "{\"adres\": \"ul. Test 1, 00-001 Warszawa\"}",
+      "contexts": [
+        "{\"adres\": \"ul. Test 1, 00-001 Warszawa\"} jest elementem dokumentu.",
+        "tekst {\"adres\": \"ul. Test 1, 00-001 Warszawa\"} tekst",
+        "({\"adres\": \"ul. Test 1, 00-001 Warszawa\"}) opis",
+        "slowo, {\"adres\": \"ul. Test 1, 00-001 Warszawa\"} slowo",
+        "jeden dwa {\"adres\": \"ul. Test 1, 00-001 Warszawa\"} trzy cztery"
+      ]
+    },
+    {
+      "id": "W0135",
+      "category": "json_tool_calls",
+      "pattern": "{\"email\": \"a@b.pl\", \"www\": \"https://example.com\"}",
+      "contexts": [
+        "{\"email\": \"a@b.pl\", \"www\": \"https://example.com\"} jest elementem dokumentu.",
+        "tekst {\"email\": \"a@b.pl\", \"www\": \"https://example.com\"} tekst",
+        "({\"email\": \"a@b.pl\", \"www\": \"https://example.com\"}) opis",
+        "slowo, {\"email\": \"a@b.pl\", \"www\": \"https://example.com\"} slowo",
+        "jeden dwa {\"email\": \"a@b.pl\", \"www\": \"https://example.com\"} trzy cztery"
+      ]
+    },
+    {
+      "id": "W0136",
+      "category": "adresy",
+      "pattern": "https://www.gov.pl",
+      "contexts": [
+        "https://www.gov.pl jest elementem dokumentu.",
+        "tekst https://www.gov.pl tekst",
+        "(https://www.gov.pl) opis",
+        "slowo, https://www.gov.pl slowo",
+        "jeden dwa https://www.gov.pl trzy cztery"
+      ]
+    },
+    {
+      "id": "W0137",
+      "category": "adresy",
+      "pattern": "http://example.com/path",
+      "contexts": [
+        "http://example.com/path jest elementem dokumentu.",
+        "tekst http://example.com/path tekst",
+        "(http://example.com/path) opis",
+        "slowo, http://example.com/path slowo",
+        "jeden dwa http://example.com/path trzy cztery"
+      ]
+    },
+    {
+      "id": "W0138",
+      "category": "adresy",
+      "pattern": "user@example.com",
+      "contexts": [
+        "user@example.com jest elementem dokumentu.",
+        "tekst user@example.com tekst",
+        "(user@example.com) opis",
+        "slowo, user@example.com slowo",
+        "jeden dwa user@example.com trzy cztery"
+      ]
+    },
+    {
+      "id": "W0139",
+      "category": "adresy",
+      "pattern": "biuro@urzad.gov.pl",
+      "contexts": [
+        "biuro@urzad.gov.pl jest elementem dokumentu.",
+        "tekst biuro@urzad.gov.pl tekst",
+        "(biuro@urzad.gov.pl) opis",
+        "slowo, biuro@urzad.gov.pl slowo",
+        "jeden dwa biuro@urzad.gov.pl trzy cztery"
+      ]
+    },
+    {
+      "id": "W0140",
+      "category": "adresy",
+      "pattern": "https://ezamowienia.gov.pl",
+      "contexts": [
+        "https://ezamowienia.gov.pl jest elementem dokumentu.",
+        "tekst https://ezamowienia.gov.pl tekst",
+        "(https://ezamowienia.gov.pl) opis",
+        "slowo, https://ezamowienia.gov.pl slowo",
+        "jeden dwa https://ezamowienia.gov.pl trzy cztery"
+      ]
+    },
+    {
+      "id": "W0141",
+      "category": "adresy",
+      "pattern": "kontakt@firma.pl",
+      "contexts": [
+        "kontakt@firma.pl jest elementem dokumentu.",
+        "tekst kontakt@firma.pl tekst",
+        "(kontakt@firma.pl) opis",
+        "slowo, kontakt@firma.pl slowo",
+        "jeden dwa kontakt@firma.pl trzy cztery"
+      ]
+    },
+    {
+      "id": "W0142",
+      "category": "adresy",
+      "pattern": "www.test.pl",
+      "contexts": [
+        "www.test.pl jest elementem dokumentu.",
+        "tekst www.test.pl tekst",
+        "(www.test.pl) opis",
+        "slowo, www.test.pl slowo",
+        "jeden dwa www.test.pl trzy cztery"
+      ]
+    },
+    {
+      "id": "W0143",
+      "category": "adresy",
+      "pattern": "https://api.sejm.gov.pl/eli",
+      "contexts": [
+        "https://api.sejm.gov.pl/eli jest elementem dokumentu.",
+        "tekst https://api.sejm.gov.pl/eli tekst",
+        "(https://api.sejm.gov.pl/eli) opis",
+        "slowo, https://api.sejm.gov.pl/eli slowo",
+        "jeden dwa https://api.sejm.gov.pl/eli trzy cztery"
+      ]
+    },
+    {
+      "id": "W0144",
+      "category": "adresy",
+      "pattern": "info@grant.org.pl",
+      "contexts": [
+        "info@grant.org.pl jest elementem dokumentu.",
+        "tekst info@grant.org.pl tekst",
+        "(info@grant.org.pl) opis",
+        "slowo, info@grant.org.pl slowo",
+        "jeden dwa info@grant.org.pl trzy cztery"
+      ]
+    },
+    {
+      "id": "W0145",
+      "category": "adresy",
+      "pattern": "https://bip.gov.pl",
+      "contexts": [
+        "https://bip.gov.pl jest elementem dokumentu.",
+        "tekst https://bip.gov.pl tekst",
+        "(https://bip.gov.pl) opis",
+        "slowo, https://bip.gov.pl slowo",
+        "jeden dwa https://bip.gov.pl trzy cztery"
+      ]
+    },
+    {
+      "id": "W0146",
+      "category": "nazwy_firm",
+      "pattern": "Sp. z o.o.",
+      "contexts": [
+        "Sp. z o.o. jest elementem dokumentu.",
+        "tekst Sp. z o.o. tekst",
+        "(Sp. z o.o.) opis",
+        "slowo, Sp. z o.o. slowo",
+        "jeden dwa Sp. z o.o. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0147",
+      "category": "nazwy_firm",
+      "pattern": "S.A.",
+      "contexts": [
+        "S.A. jest elementem dokumentu.",
+        "tekst S.A. tekst",
+        "(S.A.) opis",
+        "slowo, S.A. slowo",
+        "jeden dwa S.A. trzy cztery"
+      ]
+    },
+    {
+      "id": "W0148",
+      "category": "nazwy_firm",
+      "pattern": "Fundacja Pomoc",
+      "contexts": [
+        "Fundacja Pomoc jest elementem dokumentu.",
+        "tekst Fundacja Pomoc tekst",
+        "(Fundacja Pomoc) opis",
+        "slowo, Fundacja Pomoc slowo",
+        "jeden dwa Fundacja Pomoc trzy cztery"
+      ]
+    },
+    {
+      "id": "W0149",
+      "category": "nazwy_firm",
+      "pattern": "Stowarzyszenie Razem",
+      "contexts": [
+        "Stowarzyszenie Razem jest elementem dokumentu.",
+        "tekst Stowarzyszenie Razem tekst",
+        "(Stowarzyszenie Razem) opis",
+        "slowo, Stowarzyszenie Razem slowo",
+        "jeden dwa Stowarzyszenie Razem trzy cztery"
+      ]
+    },
+    {
+      "id": "W0150",
+      "category": "nazwy_firm",
+      "pattern": "Zespół Szkół nr 1",
+      "contexts": [
+        "Zespół Szkół nr 1 jest elementem dokumentu.",
+        "tekst Zespół Szkół nr 1 tekst",
+        "(Zespół Szkół nr 1) opis",
+        "slowo, Zespół Szkół nr 1 slowo",
+        "jeden dwa Zespół Szkół nr 1 trzy cztery"
+      ]
+    },
+    {
+      "id": "W0151",
+      "category": "nazwy_firm",
+      "pattern": "Urząd Miasta",
+      "contexts": [
+        "Urząd Miasta jest elementem dokumentu.",
+        "tekst Urząd Miasta tekst",
+        "(Urząd Miasta) opis",
+        "slowo, Urząd Miasta slowo",
+        "jeden dwa Urząd Miasta trzy cztery"
+      ]
+    },
+    {
+      "id": "W0152",
+      "category": "nazwy_firm",
+      "pattern": "Gmina Warta",
+      "contexts": [
+        "Gmina Warta jest elementem dokumentu.",
+        "tekst Gmina Warta tekst",
+        "(Gmina Warta) opis",
+        "slowo, Gmina Warta slowo",
+        "jeden dwa Gmina Warta trzy cztery"
+      ]
+    },
+    {
+      "id": "W0153",
+      "category": "nazwy_firm",
+      "pattern": "Powiat Kielecki",
+      "contexts": [
+        "Powiat Kielecki jest elementem dokumentu.",
+        "tekst Powiat Kielecki tekst",
+        "(Powiat Kielecki) opis",
+        "slowo, Powiat Kielecki slowo",
+        "jeden dwa Powiat Kielecki trzy cztery"
+      ]
+    },
+    {
+      "id": "W0154",
+      "category": "nazwy_firm",
+      "pattern": "Województwo Śląskie",
+      "contexts": [
+        "Województwo Śląskie jest elementem dokumentu.",
+        "tekst Województwo Śląskie tekst",
+        "(Województwo Śląskie) opis",
+        "slowo, Województwo Śląskie slowo",
+        "jeden dwa Województwo Śląskie trzy cztery"
+      ]
+    },
+    {
+      "id": "W0155",
+      "category": "nazwy_firm",
+      "pattern": "NGO Grantos",
+      "contexts": [
+        "NGO Grantos jest elementem dokumentu.",
+        "tekst NGO Grantos tekst",
+        "(NGO Grantos) opis",
+        "slowo, NGO Grantos slowo",
+        "jeden dwa NGO Grantos trzy cztery"
+      ]
+    }
+  ]
+}

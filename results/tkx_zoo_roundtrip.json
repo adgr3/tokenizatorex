@@ -1,0 +1,163 @@
+{
+  "cases": 700,
+  "unique_texts": 700,
+  "tokenizers": {
+    "PLLuM-4B": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "PLLuM-8B": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "PLLuM-12B": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "Bielik-11B-v3.1": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "Bielik-4.5B-v3": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "Aster-0.5B": {
+      "cases": 700,
+      "bad": 4,
+      "bad_nfd": 4,
+      "ok": false,
+      "examples_bad": [
+        {
+          "source": "1_bzp",
+          "chars": 7859
+        },
+        {
+          "source": "3_kio",
+          "chars": 20000
+        },
+        {
+          "source": "1_bzp",
+          "chars": 23308
+        },
+        {
+          "source": "1_bzp",
+          "chars": 24486
+        }
+      ]
+    },
+    "EuroLLM-1.7B": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "Mistral-Nemo": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "Gemma-3-4B": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "DanielK-t1-pl-polish-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "DanielK-t2-pl-cnc-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "V0-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "V0J2-32k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "Slayer-v6": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "Bielik-1.5B-v3": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    },
+    "APT3-1B": {
+      "cases": 700,
+      "bad": 654,
+      "bad_nfd": 4,
+      "ok": false,
+      "examples_bad": [
+        {
+          "source": "1_bzp",
+          "chars": 19119
+        },
+        {
+          "source": "1_bzp",
+          "chars": 24657
+        },
+        {
+          "source": "1_bzp",
+          "chars": 28201
+        },
+        {
+          "source": "1_bzp",
+          "chars": 15793
+        },
+        {
+          "source": "1_bzp",
+          "chars": 19179
+        }
+      ]
+    },
+    "GPT-4o-o200k": {
+      "cases": 700,
+      "bad": 0,
+      "bad_nfd": 0,
+      "ok": true,
+      "examples_bad": []
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "rule": "min fertility JSON na dev; kazde polskie zrodlo <= 1.01 x V0R; § = 1 token",
+  "base": "V0R-32k",
+  "threshold": 1.01,
+  "candidates": {
+    "V0J2-32k": {
+      "present": true,
+      "json_dev_combined": {
+        "docs": 200,
+        "words": 10882,
+        "tokens": 33529,
+        "fertility": 3.0811431722109908
+      },
+      "polish_deltas": {
+        "bzp_ogloszenia": {
+          "v0r": 1.4303736805066853,
+          "variant": 1.4335475017593244,
+          "delta_pct": 0.22188755958616468,
+          "pass": true
+        },
+        "du_eli": {
+          "v0r": 1.4634733849312904,
+          "variant": 1.467659137577002,
+          "delta_pct": 0.286014948328428,
+          "pass": true
+        },
+        "kio": {
+          "v0r": 1.3983300958370448,
+          "variant": 1.397203232488007,
+          "delta_pct": -0.08058636171763833,
+          "pass": true
+        },
+        "samorzad": {
+          "v0r": 1.5501790825793644,
+          "variant": 1.5559758921764646,
+          "delta_pct": 0.3739445114596007,
+          "pass": true
+        },
+        "granty": {
+          "v0r": 1.7455367404796567,
+          "variant": 1.811010650524864,
+          "delta_pct": 3.75093279487293,
+          "pass": false
+        },
+        "json_bzp_tabele": {
+          "v0r": 2.7356740642596886,
+          "variant": 2.6996356409407087,
+          "delta_pct": -1.3173507688582164,
+          "pass": true
+        },
+        "general_web": {
+          "v0r": 1.4116770426760428,
+          "variant": 1.4185735944001807,
+          "delta_pct": 0.4885360826626828,
+          "pass": true
+        }
+      },
+      "section_one_token": true,
+      "feasible": false,
+      "fails": [
+        "granty"
+      ]
+    },
+    "V0J5-32k": {
+      "present": true,
+      "json_dev_combined": {
+        "docs": 200,
+        "words": 10882,
+        "tokens": 32665,
+        "fertility": 3.0017460025730562
+      },
+      "polish_deltas": {
+        "bzp_ogloszenia": {
+          "v0r": 1.4303736805066853,
+          "variant": 1.4426790992258973,
+          "delta_pct": 0.8602939837968115,
+          "pass": true
+        },
+        "du_eli": {
+          "v0r": 1.4634733849312904,
+          "variant": 1.4723187490127942,
+          "delta_pct": 0.6044089474110281,
+          "pass": true
+        },
+        "kio": {
+          "v0r": 1.3983300958370448,
+          "variant": 1.4070230416724798,
+          "delta_pct": 0.6216662189646449,
+          "pass": true
+        },
+        "samorzad": {
+          "v0r": 1.5501790825793644,
+          "variant": 1.556867709037557,
+          "delta_pct": 0.4314744362995171,
+          "pass": true
+        },
+        "granty": {
+          "v0r": 1.7455367404796567,
+          "variant": 1.8124281664240287,
+          "delta_pct": 3.8321408191036355,
+          "pass": false
+        },
+        "json_bzp_tabele": {
+          "v0r": 2.7356740642596886,
+          "variant": 2.699304405432262,
+          "delta_pct": -1.3294587722484597,
+          "pass": true
+        },
+        "general_web": {
+          "v0r": 1.4116770426760428,
+          "variant": 1.4259991613173768,
+          "delta_pct": 1.014546401787797,
+          "pass": false
+        }
+      },
+      "section_one_token": true,
+      "feasible": false,
+      "fails": [
+        "granty",
+        "general_web"
+      ]
+    },
+    "V0J10-32k": {
+      "present": true,
+      "json_dev_combined": {
+        "docs": 200,
+        "words": 10882,
+        "tokens": 32000,
+        "fertility": 2.9406359125160817
+      },
+      "polish_deltas": {
+        "bzp_ogloszenia": {
+          "v0r": 1.4303736805066853,
+          "variant": 1.459875439831105,
+          "delta_pct": 2.0625211248272546,
+          "pass": false
+        },
+        "du_eli": {
+          "v0r": 1.4634733849312904,
+          "variant": 1.4751619017532775,
+          "delta_pct": 0.7986832519359943,
+          "pass": true
+        },
+        "kio": {
+          "v0r": 1.3983300958370448,
+          "variant": 1.4105431481342363,
+          "delta_pct": 0.8734026631873837,
+          "pass": true
+        },
+        "samorzad": {
+          "v0r": 1.5501790825793644,
+          "variant": 1.5687346269472533,
+          "delta_pct": 1.1969935974761148,
+          "pass": false
+        },
+        "granty": {
+          "v0r": 1.7455367404796567,
+          "variant": 1.819439123438817,
+          "delta_pct": 4.233791317325841,
+          "pass": false
+        },
+        "json_bzp_tabele": {
+          "v0r": 2.7356740642596886,
+          "variant": 2.717191122888374,
+          "delta_pct": -0.6756265891754376,
+          "pass": true
+        },
+        "general_web": {
+          "v0r": 1.4116770426760428,
+          "variant": 1.4322892809909358,
+          "delta_pct": 1.4601242133837733,
+          "pass": false
+        }
+      },
+      "section_one_token": true,
+      "feasible": false,
+      "fails": [
+        "bzp_ogloszenia",
+        "samorzad",
+        "granty",
+        "general_web"
+      ]
+    }
+  },
+  "winner": null,
+  "note": "brak kandydata spelniajacego warunek polski"
+}

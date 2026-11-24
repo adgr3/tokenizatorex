@@ -1,0 +1,131 @@
+{
+  "corpus": [
+    "1_bzp",
+    "2_du_eli",
+    "3_kio",
+    "4_samorzad",
+    "5_granty",
+    "6_json_narzedzia",
+    "7_ogolny",
+    "json_bzp_tabele"
+  ],
+  "tokenizers": {
+    "PLLuM-4B": {
+      "vocab": 262147,
+      "dead": 244795,
+      "considered": 262147,
+      "dead_pct": 93.38081305527052,
+      "special_excluded": 0
+    },
+    "PLLuM-8B": {
+      "vocab": 128259,
+      "dead": 113905,
+      "considered": 128259,
+      "dead_pct": 88.80858263357737,
+      "special_excluded": 0
+    },
+    "PLLuM-12B": {
+      "vocab": 131072,
+      "dead": 116851,
+      "considered": 131072,
+      "dead_pct": 89.15023803710938,
+      "special_excluded": 0
+    },
+    "Bielik-11B-v3.1": {
+      "vocab": 32128,
+      "dead": 23883,
+      "considered": 32128,
+      "dead_pct": 74.33702689243027,
+      "special_excluded": 0
+    },
+    "Bielik-4.5B-v3": {
+      "vocab": 32000,
+      "dead": 4801,
+      "considered": 32000,
+      "dead_pct": 15.003125,
+      "special_excluded": 0
+    },
+    "Aster-0.5B": {
+      "vocab": 32000,
+      "dead": 4676,
+      "considered": 32000,
+      "dead_pct": 14.6125,
+      "special_excluded": 0
+    },
+    "EuroLLM-1.7B": {
+      "vocab": 128000,
+      "dead": 109442,
+      "considered": 128000,
+      "dead_pct": 85.5015625,
+      "special_excluded": 0
+    },
+    "Mistral-Nemo": {
+      "vocab": 131072,
+      "dead": 116851,
+      "considered": 131072,
+      "dead_pct": 89.15023803710938,
+      "special_excluded": 0
+    },
+    "Gemma-3-4B": {
+      "vocab": 262145,
+      "dead": 244793,
+      "considered": 262145,
+      "dead_pct": 93.38076255507448,
+      "special_excluded": 0
+    },
+    "DanielK-t1-pl-polish-32k": {
+      "vocab": 32768,
+      "dead": 8174,
+      "considered": 32768,
+      "dead_pct": 24.945068359375,
+      "special_excluded": 0
+    },
+    "DanielK-t2-pl-cnc-32k": {
+      "vocab": 32768,
+      "dead": 8146,
+      "considered": 32768,
+      "dead_pct": 24.859619140625,
+      "special_excluded": 0
+    },
+    "V0-32k": {
+      "vocab": 32000,
+      "dead": 2599,
+      "considered": 32000,
+      "dead_pct": 8.121875,
+      "special_excluded": 0
+    },
+    "V0J2-32k": {
+      "vocab": 32000,
+      "dead": 3069,
+      "considered": 32000,
+      "dead_pct": 9.590625,
+      "special_excluded": 0
+    },
+    "Slayer-v6": {
+      "vocab": 32768,
+      "dead": 11477,
+      "considered": 32768,
+      "dead_pct": 35.0250244140625,
+      "special_excluded": 0
+    },
+    "Bielik-1.5B-v3": {
+      "vocab": 32000,
+      "dead": 4801,
+      "considered": 32000,
+      "dead_pct": 15.003125,
+      "special_excluded": 0
+    },
+    "APT3-1B": {
+      "vocab": 31980,
+      "dead": 4442,
+      "considered": 31980,
+      "dead_pct": 13.889931207004377,
+      "special_excluded": 0
+    },
+    "GPT-4o-o200k": {
+      "vocab": null,
+      "dead": null,
+      "note": "brak get_vocab (tiktoken)"
+    }
+  }
+}

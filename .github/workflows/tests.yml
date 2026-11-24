@@ -23,6 +23,12 @@ jobs:
         run: pip install regex pytest tokenizers==0.23.3 numpy
       - name: Testy
         run: python -m pytest -q
+      - name: Bramka liczb v2
+        run: python scripts/sprawdz_liczby_v2.py
+      - name: Generator raportów = pliki w repo
+        run: |
+          python scripts/generuj_raporty_v2.py
+          git diff --exit-code
       - name: Wytrenowane tokenizery ładują się i są bezstratne
         run: |
           python - <<'EOF'
