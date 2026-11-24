@@ -40,6 +40,6 @@ Patrz `DECYZJE_NOC.md` (animacja A bez Slayera, pominięcie DanielK/Llama, tc1 j
 - Sprawdzić draft PR #6 i zatwierdzić merge („GO MERGE #6”).
 
 ## SHA
-7e3c791edc8681230a3dafb6c2e3a0a86a17557f
+481cb02 (animacja A z wierszem Slayer)
 
 STATUS=GOTOWE
