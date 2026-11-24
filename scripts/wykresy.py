@@ -419,12 +419,33 @@ def anim_tokenizacja_porownanie(szybko=False):
     v0 = Tokenizer.from_file(str(REPO / "hf" / "variants" / "V0-32k" / "tokenizer.json"))
     enc = v0.encode(sentence, add_special_tokens=False)
     rows.append(("TOKENIZATOREX V0", [_clean_tok(v0.decode([i])) for i in enc.ids], OI_ORANGE))
+    # Slayer (z lokalnego cache, jeśli dostępny)
+    slayer_path = None
+    for cand in [REPO / "tkx_zoo" / "hf" / "Slayer-v6" / "tokenizer.json",
+                 Path("D:/VPS/fabryka/tkx-json/tkx_zoo/hf/Slayer-v6/tokenizer.json")]:
+        if cand.is_file():
+            slayer_path = cand
+            break
+    if slayer_path is None:
+        for base in [Path("C:/Users/x/.cache/huggingface/hub"),
+                     Path("D:/VPS/cache/huggingface/hub")]:
+            if base.is_dir():
+                for p in base.glob("models--SlayerLab--Slayer1B*/snapshots/*/tokenizer.json"):
+                    slayer_path = p
+                    break
+            if slayer_path is not None:
+                break
+    if slayer_path is not None:
+        sl = Tokenizer.from_file(str(slayer_path))
+        sl_enc = sl.encode(sentence, add_special_tokens=False)
+        rows.append(("Slayer v6", [_clean_tok(sl.decode([i])) for i in sl_enc.ids], OI_GREEN))
+        slayer_note = None
+    else:
+        slayer_note = "Slayer: tokenizer niedostępny lokalnie (pominięty)"
     # GPT-4o
     gpt = tiktoken.get_encoding("o200k_base")
     gids = gpt.encode(sentence)
     rows.append(("GPT-4o", [gpt.decode([i]) for i in gids], OI_BLUE))
-    # Slayer: brak lokalnie -> pomijamy z komunikatem
-    slayer_note = "Slayer: tokenizer niedostępny lokalnie (pominięty)"
 
     nframes_tokens = max(len(r[1]) for r in rows)
     hold = 18 if not szybko else 10
@@ -461,8 +482,9 @@ def anim_tokenizacja_porownanie(szybko=False):
             summary = "  |  ".join(f"{n}: {len(t)} tokenów" for n, t, _ in rows)
             ax.text(0.5, ys, summary, transform=ax.transAxes, ha="center", fontsize=10,
                     bbox=dict(boxstyle="round", fc="#F0F0F0", ec="#BBBBBB"))
-            ax.text(0.5, ys - 0.07, slayer_note, transform=ax.transAxes, ha="center",
-                    fontsize=8, color="#777777")
+            if slayer_note:
+                ax.text(0.5, ys - 0.07, slayer_note, transform=ax.transAxes, ha="center",
+                        fontsize=8, color="#777777")
         fig.suptitle("Tokenizacja jednego zdania urzędowego", fontsize=13, fontweight="bold")
 
     ani = animation.FuncAnimation(fig, draw, frames=total, interval=1000 / fps)

@@ -31,7 +31,7 @@ Patrz `DECYZJE_NOC.md` (animacja A bez Slayera, pominięcie DanielK/Llama, tc1 j
 
 ## BLOKER / WAŻNE / DROBNE
 - BLOKER: brak.
-- WAŻNE: animacja A nie zawiera wiersza Slayer (brak tokenizera lokalnie); do ewentualnego uzupełnienia rano.
+- WAŻNE: animacja A zawiera wiersze V0, Slayer v6 i GPT-4o (Slayer z lokalnego cache HF).
 - DROBNE: `znane_wady.svg` wygenerowany mimo wymogu tylko PNG (nieszkodliwe).
 
 ## Co właściciel ma zrobić rano
