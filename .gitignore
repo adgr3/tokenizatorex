@@ -19,3 +19,6 @@ tkx_v2/raw/
 # lokalne ogłoszenie poza repo; bramka liczb sprawdza je tylko, gdy istnieje
 *.local.md
 tkx_zoo/hf/
+
+media.local/
+
