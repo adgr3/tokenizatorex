@@ -357,9 +357,9 @@ def superbpe_lines():
 
 def build_release():
     rn = []
-    rn.append("# RELEASE NOTES — TOKENIZATOREX v2.0 (draft)")
+    rn.append("# RELEASE NOTES - TOKENIZATOREX v2.0")
     rn.append("")
-    rn.append("Status: DRAFT (wydanie po scaleniu PR i zgodzie właściciela).")
+    rn.append("Status: WYDANE.")
     rn.append("")
     rn.append("## Co to jest v2.0")
     rn.append("")
