@@ -215,6 +215,34 @@ python export_hf.py tokenizers/tokenizatorex-32k.json --out-dir hf --check ../da
 python demo.py "Twoje zdanie."
 ```
 
+## Plan: v2.1 i TKX-D
+
+**Pierwszy test v2.1 (25.11.2026).** Wariant, w którym superwordy mogą łączyć tylko pełne słowa
+(bez cięć typu „zgodność z” → `z | god | ność z`), z normalizacją NFC na wejściu:
+
+- cięcia w środku słowa prawie znikają: 7,27% → 0,35% słownika, a w użyciu 0,28% → 0,0008% tokenów;
+  red team i 20 000 losowych napisów: 0 złamań granicy słowa (V0: 15 i 26);
+- NFC działa: „źródło” zapisane w NFD to 1 token zamiast 7, bez zmiany słownika;
+- **cena: +15,5% tokenów względem V0** (próg był +5%) i o 0,6% więcej niż APT3; nadal 6,1% mniej niż
+  ten sam słownik bez SuperBPE (base-32k).
+
+**Decyzja: zostajemy przy V0 (v2.0).** Większość przewagi SuperBPE pochodzi właśnie z tokenów łączących
+koniec jednego słowa z następnym. Czy takie cięcia szkodzą modelowi, czy pomagają mu dzięki mocniejszej
+kompresji, rozstrzygnie TKX-D. Kod wariantów v2.1 zostanie opublikowany razem z wynikiem TKX-D.
+
+**TKX-D: wybór tokenizera na małych modelach, nie na liczbie tokenów:**
+
+- modele 30M (ewentualnie 60M) zgodne z architekturą Llama, ≥ 3 seedy na wariant;
+- ten sam budżet danych liczony w **bajtach tekstu** (nie w tokenach), metryka BPB (bity na bajt) na czystych
+  tekstach urzędowych, wykluczonych z treningu;
+- kandydaci: V0, WN (v2.1 bez cięć w środku słowa, z NFC), base-32k (bez SuperBPE), V0J2 (2% JSON);
+  punkty odniesienia: APT3 i Slayer;
+- potem rozmiar słownika (16k/24k/32k) dla zwycięzcy.
+
+**Następna runda v2.1:** zarezerwowane tokeny specjalne (32–64, m.in. pod funkcje decyzyjne modelu),
+skróty prawne (`Dz.U.`, `t.j.`, `ze zm.`, `ust.`, `art.`) jako stabilne kawałki, wariant z JSON.
+Naprawa `§` (V3) wypadła z planu: V0 ma „§” jako 1 token.
+
 ## Pliki
 
 | plik | co |
