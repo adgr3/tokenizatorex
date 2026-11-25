@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Instalacja zależności
-        run: pip install regex pytest tokenizers==0.23.3 numpy
+        run: pip install regex pytest tokenizers==0.23.3 numpy matplotlib==3.11.2
       - name: Testy
         run: python -m pytest -q
       - name: Bramka liczb v2

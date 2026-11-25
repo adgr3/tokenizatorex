@@ -4,6 +4,7 @@
 Uruchomienie:
     python scripts/wykresy.py            # wszystko, pelne rozmiary
     python scripts/wykresy.py --szybko   # mniejsze rozmiary (testy)
+    python scripts/wykresy.py --szybko --wyjscie /tmp/wykresy   # zapis poza repo
 
 Wszystkie liczby pochodza z results/*.json albo z tokenizacji skryptem.
 """
@@ -410,7 +411,12 @@ def generate_all(szybko=False):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--szybko", action="store_true")
+    ap.add_argument("--wyjscie", type=Path, default=None,
+                    help="folder na wykresy (domyslnie docs/wykresy; testy uzywaja folderu tymczasowego)")
     args = ap.parse_args()
+    if args.wyjscie is not None:
+        global OUT
+        OUT = args.wyjscie
     generate_all(szybko=args.szybko)
     print("STATUS=OK")
 

@@ -28,17 +28,17 @@ def _load_module():
     return mod
 
 
-def test_wykresy_fast_generates_all():
+def test_wykresy_fast_generates_all(tmp_path):
+    # Zapis do folderu tymczasowego: test nie nadpisuje wykresow w docs/wykresy.
     p = subprocess.run(
-        [PYTHON, str(SCRIPT), "--szybko"],
+        [PYTHON, str(SCRIPT), "--szybko", "--wyjscie", str(tmp_path)],
         cwd=REPO, capture_output=True, text=True, encoding="utf-8",
         env={**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"},
     )
     assert p.returncode == 0, p.stdout + p.stderr
-    out = REPO / "docs" / "wykresy"
     for name in EXPECTED_STATIC:
-        assert (out / name).is_file(), name
-    assert not (out / "anim").exists(), "animacje GIF usuniete decyzja wlasciciela"
+        assert (tmp_path / name).is_file(), name
+    assert not (REPO / "docs" / "wykresy" / "anim").exists(), "animacje GIF usuniete decyzja wlasciciela"
 
 
 def test_wykresy_numbers_match_json():
