@@ -1,6 +1,6 @@
-# RELEASE NOTES — TOKENIZATOREX v2.0 (draft)
+# RELEASE NOTES - TOKENIZATOREX v2.0
 
-Status: DRAFT (wydanie po scaleniu PR i zgodzie właściciela).
+Status: WYDANE.
 
 ## Co to jest v2.0
 
