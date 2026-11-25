@@ -18,11 +18,6 @@ EXPECTED_STATIC = [
     "json_heldout.png", "json_heldout.svg",
     "znane_wady.png",
 ]
-EXPECTED_GIF = [
-    "anim/tokenizacja_porownanie.gif",
-    "anim/fertility_wyscig.gif",
-    "anim/superbpe_sklejanie.gif",
-]
 
 
 def _load_module():
@@ -43,10 +38,7 @@ def test_wykresy_fast_generates_all():
     out = REPO / "docs" / "wykresy"
     for name in EXPECTED_STATIC:
         assert (out / name).is_file(), name
-    for name in EXPECTED_GIF:
-        assert (out / name).is_file(), name
-    for name in EXPECTED_GIF:
-        assert (out / name).stat().st_size <= 5 * 1024 * 1024, name
+    assert not (out / "anim").exists(), "animacje GIF usuniete decyzja wlasciciela"
 
 
 def test_wykresy_numbers_match_json():

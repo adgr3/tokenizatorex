@@ -1,4 +1,4 @@
-# Wykresy i animacje TOKENIZATOREX v2.0
+# Wykresy TOKENIZATOREX v2.0
 
 Wszystkie pliki generuje `scripts/wykresy.py` z `results/*.json` i tokenizerów w repo.
 Uruchomienie: `python scripts/wykresy.py` (lub `--szybko` dla mniejszych rozmiarów).
@@ -12,12 +12,6 @@ Uruchomienie: `python scripts/wykresy.py` (lub `--szybko` dla mniejszych rozmiar
 5. `daty_kwoty_paragraf.png/.svg` — średnia liczba tokenów na daty, kwoty i paragrafy.
 6. `json_heldout.png/.svg` — JSON: V0 vs V0J2 (tc1 −23%, nowe narzędzia −33%).
 7. `znane_wady.png` — ilustracja znanej wady SuperBPE (0,28% użyć, 13/172 tekstów).
-
-## Animacje (GIF)
-
-- `anim/tokenizacja_porownanie.gif` — jedno zdanie urzędowe tokenizowane przez V0 i GPT-4o.
-- `anim/fertility_wyscig.gif` — słupki fertility rosną i układają się w kolejności.
-- `anim/superbpe_sklejanie.gif` — jak SuperBPE skleja słowa (zgodność z → z | god | ność z).
 
 Źródło danych: `results/tkx_zoo_fertility.json`, `results/tkx_v2_fertility.json`,
 `results/tkx_zoo_formats.json`, `results/tkx_zoo_vocab_cost.json`, `results/tkx_v21_test.json`,

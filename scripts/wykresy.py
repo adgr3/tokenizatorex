@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Generowanie wykresow i animacji do dokumentacji TOKENIZATOREX v2.0.
+"""Generowanie wykresow do dokumentacji TOKENIZATOREX v2.0.
 
 Uruchomienie:
     python scripts/wykresy.py            # wszystko, pelne rozmiary
-    python scripts/wykresy.py --szybko   # mniejsze rozmiary / mniej klatek (testy)
-    python scripts/wykresy.py --tylko-statyczne
-    python scripts/wykresy.py --tylko-animacje
+    python scripts/wykresy.py --szybko   # mniejsze rozmiary (testy)
 
 Wszystkie liczby pochodza z results/*.json albo z tokenizacji skryptem.
 """
@@ -20,7 +18,6 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 RESULTS = REPO / "results"
 OUT = REPO / "docs" / "wykresy"
-ANIM = OUT / "anim"
 
 # ---------- pomocnicze ----------
 
@@ -48,7 +45,6 @@ LIGHT_GRAY = "#D0D0D0"
 
 def _ensure_dirs():
     OUT.mkdir(parents=True, exist_ok=True)
-    ANIM.mkdir(parents=True, exist_ok=True)
 
 
 def _save(fig, stem, szybko=False):
@@ -400,222 +396,22 @@ def wykres_znane_wady(szybko=False):
     _save(fig, "znane_wady", szybko)
 
 
-# ---------- animacje ----------
-
-def _clean_tok(t):
-    return t.replace("Ġ", " ").replace("Â", "").strip() or t.replace("Ġ", " ")
-
-
-def anim_tokenizacja_porownanie(szybko=False):
-    import matplotlib.animation as animation
-    from tokenizers import Tokenizer
-    import tiktoken
-
-    sentence = ("Zgodnie z § 12 ust. 3 pkt 4 lit. a, wniosek z dnia 2 stycznia 2026 r. "
-                "na kwotę 1 234 567,89 zł")
-
-    rows = []
-    # V0
-    v0 = Tokenizer.from_file(str(REPO / "hf" / "variants" / "V0-32k" / "tokenizer.json"))
-    enc = v0.encode(sentence, add_special_tokens=False)
-    rows.append(("TOKENIZATOREX V0", [_clean_tok(v0.decode([i])) for i in enc.ids], OI_ORANGE))
-    # Slayer (z lokalnego cache, jeśli dostępny)
-    slayer_path = None
-    for cand in [REPO / "tkx_zoo" / "hf" / "Slayer-v6" / "tokenizer.json",
-                 Path("D:/VPS/fabryka/tkx-json/tkx_zoo/hf/Slayer-v6/tokenizer.json")]:
-        if cand.is_file():
-            slayer_path = cand
-            break
-    if slayer_path is None:
-        for base in [Path("C:/Users/x/.cache/huggingface/hub"),
-                     Path("D:/VPS/cache/huggingface/hub")]:
-            if base.is_dir():
-                for p in base.glob("models--SlayerLab--Slayer1B*/snapshots/*/tokenizer.json"):
-                    slayer_path = p
-                    break
-            if slayer_path is not None:
-                break
-    if slayer_path is not None:
-        sl = Tokenizer.from_file(str(slayer_path))
-        sl_enc = sl.encode(sentence, add_special_tokens=False)
-        rows.append(("Slayer v6", [_clean_tok(sl.decode([i])) for i in sl_enc.ids], OI_GREEN))
-        slayer_note = None
-    else:
-        slayer_note = "Slayer: tokenizer niedostępny lokalnie (pominięty)"
-    # GPT-4o
-    gpt = tiktoken.get_encoding("o200k_base")
-    gids = gpt.encode(sentence)
-    rows.append(("GPT-4o", [gpt.decode([i]) for i in gids], OI_BLUE))
-
-    nframes_tokens = max(len(r[1]) for r in rows)
-    hold = 18 if not szybko else 10
-    total = nframes_tokens + hold
-    fps = 12 if not szybko else 8
-
-    fig, ax = plt.subplots(figsize=(10, 5.5) if not szybko else (8, 4.5))
-    ax.axis("off")
-    _title(fig, "Tokenizacja jednego zdania urzędowego")
-
-    def draw(frame):
-        ax.clear()
-        ax.axis("off")
-        shown = min(frame + 1, nframes_tokens)
-        y0 = 0.85
-        for ri, (name, toks, color) in enumerate(rows):
-            y = y0 - ri * 0.28
-            ax.text(0.02, y + 0.12, f"{name}: {min(shown, len(toks))}/{len(toks)} tokenów",
-                    fontsize=11, fontweight="bold", color=color, transform=ax.transAxes)
-            # tiles
-            x = 0.02
-            for ti in range(min(shown, len(toks))):
-                txt = toks[ti]
-                if len(txt) > 14:
-                    txt = txt[:13] + "…"
-                ax.text(x, y, txt, fontsize=9, color="white",
-                        bbox=dict(boxstyle="round,pad=0.25", fc=color, ec="none"),
-                        transform=ax.transAxes)
-                x += 0.012 + 0.011 * max(1, len(txt))
-                if x > 0.95:
-                    break
-        if frame >= nframes_tokens:
-            ys = 0.05
-            summary = "  |  ".join(f"{n}: {len(t)} tokenów" for n, t, _ in rows)
-            ax.text(0.5, ys, summary, transform=ax.transAxes, ha="center", fontsize=10,
-                    bbox=dict(boxstyle="round", fc="#F0F0F0", ec="#BBBBBB"))
-            if slayer_note:
-                ax.text(0.5, ys - 0.07, slayer_note, transform=ax.transAxes, ha="center",
-                        fontsize=8, color="#777777")
-        fig.suptitle("Tokenizacja jednego zdania urzędowego", fontsize=13, fontweight="bold")
-
-    ani = animation.FuncAnimation(fig, draw, frames=total, interval=1000 / fps)
-    out = ANIM / "tokenizacja_porownanie.gif"
-    ani.save(out, writer=animation.PillowWriter(fps=fps), dpi=100)
-    plt.close(fig)
-
-
-def anim_fertility_wyscig(szybko=False):
-    import matplotlib.animation as animation
-    rows = dane_fertility_bzp()
-    # sort by fertility (rosnąco) final
-    ordered = sorted(rows, key=lambda r: r["fertility"])
-    names = [r["name"] for r in ordered]
-    finals = [r["fertility"] for r in ordered]
-    colors = [OI_ORANGE if r["highlight"] else GRAY for r in ordered]
-    n = len(names)
-    frames = 24 if not szybko else 14
-    fps = 12 if not szybko else 8
-
-    fig, ax = plt.subplots(figsize=(10, 6) if not szybko else (8, 4.5))
-    _title(fig, "Wyścig fertility na BZP")
-
-    def draw(frame):
-        ax.clear()
-        t = frame / max(frames - 1, 1)
-        # ease-out
-        e = 1 - (1 - t) ** 3
-        vals = [f * e for f in finals]
-        y = np.arange(n)
-        ax.barh(y, vals, color=colors, height=0.7)
-        ax.set_yticks(y)
-        ax.set_yticklabels(names, fontsize=9)
-        ax.invert_yaxis()
-        ax.set_xlim(0, max(finals) * 1.15)
-        ax.set_xlabel("tokeny / słowo")
-        for i, v in enumerate(vals):
-            if v > 0.05:
-                ax.text(v + max(finals) * 0.01, i, plnum(v, 2), va="center", fontsize=8)
-        if frame == frames - 1:
-            ax.text(0.98, 0.02, "TOKENIZATOREX wyróżniony", transform=ax.transAxes,
-                    ha="right", fontsize=9, color=OI_ORANGE, fontweight="bold")
-    ani = animation.FuncAnimation(fig, draw, frames=frames + 8, interval=1000 / fps)
-    out = ANIM / "fertility_wyscig.gif"
-    ani.save(out, writer=animation.PillowWriter(fps=fps), dpi=100)
-    plt.close(fig)
-
-
-def anim_superbpe_sklejanie(szybko=False):
-    import matplotlib.animation as animation
-    from tokenizers import Tokenizer
-
-    base = Tokenizer.from_file(str(REPO / "hf" / "tokenizatorex-base-32k" / "tokenizer.json"))
-    v0 = Tokenizer.from_file(str(REPO / "hf" / "variants" / "V0-32k" / "tokenizer.json"))
-    phrase = "zgodność z"
-    base_toks = [_clean_tok(t) for t in (base.decode([i]) for i in base.encode(phrase, add_special_tokens=False).ids)]
-    v0_toks = [_clean_tok(t) for t in (v0.decode([i]) for i in v0.encode(phrase, add_special_tokens=False).ids)]
-
-    # frames: najpierw base tiles, potem łączenie w V0
-    fps = 10 if not szybko else 7
-    frames = 30 if not szybko else 18
-    fig, ax = plt.subplots(figsize=(10, 4.5) if not szybko else (8, 3.5))
-    _title(fig, "Jak SuperBPE skleja słowa")
-
-    def draw(frame):
-        ax.clear()
-        ax.axis("off")
-        ax.text(0.5, 0.92, f"fraza: „{phrase}”", transform=ax.transAxes, ha="center", fontsize=11)
-        # base row
-        ax.text(0.02, 0.72, "base-32k:", transform=ax.transAxes, fontsize=10, fontweight="bold")
-        x = 0.18
-        for t in base_toks:
-            ax.text(x, 0.72, t, transform=ax.transAxes, fontsize=9, color="white",
-                    bbox=dict(boxstyle="round,pad=0.25", fc=GRAY, ec="none"))
-            x += 0.015 + 0.012 * max(1, len(t))
-        # v0 row
-        ax.text(0.02, 0.42, "V0:", transform=ax.transAxes, fontsize=10, fontweight="bold", color=OI_ORANGE)
-        merge_progress = min(1.0, frame / (frames * 0.6))
-        # show base tokens shrinking? We'll just show V0 tokens after merge
-        if merge_progress < 1.0:
-            # show base tokens in v0 row (jeszcze nie sklejone)
-            x = 0.18
-            for t in base_toks:
-                ax.text(x, 0.42, t, transform=ax.transAxes, fontsize=9, color="white",
-                        bbox=dict(boxstyle="round,pad=0.25", fc=LIGHT_GRAY, ec="none"))
-                x += 0.015 + 0.012 * max(1, len(t))
-            cnt = len(base_toks)
-        else:
-            x = 0.18
-            for t in v0_toks:
-                ax.text(x, 0.42, t, transform=ax.transAxes, fontsize=9, color="white",
-                        bbox=dict(boxstyle="round,pad=0.25", fc=OI_ORANGE, ec="none"))
-                x += 0.015 + 0.012 * max(1, len(t))
-            cnt = len(v0_toks)
-        ax.text(0.5, 0.22, f"tokeny: {len(base_toks)} → {len(v0_toks)}", transform=ax.transAxes,
-                ha="center", fontsize=10, fontweight="bold")
-        if frame == frames + 7:
-            ax.text(0.5, 0.08, "znana wada v2.0: SuperBPE czasem tnie słowo w środku (naprawa w v2.1)",
-                    transform=ax.transAxes, ha="center", fontsize=8, color="#777777")
-
-    ani = animation.FuncAnimation(fig, draw, frames=frames + 8, interval=1000 / fps)
-    out = ANIM / "superbpe_sklejanie.gif"
-    ani.save(out, writer=animation.PillowWriter(fps=fps), dpi=100)
-    plt.close(fig)
-
-
-def generate_all(szybko=False, statyczne=True, animacje=True):
+def generate_all(szybko=False):
     _ensure_dirs()
-    if statyczne:
-        wykres_fertility_bzp(szybko)
-        wykres_skad_przewaga(szybko)
-        wykres_osiem_zrodel(szybko)
-        wykres_koszt_slownika(szybko)
-        wykres_daty_kwoty_paragraf(szybko)
-        wykres_json_heldout(szybko)
-        wykres_znane_wady(szybko)
-    if animacje:
-        anim_tokenizacja_porownanie(szybko)
-        anim_fertility_wyscig(szybko)
-        anim_superbpe_sklejanie(szybko)
+    wykres_fertility_bzp(szybko)
+    wykres_skad_przewaga(szybko)
+    wykres_osiem_zrodel(szybko)
+    wykres_koszt_slownika(szybko)
+    wykres_daty_kwoty_paragraf(szybko)
+    wykres_json_heldout(szybko)
+    wykres_znane_wady(szybko)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--szybko", action="store_true")
-    ap.add_argument("--tylko-statyczne", action="store_true")
-    ap.add_argument("--tylko-animacje", action="store_true")
     args = ap.parse_args()
-    stat = not args.tylko_animacje
-    anim = not args.tylko_statyczne
-    generate_all(szybko=args.szybko, statyczne=stat, animacje=anim)
+    generate_all(szybko=args.szybko)
     print("STATUS=OK")
 
 

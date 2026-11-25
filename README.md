@@ -30,8 +30,6 @@ Wydaje mi się, że nie tylko w Polsce jest to możliwe.
 
 ## Wykresy
 
-![Tokenizacja na żywo](docs/wykresy/anim/tokenizacja_porownanie.gif)
-
 Najważniejsze wyniki wizualnie (pełna galeria: [`docs/wykresy/README.md`](docs/wykresy/README.md)):
 
 ![fertility_bzp](docs/wykresy/fertility_bzp.png)  

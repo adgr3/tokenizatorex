@@ -109,6 +109,11 @@ def _in_hex(text: str, pos: int) -> bool:
     return False
 
 
+SVG_GEOMETRY_RE = re.compile(
+    r'\s(?:d|points|transform|viewBox|x|y|x1|y1|x2|y2|cx|cy|r|width|height|style|clip-path)="[^"]*"'
+)
+
+
 def tracked_files():
     env = {**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"}
     out = subprocess.check_output(["git", "ls-files"], cwd=REPO, text=True,
@@ -132,6 +137,10 @@ def test_no_pii_in_tracked_files():
             text = p.read_text(encoding="utf-8")
         except Exception:
             continue
+        if rel.endswith(".svg"):
+            # Wykresy SVG: współrzędne geometrii (d=, transform=, points= ...) to liczby
+            # rysunku, nie dane osób; skanujemy resztę pliku (teksty, metadane).
+            text = SVG_GEOMETRY_RE.sub(" ", text)
         for m in EMAIL_RE.finditer(text):
             val = m.group(0)
             if val in SYNTHETIC_EMAILS or rel in ALLOW_EMAIL_FILES:
