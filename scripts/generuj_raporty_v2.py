@@ -703,8 +703,13 @@ def build_release():
     rn.append("")
     rn.append("## Plan v2.1 i TKX-D")
     rn.append("")
-    rn.append("- v2.1: naprawa `§` (V3), skróty prawne, tokeny JSON; mieszanka 10–30% tekstów urzędowych.")
-    rn.append("- TKX-D: wybór wariantu i rozmiaru słownika (16k/24k/32k) na małych modelach; ≥ 3 seedy; BPB.")
+    rn.append("- Pierwszy test v2.1 (superwordy tylko z pełnych słów + NFC) usunął cięcia typu "
+              "„z | god | ność z”, ale kosztował +15,5% tokenów względem V0; "
+              "v2.0 (V0) zostaje bieżącą wersją, szczegóły w README („Plan: v2.1 i TKX-D”).")
+    rn.append("- TKX-D: wybór tokenizera na małych modelach (30M, ewentualnie 60M), ≥ 3 seedy, "
+              "ten sam budżet danych w bajtach, BPB; kandydaci V0, WN, base-32k, V0J2, "
+              "odniesienie APT3 i Slayer; potem rozmiar słownika (16k/24k/32k).")
+    rn.append("- Naprawa `§` (V3) wypadła z planu: V0 ma „§” jako 1 token.")
     rn.append("")
     rn.append("## Weryfikacja")
     rn.append("")
