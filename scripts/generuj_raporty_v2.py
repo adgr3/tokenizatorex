@@ -703,8 +703,18 @@ def build_release():
     rn.append("")
     rn.append("## Plan v2.1 i TKX-D")
     rn.append("")
-    rn.append("- v2.1: naprawa `§` (V3), skróty prawne, tokeny JSON; mieszanka 10–30% tekstów urzędowych.")
-    rn.append("- TKX-D: wybór wariantu i rozmiaru słownika (16k/24k/32k) na małych modelach; ≥ 3 seedy; BPB.")
+    rn.append("- v2.1: superwordy tylko od początku słowa (usunięcie cięć typu "
+              "„z | god | ność z”), normalizacja NFC, skróty prawne jako stabilne "
+              "kawałki, wariant z 2% JSON jako kandydat; mieszanka 10–30% tekstów "
+              "urzędowych do sprawdzenia (tylko z danych treningowych, "
+              "z dekontaminacją względem testów).")
+    rn.append("- TKX-D: decyzja na małych modelach (30M, ewentualnie 60M), ≥ 3 seedy, "
+              "BPB na czystych tekstach urzędowych + prosty test wyciągania danych; "
+              "kandydaci: V0, V0-base (bez SuperBPE), v2.1, wariant JSON, punkt "
+              "odniesienia APT3 i Slayer; najpierw wariant przy 32k, potem rozmiar "
+              "słownika (16k/24k/32k) dla zwycięzcy. Główne pytanie: czy SuperBPE "
+              "pomaga modelowi, a nie tylko liczbie tokenów.")
+    rn.append("- Naprawa `§` (V3) wypadła z planu: V0 ma „§” jako 1 token, V3 odłożony.")
     rn.append("")
     rn.append("## Weryfikacja")
     rn.append("")

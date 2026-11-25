@@ -202,6 +202,31 @@ python export_hf.py tokenizers/tokenizatorex-32k.json --out-dir hf --check ../da
 python demo.py "Twoje zdanie."
 ```
 
+## Plan: v2.1 i TKX-D
+
+**v2.1** (gałąź `feat/tkx-v2-1`, protokół [`tkx_v21b/PROTOKOL.md`](tkx_v21b/PROTOKOL.md),
+raport [`tkx_v21b/RAPORT.md`](tkx_v21b/RAPORT.md)):
+
+- superwordy tylko od początku słowa — usunięcie cięć typu „z | god | ność z”;
+- normalizacja NFC na wejściu (w tokenizerze i w eksporcie HF);
+- skróty prawne (`Dz.U.`, `M.P.`, `t.j.`, `ze zm.`, `ust.`, `art.`, …) jako
+  stabilne kawałki w podziale wstępnym;
+- wariant z 2% JSON (WNJ2) jako kandydat na dane narzędziowe;
+- do sprawdzenia przy kolejnym podejściu: mieszanka 10–30% tekstów urzędowych —
+  wyłącznie z danych treningowych, z dekontaminacją względem zbiorów testowych.
+
+**TKX-D** — decyzja na małych modelach, nie na liczbie tokenów:
+
+- modele 30M, ewentualnie 60M, ≥ 3 seedy;
+- metryka: BPB na czystych tekstach urzędowych + prosty test wyciągania danych;
+- kandydaci: V0, V0-base (bez SuperBPE), v2.1, wariant JSON; punkty odniesienia:
+  APT3 i Slayer;
+- kolejność: najpierw wariant przy 32k, potem rozmiar słownika (16k/24k/32k)
+  dla zwycięzcy;
+- główne pytanie: czy SuperBPE pomaga modelowi, a nie tylko liczbie tokenów.
+
+Naprawa `§` (V3) wypadła z planu: V0 ma „§” jako 1 token, V3 odłożony.
+
 ## Pliki
 
 | plik | co |
